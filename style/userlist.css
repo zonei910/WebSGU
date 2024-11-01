@@ -1,0 +1,164 @@
+#Display .userlist .container{
+    width: 800px; /* Chiều rộng của div */
+    height: 600px; /* Chiều cao của div */
+    overflow-y: auto; 
+     /* Thanh cuộn dọc  */
+    overflow-x: hidden; 
+     /* Ẩn thanh cuộn ngang  */
+     /* position: relative; */
+}
+#Display .userlist  .container1{
+    padding: 30px;
+    position: relative;
+}
+#Display .userlist .input1{
+    margin-bottom: 20px;
+    
+    /* background-color: aqua; */
+}
+#Display .userlist .input1 >div{
+    width: 200px;
+    height: 20px;
+    position: relative;
+    display: inline-block;
+}
+#Display .userlist .input1 >div>#input1{
+    border-radius: 5px;
+    width: 100%;
+    outline: none;
+    border: 1px solid rgb(32, 32, 78) ;
+    height: 100%;
+}
+#Display .userlist .input1 >div>i{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+#Display .userlist .input1 >div>i:hover{
+    cursor: pointer;
+}
+#Display .userlist .user{
+    background-color: rgb(32, 32, 78);
+    color: white;
+    /* height: 40px; */
+    line-height: 40px;
+    padding-left:20px ;
+}
+#Display .userlist .table table tr td:nth-child(6) div{
+    display: inline-block;
+    border: 1px solid rgb(32, 32, 78);
+    border-radius: 5px;
+    padding:5px;
+    width: calc(50% - 20px);
+    text-align: center;
+}
+#Display .userlist .table table tr td:nth-child(6) div:hover{
+    cursor: pointer;
+}
+#Display .userlist .table table tr td:nth-child(5) div{
+    text-align: center;
+    border: 1px solid rgb(32, 32, 78);
+    border-radius: 5px;
+    padding:5px;
+}
+#Display .userlist .table table tr td:nth-child(5) div:hover{
+    cursor: pointer;
+}
+#Display .userlist .table table{
+    border-collapse: collapse;
+    width: 100%;
+}
+#Display .userlist .table{
+    border:1px solid rgb(32, 32, 78);
+    padding:5px;  
+    
+}
+#Display .userlist .table table tr td{
+    padding:5px;
+    height: 20px;
+    border: 1px solid rgb(32, 32, 78);
+    /* border-collapse: collapse; */
+    /* padding: 5px; */
+}
+#Display .userlist #edit{
+    /* display:none; */
+    position: absolute;
+    top:0;
+      left: 0;
+     z-index: 99;
+     display: flex;
+    /* width:100vw; */
+    /* height:100vh; */
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0,0.5);
+}
+#Display .userlist .editinner{
+    /* display:none; */
+    padding:10px;
+    background-color: white;
+    border-radius: 5px;
+    width: 500px;
+
+
+}
+#Display .userlist .editinner>form>div:nth-child(1){
+    text-align: center;
+}
+#Display .userlist .editinner>form>div{
+    margin: 10px;
+    display: flex;
+}
+#Display .userlist .editinner>form>div>div:nth-child(1){
+    display: inline-block;
+    width: 150px;
+}
+#Display .userlist .editinner>form>div>div:nth-child(2){
+    display: inline-block;
+    width: calc(100% - 200px);
+    /* width: 200px; */
+}
+#Display .userlist .editinner>form>div>div:nth-child(2)>input,.editinner>form>div>div:nth-child(2)>textarea{
+    width: 100%;
+}
+#Display .userlist input{
+    outline: none;
+}
+#Display .userlist .editinner> form> div:nth-child(5)>div{
+    top: 0px;
+    left: 0px;
+}
+#Display .userlist .editinner> form>div>div:nth-child(1) >label> i{
+    font-size: 12px;
+}
+#Display .userlist .editinner >form>button{
+    width: 100%;
+    background-color: rgb(236,103,86);
+    border: none;
+    height: 30px;
+    margin: 10px;
+
+}
+#Display .userlist .editinner >form>button:hover{
+    cursor: pointer;
+}
+#Display .userlist .editinner > form > div > label {
+    width: 150px; /* Chiều rộng cho nhãn */
+}
+#Display .userlist .editinner > form > div > input,
+#Display .userlist .editinner > form > div > textarea {
+    flex: 1; /* Chiếm không gian còn lại */
+    outline: none;
+    border: 1px solid rgb(32, 32, 78);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#Display .userlist{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}

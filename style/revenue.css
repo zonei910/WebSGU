@@ -1,0 +1,146 @@
+#Display .revenue .container{
+    margin: 0px 30px;
+    border: 2px solid rgb(32, 32, 78);
+}
+#Display .revenue .inner1{
+    margin:0px;
+    background-color: rgb(32, 32, 78);
+    position: relative;
+}
+#Display .revenue .inner1 >div:nth-child(1){
+    padding:20px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+#Display .revenue .inner1 > div:nth-child(2){
+    color: white;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+#Display .revenue .inner1 > div:nth-child(2) > a >i{
+    color: white;
+    font-size: 15px;
+}
+#Display .revenue .inner2{
+    background-color: rgb(40,53,66);
+    /* height: 70px; */
+    padding:20px;
+    margin:10px;
+}
+#Display .revenue .inner2 >div{
+    margin: 5px;
+}
+#Display .revenue .inner2 >div:nth-child(1){
+    margin: 10px;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#Display .revenue .innerr2 > div{
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid white;
+    /* margin: 10px; */
+    font-size: 20px;
+    text-align: center;
+}
+#Display .revenue  .inner3{
+    background-color: rgb(80,139,192);
+    /* height: 70px; */
+    padding:20px;
+    margin: 10px;
+    margin:10px;
+}
+#Display .revenue  .inner3 >div:nth-child(1){
+    /* margin: 10px; */
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#Display .revenue   .innerr3>div{
+    width: 100px;
+    border-radius: 5px;
+    border: 1px solid white;
+    /* margin: 10px; */
+    font-size: 20px;
+    text-align: center;
+}
+#Display .revenue  .inner3 >div{
+    margin: 5px;
+}
+#Display .revenue  .inner4{
+    /* height: 70px; */
+    padding:20px;
+    margin:10px;
+    background-color: rgb(236,103,86);
+}
+#Display .revenue  .inner4 >div{
+    margin: 5px;
+}
+#Display .revenue  .innerr4 >div:nth-child(1){
+    width: 100px;
+    border-radius: 5px;
+    border: 1px solid white;
+    /* margin: 10px; */
+    font-size: 20px;
+    text-align: center;
+}
+#Display .revenue   .innerr4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#Display .revenue   #date{
+    background-color: white;
+    /* height: 200px; */
+    border: 1px solid white;
+    border-radius: 5px;
+    position: absolute;
+    right: 20px;
+    top: 70%;
+    color: black;
+    padding: 20px;
+    /* display: none; */
+    border: 2px solid black;
+    border-radius: 5px;
+}
+#Display .revenue    #date >i{
+    color: black;
+    padding:5px;
+
+}
+#Display .revenue  #date>div>label>select{
+    padding:5px;
+    margin-top: 5px;
+    color: black;
+    width: 100%;
+}
+#Display .revenue   #date>div>label>select>option{
+    color: black;
+}
+#Display .revenue    #date >button{
+    margin-top: 5px;
+    border: 2px solid rgb(32, 32, 78);
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(32, 32, 78);
+
+}
+#Display .revenue    #date >button:hover{
+    cursor: pointer;
+}
+#Display .revenue   #week2monthoctoberyear2024{
+    display: none;
+}
+
+#Display .revenue{
+    width: 100%;
+    padding: 20px;
+}
