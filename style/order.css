@@ -1,0 +1,60 @@
+#Display .order{
+    width: 100%;
+    padding: 20px;
+}
+
+#Display .order .inner{
+    border:1px solid grey;
+}
+
+#Display .order .head{
+    background-color: var(--mau1);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+
+
+
+
+#Display .order .container{
+    padding: 10px;
+    border-top: none;
+    overflow: auto;
+    height: 30%;
+}
+
+#Display .order .container .item{
+    border:1px solid grey;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+#Display .order .container .item p{
+    margin: 0px;
+}
+
+#Display .order .container .item i{
+    margin-right: 15px;
+}
+
+#Display .order .container .item i:nth-child(1){
+    cursor: pointer;
+}
+
+#Display .order .container .item i:nth-child(2){
+    border: 3px solid red;
+    background-color: red;
+}
+
+
+#Display .order .foot{
+    background-color: var(--mau1);
+    padding: 10px;
+    text-align: center;
+}
+
+#Display .order .foot button{
+    margin: 5px;
+}

@@ -2,6 +2,9 @@
      font-family:'Libre Baskerville', serif;;
 }
 
+body{
+    overflow: hidden;
+}
 
 .show{
     display:block;
