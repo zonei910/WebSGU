@@ -1,0 +1,457 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    font-family:'Libre Baskerville', serif;
+}
+
+:root{
+    --xanh:#d2f4f4;
+    --xam:#c0bdbd;
+}
+
+li{
+    list-style-type: none;
+}
+
+header{
+    background-color: var(--xanh);
+    position:fixed;
+    z-index: 2;
+    width:100%;
+    /* color:white; */
+}
+
+.menu-top{
+    height:50px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    position:relative;
+}
+
+.logo{
+    position:absolute;
+    left:20px;
+    
+}
+
+.logo > img{
+    width:80px;
+    height:auto;
+    margin-top:10px;
+}
+  
+
+.shop-name{
+    font-size:x-large;
+    padding-top:15px;
+}
+
+
+.account{
+    position:absolute;
+    right:30px;
+}
+
+.account > button {
+    padding:7px 1px 7px 1px;
+    width:80px;
+}
+
+.account > button:hover{
+    color:blue;
+}
+
+
+.menu-bottom{
+    height:50px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+.menu-bottom  .icon > img{
+    width:18px;
+    margin-left:10px;
+}
+
+
+.menu1{
+    display:flex;
+    flex-wrap: nowrap;
+    
+}
+
+.menu1 > li{
+    display:block;
+    padding:5px;
+    position:relative;
+    width: 145px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.menu1 > li:hover {
+    color:blue;
+    font-weight: bold;
+}
+
+
+.menu2 {
+    display: none;
+    position: absolute;
+    left: 0; 
+    top: 100%; 
+    background: var(--xanh); 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    z-index: 11; 
+}
+
+.menu2 > li{
+    color:black;
+    text-align: left;
+    padding:5px 5px 5px 10px;
+    width:140px;
+    font-weight:400;
+    cursor: pointer;
+}
+
+.menu2 > li:hover{
+    color:blue;
+    font-weight: bold;
+}
+
+.menu1 > li:hover .menu2 {
+    display: block; 
+}
+
+
+main{
+    height:auto;
+    padding-top:100px;
+    background-color: #f5f5f5;
+}
+
+#carousel {
+
+    overflow: hidden;
+    margin-left:9%;
+}
+
+.slide {
+    display: none; 
+}
+
+.slide img {
+    width: 90%;
+    height: 500px;
+    padding-top:2px;
+    object-fit: cover; 
+}
+
+.active {
+    display: block;
+}
+
+
+#sp-hot{
+    height:auto;
+    width:100%;
+}
+
+#sp-watch{
+    height:auto;
+    width:100%;
+    /* display:none; */
+}
+
+#sp-ring{
+    height:auto;
+    width:100%;
+    /* display:none; */
+}
+
+#sp-earrings{
+    height:auto;
+    width:100%;
+    /* display:none; */
+}
+
+#sp-bracelet{
+    height:auto;
+    width:100%;
+    /* display:none; */
+}
+
+#sp-necklace{
+    /* display:none; */
+    height:auto;
+    width:100%;
+}
+
+.sp-name{
+    height:auto;
+    width:100%;
+    text-align: center;
+    padding:60px 0px 20px 0px;
+    font-size:x-large;
+}
+
+.sp-contaner{
+    width:85%;
+    height:auto;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left:12%;
+}
+
+/* .bonus{} */
+
+.sp-item{
+    /* border: solid 1px black; */
+    border-radius: 25px;
+    width:26%;
+    height:auto;
+    margin:10px;
+    padding-bottom:10px;
+    position: relative;
+    background-color: white;
+    overflow: hidden;
+
+}
+.sp-item:hover {
+    border: solid black 2px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: box-shadow 0.1s, border 0.1s; 
+}
+
+
+.sp-item > img{
+    width:323.5px;
+    height:310px;
+    border-radius: 25px;
+}
+
+.sp-item > p{
+    text-align: center;
+    padding:5px;
+}
+
+
+.detail{
+    position:absolute;
+    bottom:0px;
+    display:flex;
+    flex-wrap: nowrap;
+    border-top:solid 1px black;
+    width:100%;
+    padding:10px 0px 15px 0px;
+    background-color: var(--xam);
+    display:none;
+}
+.detail .mua{
+    padding:7px;
+    border: solid 1px black;
+    margin:5px;
+    border-radius: 10px;
+    width:99px;
+    margin-left:50px;
+    background-color: var(--xanh);
+}
+
+.detail .mua:hover{
+    background-color: #ec6161;
+    border: 2px solid black;
+}
+
+.detail .chi-tiet{
+    padding:7px;
+    border: solid 1px black;
+    margin:5px;
+    border-radius: 10px;
+    width:98px;
+    background-color: var(--xanh);
+}
+
+.detail .chi-tiet:hover{
+    background-color: #ec6161;
+    border:2px solid black;
+}
+
+.sp-item:hover .detail{
+    display:flex;
+}
+
+.bonus{
+    width:85%;
+    margin-left: 12%;
+    height:90px;
+}
+
+
+#dang-nhap{
+    background-color: var(--xam);
+    width:100%;
+    height:100vh;
+    position: fixed;
+    z-index: 11;
+    top:0; right:0; bottom:0; left:0;
+    display:none;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.form-dang-nhap{
+    background-color: #fff; 
+    padding: 20px; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width:40%;
+    height:auto;
+    position: relative;
+}
+
+
+.form-dang-nhap > h2{
+    text-align: center; 
+    margin-bottom: 20px;
+}
+
+.form-dang-nhap > div input{
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+}
+
+.form-dang-nhap > div label{
+    display: block; margin-bottom: 5px;
+}
+
+
+.form-dang-nhap > button{
+    width: 100%; 
+    padding: 10px; 
+    background-color: #5cb85c; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer;
+    position: relative;
+}
+
+
+.nut-tat-dn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    transition: background-color 0.3s;
+}
+
+.nut-tat-dn:hover {
+    background-color: darkred;
+    color: white;
+
+}
+
+
+
+
+
+#dang-ky{
+    background-color: var(--xam);
+    width:100%;
+    height:100vh;
+    position: fixed;
+    z-index: 11;
+    top:0; right:0; bottom:0; left:0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    display:none;
+}
+
+.form-dang-ky{
+    background-color: #fff; 
+    padding: 20px; 
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    width: 40%; 
+    min-width: 200px;
+    height:auto;
+    position: relative;
+}
+
+.nut-tat-dk {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    transition: background-color 0.3s;
+}
+
+.nut-tat-dk:hover {
+    background-color: darkred;
+    color: white;
+
+}
+
+.form-dang-ky > h2{
+    text-align: center; margin-bottom: 20px;
+}
+
+.form-dang-ky > div{
+    margin-bottom: 15px;
+}
+
+.form-dang-ky > div > input{
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px;
+}
+
+.form-dang-ky > div > label{
+    display: block; margin-bottom: 5px;
+}
+
+.form-dang-ky > button{
+    width: 100%; 
+    padding: 10px; 
+    background-color: #5cb85c; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer;
+}
+
+
+
+footer{
+    height:350px;
+    background-color: rgba(46, 39, 39, 0.493);
+    width:100%;
+}

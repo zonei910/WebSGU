@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/navbar.css">
+    <link rel="stylesheet" href="/style/display.css">
+    <link rel="stylesheet" href="/style/viewpage.css">
+    <link rel="stylesheet" href="/style/revenue.css">
+    <link rel="stylesheet" href="/style/userlist.css">
+    <link rel="stylesheet" href="/style/merchandise.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <title>Admin</title>
+</head>
+<body>
+    
+
+    <!-- Bắt đầu Header -->
+    <header id="Header">
+        <div class="inner">
+            <a href ="/admin.html">
+            <img src="/image/logo.png" alt="">
+            </a>
+            <div class="inner-container">
+                <div class="item">
+                    <i class="fa-solid fa-note-sticky"></i>
+                    <p>Ghi chú</p>
+                </div>
+
+                <div class="item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>Thư mới</p>
+                </div>
+
+
+                <div class="item">        
+                      Xin chào,<div style="display:inline;color:blue;cursor:pointer" class="admin-info">Admin
+                             <!-- Admin info -->
+                             <ul id="Admin-info">
+                                <div>Thông tin</div>
+                                <li>Email: example@gmail.com</li>
+                                <li>Cấp độ: Quản lý</li> 
+                                <!-- Quản lý -> Nhân viên nhận đơn-->
+                                <li>Chi nhánh: Q1</li>
+                                
+                                <li class="button">
+                                    <div class="edit"><i class="fa-regular fa-pen-to-square"></i></div>
+                                    <a href="/index.html" class="logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+                                </li>   
+                                                   
+                              </ul>
+                           <!-- Kết thúc Admin info -->
+                        </div>              
+                    
+                </div>
+                
+
+            </div>
+        </div>
+    </header>
+<!-- Kết thúc Header -->
+
+<!-- Bắt đầu Main -->
+    <main id="Main">
+
+        <Section id="Menu">
+        <div>
+            <div class="viewpage">
+                <i class="fa-solid fa-file-code"></i>
+                <p>Trang Chủ</p>
+            </div>
+
+            <div class="merchandise">
+                <i class="fa-solid fa-boxes-stacked"></i>
+               <p>Hàng Hóa</p>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-cart-shopping"></i>
+                <p>Đơn hàng</p>
+            </div>
+
+            <div class="revenue">
+                <i class="fa-solid fa-chart-simple"></i>
+                <p>Thống Kê</p>
+            </div>
+            <div class="userlist">
+                <i class="fa-solid fa-users"></i>
+                <p>Danh Sách Khách Hàng</p>
+            </div>
+            <div class="adminlist">
+                <i class="fa-solid fa-user-tie"></i>
+                <p>Danh Sách Quản Trị Viên</p>
+            </div>
+            <!-- Thêm list ở đây -->
+         </div>
+        </Section>
+
+
+
+
+
+        <!-- Sẽ bị none cho đến khi học javascript nên sửa lại nhé -->
+        <Section id="Display">
+
+
+        <!-- View page nè -->
+            <div class="viewpage">
+                <iframe src="/index.html"></iframe>
+            </div>
+
+            <!-- <div class="order">
+                <div class="inner">
+                    <div>
+                        <div>Xử lý đơn hàng</div>
+                        <div>
+                        <div>Chưa xử lý</div>
+                         <div>Đã xử lý</div>
+                         </div>                        
+                    </div>
+                    
+
+
+                </div>
+            </div> -->
+
+
+            <!-- Thống kê -->
+            <div class="revenue">
+            <div class="container">
+                <div class="inner1">
+                    <div id="">filter <a href=""><i class="fa-solid fa-angle-down" id="angle-down"></i></a> </div>
+                    <div id="date">
+                        select date : <i class="fa-regular fa-calendar-days" ></i>
+                        <div>
+                            <label for="selectyear">                    
+                                <select name="" id="selectyear">
+                                <option value="">year</option>
+                                <option value="">2024</option>
+                            </select></label>
+                        </div>
+                        <div>
+                            <label for="selectmonth">                    
+                                <select name="" id="selectmonth" >
+                                <option value=""><a href="">month</a></option>
+                                <option value="1"><a href="">January</a></option>
+                                <option value="2"><a href="">February</a></option>
+                                <option value="3"><a href="">March</a></option>
+                                <option value="4"><a href="">April</a></option>
+                                <option value="5"><a href="">May</a></option>
+                                <option value="6"><a href="">June</a></option>
+                                <option value="7"><a href="">July</a></option>
+                                <option value="8"><a href="">August</a></option>
+                                <option value="9"><a href="">September</a></option>
+                                <option value="10"><a href="">October</a></option>
+                                <option value="11"><a href="">November</a></option>
+                                <option value="12"><a href="">December</a></option>
+                            </select></label>
+                        </div>
+                        <div>
+                            <label for="selectweek">
+                                <select name="" id="selectweek">
+                                    <option value=""><a href="">week</a></option>
+                                    <option value="1"><a href="">week 1</a></option>
+                                    <option value="2"><a href="">week 2</a></option>
+                                    <option value="3"><a href="">week 3</a></option>
+                                    <option value="4"><a href="">week 4</a></option>
+                                </select>
+                            </label>
+                        </div>
+                        <button id="button1">confirm</button>
+                    </div>
+                </div>
+                <div id="week1monthoctoberyear2024">
+                    <div class="inner2">
+                        <div class="innerr2">
+                            <div>tuần : 1(1.10.2024-7.10.2024)</div>
+                        </div>
+                        <div>doanh thu :9999999999999999999999999999999999999999</div>
+                        <div>tổng sản phẩm bán ra :99999999999999</div>
+                        <div>số sản phẩm được bán :99999999999999</div>
+                    </div>
+                    <div class="inner3">
+                        <div class="innerr3">
+                            <div>tháng : 10</div>
+                        </div>
+                        <div>doanh thu :9999999999999999999999999999999999999999</div>
+                        <div>tổng sản phẩm bán ra :99999999999999</div>
+                        <div>số sản phẩm được bán :99999999999999</div>
+                    </div>
+                    <div class="inner4">
+                        <div class="innerr4">
+                            <div>năm : 2024</div>
+                        </div>
+                        <div>doanh thu :9999999999999999999999999999999999999999</div>
+                        <div>tổng sản phẩm bán ra :99999999999999</div>
+                        <div>số sản phẩm được bán :99999999999999</div>
+                    </div>
+                </div>
+                <div id="week2monthoctoberyear2024">
+                    <div class="inner2">
+                        <div class="innerr2">
+                            <div>tuần : 2(8.10.2024-14.10.2024)</div>
+                        </div>
+                        <div>doanh thu :2222222</div>
+                        <div>tổng sản phẩm bán ra :222222222</div>
+                        <div>số sản phẩm được bán :3333333333</div>
+                    </div>
+                    <div class="inner3">
+                        <div class="innerr3">
+                            <div>tháng : 10</div>
+                        </div>
+                        <div>doanh thu :55555555</div>
+                        <div>tổng sản phẩm bán ra :666666666</div>
+                        <div>số sản phẩm được bán :7777777777777</div>
+                    </div>
+                    <div class="inner4">
+                        <div class="innerr4">
+                            <div>năm : 2024</div>
+                        </div>
+                        <div>doanh thu :0000000000000</div>
+                        <div>tổng sản phẩm bán ra :00000000000000</div>
+                        <div>số sản phẩm được bán :000000000000000000</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Danh sách user -->
+    <div class="userlist">
+        <div class="container">
+            <div class="container1">
+                <div class="input1">
+                    <label for="input1">Search by name <i class="fa-regular fa-user"></i></label>
+                    <div><input type="text" id="input1"> <i class="fa-solid fa-magnifying-glass"></i></div>
+                    
+        
+                </div>
+                <div class="user">User <i class="fa-solid fa-users"></i></div>
+                <div id="edit">
+                    <div class="editinner">
+                        <form action="">
+                            <div><h2>edit user information</h2></div>
+                            <div>
+                                <div><label for="username">user name <i class="fa-regular fa-circle-user"></i>: </label></div>
+                                <div><input type="text" id="username" placeholder="Enter customer name" required></div>
+                            </div>
+                            <div>
+                                <div><label for="emailuser">email <i class="fa-regular fa-envelope"></i>:</label></div>
+                                <div><input type="email" placeholder="Enter email" required id="emailuser"></div>
+                            </div>
+                            <div>
+                                <div><label for="telephoneuser">telephone <i class="fa-solid fa-phone"></i>:</label></div>
+                                <div><input type="tel"placeholder="Enter phone number" required id="telephoneuser"></div>
+                            </div>
+                            <div>
+                                <div><label for="addressuser">address <i class="fa-solid fa-location-pin"></i>:</label></div>
+                                <div><textarea id="addressusername" name="address" rows="4" placeholder="Enter address" required></textarea>
+                                </div>
+                            </div>
+                            <button>save changes</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="table">
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td>user name</td>
+                            <td>Email</td>
+                            <td>telephone number</td>
+                            <td>orders</td> 
+                            <!-- thêm thẻ a -->
+                            <td>operations</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Lâm Thái Yến Nhi</td>
+                            <td>bnhi@gmail.com</td>
+                            <td>111111111</td>
+                            <td><div>chi tiết</div></td>
+                            <td>
+                                <div onclick="thaydoi();">edit</div>
+                                <div>delete</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Mạc Tuấn Hào</td>
+                            <td>pickmeboy@gmail.com</td>
+                            <td>123456789</td>
+                            <td><div>chi tiết</div></td>
+                            <td>
+                                <div onclick="thaydoi();">edit</div>
+                                <div>delete</div>
+                            </td>
+                            <tr>
+                                <td>3</td>
+                                <td>Khang Chi</td>
+                                <td>akhang@gmail.com</td>
+                                <td>987654321</td>
+                                <td><div >detail</div></td>
+                                <td>
+                                    <div onclick="thaydoi();">edit</div>
+                                    <div>delete</div>
+                                </td>
+                            </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Lâm Thái Yến Nhi</td>
+                            <td>bnhi@gmail.com</td>
+                            <td>111111111</td>
+                            <td><div>detail</div></td>
+                            <td>
+                                <div onclick="thaydoi();">edit</div>
+                                <div>delete</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Mạc Tuấn Hào</td>
+                            <td>pickmeboy@gmail.com</td>
+                            <td>123456789</td>
+                            <td><div>detail</div></td>
+                            <td>
+                                <div onclick="thaydoi();">edit</div>
+                                <div>delete</div>
+                            </td>
+                            <tr>
+                                <td>3</td>
+                                <td>Khang Chi</td>
+                                <td>akhang@gmail.com</td>
+                                <td>987654321</td>
+                                <td><div >detail</div></td>
+                                <td>
+                                    <div onclick="thaydoi();">edit</div>
+                                    <div>delete</div>
+                                </td>
+                            </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Lâm Thái Yến Nhi</td>
+                            <td>bnhi@gmail.com</td>
+                            <td>111111111</td>
+                            <td><div>detail</div></td>
+                            <td>
+                                <div onclick="thaydoi();">edit</div>
+                                <div>delete</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Mạc Tuấn Hào</td>
+                            <td>pickmeboy@gmail.com</td>
+                            <td>123456789</td>
+                            <td><div>detail</div></td>
+                            <td>
+                                <div onclick="thaydoi();">edit</div>
+                                <div>delete</div>
+                            </td>
+                            <tr>
+                                <td>3</td>
+                                <td>Khang Chi</td>
+                                <td>akhang@gmail.com</td>
+                                <td>987654321</td>
+                                <td><div>detail</div></td>
+                                <td>
+                                    <div onclick="thaydoi();">edit</div>
+                                    <div>delete</div>
+                                </td>
+                            </tr>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Lâm Thái Yến Nhi</td>
+                            <td>bnhi@gmail.com</td>
+                            <td>111111111</td>
+                            <td><div>detail</div></td>
+                            <td>
+                                <div onclick="thaydoi();">edit</div>
+                                <div>delete</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Mạc Tuấn Hào</td>
+                            <td>pickmeboy@gmail.com</td>
+                            <td>123456789</td>
+                            <td><div>detail</div></td>
+                            <td>
+                                <div onclick="thaydoi();">edit</div>
+                                <div>delete</div>
+                            </td>
+                            <tr>
+                                <td>3</td>
+                                <td>Khang Chi</td>
+                                <td>akhang@gmail.com</td>
+                                <td>987654321</td>
+                                <td><div>detail</div></td>
+                                <td>
+                                    <div onclick="thaydoi();">edit</div>
+                                    <div>delete</div>
+                                </td>
+                            </tr>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+
+
+        <!-- Danh sách sản phẩm -->
+        <div class="merchandise">
+        <div id="prod-edit-display">
+            <div id="prod-edit-header">
+                <nav>
+                    <form method="get">
+                    <select name="sanpham" id="select">
+                        <option value="none">[Chọn sản phẩm]</option>
+                        <option value="vongco">Vòng cổ</option>
+                        <option value="vongtay">Vòng tay</option>
+                        <option value="nhan">Nhẫn</option>
+                    </select>
+                    <button>Tìm kiếm</button>
+                </form>
+                </nav>
+                <button class="button1"><i class="fa-solid fa-plus"></i></button>
+            </div>
+            <div id="main-content">
+                <div class="table">
+                    <img src="/image/img2.jpeg" width="20%">
+                    <div class="product-info">
+                        <span>ID: 001</span>
+                        <span>Name: Red diamond necklace</span>
+                        <span>Price: $499.99</span>
+                        <span>Quantity: 10</span>
+                        <span>Description: This is a description</span>
+                    </div>
+                    <div class="button-group">
+                        <button class="edit-buttons1"><i class="fa-regular fa-pen-to-square"></i></button>
+                        <button class="edit-buttons2"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+                <div class="table">
+                    <img src="/image/img2.jpeg" width="20%">
+                    <div class="product-info">
+                        <span>ID: 001</span>
+                        <span>Name: Red diamond necklace</span>
+                        <span>Price: $499.99</span>
+                        <span>Quantity: 10</span>
+                        <span>Description: This is a description</span>
+                    </div>
+                    <div class="button-group">
+                        <button class="edit-buttons1"><i class="fa-regular fa-pen-to-square"></i></button>
+                        <button class="edit-buttons2"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+                <div class="table">
+                    <img src="/image/img2.jpeg" width="20%">
+                    <div class="product-info">
+                        <span>ID: 001</span>
+                        <span>Name: Red diamond necklace</span>
+                        <span>Price: $499.99</span>
+                        <span>Quantity: 10</span>
+                        <span>Description: This is a description</span>
+                    </div>
+                    <div class="button-group">
+                        <button class="edit-buttons1"><i class="fa-regular fa-pen-to-square"></i></button>
+                        <button class="edit-buttons2"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+                <div class="table">
+                    <img src="/image/img2.jpeg" width="20%">
+                    <div class="product-info">
+                        <span>ID: 001</span>
+                        <span>Name: Red diamond necklace</span>
+                        <span>Price: $499.99</span>
+                        <span>Quantity: 10</span>
+                        <span>Description: This is a description</span>
+                    </div>
+                    <div class="button-group">
+                        <button class="edit-buttons1"><i class="fa-regular fa-pen-to-square"></i></button>
+                        <button class="edit-buttons2"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+                <div class="table">
+                    <img src="/image/img2.jpeg" width="20%">
+                    <div class="product-info">
+                        <span>ID: 001</span>
+                        <span>Name: Red diamond necklace</span>
+                        <span>Price: $499.99</span>
+                        <span>Quantity: 10</span>
+                        <span>Description: This is a description</span>
+                    </div>
+                    <div class="button-group">
+                        <button class="edit-buttons1"><i class="fa-regular fa-pen-to-square"></i></button>
+                        <button class="edit-buttons2"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+                <div class="table">
+                    <img src="/image/img2.jpeg" width="20%">
+                    <div class="product-info">
+                        <span>ID: 001</span>
+                        <span>Name: Red diamond necklace</span>
+                        <span>Price: $499.99</span>
+                        <span>Quantity: 10</span>
+                        <span>Description: This is a description</span>
+                    </div>
+                    <div class="button-group">
+                        <button class="edit-buttons1"><i class="fa-regular fa-pen-to-square"></i></button>
+                        <button class="edit-buttons2"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+    
+            </div>
+            <nav id="buttons">
+                <div class="pagination-buttons">
+                    <button class="page-button"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="page-button">1</button>
+                    <button class="page-button">2</button>
+                    <button class="page-button"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+        </Section>
+
+    </main>
+<!-- Kết thúc Main -->
+
+
+
+<script language="javascript" src="/script/navbar.js"></script>
+</body>
+</html>
