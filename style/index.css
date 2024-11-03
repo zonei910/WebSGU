@@ -335,7 +335,7 @@ main{
 }
 
 
-.form-dang-nhap > button{
+#dang-nhap   button{
     width: 100%; 
     padding: 10px; 
     background-color: #5cb85c; 
