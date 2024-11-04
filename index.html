@@ -542,7 +542,7 @@
 
 
 	<div id="dang-nhap">
-		<form class="form-dang-nhap" >
+		<form class="form-dang-nhap" method="get">
 
 			
 			<div onclick="tatDangNhap()" class="nut-tat-dn">X</div>
@@ -559,10 +559,10 @@
 				<label for="password" >Mật khẩu:</label>
 				<input type="password" id="password" name="password" required >
 			</div>
-	
-			
-			<button type="submit">Đăng Nhập</button>
+
+			<button onclick="login()">Đăng Nhập</button>
 		</form>
+		
 	</div>
 
 
@@ -633,6 +633,6 @@
 
 
 <script language = "javascript" src="/script/index.js"></script>	
-<script language = "javascript" src="/script/login.js"></script>
+<script language = "javascript" src="/script/Login_Signin.js"></script>
 </body>
 </html>
