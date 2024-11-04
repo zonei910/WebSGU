@@ -82,7 +82,7 @@ ul,li{
     margin-right: 5px;
     font-size: 20px;
     text-align: center;
-    color:black;
+    color: #4f4f4f;
     font-weight: 900;
     font-size: 16px;
     opacity: 0.5;
@@ -91,7 +91,7 @@ ul,li{
 #Header .item p{
     font-size: 20px;
     text-align: center;
-    color:black;
+    color:#4f4f4f;
     font-weight: 900;
     font-size: 16px;
     opacity: 0.4;
@@ -130,7 +130,7 @@ ul,li{
     border-bottom:3px solid black;
     background-color: var(--mau1);
     border-radius: 5px;
-    color:black;
+    color:#4f4f4f;
 }
 
 
@@ -158,7 +158,7 @@ ul,li{
 
 #Header .admin-info:hover #Admin-info{ 
     display:block;
-    color:black;
+    color:#4f4f4f;
     cursor: default;
 }
 
@@ -262,11 +262,11 @@ ul,li{
 
  #Menu div div i{
     margin-right: 10px;
-    color: black;
+    color:#4f4f4f;
 }
 #Menu div div p{
     margin-right: 10px;
-    color: black;
+    color:#4f4f4f;
 }
 
 #Menu div div:hover{
