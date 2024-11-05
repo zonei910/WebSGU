@@ -5,6 +5,11 @@
     font-family:'Libre Baskerville', serif;
 }
 
+body{
+    position: relative;
+}
+
+
 :root{
     --xanh:#d2f4f4;
     --xam:#c0bdbd;
@@ -16,9 +21,10 @@ li{
 
 header{
     background-color: var(--xanh);
-    position:fixed;
-    z-index: 2;
     width:100%;
+    position: sticky;
+    top: 0px;
+    z-index: 999;
     /* color:white; */
 }
 
@@ -38,9 +44,9 @@ header{
 }
 
 .logo > img{
-    width:80px;
+    width:60px;
     height:auto;
-    margin-top:10px;
+    margin-top:30px;
 }
   
 
@@ -53,7 +59,15 @@ header{
 .account{
     position:absolute;
     right:30px;
+    display:flex;
+    align-items: center;
 }
+
+.account *{
+    margin: 5px;
+}
+
+
 
 .account > button {
     padding:7px 1px 7px 1px;
@@ -61,16 +75,19 @@ header{
 }
 
 .account > button:hover{
-    color:blue;
-}
+    background-color:  #DDB94D ;
+    color:red;
+
+};
+
+
 
 
 .menu-bottom{
-    height:50px;
+    height:100px;
     display:flex;
     align-items: center;
     justify-content: center;
-    
 }
 
 
@@ -83,7 +100,7 @@ header{
 .menu1{
     display:flex;
     flex-wrap: nowrap;
-    
+    justify-content: center;
 }
 
 .menu1 > li{
@@ -98,6 +115,7 @@ header{
 .menu1 > li:hover {
     color:blue;
     font-weight: bold;
+    border-bottom: 3px solid  #DDB94D;
 }
 
 
