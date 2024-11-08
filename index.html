@@ -3,13 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<title>hehehe</title>
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<title>Jewelry</title>
 	<link rel="stylesheet" href="style/index.css" >
 </head>
 <body>
-
+<!-- Header -->
 	<header>
 		<div class="menu-top">
 			<a class="logo" href="index.html"><img src="image/logo.png" alt=""></a>
@@ -27,11 +28,11 @@
 				<li>Sản phẩm
 					<ul class="menu2">
 						<li onclick="home()">Tất cả</li>
-						<li id="dong-ho" onclick="listMenu(this)";>Đồng hồ</li>
-						<li id="vong-tay" onclick="listMenu(this)";>Vòng tay</li>
-						<li id="vong-co" onclick="listMenu(this)";>Vòng cổ</li>
-						<li id="khuyen-tai" onclick="listMenu(this)";>Khuyên tai</li>
-						<li id="nhan" onclick="listMenu(this)";>Nhẫn</li>
+						<li id="dong-ho" onclick="listMenu(this)">Đồng hồ</li>
+						<li id="vong-tay" onclick="listMenu(this)">Vòng tay</li>
+						<li id="vong-co" onclick="listMenu(this)">Vòng cổ</li>
+						<li id="khuyen-tai" onclick="listMenu(this)">Khuyên tai</li>
+						<li id="nhan" onclick="listMenu(this)">Nhẫn</li>
 					</ul>
 
 				</li>
@@ -46,20 +47,32 @@
 
 	</header>
 
-
+<!-- Main -->
 	<main id="content">
-
-		<div id="carousel">
-			<div class="slide">
-				<img src="image/1.png" alt="Slide 1">
-			</div>
-			<div class="slide">
-				<img src="image/2.jpg" alt="Slide 2">
-			</div>
-			<div class="slide">
-				<img src="image/3.jpg" alt="Slide 3">
-			</div>
-		</div>
+		<div class="slider">
+            <div class="list">
+                <div class="item">
+                    <img src="image/1.png" alt="">
+                </div>
+                <div class="item">
+                    <img src="image/2.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="image/3.jpg" alt="">
+                </div>
+            </div>
+            <!-- button prev and next -->
+            <div class="buttons">
+                <button id ="prev"><</button>
+                <button id ="next">></button>
+            </div>
+            <!-- dots -->
+            <ul class="dots">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
 
 
 		<div id="sp-hot">
@@ -617,9 +630,108 @@
 
 
 
-
-	<footer>
-		
+<!-- Footer -->
+	<footer class="footer" id="footerpage">
+		<div class="grid footer_app">
+			<div class="grid__row">
+				<div class="grid__column2">
+					<div class="foot_block">
+						<h4 class="footer-tittle">PHÁP LÝ & CÂU HỎI</h4>
+						<div class="footer-content">
+							<ul>
+								<li class="footer-item">
+									<a href="">Tìm kiếm</a>
+								</li>
+								<li class="footer-item">
+									<a href="">Giới thiệu</a>
+								</li>
+								<li class="footer-item">
+									<a href="">Chính sách đổi trả</a>
+								</li>
+								<li class="footer-item">
+									<a href="">Chính sách bảo mật</a>
+								</li>
+								<li class="footer-item">
+									<a href="">Điều khoản dịch vụ</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="grid__column2">
+					<div class="foot_block">
+						<h4 class="footer-tittle">DANH MỤC</h4>
+						<div class="footer-content">
+							<ul>
+								<li class="footer-item">
+									<a href="">Trang chủ</a>
+								</li>
+								<li class="footer-item">
+									<a href="">Bộ siêu tập</a>
+								</li>
+								<li class="footer-item">
+									<a href="">Sản phẩm</a>
+								</li>
+								<li class="footer-item">
+									<a href="">Giới thiệu</a>
+								</li>
+								<li class="footer-item">
+									<a href="">Liên hệ</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="grid__column2">
+					<div class="foot_block">
+						<h4 class="footer-tittle"> ĐĂNG KÍ NHẬN TIN</h4>
+						<div class="footer-content">
+							<p>Đăng ký ngay để nhận thông tin khuyến mãi, các chương trình quà tặng từ shop.</p>
+							<div class="form_newsletter">
+								<form accept-charset="UTF-8" action="" class="contact-form" method="post">
+									<input name="form_type" type="hidden" value="customer">
+									<input name="utf8" type="hidden" value="✓">
+									<div class="input-group">
+										<input type="hidden" id="newsletter_tags" name="contact" value="khach hang tiem nang">
+										<input required type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Nhập email của bạn" name="contact[email]">
+										<button type="submit" class="button dark">Đăng kí</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="grid__column2">
+					<div class="foot_block">
+						<h4 class="footer-tittle">FANPAGE</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="grid footer_app">
+			<div class="grid__row">
+				<div class="grid__column">
+					<p class="polity">
+						Copyright © 2024 Jewelry Store.
+						Powered by Haravan
+					</p>
+					<div class="social-list">
+						<a href="#" class="facebook">
+							<i class="fa-brands fa-facebook"></i>
+						</a>
+						<a href="" class="facebook">
+							<i class="fa-brands fa-instagram"></i>
+						</a>
+						<a href="" class="facebook">
+							<i class="fa-brands fa-twitter"></i>
+						</a>
+						<a href="" class="facebook">
+							<i class="fa-brands fa-tiktok"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
 	</footer>
 
 	
