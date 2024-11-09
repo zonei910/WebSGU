@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<title>Jewelry</title>
+	<link rel="stylesheet" href="style/index.css" >
+</head>
+<body>
+<!-- Header -->
+	<header>
+		<div class="menu-top">
+			<a class="logo" href="index.html"><img src="image/logo.png" alt=""></a>
+			<p class="shop-name"><b>Jewelry Store</b></p>
+			<div class="account">
+				<div class="cart"><i class="fa-solid fa-cart-shopping"></i></div>
+				<button onclick="hienthii()">Đăng kí</button>
+				<button onclick="hienthi()"	>Đăng nhập</button>
+			</div>
+		</div>
+
+		<div class="menu-bottom">
+			<ul class="menu1">
+				<li onclick="home()" id="home">Trang chủ</li>
+				<li>Sản phẩm
+					<ul class="menu2">
+						<li onclick="home()">Tất cả</li>
+						<li id="dong-ho" onclick="listMenu(this)">Đồng hồ</li>
+						<li id="vong-tay" onclick="listMenu(this)">Vòng tay</li>
+						<li id="vong-co" onclick="listMenu(this)">Vòng cổ</li>
+						<li id="khuyen-tai" onclick="listMenu(this)">Khuyên tai</li>
+						<li id="nhan" onclick="listMenu(this)">Nhẫn</li>
+					</ul>
+
+				</li>
+
+				<li>Tư vấn</li>
+				<li>Liên hệ</li>
+				<li>Phản hồi</li>
+			</ul>
+		</div>
+			
+
+
+	</header>
+
+<!-- Main -->
+	<main id="content">
+		<div class="slider">
+            <div class="list">
+                <div class="item">
+                    <img src="image/1.png" alt="">
+                </div>
+                <div class="item">
+                    <img src="image/2.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="image/3.jpg" alt="">
+                </div>
+            </div>
+            <!-- button prev and next -->
+            <div class="buttons">
+                <button id ="prev"><</button>
+                <button id ="next">></button>
+            </div>
+            <!-- dots -->
+            <ul class="dots">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+
+		<div id="sp-hot">
+			<div class="sp-name"><b>Sản phẩm bán chạy</b></div>
+
+			<div class="sp-contaner">
+
+				<div class="sp-item">
+					<img src="stock-image/ring/1.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+				
+				<div class="sp-item">
+					<img src="stock-image/bracelet/1.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+
+				<div class="sp-item">
+					<img src="stock-image/earrings/1.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+
+				<div class="sp-item">
+					<img src="stock-image/necklace/1.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+
+				<div class="sp-item">
+					<img src="stock-image/watch/1.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+
+				<div class="sp-item">
+					<img src="stock-image/watch/3.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+
+				<div class="sp-item">
+					<img src="stock-image/bracelet/2.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+
+				<div class="sp-item">
+					<img src="stock-image/earrings/3.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+
+				<div class="sp-item">
+					<img src="stock-image/necklace/6.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+
+
+			</div>
+			<div class="bonus"></div>
+		</div>
+
+
+		<div id="sp-watch">
+			<div class="sp-name"><b>Đồng hồ</b></div>
+
+			<div class="sp-contaner">
+
+				<div class="sp-item">
+					<img src="stock-image/watch/1.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+				
+				<div class="sp-item">
+					<img src="stock-image/watch/2.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+				
+				<div class="sp-item">
+					<img src="stock-image/watch/3.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+
+				<div class="sp-item">
+					<img src="stock-image/watch/4.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+
+				<div class="sp-item">
+					<img src="stock-image/watch/5.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+
+				<div class="sp-item">
+					<img src="stock-image/watch/6.png"" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="bonus"></div>
+		</div>
+
+
+
+
+		<div id="sp-ring">
+			<div class="sp-name"><b>Nhẫn</b></div>
+
+			<div class="sp-contaner">
+
+				<div class="sp-item">
+					<img src="stock-image/ring/1.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+				
+				<div class="sp-item">
+					<img src="stock-image/ring/2.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+				
+				
+				<div class="sp-item">
+					<img src="stock-image/ring/3.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+				
+
+				<div class="sp-item">
+					<img src="stock-image/ring/4.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+				
+
+				<div class="sp-item">
+					<img src="stock-image/ring/5.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+				
+
+				<div class="sp-item">
+					<img src="stock-image/ring/6.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+				
+
+			</div>
+			<div class="bonus"></div>
+		</div>
+		
+
+
+
+		<div id="sp-earrings">
+			<div class="sp-name"><b>Khuyên tai</b></div>
+
+			<div class="sp-contaner">
+
+				<div class="sp-item">
+					<img src="stock-image/earrings/1.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+				
+				<div class="sp-item">
+					<img src="stock-image/earrings/2.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+				
+
+				<div class="sp-item">
+					<img src="stock-image/earrings/3.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+				
+
+				<div class="sp-item">
+					<img src="stock-image/earrings/4.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+
+				<div class="sp-item">
+					<img src="stock-image/earrings/5.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+
+				<div class="sp-item">
+					<img src="stock-image/earrings/6.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+				
+
+			</div>
+			<div class="bonus"></div>
+		</div>
+
+
+
+
+		<div id="sp-bracelet">
+			<div class="sp-name"><b>Vòng tay</b></div>
+
+			<div class="sp-contaner">
+
+				<div class="sp-item">
+					<img src="stock-image/bracelet/1.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+				
+				<div class="sp-item">
+					<img src="stock-image/bracelet/2.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+
+				<div class="sp-item">
+					<img src="stock-image/bracelet/3.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+
+				<div class="sp-item">
+					<img src="stock-image/bracelet/4.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+
+				<div class="sp-item">
+					<img src="stock-image/bracelet/5.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+
+				<div class="sp-item">
+					<img src="stock-image/bracelet/6.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+				
+
+			</div>
+			<div class="bonus"></div>
+		</div>
+
+
+
+		<div id="sp-necklace">
+			<div class="sp-name"><b>Vòng cổ</b></div>
+
+			<div class="sp-contaner">
+
+				<div class="sp-item">
+					<img src="stock-image/necklace/1.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+				
+				<div class="sp-item">
+					<img src="stock-image/necklace/2.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+
+				<div class="sp-item">
+					<img src="stock-image/necklace/3.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+
+				<div class="sp-item">
+					<img src="stock-image/necklace/4.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+
+				<div class="sp-item">
+					<img src="stock-image/necklace/5.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+
+				<div class="sp-item">
+					<img src="stock-image/necklace/6.png" alt="">
+					<p>Tên</p>
+					<P>Giá</P>
+					<div class="detail">
+						<div class="mua">Mua ngay</div>
+						<div class="chi-tiet">Chi tiết</div>
+					</div>
+				</div>
+				
+
+			</div>
+			<div class="bonus"></div>
+		</div>
+		
+
+	
+	</main>
+
+
+
+
+
+	<div id="dang-nhap">
+		<form class="form-dang-nhap" method="get">
+
+			
+			<div onclick="tatDangNhap()" class="nut-tat-dn">X</div>
+
+
+			<h2>Đăng Nhập</h2>
+	
+			<div style="margin-bottom: 15px;">
+				<label for="eemail">Email:</label>
+				<input type="email" id="email" name="email" required >
+			</div>
+	
+			<div style="margin-bottom: 15px;">
+				<label for="password" >Mật khẩu:</label>
+				<input type="password" id="password" name="password" required >
+			</div>
+
+			<button onclick="login()">Đăng Nhập</button>
+		</form>
+		
+	</div>
+
+
+
+	<div id="dang-ky">
+		<form class="form-dang-ky">
+
+			<div onclick="tatDangKy()" class="nut-tat-dk">X</div>
+
+			<h2 >Đăng Ký</h2>
+	
+			<div >
+				<label for="email" >Email:</label>
+				<input type="email" id="email" name="eemail" placeholder="Nhập email" required >
+			</div>
+	
+			<div >
+				<label for="name">Họ tên:</label>
+				<input type="text" id="name" name="name" placeholder="Nhập tên" required >
+			</div>
+	
+			<div>
+				<label for="dob">Ngày sinh:</label>
+				<input type="date" id="dob" name="dob" required >
+			</div>
+	
+			<div>
+				<label for="gender">Giới tính:</label>
+				<select id="gender" name="gender" required >
+					<option value="">Chọn giới tính</option>
+					<option value="male">Nam</option>
+					<option value="female">Nữ</option>
+					<option value="other">Khác</option>
+				</select>
+			</div>
+	
+			<div>
+				<label for="address">Địa chỉ:</label>
+				<input type="text" id="address" name="address" placeholder="số nhà, phường, quận..." required >
+			</div>
+	
+			<div>
+				<label for="password">Mật khẩu:</label>
+				<input type="password" id="password" name="password" required >
+			</div>
+	
+			<div>
+				<label for="confirm-password">Gõ lại mật khẩu:</label>
+				<input type="password" id="confirm-password" name="confirm-password" required >
+			</div>
+	
+			<button type="submit">Đăng Ký</button>
+		</form>
+	</div>
+	
+
+
+
+<!-- Footer -->
+	<footer class="footer" id="footerpage">
+		<div class="grid footer_app">
+			<div class="grid__row">
+				<div class="grid__column2">
+					<div class="foot_block">
+						<h4 class="footer-tittle">PHÁP LÝ & CÂU HỎI</h4>
+						<div class="footer-content">
+							<ul>
+								<li class="footer-item">
+									<a href="">Tìm kiếm</a>
+								</li>
+								<li class="footer-item">
+									<a href="">Giới thiệu</a>
+								</li>
+								<li class="footer-item">
+									<a href="">Chính sách đổi trả</a>
+								</li>
+								<li class="footer-item">
+									<a href="">Chính sách bảo mật</a>
+								</li>
+								<li class="footer-item">
+									<a href="">Điều khoản dịch vụ</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="grid__column2">
+					<div class="foot_block">
+						<h4 class="footer-tittle">DANH MỤC</h4>
+						<div class="footer-content">
+							<ul>
+								<li class="footer-item">
+									<a href="">Trang chủ</a>
+								</li>
+								<li class="footer-item">
+									<a href="">Bộ siêu tập</a>
+								</li>
+								<li class="footer-item">
+									<a href="">Sản phẩm</a>
+								</li>
+								<li class="footer-item">
+									<a href="">Giới thiệu</a>
+								</li>
+								<li class="footer-item">
+									<a href="">Liên hệ</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="grid__column2">
+					<div class="foot_block">
+						<h4 class="footer-tittle"> ĐĂNG KÍ NHẬN TIN</h4>
+						<div class="footer-content">
+							<p>Đăng ký ngay để nhận thông tin khuyến mãi, các chương trình quà tặng từ shop.</p>
+							<div class="form_newsletter">
+								<form accept-charset="UTF-8" action="" class="contact-form" method="post">
+									<input name="form_type" type="hidden" value="customer">
+									<input name="utf8" type="hidden" value="✓">
+									<div class="input-group">
+										<input type="hidden" id="newsletter_tags" name="contact" value="khach hang tiem nang">
+										<input required type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Nhập email của bạn" name="contact[email]">
+										<button type="submit" class="button dark">Đăng kí</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="grid__column2">
+					<div class="foot_block">
+						<h4 class="footer-tittle">FANPAGE</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="grid footer_app">
+			<div class="grid__row">
+				<div class="grid__column">
+					<p class="polity">
+						Copyright © 2024 Jewelry Store.
+						Powered by Haravan
+					</p>
+					<div class="social-list">
+						<a href="#" class="facebook">
+							<i class="fa-brands fa-facebook"></i>
+						</a>
+						<a href="" class="facebook">
+							<i class="fa-brands fa-instagram"></i>
+						</a>
+						<a href="" class="facebook">
+							<i class="fa-brands fa-twitter"></i>
+						</a>
+						<a href="" class="facebook">
+							<i class="fa-brands fa-tiktok"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	
+
+
+
+
+
+<script language = "javascript" src="script/index.js"></script>	
+<script language = "javascript" src="script/Login_Signin.js"></script>
+</body>
+</html>
