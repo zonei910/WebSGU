@@ -9,16 +9,15 @@
     background-color: var(--mau1);
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 #Display .merchandise #prod-edit-header nav{
     display: flex;
     justify-content: space-between;
     margin-left: 2rem;
     margin-right: 1rem;
-    padding: 1rem;
 }
 #Display .merchandise #prod-edit-header div{
-    border: 1px solid black;
     border-radius: 10px;
     padding: 10px;
     color: white;
@@ -62,10 +61,20 @@
     border-radius: 5px;
 }
 #Display .merchandise .button1{
-    background-color: greenyellow;
-    width: 15%;
+    background-color: rgb(3, 208, 16);
+    border: 1px solid rgb(3, 208, 16);
+    width: 50px;
+    height: 40px;
     cursor:pointer;
+    margin-right: 50px;
 }
+
+#Display .merchandise .button1:hover{
+    background-color: rgb(117, 255, 117);
+    border: 1px solid rgb(117, 255, 117);
+}
+
+
 #Display .merchandise .button2{
     background-color: rgb(60, 255, 60);
 }
@@ -139,14 +148,115 @@
 }
 
 
-
-#Display .merchandise .findadvanced{
-    display:none;
-}
-
 #Display .merchandise{
     padding:20px;
     width: 100%;
     display:none;
 }
 
+#Display .merchandise .add-form .head{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 3px solid grey;
+}
+
+#Display .merchandise .add-form .head i{
+    border: 3px solid red;
+    border-radius: 5px;
+    background-color: red;
+    width: 10%;
+    text-align: center;
+    cursor:pointer;
+}
+#Display .merchandise .add-form .head i:hover{
+    border: 3px solid rgb(252, 68, 68);
+    background-color: rgb(252, 68, 68);
+}
+
+#Display .merchandise .add-form .quanity{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#Display .merchandise .add-form .upload{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#Display .merchandise .add-form .upload input{
+    width: 28%;
+
+}
+#Display .merchandise .add-form .name{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#Display .merchandise .add-form .price{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#Display .merchandise .add-form .category{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#Display .merchandise .add-form .category select{
+    text-align: left;
+    width: 28%;
+}
+
+#Display .merchandise .add-form .description{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+#Display .merchandise .add-form .btn-save{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+#Display .merchandise .add-form .btn-save div{
+    cursor: pointer;
+    background-color: aqua;
+    width: 30%;
+}
+
+#Display .merchandise .add-form .btn-save div:hover{
+    background-color: blue;
+}
+
+
+#Display .merchandise .add-form div div{
+    width: max-content;
+}
+
+
+#Display .merchandise .add-form div{
+    margin: 3px
+}
+
+#Display .merchandise .add-form{
+    background-color: white;
+    padding: 10px;
+    width: 50%;
+    position: absolute;
+    top: calc(50% - 25%);
+    left: calc(40% - 50%/2) ;
+}
+
+
+#Display .merchandise .add{
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    height: 100%;
+
+}

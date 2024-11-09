@@ -23,10 +23,10 @@ const Product = [
             <p>18" Chain Included. Pendant Length: 1.25"</p>
         `,
         images: [
-            "./assets/img/ring/1.png",
-            "./assets/img/ring/2.png",
-            "./assets/img/ring/3.png",
-            "./assets/img/ring/4.png"
+            "assets/User/img/ring/1.png",
+            "assets/User/img/ring/2.png",
+            "assets/User/img/ring/3.png",
+            "assets/User/img/ring/4.png"
         ]
     },
     {
@@ -41,10 +41,10 @@ const Product = [
             <p>Round Diamond 0.09</p>
         `,
         images: [
-            "./assets/img/watch/1.png",
-            "./assets/img/watch/2.png",
-            "./assets/img/watch/3.png",
-            "./assets/img/watch/4.png"
+            "assets/User/img/watch/1.png",
+            "assets/User/img/watch/2.png",
+            "assets/User/img/watch/3.png",
+            "assets/User/img/watch/4.png"
         ]
     },
     {
@@ -59,10 +59,10 @@ const Product = [
             <p>Natural Diffused Ceylon Sapphire</p>
         `,
         images: [
-            "./assets/img/bracelet/1.png",
-            "./assets/img/bracelet/2.png",
-            "./assets/img/bracelet/3.png",
-            "./assets/img/bracelet/4.png"
+            "assets/User/img/bracelet/1.png",
+            "assets/User/img/bracelet/2.png",
+            "assets/User/img/bracelet/3.png",
+            "assets/User/img/bracelet/4.png"
         ]
     },
     {
@@ -77,10 +77,10 @@ const Product = [
             <p>Length: 7" Width:1/2"</p>
         `,
         images: [
-            "./assets/img/necklace/1.png",
-            "./assets/img/necklace/2.png",
-            "./assets/img/necklace/3.png",
-            "./assets/img/necklace/4.png"
+            "assets/User/img/necklace/1.png",
+            "assets/User/img/necklace/2.png",
+            "assets/User/img/necklace/3.png",
+            "assets/User/img/necklace/4.png"
         ]
     },
     {
@@ -95,10 +95,10 @@ const Product = [
             <p>Oval Emerald 1.02</p>
         `,
         images: [
-            "./assets/img/ring/1.png",
-            "./assets/img/ring/2.png",
-            "./assets/img/ring/3.png",
-            "./assets/img/ring/4.png"
+            "assets/User/img/ring/1.png",
+            "assets/User/img/ring/2.png",
+            "assets/User/img/ring/3.png",
+            "assets/User/img/ring/4.png"
         ]
     },
     {
@@ -113,10 +113,10 @@ const Product = [
             <p>Oval Emerald 1.02</p>
         `,
         images: [
-            "./assets/img/necklace/1.png",
-            "./assets/img/necklace/2.png",
-            "./assets/img/necklace/3.png",
-            "./assets/img/necklace/4.png"
+            "assets/User/img/necklace/1.png",
+            "assets/User/img/necklace/2.png",
+            "assets/User/img/necklace/3.png",
+            "assets/User/img/necklace/4.png"
         ]
     },
     {
@@ -131,10 +131,10 @@ const Product = [
             <p>Oval Emerald 1.02</p>
         `,
         images: [
-            "./assets/img/ring/1.png",
-            "./assets/img/ring/2.png",
-            "./assets/img/ring/3.png",
-            "./assets/img/ring/4.png"
+            "assets/User/img/ring/1.png",
+            "assets/User/img/ring/2.png",
+            "assets/User/img/ring/3.png",
+            "assets/User/img/ring/4.png"
         ]
     },
     {
@@ -149,10 +149,10 @@ const Product = [
             <p>Oval Emerald 1.02</p>
         `,
         images: [
-            "./assets/img/necklace/1.png",
-            "./assets/img/necklace/2.png",
-            "./assets/img/necklace/3.png",
-            "./assets/img/necklace/4.png"
+            "assets/User/img/necklace/1.png",
+            "assets/User/img/necklace/2.png",
+            "assets/User/img/necklace/3.png",
+            "assets/User/img/necklace/4.png"
         ]
     },
     {
@@ -167,10 +167,10 @@ const Product = [
             <p>Round Diamond 0.09</p>
         `,
         images: [
-            "./assets/img/watch/1.png",
-            "./assets/img/watch/2.png",
-            "./assets/img/watch/3.png",
-            "./assets/img/watch/4.png"
+            "assets/User/img/watch/1.png",
+            "assets/User/img/watch/2.png",
+            "assets/User/img/watch/3.png",
+            "assets/User/img/watch/4.png"
         ]
     },
 ];
