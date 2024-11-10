@@ -217,23 +217,6 @@
 
 
 
-#Display .merchandise .add-form .btn-save{
-    text-align: center;
-    display: flex;
-    justify-content: center;
-}
-
-#Display .merchandise .add-form .btn-save div{
-    cursor: pointer;
-    background-color: aqua;
-    width: 30%;
-}
-
-#Display .merchandise .add-form .btn-save div:hover{
-    background-color: blue;
-}
-
-
 #Display .merchandise .add-form div div{
     width: max-content;
 }
@@ -259,4 +242,34 @@
     z-index: 100;
     height: 100%;
 
+}
+
+#Display .merchandise .btn{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#Display .merchandise .add-form .btn-add{
+    background-color: rgb(23, 253, 23);
+    cursor: pointer;
+    border-radius: 5px;
+    border: 3px solid  rgb(23, 253, 23);
+}
+
+#Display .merchandise .btn-add:hover{
+    background-color: aqua;
+    border: 3px solid  aqua;
+}
+
+#Display .merchandise .add-form .btn-reset{
+    background-color: yellow;
+    cursor:pointer;
+    border: 3px solid yellow;
+    border-radius: 5px;
+}
+
+#Display .merchandise .add-form .btn-reset:hover{
+    background-color:  orange;
+    border: 3px solid orange; 
 }
