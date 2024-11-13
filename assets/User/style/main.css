@@ -40,7 +40,7 @@
 
 .navbar_action{
     display: flex;
-    width: 150px;
+    /* width: 150px; */
     justify-content: flex-end;
     align-items: center;
 }
@@ -132,6 +132,79 @@
     padding: 12px;
     cursor: pointer;
 }
+
+/* account */
+.navbar_user {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.navbar__user-avata {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    vertical-align: middle; 
+}
+
+.navbar_user-name {
+    margin-left: 4px;
+    color: var(--white);
+    font-size: 1.4rem;
+    font-weight: 400;
+    display: inline-block; 
+    vertical-align: middle; 
+}
+
+/* phần dropbar của navbar_user */
+.navbar_user-items {
+    position: absolute;
+    padding: 0;
+    list-style: none;
+    width: 160px;
+    top: 50px;
+    right: 0;
+    border-radius: 2px;
+    box-shadow: 0 1px 3.125rem rgba(0, 0, 0, 0.2);
+    background-color: var(--white);
+    animation: opacity ease-in-out 0.25s; 
+    transform-origin: 95% top;
+    will-change: opacity;
+    z-index: 1;
+    display: none;
+}
+
+.navbar_user-item:hover {
+    background-color: var(--xanhnhat);
+}
+
+.navbar_user-item a {
+    text-decoration: none;
+    color: var(--black);
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding: 10px;
+    display: block;
+}
+
+.navbar_user-item:first-child {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.navbar_user-item:last-child {
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.navbar_user-item-out {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 
 /* phần dropdown của cart */
 .navbar_cart-warp {

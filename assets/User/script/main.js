@@ -291,3 +291,14 @@ cart.addEventListener('click', () => {
     else
         dropdowncart.style.display = 'block';
 })
+
+// =====================account ==================
+let account = document.querySelector('.navbar_user');
+
+account.addEventListener('click', () => {
+    let dropdownaccount = document.querySelector('.navbar_user-items');
+    if ( dropdownaccount.style.display === 'block' )
+        dropdownaccount.style.display = 'none';
+    else
+        dropdownaccount.style.display = 'block';
+})
