@@ -49,35 +49,35 @@ dots.forEach((li, key) => {
 
 
 //================= pagination==================
-let buttonNext = document.querySelector('.buttonNext');
-let numbers = document.querySelectorAll('.pagination .page-note')
+// let buttonNext = document.querySelector('.buttonNext');
+// let numbers = document.querySelectorAll('.pagination .page-note')
 
 let current = 0;
-// add eventlisteners to the numberslist
-numbers.forEach((number,numIndex) => {
-    number.addEventListener("click", () => {
-        //1. set the curent step to  the clicked number
-        current = numIndex;
-        //2. remove the "current" class from the prev number
-        document.querySelector(".current").classList.remove('current');
-        //3. add the "active" class to the clicked number link
-        number.classList.add("current");
-        // console.log(current);
-        displayProducts(current,products);
-    })
-})
+// // add eventlisteners to the numberslist
+// numbers.forEach((number,numIndex) => {
+//     number.addEventListener("click", () => {
+//         //1. set the curent step to  the clicked number
+//         current = numIndex;
+//         //2. remove the "current" class from the prev number
+//         document.querySelector(".current").classList.remove('current');
+//         //3. add the "active" class to the clicked number link
+//         number.classList.add("current");
+//         // console.log(current);
+//         displayProducts(current,products);
+//     })
+// })
 
-// add eventlisteners to the Next button
-buttonNext.addEventListener('click', () => {
-    if ( current === (numbers.length - 1))
-        current = 0;
-    else
-        current += 1;
-    document.querySelector(".current")?.classList.remove('current');
-    numbers[current].classList.add("current");
-    // console.log(current);
-    displayProducts(current,products);
-})
+// // add eventlisteners to the Next button
+// buttonNext.addEventListener('click', () => {
+//     if ( current === (numbers.length - 1))
+//         current = 0;
+//     else
+//         current += 1;
+//     document.querySelector(".current")?.classList.remove('current');
+//     numbers[current].classList.add("current");
+//     // console.log(current);
+//     displayProducts(current,products);
+// })
 
 
 
@@ -125,43 +125,33 @@ function displayProducts(page, filteredProducts) {
 // ============pagination tự động==============
 
 function updatePagination(page, filteredProducts) {
-     // Tính toán tổng số trang dựa trên số sản phẩm đã lọc
+        // Tính toán tổng số trang dựa trên số sản phẩm đã lọc
     const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
     
     // Cập nhật số lượng các nút phân trang
     const paginationContainer = document.querySelector('.pagination'); 
     // console.log(paginationContainer);
     
-    // Lấy danh sách các nút phân trang hiện tại
-    const currentPageNotes = Array.from(paginationContainer.querySelectorAll('.pagination-item'));
+    // Reset nội dung pagination
+    paginationContainer.innerHTML = ''; 
 
-
-    // Tìm nút "Next"
-    let nextButton = paginationContainer.querySelector('.buttonNext');
-
-    // Nếu số lượng nút phân trang cần thay đổi (thêm hoặc bớt), làm lại các nút phân trang
-    if (currentPageNotes.length !== totalPages) {
-         // Xóa các phần tử <li> cũ
-        currentPageNotes.forEach(item => {
-            if (!item.classList.contains('buttonNext')) {
-                item.remove();
-            }
-        });
-        
-         // Tạo lại các phần tử <li> mới với các thẻ <a>(nếu cần)
-        for (let i = 0; i < totalPages; i++) {
+            // Tạo lại các phần tử <li> mới với các thẻ <a>(nếu cần)
+        for (let numIndex = 0; numIndex < totalPages; numIndex++) {
             const li = document.createElement('li');
             li.classList.add('pagination-item');
-
             const a = document.createElement('a');
             a.classList.add('page-note');
             a.href = '#';  // Đảm bảo rằng link sẽ không làm trang tải lại
-            a.textContent = i + 1;
+            a.textContent = numIndex + 1;
 
-                // Lắng nghe sự kiện click trên các trang
+            // Đặt trang hiện tại
+            if (numIndex === page) 
+                a.classList.add('current');
+            
+            // Lắng nghe sự kiện click trên các trang
             a.addEventListener('click', (event) => {
                 event.preventDefault();  // Ngăn không cho trang reload
-                current = i;  // Cập nhật trang hiện tại
+                current = numIndex;  // Cập nhật trang hiện tại
                 displayProducts(current, filteredProducts);  // Hiển thị lại sản phẩm
             });
 
@@ -169,9 +159,8 @@ function updatePagination(page, filteredProducts) {
             paginationContainer.appendChild(li);
         }
 
-        // Chỉ hiển thị nút "Next" nếu có hơn 1 trang
-        if (totalPages > 1 && !nextButton) {
-            nextButton = document.createElement('li');
+
+            const nextButton = document.createElement('li');
             nextButton.classList.add('buttonNext');
             nextButton.id = 'Next';
 
@@ -185,6 +174,8 @@ function updatePagination(page, filteredProducts) {
                 if (current < totalPages - 1) {
                     current += 1;
                 }
+                else 
+                    current = 0;
                 document.querySelector(".current")?.classList.remove('current');
                 paginationContainer.querySelectorAll('.page-note')[current].classList.add('current');
                 displayProducts(current, filteredProducts);
@@ -192,17 +183,8 @@ function updatePagination(page, filteredProducts) {
 
             nextButton.appendChild(aNext);
             paginationContainer.appendChild(nextButton);
-        }
-    }
-    // Cập nhật các nút phân trang (thêm lớp "current" cho trang hiện tại)
-    const pageLinks = paginationContainer.querySelectorAll('.page-note');
-    pageLinks.forEach((link, index) => {
-        link.classList.remove('current');
-        if (index === page) {
-            link.classList.add('current');  // Làm nổi bật trang hiện tại
-        }
-    });
-     // Cập nhật lại khả năng kích hoạt nút "Next"
+        
+        // Cập nhật lại khả năng kích hoạt nút "Next"
     if (totalPages <= 1) {
         nextButton.style.display = 'none'; // Nếu chỉ có một trang, ẩn nút "Next"
     } else {
