@@ -220,7 +220,7 @@ function showProductDetail(productId) {
          // Hiển thị div chi tiết sản phẩm
         let detail = document.querySelector('.detail_product');
         detail.style.display = 'block';
-        document.querySelector('.product_info i').onclick = function() {
+        document.querySelector('.product__body i').onclick = function() {
             detail.style.display = 'none';
         }
     }

@@ -137,5 +137,47 @@ html {
     border-radius: 5px;
     width: 900px;
     max-width: 100%;
+    position: relative;
 }
 
+/* Mobile: width < 740 */
+@media only screen and (max-width: 739px) {
+    .grid__row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .grid__column35 {
+        width: 100%;
+    }
+
+    .grid__column65 {
+        width: 100%;
+    }
+
+    .grid__column3 {
+        width: 100%;
+    }
+
+    .grid__column2 {
+        width: 100%;
+    }
+
+    /* detail_product */
+    .detail_product {
+        height: 100%;
+        width: 100%;
+    }
+
+    /* product__body */
+    .product__body {
+        height: 900px;
+        max-height: 100vh;
+        width: 100%;
+    }
+
+}
+/* Tablet: width >= 740 and width < 1024 */
+@media only screen and (min-width: 740px) and (max-width: 1023px) {
+
+}

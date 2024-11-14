@@ -452,7 +452,11 @@
 
 @media screen and (max-width: 768px) {
     .slider{
-        height: 400px;
+        height: 200px;
+    }
+
+    .list img {
+        width: 413px;
     }
 }
 
@@ -725,7 +729,7 @@
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
-    
+    object-fit: cover;
 }
 
 .small_img-group {
@@ -754,10 +758,10 @@
     position: relative;
 }
 
-.product_info i{
+.product__body i{
     position: absolute;
-    top: -15px;
-    right: 0;
+    top: 0px;
+    right: 5px;
     cursor: pointer;
     color: var(--icon);
     font-size: 3rem;
@@ -765,7 +769,7 @@
     transition: transform 0.3s; 
 }
 
-.product_info i:hover{
+.product__body i:hover{
     color: rgb(243, 68, 68);
     transform: rotate(90deg);
 }
