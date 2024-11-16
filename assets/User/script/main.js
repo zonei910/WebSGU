@@ -285,6 +285,16 @@ account.addEventListener('click', () => {
         dropdownaccount.style.display = 'block';
 })
 
+// ==============menuicon==========
+let menu = document.querySelector('.navbar_two');
+let menuButton = document.querySelector('.navbar__menu');
+
+menuButton.addEventListener('click', () => {
+    menu.classList.toggle('navbar__open');
+})
+
+
+
 //================= login =============logout=============
 function dangky() {
     // lay cac gia tri tu input de kiem tra

@@ -15,13 +15,15 @@
     <!-- main/base.css -->
     <link rel="stylesheet" href="assets/User/style/base.css">
     <link rel="stylesheet" href="assets/User/style/main.css">
+    <link rel="stylesheet" href="assets/User/style/reponsive.css">
+    <link rel="stylesheet" href="assets/User/style/grid.css">
 </head>
 <body>
     <!-- block element modifier -->
     <div class="app">
         <!-- header -->
         <header class="header">
-            <div class="grid">
+            <div class="grid wide">
                 <nav class="navbar_one">
                     <div class="navbar_logo">
                         <a class="navbar_logo-link" href="index.html">
@@ -86,11 +88,14 @@
                                 </span>
                             </div>
                         </div>
-                        
+                        <div class="navbar__menu"> 
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
+                        </div>                        
                     </div>
                 </nav>
 
                 <nav class="navbar_two">
+                    <div  class="fa-solid fa-xmark"></div>
                     <ul class="navbar_link">
                         <li class="active">
                             <a href="index.html" class="navbar_link-name">
@@ -172,17 +177,17 @@
         <!-- body -->
         <div class="container">
             <!-- cố định 1 trang web 80% -->
-            <div class="grid">
-                <div class="grid__row grid_app">
+            <div class="grid wide">
+                <div class="row grid_app">
                     <div class="grid__column"> 
                         <div class="tilte-product">
                             <h1 class="title">Tất cả sản phẩm</h1>
                         </div>
                         <div class="home-product">
-                            <div class="grid__row">
+                            <div class="row">
                                 <div class="grid__column3" data-category="ring" data-id="1">
                                     <a href="#" class="home-product-item">
-                                        <div class="product-img">
+                                        <div class="product-img">   
                                                 <img src="assets/User/img/ring/1.png" alt="">
                                         </div>
                                         <div class="product-info">
@@ -300,8 +305,8 @@
 
         <!-- footer -->
         <footer class="footer" id="footerpage">
-            <div class="grid footer_app">
-                <div class="grid__row">
+            <div class="grid wide footer_app">
+                <div class="row">
                     <div class="grid__column2">
                         <div class="foot_block">
                             <h4 class="footer-tittle">PHÁP LÝ & CÂU HỎI</h4>
@@ -376,8 +381,8 @@
                     </div>
                 </div>
             </div>
-            <div class="grid footer_app">
-                <div class="grid__row">
+            <div class="grid wide footer_app">
+                <div class="row">
                     <div class="grid__column">
                         <p class="polity">
                             Copyright © 2024 Jewelry Store.
@@ -412,7 +417,7 @@
             <div class="overlay">
                 <div class="product__body">
                     <i class="fa-solid fa-xmark"></i>
-                    <div class="grid__row">
+                    <div class="row">
                             <div class="grid__column35">
                                 <div class="product_img">
                                     <img src="assets/User/img/earrings/1.png" alt="" class="main_img" id="product-main-img">
