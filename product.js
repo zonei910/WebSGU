@@ -227,16 +227,40 @@ function showProductDetail(productId) {
 }
 
 // Lắng nghe sự kiện click trên các sản phẩmso
-document.addEventListener('DOMContentLoaded', function () {
+// document.addEventListener('DOMContentLoaded', function () {
+function addClickEventToProducts() {
     document.querySelectorAll('.home-product-item').forEach(item => {
         item.addEventListener('click', (event) => {
             event.preventDefault();
             // Lấy id sản phẩm từ data-id
-            const productId = item.closest('.grid__column3').getAttribute('data-id');
+            const productId = item.parentElement.getAttribute('data-id');//.closest('.grid__column3')
 
             if (productId)
             showProductDetail(parseInt(productId));
         });
     });
     console.log('Trang đã tải xong!');
-});
+}
+// });
+
+
+//=============== tạo sản phẩm tự động ===============
+// const productContainer = document.getElementById('product-container');
+
+// Product.forEach(product => {
+//     let productHTML =`
+//         <div class="grid__column3" data-category="${product.category}" data-id="${product.id}">
+//             <a href="#" class="home-product-item">
+//                 <div class="product-img">   
+//                     <img src="${product.images[0]}" alt="${product.name}">
+//                 </div>
+//                 <div class="product-info">
+//                     <h3 class="product-name">${product.name}</h3>
+//                     <span class="product-prices">${product.price === 0 ? 'Hàng tặng' : product.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</span>
+//                 </div>
+//             </a>
+//         </div>
+//     `;
+//     productContainer.innerHTML += productHTML;
+// })
+// console.log(document.querySelectorAll('.grid__column3'));
