@@ -78,7 +78,7 @@
     }
 
     .sub_menu {
-        top: 100%;
+        top: 90%;
         width: 100%;
     }
 
@@ -125,6 +125,19 @@
     }
     .product__body {
         overflow-y: auto;
+    }
+
+    .navbar_search-dropdown {
+        right: -110px;
+        width: 300px;
+    }
+
+    .navbar_search-dropdown::after {
+        right: 115px;
+    }
+
+    .navbar_cart-dropdown-nocart {
+        width: 300px;
     }
 }
 

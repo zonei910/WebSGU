@@ -138,7 +138,7 @@ function displayProducts(page, filteredProducts) {
     //     }
     // });
 
-
+//=============== tạo sản phẩm tự động ===============
     productsToDisplay.forEach(product => {
         const productHTML = document.createElement('div');
             productHTML.classList.add('grid__column3');
@@ -162,9 +162,49 @@ function displayProducts(page, filteredProducts) {
     // Cập nhật các nút phân trang
     updatePagination(page,filteredProducts);
 }
+// =========== tìm kiếm sản phẩm lọc theo tên
+    function searchProducts() {
+        const searchTerm = document.getElementById('search-input').value.trim().toLowerCase();
+        const priceCheckboxes = document.querySelectorAll('.check-box-list input[type="checkbox"]:checked');
+        console.log('Từ khóa tìm kiếm:', searchTerm);
 
+        // lọc theo tên
+        filteredProducts = products.filter(product =>
+            product.name.toLowerCase().includes(searchTerm)
+        );
 
+        // lọc theo giá
+        if (priceCheckboxes.length > 0) {
+            filteredProducts = filteredProducts.filter(product => {
+                return Array.from(priceCheckboxes).some(checkbox => {
+                    const priceCondition = checkbox.getAttribute('data-price');
+                    return eval(priceCondition.replace(/price:product/g, product.price));
+                });
+            });
+        }
 
+        console.log('Sản phẩm đã lọc:', filteredProducts);
+        
+        // Cập nhật tiêu đề tìm kiếm
+        const title = document.querySelector('.title');
+        if ((searchTerm === '' && priceCheckboxes.length === 0) || (filteredProducts.length > 0 && searchTerm === '')) {
+            title.textContent = 'Tất cả sản phẩm';
+        } else  {
+            title.textContent = `Kết quả tìm kiếm cho: "${searchTerm}"`;
+        }
+
+        if (filteredProducts.length > 0) {
+            displayProducts(0, filteredProducts); // Gọi hàm hiển thị sản phẩm
+        } else {
+            const productContainer = document.getElementById('product-container');
+            productContainer.innerHTML = '<p>Không tìm thấy sản phẩm nào phù hợp!</p>';
+        }
+
+        // Hiển thị sản phẩm đã lọc (nếu có)
+        // displayProducts(0, filteredProducts);
+    }
+    const buttonSearch = document.querySelector('.button_search');
+    buttonSearch.addEventListener('click',searchProducts);
 
 // ============pagination tự động==============
 

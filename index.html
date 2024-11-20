@@ -41,11 +41,40 @@
                             <div class="navbar_search-dropdown">
                                 <p class="titlebox">Tìm kiếm</p>
                                 <div class="navbar_search-warpper">
+                                    <!-- tìm kiếm theo tên -->
                                     <div class="input_search-warpper">
-                                        <input type="text" class="input_search" placeholder="Tìm kiếm">
+                                        <input type="text" class="input_search" placeholder="Tìm kiếm" id="search-input">
                                     </div>
-                                    <div class="btn button_search">
+                                    <div class="btn button_search" id="search-button">
                                         <i class="fa-solid fa-magnifying-glass"></i>
+                                    </div>
+                                </div>
+                                <!-- check giá -->
+                                <div class="navbar_search-cost">
+                                    <div class="cost_search-warpper">
+                                        <span>Giá sản phẩm</span>
+                                        <ul class="check-box-list">
+                                            <li>
+                                                <input type="checkbox" id="p1" name="cc" data-price="(price:product<=500000)">
+                                                <label for="p1">Dưới 500,000₫</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="p2" name="cc" data-price="((price:product>500000)&amp;&amp;(price:product<=1000000))">
+                                                <label for="p2">500,000₫ - 1,000,000₫</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="p3" name="cc" data-price="((price:product>1000000)&amp;&amp;(price:product<=1500000))">
+                                                <label for="p3">1,000,000₫ - 1,500,000₫</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="p4" name="cc" data-price="((price:product>2000000)&amp;&amp;(price:product<=5000000))">
+                                                <label for="p4">2,000,000₫ - 5,000,000₫</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" id="p5" name="cc" data-price="(price:product>=5000000)">
+                                                <label for="p5">Trên 5,000,000₫</label>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>   
