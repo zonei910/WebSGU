@@ -79,13 +79,13 @@
                                     </div>
                                 </div>
                             </div>   
-                        </div>
+                        </div>  
 
                             <div class="navbar_account" onclick="moDangNhap()">
                                 <i class="fa-regular fa-user"></i>
                             </div>
 
-                            <!-- <div class="navbar_user">
+                            <div class="navbar_user" style="display: none;">
                                 <img src="https://lh3.googleusercontent.com/ogw/AF2bZygaTCHJ0-cu_s_w-JZ4EqMjLBVHkul4IqhfoF-_D2Nok74=s32-c-mo" alt="" class="navbar__user-avata">
                                 <span class="navbar_user-name">Hi, Duy</span>
                                 <ul class="navbar_user-items">
@@ -96,10 +96,10 @@
                                         <a href="">Đơn mua</a>
                                     </li>
                                     <li class="navbar_user-item navbar_user-item-out">
-                                        <a href="">Đăng xuất</a>
+                                        <a href="" onclick="dangxuat()">Đăng xuất</a>
                                     </li>
                                 </ul>
-                            </div> -->
+                            </div>
 
                             <!-- <div class="navbar_user" onclick="moDangNhap()">
                                 <i class="fa-solid fa-user"></i>
@@ -497,16 +497,16 @@
     </div>
 
     <div id="dang-nhap" style="display:none;">
-        <form class="form-dang-nhap">
+        <form class="form-dang-nhap" onsubmit="dangnhap(event);">
             <div onclick="tatDangNhap()" class="nut-tat-dn">X</div>
             <h2>Đăng Nhập</h2>
             <div>
                 <label for="phone">Số điện thoại:</label>
-                <input type="tel" id="phone" name="phone" required>
+                <input type="tel" id="login-phone" name="phone" required>
             </div>
             <div>
                 <label for="password">Mật khẩu:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="login-password" name="password" required>
             </div>
             <button type="submit">Đăng Nhập</button>
             <p>Chưa có tài khoản? <a href="javascript:void(0)" onclick="chuyenFormDangKy()">Đăng ký</a></p>
@@ -514,12 +514,12 @@
     </div>
     
     <div id="dang-ky" style="display:none;">
-        <form class="form-dang-ky">
+        <form class="form-dang-ky" onsubmit="dangky(event);">
             <div onclick="tatDangKy()" class="nut-tat-dk">X</div>
             <h2>Đăng Ký</h2>
             <div>
                 <label for="phone">Số điện thoại:</label>
-                <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại..." required>
+                <input type="tel" id="register-phone" name="phone" placeholder="Nhập số điện thoại..." required>
             </div>
             <div>
                 <label for="name">Họ tên:</label>
@@ -544,11 +544,11 @@
             </div>
             <div>
                 <label for="password">Mật khẩu:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="register-password" name="password" required>
             </div>
             <div>
                 <label for="confirm-password">Gõ lại mật khẩu:</label>
-                <input type="password" id="confirm-password" name="confirm-password" required>
+                <input type="password" id="register-confirm-password" name="confirm-password" required>
             </div>
             <button type="submit">Đăng Ký</button>
             <p>Đã có tài khoản? <a href="javascript:void(0)" onclick="chuyenFormDangNhap()">Đăng nhập</a></p>
@@ -586,6 +586,7 @@ function chuyenFormDangNhap() {
     <script src="assets/User/script/main.js"></script>
     <script src="product.js"></script>
     <script src="customer.js"></script>
+    <script src="./script/Login_Signin.js"></script>
     <!-- awesome font -->
     <script src="https://kit.fontawesome.com/097a4985d9.js" crossorigin="anonymous"></script>
 </body>
