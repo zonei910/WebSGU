@@ -1,0 +1,129 @@
+
+
+#Display .head{
+    background-color: #363A3F;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#Display .head .filter{
+    display:flex;
+    width: 20%;
+}
+#Display .head .filter select{
+    text-align: center;
+}
+
+#Display .head .filter div{
+        border: 2px solid green;
+        border-radius: 3px;
+        color: green;
+        cursor: pointer;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+        display:inline-block;
+        width: 30%;
+        text-align: center;
+        margin-left: 2px;
+}
+
+#Display  .head .find{
+    display:flex;
+}
+
+#Display  .head .find div{
+    border: 2px solid green;
+    border-radius: 3px;
+    color: green;
+    cursor: pointer;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+#Display .foot{
+    background-color: #363A3F;
+    padding: 10px;
+}
+
+#Display .foot .button {
+    text-align: center;
+}
+
+#Display .foot .button .item{
+    cursor: pointer;
+}
+
+#Display .foot .button .item{
+    border: 3px solid red;
+    display: inline-block;
+    width: 5%;
+    color:white;
+}
+
+#Display .display .item{
+    display:flex;
+    align-items: center;
+    border: 3px solid black;
+    width: 50;
+
+    padding: 10px;
+}
+
+#Display .display .item img{
+    width: 15%;
+}
+
+#Display .display .item .content{
+    margin-left: 10px;
+    display: inline-block;
+    width: 40%;
+}
+
+
+#Display .display .item .button select{
+    border: 1px solid #b5e2ef;
+    text-align: center;
+    padding: 5px;
+}
+
+#Display .display .item .button .add div{
+    background-color: #b5e2ef;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+    height: 40px;
+    display: inline-block;
+}
+
+#Display .display .item .button .add div:hover{
+    background-color: white;
+    color: black;
+
+}
+
+#Display .display .item .button .add{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#Display .display .item .button .add input{
+    width: 50px;
+    height: 40px;
+    margin-right: 5px;
+    text-align: center;
+    border: 1px solid #b5e2ef;
+}
+
+#Display .display .item .button{
+    width: 40%;
+}
+
