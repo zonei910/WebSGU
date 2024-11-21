@@ -4,7 +4,7 @@ var email = document.querySelector("#dang-nhap #email");
 var password = document.querySelector("#dang-nhap #password");
 var thiswindow = window;
 if(email.value == "hihi@gmail.com" && password.value == "hehe"){
-     thiswindow = window.open("admin.html","AdminPage");
+    thiswindow = window.open("admin.html","AdminPage");
 }
     window.close(thiswindow);
 }
@@ -51,13 +51,20 @@ function dangky(event) {
         return false;
     }
 
+    // Kiểm tra trùng số điện thoại admin
+    const admin = JSON.parse(localStorage.getItem("admin"));
+    if (admin && admin.phone === phone) {
+        alert("Số điện thoại này đã được sử dụng bởi tài khoản admin!");
+        return;
+    }
+
     //lay thong tin ng dung tu local ra
     let users = JSON.parse(localStorage.getItem('users')) || [];
     if (users.length === 0) {
         console.log("Danh sách người dùng hiện đang rỗng.");
     }
 
-    // kiem tra sdt co trung
+    // kiem tra sdt co trung của user
     if (users.some(user => user.phone === phone)) {
         alert("Số điện thoại đã được đăng ký!");
         return false;
@@ -85,6 +92,27 @@ function dangnhap(event) {
     let userphone= document.getElementById("login-phone").value.trim();
     let userpassword = document.getElementById('login-password').value.trim();
 
+    // Kiểm tra tài khoản admin
+    const admin = JSON.parse(localStorage.getItem('admin'));
+    if (userphone === admin.phone) {
+        if (userpassword === admin.password) {
+            // Nếu login thành công với tài khoản admin
+            alert("Đăng nhập Admin thành công");
+
+            // Lưu trạng thái đăng nhập
+            // localStorage.setItem("isLoggedIn", "true");
+            // localStorage.setItem("currentUser", JSON.stringify(admin));
+
+            // Chuyển hướng tới trang admin hoặc trang chính
+            window.location.href = "admin.html";  // Chuyển hướng tới trang admin
+            return;
+        } else {
+            alert("Mật khẩu không đúng");
+            return;
+        }
+    }
+
+    // kiem tra tai khoan user
     let users = JSON.parse(localStorage.getItem("users")) || [];
     let user = users.find(u => u.phone === userphone);
 
@@ -139,7 +167,7 @@ function hienThiTaiKhoan(user) {
     const navbarUser = document.querySelector('.navbar_user');
     if (navbarUser) {
         navbarUser.style.display = 'flex';
-        
+
         const userNameElement = navbarUser.querySelector('.navbar_user-name');
         if (userNameElement) {
             userNameElement.textContent = `Hi, ${user.name || 'Người dùng'}`;
@@ -147,7 +175,18 @@ function hienThiTaiKhoan(user) {
     }
 }
 
-function kiemTraDangNhap() {
+// function kiemTraDangNhap() {
+//     if (localStorage.getItem("isLoggedIn") === "true") {
+//         const user = JSON.parse(localStorage.getItem("currentUser"));
+//         if (user) {
+//             hienThiTaiKhoan(user);
+//             tatDangNhap();
+//         }
+//     }
+// }
+// window.onload = kiemTraDangNhap;    
+// ===========taotk admin==============
+window.onload = function() {
     if (localStorage.getItem("isLoggedIn") === "true") {
         const user = JSON.parse(localStorage.getItem("currentUser"));
         if (user) {
@@ -155,5 +194,17 @@ function kiemTraDangNhap() {
             tatDangNhap();
         }
     }
+
+    const admin = JSON.parse(localStorage.getItem('admin'));
+    if (!admin) {
+        const newAdmin = {
+            phone: '12345678',
+            name: 'Admin',
+            password: '12345',
+        };
+    localStorage.setItem('admin', JSON.stringify(newAdmin));
+    console.log("Tài khoản admin đã được tạo:", newAdmin);
+    } else {
+        console.log("Tài khoản admin đã tồn tại:", admin);
+    }
 }
-window.onload = kiemTraDangNhap;
