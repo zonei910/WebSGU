@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="assets/User/style/main.css">
     <link rel="stylesheet" href="assets/User/style/reponsive.css">
     <link rel="stylesheet" href="assets/User/style/grid.css">
+    <link rel="stylesheet" href="assets/User/style/login_signin.css">
 </head>
 <body>
     <!-- block element modifier -->
@@ -80,15 +81,11 @@
                             </div>   
                         </div>
 
-                            <!-- <div class="navbar_account">
+                            <div class="navbar_account" onclick="moDangNhap()">
                                 <i class="fa-regular fa-user"></i>
-                                <div>
-                                    <p>Email:</p>
-                                    <p></p>
-                                </div>
-                            </div> -->
+                            </div>
 
-                            <div class="navbar_user">
+                            <!-- <div class="navbar_user">
                                 <img src="https://lh3.googleusercontent.com/ogw/AF2bZygaTCHJ0-cu_s_w-JZ4EqMjLBVHkul4IqhfoF-_D2Nok74=s32-c-mo" alt="" class="navbar__user-avata">
                                 <span class="navbar_user-name">Hi, Duy</span>
                                 <ul class="navbar_user-items">
@@ -102,8 +99,12 @@
                                         <a href="">Đăng xuất</a>
                                     </li>
                                 </ul>
+                            </div> -->
+
+                            <!-- <div class="navbar_user" onclick="moDangNhap()">
+                                <i class="fa-solid fa-user"></i>
                             </div>
-                        
+                         -->
                         <div class="navbar_cart-warp">
                             <div class="navbar_cart">
                                 <i class="fa-solid fa-cart-shopping"></i>
@@ -494,6 +495,92 @@
             
         </div>
     </div>
+
+    <div id="dang-nhap" style="display:none;">
+        <form class="form-dang-nhap">
+            <div onclick="tatDangNhap()" class="nut-tat-dn">X</div>
+            <h2>Đăng Nhập</h2>
+            <div>
+                <label for="phone">Số điện thoại:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div>
+                <label for="password">Mật khẩu:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Đăng Nhập</button>
+            <p>Chưa có tài khoản? <a href="javascript:void(0)" onclick="chuyenFormDangKy()">Đăng ký</a></p>
+        </form>
+    </div>
+    
+    <div id="dang-ky" style="display:none;">
+        <form class="form-dang-ky">
+            <div onclick="tatDangKy()" class="nut-tat-dk">X</div>
+            <h2>Đăng Ký</h2>
+            <div>
+                <label for="phone">Số điện thoại:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại..." required>
+            </div>
+            <div>
+                <label for="name">Họ tên:</label>
+                <input type="text" id="name" name="name" placeholder="Mạc Tấn Hào" required>
+            </div>
+            <div>
+                <label for="dob">Ngày sinh:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div>
+                <label for="gender">Giới tính:</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Chọn giới tính</option>
+                    <option value="male">Nam</option>
+                    <option value="female">Nữ</option>
+                    <option value="other">Khác</option>
+                </select>
+            </div>
+            <div>
+                <label for="address">Địa chỉ:</label>
+                <input type="text" id="address" name="address" placeholder="số nhà, phường, quận..." required>
+            </div>
+            <div>
+                <label for="password">Mật khẩu:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div>
+                <label for="confirm-password">Gõ lại mật khẩu:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            <button type="submit">Đăng Ký</button>
+            <p>Đã có tài khoản? <a href="javascript:void(0)" onclick="chuyenFormDangNhap()">Đăng nhập</a></p>
+        </form>
+    </div>
+    
+    <script>
+        function moDangNhap() {
+    document.getElementById("dang-nhap").style.display = "flex";
+    document.getElementById("dang-ky").style.display = "none";
+}
+
+function tatDangNhap() {
+    document.getElementById("dang-nhap").style.display = "none";
+}
+
+function tatDangKy() {
+    document.getElementById("dang-ky").style.display = "none";
+}
+
+function chuyenFormDangKy() {
+    document.getElementById("dang-nhap").style.display = "none";
+    document.getElementById("dang-ky").style.display = "flex";
+}
+
+function chuyenFormDangNhap() {
+    document.getElementById("dang-ky").style.display = "none";
+    document.getElementById("dang-nhap").style.display = "flex";
+}
+
+    </script>
+
 
     <!-- js -->
     <script src="assets/User/script/main.js"></script>
