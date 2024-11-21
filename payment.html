@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Document</title>
+    <style>
+        .outter{
+            margin:0;
+            border: 1px black solid;
+            padding:0px 100px 0px 100px;
+            min-height: 1000px;
+            /* height: 100%; */
+        }
+        .inner1>div:nth-child(1){
+            text-align: center;
+            font-size: 30px;
+            color:#817b7b;
+        }
+        .inner1>div:nth-child(3){
+            text-align: center;
+            color:#817b7b;
+        }
+        .inner1>div:nth-child(2){
+            color: #6c6a6b;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .inner2left{
+            width: calc(70% - 20px);
+            /* background-color: aqua; */
+            float: left;
+        }
+        .inner2left>div:nth-child(1){
+            padding:20px 0px 0px 0px;
+            color: #6c6a6b ;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .inner2left>form>div{
+            color: #817b7b;
+        }
+        .inner2left>form>div{
+            margin:10px 0px;
+        }
+        .inner2left>form>div>input{
+            color: #6c6a6b ;
+            outline: none;
+            border:none;
+            background-color: #e7ebf4;
+            width: 100%;
+            border-radius: 2px;
+            height: 15px;
+            padding:5px;
+        }
+
+
+        #Form .sub-button{
+            
+            color: #6c6a6b ;
+            outline: none;
+            border:none;
+            background-color:#3778f7;
+            width: 100%;
+            border-radius: 2px;
+            height: 15px;
+            padding:5px;
+            height: 100%;
+            color: white;
+            cursor: pointer;
+        }
+        .inner2left>form>div>select{
+            border: none;
+            color: #6c6a6b ;
+            background-color: #e7ebf4;
+            outline: none;
+            width: 100%;
+            border-radius: 2px;
+            line-height: 15px;
+            padding:5px;
+        }
+        .inner2right{
+            float: left;
+            width: calc(30% - 20px);
+            margin-left: 20px;
+            /* background-color: aqua; */
+        }
+        .inner2right::after{
+            clear: both;
+        }
+        .inner2right>div:nth-child(1){
+            padding:20px 0px 10px 0px;
+            /* background-color: aqua; */
+        }
+        .inner2right>div:nth-child(1)>div:nth-child(1){
+            color: #6c6a6b ;
+            font-size: 20px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .inner2right>div:nth-child(1)>div:nth-child(2){
+            width: 30px;
+            border-radius: 10px;
+            height: 20px;
+            background-color: #6d7278;
+            display: inline;
+            float: right;
+            color:white;
+            text-align: center;
+        }
+        .inner2right>div:nth-child(1)>div:nth-child(2)::after{
+            clear: both;
+        }
+        .cartoutter{
+            border-radius: 5px;
+            border: 1px #ceced6 solid;
+            color: #6c6a6b ;
+        }
+        .cartinner{
+            border-bottom: 1px solid #ceced6;
+        }
+        .cartinner>div{
+            margin: 5px;
+        }
+        .cart>div:nth-child(1){
+            font-weight: bold;
+        }
+        .sumofcart>div{
+            margin: 5px;
+        }
+        .cart>div{
+            margin:5px;
+        }
+        .cart{
+            float: left;
+        }
+        .sumofcart{
+            float: right;
+        }
+        /* .sumofcart::after{
+            clear: both;
+        } */
+         .clear{
+            clear: both;
+         }
+        .sumoutter{
+            border-bottom: 1px solid #ceced6;
+            padding: 5px;
+            height: 28px;
+        }
+        .sumoutter>div:nth-child(1){
+            float: left;
+        }
+        .suminner{
+            float: right;
+            font-weight: bold;
+        }
+        .suminner::after{
+            clear: both;
+        }
+        .khuyenmai{
+            border-radius: 5px;
+            border: 1px #ceced6 solid;
+            margin-top: 10px;
+            height: 38px;
+            color: #6c6a6b ;
+            /* padding-left: 10px; */
+        }
+        .khuyenmai .code{
+            width: 61.7%;
+            height: 84%;
+        }
+
+
+        .khuyenmai>div:nth-child(2){
+            background-color: azure;
+            /* padding: 10px; */
+            width:30%;
+            float: right;
+            background-color: #6f747a;
+            border-radius: 0px 0px 5px 0px;
+            /* height: 100%; */
+            color: white;
+            padding:10px;
+            text-align: right;
+            cursor: pointer;    
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="outter">
+        <div>
+            <div class="inner1">
+                <div><i class="fa-regular fa-credit-card"></i></div>
+                <div>Thanh toán</div>
+                <div>Vui lòng kiểm tra thông tin khách hàng,thông tin Giỏ hàng trước khi đặt hàng</div>
+            </div>
+            <div class="inner2">
+                <div class="inner2left">
+                    <div>Thông tin khách hàng</div>
+
+                    <form method="get" id = "Form">
+                        <div><label for="name">Họ tên</label> <br><input type="text" id="name" name="name"></div>
+                        <div><label for="sex">Giới tính</label> <br>
+                            <select id="sex" name="sex">
+                                <option value="">Nam</option>
+                                <option value="">Nữ</option>
+                            </select>
+                        </div>
+                        <div><label for="tele">Điện thoại</label><br> <input type="tel" id="tele" name="tele"></div>
+                        <div><label for="address"> Địa chỉ</label> <br><input type="text" id="address" name="address"></div>
+                        <div><label for="email">Email</label><br> <input type="email" id="email" name="email"></div>
+                        <div><label for="dateofbirth">Ngày sinh</label><br> <input type="date" id="dateofbirth" name="dateofbirth"></div>
+                        <div><label for="CMND">CMND</label><br> <input type="text" id="CMND" name="CMND"></div>
+                        <input type="submit" value="Đặt hàng" class="sub-button"> 
+                    </form>
+                 
+                    <!-- .inner2left>input -->
+                </div>
+                <div class="inner2right">
+                    <div>
+                        <div>Giỏ hàng</div>
+                        <div>5</div>
+                    </div>
+                    <div class="cartoutter">
+                        <div class="cartinner">
+                            <div class="cart">
+                                <div>
+                                    Samsung Galaxy S3
+                                </div>
+                                <div>
+                                    132.5$ x 2
+                                </div>
+                            </div>
+                            <div class="sumofcart">
+                                245$
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="cartinner">
+                            <div class="cart">
+                                <div>
+                                    Samsung Galaxy Tab 10.1 3G
+                                </div>
+                                <div>
+                                    132.5$ x 2
+                                </div>
+                            </div>
+                            <div class="sumofcart">
+                                245$
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="sumoutter">
+                            <div>Tổng thành tiền :</div>
+                            <div class="suminner">32.25$</div>
+                        </div>
+                    </div>
+                    <div class="khuyenmai">
+                        <input type="text" placeholder="Mã khuyến mãi" class="code">
+                        <div>Xác nhận</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
