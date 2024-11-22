@@ -34,19 +34,20 @@ body{
     /* background-color: aqua; */
     float: left;
 }
-.inner2left>div:nth-child(1){
+.inner2left>div:nth-child(2){
     padding:20px 0px 0px 0px;
     color: #6c6a6b ;
     font-size: 15px;
     font-weight: bold;
 }
-.inner2left>form>div{
+/* form */
+.inner2left>div>div{
     color: #817b7b;
 }
-.inner2left>form>div{
+.inner2left>div:nth-child(2)>div{
     margin:10px 0px;
 }
-.inner2left>form>div>input{
+.inner2left>div>div>input{
     color: #6c6a6b ;
     outline: none;
     border:none;
@@ -57,7 +58,15 @@ body{
     padding:5px;
 
 }
-
+.inner2left>div>div>select{
+    width: 100%;
+    background-color: #e7ebf4;
+    height: 30px;
+    padding:5px;
+    border-radius: 2px;
+    outline: none;
+    border:none;
+}
 
 #Form .sub-button{
     
@@ -73,7 +82,7 @@ body{
     color: white;
     cursor: pointer;
 }
-.inner2left>form>div>select{
+.inner2left>div>div>select{
     border: none;
     color: #6c6a6b ;
     background-color: #e7ebf4;

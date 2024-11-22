@@ -44,12 +44,16 @@
                                         <option value="watch">Đồng Hồ</option>
                                         <option value="bracelet">Vòng Tay</option>
                                         <option value="necklace">Vòng Cổ</option>
+                                        <option value="500.000">Dưới 500.000 VNĐ</option>
+                                        <option value="500.000 - 1.000.000">500.000 VNĐ - 1.000.000 VNĐ</option>
+                                        <option value="2.000.000 - 5.000.000">2.000.000 VNĐ - 5.000.000 VNĐ</option>
+                                        <option value="5.000.000">Trên 5.000.000.000</option>
                                     </select>
                                     <div  onclick="filter()">Lọc</div>   
                                 </div>
                                 <div class="find">
-                                    <input type="text" class="find_input" placeholder="Tìm kiếm">
-                                    <div>Tìm kiếm</div>
+                                    <input type="text" class="find_input" placeholder="Tên Sản Phẩm Cần Tìm" id ="find">
+                                    <div onclick="find()">Tìm kiếm</div>
                                 </div>
                             </div>
                             <div class="display">
@@ -82,7 +86,7 @@
                             </div>
                     </div>
 
-                    <form method="get" id = "Form">
+                    <div method="get" id = "Form">
                         <div style="color:black; opacity: 1">Thông tin khách hàng</div>
                         <div><label for="name">Họ tên</label> <br><input type="text" id="name" name="name"></div>
                         <div><label for="sex">Giới tính</label> <br>
@@ -94,10 +98,8 @@
                         <div><label for="tele">Điện thoại</label><br> <input type="tel" id="tele" name="tele"></div>
                         <div><label for="address"> Địa chỉ</label> <br><input type="text" id="address" name="address"></div>
                         <div><label for="email">Email</label><br> <input type="email" id="email" name="email"></div>
-                        <div><label for="dateofbirth">Ngày sinh</label><br> <input type="date" id="dateofbirth" name="dateofbirth"></div>
-                        <div><label for="CMND">CMND</label><br> <input type="text" id="CMND" name="CMND"></div>
                         <input type="submit" value="Đặt hàng" class="sub-button"> 
-                    </form>
+                    </div>
                  
                     <!-- .inner2left>input -->
                 </div>

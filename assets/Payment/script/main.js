@@ -34,7 +34,7 @@ function showSanPham(){
                                     <div class="content">
                                         <p>Tên: ${Product[i].name}</p>
                                         <p>Loại: ${Product[i].category}</p>
-                                        <p>Giá ${Product[i].price}VNĐ</p>
+                                        <p>Giá: ${Product[i].price} VNĐ</p>
                                     </div>
                                     <div class="button">
                                         <select name="size">
@@ -90,7 +90,7 @@ let a = ``;
                                     <div class="content">
                                         <p>Tên: ${Product[i].name}</p>
                                         <p>Loại: ${Product[i].category}</p>
-                                        <p>Giá ${Product[i].price}VNĐ</p>
+                                        <p>Giá: ${Product[i].price} VNĐ</p>
                                     </div>
                                     <div class="button">
                                         <select name="size">

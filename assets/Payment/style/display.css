@@ -1,3 +1,7 @@
+#Display{
+    width: 100%;
+    height: 100px;
+}
 
 
 #Display .head{
@@ -74,7 +78,6 @@
     align-items: center;
     border: 3px solid black;
     width: 50;
-
     padding: 10px;
 }
 
