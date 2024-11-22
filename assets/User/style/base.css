@@ -70,6 +70,12 @@ html {
     width: 35%;
 }
 
+.grid__column5{
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 50%;
+}
+
 .grid__column65 {
     padding-left: 12px;
     padding-right: 12px;
