@@ -1,40 +1,42 @@
 
-let a =[1,2,3,4];
-let display = document.querySelector("#Display");
-let form = document.querySelector("#Form");
-display.style.display = "none";
+let filterarr = [];
+function filter(){
+    filterarr = [];
+    let select = document.querySelector("#filter");
+    if(select.value == "none"){
+        showSanPham();
+        return 0;
+    }
+   
+
+    for(let i = 0 ;i < Product.length;i++)
+        if(Product[i].category == select.value)
+            filterarr.push(Product[i]);
 
 
-function showSanPham(){
-    form.style.display = "none"; 
-    display.style.display = "block";
-
-    
-    let sosanphammoitrang = 3;
-    let tongsotrang = Math.ceil(Product.length/sosanphammoitrang);
     let sotranghientai = 1;
-    let vitrihientai = (sotranghientai -1)  * sosanphammoitrang;
-
+    let sosanphammoitrang = 3;
+    let tongsotrang = Math.ceil(filterarr.length / sosanphammoitrang);
+    let vitrihientai = (sotranghientai - 1) * sosanphammoitrang;
 
     let butt = ``;
     for(let i = 1 ; i<=tongsotrang;i++)
         butt += `
-        <div class="item" onclick="nuttrang(this)" name="${i}">${i}</div>
+        <div class="item" onclick="nuttrang_filter(this)" name="${i}">${i}</div>
     `;
 
 
+    let temp = ``;
     let n = 0;
-    let a = ``;
-    for(let i = vitrihientai     ; i < Product.length;i++){
-        if(n == sosanphammoitrang) break; 
-
-        a += `
-        <div class="item">
-                                    <img src="${Product[i].images[0]}">
+    for(let i = 0 ; i < filterarr.length ; i++ ){
+        n++;
+        temp += `
+         <div class="item">
+                                    <img src="${filterarr[i].images[0]}">
                                     <div class="content">
-                                        <p>Tên: ${Product[i].name}</p>
-                                        <p>Loại: ${Product[i].category}</p>
-                                        <p>Giá ${Product[i].price}VNĐ</p>
+                                        <p>Tên: ${filterarr[i].name}</p>
+                                        <p>Loại: ${filterarr[i].category}</p>
+                                        <p>Giá ${filterarr[i].price}VNĐ</p>
                                     </div>
                                     <div class="button">
                                         <select name="size">
@@ -51,14 +53,14 @@ function showSanPham(){
                                         </div>
                                     </div>
             </div>
-        `
-        n++;
+        
+        `;
+        if(n == sosanphammoitrang)  break;
+    
     }
 
-
     let showsanpham = document.querySelector("#Display .display");
-    showsanpham.innerHTML = a;
-    if(tongsotrang == 1) return 0;
+    showsanpham.innerHTML = temp;
     let shownut = document.querySelector("#Display .foot .button");
     if(tongsotrang != 1) 
      shownut.innerHTML = butt;
@@ -67,30 +69,24 @@ function showSanPham(){
 }
 
 
-
-function showThanhToan(){
-    form.style.display  = "block";
-    display.style.display = "none";
-}
-
-function nuttrang(trang){
+function nuttrang_filter(trang){
     let sosanphammoitrang = 3;
-    let tongsotrang = Math.ceil(Product.length/sosanphammoitrang);
+    let tongsotrang = Math.ceil(filterarr.length/sosanphammoitrang);
     let vitrihientai = (trang.getAttribute("name")-1)  * sosanphammoitrang;
 
 
-let n =0 ;
+let n = 0 ;
 let a = ``;
-    for(let i = vitrihientai     ; i <Product.length;i++){
+    for(let i = vitrihientai     ; i <= filterarr.length;i++){
         if(n == sosanphammoitrang) break; 
 
         a += `
         <div class="item">
-                                    <img src="${Product[i].images[0]}">
+                                    <img src="${filterarr[i].images[0]}">
                                     <div class="content">
-                                        <p>Tên: ${Product[i].name}</p>
-                                        <p>Loại: ${Product[i].category}</p>
-                                        <p>Giá ${Product[i].price}VNĐ</p>
+                                        <p>Tên: ${filterarr[i].name}</p>
+                                        <p>Loại: ${filterarr[i].category}</p>
+                                        <p>Giá ${filterarr[i].price}VNĐ</p>
                                     </div>
                                     <div class="button">
                                         <select name="size">
@@ -110,7 +106,7 @@ let a = ``;
         `
         n++;
     }
-    let showsanpham = document.querySelector("#Display .display");
+     let showsanpham = document.querySelector("#Display .display");
     showsanpham.innerHTML = a;
 
 }
