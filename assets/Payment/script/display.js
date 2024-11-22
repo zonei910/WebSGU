@@ -95,67 +95,100 @@ if(select.value == "ring" || select.value == "watch" || select.value == "bracele
 }
 
 
-function nuttrang_filter(trang){
-    let sosanphammoitrang = 3;
-    let tongsotrang = Math.ceil(filterarr.length/sosanphammoitrang);
-    let vitrihientai = (trang.getAttribute("name")-1)  * sosanphammoitrang;
 
 
-let n = 0 ;
-let a = ``;
-    for(let i = vitrihientai     ; i <= filterarr.length;i++){
-        if(n == sosanphammoitrang) break; 
 
-        a += `
-        <div class="item">
-                                    <img src="${filterarr[i].images[0]}">
-                                    <div class="content">
-                                        <p>Tên: ${filterarr[i].name}</p>
-                                        <p>Loại: ${filterarr[i].category}</p>
-                                        <p>Giá: ${filterarr[i].price} VNĐ</p>
-                                    </div>
-                                    <div class="button">
-                                        <select name="size">
-                                            <option value="none" selected>Select Size</option>
-                                            <option value="xxl">XXL</option>
-                                            <option value="xl">XL</option>
-                                            <option value="large">Large</option>
-                                            <option value="medium">Medium</option>
-                                            <option value="small">Small</option>
-                                        </select>
-                                        <div class="add">
-                                        <input type="number" value="1" min="1">
-                                        <div>Thêm vào giỏ</div>
-                                        </div>
-                                    </div>
-            </div>
-        `
-        n++;
-    }
-     let showsanpham = document.querySelector("#Display .display");
-    showsanpham.innerHTML = a;
 
-}
+
 
 
 function find(){
     filterarr = [];
-    let find = document.querySelector("#find");
-    let result = find.value.trim().toUpperCase();
-    
-    for(let i = 0 ; i < Product.length ; i++){
-        let name = Product[i].name.toUpperCase();
-        if(name.includes(result))
-            filterarr.push(Product[i]);
+ 
+let a = document.querySelectorAll("#Display .head .find .choose");
+for(let i=0;i<4 ; i++){
+    if(a[i].checked == true){
+        for(let j = 0 ; j < Product.length ; j++){
+            if(Product[j].category == a[i].value){
+                filterarr.push(Product[j]);
+            }
+        }
+    }
     }
 
-    console.log(filterarr);
+for(let i = 4 ; i < 8 ; i++){
+    if(a[i].checked == true){
+        for(let j = 0 ; j < Product.length ; j++){
+            let co = 0;
+
+            if(i == 4){
+                if(Product[j].price < 500000 ){
+                    for(let k = 0 ; k < filterarr.length ; k++){
+                        if(Product[j].id == filterarr[k].id ) co = 1;
+                    }
+                if(co == 0) filterarr.push(Product[j]);
+                }
+            }
+        
+            if(i == 5){
+                if(Product[j].price  >= 500000 && Product[j].price<=1000000 ){
+                    for(let k = 0 ; k < filterarr.length ; k++){
+                        if(Product[j].id == filterarr[k].id ) co = 1;
+                    }
+                if(co == 0) filterarr.push(Product[j]);
+                }
+            }
+
+            if(i == 6){
+                if(Product[j].price  >= 2000000 && Product[j].price<=5000000 ){
+                    for(let k = 0 ; k < filterarr.length ; k++){
+                        if(Product[j].id == filterarr[k].id ) co = 1;
+                    }
+                if(co == 0) filterarr.push(Product[j]);
+                }
+            }
+
+            if(i == 7){
+                if(Product[j].price  > 5000000 ){
+                    for(let k = 0 ; k < filterarr.length ; k++){
+                        if(Product[j].id == filterarr[k].id ) co = 1;
+                    }
+                if(co == 0) filterarr.push(Product[j]);
+                }
+            }
+
+        }
+    }
+}    
+
+
+   let find = document.querySelector("#find");
+    let result = find.value.trim().toUpperCase();
+    
+    if(result != ""){
+    for(let i = 0 ; i < Product.length ; i++){
+        let co = 0;
+        let name = Product[i].name.toUpperCase();
+
+        if(name.includes(result)){
+            for(let j = 0 ; j <filterarr.length;j++){
+                if(Product[i].id == filterarr[j].id) co = 1;
+            }
+            if(co == 0) filterarr.push(Product[i]);
+        }
+          
+    }
+    }
+
+
     if(filterarr.length == 0){
         alert("Không tìm thấy sản phẩm cần tìm");
+       
         find.focus();
         find.onfocus = ()=> {
             find.select();
         }
+        return showSanPham();
     }
 
 
@@ -210,8 +243,51 @@ function find(){
     if(tongsotrang != 1) 
      shownut.innerHTML = butt;
     else shownut.innerHTML = "";
-    
+    console.log(filterarr);
+
 
 
 }
 
+
+function nuttrang_filter(trang){
+    let sosanphammoitrang = 3;
+    let tongsotrang = Math.ceil(filterarr.length/sosanphammoitrang);
+    let vitrihientai = (trang.getAttribute("name")-1)  * sosanphammoitrang;
+
+
+let n = 0 ;
+let a = ``;
+    for(let i = vitrihientai     ; i < filterarr.length;i++){
+        n++;
+        a += `
+        <div class="item">
+                                    <img src="${filterarr[i].images[0]}">
+                                    <div class="content">
+                                        <p>Tên: ${filterarr[i].name}</p>
+                                        <p>Loại: ${filterarr[i].category}</p>
+                                        <p>Giá: ${filterarr[i].price} VNĐ</p>
+                                    </div>
+                                    <div class="button">
+                                        <select name="size">
+                                            <option value="none" selected>Select Size</option>
+                                            <option value="xxl">XXL</option>
+                                            <option value="xl">XL</option>
+                                            <option value="large">Large</option>
+                                            <option value="medium">Medium</option>
+                                            <option value="small">Small</option>
+                                        </select>
+                                        <div class="add">
+                                        <input type="number" value="1" min="1">
+                                        <div>Thêm vào giỏ</div>
+                                        </div>
+                                    </div>
+            </div>
+        `
+     
+        if(n == sosanphammoitrang) break; 
+    }
+     let showsanpham = document.querySelector("#Display .display");
+    showsanpham.innerHTML = a;
+
+}

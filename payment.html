@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="assets/Payment/style/main.css">
     <link rel="stylesheet" href="assets/Payment/style/display.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 </head>
 <body>
@@ -31,7 +32,7 @@
             <div class="inner1">
                 <div><i class="fa-regular fa-credit-card"></i></div>
                 <div>Thanh toán</div>
-                <div>Vui lòng kiểm tra thông tin khách hàng,thông tin Giỏ hàng trước khi đặt hàng</div>
+                <div>Vui lòng kiểm tra thông tin Khách Hàng , thông tin Giỏ hàng trước khi đặt hàng</div>
             </div>
             <div class="inner2">
                 <div class="inner2left">
@@ -51,11 +52,24 @@
                                     </select>
                                     <div  onclick="filter()">Lọc</div>   
                                 </div>
+                                <div>
+                                <i class="fa-solid fa-magnifying-glass"></i>
                                 <div class="find">
                                     <input type="text" class="find_input" placeholder="Tên Sản Phẩm Cần Tìm" id ="find">
-                                    <div onclick="find()">Tìm kiếm</div>
+                                    <div onclick="find()">Tìm kiếm</div> 
+                                   <hr>
+                                    <input type="checkbox" value="ring" class="choose"> Nhẫn <br>
+                                    <input type="checkbox" value="watch" class="choose"> Đồng Hồ <br>
+                                    <input type="checkbox" value="bracelet" class="choose"> Vòng Tay <br>
+                                    <input type="checkbox" value="necklace" class="choose"> Vòng Cổ <br>
+                                    <input type="checkbox" value="500.000" class="choose"> Dưới 500.000 VNĐ <br>
+                                    <input type="checkbox" value="500.000 - 1.000.000" class="choose"> 500.000 VNĐ - 1.000.000 VNĐ <br>
+                                    <input type="checkbox" value="2.000.000 - 5.000.000" class="choose"> 2.000.000 VNĐ - 5.000.000 VNĐ <br>
+                                    <input type="checkbox" value="5.000.000" class="choose"> Trên 5.000.000.000 <br>
                                 </div>
                             </div>
+                            </div>
+
                             <div class="display">
                                 <div class="item">
                                     <img src="image-placeholder-500x500.jpg">
@@ -87,7 +101,7 @@
                     </div>
 
                     <div method="get" id = "Form">
-                        <div style="color:black; opacity: 1">Thông tin khách hàng</div>
+                        <div style="color:black; opacity: 1">Thông tin Khách Hàng</div>
                         <div><label for="name">Họ tên</label> <br><input type="text" id="name" name="name"></div>
                         <div><label for="sex">Giới tính</label> <br>
                             <select id="sex" name="sex">
