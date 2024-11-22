@@ -368,3 +368,214 @@ let menuButton = document.querySelector('.navbar__menu');
 menuButton.addEventListener('click', () => {
     menu.classList.toggle('navbar__open');
 })
+
+
+
+
+
+
+
+
+
+
+//==========================================================================================================================================================================
+
+
+
+
+// Hàm để hiển thị thông tin chi tiết sản phẩm khi click vào sản phẩm
+function showProductDetail(productId) {
+    // Tìm sản phẩm tương ứng trong mảng products
+    const product = Product.find(p => p.id === productId);
+
+    if (product) {
+        // Cập nhật thông tin vào div chi tiết sản phẩm
+        document.getElementById('product-name').innerText = product.name;
+        document.getElementById('product-price').innerText = product.price + '₫';
+
+        // Hiển thị mô tả với các thẻ HTML
+        document.getElementById('product-description').innerHTML = product.description;
+        document.getElementById('product-main-img').src = product.images[0];
+
+        // Hiển thị các ảnh nhỏ (nếu có)
+        const smallImgContainer = document.getElementById('product-small-imgs');
+        smallImgContainer.innerHTML = '';
+        product.images.forEach(imgSrc => {
+             // Tạo div nhỏ để bọc ảnh
+            const smallImgCol = document.createElement('div');
+            smallImgCol.classList.add('small_img-col');
+            // Tạo thẻ img và thêm ảnh
+            const imgElement = document.createElement('img');
+            imgElement.classList.add('small_img');
+            imgElement.src = imgSrc;
+             // Thêm ảnh vào div nhỏ
+            smallImgCol.appendChild(imgElement);
+            // Thêm div này vào container
+            smallImgContainer.appendChild(smallImgCol);
+            
+        });
+        //hàm chuyển ảnh nhỏ sang ảnh chính
+        let mainImg = document.querySelector('.main_img');
+        let smallImgs = document.querySelectorAll('.small_img');
+
+        smallImgs.forEach((img) => {
+            img.onclick = function() {
+                console.log('Thumbnail clicked:', img.src);
+                mainImg.src = img.src;
+            }
+        })
+
+         // Hiển thị div chi tiết sản phẩm
+        let detail = document.querySelector('.detail_product');
+        detail.style.display = 'block';
+        document.querySelector('.product__body i').onclick = function() {
+            detail.style.display = 'none';
+        }
+    }
+}
+
+// Lắng nghe sự kiện click trên các sản phẩmso
+// document.addEventListener('DOMContentLoaded', function () {
+function addClickEventToProducts() {
+    document.querySelectorAll('.home-product-item').forEach(item => {
+        item.addEventListener('click', (event) => {
+            event.preventDefault();
+            // Lấy id sản phẩm từ data-id
+            const productId = item.parentElement.getAttribute('data-id');//.closest('.grid__column3')
+
+            if (productId)
+            showProductDetail(parseInt(productId));
+        });
+    });
+    console.log('Trang đã tải xong!');
+}
+// });
+
+
+//=============== tạo sản phẩm tự động ===============
+// const productContainer = document.getElementById('product-container');
+
+// Product.forEach(product => {
+//     let productHTML =`
+//         <div class="grid__column3" data-category="${product.category}" data-id="${product.id}">
+//             <a href="#" class="home-product-item">
+//                 <div class="product-img">   
+//                     <img src="${product.images[0]}" alt="${product.name}">
+//                 </div>
+//                 <div class="product-info">
+//                     <h3 class="product-name">${product.name}</h3>
+//                     <span class="product-prices">${product.price === 0 ? 'Hàng tặng' : product.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</span>
+//                 </div>
+//             </a>
+//         </div>
+//     `;
+//     productContainer.innerHTML += productHTML;
+// })
+// console.log(document.querySelectorAll('.grid__column3'));
+
+// Chuyển mảng sản phẩm thành JSON và lưu vào localStorage
+localStorage.setItem('products', JSON.stringify(Product));
+// Lấy mảng sản phẩm từ localStorage và chuyển lại thành mảng
+const savedProducts = JSON.parse(localStorage.getItem('products'));
+
+if (savedProducts) {
+    // Nếu dữ liệu có sẵn trong localStorage, sử dụng nó
+    Product = savedProducts;
+} else {
+    // Nếu không có dữ liệu, bạn có thể sử dụng mảng sản phẩm mặc định hoặc gọi API để lấy dữ liệu
+    Product = []; // hoặc gọi API
+}
+
+
+
+
+
+
+function hienthi(){
+    document.getElementById("dang-nhap").style.display="flex";
+}
+function hienthii(){
+    document.getElementById("dang-ky").style.display="flex";
+}
+function tatDangNhap(){
+    document.getElementById("dang-nhap").style.display="none";
+}
+function tatDangKy(){
+    document.getElementById("dang-ky").style.display="none";
+}
+
+
+function home() {
+    const showFull = ["carousel","sp-hot", "sp-watch", "sp-ring", "sp-earrings", "sp-bracelet", "sp-necklace"];
+    
+    showFull.forEach(id => {
+        document.getElementById(id).style.display = "block";
+    });
+}
+
+
+function listMenu(abc) {
+    const elementsToHide = ["carousel","sp-hot", "sp-watch", "sp-ring", "sp-earrings", "sp-bracelet", "sp-necklace"];
+
+    elementsToHide.forEach(id => {
+        document.getElementById(id).style.display = "none";
+    });
+    const bien = abc.id;
+    switch (bien) {
+        // case "carousel":
+        //     document.getElementById("carousel").style.display = "block";
+        //     break;
+        case "dong-ho":
+            document.getElementById("sp-watch").style.display = "block";
+            break;
+        case "nhan":
+            document.getElementById("sp-ring").style.display = "block";
+            break;
+        case "khuyen-tai":
+            document.getElementById("sp-earrings").style.display = "block";
+            break;
+        case "vong-tay":
+            document.getElementById("sp-bracelet").style.display = "block";
+            break;
+        case "vong-co":
+            document.getElementById("sp-necklace").style.display = "block";
+            break;
+        default:
+            break; 
+    }
+}
+
+
+
+
+//=================================================================================================================================================================================================
+
+
+
+
+
+
+let currentIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+            slide.classList.add('active');
+        }
+    });
+}
+
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    showSlide(currentIndex);
+}
+
+setInterval(nextSlide, 3000); 
+showSlide(currentIndex); 
+
+
+
+
