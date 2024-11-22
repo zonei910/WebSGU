@@ -263,43 +263,51 @@
 
         <div id="prod-edit-display">
             <div id="prod-edit-header">
-                <nav>
-                    <div class="timkiem">
-                    <select name="sanpham" id="select">
-                        <option value="all"selected>[Chọn sản phẩm]</option>
-                        <option value="necklace">Vòng cổ</option>
-                        <option value="bracelet">Vòng tay</option>
-                        <option value="ring">Nhẫn</option>
-                        <option value="watch">Đồng hồ</option>
-                        <option value="earring">Khuyên tai</option>
-                    </select>
-                    <button>Lọc</button>
+                <button class="button1"><i class="fa-solid fa-plus"></i></button>
+                <div class="find">
+                    <i class="fa-solid fa-magnifying-glass" onclick="showFind()"></i>
+                    <div class="inner hide">
+                        <input type="text" class="find_input" placeholder="Tên Sản Phẩm Cần Tìm" >
+                        <div onclick="find()">Tìm kiếm</div> 
+                       <hr>
+                        <input type="checkbox" value="ring" class="choose"> Nhẫn <br>
+                        <input type="checkbox" value="watch" class="choose"> Đồng Hồ <br>
+                        <input type="checkbox" value="bracelet" class="choose"> Vòng Tay <br>
+                        <input type="checkbox" value="necklace" class="choose"> Vòng Cổ <br>
+                        <input type="checkbox" value="500.000" class="choose"> Dưới 500.000 VNĐ <br>
+                        <input type="checkbox" value="500.000 - 1.000.000" class="choose"> 500.000 VNĐ - 1.000.000 VNĐ <br>
+                        <input type="checkbox" value="2.000.000 - 5.000.000" class="choose"> 2.000.000 VNĐ - 5.000.000 VNĐ <br>
+                        <input type="checkbox" value="5.000.000" class="choose"> Trên 5.000.000.000 <br>
+                    </div>
+                </div>
                 </div>
                 </nav>
-                <button class="button1"><i class="fa-solid fa-plus"></i></button>
+                
             </div>
             <div id="main-content">
+
+
                 <div class="table">
                     <img src="assets/Admin/image/img2.jpeg" width="20%">
                     <div class="product-info">
-                        <span>ID: 001</span>
-                        <span>Name: Red diamond necklace</span>
-                        <span>Price: $499.99</span>
-                        <span>Quantity: 10</span>
-                        <span>Description: This is a description</span>
+                        <div>ID: 001</div>
+                        <div>Name: Red diamond necklace</div>
+                        <div>Price: $499.99</div>
+                        <div>Quantity: 10</div>
+                        <div>Description: This is a description</div>
                     </div>
                     <div class="button-group">
                         <button class="edit-buttons1"><i class="fa-regular fa-pen-to-square"></i></button>
                         <button class="edit-buttons2"><i class="fa-solid fa-trash"></i></button>
                     </div>
                 </div>
+
+
             </div>
             <nav id="buttons">
                 <div class="pagination-buttons">
-                    <button class="page-button"><i class="fa-solid fa-chevron-left"></i></button>
                     <button class="page-button">1</button>
                     <button class="page-button">2</button>
-                    <button class="page-button"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
             </nav>
         </div>
@@ -311,7 +319,7 @@
 <!-- Kết thúc Main -->
 
 
-
+<script language="javascript" src="product.js"></script>
 <script language="javascript" src="assets/Admin/script/navbar.js"></script>
 <script language="javascript" src="assets/Admin/script/merchandise.js"></script>
 </body>

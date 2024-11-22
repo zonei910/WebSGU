@@ -1,5 +1,5 @@
 
-let a =[1,2,3,4];
+
 let display = document.querySelector("#Display");
 let form = document.querySelector("#Form");
 display.style.display = "none";
