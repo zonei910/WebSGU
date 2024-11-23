@@ -152,7 +152,7 @@ const Product = [
             "assets/User/img/ring/3-1.jpg",
             "assets/User/img/ring/3-2.jpg",
             "assets/User/img/ring/3-3.jpg",
-            "assets/User/img/ring/3.jpg"
+            "assets/User/img/ring/3-4.jpg"
         ]
     },
     {
