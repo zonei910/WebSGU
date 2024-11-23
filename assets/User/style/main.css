@@ -589,7 +589,11 @@
 }
 
 .footer_app {
-    padding-top: 30px;
+    padding: 30px 0 0 0;
+}
+
+.footer_app1{
+    padding: 30px 0 30px 0;
 }
 
 .footer-tittle {
@@ -858,4 +862,77 @@
 .product-info p {
     margin: 0 0 10px 0;
     line-height: 21px
+}
+
+/* ===================account-info========= */
+.account-app {
+    margin: 20px 0 20px 0;
+}
+
+.main_account {
+    border: 1px solid #dae2e6;
+    padding: 20px;
+}
+
+.tittle-main_account {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.tittle-main_account h3{
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.tittle-main_account p{
+    font-size: 15px;
+    margin: 0;
+}
+
+.body-main_account {
+    margin-top: 10px;
+}
+
+.form-group {
+    margin-right: 30px;
+    margin-bottom: 10px;
+}
+
+.form-label {
+    margin-bottom: 5px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-control {
+    width: 100%;
+    height: 40px;
+    padding: 8px 12px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    outline: none;
+    transition: border 0.3s linear;
+}
+
+.form-message {
+    color: red;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.body-main_account-action {
+    width: 100%;
+    display: flex;
+}
+
+.body-main_account-action button{
+    border: none;
+    outline: none;
+    color: var(--white);
+    background-color: var(--xanhnhat);
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
 }

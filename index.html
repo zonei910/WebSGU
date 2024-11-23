@@ -333,10 +333,76 @@
             </div>
         </div>
 
+        <!-- body account info -->
+        <div class="container_account" style="display: none;">
+            <div class="grid wide1">
+                <div class="row account-app">
+                    <div class="grid__column">
+                        <div class="main_account">
+                            <div class="tittle-main_account">
+                                <h3>Thông tin tài khoản của bạn</h3>
+                                <p>Quản lý thông tin để bảo mật tài khoản</p>
+                            </div>
+                            <div class="body-main_account row">
+                                <div class="grid__column5">
+                                    <form action="" class="info-user">
+                                        <div class="form-group">
+                                            <label for="infoname" class="form-label">Họ và tên</label>
+                                            <input class="form-control" type="text" name="infoname" id="infoname" placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="infophone" class="form-label">Số điện thoại</label>
+                                            <input class="form-control" type="text" name="infophone" id="infophone" disabled="true" placeholder="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="infoemail" class="form-label">Email</label>
+                                            <input class="form-control" type="email" name="infoemail" id="infoemail" placeholder="Thêm địa chỉ email của bạn">
+                                            <span class="inforemail-error form-message"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="infoaddress" class="form-label">Địa chỉ</label>
+                                            <input class="form-control" type="text" name="infoaddress" id="infoaddress" placeholder="Thêm địa chỉ giao hàng của bạn">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="grid__column5">
+                                    <form action="" class="change-password">
+                                        <div class="form-group">
+                                            <label for="" class="form-label w60">Mật khẩu hiện tại</label>
+                                            <input class="form-control" type="password" name="" id="password-cur-info" placeholder="Nhập mật khẩu hiện tại">
+                                            <span class="password-cur-info-error form-message"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="" class="form-label w60">Mật khẩu mới </label>
+                                            <input class="form-control" type="password" name="" id="password-after-info" placeholder="Nhập mật khẩu mới">
+                                            <span class="password-after-info-error form-message"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="" class="form-label w60">Xác nhận mật khẩu mới</label>
+                                            <input class="form-control" type="password" name="" id="password-comfirm-info" placeholder="Nhập lại mật khẩu mới">
+                                            <span class="password-after-comfirm-error form-message"></span>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="body-main_account-action ">
+                                    <div class="grid__column5">
+                                        <button id="save-info-user" onclick="changeInformation()"><i class="fa-solid fa-floppy-disk"></i> Lưu thay đổi</button> 
+                                    </div>
+                                    <div class="grid__column5">
+                                        <button id="save-password" onclick="changePassword()"><i class="fa-solid fa-key"></i> Đổi mật khẩu</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- footer -->
         <footer class="footer" id="footerpage">
-            <div class="grid wide footer_app">
-                <div class="row">
+            <div class="grid wide">
+                <div class="row footer_app">
                     <div class="grid__column2">
                         <div class="foot_block">
                             <h4 class="footer-tittle">PHÁP LÝ & CÂU HỎI</h4>
@@ -411,8 +477,8 @@
                     </div>
                 </div>
             </div>
-            <div class="grid wide footer_app">
-                <div class="row">
+            <div class="grid wide">
+                <div class="row footer_app1">
                     <div class="grid__column">
                         <p class="polity">
                             Copyright © 2024 Jewelry Store.
