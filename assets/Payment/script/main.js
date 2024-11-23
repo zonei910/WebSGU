@@ -2,13 +2,16 @@
 
 let display = document.querySelector("#Display");
 let form = document.querySelector("#Form");
+let purchase = document.querySelector("#Purchase");
+
 display.style.display = "none";
+purchase.style.display = "none";
 
 
 function showSanPham(){
     form.style.display = "none"; 
     display.style.display = "block";
-
+    purchase.style.display = "none";
     
     let sosanphammoitrang = 3;
     let tongsotrang = Math.ceil(Product.length/sosanphammoitrang);
@@ -71,7 +74,17 @@ function showSanPham(){
 function showThanhToan(){
     form.style.display  = "block";
     display.style.display = "none";
+    purchase.style.display = "none";
 }
+
+
+
+function showMethodPurchase(){
+    form.style.display = "none";
+    display.style.display = "none";
+    purchase.style.display = "block";
+}
+
 
 function nuttrang(trang){
     let sosanphammoitrang = 3;
@@ -114,3 +127,5 @@ let a = ``;
     showsanpham.innerHTML = a;
 
 }
+
+

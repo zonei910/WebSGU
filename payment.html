@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="assets/Payment/style/main.css">
     <link rel="stylesheet" href="assets/Payment/style/display.css">
+    <link rel="stylesheet" href="assets/Payment/style/purchase.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 </head>
@@ -18,7 +19,7 @@
             <li onclick= "showSanPham()">Sản phẩm</li>
             <li onclick="showThanhToan()">Thanh toán </li>
             <li>Liên hệ</li>
-            <li>Đăng xuất</li>
+            <li onclick="">Đăng xuất</li>
         </ul>
     </div>
 </header>
@@ -100,7 +101,7 @@
                             </div>
                     </div>
 
-                    <div method="get" id = "Form">
+                    <div  id = "Form">
                         <div style="color:black; opacity: 1">Thông tin Khách Hàng</div>
                         <div><label for="name">Họ tên</label> <br><input type="text" id="name" name="name"></div>
                         <div><label for="sex">Giới tính</label> <br>
@@ -109,12 +110,123 @@
                                 <option value="">Nữ</option>
                             </select>
                         </div>
-                        <div><label for="tele">Điện thoại</label><br> <input type="tel" id="tele" name="tele"></div>
+                        <div><label for="tele">Điện thoại</label><br> <input type="tel" id="tele" name="tele" readonly placeholder="123456"></div>
                         <div><label for="address"> Địa chỉ</label> <br><input type="text" id="address" name="address"></div>
                         <div><label for="email">Email</label><br> <input type="email" id="email" name="email"></div>
-                        <input type="submit" value="Đặt hàng" class="sub-button"> 
+                        <input type="submit" value="Đặt hàng" class="sub-button" onclick="showMethodPurchase()"> 
                     </div>
-                 
+                    
+                    <div id ="Purchase">
+                        <div class="downer">
+                            <div>Chọn phương thức thanh toán</div>
+                            <div><input type="radio" id="zalopay"  name="method" style="margin-left:0;" onclick="showPurchase()"><label for="zalopay"><img src="assets/Payment/image/thenganhangimage/zalopay.png" alt="" style="position: absolute; left: 15px;">Zalopay</label></div>
+                            <div><input type="radio" id="bycash"  name="method" onclick="showPurchase()"><label for="bycash"><i class="fa-regular fa-money-bill-1"></i> Trả tiền khi nhận hàng</label></div>
+                            <div><input type="radio" id="bycard"  name="method" onclick="showPurchase()"><label for="bycard"><i class="fa-regular fa-credit-card"></i> Chuyển khoản ngân hàng</label></div>
+                          
+                          <div id = "bank">
+                            <div id="thecard">
+                                <div> 
+                                    <input type="radio" class="choose_bank" name="bank">
+                                    <img src="assets/Payment/image/thenganhangimage/1abbank.png" alt="">
+                                </div>
+                                <div>
+                                    <input type="radio" class="choose_bank" name="bank">
+                                <img src="assets/Payment/image/thenganhangimage/2acb.png" alt="">
+                                </div>
+                                <div>
+                                    <input type="radio" class="choose_bank" name="bank">
+                                <img src="assets/Payment/image/thenganhangimage/3 keb.webp" alt="">
+                                </div>
+                                <div>
+                                    <input type="radio" class="choose_bank" name="bank">
+                                    <img src="assets/Payment/image/thenganhangimage/4vietcredit.webp" alt="">
+                                </div>
+                                <div>
+                                    <input type="radio" class="choose_bank" name="bank">
+                                <img src="assets/Payment/image/thenganhangimage/5nhfd.png" alt="">
+                                </div>
+                                <div>
+                                    <input type="radio" class="choose_bank" name="bank">
+                                <img src="assets/Payment/image/thenganhangimage/6fslkd.png" alt="">
+        
+                                </div>
+                                <div>
+                                    <input type="radio" class="choose_bank" name="bank">
+                                <img src="assets/Payment/image/thenganhangimage/7flrjt.png" alt="">
+        
+                                </div>
+                                <div>
+                                    <input type="radio" class="choose_bank" name="bank">
+                                <img src="assets/Payment/image/thenganhangimage/8fks.png" alt="">
+        
+                                </div>
+                                <div>
+                                    <input type="radio" class="choose_bank" name="bank">
+                                <img src="assets/Payment/image/thenganhangimage/9tkrjet.png" alt="">
+        
+                                </div>
+                                <div>
+                                    <input type="radio" class="choose_bank" name="bank">
+                                <img src="assets/Payment/image/thenganhangimage/10lgerl.png" alt="">
+        
+                                </div>
+                                <div>
+                                    <input type="radio" class="choose_bank" name="bank">
+                                <img src="assets/Payment/image/thenganhangimage/11ksd.webp" alt="">
+        
+                                </div>
+                                <div>
+                                    <input type="radio" class="choose_bank" name="bank">
+                                <img src="assets/Payment/image/thenganhangimage/12ure.png" alt="">
+                                </div>
+                                <div>
+                                    <input type="radio" class="choose_bank" name="bank">
+                                    <img src="assets/Payment/image/thenganhangimage/13flkje.png" alt="">
+                                </div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/14lgejte.png" alt=""></div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/15fljet.png" alt=""></div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/16lfkjre.png" alt=""></div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/17lfjdsk.png" alt=""></div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/18lfjldk.png" alt=""></div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/19lfjsdl.png" alt=""></div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/20lfkjdsj.png" alt=""></div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/21lfkjsld.png" alt=""></div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/22lfwfj.png" alt=""></div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/23lưl.png" alt=""></div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/24mb.png" alt=""></div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/25miraeasset.webp" alt=""></div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/26MSB.png" alt=""></div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/27pvcombank.png" alt=""></div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/28sacombank.png" alt=""></div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/29scb.webp" alt=""></div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/30shinhanbank.webp" alt=""></div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/31theimage.png" alt=""></div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/32theimage2.png" alt=""></div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/33trtjfd.png" alt=""></div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/34tuòi.png" alt=""></div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/35uob.png.webp" alt=""></div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/36vietbank.webp" alt=""></div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/37vrbank.png" alt=""></div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/38.webp" alt=""></div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/39h.png" alt=""></div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/40hjdk.png" alt=""></div>
+                                <div><input type="radio" class="choose_bank" name="bank"><img src="assets/Payment/image/thenganhangimage/41kdwf.png" alt=""></div>
+        
+                            </div>
+                            </div>
+                            <div id = "stk">
+                                <input type="text" placeholder="Nhập số tài khoản đã dùng để thanh toán" >
+                            </div>
+        
+                            <div class= "confirm">Xác Nhận Thanh Toán</div>
+        
+        
+        
+                        </div>
+                    </div>
+
+
+
                     <!-- .inner2left>input -->
                 </div>
                 <div class="inner2right">
@@ -158,7 +270,7 @@
                     </div>
                     <div class="khuyenmai">
                         <input type="text" placeholder="Mã khuyến mãi" class="code">
-                        <div>Xác nhận</div>
+                        <div >Xác nhận</div>
                     </div>
                 </div>
             </div>
@@ -170,5 +282,6 @@
 <script language="javascript" src="product.js"></script>
 <script language="javascript" src="assets/Payment/script/main.js"></script>
 <script language = "javascript" src="assets/Payment/script/display.js"></script>
+<script language = "javascript" src="assets/Payment/script/purchase.js"></script>
 </body>
 </html>
