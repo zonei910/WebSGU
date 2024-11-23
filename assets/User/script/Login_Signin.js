@@ -208,3 +208,118 @@ window.onload = function() {
         console.log("Tài khoản admin đã tồn tại:", admin);
     }
 }
+
+//==============tài khoản của tôii========================//
+function hienThiThongTin() {
+    let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    if (currentUser) {
+        document.getElementById("infoname").value = currentUser.name || "";
+        document.getElementById("infophone").value = currentUser.phone || "";
+        document.getElementById("infoaddress").value = currentUser.address || "";
+    } 
+    // else {
+    //     alert("Không tìm thấy thông tin tài khoản!");
+    // }
+}
+
+function changeInformation() {
+    let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    // if (!currentUser) {
+    //     alert("Bạn cần đăng nhập để cập nhật thông tin!");
+    //     return;
+    // }
+
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const index = users.findIndex(user => user.phone === currentUser.phone);
+
+    if (index === -1) {
+        alert("Không tìm thấy tài khoản trong danh sách người dùng!");
+        return;
+    }
+
+    // lay giá trị của các ô ng dùng nhập để chỉnh sửa
+    const newName = document.getElementById("infoname").value.trim();
+    const newAddress = document.getElementById("infoaddress").value.trim();
+
+    // cap nhap thong tin ngdung da thay doi
+    users[index].name = newName;
+    users[index].address = newAddress;
+
+    // Cập nhật lại trong localStorage
+    localStorage.setItem("users", JSON.stringify(users));
+    localStorage.setItem("currentUser", JSON.stringify(users[index]));
+
+    alert("Thông tin tài khoản đã được cập nhật!");
+}
+
+function changePassword() {
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    // if (!currentUser) {
+    //     alert("Bạn cần đăng nhập để đổi mật khẩu!");
+    //     return;
+    // }
+
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const index = users.findIndex(user => user.phone === currentUser.phone);
+
+
+    if (index === -1) {
+        alert("Không tìm thấy tài khoản trong danh sách người dùng!");
+        return;
+    }
+
+    const currentPassword = document.getElementById("password-cur-info").value.trim();
+    const newPassword = document.getElementById("password-after-info").value.trim();
+    const confirmPassword = document.getElementById("password-comfirm-info").value.trim();
+
+
+    if (currentPassword !== currentUser.password) {
+        document.querySelector(".password-cur-info-error").textContent = "Mật khẩu hiện tại không chính xác!";
+        return;
+    } else {
+        document.querySelector(".password-cur-info-error").textContent = "";
+    }
+
+    if (newPassword.length < 6) {
+        document.querySelector(".password-after-info-error").textContent = "Mật khẩu mới phải ít nhất 6 ký tự!";
+        return;
+    } else {
+        document.querySelector(".password-after-info-error").textContent = "";
+    }
+    if (newPassword !== confirmPassword) {
+        document.querySelector(".password-after-comfirm-error").textContent = "Mật khẩu xác nhận không khớp!";
+        return;
+    } else {
+        document.querySelector(".password-after-comfirm-error").textContent = "";
+    }
+
+     // Cập nhật mật khẩu
+    users[index].password = newPassword;
+    localStorage.setItem("users", JSON.stringify(users));
+    localStorage.setItem("currentUser", JSON.stringify(users[index]));
+
+    // làm mới ô điền mật khẩu
+    document.getElementById("password-cur-info").value = "";
+    document.getElementById("password-after-info").value = "";
+    document.getElementById("password-comfirm-info").value = "";
+}
+// Tự động hiển thị thông tin khi mở form thông tin tài khoản
+document.addEventListener("DOMContentLoaded", hienThiThongTin);
+
+//================sự kiện click vào tài khoản của tôi
+function chuyenFormThongTin() {
+    const accountContainer = document.querySelector(".container_account");
+    if (accountContainer) {
+        accountContainer.style.display = "block"; 
+    }
+
+    const slider = document.querySelector('.slider');
+    if (slider) {
+        slider.style.display = "none";
+    }
+
+    const container = document.querySelector('.container');
+    if (container) {
+        container.style.display = "none";
+    }
+}

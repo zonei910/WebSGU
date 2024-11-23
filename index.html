@@ -90,7 +90,7 @@
                                 <span class="navbar_user-name">Hi, Duy</span>
                                 <ul class="navbar_user-items">
                                     <li class="navbar_user-item">
-                                        <a href="">Tài khoản của tôi</a>
+                                        <a href="#" onclick="chuyenFormThongTin()">Tài khoản của tôi</a>
                                     </li>
                                     <li class="navbar_user-item">
                                         <a href="">Đơn mua</a>
@@ -354,11 +354,11 @@
                                             <label for="infophone" class="form-label">Số điện thoại</label>
                                             <input class="form-control" type="text" name="infophone" id="infophone" disabled="true" placeholder="">
                                         </div>
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <label for="infoemail" class="form-label">Email</label>
                                             <input class="form-control" type="email" name="infoemail" id="infoemail" placeholder="Thêm địa chỉ email của bạn">
                                             <span class="inforemail-error form-message"></span>
-                                        </div>
+                                        </div> -->
                                         <div class="form-group">
                                             <label for="infoaddress" class="form-label">Địa chỉ</label>
                                             <input class="form-control" type="text" name="infoaddress" id="infoaddress" placeholder="Thêm địa chỉ giao hàng của bạn">
@@ -503,11 +503,6 @@
             </div>
         </footer>
 
-        <!-- modal -->
-        <div class="modal">
-            
-        </div>
-
         <!-- detail product -->
         <div class="detail_product">
             <div class="overlay">
@@ -562,6 +557,7 @@
         </div>
     </div>
 
+    <!-- modal -->
     <div id="dang-nhap" style="display:none;">
         <form class="form-dang-nhap" onsubmit="dangnhap(event);">
             <div onclick="tatDangNhap()" class="nut-tat-dn">X</div>
