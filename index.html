@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="assets/User/style/reponsive.css">
     <link rel="stylesheet" href="assets/User/style/grid.css">
     <link rel="stylesheet" href="assets/User/style/login_signin.css">
+    <link rel="stylesheet" href="/assets/User/style/cart.css">
+    <link rel="stylesheet" href="./assets/User/style/payment.css">
 </head>
 <body>
     <!-- block element modifier -->
@@ -107,16 +109,17 @@
                             </div>
                             -->
                         <div class="navbar_cart-warp">
-                            <div class="navbar_cart">
+                            <div class="navbar_cart" onclick="hienthiGiohang()">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </div>
-                            <span class="navbar__cart-notice">0</span>
+                            <span id="cart-count">0</span>
+                            <!-- <span class="navbar__cart-notice">0</span> -->
                             <!-- nocart thì add navbar_cart-dropdown-nocart -->
-                            <div class="navbar_cart-dropdown navbar_cart-dropdown-nocart">
+                            <!-- <div class="navbar_cart-dropdown navbar_cart-dropdown-nocart">
                                 <img src="assets/User/img/download.png" alt="" class="no-cart">
                                 <span class="navbar_cart-dropdown-mess">
                                     Chưa có sản phẩm
-                                </span>
+                                </span> -->
                             </div>
                         </div>
                         <div class="navbar__menu"> 
@@ -613,7 +616,7 @@
                                         <option value="">Small</option>
                                     </select>
                                     <input type="number" value="1" id="product-quantity" min="1">
-                                    <button href="" class="btn">Thêm vào giỏ</button>
+                                    <button href="" id="add-to-cart" class="btn">Thêm vào giỏ</button>
                                     <h2>Mô tả</h2>
                                     <p id="product-description">Metal: 14K Gold</p>
                                     <!-- <p>Metal Color: Rose</p> -->
@@ -625,6 +628,80 @@
                 </div>
             </div>
             
+        </div>
+    </div>
+
+    <!-- giỏ hàng -->
+    <div id="giohang">
+        <div class="showcart">
+            <h2>Giỏ hàng</h2>
+            <i id="close-cart" onclick="closeCart()" class="fa-solid fa-xmark"></i>
+            <table class="cart-item">
+                <tr class="row-start">
+                    <th>Hình</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Số lượng</th>
+                    <th>Đơn giá</th>
+                    <th>Thành tiền</th>
+                    <th>Xoá</th>
+                </tr>
+                <tbody id="myCart">
+
+                </tbody>
+                
+                <!-- <tr class="row-end">
+                    <th colspan="4">Tổng đơn giá</th>
+                    <th>
+                        <div>Tiền không quan trọng</div>
+                    </th>
+                </tr> -->
+            </table>
+            
+            <button id="deleteAll" onclick="deleteAll()">Xóa tất cả</button>
+            <button id="thanhtoan" onclick="openPayment()">Thanh toán</button>
+            
+        </div>
+    </div>
+
+    <!--  thanh toán -->
+    <div id="payment">
+        <div id="paymentForm">
+            <h2>Thông tin thanh toán</h2>
+            <form id="paymentFormContent">
+                <label for="name">Họ tên:</label>
+                <input type="text" id="name" name="name" required><br>
+        
+                <label for="address">Địa chỉ:</label>
+                <input type="text" id="address" name="address" required><br>
+        
+                <label for="phone">Số điện thoại:</label>
+                <input type="text" id="phone" name="phone" required><br>
+        
+                <label for="paymentMethod">Phương thức thanh toán:</label>
+                <select id="paymentMethod" name="paymentMethod" required>
+                    <option value="cash">Thanh toán khi nhận hàng</option>
+                    <option value="online">Thanh toán trực tuyến</option>
+                </select><br>
+                <br>
+                <h2>Sản phẩm đã chọn</h2>
+                <br>
+                <table class="cart-item">
+                    <tr class="row-start">
+                        <th>Hình</th>
+                        <th>Tên sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th>Đơn giá</th>
+                        <th>Thành tiền</th>
+                    </tr>
+                    <tbody id="paying">
+    
+                    </tbody>
+                
+                </table>
+                
+                <button id="nutThanhToan" type="submit">Xác nhận thanh toán</button>
+                <button id="nutHuyTT" type="button" onclick="cancelPayment()">Hủy</button>
+            </form>
         </div>
     </div>
 
@@ -720,6 +797,7 @@ function chuyenFormDangNhap() {
     <script src="customer.js"></script>
     <script src="assets/User/script/main.js"></script>
     <script src="assets/User/script/Login_Signin.js"></script>
+    <script src="./assets/User/script/cart.js"></script>
     <!-- awesome font -->
     <script src="https://kit.fontawesome.com/097a4985d9.js" crossorigin="anonymous"></script>
 </body>
