@@ -1,3 +1,5 @@
+let customer;
+
 function moDangNhap() {
     document.getElementById("dang-nhap").style.display = "flex";
     document.getElementById("dang-ky").style.display = "none";
@@ -27,7 +29,7 @@ function dangky(event) {
     // lay cac gia tri tu input de kiem tra
     let phone = document.getElementById('register-phone').value.trim();
     let name = document.getElementById('name').value.trim();
-    let date = document.getElementById('dob').value.trim();
+    let email = document.getElementById('email').value.trim();
     let sex = document.getElementById('gender').value;
     let address = document.getElementById('address').value.trim();
     let password = document.getElementById('register-password').value.trim();
@@ -62,10 +64,11 @@ function dangky(event) {
     const user = {
         phone: phone,
         name: name, 
-        dob: date, 
+        email: email, 
         gender: sex, 
         address: address, 
-        password: password
+        password: password,
+        status: 0
     };
 
     Customer.push(user);
@@ -119,7 +122,6 @@ function dangnhap(event) {
             // Đóng form đăng nhập
             tatDangNhap();
             console.log("Chuyển hướng đến trang index...");
-            window.location.href = "index.html";
         } else {
         // Nếu không tìm thấy người dùng, báo lỗi
         alert("Mật khẩu không đúng");
@@ -128,6 +130,9 @@ function dangnhap(event) {
         alert("Số điện thoại không tồn tại");
     }
 }
+
+
+
 
 function dangxuat() {
     localStorage.removeItem("isLoggedIn");
@@ -182,6 +187,8 @@ window.onload = function() {
             tatDangNhap();
         }
     }
+
+   
 
     const admin = JSON.parse(localStorage.getItem('admin'));
     if (!admin) {
