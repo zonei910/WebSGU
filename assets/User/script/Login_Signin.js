@@ -1,3 +1,5 @@
+let customer;
+
 function moDangNhap() {
     document.getElementById("dang-nhap").style.display = "flex";
     document.getElementById("dang-ky").style.display = "none";
@@ -189,6 +191,8 @@ window.onload = function() {
             tatDangNhap();
         }
     }
+
+   
 
     const admin = JSON.parse(localStorage.getItem('admin'));
     if (!admin) {
