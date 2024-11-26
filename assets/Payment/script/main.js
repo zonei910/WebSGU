@@ -1,5 +1,5 @@
 
-
+let user = JSON.parse(localStorage.getItem("currentUser"));
 let display = document.querySelector("#Display");
 let form = document.querySelector("#Form");
 let purchase = document.querySelector("#Purchase");
@@ -126,5 +126,22 @@ let a = ``;
     showsanpham.innerHTML = a;
 
 }
+
+
+
+
+    let ten = document.querySelector("#name");
+    let email = document.querySelector("#email");
+    let phone = document.querySelector("#tele");
+    let address = document.querySelector("#address");
+    let gender = document.querySelector("#sex");
+
+    console.log(ten);
+
+    ten.value = user.name;
+    email.value = user.email;
+    phone.value = user.phone;
+    address.value = user.address;
+    gender.value = user.gender;
 
 
