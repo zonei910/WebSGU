@@ -467,3 +467,4 @@ let Product = [
 if(JSON.parse(localStorage.getItem("products")) == null){
     localStorage.setItem("products", JSON.stringify(Product));
 }
+
