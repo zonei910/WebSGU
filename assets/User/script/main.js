@@ -381,7 +381,7 @@ menuButton.addEventListener('click', () => {
 //==========================================================================================================================================================================
 
 
-dăidjwadklw
+
 
 // Hàm để hiển thị thông tin chi tiết sản phẩm khi click vào sản phẩm
 function showProductDetail(productId) {
