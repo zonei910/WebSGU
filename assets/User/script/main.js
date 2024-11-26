@@ -474,17 +474,17 @@ function addClickEventToProducts() {
 // console.log(document.querySelectorAll('.grid__column3'));
 
 // Chuyển mảng sản phẩm thành JSON và lưu vào localStorage
-localStorage.setItem('products', JSON.stringify(Product));
-// Lấy mảng sản phẩm từ localStorage và chuyển lại thành mảng
-const savedProducts = JSON.parse(localStorage.getItem('products'));
+// localStorage.setItem('products', JSON.stringify(Product));
+// // Lấy mảng sản phẩm từ localStorage và chuyển lại thành mảng
+// const savedProducts = JSON.parse(localStorage.getItem('products'));
 
-if (savedProducts) {
-    // Nếu dữ liệu có sẵn trong localStorage, sử dụng nó
-    Product = savedProducts;
-} else {
-    // Nếu không có dữ liệu, bạn có thể sử dụng mảng sản phẩm mặc định hoặc gọi API để lấy dữ liệu
-    Product = []; // hoặc gọi API
-}
+// if (savedProducts) {
+//     // Nếu dữ liệu có sẵn trong localStorage, sử dụng nó
+//     Product = savedProducts;
+// } else {
+//     // Nếu không có dữ liệu, bạn có thể sử dụng mảng sản phẩm mặc định hoặc gọi API để lấy dữ liệu
+//     Product = []; // hoặc gọi API
+// }
 
 
 

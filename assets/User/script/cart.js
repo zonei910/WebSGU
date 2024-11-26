@@ -163,3 +163,6 @@ document.addEventListener("DOMContentLoaded", function() {
     showcountsp(); 
     showMyCart();
 });
+
+
+//Mù quáng khi yêu
