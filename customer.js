@@ -54,3 +54,5 @@ let Customer = [
     },
 
 ];
+
+localStorage.setItem("users", JSON.stringify(Customer));

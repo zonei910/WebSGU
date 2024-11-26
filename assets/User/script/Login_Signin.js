@@ -119,7 +119,6 @@ function dangnhap(event) {
             // Đóng form đăng nhập
             tatDangNhap();
             console.log("Chuyển hướng đến trang index...");
-            window.location.href = "index.html";
         } else {
         // Nếu không tìm thấy người dùng, báo lỗi
         alert("Mật khẩu không đúng");
