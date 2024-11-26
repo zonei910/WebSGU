@@ -1,5 +1,5 @@
 
-
+let user = JSON.parse(localStorage.getItem("currentUser"));
 let display = document.querySelector("#Display");
 let form = document.querySelector("#Form");
 let purchase = document.querySelector("#Purchase");
@@ -12,7 +12,7 @@ function showSanPham(){
     form.style.display = "none"; 
     display.style.display = "block";
     purchase.style.display = "none";
-    
+    let Product = JSON.parse(localStorage.getItem("products"));
     let sosanphammoitrang = 3;
     let tongsotrang = Math.ceil(Product.length/sosanphammoitrang);
     let sotranghientai = 1;
@@ -66,7 +66,6 @@ function showSanPham(){
     if(tongsotrang != 1) 
      shownut.innerHTML = butt;
     else shownut.innerHTML = "";
-
 }
 
 
@@ -87,10 +86,10 @@ function showMethodPurchase(){
 
 
 function nuttrang(trang){
+    let Product = JSON.parse(localStorage.getItem("products"));
     let sosanphammoitrang = 3;
     let tongsotrang = Math.ceil(Product.length/sosanphammoitrang);
     let vitrihientai = (trang.getAttribute("name")-1)  * sosanphammoitrang;
-
 
 let n =0 ;
 let a = ``;
@@ -127,5 +126,22 @@ let a = ``;
     showsanpham.innerHTML = a;
 
 }
+
+
+
+
+    let ten = document.querySelector("#name");
+    let email = document.querySelector("#email");
+    let phone = document.querySelector("#tele");
+    let address = document.querySelector("#address");
+    let gender = document.querySelector("#sex");
+
+    console.log(ten);
+
+    ten.value = user.name;
+    email.value = user.email;
+    phone.value = user.phone;
+    address.value = user.address;
+    gender.value = user.gender;
 
 

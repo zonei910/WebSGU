@@ -1,360 +1,265 @@
-var Merchandise_addbtn = document.querySelector("#Display .merchandise .button1");
-var Merchandise_additem = document.querySelector("#Display .merchandise .add");
-Merchandise_additem.style.display = "none";
+function stripHtml(html) {
+    const temporaryElement = document.createElement('div');
+    temporaryElement.innerHTML = html;
+    return temporaryElement.textContent || temporaryElement.innerText || "";
+}
 
+document.addEventListener("DOMContentLoaded", () => {
+    const rowsPerPage = 5; // Number of rows to show per page
+    let currentPage = 1;
+    let products = [];
+    let editingItemIndex = null;
 
-Merchandise_addbtn.addEventListener("click" ,()=>{
-    Merchandise_additem.style.display = "block";
-    var offbtn = document.querySelector("#Display .merchandise .add-form .head i");
-    var addbtn = document.querySelector("#Display .merchandise .add-form .btn-add");
-    var resetbtn = document.querySelector("#Display .merchandise .add-form .btn-reset");
-    var upload = document.querySelector("#Display .merchandise .add-form .upload input");
-    var name = document.querySelector("#Display .merchandise .add-form .name input");
-    var price = document.querySelector("#Display .merchandise .add-form .price input");
-    var quantify = document.querySelector("#Display .merchandise .add-form .quanity input");
-    var description =  document.querySelector("#Display .merchandise .add-form .description textarea");
-    var category = document.querySelector("#Display .merchandise .add-form .category select");
+    // Load JSON data from `data.json`
+    function loadData() {
+        try {
+            // Embedded JSON data
+            products = JSON.parse(localStorage.getItem("products"));
+            filteredProducts=null;
+            displayPaginationButtons();
+            displayPage(currentPage);
+        } catch (error) {
+            console.error("Error loading data:", error);
+        }
+    }
+    // Function to display the product data for a specific page
+    function displayPage(page) {
+        const mainContent = document.getElementById("main-content");
+        mainContent.innerHTML = ""; // Clear existing rows
 
-    offbtn.onclick = ()=>{
-        Merchandise_additem.style.display = "none";
-        upload.value = "";
-        name.value = "";
-        price.value = "";
-        quantify.value = "";
-        description.value = "";
-        category.value = "none";
+        // Use filteredProducts if it's set, otherwise use the original products array
+        const dataToDisplay = filteredProducts || products;
+
+        // Calculate the start and end indices for the rows on the current page
+        const startIndex = (page - 1) * rowsPerPage;
+        const endIndex = Math.min(startIndex + rowsPerPage, dataToDisplay.length);
+
+        // Generate the rows for the current page
+        for (let i = startIndex; i < endIndex; i++) {
+            const product = dataToDisplay[i];
+            const productDiv = document.createElement("div");
+            productDiv.classList.add("table");
+            productDiv.innerHTML = `
+                <img src="${product.images[0]}" width="20%">
+                <div class="product-info">
+                    <span>ID: ${product.id}</span>
+                    <span>Name: ${product.name}</span>
+                    <span>Category: ${product.category}</span>
+                    <span>Price: ${product.price}</span>
+                    <span>Description: ${stripHtml(product.description)}</span>
+                </div>
+                <div class="button-group">
+                    <button class="edit-buttons1" onclick="openEditBlock(${i})"><i class="fa-regular fa-pen-to-square"></i></button>
+                    <button class="edit-buttons2" onclick="confirmDelete(${i})"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            `;
+            mainContent.appendChild(productDiv);
+        }
+
+        updateActiveButton(page);
+    }
+
+    // Function to handle search functionality
+    function searchProducts() {
+        const searchInput = document.getElementById("searchInput").value.toLowerCase();
+        const searchFilter = document.getElementById("searchFilter").value;
+
+        // Filter products based on the search criteria
+        filteredProducts = products.filter(product => {
+            const value = product[searchFilter].toString().toLowerCase();
+            return value.includes(searchInput);
+        });
+
+        // Update pagination and display the first page of filtered results
+        currentPage = 1;
+        displayPaginationButtons(filteredProducts);
+        displayPage(currentPage);
     }
     
-    resetbtn.onclick = ()=>{
-        upload.value = "";
-        name.value = "";
-        price.value = "";
-        quantify.value = "";
-        description.value = "";
-        category.value = "none";
+    // Function to display filtered results
+    function displayFilteredResults(filteredProducts) {
+        const mainContent = document.getElementById("main-content");
+        mainContent.innerHTML = ""; // Clear existing rows
+
+        filteredProducts.forEach((product, index) => {
+            const productDiv = document.createElement("div");
+            productDiv.classList.add("table");
+            productDiv.innerHTML = `
+                <img src="${product.images[0]}" width="20%">
+                <div class="product-info">
+                    <span>ID: ${product.id}</span>
+                    <span>Name: ${product.name}</span>
+                    <span>Category: ${product.category}</span>
+                    <span>Price: ${product.price}</span>
+                    <span>Description: ${product.description}</span>
+                </div>
+                <div class="button-group">
+                    <button class="edit-buttons1" onclick="openEditBlock(${i})"><i class="fa-regular fa-pen-to-square"></i></button>
+                    <button class="edit-buttons2" onclick="confirmDelete(${i})"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            `;
+            mainContent.appendChild(productDiv);
+        });
     }
 
-    addbtn.onclick = ()=>{
-        if(upload.value == ""){
-            alert("Vui lòng thêm ảnh");
-            upload.focus();
+    // Function to display pagination buttons
+    function displayPaginationButtons(data = null) {
+        const buttonGroup = document.querySelector("#Display .merchandise .pagination-buttons");
+        buttonGroup.innerHTML = ""; // Clear existing buttons
+
+        // Use the provided data (filtered or original) to calculate total pages
+        const dataToPaginate = data || (filteredProducts || products);
+        const totalPages = Math.ceil(dataToPaginate.length / rowsPerPage);
+
+        // Create Previous button
+        const prevButton = document.createElement("button");
+        prevButton.classList.add("prev-page");
+        prevButton.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
+        prevButton.addEventListener("click", () => {
+            if (currentPage > 1) {
+                currentPage--;
+                displayPage(currentPage);
+            }
+        });
+        buttonGroup.appendChild(prevButton);
+
+        // Create page number buttons
+        for (let i = 1; i <= totalPages; i++) {
+            const pageButton = document.createElement("button");
+            pageButton.classList.add("page-button");
+            pageButton.textContent = i;
+            pageButton.addEventListener("click", () => {
+                currentPage = i;
+                displayPage(currentPage);
+            });
+            buttonGroup.appendChild(pageButton);
         }
-        if(name.value == ""){
-            alert("Vui lòng thêm tên");
-            name.focus();
-        }
-        if(price.value == ""){
-            alert("Vui lòng thêm giá tiền");
-            price.focus();
-    }else{
-        var checkprice = parseInt(price.value);
-        if(checkprice != price.value){
-            alert("Vui lòng nhập giá tiền là số VD: 150.000 thì nhập 150000");
-            price.focus();
-        }
+
+        // Create Next button
+        const nextButton = document.createElement("button");
+        nextButton.classList.add("next-page");
+        nextButton.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
+        nextButton.addEventListener("click", () => {
+            if (currentPage < totalPages) {
+                currentPage++;
+                displayPage(currentPage);
+            }
+        });
+        buttonGroup.appendChild(nextButton);
     }
-        if(category.value == "none"){
-            alert("Vui lòng chọn loại hàng");
-            category.focus();
+    loadData();
+
+    // Function to toggle search block visibility
+    document.getElementById("searchButton").addEventListener("click", () => {
+        const searchBlock = document.getElementById("searchBlock");
+        searchBlock.style.display = searchBlock.style.display === "none" ? "block" : "none";
+    });
+
+    // Trigger search when the search button is clicked
+    document.getElementById("searchSubmitButton").addEventListener("click", searchProducts);
+
+    // Function to open the Edit block (for editing or adding an item)
+    window.openEditBlock = function(index = null) {
+        editingItemIndex = index;
+        const editBlock = document.querySelector('#Display .merchandise .DisplayEditItemBlock');
+        editBlock.style.display = 'flex';
+
+        if (index !== null) {
+            // Pre-fill form for editing
+            const product = products[index];
+            document.getElementById('idInput').value = product.id;
+            document.getElementById('nameInput').value = product.name;
+            document.getElementById('categoryInput').value = product.category;
+            document.getElementById('priceInput').value = product.price; // Use lowercase 'price'
+            document.getElementById('descInput').value = stripHtml(product.description); // Use lowercase 'description'
+            document.getElementById('uploadedImage').src = product.images[0];
+            document.getElementById('uploadedImage').style.display = 'block';
+            document.getElementById('uploadText').style.display = 'none';
+        } else {
+            // Clear form for adding a new item
+            document.getElementById('itemForm').reset();
+            document.getElementById('uploadedImage').style.display = 'none';
+            document.getElementById('uploadText').style.display = 'block';
+        }
+    };
+
+    // Function to close the Edit block
+    window.closeEditBlock = function() {
+        document.querySelector('#Display .merchandise .DisplayEditItemBlock').style.display = 'none';
+    };
+
+    // Function to validate and update/add the item
+    window.updateItem = function() {
+        const id = document.getElementById('idInput').value.trim();
+        const name = document.getElementById('nameInput').value.trim();
+        const category = document.getElementById('categoryInput').value.trim();
+        const price = document.getElementById('priceInput').value.trim();
+        const desc = document.getElementById('descInput').value.trim();
+        const imageUploaded = document.getElementById('uploadedImage').src !== '';
+
+        if (!id || !name || !category || !price || !desc || !imageUploaded) {
+            alert('Please fill in all fields and upload an image.');
+            return false;
         }
 
-        if(quantify.value == ""){
-            alert("Vui lòng thêm số lượng hiện có");
-            quantify.focus();
+        if (editingItemIndex !== null) {
+            // Update existing item
+            products[editingItemIndex] = {
+                id,
+                name,
+                category,
+                price, // Use lowercase 'price'
+                description: desc, // Use lowercase 'description'
+                images: [document.getElementById('uploadedImage').src]
+            };
+            localStorage.setItem("products", JSON.stringify(products));
+            displayPage(1);
+            alert('Item updated successfully!');
+        } else {
+            // Add a new item
+            products.push({
+                id,
+                name,
+                category,
+                price, // Use lowercase 'price'
+                description: desc, // Use lowercase 'description'
+                images: [document.getElementById('uploadedImage').src]
+            });
+            localStorage.setItem("products", JSON.stringify(products));
+            alert('Item added successfully!');
+            displayPage(1);
         }
 
+        displayPage(currentPage);
+        closeEditBlock();
+    };
+    loadData();
+    // Function to confirm deletion of a product
+    window.confirmDelete = function(index) {
+        const confirmation = confirm("Are you sure that you want to delete this?");
+        if (confirmation) {
+            products.splice(index, 1); // Remove the product from the array
+            localStorage.setItem("products", JSON.stringify(products));
+            displayPage(1);  // Refresh the page after deletion
+            displayPaginationButtons(); // Update pagination if needed
+        }
+    };
 
-        /*Tìm kiếm trong đám mảng sản phẩm rồi ném ra */
-
-
-}
+    // Load initial data and set up pagination
+    loadData();
 });
 
-
-
-function showSanPham(){
-    let sosanphammoitrang = 3;
-    let tongsotrang = Math.ceil(Product.length/sosanphammoitrang);
-    let sotranghientai = 1;
-    let vitrihientai = (sotranghientai -1)  * sosanphammoitrang;
-
-
-    let butt = ``;
-    for(let i = 1 ; i<=tongsotrang;i++)
-        butt += `
-        <div class="page-button" onclick="nuttrang(this)" name="${i}">${i}</div>
-    `;
-
-
-    let n = 0;
-    let a = ``;
-    for(let i = vitrihientai     ; i < Product.length;i++){
-        n++;
-     
-
-        a += `
-        <div class="table">
-                    <img src="${Product[i].images[0]}" width="20%">
-                    <div class="product-info">
-                        <div>ID: ${Product[i].id}</div>
-                        <div>Tên: ${Product[i].name}</div>
-                        <div>Loại: ${Product[i].category}</div>
-                        <div>Price: ${Product[i].price}</div>
-                        <div>Quantity: 10</div>
-                        <div>${Product[i].description}</div>
-                    </div>
-                    <div class="button-group">
-                        <button class="edit-buttons1" name="edit-${Product[i].id}"><i class="fa-regular fa-pen-to-square"></i></button>
-                        <button class="edit-buttons2" name="delete-${Product[i].id}"><i class="fa-solid fa-trash"></i></button>
-                    </div>
-                </div>
-
-        `
-        if(n == sosanphammoitrang) break; 
+// Event listener for the image file input
+document.getElementById('imageInput').addEventListener('change', function () {
+    const file = this.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            document.getElementById('uploadedImage').src = e.target.result;
+            document.getElementById('uploadedImage').style.display = 'block';
+            document.getElementById('uploadText').style.display = 'none';
+        };
+        reader.readAsDataURL(file);
     }
+});
 
-
-    let showsanpham = document.querySelector("#Display .merchandise #main-content");
-    showsanpham.innerHTML = a;
-    if(tongsotrang == 1) return 0;
-    let shownut = document.querySelector("#Display .merchandise .pagination-buttons");
-    if(tongsotrang != 1) 
-     shownut.innerHTML = butt;
-    else shownut.innerHTML = "";
-
-}
-
-
-function nuttrang(trang){
-    let sosanphammoitrang = 3;
-    let tongsotrang = Math.ceil(Product.length/sosanphammoitrang);
-    let vitrihientai = (trang.getAttribute("name")-1)  * sosanphammoitrang;
-
-
-let n =0 ;
-let a = ``;
-    for(let i = vitrihientai     ; i <Product.length;i++){
-        a += `
-          <div class="table">
-                    <img src="${Product[i].images[0]}" width="20%">
-                    <div class="product-info">
-                        <div>ID: ${Product[i].id}</div>
-                        <div>Tên: ${Product[i].name}</div>
-                        <div>Loại: ${Product[i].category}</div>
-                        <div>Price: ${Product[i].price}</div>
-                        <div>Quantity: 10</div>
-                        <div>${Product[i].description}</div>
-                    </div>
-                    <div class="button-group">
-                        <button class="edit-buttons1" name="edit-${Product[i].id}"><i class="fa-regular fa-pen-to-square"></i></button>
-                        <button class="edit-buttons2" name="delete-${Product[i].id}"><i class="fa-solid fa-trash"></i></button>
-                    </div>
-                </div>
-
-        
-        `
-        n++;
-        if(n == sosanphammoitrang) break; 
-    }
-    let showsanpham = document.querySelector("#Display .merchandise #main-content");
-    showsanpham.innerHTML = a;
-
-}
-
-
-function showFind(){
-    let a = document.querySelector("#Display .merchandise .find .inner");
-    if(a.classList.contains("hide")){
-        console.log("Hello")
-        a.classList.remove("hide");
-        a.classList.add("show");
-    }else{
-        a.classList.remove("show");
-        a.classList.add("hide");
-    }
-
-}
-
-
-
-let filterarr = [];
-
-function find(){
-    filterarr = [];
- 
-let a = document.querySelectorAll("#Display .merchandise .find .choose");
-
-for(let i=0;i<4 ; i++){
-    if(a[i].checked == true){
-        for(let j = 0 ; j < Product.length ; j++){
-            if(Product[j].category == a[i].value){
-                filterarr.push(Product[j]);
-            }
-        }
-    }
-    }
-
-for(let i = 4 ; i < 8 ; i++){
-    if(a[i].checked == true){
-        for(let j = 0 ; j < Product.length ; j++){
-            let co = 0;
-
-            if(i == 4){
-                if(Product[j].price < 500000 ){
-                    for(let k = 0 ; k < filterarr.length ; k++){
-                        if(Product[j].id == filterarr[k].id ) co = 1;
-                    }
-                if(co == 0) filterarr.push(Product[j]);
-                }
-            }
-        
-            if(i == 5){
-                if(Product[j].price  >= 500000 && Product[j].price<=1000000 ){
-                    for(let k = 0 ; k < filterarr.length ; k++){
-                        if(Product[j].id == filterarr[k].id ) co = 1;
-                    }
-                if(co == 0) filterarr.push(Product[j]);
-                }
-            }
-
-            if(i == 6){
-                if(Product[j].price  >= 2000000 && Product[j].price<=5000000 ){
-                    for(let k = 0 ; k < filterarr.length ; k++){
-                        if(Product[j].id == filterarr[k].id ) co = 1;
-                    }
-                if(co == 0) filterarr.push(Product[j]);
-                }
-            }
-
-            if(i == 7){
-                if(Product[j].price  > 5000000 ){
-                    for(let k = 0 ; k < filterarr.length ; k++){
-                        if(Product[j].id == filterarr[k].id ) co = 1;
-                    }
-                if(co == 0) filterarr.push(Product[j]);
-                }
-            }
-
-        }
-    }
-}    
-
-
-   let find = document.querySelector("#Display .merchandise .find_input");
-    let result = find.value.trim().toUpperCase();
-    
-    if(result != ""){
-    for(let i = 0 ; i < Product.length ; i++){
-        let co = 0;
-        let name = Product[i].name.toUpperCase();
-
-        if(name.includes(result)){
-            for(let j = 0 ; j <filterarr.length;j++){
-                if(Product[i].id == filterarr[j].id) co = 1;
-            }
-            if(co == 0) filterarr.push(Product[i]);
-        }
-          
-    }
-    }
-    console.log(filterarr);
-
-    if(filterarr.length == 0){
-        alert("Không tìm thấy sản phẩm cần tìm");
-       
-        find.focus();
-        find.onfocus = ()=> {
-            find.select();
-        }
-        return showSanPham();
-    }
-
-
-    let sotranghientai = 1;
-    let sosanphammoitrang = 3;
-    let tongsotrang = Math.ceil(filterarr.length / sosanphammoitrang);
-    let vitrihientai = (sotranghientai - 1) * sosanphammoitrang;
-
-    let butt = ``;
-    for(let i = 1 ; i<=tongsotrang;i++)
-        butt += `
-         <div class="page-button" onclick="nuttrang_filter(this)" name="${i}">${i}</div>
-    `;
-
-
-    let temp = ``;
-    let n = 0;
-    for(let i = 0 ; i < filterarr.length ; i++ ){
-        n++;
-        temp += `
-           <div class="table">
-                    <img src="${Product[i].images[0]}" width="20%">
-                    <div class="product-info">
-                        <div>ID: ${Product[i].id}</div>
-                        <div>Tên: ${Product[i].name}</div>
-                        <div>Loại: ${Product[i].category}</div>
-                        <div>Price: ${Product[i].price}</div>
-                        <div>Quantity: 10</div>
-                        <div>${Product[i].description}</div>
-                    </div>
-                    <div class="button-group">
-                        <button class="edit-buttons1" name="edit-${Product[i].id}"><i class="fa-regular fa-pen-to-square"></i></button>
-                        <button class="edit-buttons2" name="delete-${Product[i].id}"><i class="fa-solid fa-trash"></i></button>
-                    </div>
-            </div>
-
-            `;
-        if(n == sosanphammoitrang)  break;
-    }
-
-
-    let showsanpham = document.querySelector("#Display .merchandise #main-content");
-    showsanpham.innerHTML = temp;
-
-
-    if(tongsotrang == 1) return 0;
-    let shownut = document.querySelector("#Display .merchandise .pagination-buttons");
-    if(tongsotrang != 1) 
-     shownut.innerHTML = butt;
-    else shownut.innerHTML = "";
-
-  
-
-}
-
-
-
-function nuttrang_filter(trang){
-    let sosanphammoitrang = 3;
-    let tongsotrang = Math.ceil(filterarr.length/sosanphammoitrang);
-    let vitrihientai = (trang.getAttribute("name")-1)  * sosanphammoitrang;
-
-
-let n = 0 ;
-let a = ``;
-    for(let i = vitrihientai  ; i < filterarr.length;i++){
-        n++;
-        a += `
-          <div class="table">
-                    <img src="${Product[i].images[0]}" width="20%">
-                    <div class="product-info">
-                        <div>ID: ${Product[i].id}</div>
-                        <div>Tên: ${Product[i].name}</div>
-                        <div>Loại: ${Product[i].category}</div>
-                        <div>Price: ${Product[i].price}</div>
-                        <div>Quantity: 10</div>
-                        <div>${Product[i].description}</div>
-                    </div>
-                    <div class="button-group">
-                        <button class="edit-buttons1" name="edit-${Product[i].id}"><i class="fa-regular fa-pen-to-square"></i></button>
-                        <button class="edit-buttons2" name="delete-${Product[i].id}"><i class="fa-solid fa-trash"></i></button>
-                    </div>
-                </div>
-            </div>
-        `
-     
-        if(n == sosanphammoitrang) break; 
-    }
-    let showsanpham = document.querySelector("#Display .merchandise #main-content");
-    showsanpham.innerHTML = a;
-}

@@ -10,7 +10,7 @@
 // })
 
 // ==============detail products ==================
-const Product = [
+let Product = [
     {
         id: 1,
         name: "Đồng Hồ Vàng Sang Trọng",
@@ -462,4 +462,9 @@ const Product = [
         ]
     },
 ];
+
+
+if(JSON.parse(localStorage.getItem("products")) == null){
+    localStorage.setItem("products", JSON.stringify(Product));
+}
 
