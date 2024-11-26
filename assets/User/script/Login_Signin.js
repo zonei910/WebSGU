@@ -28,10 +28,10 @@ function dangky(event) {
     event.preventDefault();
     // lay cac gia tri tu input de kiem tra
     let phone = document.getElementById('register-phone').value.trim();
-    let name = document.getElementById('name').value.trim();
-    let email = document.getElementById('email').value.trim();
-    let sex = document.getElementById('gender').value;
-    let address = document.getElementById('address').value.trim();
+    let name = document.getElementById('register-name').value.trim();
+    let email = document.getElementById('register-email').value.trim();
+    let sex = document.getElementById('register-gender').value;
+    let address = document.getElementById('register-address').value.trim();
     let password = document.getElementById('register-password').value.trim();
     let confirmpassword = document.getElementById('register-confirm-password').value.trim();
 
@@ -122,6 +122,7 @@ function dangnhap(event) {
             // Đóng form đăng nhập
             tatDangNhap();
             console.log("Chuyển hướng đến trang index...");
+            window.location.href = "index.html";
         } else {
         // Nếu không tìm thấy người dùng, báo lỗi
         alert("Mật khẩu không đúng");

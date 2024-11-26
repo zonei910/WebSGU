@@ -124,8 +124,8 @@ function closeCart(){
 // Mở phần thanh toán
 function openPayment() {
     window.location.href="payment.html";
-    document.getElementById("giohang").style.display = 'none'; 
-    document.getElementById("payment").style.display = 'block'; 
+    // document.getElementById("giohang").style.display = 'none'; 
+    // document.getElementById("payment").style.display = 'block'; 
     // Hiển thị sản phẩm đã chọn trong form thanh toán
     showThanhToan(); 
 }

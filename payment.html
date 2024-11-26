@@ -106,15 +106,16 @@
                     <div  id = "Form">
                         <div style="color:black; opacity: 1">Thông tin Khách Hàng</div>
                         <div><label for="name">Họ tên</label> <br><input type="text" id="name" name="name"></div>
+                        <div><label for="email">Email</label><br> <input type="email" id="email" name="email"></div>
+                        <div><label for="tele">Điện thoại</label><br> <input type="tel" id="tele" name="tele" readonly></div>
                         <div><label for="sex">Giới tính</label> <br>
                             <select id="sex" name="sex">
-                                <option value="">Nam</option>
-                                <option value="">Nữ</option>
+                                <option value="nam">Nam</option>
+                                <option value="nu">Nữ</option>
                             </select>
                         </div>
-                        <div><label for="tele">Điện thoại</label><br> <input type="tel" id="tele" name="tele" readonly placeholder="123456"></div>
                         <div><label for="address"> Địa chỉ</label> <br><input type="text" id="address" name="address"></div>
-                        <div><label for="email">Email</label><br> <input type="email" id="email" name="email"></div>
+                       
                         <input type="submit" value="Đặt hàng" class="sub-button" onclick="showMethodPurchase()"> 
                     </div>
                     
@@ -281,8 +282,11 @@
 
 
 
+<<<<<<< HEAD
 <script language="javascript" src="product.js"></script>
 <script src="user.js"></script>
+=======
+>>>>>>> f7e810f39ac026bab5b3cc364f3f3f1e5c76079e
 <script language="javascript" src="assets/Payment/script/main.js"></script>
 <script language = "javascript" src="assets/Payment/script/display.js"></script>
 <script language = "javascript" src="assets/Payment/script/purchase.js"></script>
