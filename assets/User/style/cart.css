@@ -1,0 +1,84 @@
+:root{
+    --xamdam: rgb(180, 179, 179);
+
+}
+
+th{
+    padding:10px;
+}
+
+.navbar_cart-warp {
+    position: relative;
+}
+
+#giohang{
+    position: fixed;
+    top:0;right:0;bottom:0;left:0;
+    display: none;
+}
+#close-cart{
+    position: absolute;
+    top:7px;
+    right:7px;
+    padding:7px;
+    font-size: larger;
+}
+#close-cart:hover{
+    color: red;
+}
+
+.showcart{
+    position: absolute;
+    top:130px;
+    right:50px;
+    min-width: 300px;
+    border:solid 1px black;
+    background-color: var(--xam);
+    padding:10px;
+    padding-bottom: 40px;
+    border-radius: 5px;
+
+}
+.showcart >h2{
+    margin-left: 40%;
+}
+
+.cart-item-img{
+    width:80px;
+    height:auto;
+}
+
+.row-start{
+    background-color: var(--xamdam);
+}
+.row-end{
+    background-color: var(--xamdam);
+
+}
+
+#cart-count{
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    padding: 1px 6px;
+    color: var(--xanhnhat);
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    border-radius: 10px;
+    border: 2px solid var(--xanhnhat);
+    background-color: var(--white);
+}
+
+#deleteAll{
+    padding:5px;
+    position: absolute;
+    right:52%;
+    bottom:10px;
+    
+}
+#thanhtoan{
+    padding:5px;
+    position:absolute;
+    left:52%;
+    bottom:10px;
+}

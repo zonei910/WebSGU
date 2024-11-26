@@ -580,7 +580,7 @@
 }
 
 .current{
-    color: var(--xanh);
+    color: var(--xanhdam);
 }
 
 /* ===============footer=========== */
@@ -935,4 +935,119 @@
     padding: 10px 15px;
     cursor: pointer;
     border-radius: 5px;
+}
+/*========== payment history========== */
+.order-history-group {
+    border: 1px solid #e5e5e5;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.order-history {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.order-history-left {
+    display: flex;
+}
+
+.order-history-left img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 14px;
+    border-radius: 5px;
+}
+
+.order-history-info h4 {
+    font-weight: 500;
+    color: var(--text);
+    font-size: 16px;
+}
+
+.order-history-info p {
+    margin-top: 7px;
+}
+
+.order-history-price {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.order-history-current-price {
+    color: #90cdde;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.order-history-control {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-history-status-sp {
+    background-color: #eee;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 14px;
+    color: var(--text);
+    text-transform: uppercase;
+    position: relative;
+}
+
+.order-history-status-sp.no-complete {
+    background-color: #09549f;
+    color: var(--white);
+    padding-left: 35px;
+}
+
+#order-history-detail {
+    outline: none;
+    border: none;
+    cursor: pointer;    
+    background-color: #e5e5e5;
+    color: var(--text);
+}
+
+.order-history-status-sp.no-complete::before {
+    content: "\f110";
+    font-family: "Font Awesome 6 Pro";
+    position: absolute;
+    color: white;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: spin 1.5s linear infinite;
+    border-radius: 50%; /* Tạo hình tròn */
+    background: radial-gradient(circle, white 25%, transparent 26%); /* Tạo đốm chấm */
+    mask: repeating-radial-gradient(circle, black 0, black 20%, transparent 21%, transparent 40%);
+    -webkit-mask: repeating-radial-gradient(circle, black 0, black 20%, transparent 21%, transparent 40%);
+}
+
+#order-history-detail, .order-history-status-sp {
+    background-color: #eee;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 14px;
+    color: var(--text-color);
+    text-transform: uppercase;
+    position: relative;
+}
+
+.order-history-total-desc {
+    font-size: 15px;
+    margin-right: 15px;
+}
+
+.order-history-toltal-price {
+    color: #90cdde;
+    font-size: 22px;
+    font-weight: 500;
 }
