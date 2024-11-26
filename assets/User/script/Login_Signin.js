@@ -127,7 +127,14 @@ function dangnhap(event) {
     } else {
         alert("Số điện thoại không tồn tại");
     }
+
+
+   
+
 }
+
+
+
 
 function dangxuat() {
     localStorage.removeItem("isLoggedIn");
