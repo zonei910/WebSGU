@@ -558,7 +558,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to display pagination buttons
     function displayPaginationButtons(data = null) {
-        const buttonGroup = document.querySelector(".pagination-buttons");
+        const buttonGroup = document.querySelector("#Display .merchandise .pagination-buttons");
         buttonGroup.innerHTML = ""; // Clear existing buttons
 
         // Use the provided data (filtered or original) to calculate total pages
@@ -615,7 +615,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Function to open the Edit block (for editing or adding an item)
     window.openEditBlock = function(index = null) {
         editingItemIndex = index;
-        const editBlock = document.querySelector('.DisplayEditItemBlock');
+        const editBlock = document.querySelector('#Display .merchandise .DisplayEditItemBlock');
         editBlock.style.display = 'flex';
 
         if (index !== null) {
@@ -639,7 +639,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to close the Edit block
     window.closeEditBlock = function() {
-        document.querySelector('.DisplayEditItemBlock').style.display = 'none';
+        document.querySelector('#Display .merchandise .DisplayEditItemBlock').style.display = 'none';
     };
 
     // Function to validate and update/add the item
