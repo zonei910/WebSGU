@@ -27,7 +27,7 @@ function dangky(event) {
     // lay cac gia tri tu input de kiem tra
     let phone = document.getElementById('register-phone').value.trim();
     let name = document.getElementById('name').value.trim();
-    let date = document.getElementById('dob').value.trim();
+    let email = document.getElementById('email').value.trim();
     let sex = document.getElementById('gender').value;
     let address = document.getElementById('address').value.trim();
     let password = document.getElementById('register-password').value.trim();
@@ -62,10 +62,11 @@ function dangky(event) {
     const user = {
         phone: phone,
         name: name, 
-        dob: date, 
+        email: email, 
         gender: sex, 
         address: address, 
-        password: password
+        password: password,
+        status: 0
     };
 
     Customer.push(user);
