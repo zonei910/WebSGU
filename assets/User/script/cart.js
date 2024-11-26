@@ -121,6 +121,10 @@ function closeCart(){
     document.getElementById("giohang").style.display='none';
 }
 
+
+
+
+
 // Mở phần thanh toán
 function openPayment() {
     window.location.href="payment.html";
@@ -163,3 +167,36 @@ document.addEventListener("DOMContentLoaded", function() {
     showcountsp(); 
     showMyCart();
 });
+
+
+
+// Đem mảng Customer lưu vào localStorage 
+if (!localStorage.getItem("Customer")) {
+    localStorage.setItem("Customer", JSON.stringify(Customer));
+}
+
+// người dùng hiện tại storage
+let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+if (currentUser) {
+    // Lấy số điện thoại
+    let sdt = currentUser.phone;
+
+    let customers = JSON.parse(localStorage.getItem("Customer"));
+    const user = customers.find(user => user.phone === sdt);
+
+    // Nếu tìm thấy người dùng thì thêm giohang vào nó
+    if (user) {
+        user.giohang = giohang; 
+
+        // Cập nhật lại mảng Customer trong bộ nhớ
+        localStorage.setItem("Customer", JSON.stringify(customers));  // Lưu lại mảng Customer vào localStorage
+
+        // Kiểm tra lại người dùng đã có giohang
+        alert("Đã thêm giỏ hàng vào người dùng: " + JSON.stringify(user));
+    } else {
+        alert("Không tìm thấy người dùng với số điện thoại: " + sdt);
+    }
+} else {
+    alert("Không có người dùng hiện tại trong localStorage.");
+}
