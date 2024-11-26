@@ -131,7 +131,7 @@ function openPayment() {
     // document.getElementById("giohang").style.display = 'none'; 
     // document.getElementById("payment").style.display = 'block'; 
     // Hiển thị sản phẩm đã chọn trong form thanh toán
-    showThanhToan(); 
+    // showThanhToan(); 
 }
 
 // Hiển thị thông tin thanh toán
@@ -169,14 +169,8 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-// Đem mảng Customer lưu vào localStorage 
-if (!localStorage.getItem("Customer")) {
-    localStorage.setItem("Customer", JSON.stringify(Customer));
-}
-
 // người dùng hiện tại storage
 let currentUser = JSON.parse(localStorage.getItem("currentUser"));
-
 if (currentUser) {
     // Lấy số điện thoại
     let sdt = currentUser.phone;

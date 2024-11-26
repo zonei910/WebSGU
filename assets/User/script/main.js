@@ -453,38 +453,37 @@ function addClickEventToProducts() {
 
 
 //=============== tạo sản phẩm tự động ===============
-// const productContainer = document.getElementById('product-container');
+const productContainer = document.getElementById('product-container');
 
-// Product.forEach(product => {
-//     let productHTML =`
-//         <div class="grid__column3" data-category="${product.category}" data-id="${product.id}">
-//             <a href="#" class="home-product-item">
-//                 <div class="product-img">   
-//                     <img src="${product.images[0]}" alt="${product.name}">
-//                 </div>
-//                 <div class="product-info">
-//                     <h3 class="product-name">${product.name}</h3>
-//                     <span class="product-prices">${product.price === 0 ? 'Hàng tặng' : product.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</span>
-//                 </div>
-//             </a>
-//         </div>
-//     `;
-//     productContainer.innerHTML += productHTML;
-// })
-// console.log(document.querySelectorAll('.grid__column3'));
+Product.forEach(product => {
+    let productHTML =`
+        <div class="grid__column3" data-category="${product.category}" data-id="${product.id}">
+            <a href="#" class="home-product-item">
+                <div class="product-img">   
+                    <img src="${product.images[0]}" alt="${product.name}">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">${product.name}</h3>
+                    <span class="product-prices">${product.price === 0 ? 'Hàng tặng' : product.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</span>
+                </div>
+            </a>
+        </div>
+    `;
+    productContainer.innerHTML += productHTML;
+})
+console.log(document.querySelectorAll('.grid__column3'));
 
 // Chuyển mảng sản phẩm thành JSON và lưu vào localStorage
-// localStorage.setItem('products', JSON.stringify(Product));
-// // Lấy mảng sản phẩm từ localStorage và chuyển lại thành mảng
-// const savedProducts = JSON.parse(localStorage.getItem('products'));
+// Lấy mảng sản phẩm từ localStorage và chuyển lại thành mảng
+const savedProducts = JSON.parse(localStorage.getItem('products'));
 
-// if (savedProducts) {
-//     // Nếu dữ liệu có sẵn trong localStorage, sử dụng nó
-//     Product = savedProducts;
-// } else {
-//     // Nếu không có dữ liệu, bạn có thể sử dụng mảng sản phẩm mặc định hoặc gọi API để lấy dữ liệu
-//     Product = []; // hoặc gọi API
-// }
+if (savedProducts) {
+    // Nếu dữ liệu có sẵn trong localStorage, sử dụng nó
+    Product = savedProducts;
+} else {
+    // Nếu không có dữ liệu, bạn có thể sử dụng mảng sản phẩm mặc định hoặc gọi API để lấy dữ liệu
+    Product = []; // hoặc gọi API
+}
 
 
 
