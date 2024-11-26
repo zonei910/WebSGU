@@ -61,13 +61,12 @@ let Customer = [
 
 ];
 
-window.onload = () => {
 
 
-if( localStorage.getItem("users") === undefined ) {
+
+if( JSON.parse(localStorage.getItem("users")) === null ) {
 localStorage.setItem("users", JSON.stringify(Customer));
 }
 
 
 
-}
