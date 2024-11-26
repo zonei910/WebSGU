@@ -462,4 +462,3 @@ const Product = [
         ]
     },
 ];
-

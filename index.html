@@ -724,7 +724,7 @@
     </div>
     
     <div id="dang-ky" style="display:none;">
-        <form class="form-dang-ky" onsubmit="dangky(event);">
+        <form class="form-dang-ky" onsubmit= "return dang_ky()" >
             <div onclick="tatDangKy()" class="nut-tat-dk">X</div>
             <h2>Đăng Ký</h2>
             <div>
@@ -733,15 +733,15 @@
             </div>
             <div>
                 <label for="name">Họ tên:</label>
-                <input type="text" id="name" name="name" placeholder="Họ và Tên" required>
+                <input type="text" id="register-name" name="name" placeholder="Họ và Tên" required>
             </div>
             <div>
-                <label for="dob">Ngày sinh:</label>
-                <input type="date" id="dob" name="dob" required>
+                <label for="email">Email</label>
+                <input type="email" id="register-email" name="email" required>
             </div>
             <div>
                 <label for="gender">Giới tính:</label>
-                <select id="gender" name="gender" required>
+                <select id="register-gender" name="gender" required>
                     <option value="">Chọn Giới Tính</option>
                     <option value="male">Nam</option>
                     <option value="female">Nữ</option>
@@ -750,7 +750,7 @@
             </div>
             <div>
                 <label for="address">Địa Chỉ:</label>
-                <input type="text" id="address" name="address" placeholder="số nhà, phường, quận..." required>
+                <input type="text" id="register-address" name="address" placeholder="số nhà, phường, quận..." required>
             </div>
             <div>
                 <label for="password">Mật khẩu:</label>
@@ -794,12 +794,13 @@ function chuyenFormDangNhap() {
 
     <!-- js -->
     <script src="product.js"></script>
-    <script src="customer.js"></script>
+    <script src="user.js"></script>
     <script src="assets/User/script/main.js"></script>
     <script src="assets/User/script/Login_Signin.js"></script>
     <script src="./assets/User/script/cart.js"></script>
+    <script src="link.js"></script>
     <!-- awesome font -->
     <script src="https://kit.fontawesome.com/097a4985d9.js" crossorigin="anonymous"></script>
-    <script src="link.js"></script>
+   
 </body>
 </html>
