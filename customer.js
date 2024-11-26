@@ -10,12 +10,12 @@
 
 let Customer = [
 {
-        phone: "0987654321",
+        phone: "123",
         name: "Nguyễn Hiền",
         email: "nguyenhien@gmail.com",
         gender: "nu",
         address: "123 Đường Lê Lợi, Quận 1, TP. HCM",
-        password: "12345678",
+        password: "123",
         status: 0,
     },
 
