@@ -75,7 +75,7 @@ if(select.value == "ring" || select.value == "watch" || select.value == "bracele
                                         </select>
                                         <div class="add">
                                         <input type="number" value="1" min="1">
-                                        <div>Thêm vào giỏ</div>
+                                        <div name="${filterarr[i].id}>Thêm vào giỏ</div>
                                         </div>
                                     </div>
             </div>
@@ -227,7 +227,7 @@ for(let i = 4 ; i < 8 ; i++){
                                         </select>
                                         <div class="add">
                                         <input type="number" value="1" min="1">
-                                        <div>Thêm vào giỏ</div>
+                                        <div name="${filterarr[i].id}>Thêm vào giỏ</div>
                                         </div>
                                     </div>
             </div>
@@ -269,7 +269,7 @@ let a = ``;
                                         <p>Giá: ${filterarr[i].price} VNĐ</p>
                                     </div>
                                     <div class="button">
-                                        <select name="size">
+                                        <select name="size" class="select-size">
                                             <option value="none" selected>Select Size</option>
                                             <option value="xxl">XXL</option>
                                             <option value="xl">XL</option>
@@ -279,7 +279,7 @@ let a = ``;
                                         </select>
                                         <div class="add">
                                         <input type="number" value="1" min="1">
-                                        <div>Thêm vào giỏ</div>
+                                        <div name="${filterarr[i].id}">Thêm vào giỏ</div>
                                         </div>
                                     </div>
             </div>
