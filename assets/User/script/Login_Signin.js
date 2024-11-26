@@ -47,13 +47,13 @@ function dangky(event) {
     }
 
     //lay thong tin ng dung tu local ra
-    let users = JSON.parse(localStorage.getItem('users')) || [];
-    if (users.length === 0) {
+    let Customer = JSON.parse(localStorage.getItem('users')) || [];
+    if (Customer.length === 0) {
         console.log("Danh sách người dùng hiện đang rỗng.");
     }
 
     // kiem tra sdt co trung của user
-    if (users.some(user => user.phone === phone)) {
+    if (Customer.some(user => user.phone === phone)) {
         alert("Số điện thoại đã được đăng ký!");
         return false;
     }
@@ -68,8 +68,8 @@ function dangky(event) {
         password: password
     };
 
-    users.push(user);
-    localStorage.setItem('users', JSON.stringify(users));
+    Customer.push(user);
+    localStorage.setItem('users', JSON.stringify(Customer));
     alert("Đăng kí thành công!");
     tatDangKy();
     moDangNhap();

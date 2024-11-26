@@ -1,5 +1,13 @@
-let Customer = [
-    // {
+let Customer = [];
+
+function refreshCustomers() {
+    const storedUsers = JSON.parse(localStorage.getItem('users') || '[]');
+    Customer = storedUsers;
+}
+
+refreshCustomers();
+console.log('Dữ liệu khách hàng hiện tại:', Customer);
+// {
     //     email: "nguyenhien@gmail.com",
     //     password: "12345678",
     //     name: "Nguyễn Hiền",
@@ -42,13 +50,3 @@ let Customer = [
     //     phone: "0901234567",
     //     sex: "nam",
     // },
-];
-
-
-function refreshCustomers() {
-    const storedUsers = JSON.parse(localStorage.getItem('users') || '[]');
-    Customer = storedUsers;
-}
-
-refreshCustomers();
-console.log('Dữ liệu khách hàng hiện tại:', Customer);
