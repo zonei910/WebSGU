@@ -1,5 +1,5 @@
 // Lấy giỏ hàng từ storage hoặc mảng rỗng
-var giohang = JSON.parse(sessionStorage.getItem('giohang') || '[]'); 
+var giohang = JSON.parse(localStorage.getItem('giohang') || '[]'); 
 
 //click vào nút "Thêm vào giỏ"
 document.getElementById('add-to-cart').addEventListener('click', function() {
@@ -27,13 +27,12 @@ document.getElementById('add-to-cart').addEventListener('click', function() {
         }
     }
 
-
     if (!kt) {
         giohang.push(sp);
     }
 
     // Cập nhật lại giỏ hàng
-    sessionStorage.setItem('giohang', JSON.stringify(giohang));
+    localStorage.setItem('giohang', JSON.stringify(giohang));
     showcountsp();
     showMyCart();
 });
@@ -56,7 +55,7 @@ function tangsp(x){
     }
 
     // Cập nhật lại giỏ hàng
-    sessionStorage.setItem('giohang', JSON.stringify(giohang));
+    localStorage.setItem('giohang', JSON.stringify(giohang));
     showcountsp();
     showMyCart();
 }
@@ -77,7 +76,7 @@ function giamsp(x){
     }
 
     // Cập nhật lại giỏ hàng
-    sessionStorage.setItem('giohang', JSON.stringify(giohang));
+    localStorage.setItem('giohang', JSON.stringify(giohang));
     showcountsp();
     showMyCart();
 }
@@ -96,14 +95,14 @@ function xoasp(x) {
     }
 
     // Cập nhật lại :>
-    sessionStorage.setItem('giohang', JSON.stringify(giohang));
+    localStorage.setItem('giohang', JSON.stringify(giohang));
     showMyCart();
 }
 
 // Hàm xóa tất cả sản phẩm trong giỏ
 function deleteAll() {
     giohang = []; // Xóa heest
-    sessionStorage.setItem('giohang', JSON.stringify(giohang));
+    localStorage.setItem('giohang', JSON.stringify(giohang));
     showMyCart();
 }
 
@@ -135,10 +134,7 @@ function showMyCart() {
     showcountsp();
 }
 
-
-            
-
-// Hiển thị hoặc ẩn giỏ hàng  !!!!!!!   Hàm này không tìm ra lỗi nhưng vẫn lỗi ( click giohang không đóng lại giỏ ) 
+// Hiển thị hoặc ẩn giỏ hàng
 function hienthiGiohang() {
     const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
     if (!isLoggedIn) {
@@ -168,7 +164,7 @@ function hienthiGiohang() {
             }
         } else {
             alert("Không có người dùng hiện tại trong localStorage.");
-            }
+        }
     }
     let x = document.getElementById('giohang');
 
@@ -192,17 +188,9 @@ function closeCart(){
     document.getElementById("giohang").style.display='none';
 }
 
-
-
-
-
 // Mở phần thanh toán
 function openPayment() {
     window.location.href="payment.html";
-    // document.getElementById("giohang").style.display = 'none'; 
-    // document.getElementById("payment").style.display = 'block'; 
-    // Hiển thị sản phẩm đã chọn trong form thanh toán
-    // showThanhToan(); 
 }
 
 // Hiển thị thông tin thanh toán
@@ -238,5 +226,3 @@ document.addEventListener("DOMContentLoaded", function() {
     showcountsp(); 
     showMyCart();
 });
-
-
