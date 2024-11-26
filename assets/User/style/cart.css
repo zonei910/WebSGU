@@ -1,6 +1,6 @@
 :root{
-    --xamdam: rgb(180, 179, 179);
-
+    --xamdam: rgb(197, 196, 196);
+    --xanhdam: rgb(112, 227, 227);
 }
 
 th{
@@ -21,7 +21,7 @@ th{
     top:7px;
     right:7px;
     padding:7px;
-    font-size: larger;
+    font-size: x-large;
 }
 #close-cart:hover{
     color: red;
@@ -34,9 +34,11 @@ th{
     min-width: 300px;
     border:solid 1px black;
     background-color: var(--xam);
-    padding:10px;
-    padding-bottom: 40px;
+    padding:20px;
+    padding-bottom: 20px;
     border-radius: 5px;
+    max-height: 75%;
+    overflow-y: auto;
 
 }
 .showcart >h2{
@@ -70,15 +72,24 @@ th{
 }
 
 #deleteAll{
-    padding:5px;
-    position: absolute;
-    right:52%;
-    bottom:10px;
-    
+    padding: 7px;
+    margin-top: 20px;
+    background-color: var(--xanhnhat);
+    border: solid 1px black;
+    border-radius: 5px;
+    margin-left: 35%;
+}
+#deleteAll:hover{
+    background-color: var(--xanhdam);
 }
 #thanhtoan{
-    padding:5px;
-    position:absolute;
-    left:52%;
-    bottom:10px;
+    padding:7px;
+    margin-top: 20px;
+    background-color: var(--xanhnhat);
+    border: solid 1px black;
+    border-radius: 5px;
+    margin-left: 5%;
+}
+#thanhtoan:hover{
+    background-color: var(--xanhdam);
 }

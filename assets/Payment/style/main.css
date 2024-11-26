@@ -7,6 +7,15 @@ body{
     padding: 0;
 }
 
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+
 .outter{
     margin:0;
     padding:0px 100px 0px 100px;
