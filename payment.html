@@ -39,7 +39,7 @@
                 <div class="inner2left">
                     <div id="Display">
                             <div class="head">
-                                <div class="filter">
+                                <!-- <div class="filter">
                                     <select name="category" id="filter">
                                         <option value="none" selected>Tất Cả</option>
                                         <option value="ring">Nhẫn</option>
@@ -52,10 +52,11 @@
                                         <option value="5.000.000">Trên 5.000.000.000</option>
                                     </select>
                                     <div  onclick="filter()">Lọc</div>   
-                                </div>
+                                </div> -->
                                 <div>
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                                <div class="find">
+                                <i class="fa-solid fa-magnifying-glass" onclick="showFind()"></i>
+
+                                <div class="find hide">
                                     <input type="text" class="find_input" placeholder="Tên Sản Phẩm Cần Tìm" id ="find">
                                     <div onclick="find()">Tìm kiếm</div> 
                                    <hr>
@@ -69,6 +70,7 @@
                                     <input type="checkbox" value="5.000.000" class="choose"> Trên 5.000.000.000 <br>
                                 </div>
                             </div>
+                            <div style="clear:right"></div>
                             </div>
 
                             <div class="display">

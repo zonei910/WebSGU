@@ -6,27 +6,36 @@
 #Display .merchandise #prod-edit-header{
     border-bottom: 1px solid black;
     padding: 5px;
-    background-color: var(--mau1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: #1f314d;
 }
 #Display .merchandise #prod-edit-header nav{
     display: flex;
     justify-content: space-between;
     margin-left: 2rem;
     margin-right: 1rem;
+    padding: 1rem;
 }
-
-
-
+#Display .merchandise #prod-edit-header div{
+    border: 1px solid black;
+    background-color: #f5ed51;
+    border-radius: 10px;
+    padding: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
 #Display .merchandise #prod-edit-header a{
     background-color: rgb(202, 26, 26);
     color: white;
     border: 1px solid black;
     padding: 10px;
-    border-radius: 10px; 
+    border-radius: 10px;
     cursor: pointer;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 #Display .merchandise #prod-edit-header a:hover{
     background-color: rgb(250, 40, 40);
@@ -36,39 +45,32 @@
 }
 #Display .merchandise #buttons{
     border-top: 1px solid black;
-    background-color:var(--mau1);
+    background-color: #1f314d;
     padding: 10px;
     display: flex; 
     justify-content: center;
 }
 #Display .merchandise #main-content{
     flex-grow: 1;
+    max-height: 60vh;
     overflow-y: auto;
+    padding: 1rem;
 }
 #Display .merchandise #buttons button{
     margin: 0 7px;
     padding: 10px;
     cursor: pointer;
-    width: 20%;
 }
 #Display .merchandise .button1, .button2, .button3{
     border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 #Display .merchandise .button1{
-    background-color: rgb(3, 208, 16);
-    border: 1px solid rgb(3, 208, 16);
-    width: 50px;
-    height: 40px;
-    cursor:pointer;
-    margin-right: 50px;
+    background-color: rgb(55, 255, 255);
 }
-
-#Display .merchandise .button1:hover{
-    background-color: rgb(117, 255, 117);
-    border: 1px solid rgb(117, 255, 117);
-}
-
-
 #Display .merchandise .button2{
     background-color: rgb(60, 255, 60);
 }
@@ -76,19 +78,18 @@
     background-color: rgb(252, 52, 52);
 }
 #Display .merchandise .table{
-    gap: 20px;
-
-    border-bottom: 3px solid black;
-    display:flex;
+    display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    gap: 20px;
+    margin-bottom: 10px;
+    justify-content: space-between;
 }
 #Display .merchandise .table img{
-  width: 10%;
+    margin-left: 50px;
 }
 #Display .merchandise .product-info{
-    display:inline-block;
-    width: 50%;
+    display: flex;
+    flex-direction: column;
 }
 #Display .merchandise .edit-buttons1, .edit-buttons2{
     margin-right: 10px;
@@ -96,6 +97,10 @@
     border-style: none;
     border-radius: 5px;
     cursor: pointer;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 #Display .merchandise .edit-buttons1{
     background-color: rgb(62, 199, 199);
@@ -116,7 +121,7 @@
     background-color: rgb(255, 121, 121);
 }
 #Display .merchandise .button-group{
-    display: inline-block;
+    display: flex;
     gap: 1px;
 }
 #Display .merchandise #edit-products{
@@ -134,6 +139,10 @@
     border: 1px solid black;
     background-color: white;
     cursor: pointer;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 #Display .merchandise .page-button:hover{
     background-color: rgb(180, 178, 178);
@@ -141,158 +150,242 @@
 #Display .merchandise .page-button:active{
     background-color: rgb(224, 223, 223);
 }
-
-
-#Display .merchandise{
-    width: 100%;
-    display:none;
-}
-
-#Display .merchandise .add-form .head{
-    display:flex;
-    justify-content: space-around;
-    align-items: center;
-    border-bottom: 3px solid grey;
-}
-
-#Display .merchandise .add-form .head i{
-    border: 3px solid red;
-    border-radius: 5px;
-    background-color: red;
-    width: 10%;
-    text-align: center;
-    cursor:pointer;
-}
-#Display .merchandise .add-form .head i:hover{
-    border: 3px solid rgb(252, 68, 68);
-    background-color: rgb(252, 68, 68);
-}
-
-#Display .merchandise .add-form .quanity{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-}
-#Display .merchandise .add-form .upload{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-}
-#Display .merchandise .add-form .upload input{
-    width: 28%;
-
-}
-#Display .merchandise .add-form .name{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-}
-#Display .merchandise .add-form .price{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#Display .merchandise .add-form .category{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-}
-#Display .merchandise .add-form .category select{
-    text-align: left;
-    width: 28%;
-}
-
-#Display .merchandise .add-form .description{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
-
-#Display .merchandise .add-form div div{
-    width: max-content;
-}
-
-
-#Display .merchandise .add-form div{
-    margin: 3px
-}
-
-#Display .merchandise .add-form{
-    background-color: white;
+#Display .merchandise .addItem {
+    background-color: rgb(44, 212, 44);
+    border-style: none;
+    border-radius: 15%;
     padding: 10px;
-    width: 50%;
-    position: absolute;
-    top: calc(50% - 25%);
-    left: calc(40% - 50%/2) ;
+    color: white;
+    cursor: pointer;
+    -webkit-border-radius: 15%;
+    -moz-border-radius: 15%;
+    -ms-border-radius: 15%;
+    -o-border-radius: 15%;
+}
+#Display .merchandise .addItem:hover{
+    background-color: rgb(43, 255, 43);
+}
+#Display .merchandise .addItem:active{
+    background-color: rgb(98, 243, 98);
 }
 
-
-#Display .merchandise .add{
-    background-color: white;
+/* Edit Item Block Styles */
+#Display .merchandise .DisplayEditItemBlock {
     position: fixed;
-    width: 100%;
-    z-index: 100;
-    height: 100%;
-
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    width: 40%;
+    padding: 20px;
+    z-index: 1000;
+    display: none;
+    /*Hiddenbydefault*/flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: ease 0.3s;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    -webkit-transition: ease 0.3s;
+    -moz-transition: ease 0.3s;
+    -ms-transition: ease 0.3s;
+    -o-transition: ease 0.3s;
 }
 
-#Display .merchandise .btn{
+#Display .merchandise .EditItemHeader {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#Display .merchandise .ProperHeaderDisplay {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 100%;
     align-items: center;
 }
 
-#Display .merchandise .add-form .btn-add{
-    background-color: rgb(23, 253, 23);
-    cursor: pointer;
-    border-radius: 5px;
-    border: 3px solid  rgb(23, 253, 23);
-}
-
-#Display .merchandise .btn-add:hover{
-    background-color: aqua;
-    border: 3px solid  aqua;
-}
-
-#Display .merchandise .add-form .btn-reset{
-    background-color: yellow;
-    cursor:pointer;
-    border: 3px solid yellow;
-    border-radius: 5px;
-}
-
-#Display .merchandise .add-form .btn-reset:hover{
-    background-color:  orange;
-    border: 3px solid orange; 
-}
-
-
-
-
-
-#Display .merchandise .find i{
-    cursor: pointer;
-    width: 100%;
-    height: 40px;
-    line-height: 40px;
+#Display .merchandise .ProperHeaderDisplay div {
+    margin-left: 20px; 
+    background-color: rgb(230, 241, 66);
+    width: 80px;
+    border: 1px solid black;
+    padding: 5px;
     text-align: center;
+    font-size: 0.8rem;
 }
 
-#Display .merchandise .find .inner{
-    position: absolute;
-    right: 2px;
-    top:6%;
-    background-color: white;
+#Display .merchandise .ProperHeaderDisplay button {
+    background-color: rgb(202, 26, 26);
+    margin-right: 20px;
+    color: white;
+    border: 1px solid black;
+    padding: 2px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+#Display .merchandise .DisplayEditItemBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    border: 1px dashed #ccc;
+    margin-bottom: 20px;
+    padding: 15px;
+    text-align: center;
+    background-color: #fafafa;
+}
+#Display .merchandise form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+input {
+    width: 80%;
+    padding: 3px;
+    margin-bottom: 8px;
+}
+
+#Display .merchandise .choose-button, .update-button {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+#Display .merchandise .update-button {
+    background-color: blue;
+    color: white;
+}
+
+#Display .merchandise .choose-button {
+    background-color: rgb(81, 182, 250);
+    color: white;
+}
+
+#Display .merchandise #uploadedImage {
+    max-width: 100%;
+    max-height: 100px;
+    margin-top: 8px;
+}
+#Display .merchandise .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 500;
+    display: none; /* Hidden by default */
+}
+#Display .merchandise #searchSubmitButton{
     padding: 10px;
 }
-
-#Display .merchandise .find .inner div{
-    display: inline-block;
-    cursor: pointer;
-    border: 3px solid red;
-    color: red;
+#Display .merchandise .searchbar{
+    padding: 10px;
+}
+@media (max-width: 1200px) {
+    #Display .merchandise .product-info {
+        font-size: 0.9rem;
+    }
+    #Display .merchandise  .edit-buttons1, .edit-buttons2 {
+        margin-right: 10px;
+        padding: 8px; /* Reduced from 10px */
+        font-size: 0.8rem; /* Adjust button text size if needed */
+    }
+    #Display .merchandise .button1, .button2, .button3{
+        padding: 8px;
+        font-size: 0.8rem;
+    }
 }
 
+@media (max-width: 900px) {
+    #Display .merchandise .product-info {
+        font-size: 0.7rem;
+    }
+    #Display .merchandise .edit-buttons1, .edit-buttons2 {
+        margin-right: 10px;
+        padding: 4px; /* Reduced from 6px */
+        font-size: 0.7rem; /* Adjust button text size if needed */
+    }
+
+}
+@media (max-width: 1100px) {
+    #Display .merchandise .button1, .button2, .button3{
+        margin: 4px;
+        padding: 4px;
+        font-size: 0.7rem;
+    }
+    #Display .merchandise .page-button{
+        margin: 4px;
+        padding: 4px;
+        font-size: 0.7rem;
+    }
+    #Display .merchandise .pagination-buttons{
+        margin-left: 50px;
+    }
+}
+@media (max-width: 1000px) {
+    #Display .merchandise .button1, .button2, .button3{
+        margin: 4px;
+        padding: 2px;
+        font-size: 0.7rem;
+    }
+    #Display .merchandise .page-button{
+        margin: 4px;
+        padding: 1px;
+        font-size: 0.7rem;
+    }
+    #Display .merchandise .pagination-buttons{
+        margin-left: 20px;
+    }
+}
+@media (max-width: 950px) {
+    #Display .merchandise .button1, .button2, .button3{
+        margin: 4px;
+        padding: 1px;
+        font-size: 0.7rem;
+    }
+    #Display .merchandise .page-button{
+        margin: 4px;
+        padding: 0px;
+        font-size: 0.7rem;
+    }
+    #Display .merchandise .pagination-buttons{
+        margin-left: 3px;
+    }
+}
+
+@media (max-width: 600px) {
+    #Display .merchandise .product-info {
+        font-size: 0.5rem;
+    }
+    #Display .merchandise .edit-buttons1, .edit-buttons2 {
+        margin-right: 10px;
+        padding: 2px; /* Reduced from 3px */
+        font-size: 0.6rem; /* Adjust button text size if needed */
+    }
+}

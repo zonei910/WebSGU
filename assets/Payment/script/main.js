@@ -50,7 +50,7 @@ function showSanPham(){
                                         </select>
                                         <div class="add">
                                         <input type="number" value="1" min="1">
-                                        <div>Thêm vào giỏ</div>
+                                        <div name = "${Product[i].id}">Thêm vào giỏ</div>
                                         </div>
                                     </div>
             </div>
