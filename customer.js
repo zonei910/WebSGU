@@ -1,10 +1,10 @@
 const Customer = [
     {
         email: "nguyenhien@gmail.com",
-        password: "12345678",
+        password: "123",
         name: "Nguyễn Hiền",
         address: "123 Đường Lê Lợi, Quận 1, TP. HCM",
-        phone: "0987654321",
+        phone: "123",
         sex: "nu",
     },
 
