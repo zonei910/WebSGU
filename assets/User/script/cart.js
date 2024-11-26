@@ -3,6 +3,12 @@ var giohang = JSON.parse(sessionStorage.getItem('giohang') || '[]');
 
 //click vào nút "Thêm vào giỏ"
 document.getElementById('add-to-cart').addEventListener('click', function() {
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    if (!isLoggedIn) {
+        alert("Bạn cần đăng nhập để thêm sản phẩm vào giỏ hàng!");
+        return; // Dừng lại nếu chưa đăng nhập
+    }
+
     var soLuong = parseInt(document.getElementById('product-quantity').value);
 
     var ten = document.getElementById('product-name').innerText;
@@ -88,14 +94,23 @@ function showMyCart() {
 
 // Hiển thị hoặc ẩn giỏ hàng  !!!!!!!   Hàm này không tìm ra lỗi nhưng vẫn lỗi ( click giohang không đóng lại giỏ ) 
 function hienthiGiohang() {
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    if (!isLoggedIn) {
+        alert("Bạn cần đăng nhập để thêm sản phẩm vào giỏ hàng!");
+        return; // Dừng lại nếu chưa đăng nhập
+    }
     let x = document.getElementById('giohang');
-    
+
     let currentDisplay = window.getComputedStyle(x).display;
     
     if (currentDisplay === 'none') {
         x.style.display = 'block'; 
     } else {
         x.style.display = 'none';
+    }
+
+    if (noCart) {
+        noCart.style.display = 'none';
     }
     
     showMyCart(); 
