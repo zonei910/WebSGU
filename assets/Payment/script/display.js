@@ -291,3 +291,20 @@ let a = ``;
     showsanpham.innerHTML = a;
 
 }
+
+function showFind(){
+    console.log("Hello");
+    let timkiem = document.querySelector("#Display .find");
+    console.log(timkiem);
+    if(timkiem.classList.contains("hide")){
+            timkiem.classList.remove("hide")
+            timkiem.classList.add("show");
+            
+    }
+
+   else if(timkiem.classList.contains("show")){
+        timkiem.classList.remove("show")
+        timkiem.classList.add("hide");
+       
+    }
+}

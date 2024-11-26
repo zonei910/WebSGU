@@ -7,9 +7,6 @@
 #Display .head{
     background-color: #363A3F;
     padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 #Display .head .filter{
@@ -34,11 +31,15 @@
         text-align: center;
         margin-left: 2px;
 }
-
+#Display .head>div>i{
+    float:right;
+    cursor: pointer;
+}
 
 
 #Display  .head .find{
     /* display:flex; */
+    float:right;
     width: max-content;
     flex-wrap: wrap;
     position: absolute;
@@ -46,16 +47,13 @@
     top: 22%;
     background-color: white;
     padding: 10px;
-    display: none;
 }
 
 #Display  .head div:nth-child(2){
     cursor: pointer;
     width: max-content;
 }
-#Display  .head div:nth-child(2):hover .find{
-   display:block;
-}
+
 
 #Display  .head .find div{
     border: 2px solid green;
