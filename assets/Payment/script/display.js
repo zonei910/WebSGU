@@ -7,7 +7,8 @@ function filter(){
         showSanPham();
         return 0;
     }
-   
+  let Product = JSON.parse(localStorage.getItem("products"));
+
 if(select.value == "ring" || select.value == "watch" || select.value == "bracelet" || select.value == "neckalce"){
     for(let i = 0 ;i < Product.length;i++)
         if(Product[i].category == select.value)
@@ -104,7 +105,7 @@ if(select.value == "ring" || select.value == "watch" || select.value == "bracele
 
 function find(){
     filterarr = [];
- 
+let Product = JSON.parse(localStorage.getItem("products"));
 let a = document.querySelectorAll("#Display .head .find .choose");
 for(let i=0;i<4 ; i++){
     if(a[i].checked == true){

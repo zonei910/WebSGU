@@ -12,7 +12,7 @@ function showSanPham(){
     form.style.display = "none"; 
     display.style.display = "block";
     purchase.style.display = "none";
-    
+    let Product = JSON.parse(localStorage.getItem("products"));
     let sosanphammoitrang = 3;
     let tongsotrang = Math.ceil(Product.length/sosanphammoitrang);
     let sotranghientai = 1;
@@ -66,7 +66,6 @@ function showSanPham(){
     if(tongsotrang != 1) 
      shownut.innerHTML = butt;
     else shownut.innerHTML = "";
-
 }
 
 
@@ -87,10 +86,10 @@ function showMethodPurchase(){
 
 
 function nuttrang(trang){
+    let Product = JSON.parse(localStorage.getItem("products"));
     let sosanphammoitrang = 3;
     let tongsotrang = Math.ceil(Product.length/sosanphammoitrang);
     let vitrihientai = (trang.getAttribute("name")-1)  * sosanphammoitrang;
-
 
 let n =0 ;
 let a = ``;
