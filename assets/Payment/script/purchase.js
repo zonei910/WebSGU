@@ -100,6 +100,7 @@ let phieumua = {
     ngaydat: `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}` ,
     ngayduyet: 0 ,
     diachiKH: diachi,
+    tongtien: s,
     tenKH: currentUser.name,
     phoneKH: currentUser.phone,
     emailKH: currentUser.email,
@@ -111,7 +112,8 @@ localStorage.setItem("donhang", JSON.stringify(donhang));
 let users = JSON.parse(localStorage.getItem("users"));
 for(let i = 0 ; i<users.length;i++){
     if(users[i].phone == currentUser.phone){
-        users[i].lichsuMuaHang.push(donhang);
+        users[i].lichsuMuaHang.push(phieumua);
+        console.log("Hello world");
     }
 }
 
@@ -120,8 +122,7 @@ let giohang = [];
 currentUser.giohang = giohang;
 localStorage.setItem("giohang", JSON.stringify(giohang));
 localStorage.setItem("currentUser", JSON.stringify(currentUser));
-
-
+localStorage.setItem("users" , JSON.stringify(users));
 
 
 showTomtatsp();
