@@ -1,60 +1,42 @@
 #Display .order{
-    width: 100%;
-    padding: 20px;
-}
-
-#Display .order .inner{
-    border:1px solid grey;
+	border:  3px solid red;
 }
 
 #Display .order .head{
-    background-color: var(--mau1);
-    padding: 10px;
-    border-radius: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
-
-
-
-
-#Display .order .container{
-    padding: 10px;
-    border-top: none;
-    overflow: auto;
-    height: 30%;
+#Display .order .time>div{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
-#Display .order .container .item{
-    border:1px solid grey;
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 5px;
-}
-#Display .order .container .item p{
-    margin: 0px;
+#Display .order .filterbtn{
+	border:  3px solid black;
+	cursor: pointer;
+}	
+
+#Display .order .filterbtn:hover{
+	background-color: red;
 }
 
-#Display .order .container .item i{
-    margin-right: 15px;
+#Display .order .find{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 20%;
+	border: 3px solid orange;
 }
 
-#Display .order .container .item i:nth-child(1){
-    cursor: pointer;
+#Display .otder .find .findbtn{
+	width: 30%;
+	background-color: black;
 }
 
-#Display .order .container .item i:nth-child(2){
-    border: 3px solid red;
-    background-color: red;
-}
-
-
-#Display .order .foot{
-    background-color: var(--mau1);
-    padding: 10px;
-    text-align: center;
-}
-
-#Display .order .foot button{
-    margin: 5px;
+#Display .order .find .timkiem{
+	width: 50%;
+	border: 3px solid black;
 }
