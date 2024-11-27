@@ -111,6 +111,7 @@ localStorage.setItem("donhang", JSON.stringify(donhang));
 let users = JSON.parse(localStorage.getItem("users"));
 for(let i = 0 ; i<users.length;i++){
     if(users[i].phone == currentUser.phone){
+        console.log("hihi")
         users[i].lichsuMuaHang.push(donhang);
     }
 }
@@ -125,7 +126,7 @@ localStorage.setItem("currentUser", JSON.stringify(currentUser));
 
 
 showTomtatsp();
-alert("Đặt hàng thành công quay về trang chủ");
-window.location.href = "index.html";
+// alert("Đặt hàng thành công quay về trang chủ");
+// window.location.href = "index.html";
 }
 
