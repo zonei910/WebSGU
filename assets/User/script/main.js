@@ -340,15 +340,15 @@ search.addEventListener('click', () => {
 })
 
 // ======================cart ====================
-let cart = document.querySelector('.navbar_cart');
+// let cart = document.querySelector('.navbar_cart');
 
-cart.addEventListener('click', () => {
-    let dropdowncart = document.querySelector('.navbar_cart-dropdown-nocart');
-    if ( dropdowncart.style.display === 'block' )
-        dropdowncart.style.display = 'none';
-    else
-        dropdowncart.style.display = 'block';
-})
+// cart.addEventListener('click', () => {
+//     let dropdowncart = document.querySelector('.navbar_cart-dropdown-nocart');
+//     if ( dropdowncart.style.display === 'block' )
+//         dropdowncart.style.display = 'none';
+//     else
+//         dropdowncart.style.display = 'block';
+// })
 
 // =====================account ==================
 let account = document.querySelector('.navbar_user');
