@@ -8,13 +8,15 @@ document.getElementById('add-to-cart').addEventListener('click', function() {
 
     var soLuong = parseInt(document.getElementById('product-quantity').value);
     var ten = document.getElementById('product-name').innerText;
-    var gia = document.getElementById('product-price').innerText.replace('đ', '').trim(); // Loại bỏ ký tự "đ"
+    var gia = document.getElementById('product-price').innerText.slice(0 , -1); // Loại bỏ ký tự "đ"
     var hinh = document.getElementById('product-main-img').src;
     let product = JSON.parse(localStorage.getItem("products"));
     let id;
+    let loai;
     for(let i = 0 ; i < product.length ; i ++){
         if(product[i].name == ten){
             id = product[i].id;
+            loai = product[i].category;
         }
     }
 
@@ -25,7 +27,9 @@ document.getElementById('add-to-cart').addEventListener('click', function() {
         ten: ten,
         gia: gia,
         soLuong: soLuong,
+        loai: loai,
     }
+
 
     // Kiểm tra sản phẩm đã có trong giỏ hàng chưa
     var kt = false;
@@ -124,8 +128,7 @@ function showMyCart() {
     var tt = "";
     var tong = 0;
     for (let i = 0; i < giohang.length; i++) {
-        let gia = parseInt(giohang[i].gia.replace('đ', '').trim()); // Xóa ký tự "đ"
-        console.log(gia);
+        let gia = parseInt(giohang[i].gia); // Xóa ký tự "đ"
         let thanhtien = gia * parseInt(giohang[i].soLuong);
         
         tong += thanhtien;

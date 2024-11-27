@@ -5,6 +5,7 @@
 body{
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 .hide{
@@ -136,9 +137,14 @@ body{
     border-radius: 5px;
     border: 1px #ceced6 solid;
     color: #6c6a6b ;
+    height: 400px;
 }
+.cartoutter .item{
+    height: 370px;
+}
+
 .cartinner{
-    border-bottom: 1px solid #ceced6;
+    border-bottom: 1px solid #6c6a6b;
 }
 .cartinner>div{
     margin: 5px;
@@ -162,12 +168,11 @@ body{
     clear: both;
 } */
  .clear{
-    border:3px solid black;
-    cursor:pointer;
     clear: both;
  }
 .sumoutter{
     border-bottom: 1px solid #ceced6;
+    border-top : 1px solid #ceced6;
     padding: 5px;
     height: 28px;
 }
@@ -261,4 +266,21 @@ body{
 #Header li a{
     text-decoration: none;
     color: white;
+}
+
+.cartinner .button{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    float:right;
+}
+
+.cartinner .button div{
+    cursor: pointer;
+    border:1px solid #363A3F;
+}
+
+.cartinner .button div:hover{
+    background-color: red;
 }

@@ -8,9 +8,11 @@ function showTomtatsp(){
     let product = currentUser.giohang;
     let a = '';
     let s = 0;
+    let n = 0;
     for(let i = 0 ; i < product.length ; i++){
-        let gia = parseInt(product[i].gia.replace('đ', '').trim()); // Xóa ký tự "đ"
-        let thanhtien = gia * parseInt(product[i].soluong);
+        n += product[i].soLuong;
+        let gia = parseInt(product[i].gia);
+        let thanhtien = gia * parseInt(product[i].soLuong);
         s += thanhtien;
         a += `
         <div class="cartinner">
@@ -21,20 +23,26 @@ function showTomtatsp(){
             <div class="sumofcart">
                 ${thanhtien}
             </div>
-            <div class="clear" style="float:right" onclick="xoasp(this)" name="${product[i].id}">Xóa</div>
+            <div class="button clear">
+            <div class="plusbtn" onclick="tang(this)" name="${product[i].id}">Tăng</div>
+            <div class="subbtn" onclick="giam(this)" name="${product[i].id}">Giảm</div>
+            <div class="deletebtn"  onclick="xoasp(this)" name="${product[i].id}">Xóa</div>
+            </div>
+             <div style="clear:both"></div>
         </div>
         
-        
+
         `
     }
-    console.log(a);
+   
  
 
-
-    let showSP = document.querySelector(".inner2right .cartoutter");
+    let showCount = document.querySelector(".inner2right .countcart");
+    let showSP = document.querySelector(".inner2right .cartoutter .item");
     let showTong = document.querySelector(".sumoutter .suminner");
+    showCount.innerHTML = n;
     showSP.innerHTML = a;
-    showTong.innerHTML = s;
+    showTong.textContent = `${s} đ`;
 }
 
 showTomtatsp();
@@ -85,8 +93,8 @@ function showSanPham(){
                                             <option value="small">Small</option>
                                         </select>
                                         <div class="add">
-                                        <input type="number" value="1" min="1">
-                                        <div name = "${Product[i].id}">Thêm vào giỏ</div>
+                                        <input type="number" value="1" min="1" name = "${Product[i].id}" id="soluong">
+                                        <div name = "${Product[i].id}" onclick="themsp(this)">Thêm vào giỏ</div>
                                         </div>
                                     </div>
             </div>
@@ -150,8 +158,8 @@ let a = ``;
                                             <option value="small">Small</option>
                                         </select>
                                         <div class="add">
-                                        <input type="number" value="1" min="1">
-                                        <div>Thêm vào giỏ</div>
+                                        <input type="number" value="1" min="1" name = "${Product[i].id}" id="soluong">
+                                        <div onclick="themsp(this)" name = "${Product[i].id}">Thêm vào giỏ</div>
                                         </div>
                                     </div>
             </div>
@@ -162,6 +170,9 @@ let a = ``;
     showsanpham.innerHTML = a;
 
 }
+
+
+
 
 
 
@@ -181,8 +192,6 @@ let a = ``;
 
   
   
-   
-
 
 
 
