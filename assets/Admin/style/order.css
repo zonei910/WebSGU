@@ -30,6 +30,50 @@
 }
 
 
-#Display .main{
+#Display .order .main{
     border: 3px solid black;
 }
+
+#Display .order .main table{
+    width: 100%;
+}
+
+#Display .order .main th, td{
+    padding: 10px;
+    text-align: left;
+}
+
+#Display .order .main tbody tr{
+    border-bottom: 1px solid #ccc;
+}
+
+#Display .order .main tbody .button div{
+    cursor: pointer;
+    border: 3px solid black;
+    text-align: center;
+}
+
+#Display .order .main tbody .button div:hover{
+    background-color: blue;
+}
+
+#Display .foot{
+    border: 3px solid red;
+    display: flex;
+    justify-content: center;
+}
+
+#Display .foot .pagination{
+    text-align: center;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Display .foot .pagination .item{
+    border: 3px solid grey;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
