@@ -112,95 +112,74 @@
             </div>
 
         <div class="order">
-            <div class="inner">
-                <div class = "head">
-                    <input type="text">
-                    <button>Tìm kiếm</button>
-                </div>    
-
-                <div class="container">
-                    <div class="item">
-                            <div>
-                                <b>ID: 123</b>
-                                <p>Username: hihi</p>
-                                <p>Email:  hihi@gmail.com</p>
-                                <p>Address: Cau Giay Hanoi</p>
-                            </div>
-                            <div>
-                                <p>ID 1: 12</p>
-                                <p>ID 2: 12</p>
-                                <p>ID 4: 12</p>
-                                <p>ID 6: 12</p>
-                            </div>
-                            <div><i class="fa-solid fa-eye-slash"></i><i class="fa-solid fa-x"></i></div>
+            <div class="head">
+                <div class="filter">
+                    <select name="loc" class="loc" onchange="filter_order()">
+                        <option value="none" selected="true">Chọn lọc</option>
+                        <option value="status-0">Chưa xử lý</option>
+                        <option value="status-1">Đã xử lý</option>
+                        <option value="status-2">Giao hàng thành công</option>
+                        <option value="time">Thời gian đặt hàng</option>
+                    </select>
+                    <div class="time hide">
+                        <div>
+                        <div>Từ ngày<input type="date" class="tu_ngay"></div>
+                        <div>Đến ngày<input type="date" class="den_ngay"></div>
+                        <div class="filterbtn hide">Lọc</div>
+                        </div>
                     </div>
-
-
-                    <div class="item">
-                        <div>
-                            <b>ID: 123</b>
-                            <p>Username: hihi</p>
-                            <p>Email:  hihi@gmail.com</p>
-                            <p>Address: Cau Giay Hanoi</p>
-                        </div>
-                        <div>
-                            <p>ID 1: 12</p>
-                            <p>ID 2: 12</p>
-                            <p>ID 4: 12</p>
-                            <p>ID 6: 12</p>
-                        </div>
-                        <div><i class="fa-solid fa-eye-slash"></i><i class="fa-solid fa-x"></i></div>
                 </div>
 
-                <div class="item">
-                    <div>
-                        <b>ID: 123</b>
-                        <p>Username: hihi</p>
-                        <p>Email:  hihi@gmail.com</p>
-                        <p>Address: Cau Giay Hanoi</p>
-                    </div>
-                    <div>
-                        <p>ID 1: 12</p>
-                        <p>ID 2: 12</p>
-                        <p>ID 4: 12</p>
-                        <p>ID 6: 12</p>
-                    </div>
-                    <div><i class="fa-solid fa-eye-slash"></i><i class="fa-solid fa-x"></i></div>
+
+
+              
+                    <input type="text" class="timkiem" placeholder="Nhập mã đơn hàng">
+              
+                </div>
+          
+
+
+            <div class="main">
+                <table>
+                    <thead>
+                       <tr>
+                            <th>Mã đơn hàng</th>
+                            <th>Tên khách hàng</th>
+                            <th>Tổng tiền</th>
+                            <th>Ngày đặt hàng</th>
+                            <th>Ngày duyệt đơn hàng</th>
+                            <th>Trạng thái</th>
+                        </tr> 
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Hiền hehe</td>
+                            <td>100</td>
+                            <td>22/2</td>
+                            <td>0</td>
+                            <td>chưa xử lý</td>
+                            <td class="button">
+                                <div>Xử lý đơn hàng</div>
+                            </td>
+                    </tr>   
+                    </tbody>
+                </table>
             </div>
 
-            <div class="item">
-                <div>
-                    <b>ID: 123</b>
-                    <p>Username: hihi</p>
-                    <p>Email:  hihi@gmail.com</p>
-                    <p>Address: Cau Giay Hanoi</p>
-                </div>
-                <div>
-                    <p>ID 1: 12</p>
-                    <p>ID 2: 12</p>
-                    <p>ID 4: 12</p>
-                    <p>ID 6: 12</p>
-                </div>
-                <div><i class="fa-solid fa-eye-slash"></i><i class="fa-solid fa-x"></i></div>
-        </div>
 
-
+            <div class="foot">
+                <div class="pagination">
+                    <div class="item">1</div>
                 </div>
-
-                <div class="foot">
-                    <div class="pagination-buttons">
-                        <button class="page-button"><i class="fa-solid fa-chevron-left"></i></button>
-                        <button class="page-button">1</button>
-                        <button class="page-button">2</button>
-                        <button class="page-button"><i class="fa-solid fa-chevron-right"></i></button>
-                    </div>
-                </div>
-            </div> 
+            </div>
         </div>
 
             <!-- Thống kê -->
             <div class="revenue">
-                hihi
+                
+
+
         </div>
 
 
@@ -292,9 +271,18 @@
 <!-- Kết thúc Main -->
 
 
+<<<<<<< HEAD
 <script language="javascript" src="product.js"></script>
 <script src = "user.js"></script>
+=======
+
+>>>>>>> aa05287a9a5146965f36dcae2fb89d209693809d
 <script language="javascript" src="assets/Admin/script/navbar.js"></script>
-<script language="javascript" src="assets/Admin/script/importv3.js"></script>
+<script language="javascript" src="assets/Admin/script/merchandise.js"></script>
+<script language="javascript" src="assets/Admin/script/order.js"></script>
+
+
+
+</script>
 </body>
 </html>

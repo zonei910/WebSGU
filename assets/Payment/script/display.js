@@ -75,8 +75,8 @@ if(select.value == "ring" || select.value == "watch" || select.value == "bracele
                                             <option value="small">Small</option>
                                         </select>
                                         <div class="add">
-                                        <input type="number" value="1" min="1">
-                                        <div name="${filterarr[i].id}>Thêm vào giỏ</div>
+                                        <input type="number" value="1" min="1" name = "${filterarr[i].id}" id ="soluong">
+                                        <div name="${filterarr[i].id}" onclick="themsp(this)" >Thêm vào giỏ</div>
                                         </div>
                                     </div>
             </div>
@@ -227,8 +227,8 @@ for(let i = 4 ; i < 8 ; i++){
                                             <option value="small">Small</option>
                                         </select>
                                         <div class="add">
-                                        <input type="number" value="1" min="1">
-                                        <div name="${filterarr[i].id}>Thêm vào giỏ</div>
+                                        <input type="number" value="1" min="1"  name="${filterarr[i].id}" id="soluong">
+                                        <div name="${filterarr[i].id}" onclick="themsp(this)">Thêm vào giỏ</div>
                                         </div>
                                     </div>
             </div>
@@ -244,7 +244,7 @@ for(let i = 4 ; i < 8 ; i++){
     if(tongsotrang != 1) 
      shownut.innerHTML = butt;
     else shownut.innerHTML = "";
-    console.log(filterarr);
+
 
 
 
@@ -279,8 +279,8 @@ let a = ``;
                                             <option value="small">Small</option>
                                         </select>
                                         <div class="add">
-                                        <input type="number" value="1" min="1">
-                                        <div name="${filterarr[i].id}">Thêm vào giỏ</div>
+                                         <input type="number" value="1" min="1"  name="${filterarr[i].id}" id="soluong">
+                                         <div name= "${filterarr[i].id}" onclick="themsp(this)">Thêm vào giỏ</div>
                                         </div>
                                     </div>
             </div>
@@ -294,9 +294,9 @@ let a = ``;
 }
 
 function showFind(){
-    console.log("Hello");
+
     let timkiem = document.querySelector("#Display .find");
-    console.log(timkiem);
+
     if(timkiem.classList.contains("hide")){
             timkiem.classList.remove("hide")
             timkiem.classList.add("show");
@@ -308,4 +308,91 @@ function showFind(){
         timkiem.classList.add("hide");
        
     }
+}
+
+
+function themsp(a){
+   let temp = document.querySelectorAll("#soluong");
+   let soluong;
+    for(let i = 0 ; i<temp.length;i++){
+        if(a.getAttribute("name") == temp[i].getAttribute("name")){
+            soluong = parseInt(temp[i].value);
+        }
+    }
+    let co = 0;
+    let product = JSON.parse(localStorage.getItem("products"));
+    for(let i = 0 ; i<currentUser.giohang.length;i++){
+        if(a.getAttribute("name") == currentUser.giohang[i].id){
+            currentUser.giohang[i].soLuong = parseInt(currentUser.giohang[i].soLuong) + soluong;
+            co = 1;
+            break;
+        }
+    }
+
+    if(co == 0){
+        for(let i = 0 ; i<product.length ; i ++){
+            if(a.getAttribute("name") == product[i].id){
+                let sp = {
+                    hinh: product[i].images[0],
+                    ten: product[i].name,
+                    id: product[i].id,
+                    loai: product[i].category,
+                    soLuong: soluong,
+                    gia: product[i].price,
+                };
+                console.log(sp);
+                currentUser.giohang.push(sp);
+                break;
+            }
+              
+        }
+    }
+    let giohang = currentUser.giohang;
+    localStorage.setItem("currentUser", JSON.stringify(currentUser));
+    localStorage.setItem("giohang", JSON.stringify(giohang));
+    showTomtatsp();
+}
+
+function xoasp(a){
+    for(let i = 0 ; i <currentUser.giohang.length ; i ++){
+        if(currentUser.giohang[i].id == a.getAttribute("name")){
+            currentUser.giohang.splice(i,1);
+            break;
+        }
+    }
+    let giohang = currentUser.giohang;
+    localStorage.setItem("giohang" , JSON.stringify(giohang));
+    localStorage.setItem("currentUser", JSON.stringify(currentUser));
+    showTomtatsp();
+}
+
+
+function tang(a){
+    for(let i = 0 ; i<currentUser.giohang.length ; i++){
+        if(currentUser.giohang[i].id == a.getAttribute("name")){
+            currentUser.giohang[i].soLuong++;
+            break;
+        }
+    }
+    let giohang = currentUser.giohang;
+    localStorage.setItem("giohang" , JSON.stringify(giohang));
+    localStorage.setItem("currentUser", JSON.stringify(currentUser));
+    showTomtatsp();
+}
+
+function giam(a){
+    for(let i = 0 ; i<currentUser.giohang.length ; i++){
+        if(currentUser.giohang[i].id == a.getAttribute("name")){
+            currentUser.giohang[i].soLuong--;
+            if(currentUser.giohang[i].soLuong <= 0){
+                currentUser.giohang.splice(i,1);
+                break;
+            }
+            break;
+        }
+    }
+    let giohang = currentUser.giohang;
+    localStorage.setItem("giohang" , JSON.stringify(giohang));
+    localStorage.setItem("currentUser", JSON.stringify(currentUser));
+    showTomtatsp();
 }

@@ -33,7 +33,9 @@
             <div class="inner1">
                 <div><i class="fa-regular fa-credit-card"></i></div>
                 <div>Thanh toán</div>
-                <div>Vui lòng kiểm tra thông tin Khách Hàng , thông tin Giỏ hàng trước khi đặt hàng</div>
+                <div>Vui lòng kiểm tra Địa Chỉ , thông tin Giỏ hàng trước khi đặt hàng<br>
+                    Nếu gặp sự cố vui lòng liên hệ với chúng tôi để được hỗ trợ
+                </div>
             </div>
             <div class="inner2">
                 <div class="inner2left">
@@ -105,11 +107,11 @@
 
                     <div  id = "Form">
                         <div style="color:black; opacity: 1">Thông tin Khách Hàng</div>
-                        <div><label for="name">Họ tên</label> <br><input type="text" id="name" name="name"></div>
-                        <div><label for="email">Email</label><br> <input type="email" id="email" name="email"></div>
+                        <div><label for="name">Họ tên</label> <br><input type="text" id="name" name="name" readonly></div>
+                        <div><label for="email">Email</label><br> <input type="email" id="email" name="email" readonly></div>
                         <div><label for="tele">Điện thoại</label><br> <input type="tel" id="tele" name="tele" readonly></div>
                         <div><label for="sex">Giới tính</label> <br>
-                            <select id="sex" name="sex">
+                            <select id="sex" name="sex" disabled>
                                 <option value="nam">Nam</option>
                                 <option value="nu">Nữ</option>
                             </select>
@@ -221,7 +223,7 @@
                                 <input type="text" placeholder="Nhập số tài khoản đã dùng để thanh toán" >
                             </div>
         
-                            <div class= "confirm">Xác Nhận Thanh Toán</div>
+                            <div class= "confirm" onclick="thanhtoan()">Xác Nhận Thanh Toán</div>
         
         
         
@@ -235,9 +237,10 @@
                 <div class="inner2right">
                     <div>
                         <div>Giỏ hàng</div>
-                        <div>5</div>
+                        <div class="countcart">5</div>
                     </div>
                     <div class="cartoutter">
+                        <div class="item">
                         <div class="cartinner">
                             <div class="cart">
                                 <div>
@@ -250,22 +253,10 @@
                             <div class="sumofcart">
                                 245$
                             </div>
-                            <div class="clear"></div>
+                            <div class="clear" style="float:right" onclick="xoasp(this)" name:="idcuathngsanphamtronggiohang">Xóa</div>
+                            <div style="clear: both"></div>
                         </div>
-                        <div class="cartinner">
-                            <div class="cart">
-                                <div>
-                                    Samsung Galaxy Tab 10.1 3G
-                                </div>
-                                <div>
-                                    132.5$ x 2
-                                </div>
-                            </div>
-                            <div class="sumofcart">
-                                245$
-                            </div>
-                            <div class="clear"></div>
-                        </div>
+                    </div>
                         <div class="sumoutter">
                             <div>Tổng thành tiền :</div>
                             <div class="suminner">32.25$</div>

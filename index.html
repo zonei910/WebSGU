@@ -14,12 +14,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <!-- main/base.css -->
-    <link rel="stylesheet" href="assets/User/style/base.css">
-    <link rel="stylesheet" href="assets/User/style/main.css">
-    <link rel="stylesheet" href="assets/User/style/reponsive.css">
-    <link rel="stylesheet" href="assets/User/style/grid.css">
-    <link rel="stylesheet" href="assets/User/style/login_signin.css">
-    <link rel="stylesheet" href="/assets/User/style/cart.css">
+    <link rel="stylesheet" href="./assets/User/style/base.css">
+    <link rel="stylesheet" href="./assets/User/style/main.css">
+    <link rel="stylesheet" href="./assets/User/style/reponsive.css">
+    <link rel="stylesheet" href="./assets/User/style/grid.css">
+    <link rel="stylesheet" href="./assets/User/style/login_signin.css">
+    <link rel="stylesheet" href="./assets/User/style/cart.css">
     <link rel="stylesheet" href="./assets/User/style/payment.css">
 </head>
 <body>
@@ -96,7 +96,7 @@
                                         <a href="#" onclick="chuyenFormThongTin()">Tài khoản của tôi</a>
                                     </li>
                                     <li class="navbar_user-item">
-                                        <a href="">Đơn mua</a>
+                                        <a href="#" onclick="chuyenFormLichSuDonHang()">Đơn mua</a>
                                     </li>
                                     <li class="navbar_user-item navbar_user-item-out">
                                         <a href="" onclick="dangxuat()">Đăng xuất</a>
@@ -403,7 +403,7 @@
         </div>
 
         <!-- body payment history -->
-        <div class="order_history" style="display: none;">
+        <div class="order_history" style="display: none;" >
             <div class="grid wide1">
                 <div class="row account-app">
                     <div class="grid__column">
@@ -615,7 +615,7 @@
                                         <!-- <option value="">Small</option> -->
                                     </select>
                                     <input type="number" value="1" id="product-quantity" min="1">
-                                    <button href="" id="add-to-cart" class="btn">Thêm vào giỏ</button>
+                                    <button  id="add-to-cart" class="btn">Thêm vào giỏ</button>
                                     <h2>Mô tả</h2>
                                     <p id="product-description">Metal: 14K Gold</p>
                                     <!-- <p>Metal Color: Rose</p> -->
@@ -642,7 +642,7 @@
                     <th>Số lượng</th>
                     <th>Đơn giá</th>
                     <th>Thành tiền</th>
-                    <th>Xoá</th>
+                    <th>Sửa</th>
                 </tr>
                 <tbody id="myCart">
 
@@ -801,10 +801,17 @@ function chuyenFormDangNhap() {
 
 
     <!-- js -->
+<<<<<<< HEAD
     <script src="product.js"></script>
     <script src="user.js"></script>
     <script src="assets/User/script/main.js"></script>
     <script src="assets/User/script/Login_Signin.js"></script>
+=======
+    <script src="./product.js"></script>
+    <script src="./customer.js"></script>
+    <script src="./assets/User/script/main.js"></script>
+    <script src="./assets/User/script/Login_Signin.js"></script>
+>>>>>>> aa05287a9a5146965f36dcae2fb89d209693809d
     <script src="./assets/User/script/cart.js"></script>
     <script src="link.js"></script>
     <!-- awesome font -->

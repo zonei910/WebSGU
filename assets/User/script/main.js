@@ -340,15 +340,15 @@ search.addEventListener('click', () => {
 })
 
 // ======================cart ====================
-let cart = document.querySelector('.navbar_cart');
+// let cart = document.querySelector('.navbar_cart');
 
-cart.addEventListener('click', () => {
-    let dropdowncart = document.querySelector('.navbar_cart-dropdown-nocart');
-    if ( dropdowncart.style.display === 'block' )
-        dropdowncart.style.display = 'none';
-    else
-        dropdowncart.style.display = 'block';
-})
+// cart.addEventListener('click', () => {
+//     let dropdowncart = document.querySelector('.navbar_cart-dropdown-nocart');
+//     if ( dropdowncart.style.display === 'block' )
+//         dropdowncart.style.display = 'none';
+//     else
+//         dropdowncart.style.display = 'block';
+// })
 
 // =====================account ==================
 let account = document.querySelector('.navbar_user');
@@ -453,28 +453,27 @@ function addClickEventToProducts() {
 
 
 //=============== tạo sản phẩm tự động ===============
-// const productContainer = document.getElementById('product-container');
+const productContainer = document.getElementById('product-container');
 
-// Product.forEach(product => {
-//     let productHTML =`
-//         <div class="grid__column3" data-category="${product.category}" data-id="${product.id}">
-//             <a href="#" class="home-product-item">
-//                 <div class="product-img">   
-//                     <img src="${product.images[0]}" alt="${product.name}">
-//                 </div>
-//                 <div class="product-info">
-//                     <h3 class="product-name">${product.name}</h3>
-//                     <span class="product-prices">${product.price === 0 ? 'Hàng tặng' : product.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</span>
-//                 </div>
-//             </a>
-//         </div>
-//     `;
-//     productContainer.innerHTML += productHTML;
-// })
-// console.log(document.querySelectorAll('.grid__column3'));
+Product.forEach(product => {
+    let productHTML =`
+        <div class="grid__column3" data-category="${product.category}" data-id="${product.id}">
+            <a href="#" class="home-product-item">
+                <div class="product-img">   
+                    <img src="${product.images[0]}" alt="${product.name}">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">${product.name}</h3>
+                    <span class="product-prices">${product.price === 0 ? 'Hàng tặng' : product.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</span>
+                </div>
+            </a>
+        </div>
+    `;
+    productContainer.innerHTML += productHTML;
+})
+console.log(document.querySelectorAll('.grid__column3'));
 
 // Chuyển mảng sản phẩm thành JSON và lưu vào localStorage
-localStorage.setItem('products', JSON.stringify(Product));
 // Lấy mảng sản phẩm từ localStorage và chuyển lại thành mảng
 const savedProducts = JSON.parse(localStorage.getItem('products'));
 

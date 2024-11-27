@@ -1,60 +1,79 @@
 #Display .order{
-    width: 100%;
-    padding: 20px;
-}
 
-#Display .order .inner{
-    border:1px solid grey;
 }
 
 #Display .order .head{
-    background-color: var(--mau1);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+    padding:10px;
+}
+
+#Display .order .time>div{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+
+#Display .order .filterbtn{
+	border:  3px solid black;
+	cursor: pointer;
+}	
+
+#Display .order .filterbtn:hover{
+	background-color: red;
+}
+
+#Display .order  .timkiem{
+	width: 20%;
+}
+
+
+#Display .order .main{
+    border: 3px solid black;
+}
+
+#Display .order .main table{
+    width: 100%;
+}
+
+#Display .order .main th, td{
     padding: 10px;
-    border-radius: 4px;
+    text-align: left;
 }
 
-
-
-
-
-#Display .order .container{
-    padding: 10px;
-    border-top: none;
-    overflow: auto;
-    height: 30%;
+#Display .order .main tbody tr{
+    border-bottom: 1px solid #ccc;
 }
 
-#Display .order .container .item{
-    border:1px solid grey;
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 5px;
-}
-#Display .order .container .item p{
-    margin: 0px;
-}
-
-#Display .order .container .item i{
-    margin-right: 15px;
-}
-
-#Display .order .container .item i:nth-child(1){
+#Display .order .main tbody .button div{
     cursor: pointer;
-}
-
-#Display .order .container .item i:nth-child(2){
-    border: 3px solid red;
-    background-color: red;
-}
-
-
-#Display .order .foot{
-    background-color: var(--mau1);
-    padding: 10px;
+    border: 3px solid black;
     text-align: center;
 }
 
-#Display .order .foot button{
-    margin: 5px;
+#Display .order .main tbody .button div:hover{
+    background-color: blue;
 }
+
+#Display .foot{
+    border: 3px solid red;
+    display: flex;
+    justify-content: center;
+}
+
+#Display .foot .pagination{
+    text-align: center;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Display .foot .pagination .item{
+    border: 3px solid grey;
+    cursor: pointer;
+    margin: 0 10px;
+}
+

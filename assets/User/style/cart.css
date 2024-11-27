@@ -6,6 +6,12 @@
 th{
     padding:10px;
 }
+.cart-item > button{
+    display: flex;
+    flex-direction: column; 
+    margin-bottom: 5px;
+    width:40px;
+}
 
 .navbar_cart-warp {
     position: relative;
@@ -46,7 +52,7 @@ th{
 }
 
 .cart-item-img{
-    width:80px;
+    width:100px;
     height:auto;
 }
 
