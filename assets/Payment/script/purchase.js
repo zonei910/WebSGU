@@ -90,7 +90,7 @@ if(donhang == null){
     madon = 1;
     donhang = [];
 }else{
-    madon = donhang.length;
+    madon = donhang.length + 1;
 }
 
 let diachi = document.querySelector("#address").value;
