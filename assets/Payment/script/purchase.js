@@ -39,6 +39,7 @@ confirm.style.display = "block";
 
 }
 
+
 confirm.onclick = () =>{
 stk.value = stk.value.replace(/\.$/, '');
 if(stk.value == "" && stk.style.display == "block"){
@@ -68,6 +69,62 @@ if (co == 0){
 }
 }
 
+if(currentUser.giohang.length == 0){
+    alert("Vui lòng chọn sản phẩm cần mua");
+    form.style.display = "none"; 
+    display.style.display = "block";
+    purchase.style.display = "none";
+    return 0;
+}
+
+let s = 0;
+for(let i = 0; i < currentUser.giohang.length ;i++){
+    let thanhtien = currentUser.giohang[i].gia * currentUser.giohang[i].soLuong;
+    s += thanhtien;
+}
+
+let today =   new Date();
+let madon;
+let donhang = JSON.parse(localStorage.getItem("donhang"));
+if(donhang == null){
+    madon = 1;
+    donhang = [];
+}else{
+    madon = donhang.length;
+}
+
+let diachi = document.querySelector("#address").value;
+
+let phieumua = {
+    id: madon,
+    ngaydat: `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}` ,
+    ngayduyet: 0 ,
+    diachiKH: diachi,
+    tenKH: currentUser.name,
+    phoneKH: currentUser.phone,
+    emailKH: currentUser.email,
+    genderKH: currentUser.gender,
+    giohang: currentUser.giohang,
+}
+donhang.push(phieumua);
+localStorage.setItem("donhang", JSON.stringify(donhang));
+let users = JSON.parse(localStorage.getItem("users"));
+for(let i = 0 ; i<users.length;i++){
+    if(users[i].phone == currentUser.phone){
+        users[i].lichsuMuaHang.push(donhang);
+    }
+}
+
+
+let giohang = [];
+currentUser.giohang = giohang;
+localStorage.setItem("giohang", JSON.stringify(giohang));
+localStorage.setItem("currentUser", JSON.stringify(currentUser));
+
+
+
+
+showTomtatsp();
 alert("Đặt hàng thành công quay về trang chủ");
 window.location.href = "index.html";
 }

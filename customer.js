@@ -16,6 +16,7 @@ let Customer = [
         gender: "nu",
         address: "123 Đường Lê Lợi, Quận 1, TP. HCM",
         password: "123",
+        lichsuMuaHang: [],
         status: 0,
     },
 
@@ -26,6 +27,7 @@ let Customer = [
         gender: "nam",
         address: "101 Đường Nguyễn Trãi, Quận 4, TP. HCM",
         password: "minhpham123",
+        lichsuMuaHang: [],
         status: 0,
     },
 
@@ -36,6 +38,7 @@ let Customer = [
         gender: "nu",
         address: "102 Đường Lý Thường Kiệt, Quận 10, TP. HCM",
         password: "hoangmai123",
+        lichsuMuaHang: [],
         status: 0,
     },
 
@@ -46,6 +49,7 @@ let Customer = [
         gender: "nu",
         address: "456 Đường CMT8, Quận 3, TP. HCM",
         password: "password567",
+        lichsuMuaHang: [],
         status: 0,
     },
 
@@ -56,6 +60,7 @@ let Customer = [
         gender: "nam",
         address: "789 Đường Võ Thị Sáu, Quận 5, TP. HCM",
         password: "lehoang123",
+        lichsuMuaHang: [],
         status: 0,
     },
 

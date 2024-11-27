@@ -33,7 +33,9 @@
             <div class="inner1">
                 <div><i class="fa-regular fa-credit-card"></i></div>
                 <div>Thanh toán</div>
-                <div>Vui lòng kiểm tra thông tin Khách Hàng , thông tin Giỏ hàng trước khi đặt hàng</div>
+                <div>Vui lòng kiểm tra Địa Chỉ , thông tin Giỏ hàng trước khi đặt hàng<br>
+                    Nếu gặp sự cố vui lòng liên hệ với chúng tôi để được hỗ trợ
+                </div>
             </div>
             <div class="inner2">
                 <div class="inner2left">
@@ -105,11 +107,11 @@
 
                     <div  id = "Form">
                         <div style="color:black; opacity: 1">Thông tin Khách Hàng</div>
-                        <div><label for="name">Họ tên</label> <br><input type="text" id="name" name="name"></div>
-                        <div><label for="email">Email</label><br> <input type="email" id="email" name="email"></div>
+                        <div><label for="name">Họ tên</label> <br><input type="text" id="name" name="name" readonly></div>
+                        <div><label for="email">Email</label><br> <input type="email" id="email" name="email" readonly></div>
                         <div><label for="tele">Điện thoại</label><br> <input type="tel" id="tele" name="tele" readonly></div>
                         <div><label for="sex">Giới tính</label> <br>
-                            <select id="sex" name="sex">
+                            <select id="sex" name="sex" disabled>
                                 <option value="nam">Nam</option>
                                 <option value="nu">Nữ</option>
                             </select>
@@ -221,7 +223,7 @@
                                 <input type="text" placeholder="Nhập số tài khoản đã dùng để thanh toán" >
                             </div>
         
-                            <div class= "confirm">Xác Nhận Thanh Toán</div>
+                            <div class= "confirm" onclick="thanhtoan()">Xác Nhận Thanh Toán</div>
         
         
         
