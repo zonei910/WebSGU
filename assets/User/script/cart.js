@@ -170,26 +170,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // người dùng hiện tại storage
-let currentUser = JSON.parse(localStorage.getItem("currentUser"));
-if (currentUser) {
-    // Lấy số điện thoại
-    let sdt = currentUser.phone;
+// let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+// if (currentUser) {
+//     // Lấy số điện thoại
+//     let sdt = currentUser.phone;
 
-    let customers = JSON.parse(localStorage.getItem("Customer"));
-    const user = customers.find(user => user.phone === sdt);
+//     let customers = JSON.parse(localStorage.getItem("Customer"));
+//     const user = customers.find(user => user.phone === sdt);
 
-    // Nếu tìm thấy người dùng thì thêm giohang vào nó
-    if (user) {
-        user.giohang = giohang; 
+//     // Nếu tìm thấy người dùng thì thêm giohang vào nó
+//     if (user) {
+//         user.giohang = giohang; 
 
-        // Cập nhật lại mảng Customer trong bộ nhớ
-        localStorage.setItem("Customer", JSON.stringify(customers));  // Lưu lại mảng Customer vào localStorage
+//         // Cập nhật lại mảng Customer trong bộ nhớ
+//         localStorage.setItem("Customer", JSON.stringify(customers));  // Lưu lại mảng Customer vào localStorage
 
-        // Kiểm tra lại người dùng đã có giohang
-        alert("Đã thêm giỏ hàng vào người dùng: " + JSON.stringify(user));
-    } else {
-        alert("Không tìm thấy người dùng với số điện thoại: " + sdt);
-    }
-} else {
-    alert("Không có người dùng hiện tại trong localStorage.");
-}
+//         // Kiểm tra lại người dùng đã có giohang
+//         alert("Đã thêm giỏ hàng vào người dùng: " + JSON.stringify(user));
+//     } else {
+//         alert("Không tìm thấy người dùng với số điện thoại: " + sdt);
+//     }
+// } else {
+//     alert("Không có người dùng hiện tại trong localStorage.");
+// }
