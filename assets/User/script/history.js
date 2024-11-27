@@ -53,8 +53,8 @@ function renderOrderHistory() {
     if (userOrders.length === 0) {
         orderHtml = `
             <div class="order-history-empty">
-                <h3>Không có đơn hàng nào!</h3>
-                <p>Hiện tại bạn chưa có đơn hàng nào.</p>
+                <img src="./assets/User/img/download.png" alt="" class="empty-order-img">
+                <p>Chưa có đơn hàng nào</p>
             </div>`;
     } else {
         userOrders.forEach(order => {
