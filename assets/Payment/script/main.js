@@ -11,8 +11,7 @@ function showTomtatsp(){
     let n = 0;
     for(let i = 0 ; i < product.length ; i++){
         n += product[i].soLuong;
-        console.log(product[i].gia, typeof(product[i].gia));
-        let gia = product[i].gia.slice(0,-1);
+        let gia = parseInt(product[i].gia);
         let thanhtien = gia * parseInt(product[i].soLuong);
         s += thanhtien;
         a += `
