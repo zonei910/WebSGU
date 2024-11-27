@@ -75,8 +75,8 @@ if(select.value == "ring" || select.value == "watch" || select.value == "bracele
                                             <option value="small">Small</option>
                                         </select>
                                         <div class="add">
-                                        <input type="number" value="1" min="1">
-                                        <div name="${filterarr[i].id}>Thêm vào giỏ</div>
+                                        <input type="number" value="1" min="1" name = "${filterarr[i].id}" id ="soluong">
+                                        <div name="${filterarr[i].id}" onclick="themsp(this)" >Thêm vào giỏ</div>
                                         </div>
                                     </div>
             </div>
@@ -227,8 +227,8 @@ for(let i = 4 ; i < 8 ; i++){
                                             <option value="small">Small</option>
                                         </select>
                                         <div class="add">
-                                        <input type="number" value="1" min="1">
-                                        <div name="${filterarr[i].id}>Thêm vào giỏ</div>
+                                        <input type="number" value="1" min="1"  name="${filterarr[i].id}" id="soluong">
+                                        <div name="${filterarr[i].id}" onclick="themsp(this)">Thêm vào giỏ</div>
                                         </div>
                                     </div>
             </div>
@@ -244,7 +244,7 @@ for(let i = 4 ; i < 8 ; i++){
     if(tongsotrang != 1) 
      shownut.innerHTML = butt;
     else shownut.innerHTML = "";
-    console.log(filterarr);
+
 
 
 
@@ -279,8 +279,8 @@ let a = ``;
                                             <option value="small">Small</option>
                                         </select>
                                         <div class="add">
-                                        <input type="number" value="1" min="1">
-                                        <div name="${filterarr[i].id}">Thêm vào giỏ</div>
+                                         <input type="number" value="1" min="1"  name="${filterarr[i].id}" id="soluong">
+                                         <div name= "${filterarr[i].id}" onclick="themsp(this)">Thêm vào giỏ</div>
                                         </div>
                                     </div>
             </div>
@@ -294,9 +294,9 @@ let a = ``;
 }
 
 function showFind(){
-    console.log("Hello");
+
     let timkiem = document.querySelector("#Display .find");
-    console.log(timkiem);
+
     if(timkiem.classList.contains("hide")){
             timkiem.classList.remove("hide")
             timkiem.classList.add("show");
@@ -308,4 +308,26 @@ function showFind(){
         timkiem.classList.add("hide");
        
     }
+}
+
+
+function themsp(a){
+   let temp = document.querySelectorAll("#soluong");
+   let soluong;
+    for(let i = 0 ; i<temp.length;i++){
+        if(a.getAttribute("name") == temp[i].getAttribute("name")){
+            soluong = parseInt(temp[i].value);
+        }
+    }
+
+    for(let i = 0 ; i<currentUser.giohang.length;i++){
+        if(a.getAttribute("name") == currentUser.giohang[i].id){
+            currentUser.giohang[i].soLuong = parseInt(currentUser.giohang[i].soLuong) + soluong;
+            co = 1;
+            break;
+        }
+    }
+
+    localStorage.setItem("currentUser", JSON.stringify(currentUser));
+    showTomtatsp();
 }

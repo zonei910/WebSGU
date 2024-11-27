@@ -48,7 +48,7 @@ if(stk.value == "" && stk.style.display == "block"){
 }
 else{
 let checkstk = parseInt(stk.value);
-console.log(checkstk , stk.value); 
+
 if(checkstk != stk.value    && stk.style.display == "block" ){
     alert("Vui lòng nhập số tài khoản là số");
     stk.focus();
@@ -70,6 +70,5 @@ if (co == 0){
 
 alert("Đặt hàng thành công quay về trang chủ");
 window.location.href = "index.html";
-
-
 }
+
