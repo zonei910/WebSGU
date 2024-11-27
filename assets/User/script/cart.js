@@ -163,9 +163,9 @@ function hienthiGiohang() {
         x.style.display = 'none';
     }
 
-    if (noCart) {
-        noCart.style.display = 'none';
-    }
+    // if (noCart) {
+    //     noCart.style.display = 'none';
+    // }
     
     showMyCart(); 
 }
