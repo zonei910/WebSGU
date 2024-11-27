@@ -353,7 +353,46 @@ function themsp(a){
     showTomtatsp();
 }
 
+function xoasp(a){
+    for(let i = 0 ; i <currentUser.giohang.length ; i ++){
+        if(currentUser.giohang[i].id == a.getAttribute("name")){
+            currentUser.giohang.splice(i,1);
+            break;
+        }
+    }
+    let giohang = currentUser.giohang;
+    localStorage.setItem("giohang" , JSON.stringify(giohang));
+    localStorage.setItem("currentUser", JSON.stringify(currentUser));
+    showTomtatsp();
+}
+
 
 function tang(a){
-    
+    for(let i = 0 ; i<currentUser.giohang.length ; i++){
+        if(currentUser.giohang[i].id == a.getAttribute("name")){
+            currentUser.giohang[i].soLuong++;
+            break;
+        }
+    }
+    let giohang = currentUser.giohang;
+    localStorage.setItem("giohang" , JSON.stringify(giohang));
+    localStorage.setItem("currentUser", JSON.stringify(currentUser));
+    showTomtatsp();
+}
+
+function giam(a){
+    for(let i = 0 ; i<currentUser.giohang.length ; i++){
+        if(currentUser.giohang[i].id == a.getAttribute("name")){
+            currentUser.giohang[i].soLuong--;
+            if(currentUser.giohang[i].soLuong <= 0){
+                currentUser.giohang.splice(i,1);
+                break;
+            }
+            break;
+        }
+    }
+    let giohang = currentUser.giohang;
+    localStorage.setItem("giohang" , JSON.stringify(giohang));
+    localStorage.setItem("currentUser", JSON.stringify(currentUser));
+    showTomtatsp();
 }
