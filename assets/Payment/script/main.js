@@ -4,6 +4,42 @@ let display = document.querySelector("#Display");
 let form = document.querySelector("#Form");
 let purchase = document.querySelector("#Purchase");
 
+function showTomtatsp(){
+    let product = currentUser.giohang;
+    let a = '';
+    let s = 0;
+    for(let i = 0 ; i < product.length ; i++){
+        let gia = parseInt(product[i].gia.replace('đ', '').trim()); // Xóa ký tự "đ"
+        let thanhtien = gia * parseInt(product[i].soluong);
+        s += thanhtien;
+        a += `
+        <div class="cartinner">
+            <div class="cart">
+                <div>${product[i].ten}</div>
+                <div>${product[i].gia} * ${product[i].soLuong} </div>
+            </div>
+            <div class="sumofcart">
+                ${thanhtien}
+            </div>
+            <div class="clear" style="float:right" onclick="xoasp(this)" name="${product[i].id}">Xóa</div>
+        </div>
+        
+        
+        `
+    }
+    console.log(a);
+ 
+
+
+    let showSP = document.querySelector(".inner2right .cartoutter");
+    let showTong = document.querySelector(".sumoutter .suminner");
+    showSP.innerHTML = a;
+    showTong.innerHTML = s;
+}
+
+showTomtatsp();
+
+
 display.style.display = "none";
 purchase.style.display = "none";
 
@@ -143,27 +179,9 @@ let a = ``;
     address.value = currentUser.address;
     gender.value = currentUser.gender;
 
-    function showTomtatsp(){
-        let product = currentUser.giohang;
-        let a = '';
-        for(let i = 0 ; i < product.length ; i++){
-            a += `
-            <div class="cartinner">
-                <div class="cart">
-                    <div>${product[i][]}</div>
-                </div>
-                <div>
-
-                </div>
-            
-            
-            </div>
-            
-            
-            `
-        }
-    }
   
+  
+   
 
 
 
