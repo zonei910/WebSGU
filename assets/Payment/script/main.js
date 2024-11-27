@@ -1,5 +1,5 @@
 
-let user = JSON.parse(localStorage.getItem("currentUser"));
+let currentUser = JSON.parse(localStorage.getItem("currentUser"));
 let display = document.querySelector("#Display");
 let form = document.querySelector("#Form");
 let purchase = document.querySelector("#Purchase");
@@ -136,12 +136,38 @@ let a = ``;
     let address = document.querySelector("#address");
     let gender = document.querySelector("#sex");
 
-    console.log(ten);
 
-    ten.value = user.name;
-    email.value = user.email;
-    phone.value = user.phone;
-    address.value = user.address;
-    gender.value = user.gender;
+    ten.value = currentUser.name;
+    email.value = currentUser.email;
+    phone.value = currentUser.phone;
+    address.value = currentUser.address;
+    gender.value = currentUser.gender;
+
+    function showTomtatsp(){
+        let product = currentUser.giohang;
+        let a = '';
+        for(let i = 0 ; i < product.length ; i++){
+            a += `
+            <div class="cartinner">
+                <div class="cart">
+                    <div>${product[i][]}</div>
+                </div>
+                <div>
+
+                </div>
+            
+            
+            </div>
+            
+            
+            `
+        }
+    }
+  
+
+
+
+
+
 
 

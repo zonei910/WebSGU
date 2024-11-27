@@ -1,27 +1,37 @@
 // Lấy giỏ hàng từ storage hoặc mảng rỗng
 var giohang = JSON.parse(localStorage.getItem('giohang') || '[]'); 
 
+
+
 //click vào nút "Thêm vào giỏ"
 document.getElementById('add-to-cart').addEventListener('click', function() {
-    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-    if (!isLoggedIn) {
-        alert("Bạn cần đăng nhập để thêm sản phẩm vào giỏ hàng!");
-        return; // Dừng lại nếu chưa đăng nhập
-    }
 
     var soLuong = parseInt(document.getElementById('product-quantity').value);
-
     var ten = document.getElementById('product-name').innerText;
     var gia = document.getElementById('product-price').innerText.replace('đ', '').trim(); // Loại bỏ ký tự "đ"
     var hinh = document.getElementById('product-main-img').src;
+    let product = JSON.parse(localStorage.getItem("products"));
+    let id;
+    for(let i = 0 ; i < product.length ; i ++){
+        if(product[i].name == ten){
+            id = product[i].id;
+        }
+    }
 
-    var sp = [hinh, ten, gia, soLuong];
+
+    var sp = {
+        hinh: hinh,
+        id: id,
+        ten: ten,
+        gia: gia,
+        soLuong: soLuong,
+    }
 
     // Kiểm tra sản phẩm đã có trong giỏ hàng chưa
     var kt = false;
     for (let i = 0; i < giohang.length; i++) {
-        if (giohang[i][1] === ten) {
-            giohang[i][3] = parseInt(giohang[i][3]) + soLuong;
+        if (giohang[i].ten === ten) {
+            giohang[i].soLuong = parseInt(giohang[i].soLuong) + soLuong;
             kt = true;
             break;
         }
@@ -35,6 +45,9 @@ document.getElementById('add-to-cart').addEventListener('click', function() {
     localStorage.setItem('giohang', JSON.stringify(giohang));
     showcountsp();
     showMyCart();
+
+    
+
 });
 
 function showcountsp() {
@@ -48,8 +61,8 @@ function tangsp(x){
 
     // Tangw sản phẩm trong mảng giohang
     for (let i = 0; i < giohang.length; i++) {
-        if (giohang[i][1] === tensp) {
-            giohang[i][3]++;
+        if (giohang[i].ten === tensp) {
+            giohang[i].soLuong++;
             break;
         }
     }
@@ -66,9 +79,9 @@ function giamsp(x){
 
     // Tangw sản phẩm trong mảng giohang
     for (let i = 0; i < giohang.length; i++) {
-        if (giohang[i][1] === tensp) {
-            if (giohang[i][3]>1){
-                giohang[i][3]--;
+        if (giohang[i].ten === tensp) {
+            if (parseInt(giohang[i].soLuong)>1){
+                giohang[i].soLuong--;
             }
             else xoasp(x);
             break;
@@ -88,7 +101,7 @@ function xoasp(x) {
 
     // Xóa sản phẩm trong mảng giohang
     for (let i = 0; i < giohang.length; i++) {
-        if (giohang[i][1] === tensp) {
+        if (giohang[i].ten === tensp) {
             giohang.splice(i, 1);
             break;
         }
@@ -111,13 +124,16 @@ function showMyCart() {
     var tt = "";
     var tong = 0;
     for (let i = 0; i < giohang.length; i++) {
-        let thanhtien = parseInt(giohang[i][2]) * parseInt(giohang[i][3]);
+        let gia = parseInt(giohang[i].gia.replace('đ', '').trim()); // Xóa ký tự "đ"
+        console.log(gia);
+        let thanhtien = gia * parseInt(giohang[i].soLuong);
+        
         tong += thanhtien;
         tt += '<tr>' +
-            '<td><img class="cart-item-img" src="' + giohang[i][0] + '" alt=""></td>' +
-            '<td>' + giohang[i][1] + '</td>' +
-            '<td>' + giohang[i][3] + '</td>' +
-            '<td>' + giohang[i][2] + 'đ</td>' +
+            '<td><img class="cart-item-img" src="' + giohang[i].hinh + '" alt=""></td>' +
+            '<td>' + giohang[i].ten + '</td>' +
+            '<td>' + giohang[i].soLuong + '</td>' +
+            '<td>' + giohang[i].gia + 'đ</td>' +
             '<td>' + thanhtien + 'đ</td>' +
             '<td>' +
                 '<button onclick="xoasp(this)">Xóa</button>' +
@@ -136,36 +152,7 @@ function showMyCart() {
 
 // Hiển thị hoặc ẩn giỏ hàng
 function hienthiGiohang() {
-    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-    if (!isLoggedIn) {
-        alert("Bạn cần đăng nhập để thêm sản phẩm vào giỏ hàng!");
-        return; // Dừng lại nếu chưa đăng nhập
-    }else{
-        // người dùng hiện tại storage
-        let currentUser = JSON.parse(localStorage.getItem("currentUser"));
-        if (currentUser) {
-            // Lấy số điện thoại
-            let sdt = currentUser.phone;
-
-            let customers = JSON.parse(localStorage.getItem("Customer"));
-            const user = customers.find(user => user.phone === sdt);
-
-            // Nếu tìm thấy người dùng thì thêm giohang vào nó
-            if (user) {
-                user.giohang = giohang; 
-
-                // Cập nhật lại mảng Customer trong bộ nhớ
-                localStorage.setItem("Customer", JSON.stringify(customers));  // Lưu lại mảng Customer vào localStorage
-
-                // Kiểm tra lại người dùng đã có giohang
-                 alert("Đã thêm giỏ hàng vào người dùng: " + JSON.stringify(user));
-            } else {
-                alert("Không tìm thấy người dùng với số điện thoại: " + sdt);
-            }
-        } else {
-            alert("Không có người dùng hiện tại trong localStorage.");
-        }
-    }
+    
     let x = document.getElementById('giohang');
 
     let currentDisplay = window.getComputedStyle(x).display;
@@ -190,7 +177,18 @@ function closeCart(){
 
 // Mở phần thanh toán
 function openPayment() {
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    if (!isLoggedIn) {
+        alert("Bạn cần đăng nhập để thêm sản phẩm vào giỏ hàng!");
+        moDangNhap();
+        return; // Dừng lại nếu chưa đăng nhập
+    }else{
+
+    let currentUser  = JSON.parse(localStorage.getItem("currentUser"));
+    currentUser.giohang = JSON.parse(localStorage.getItem("giohang"));
+    localStorage.setItem("currentUser", JSON.stringify(currentUser));
     window.location.href="payment.html";
+    }
 }
 
 // Hiển thị thông tin thanh toán
