@@ -85,7 +85,7 @@
             text-align: center;
         }
 
-        .sp-item th img {
+        .sp-item td img {
             width: 100px;
             height: auto;
             object-fit: cover;
@@ -151,65 +151,130 @@
             <div class="khachhang">
                 <div class="left">
                     <p>Mã đơn: <span></span></p>
-                    <p>Tên khách hàng: <span></span></p>
-                    <p>Giới tính: <span></span></p>
-                    <p>Số điện thoại: <span></span></p>
+                    <p>Trạng thái: <span></span></p>
                     <p>Tổng tiền: <span></span></p>
-                </div>
-                <div class="right">
-                    <p>Email: <span></span></p>
-                    <p>Địa chỉ: <span></span></p>
                     <p>Mã khuyến mãi: <span></span></p>
+                    <p>Ngày đặt hàng: <span></span></p>
                     <p>Hình thức thanh toán: <span></span></p>
                     <p>Số tài khoản (nếu có): <span></span></p>
                 </div>
+                <div class="right">
+                    <p>Tên: <span></span></p>
+                    <p>Số điện thoại: <span></span></p>
+                    <p>Email: <span></span></p>
+                    <p>Địa chỉ: <span></span></p>
+                    <p>Giới tính: <span></span></p>
+                </div>
             </div>
-
+<hr>
+<div style="text-align: center;font-size:20px;font-weight: bold;">Đồng hồ</div>
             <div class="sanpham">
+              
                 <table class="sp-item">
-                    <tr class="row-head">
+                    <thead class="row-head">
+                    <tr>
                         <th>Hình</th>
+                        <th>Mã sản phẩm</th>
                         <th>Tên sản phẩm</th>
                         <th>Số lượng</th>
                         <th>Đơn giá</th>
                         <th>Thành tiền</th>
                     </tr>
+                    </thead>
                     <tbody id="sp-giohang">
                         <tr>
-                            <th><img src="assets/User/img/watch/4-1.jpg" alt=""></th>
-                            <th>Đồng hồ</th>
-                            <th>8</th>
-                            <th>200000</th>
-                            <th>1600000</th>
+                            <td><img src="assets/User/img/watch/4-1.jpg" alt=""></td>
+                            <td>1</td>
+                            <td>Đồng hồ</td>
+                            <td>8</td>
+                            <td>200000</td>
+                            <td>1600000</td>
                         </tr>
                         <tr>
-                            <th><img src="assets/User/img/watch/3-1.jpg" alt=""></th>
-                            <th>Đồng hồ</th>
-                            <th>5</th>
-                            <th>900000</th>
-                            <th>4500000</th>
+                            <td><img src="assets/User/img/watch/3-1.jpg" alt=""></td>
+                            <td>2</td>
+                            <td>Đồng hồ</td>
+                            <td>5</td>
+                            <td>900000</td>
+                            <td>4500000</td>
                         </tr>
                         <tr>
-                            <th><img src="assets/User/img/watch/2-1.jpg" alt=""></th>
-                            <th>Đồng hồ</th>
-                            <th>1</th>
-                            <th>200000</th>
-                            <th>200000</th>
+                            <td><img src="assets/User/img/watch/2-1.jpg" alt=""></td>
+                            <td>3</td>
+                            <td>Đồng hồ</td>
+                            <td>1</td>
+                            <td>200000</td>
+                            <td>200000</td>
                         </tr>
                     </tbody>
                     
                     <tr class="row-foot">
-                        <th colspan="4">Tổng đơn giá</th>
-                        <th>
-                            <div>Tiền không quan trọng</div>
-                        </th>
+                        <td colspan="4">Tổng đơn giá</td>
+                        <td>
+                            <div>100</div>
+                        </td>
                     </tr>
                 </table>
             </div>
+<br>
+<div style="text-align: center;font-size:20px;font-weight: bold;" >Nhẫn</div>
+
+<div class="sanpham">
+    <table class="sp-item">
+        <thead class="row-head">
+        <tr>
+            <th>Hình</th>
+            <th>Mã sản phẩm</th>
+            <th>Tên sản phẩm</th>
+            <th>Số lượng</th>
+            <th>Đơn giá</th>
+            <th>Thành tiền</th>
+        </tr>
+        </thead>
+        <tbody id="sp-giohang">
+            <tr>
+                <td><img src="assets/User/img/watch/4-1.jpg" alt=""></td>
+                <td>1</td>
+                <td>Đồng hồ</td>
+                <td>8</td>
+                <td>200000</td>
+                <td>1600000</td>
+            </tr>
+            <tr>
+                <td><img src="assets/User/img/watch/3-1.jpg" alt=""></td>
+                <td>2</td>
+                <td>Đồng hồ</td>
+                <td>5</td>
+                <td>900000</td>
+                <td>4500000</td>
+            </tr>
+            <tr>
+                <td><img src="assets/User/img/watch/2-1.jpg" alt=""></td>
+                <td>3</td>
+                <td>Đồng hồ</td>
+                <td>1</td>
+                <td>200000</td>
+                <td>200000</td>
+            </tr>
+        </tbody>
+        
+        <tr class="row-foot">
+            <td colspan="4">Tổng đơn giá</td>
+            <td>
+                <div>Tiền không quan trọng</div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+
+
 
             <div class="bonus">
                 <button>Duyệt</button>
                 <button>Hủy</button>
+                <button>Đã giao hàng</button>
             </div>
         </div>
     </div>

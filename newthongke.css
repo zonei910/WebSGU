@@ -1,128 +1,143 @@
 
-.outer{
-    width:80%;
+#Display .revenue .outer{
+    /* width:80%; */
+    overflow-y: scroll;
+    overflow: scroll;
+    /* height: 1000px; */
 }
-.container0{
+#Display .revenue .container0{
     display: grid;
     grid-template-columns: 510px 510px;
 }
-.container1{
+#Display .revenue .container1{
     display: grid;
     grid-template-columns: 510px 510px;
     grid-template-rows: 185px 185px ;
     gap:10px;
 }
-.container1 > div{
-    /* padding:20px; */
-    border-radius: 5px;
+#Display .revenue .container1 > div{
+    /*padding:20px;
+    */border-radius: 5px;
     color:white;
+ 
 }
-.container1>div>div{
+#Display .revenue .container1>div>div{
     margin:10px;
     padding: 5px;
     /* --------------------------------------------------------------- */
 }
-.container1 > div >div:nth-child(1){
+#Display .revenue .container1 > div >div:nth-child(1){
     font-size: 15px;
 }
-.container1 > div >div:nth-child(2){
+#Display .revenue .container1 > div >div:nth-child(2){
     font-size: 20px;
 }
-.container1 > div >div:nth-child(1){
+#Display .revenue .container1 > div >div:nth-child(1){
     font-size: 13px;
 }
-.container1 > div:nth-child(1){
+#Display .revenue .container1 > div:nth-child(1){
     background-color: rgb(59, 118, 238);
 }
-.container1 > div:nth-child(2){
+#Display .revenue .container1 > div:nth-child(2){
     background-color: rgb(98, 199, 255);
 }
-.container1 > div:nth-child(3){
+#Display .revenue .container1 > div:nth-child(3){
     background-color: rgb(166, 109, 212);
 }
-.container1 > div:nth-child(4){
+#Display .revenue .container1 > div:nth-child(4){
     background-color: rgb(108, 212, 177);
 }
-.container0>div:nth-child(1){
+#Display .revenue .container0>div:nth-child(1){
     border: none;
     position: relative;
     /* background-color: aqua; */
     height: 60px;
 }
-.container0 >div:nth-child(1)>input{
-    /* margin-left: 20px; */
-    width: 300px;
+#Display .revenue .container0 >div:nth-child(1)>input{
+    /*margin-left: 20px;
+    */width: 300px;
     height: 60px;
     border-radius: 20px;
     outline: none;
-    /* background-color: rgb(247, 250, 255); */
-    border:none;
+    /*background-color: rgb(247, 250, 255);
+    */border:none;
     background-color: white;
     padding:5px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
 }
 
 
-.container0 >div:nth-child(2)>div{
+#Display .revenue .container0 >div:nth-child(2)>div{
     padding:5px;
-    /* position: relative;
-    left: 570px; */
-    /* height: 60px; */
-    border-radius: 5px;
+    /*position: relative;
+    left: 570px;
+    *//*height: 60px;
+    */border-radius: 5px;
     float: left;
     outline: none;
     border-width: 1px;
-    /* border:rgb(131, 140, 145) 1px solid; */
-    border: none;
+    /*border:rgb(131, 140, 145) 1px solid;
+    */border: none;
     margin-left: 2px;
     color: rgb(131, 140, 145);
     width: 120px;
     display: flex;
     justify-content: center;
-    /* background-color: aqua; */
-    align-items: center;
-    /* line-height: 60px; */
+    /*background-color: aqua;
+    */align-items: center;
+    /*line-height: 60px;
+    */
+
 }
-.container0 >div:nth-child(2)>div:nth-child(2){
+#Display .revenue .container0 >div:nth-child(2)>div:nth-child(2){
     width: 5px;
     border-radius: 0px;
     height: 30px;
-    /* background-color: white; */
+    /*background-color: white;
+     */
 }
-.container0 >div:nth-child(2)>div>select{
+#Display .revenue .container0 >div:nth-child(2)>div>select{
     border: none;
     outline:none;
 }
-.container0>div:nth-child(2){
+#Display .revenue .container0>div:nth-child(2){
     display: flex;
     justify-content: right;
     border: none;
     outline:none;
 }
-.container0>div:nth-child(2)>div>input{
+#Display .revenue .container0>div:nth-child(2)>div>input{
     border: none;
     outline:none;
     /* height: 30px; */
 }
-.container0 >div:nth-child(1)>i{
+#Display .revenue .container0 >div:nth-child(1)>i{
     font-size: 30px;
     color: rgb(131, 140, 145);
     position: absolute;
     top:50%;
     transform: translateY(-50%);
     left: 280px;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
 }
-.container0{
+#Display .revenue .container0{
     padding:20px;
     margin:10px;
     background-color: rgb(247, 250, 255);
     position: relative;
 }
-.container{
+#Display .revenue .container{
     padding:20px;
     margin:10px;
     background-color: rgb(247, 250, 255);
 }
-.container2{
+#Display .revenue .container2{
     padding:20px;
     margin:10px;
     background-color: rgb(247, 250, 255);
@@ -132,15 +147,16 @@
     grid-template-rows: 300px;
     gap:10px;
 }
-.container2>div >div:nth-child(1){
+#Display .revenue .container2>div >div:nth-child(1){
     padding: 20px;
 }
-.container2>.thongke1{
+#Display .revenue .container2>.thongke1{
     background-color: white;
     padding: 10px;
     border-radius:5px ;
+
 }
-.container2>.thongke2{
+#Display .revenue .container2>.thongke2{
     padding: 10px;
     background-color:white;
     border-radius:5px ;
@@ -149,57 +165,57 @@
 /* .thongke1{
     padding:10px;
 } */
- .thongke1{
+#Display .revenue .thongke1{
     position: relative;
  }
-.thongke1 > div:nth-child(1){
+ #Display .revenue .thongke1 > div:nth-child(1){
     margin-bottom:10px ;
     color: rgb(87, 82, 88);
 }
-.thongke2 > div:nth-child(1){
+#Display .revenue .thongke2 > div:nth-child(1){
     margin-bottom:10px ;
     color: rgb(87, 82, 88);
 }
-table {
+#Display .revenue table {
     width: 100%;
     /* height: 207.4px; */
     height: 70%;
     border-collapse: collapse;
 }
-table, td {
+#Display .revenue table, td {
     border: 1px solid #ccc;
 }
-td{
+#Display .revenue td{
     width: 5px;
     height: 20px;
     padding: 0px;
 }
-.none{
+#Display .revenue .none{
     border-color: transparent;
     width: 6%;
 }
-.none1{
+#Display .revenue .none1{
     /* bottom khác màu */
     border-left-color:transparent ;
     border-right-color:transparent;
     border-top-color:transparent;
     border-bottom-color:#ccc ;
 }
-.left{
+#Display .revenue .left{
     /* left khác màu */
     border-left-color:#ccc ;
     border-right-color:transparent;
     border-top-color:transparent;
     border-bottom-color:#ccc ;
 }
-.bottom{
+#Display .revenue .bottom{
     /* bottom khác màu */
     border-bottom-color:#ccc ;
     border-left-color:transparent;
     border-right-color:transparent;
     border-top-color:transparent;
 }
-.none2{ 
+#Display .revenue .none2{ 
     /* right khác màu */
     border-bottom-color:transparent ;
     border-left-color:transparent;
@@ -208,28 +224,28 @@ td{
     width: 5%;
     position: relative;
 }
-.none3{
+#Display .revenue .none3{
     /* top khác màu */
     border-bottom-color:transparent ;
     border-left-color:transparent;
     border-top-color:#ccc;
     border-right-color:transparent;
 }
-.empty{
+#Display .revenue .empty{
     width: 7.4%;
 }
-tr>td>span{
+#Display .revenue tr>td>span{
     text-align: right;
     width: 10px;
     position: absolute;
     bottom:-8px;
     right: 20px;
 }
-td{
+#Display .revenue td{
     color:rgb(135, 136, 140);
     font-size:13px;
 }
-#tableabove{
+#Display .revenue #tableabove{
     position: absolute;
     /* height: calc(100% - 28px); */
     height: 207.3px;
@@ -237,7 +253,7 @@ td{
     justify-content: center; */
     /* align-items: center; */
 }
-.tdabove{
+#Display .revenue .tdabove{
     /* display: flex;
     align-items: flex-end; */
     display: flex;
@@ -249,77 +265,77 @@ td{
     display: flex;
     align-items: flex-end;
 } */
-.divout{
+#Display .revenue .divout{
     width: 100%;
     height: 100%;
     display: flex;
     align-items: flex-end;
 }
-#t1,#tt1{
+#Display .revenue #t1,#tt1{
     background-color: aqua;
     width: 50%;
     height: 100%;
 }
-#t2,#tt2{
+#Display .revenue #t2,#tt2{
     background-color: aqua;
     width: 50%;
     height: 90%;
 }
-#t3,#tt3{
+#Display .revenue #t3,#tt3{
     background-color: aqua;
     width: 50%;
     height: 80%;
 }
-#t4,#tt4{
+#Display .revenue #t4,#tt4{
     background-color: aqua;
     width: 50%;
     height: 70%;
 }
-#t5,#tt5{
+#Display .revenue #t5,#tt5{
     background-color: aqua;
     width: 50%;
     height: 60%;
 }
-#t6,#tt6{
+#Display .revenue #t6,#tt6{
     background-color: aqua;
     width: 50%;
     height: 50%;
 }
-#t7,#tt7{
+#Display .revenue #t7,#tt7{
     background-color: aqua;
     width: 50%;
     height: 40%;
 }
-#t8,#tt8{
+#Display .revenue #t8,#tt8{
     background-color: aqua;
     width: 50%;
     height: 30%;
 }
-#t9,#tt9{
+#Display .revenue #t9,#tt9{
     background-color: aqua;
     width: 50%;
     height: 10%;
 }
-#t10,#tt10{
+#Display .revenue #t10,#tt10{
     background-color: aqua;
     width: 50%;
     height: 30%;
 }
-#t11,#tt11{
+#Display .revenue #t11,#tt11{
     background-color: aqua;
     width: 50%;
     height: 70%;
 }
-#t12,#tt12{
+#Display .revenue #t12,#tt12{
     background-color: aqua;
     width: 50%;
     height: 80%;
 }
-.doanhthu{
+#Display .revenue .doanhthu{
     display:flex;
     /* background-color: aqua; */
 }
-.doanhthu>div{
+#Display .revenue .doanhthu>div{
     height: 50px;
     border:none;
     /* color:white; */
@@ -327,20 +343,20 @@ td{
     font-size:18px;
     padding:10px
 }
-.doanhthu>div:nth-child(1){
+#Display .revenue .doanhthu>div:nth-child(1){
     width:50%;
     border-radius: 5px 0px 0px 5px;
     display: flex;
     align-items: center;
 }
-.doanhthu>div:nth-child(2){
+#Display .revenue .doanhthu>div:nth-child(2){
     width:25%;
     /* background-color: aqua; */
     /* border: #534936 1px solid; */
     display: flex;
     align-items: center;
 }
-.doanhthu>div:nth-child(3){
+#Display .revenue .doanhthu>div:nth-child(3){
     width:25%;
     border-radius: 0px 5px 5px 0px;
     display: flex;
@@ -348,13 +364,13 @@ td{
     /* background-color: aqua; */
     /* border: #534936 1px solid; */
 }
-.container3{
+#Display .revenue .container3{
     padding:20px;
     margin:10px;
     background-color: rgb(247, 250, 255);
     
 }
-.inputdate{
+#Display .revenue .inputdate{
     height:40px;
     padding:5px;
     border-radius: 20px;
@@ -362,7 +378,7 @@ td{
     border-width: 1px;
     margin-left:5px;
 }
-.getyearmonth{
+#Display .revenue .getyearmonth{
     height:40px;
     padding:5px;
     border-radius: 20px;
@@ -370,44 +386,44 @@ td{
     border-width: 1px;
     margin-left:5px;
 }
-.thongkecustom{
+#Display .revenue .thongkecustom{
     margin:10px;
     border: #244561 solid 1px;
     padding: 10px;
     border-radius: 5px;
     display: none;
 }
-.thongkesanpham{
+#Display .revenue .thongkesanpham{
     margin:10px;
     border: #244561 solid 1px;
     padding: 10px;
     border-radius: 5px;
     display: none;
 }
-.thongkecustom>div>div{
+#Display .revenue .thongkecustom>div>div{
     display: flex;
     position: relative;
     margin:10px;
 }
-.thongkesanpham>div>div{
+#Display .revenue .thongkesanpham>div>div{
     display: flex;
     position: relative;
     margin:10px;
 }
-.cuswithhighestprofit,.cuswithlowestprofit{
+#Display .revenue .cuswithhighestprofit,.cuswithlowestprofit{
     background-color: #ef9f9f;
     padding:20px;
     margin-top: 10px;
     border-radius: 5px;
     /* color: w; */
 }
-.productwithhighestprofit,.productwithlowestprofit{
+#Display .revenue .productwithhighestprofit,.productwithlowestprofit{
     background-color: #dbf0ff;
     padding:20px;
     margin-top: 10px;
     border-radius: 5px;
 }
-.thongkecustom>div>div>div{
+#Display .revenue .thongkecustom>div>div>div{
     width: 16.6%;
     /* vertical-align: middle; */
     height: 100px;
@@ -416,7 +432,7 @@ td{
     color:rgb(62, 75, 82);
     font-size: 17px;
 }
-.thongkesanpham>div>div>div{
+#Display .revenue .thongkesanpham>div>div>div{
     width: 16.6%;
     /* vertical-align: middle; */
     height: 100px;
@@ -426,17 +442,17 @@ td{
     font-size: 17px;
 }
 
-.thongkecustom>div>div:nth-child(1)>div {
+#Display .revenue .thongkecustom>div>div:nth-child(1)>div {
     height: 50px;
     font-weight: bold;
     font-size: 20px;
 }
-.thongkesanpham>div>div:nth-child(1)>div {
+#Display .revenue .thongkesanpham>div>div:nth-child(1)>div {
     height: 50px;
     font-weight: bold;
     font-size: 20px;
 }
-.header{
+#Display .revenue .header{
     margin-top: 10px;
     margin-left: 10px;
     font-weight: bold;
@@ -444,31 +460,31 @@ td{
     color: #244561;
     padding: 0px;
 }
-.thongkecustom>div>div:nth-child(1){
+#Display .revenue .thongkecustom>div>div:nth-child(1){
     height: 50px;
     font-weight: bold;
     font-size: 20px;
     color:rgb(62, 75, 82);
 }
-.thongkesanpham>div>div:nth-child(1){
+#Display .revenue .thongkesanpham>div>div:nth-child(1){
     height: 50px;
     font-weight: bold;
     font-size: 20px;
     color:rgb(62, 75, 82);
 }
-.imgofcustomer{
+#Display .revenue .imgofcustomer{
     width: 80px;
     height: 80px;
     border-radius: 100%;
 }
-#timefirst{
+#Display .revenue #timefirst{
     /* width: 50px;
     height: 50px; */
     /* background-color: aquamarine; */
     background-color: white;
     height: 30px;
 }
-#timesecond{
+#Display .revenue #timesecond{
     background-color: white;
     height: 30px;
 }
