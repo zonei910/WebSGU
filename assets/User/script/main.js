@@ -292,9 +292,9 @@ choose.forEach(link => {
 
         // Cập nhật tiêu đề
         if ( category === 'all')
-            categoryTitle.textContent = `${categoryName} sản phẩm`;
+            categoryTitle.textContent = `✨${categoryName} sản phẩm`;
         else    
-            categoryTitle.textContent = `Sản phẩm ${categoryName}`;
+            categoryTitle.textContent = `✨Sản phẩm ${categoryName}`;
 
         choose.forEach(item => item.parentElement.classList.remove('active'));
         link.parentElement.classList.add('active');
