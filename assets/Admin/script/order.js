@@ -54,7 +54,7 @@ function showDonHang(){
                             <td>${donhang[i].ngayduyet == 0?"Chưa duyệt": donhang[i].ngayduyet}</td>
                             <td>${trangthai}</td>
                             <td class="button">
-                                <div name="${donhang[i].id}" onclick="xulydonhang(this)">Xử lý đơn hàng</div>
+                                <div name="${donhang[i].id}" onclick="xulydonhang(this)">Xem chi tiết đơn hang</div>
                             </td>
                     </tr>   
 			
@@ -97,7 +97,7 @@ function nuttrang_order(a){
                             <td>${donhang[i].ngayduyet == 0?"Chưa duyệt": donhang[i].ngayduyet}</td>
                             <td>${trangthai}</td>
                             <td class="button">
-                                <div name="${donhang[i].id}" onclick="xulydonhang(this)">Xử lý đơn hàng</div>
+                                <div name="${donhang[i].id}" onclick="xulydonhang(this)">Xem chi tiết đơn hàng</div>
                             </td>
                     </tr>   
 			
@@ -123,9 +123,15 @@ function filter_order(){
 			showDonHang();
 			return 0;
 		}
+
+		for(let i = 0 ; i < donhang.length ; i++){
+			if(select.value == donhang[i].status){
+				filterarr.push(donhang[i]);
+			}
+		}
 		let sosanphammoitrang = 3;
 		let sotranghientai = 1;
-		let tongsotrang = Math.ceil(donhang.length/sosanphammoitrang);
+		let tongsotrang = Math.ceil(filterarr.length/sosanphammoitrang);
 		let vitrihientai = (sotranghientai - 1) * sosanphammoitrang;
 		let btn = '';
 		if(tongsotrang != 1){
@@ -138,11 +144,7 @@ function filter_order(){
 	}	
 
 
-		for(let i = 0 ; i < donhang.length ; i++){
-			if(select.value == donhang[i].status){
-				filterarr.push(donhang[i]);
-			}
-		}
+	
 
 		let a ='';
 		let n = 0;
@@ -165,7 +167,7 @@ function filter_order(){
                             <td>${filterarr[i].ngayduyet == 0?"Chưa duyệt": filterarr[i].ngayduyet}</td>
                             <td>${trangthai}</td>
                             <td class="button">
-                                <div name="${filterarr[i].id}" onclick="xulydonhang(this)">Xử lý đơn hàng</div>
+                                <div name="${filterarr[i].id}" onclick="xulydonhang(this)">Xem chi tiết đơn hàng</div>
                             </td>
                     </tr>   
 			
@@ -208,7 +210,7 @@ function nuttrangfilter_order(a){
                             <td>${filterarr[i].ngayduyet == 0?"Chưa duyệt": filterarr[i].ngayduyet}</td>
                             <td>${trangthai}</td>
                             <td class="button">
-                                <div name="${filterarr[i].id}" onclick="xulydonhang(this)">Xử lý đơn hàng</div>
+                                <div name="${filterarr[i].id}" onclick="xulydonhang(this)">Xem chi tiết đơn hàng</div>
                             </td>
                     </tr>   
 			
@@ -219,6 +221,91 @@ let showdon = document.querySelector("#Display .order .main table tbody");
 showdon.innerHTML = b;
 }
 
+let findarr = [];
 function find_order(){
+	findarr = [];
+	let select = document.querySelector("#Display .order .loc");
+	let find = document.querySelector("#Display .order .timkiem");
+	if(select.value == "none"){
+		let donhang = JSON.parse(localStorage.getItem("donhang"));
+		if(donhang == null){
+			alert("Không có đơn hàng nào");
+			return 0;
+		}
+			donhang.forEach((item)=>{
+				if(item.id == parseInt(find.value)){
+					findarr.push(item);
+				}
+			});
+		
+			
+	}else{
+		if(findarr.value == ""){
+			filter_order();
+			console.log("hihi");
+			return 0;
+		}
+
+		filterarr.forEach((item)=>{
+			if(item.id == parseInt(find.value)){
+				findarr.push(item);
+			}
+		});
+
 	
+		
+	}
+	filterarr = findarr;
+
+	let sosanphammoitrang = 3;
+	let sotranghientai = 1;
+	let tongsotrang = Math.ceil(filterarr.length/sosanphammoitrang);
+	let vitrihientai = (sotranghientai - 1) * sosanphammoitrang;
+	let btn = '';
+	if(tongsotrang != 1){
+	for(let i = 1 ; i<=tongsotrang ; i ++){
+		btn += `
+			<div class="item" onclick="nuttrangfilter_order(${i})">${i}</div>	
+
+		`
+	}
+}	
+
+
+	let a ='';
+	let n = 0;
+	for(let i = 0 ; i<filterarr.length;i++){
+		let trangthai;
+		if(filterarr[i].status == 0){
+			trangthai = "Chưa xử lý";
+		}else if(filterarr[i].status == 1){
+			trangthai = "Đã duyệt";
+		}else if(filterarr[i].status == 2){
+			trangthai = "Đã giao hàng thành công";
+		}
+		n++;
+		a += `
+		<tr>
+			  <td>${filterarr[i].id}</td>
+						<td>${filterarr[i].tenKH}</td>
+						<td>${filterarr[i].tongtien}</td>
+						<td>${filterarr[i].ngaydat}</td>
+						<td>${filterarr[i].ngayduyet == 0?"Chưa duyệt": filterarr[i].ngayduyet}</td>
+						<td>${trangthai}</td>
+						<td class="button">
+							<div name="${filterarr[i].id}" onclick="xulydonhang(this)">Xem chi tiết đơn hàng</div>
+						</td>
+				</tr>   
+		
+		`;
+		if(n == sosanphammoitrang) break;
+	}
+
+
+	let showbtn = document.querySelector("#Display .order .foot .pagination");
+	showbtn.innerHTML = btn;
+	let showdon = document.querySelector("#Display .order .main table tbody");
+	showdon.innerHTML = a;
+	console.log(filterarr);
 }
+

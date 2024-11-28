@@ -115,7 +115,7 @@
             <div class="head">
                 <div class="filter">
                     <select name="loc" class="loc" onchange="filter_order()">
-                        <option value="none" selected="true">Chọn lọc</option>
+                        <option value="none" selected="true">Tất cả</option>
                         <option value="0">Chưa xử lý</option>
                         <option value="1">Đã xử lý</option>
                         <option value="2">Giao hàng thành công</option>
@@ -134,7 +134,7 @@
 
 
               
-                    <input type="text" class="timkiem" placeholder="Nhập mã đơn hàng">
+                    <input type="text" class="timkiem" placeholder="Nhập mã đơn hàng" onkeyup="find_order()">
               
                 </div>
           
