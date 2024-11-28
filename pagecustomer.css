@@ -1,0 +1,384 @@
+.container3{
+    background-color: rgb(247, 250, 255);
+    margin:10px;
+    padding:20px;
+    border-radius: 5px;
+}
+.outer{
+    width:100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /* height: 500px; */
+    background-color: white;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+.container3>input{
+    width: 300px;
+    height: 60px;
+    border-radius: 20px;
+    outline: none;
+    border:none;
+    background-color: white;
+    padding:5px;
+}
+.container3{
+    position: relative;
+}
+.container3>i{
+    font-size: 30px;
+    color: rgb(131, 140, 145);
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    left: 260px;
+}
+.outercontainer4{
+    padding-bottom: 70px;
+    background-color: rgb(247, 250, 255);
+    /* background-color: #75ba75; */
+    margin:10px;
+    position: relative;
+    border-radius: 5px;
+}
+#phantrang{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#phantrangouter{
+    position: absolute;
+    /* left: 50%;
+    bottom:20px; 
+    transform: translate(-50%,50%); */
+}
+#phantrangouter:hover{
+    cursor: pointer;
+}
+#container4{
+    /* position: absolute; */
+    padding-top:20px;
+    /* padding:0x; */
+    /* display: flex; */
+    /* display:grid; */
+    /* grid-template-columns: 1190px; */
+    /* grid-template-rows: 50px 50px 100px 200px 50px; */
+    /* grid-auto-rows: 50px; */
+}
+.nutphantrang{
+    /* border-radius: 10px; */
+    text-align: center;
+    line-height: 30px;
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    border: 1px solid salmon;
+    /* border:none; */
+    background-color: white;
+    transform: translate(-50%,-50%);
+    color:rgb(87, 82, 88) ;
+}
+#container4 >.clientouter{
+    width: 100%;
+    margin: 20px;
+    display: flex;
+    /* grid-template-columns:168.33px 168.33px 168.33px 168.33px 168.33px 168.33px; */
+    /* grid-auto-rows: 50px; */
+    /* gap:10px; */
+    /* background-color: blue; */
+}
+.clientouter>div{
+    width: 14%;
+}
+#clientouter{
+    padding-bottom:10px;
+}
+#container4>#editclient{
+    padding: 20px;
+    display: flex;
+    /* grid-template-columns:repeat(7,168.33px); */
+
+    /* background-color: aqua; */
+    background-color: rgb(254, 199, 111);
+    border-radius: 0px 0px 10px 10px;
+    /* grid-template-columns:168.33px 168.33px 168.33px 168.33px 168.33px 168.33px; */
+    /* grid-auto-rows: 50px; */
+    /* gap:10px; */
+    /* width: 100%; */
+}
+#container4>#addclient{
+    position: relative;
+    padding: 20px;
+    display: flex;
+    /* grid-template-columns:repeat(7,168.33px); */
+    /* background-color: aqua; */
+    background-color: rgb(254, 199, 111);
+    border-radius: 0px 0px 10px 10px;
+    /* grid-template-columns:168.33px 168.33px 168.33px 168.33px 168.33px 168.33px; */
+    /* grid-auto-rows: 50px; */
+    /* gap:10px; */
+    /* width: 100%; */
+}
+#container4 > #editclient>input{
+    border-radius: 10px;
+    outline:none;
+    border: none;
+    width: 70%;
+    padding:10px;
+    color:rgb(87, 82, 88);
+}
+#container4 > #addclient>input{
+    border-radius: 10px;
+    outline:none;
+    border: none;
+    width: 70%;
+    padding:10px;
+    color:rgb(87, 82, 88);
+}
+#container4 > #editclient>input:nth-child(6){
+    background-color: #75ba75;
+    border: 1px solid black;
+    border-radius: 0px;
+}
+#container4 > #addclient>input:nth-child(6){
+    background-color: #75ba75;
+    border: 1px solid black;
+    border-radius: 0px;
+}
+#container4 >.orderouter{
+    /* display: flex; */
+    /* grid-template-columns:1000px; */
+    /* grid-template-rows: 50px 50px; */
+    /* grid-auto-rows: 50px; */
+    /* gap:10px; */
+    /* background-color: rgb(166, 109, 212); */
+    background-color: #62c7ff;
+    /* width: 100%; */
+    border-radius: 0px 0px 10px 10px;
+}
+#container4>.orderouter>div:nth-child(1)>div{
+    font-weight: bold;
+    width: 14%;
+}
+.orderouter > div{
+    /* display:grid; */
+    /* grid-template-columns:repeat(7,168.33px); */
+    /* grid-template-columns:168.33px 168.33px 168.33px 168.33px 168.33px 168.33px; */
+    /* grid-template-rows: 50px; */
+    /* gap:10px; */
+    padding: 20px;
+    height: 40px;
+    /*  */
+    width: 100%;
+}
+.orderouter>div>div{
+    width: 14%;
+}
+#container4>div:nth-child(1)>div{
+    font-weight: bold;
+}
+#container4>.clientouter>div{
+    color:rgb(87, 82, 88) ;
+}
+.outerorder>.clientouter>div{
+    /* color:white; */
+    color:rgb(87, 82, 88) ;
+}
+.orderouter>div >div{
+    /* /* color:white; */
+    color:rgb(87, 82, 88) ;
+}
+#container4>.clientouter>div>i{
+    margin:5px;
+    color:rgb(87, 82, 88) ;
+}
+#container4>div>div> i{
+    margin:5px;
+    color:rgb(87, 82, 88) ;
+}
+#container4>div>div>div> i{
+    margin:5px;
+    color:rgb(87, 82, 88) ;
+}
+/* .container4>div> i:hover{
+    cursor: pointer;
+} */
+.orderouter > div > div>input{
+    border-radius: 10px;
+    border: none;
+    height: 30px;
+    padding: 5px;
+}
+.active{
+    background-color: salmon;
+}
+#askbeforedeleting{
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0,0.5);
+    position: fixed;
+    width:100vw;
+    height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+#askbeforedeleting > div{
+    background-color: white;
+    text-align: center;
+    color: rgb(87, 82, 88) ;
+    border: none;
+    border-radius: 5px;
+    padding:10px;
+
+}
+#no{
+    border: none;
+    border-radius: 5px;
+    background-color: #6cd4b1;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    width: 20px;
+}
+#yes{
+    width: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fec76f;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+}
+#yes:hover{
+    cursor: pointer;
+}
+#no:hover{
+    cursor: pointer;
+}
+.delete:hover{
+    cursor: pointer;
+}
+#editclient{
+    position: relative;
+}
+#editclient > .alertdivedit:nth-child(7){
+    position: absolute;
+    left: 16%;
+    top:0;
+}
+#addclient > .alertdiv:nth-child(7){
+    position: absolute;
+    left: 16%;
+    top:0;
+}
+#editclient > .alertdivedit:nth-child(8){
+    position: absolute;
+    left: 30%;
+    top:0;
+}
+#addclient > .alertdiv:nth-child(8){
+    position: absolute;
+    left: 30%;
+    top:0;
+}
+#editclient > .alertdivedit:nth-child(9){
+    position: absolute;
+    left: 44%;
+    top:0;
+}
+#addclient > .alertdiv:nth-child(9){
+    position: absolute;
+    left: 44%;
+}
+#addclient > .alertdiv:nth-child(10){
+    position: absolute;
+    left: 58%;
+    top:0;
+}
+#editclient > .alertdivedit:nth-child(10){
+    position: absolute;
+    left: 58%;
+    top:0;
+}
+#addclient>div>i{
+    color:red;
+    font-size: 12px;
+}
+#editclient> .alertdivedit>i{
+    color:red;
+    font-size: 12px;
+}
+.editstatus>div{
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    text-align: center;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    width: 120px;
+    height: 30px;
+    background-color: white;
+    color: palevioletred;
+}
+.editstatus>div>i::before ,.delivering>i::before ,.delivered>i::before{
+    color: palevioletred;
+    margin:2px;
+    font-size: 13px;
+}
+.delivery{
+    display: none;
+}
+
+.editstatus>div,.delivering,.delivered{
+    color: #be95be;
+    background-color: white;
+    margin-top:2px;
+    width: 120px;
+    height: 20px;
+}
+.clientstatus> div,.paid> div,.unpaid> div {
+    color: #be95be;
+}
+.paid,.unpaid,.innerclientstatus{
+    text-align: center;
+    /* border-radius: 5px; */
+    border:1px solid #be95be;
+    height: 25px;
+    width: 70px;
+    padding:2px;
+}
+
+.paid:hover,.unpaid:hover,.clientstatus:hover{
+    cursor: pointer;
+}
+.paid > i,.unpaid > i,.clientstatus >div> i::before{
+    color: #be95be;
+    font-size: 10px;
+}
+.choosetime{
+    /* width: 15px; */
+    padding:2px;
+    border: none;
+}
+.divchoosetime{
+    border: black;
+    background-color:white;
+    /* width: 120px; */
+}
+.imageofcustomer{
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    border: #75ba75 2px solid;
+}

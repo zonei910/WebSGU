@@ -1,6 +1,9 @@
 
 .outer{
-    width:80%;
+    /* width:80%; */
+    overflow-y: scroll;
+    overflow: scroll;
+    /* height: 1000px; */
 }
 .container0{
     display: grid;

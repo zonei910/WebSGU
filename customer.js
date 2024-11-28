@@ -31,7 +31,7 @@ let Customer = [
                   "genderKH": "nu",
                   "giohang": [
                     {
-                      "hinh": "http://127.0.0.1:5500/Bonus/WebSGU/assets/User/img/watch/1-1.jpg",
+                      "hinh": "assets/User/img/watch/1-1.jpg",
                       "id": 1,
                       "ten": "Đồng Hồ Vàng Sang Trọng",
                       "gia": "47500000",
@@ -39,7 +39,7 @@ let Customer = [
                       "loai": "watch"
                     },
                     {
-                      "hinh": "http://127.0.0.1:5500/Bonus/WebSGU/assets/User/img/watch/2-1.jpg",
+                      "hinh": "assets/User/img/watch/2-1.jpg",
                       "id": 2,
                       "ten": "Đồng Hồ Đính Kim Cương",
                       "gia": "71250000",
@@ -62,7 +62,7 @@ let Customer = [
                   "genderKH": "nu",
                   "giohang": [
                     {
-                      "hinh": "http://127.0.0.1:5500/Bonus/WebSGU/assets/User/img/watch/4-1.jpg",
+                      "hinh": "assets/User/img/watch/4-1.jpg",
                       "id": 4,
                       "ten": "Đồng Hồ Vàng Hồng Sang Trọng",
                       "gia": "80750000",
@@ -70,7 +70,7 @@ let Customer = [
                       "loai": "watch"
                     },
                     {
-                      "hinh": "http://127.0.0.1:5500/Bonus/WebSGU/assets/User/img/watch/5-1.jpg",
+                      "hinh": "assets/User/img/watch/5-1.jpg",
                       "id": 5,
                       "ten": "Đồng Hồ Mặt Sapphire",
                       "gia": "93100000",
@@ -92,7 +92,7 @@ let Customer = [
                   "genderKH": "nu",
                   "giohang": [
                     {
-                      "hinh": "http://127.0.0.1:5500/Bonus/WebSGU/assets/User/img/watch/2-1.jpg",
+                      "hinh": "assets/User/img/watch/2-1.jpg",
                       "id": 2,
                       "ten": "Đồng Hồ Đính Kim Cương",
                       "gia": "71250000",
@@ -100,7 +100,7 @@ let Customer = [
                       "loai": "watch"
                     },
                     {
-                      "hinh": "http://127.0.0.1:5500/Bonus/WebSGU/assets/User/img/watch/3-1.jpg",
+                      "hinh": "assets/User/img/watch/3-1.jpg",
                       "id": 3,
                       "ten": "Đồng Hồ Bạch Kim",
                       "gia": "114000000",
@@ -122,7 +122,7 @@ let Customer = [
                   "genderKH": "nu",
                   "giohang": [
                     {
-                      "hinh": "http://127.0.0.1:5500/Bonus/WebSGU/assets/User/img/watch/1-1.jpg",
+                      "hinh": "assets/User/img/watch/1-1.jpg",
                       "id": 1,
                       "ten": "Đồng Hồ Vàng Sang Trọng",
                       "gia": "47500000",
@@ -156,7 +156,7 @@ let Customer = [
                   "genderKH": "nam",
                   "giohang": [
                     {
-                      "hinh": "http://127.0.0.1:5500/Bonus/WebSGU/assets/User/img/watch/2-1.jpg",
+                      "hinh": "assets/User/img/watch/2-1.jpg",
                       "id": 2,
                       "ten": "Đồng Hồ Đính Kim Cương",
                       "gia": "71250000",
@@ -164,7 +164,7 @@ let Customer = [
                       "loai": "watch"
                     },
                     {
-                      "hinh": "http://127.0.0.1:5500/Bonus/WebSGU/assets/User/img/ring/1-1.jpg",
+                      "hinh": "assets/User/img/ring/1-1.jpg",
                       "id": 6,
                       "ten": "Nhẫn Đính Hôn Kim Cương",
                       "gia": "142500000",
@@ -172,7 +172,7 @@ let Customer = [
                       "loai": "ring"
                     },
                     {
-                      "hinh": "http://127.0.0.1:5500/Bonus/WebSGU/assets/User/img/watch/5-1.jpg",
+                      "hinh": "assets/User/img/watch/5-1.jpg",
                       "id": 5,
                       "ten": "Đồng Hồ Mặt Sapphire",
                       "gia": "93100000",
@@ -206,7 +206,7 @@ let Customer = [
                   "genderKH": "nu",
                   "giohang": [
                     {
-                      "hinh": "http://127.0.0.1:5500/Bonus/WebSGU/assets/User/img/watch/1-1.jpg",
+                      "hinh": "assets/User/img/watch/1-1.jpg",
                       "id": 1,
                       "ten": "Đồng Hồ Vàng Sang Trọng",
                       "gia": "47500000",
@@ -214,7 +214,7 @@ let Customer = [
                       "loai": "watch"
                     },
                     {
-                      "hinh": "http://127.0.0.1:5500/Bonus/WebSGU/assets/User/img/watch/3-1.jpg",
+                      "hinh": "assets/User/img/watch/3-1.jpg",
                       "id": 3,
                       "ten": "Đồng Hồ Bạch Kim",
                       "gia": "114000000",
@@ -248,7 +248,7 @@ let Customer = [
                   "genderKH": "nu",
                   "giohang": [
                     {
-                      "hinh": "http://127.0.0.1:5500/Bonus/WebSGU/assets/User/img/watch/2-1.jpg",
+                      "hinh": "assets/User/img/watch/2-1.jpg",
                       "id": 2,
                       "ten": "Đồng Hồ Đính Kim Cương",
                       "gia": "71250000",
@@ -256,7 +256,7 @@ let Customer = [
                       "loai": "watch"
                     },
                     {
-                      "hinh": "http://127.0.0.1:5500/Bonus/WebSGU/assets/User/img/watch/3-1.jpg",
+                      "hinh": "assets/User/img/watch/3-1.jpg",
                       "id": 3,
                       "ten": "Đồng Hồ Bạch Kim",
                       "gia": "114000000",
@@ -264,7 +264,7 @@ let Customer = [
                       "loai": "watch"
                     },
                     {
-                      "hinh": "http://127.0.0.1:5500/Bonus/WebSGU/assets/User/img/watch/1-1.jpg",
+                      "hinh": "assets/User/img/watch/1-1.jpg",
                       "id": 1,
                       "ten": "Đồng Hồ Vàng Sang Trọng",
                       "gia": "47500000",
@@ -272,7 +272,7 @@ let Customer = [
                       "loai": "watch"
                     },
                     {
-                      "hinh": "http://127.0.0.1:5500/Bonus/WebSGU/assets/User/img/ring/1-1.jpg",
+                      "hinh": "assets/User/img/ring/1-1.jpg",
                       "id": 6,
                       "ten": "Nhẫn Đính Hôn Kim Cương",
                       "gia": "142500000",
@@ -306,7 +306,7 @@ let Customer = [
                   "genderKH": "nam",
                   "giohang": [
                     {
-                      "hinh": "http://127.0.0.1:5500/Bonus/WebSGU/assets/User/img/watch/2-1.jpg",
+                      "hinh": "assets/User/img/watch/2-1.jpg",
                       "id": 2,
                       "ten": "Đồng Hồ Đính Kim Cương",
                       "gia": "71250000",
@@ -314,7 +314,7 @@ let Customer = [
                       "loai": "watch"
                     },
                     {
-                      "hinh": "http://127.0.0.1:5500/Bonus/WebSGU/assets/User/img/ring/5-1.jpg",
+                      "hinh": "assets/User/img/ring/5-1.jpg",
                       "id": 10,
                       "ten": "Bộ Nhẫn Cưới Bạch Kim",
                       "gia": "161500000",
@@ -322,7 +322,7 @@ let Customer = [
                       "loai": "ring"
                     },
                     {
-                      "hinh": "http://127.0.0.1:5500/Bonus/WebSGU/assets/User/img/ring/4-1.jpg",
+                      "hinh": "assets/User/img/ring/4-1.jpg",
                       "id": 9,
                       "ten": "Nhẫn Ngọc Lục Bảo và Kim Cương",
                       "gia": "104500000",
