@@ -8,7 +8,7 @@ let next = document.getElementById('next');
 let active = 0;
 let lengthItems = items.length - 1;
 
-next.onclick = function() {
+next.onclick = function() {    
     if ( (active + 1) > lengthItems )
         active = 0;
     else 
@@ -335,8 +335,11 @@ search.addEventListener('click', () => {
     let dropdownsearch= document.querySelector('.navbar_search-dropdown');
     if ( dropdownsearch.style.display === 'block' )
         dropdownsearch.style.display = 'none';
-    else
+    else{
         dropdownsearch.style.display = 'block';
+        let dropdownaccount = document.querySelector('.navbar_user-items');
+        dropdownaccount.style.display = 'none';
+    }
 })
 
 // ======================cart ====================
@@ -357,8 +360,11 @@ account.addEventListener('click', () => {
     let dropdownaccount = document.querySelector('.navbar_user-items');
     if ( dropdownaccount.style.display === 'block' )
         dropdownaccount.style.display = 'none';
-    else
+    else{
         dropdownaccount.style.display = 'block';
+        let dropdownsearch= document.querySelector('.navbar_search-dropdown');
+        dropdownsearch.style.display = 'none';
+    }
 })
 
 // ==============menuicon==========
@@ -370,28 +376,12 @@ menuButton.addEventListener('click', () => {
 })
 
 // ==========fix lỗi đề lên nhau khi sử dụng các thanh công cụ
-document.addEventListener('click', (event) => {
-    // Đóng tất cả menu trước khi xử lý sự kiện nhấp
-    document.querySelectorAll('.navbar_search-dropdown, .navbar_user-items').forEach(menu => {
-        if (menu.style.display === 'block') {
-            menu.style.display = 'none';
-        }
-    });
 
-    // Kiểm tra sự kiện nhấp cho thanh tìm kiếm
-    const search = document.querySelector('.navbar_search');
-    const dropdownSearch = document.querySelector('.navbar_search-dropdown');
-    if (search.contains(event.target)) {
-        dropdownSearch.style.display = dropdownSearch.style.display === 'block' ? 'none' : 'block';
-    }
 
-    // Kiểm tra sự kiện nhấp cho tài khoản
-    const account = document.querySelector('.navbar_user');
-    const dropdownAccount = document.querySelector('.navbar_user-items');
-    if (account.contains(event.target)) {
-        dropdownAccount.style.display = dropdownAccount.style.display === 'block' ? 'none' : 'block';
-    }
-});
+
+
+
+
 
 
 
