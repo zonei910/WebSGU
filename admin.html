@@ -117,550 +117,616 @@
             </div>
 
         <div class="order">
-            <div class="inner">
-                <div class = "head">
-                    <input type="text">
-                    <button>Tìm kiếm</button>
-                </div>    
-
-                <div class="container">
-                    <div class="item">
-                            <div>
-                                <b>ID: 123</b>
-                                <p>Username: hihi</p>
-                                <p>Email:  hihi@gmail.com</p>
-                                <p>Address: Cau Giay Hanoi</p>
-                            </div>
-                            <div>
-                                <p>ID 1: 12</p>
-                                <p>ID 2: 12</p>
-                                <p>ID 4: 12</p>
-                                <p>ID 6: 12</p>
-                            </div>
-                            <div><i class="fa-solid fa-eye-slash"></i><i class="fa-solid fa-x"></i></div>
+            <div class="head">
+                <div class="filter">
+                    <select name="loc" class="loc" onchange="filter_order()">
+                        <option value="none" selected="true">Tất cả</option>
+                        <option value="0">Chưa xử lý</option>
+                        <option value="1">Đã xử lý</option>
+                        <option value="2">Giao hàng thành công</option>
+                        <option value="3">Đơn hàng bị hủy</option>
+                        <option value="time">Thời gian đặt hàng</option>
+                    </select>
+                    <div class="time hide">
+                        <div>
+                        <div>Từ ngày<input type="date" class="tu_ngay"></div>
+                        <div>Đến ngày<input type="date" class="den_ngay"></div>
+                        <div class="filterbtn hide">Lọc</div>
+                        </div>
                     </div>
-
-
-                    <div class="item">
-                        <div>
-                            <b>ID: 123</b>
-                            <p>Username: hihi</p>
-                            <p>Email:  hihi@gmail.com</p>
-                            <p>Address: Cau Giay Hanoi</p>
-                        </div>
-                        <div>
-                            <p>ID 1: 12</p>
-                            <p>ID 2: 12</p>
-                            <p>ID 4: 12</p>
-                            <p>ID 6: 12</p>
-                        </div>
-                        <div><i class="fa-solid fa-eye-slash"></i><i class="fa-solid fa-x"></i></div>
                 </div>
 
-                <div class="item">
-                    <div>
-                        <b>ID: 123</b>
-                        <p>Username: hihi</p>
-                        <p>Email:  hihi@gmail.com</p>
-                        <p>Address: Cau Giay Hanoi</p>
-                    </div>
-                    <div>
-                        <p>ID 1: 12</p>
-                        <p>ID 2: 12</p>
-                        <p>ID 4: 12</p>
-                        <p>ID 6: 12</p>
-                    </div>
-                    <div><i class="fa-solid fa-eye-slash"></i><i class="fa-solid fa-x"></i></div>
+
+
+              
+                    <input type="text" class="timkiem" placeholder="Nhập mã đơn hàng" onkeyup="find_order()">
+              
+                </div>
+          
+
+
+            <div class="main">
+                <table>
+                    <thead>
+                       <tr>
+                            <th>Mã đơn hàng</th>
+                            <th>Tên khách hàng</th>
+                            <th>Tổng tiền</th>
+                            <th>Ngày đặt hàng</th>
+                            <th>Ngày duyệt đơn hàng</th>
+                            <th>Trạng thái</th>
+                        </tr> 
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Hiền hehe</td>
+                            <td>100</td>
+                            <td>22/2</td>
+                            <td>0</td>
+                            <td>chưa xử lý</td>
+                            <td class="button">
+                                <div>Xử lý đơn hàng</div>
+                            </td>
+                    </tr>   
+                    </tbody>
+                </table>
             </div>
 
-            <div class="item">
-                <div>
-                    <b>ID: 123</b>
-                    <p>Username: hihi</p>
-                    <p>Email:  hihi@gmail.com</p>
-                    <p>Address: Cau Giay Hanoi</p>
-                </div>
-                <div>
-                    <p>ID 1: 12</p>
-                    <p>ID 2: 12</p>
-                    <p>ID 4: 12</p>
-                    <p>ID 6: 12</p>
-                </div>
-                <div><i class="fa-solid fa-eye-slash"></i><i class="fa-solid fa-x"></i></div>
-        </div>
 
-
+            <div class="foot">
+                <div class="pagination">
+                    <div class="item">1</div>
                 </div>
-
-                <div class="foot">
-                    <div class="pagination-buttons">
-                        <button class="page-button"><i class="fa-solid fa-chevron-left"></i></button>
-                        <button class="page-button">1</button>
-                        <button class="page-button">2</button>
-                        <button class="page-button"><i class="fa-solid fa-chevron-right"></i></button>
-                    </div>
-                </div>
-            </div> 
+            </div>
         </div>
 
             <!-- Thống kê -->
             <div class="revenue" id="revenue">
                 <div>
-                    <div class="outer">
-                        <div class="container0">
-                            <div><input type="text" placeholder="Search hear" > <i class="fa-solid fa-magnifying-glass"></i></div>
-                            <div>
-                                <div><input type="date" id="timefirst" onclick="gettimefirst()"></div>
-                                <div>-</div>
-                                <div><input type="date" id="timesecond" onclick="gettimesecond()"></div>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="container1">
-                                <div>
-                                    <div >Total Price</div>
-                                    <div id="totalprice">0$</div>
-                                    <!-- <div>Saved 25%</div> -->
-                                </div>
-                                <div >
-                                    <div>Total Product Sold</div> 
-                                    <div id="totalproduct">0</div>
-                                    <!-- <div>Saved 25%</div> -->
-                                </div>
-                                <div >
-                                    <div>Total Profit</div>
-                                    <div id="totalprofit">0$</div>
-                                    <!-- <div>Saved 25%</div> -->
-                                </div>
-                                <div >
-                                    <div>Total User</div> 
-                                    <div id="totaluser">0</div>
-                                    <!-- <div>Saved 25%</div> -->
-                                </div>
-                            </div>
-                        </div>        <div class="container2">
-                            <div class="thongke1">
-                                <div>Amount of product</div>
-                    
-                                <table id="tableabove">
-                                    <tr>
-                                        <td class="none1"><div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="t1" >.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="t2" >.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="t3">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="t4">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="t5">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="t6">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="t7">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="t8">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="t9">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="t10">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="t11">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="t12">.</div></div></td>
-                                        <td class="none"></td>
-                                    </tr>
-                
-                                </table>
-                                <table>
-                                    <tr>
-                                        <td class="none2"><span>90%</span></td>
-                                        <td class="left" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none2"><span>80%</span></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none2"><span>70%</span></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none2"><span>60%</span></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none2"><span>50%</span></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none2"><span>40%</span></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none2"><span>30%</span></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none2"><span>20%</span></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none2"><span>10%</span></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none2"><span>0%</span></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="bottom"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none3"></td>
-                                        <td class="none3">Jan</td>
-                                        <td class="none3">Feb</td>
-                                        <td class="none3">Mar</td>
-                                        <td class="none3">Apr</td>
-                                        <td class="none3">May</td>
-                                        <td class="none3">Jun</td>
-                                        <td class="none3">Jul</td>
-                                        <td class="none3">Aug</td>
-                                        <td class="none3">Sep</td>
-                                        <td class="none3">Oct</td>
-                                        <td class="none3">Nov</td>
-                                        <td class="none3">Dec</td>
-                                        <td class="none"></td>
-                                    </tr>
-                                </table>
-                            </div>
-                            <div class="thongke2">
-                                <div>Cost of goods </div>
-                                <table id="tableabove">
-                                    <tr>
-                                        <td class="none1"><div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="tt1" >.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="tt2" >.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="tt3">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="tt4">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="tt5">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="tt6">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="tt7">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="tt8">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="tt9">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="tt10">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="tt11">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="tt12">.</div></div></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                </table>
-                                <table>
-                                    <tr>
-                                        <td class="none2"><span>90%</span></td>
-                                        <td class="left" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none2"><span>80%</span></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none2"><span>70%</span></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none2"><span>60%</span></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none2"><span>50%</span></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none2"><span>40%</span></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none2"><span>30%</span></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none2"><span>20%</span></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none2"><span>10%</span></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none2"><span>0%</span></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="bottom"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none3"></td>
-                                        <td class="none3">Jan</td>
-                                        <td class="none3">Feb</td>
-                                        <td class="none3">Mar</td>
-                                        <td class="none3">Apr</td>
-                                        <td class="none3">May</td>
-                                        <td class="none3">Jun</td>
-                                        <td class="none3">Jul</td>
-                                        <td class="none3">Aug</td>
-                                        <td class="none3">Sep</td>
-                                        <td class="none3">Oct</td>
-                                        <td class="none3">Nov</td>
-                                        <td class="none3">Dec</td>
-                                        <td class="none"></td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="thongkecustom">
-                        </div>
-                
-                
-                
-                        <div class="thongkesanpham">
-               
-                        </div>
-                        <div class="header">List of product</div>
-                        <div class="container3">
-                            <div class="thongke3">
-                                <div class="doanhthu">
-                                    <div>name</div>
-                                    <div>sales volumn</div>
-                                    <!-- <div>sales<input type="date" class="inputdate"></input></div> -->
-                                    <div>sales</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <script src="newnewthongke.js"></script>
+                        
+    <div class="outer">
+        <div class="container0">
+            <div><input type="text" placeholder="Search hear" > <i class="fa-solid fa-magnifying-glass"></i></div>
+            <div>
+                <div><input type="date" id="timefirst" onclick="gettimefirst()"></div>
+                <div>-</div>
+                <div><input type="date" id="timesecond" onclick="gettimesecond()"></div>
+            </div>
+            <!-- <input type="date" onclick="getdate()" id="dateinput"> -->
+            <!-- <input type="month" onclick="getdate()" id="dateinput"> -->
+             <!-- <div id="getyearmonth" onclick="getyearmonth()">
+                <div >
+                    <select  > 
+                        <option value="">select month or year</option>
+                        <option value="month">month</option>
+                        <option value="year">year</option>
+                    </select>
+                </div>
+             </div> -->
+        </div>
+        <div class="container">
+            <div class="container1">
+                <div>
+                    <div >Total Price</div>
+                    <div id="totalprice">0$</div>
+                    <!-- <div>Saved 25%</div> -->
+                </div>
+                <div >
+                    <div>Total Product Sold</div> 
+                    <div id="totalproduct">0</div>
+                    <!-- <div>Saved 25%</div> -->
+                </div>
+                <div >
+                    <div>Total Profit</div>
+                    <div id="totalprofit">0$</div>
+                    <!-- <div>Saved 25%</div> -->
+                </div>
+                <div >
+                    <div>Total User</div> 
+                    <div id="totaluser">0</div>
+                    <!-- <div>Saved 25%</div> -->
+                </div>
+            </div>
+        </div>        <div class="container2">
+            <div class="thongke1">
+                <div>Amount of product</div>
+                <div>
+                    <!-- <div>fdsf</div> -->
+                    <table class="tableabove">
+                        <tr>
+                            <td class="none"><div></div></td>
+                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t1" >.</div></div></td>
+                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t2" >.</div></div></td>
+                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t3">.</div></div></td>
+                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t4">.</div></div></td>
+                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t5">.</div></div></td>
+                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t6">.</div></div></td>
+                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t7">.</div></div></td>
+                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t8">.</div></div></td>
+                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t9">.</div></div></td>
+                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t10">.</div></div></td>
+                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t11">.</div></div></td>
+                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t12">.</div></div></td>
+                            <td class="none"></td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <td class="none2"><span>90%</span></td>
+                            <td class="left" class="empty"></td>
+                            <td class="none1" class="empty"></td>
+                            <td class="none1" class="empty"></td>
+                            <td class="none1" class="empty"></td>
+                            <td class="none1" class="empty"></td>
+                            <td class="none1" class="empty"></td>
+                            <td class="none1" class="empty"></td>
+                            <td class="none1" class="empty"></td>
+                            <td class="none1" class="empty"></td>
+                            <td class="none1" class="empty"></td>
+                            <td class="none1" class="empty"></td>
+                            <td class="none1" class="empty"></td>
+                            <td class="none"></td>
+                        </tr>
+                        <tr>
+                            <td class="none2"><span>80%</span></td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                            <td class="none"></td>
+                        </tr>
+                        <tr>
+                            <td class="none2"><span>70%</span></td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                            <td class="none"></td>
+                        </tr>
+                        <tr>
+                            <td class="none2"><span>60%</span></td>
+                            <td class="empty"></td>
+                            <td class="empty"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="none"></td>
+                        </tr>
+                        <tr>
+                            <td class="none2"><span>50%</span></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="none"></td>
+                        </tr>
+                        <tr>
+                            <td class="none2"><span>40%</span></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="none"></td>
+                        </tr>
+                        <tr>
+                            <td class="none2"><span>30%</span></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="none"></td>
+                        </tr>
+                        <tr>
+                            <td class="none2"><span>20%</span></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="none"></td>
+                        </tr>
+                        <tr>
+                            <td class="none2"><span>10%</span></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="none"></td>
+                        </tr>
+                        <tr>
+                            <td class="none2"><span>0%</span></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="bottom"></td>
+                        </tr>
+                        <tr>
+                            <td class="none3"></td>
+                            <td class="none3">Jan</td>
+                            <td class="none3">Feb</td>
+                            <td class="none3">Mar</td>
+                            <td class="none3">Apr</td>
+                            <td class="none3">May</td>
+                            <td class="none3">Jun</td>
+                            <td class="none3">Jul</td>
+                            <td class="none3">Aug</td>
+                            <td class="none3">Sep</td>
+                            <td class="none3">Oct</td>
+                            <td class="none3">Nov</td>
+                            <td class="none3">Dec</td>
+                            <td class="none"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="thongke2">
+                <div>Cost of goods </div>
+                <table class="tableabove">
+                    <tr>
+                        <td class="none"><div></div></td>
+                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt1" >.</div></div></td>
+                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt2" >.</div></div></td>
+                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt3">.</div></div></td>
+                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt4">.</div></div></td>
+                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt5">.</div></div></td>
+                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt6">.</div></div></td>
+                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt7">.</div></div></td>
+                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt8">.</div></div></td>
+                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt9">.</div></div></td>
+                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt10">.</div></div></td>
+                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt11">.</div></div></td>
+                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt12">.</div></div></td>
+                        <td class="none"></td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td class="none2"><span>90%</span></td>
+                        <td class="left" class="empty"></td>
+                        <td class="none1" class="empty"></td>
+                        <td class="none1" class="empty"></td>
+                        <td class="none1" class="empty"></td>
+                        <td class="none1" class="empty"></td>
+                        <td class="none1" class="empty"></td>
+                        <td class="none1" class="empty"></td>
+                        <td class="none1" class="empty"></td>
+                        <td class="none1" class="empty"></td>
+                        <td class="none1" class="empty"></td>
+                        <td class="none1" class="empty"></td>
+                        <td class="none1" class="empty"></td>
+                        <td class="none"></td>
+                    </tr>
+                    <tr>
+                        <td class="none2"><span>80%</span></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="none"></td>
+                    </tr>
+                    <tr>
+                        <td class="none2"><span>70%</span></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td class="none"></td>
+                    </tr>
+                    <tr>
+                        <td class="none2"><span>60%</span></td>
+                        <td class="empty"></td>
+                        <td class="empty"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="none"></td>
+                    </tr>
+                    <tr>
+                        <td class="none2"><span>50%</span></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="none"></td>
+                    </tr>
+                    <tr>
+                        <td class="none2"><span>40%</span></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="none"></td>
+                    </tr>
+                    <tr>
+                        <td class="none2"><span>30%</span></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="none"></td>
+                    </tr>
+                    <tr>
+                        <td class="none2"><span>20%</span></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="none"></td>
+                    </tr>
+                    <tr>
+                        <td class="none2"><span>10%</span></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="none"></td>
+                    </tr>
+                    <tr>
+                        <td class="none2"><span>0%</span></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="bottom"></td>
+                    </tr>
+                    <tr>
+                        <td class="none3"></td>
+                        <td class="none3">Jan</td>
+                        <td class="none3">Feb</td>
+                        <td class="none3">Mar</td>
+                        <td class="none3">Apr</td>
+                        <td class="none3">May</td>
+                        <td class="none3">Jun</td>
+                        <td class="none3">Jul</td>
+                        <td class="none3">Aug</td>
+                        <td class="none3">Sep</td>
+                        <td class="none3">Oct</td>
+                        <td class="none3">Nov</td>
+                        <td class="none3">Dec</td>
+                        <td class="none"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="thongkecustom">
+            <!-- <div class="header">the customer with the highest profit</div>
+            <div class="cuswithhighestprofit">
+                <div>
+                    <div>id</div>
+                    <div>client name</div>
+                    <div>image</div>
+                    <div>amount spent</div>
+                    <div>telephone</div>
+                    <div>email</div>
+                </div>
+                <div>
+                    <div>1</div>
+                    <div>Naruto Chan</div>
+                    <div></div>
+                    <div>7823.6$</div>
+                    <div>0734 610 362</div>
+                    <div>Narutochan@gmail.com</div>
+                </div>
+            </div>
+            <div class="header">the customer with the lowest profit</div>
+            <div class="cuswithlowestprofit">
+                <div>
+                    <div>id</div>
+                    <div>client name</div>
+                    <div>image</div>
+                    <div>amount spent</div>
+                    <div>telephone</div>
+                    <div>email</div>
+                </div>
+                <div>
+                    <div>1</div>
+                    <div>Mikasa Chan</div>
+                    <div><img src="./thenganhangimage/mikasachan.jfif" alt="" class="imgofcustomer"></div>
+                    <div>7823.6$</div>
+                    <div>0734 610 362</div>
+                    <div>mikasachan@gmail.com</div>
+                </div>
+            </div> -->
+        </div>
+
+
+
+        <div class="thongkesanpham">
+            <!-- <div class="header">the product with the highest profit</div>
+            <div class="productwithhighestprofit">
+                <div>
+                    <div>id</div>
+                    <div>client name</div>
+                    <div>image</div>
+                    <div>amount spent</div>
+                    <div>telephone</div>
+                    <div>email</div>
+                </div>
+                <div>
+                    <div>1</div>
+                    <div>Naruto Chan</div>
+                    <div></div>
+                    <div>7823.6$</div>
+                    <div>0734 610 362</div>
+                    <div>Narutochan@gmail.com</div>
+                </div>
+            </div>
+            <div class="header">the product with the lowest profit</div>
+            <div class="productwithlowestprofit">
+                <div>
+                    <div>id</div>
+                    <div>client name</div>
+                    <div>image</div>
+                    <div>amount spent</div>
+                    <div>telephone</div>
+                    <div>email</div>
+                </div>
+                <div>
+                    <div>1</div>
+                    <div>Mikasa Chan</div>
+                    <div><img src="./thenganhangimage/mikasachan.jfif" alt="" class="imgofcustomer"></div>
+                    <div>7823.6$</div>
+                    <div>0734 610 362</div>
+                    <div>mikasachan@gmail.com</div>
+                </div> 
+            </div> -->
+        </div>
+        <div class="header">List of product</div>
+        <div class="container3">
+            <div class="thongke3">
+                <div class="doanhthu">
+                    <div>name</div>
+                    <div>sales volumn</div>
+                    <!-- <div>sales<input type="date" class="inputdate"></input></div> -->
+                    <div>sales</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="newnewthongke.js"></script>
                 </div>
 
         </div>
@@ -790,5 +856,10 @@
 
 <script language="javascript" src="assets/Admin/script/navbar.js"></script>
 <script language="javascript" src="assets/Admin/script/merchandise.js"></script>
+<script language="javascript" src="assets/Admin/script/order.js"></script>
+
+
+
+</script>
 </body>
 </html>

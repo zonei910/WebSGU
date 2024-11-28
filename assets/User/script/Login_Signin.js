@@ -318,4 +318,36 @@ function chuyenFormThongTin() {
     if (container) {
         container.style.display = "none";
     }
+
+    const accountOrdered = document.querySelector(".order_history");
+    if (accountOrdered) {
+        accountOrdered.style.display = "none"; 
+    }
+
+}
+
+function chuyenFormLichSuDonHang() {
+    const accountOrdered = document.querySelector(".order_history");
+    if (accountOrdered) {
+        accountOrdered.style.display = "block"; 
+    }
+    
+    const slider = document.querySelector('.slider');
+    if (slider) {
+        slider.style.display = "none";
+    }
+
+    const container = document.querySelector('.container');
+    if (container) {
+        container.style.display = "none";
+    }
+
+    const accountContainer = document.querySelector(".container_account");
+    if (accountContainer) {
+        accountContainer.style.display = "none"; 
+    }
+
+
+    // Gọi hàm renderOrderProduct để hiển thị lịch sử đơn hàng
+    renderOrderHistory();
 }

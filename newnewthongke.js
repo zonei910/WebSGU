@@ -7,6 +7,18 @@ let customers = [
             category: "ring",
             price:  10.5,
             profit: 2.4,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: Rose</p>
+            <p>Stones: Round Diamond 0.95</p>
+            <p>18" Chain Included. Pendant Length: 1.25"</p>
+        `,
+        images: [
+            "assets/User/img/ring/1.png",
+            "assets/User/img/ring/2.png",
+            "assets/User/img/ring/3.png",
+            "assets/User/img/ring/4.png"
+        ],
             receipttime: "13-08-2024", 
             completiontime: "17-09-2024",
             amount:8
@@ -17,6 +29,18 @@ let customers = [
             category: "watch",
             price: 34,
             profit: 10.5,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: Yellow/Rose/Green</p>
+            <p>Stones: Round Yellow Sapphire 0.23</p>
+            <p>Round Diamond 0.09</p>
+        `,
+        images: [
+            "assets/User/img/watch/1.png",
+            "assets/User/img/watch/2.png",
+            "assets/User/img/watch/3.png",
+            "assets/User/img/watch/4.png"
+        ],
             amount:4,
             receipttime: "01-08-2024", 
             completiontime: "15-09-2024"
@@ -27,6 +51,18 @@ let customers = [
             category: "bracelet",
             price: 22,
             profit: 12.9,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: White</p>
+            <p>Emerald Cut Blue Sapphire 1.52</p>
+            <p>Natural Diffused Ceylon Sapphire</p>
+        `,
+        images: [
+            "assets/User/img/bracelet/1.png",
+            "assets/User/img/bracelet/2.png",
+            "assets/User/img/bracelet/3.png",
+            "assets/User/img/bracelet/4.png"
+        ],
             receipttime: "18-04-2025", 
             completiontime: "25-04-2025",
             amount:6
@@ -37,6 +73,18 @@ let customers = [
             category: "necklace",
             price: 46,
             profit: 15.9,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: White</p>
+            <p>Stones: Round Diamond 9.19</p>
+            <p>Length: 7" Width:1/2"</p>
+        `,
+        images: [
+            "assets/User/img/necklace/1.png",
+            "assets/User/img/necklace/2.png",
+            "assets/User/img/necklace/3.png",
+            "assets/User/img/necklace/4.png"
+        ],
             receipttime: "01-04-2024", 
             completiontime: "10-04-2024",
             amount:4
@@ -51,6 +99,18 @@ let customers = [
             category: "necklace",
             price: 97.3,
             profit: 20.7,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: Rose/Yellow/White</p>
+            <p>Round Emerald 0.99</p>
+            <p>Oval Emerald 1.02</p>
+        `,
+        images: [
+            "assets/User/img/necklace/1.png",
+            "assets/User/img/necklace/2.png",
+            "assets/User/img/necklace/3.png",
+            "assets/User/img/necklace/4.png"
+        ],
             receipttime: "01-05-2024", 
             completiontime: "08-05-2024",
             amount:1
@@ -61,6 +121,18 @@ let customers = [
             category: "necklace",
             price: 371.67,
             profit: 34.8,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: Rose/Yellow/White</p>
+            <p>Round Emerald 0.99</p>
+            <p>Oval Emerald 1.02</p>
+        `,
+        images: [
+            "assets/User/img/necklace/1.png",
+            "assets/User/img/necklace/2.png",
+            "assets/User/img/necklace/3.png",
+            "assets/User/img/necklace/4.png"
+        ],
             receipttime: "01-02-2024", 
             completiontime: "08-02-2024",
             amount:1
@@ -75,6 +147,18 @@ let customers = [
             category: "watch",
             price: 429.888,
             profit: 90.7,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: White</p>
+            <p>Emerald Cut Blue Sapphire 1.52</p>
+            <p>Natural Diffused Ceylon Sapphire</p>
+        `,
+        images: [
+            "assets/User/img/bracelet/1.png",
+            "assets/User/img/bracelet/2.png",
+            "assets/User/img/bracelet/3.png",
+            "assets/User/img/bracelet/4.png"
+        ],
             receipttime: "01-01-2024", 
             completiontime: "09-01-2024",
             amount:1
@@ -89,6 +173,18 @@ let customers = [
             category: "necklace",
             price: 371.67,
             profit: 34.8,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: Rose/Yellow/White</p>
+            <p>Round Emerald 0.99</p>
+            <p>Oval Emerald 1.02</p>
+        `,
+        images: [
+            "assets/User/img/necklace/1.png",
+            "assets/User/img/necklace/2.png",
+            "assets/User/img/necklace/3.png",
+            "assets/User/img/necklace/4.png"
+        ],
             receipttime: "01-06-2024", 
             completiontime: "08-06-2024",
             amount:1
@@ -103,6 +199,18 @@ let customers = [
             category: "necklace",
             price: 371.67,
             profit: 34.8,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: Rose/Yellow/White</p>
+            <p>Round Emerald 0.99</p>
+            <p>Oval Emerald 1.02</p>
+        `,
+        images: [
+            "assets/User/img/necklace/1.png",
+            "assets/User/img/necklace/2.png",
+            "assets/User/img/necklace/3.png",
+            "assets/User/img/necklace/4.png"
+        ],
             receipttime: "01-07-2024", 
             completiontime: "08-07-2024",
             amount:1
@@ -117,6 +225,18 @@ let customers = [
             category: "ring",
             price: 167.46,
             profit: 40.9,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: Rose/Yellow/White</p>
+            <p>Round Ruby 0.99</p>
+            <p>Oval Emerald 1.02</p>
+        `,
+        images: [
+            "assets/User/img/ring/1.png",
+            "assets/User/img/ring/2.png",
+            "assets/User/img/ring/3.png",
+            "assets/User/img/ring/4.png"
+        ],
             receipttime: "29-08-2024", 
             completiontime: "06-09-2024",
             amount:3
@@ -131,6 +251,18 @@ let customers = [
             category: "ring",
             price: 167.46,
             profit: 40.9,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: Rose/Yellow/White</p>
+            <p>Round Ruby 0.99</p>
+            <p>Oval Emerald 1.02</p>
+        `,
+        images: [
+            "assets/User/img/ring/1.png",
+            "assets/User/img/ring/2.png",
+            "assets/User/img/ring/3.png",
+            "assets/User/img/ring/4.png"
+        ],
             receipttime: "06-09-2024", 
             completiontime: "15-09-2024",
             amount:1
@@ -145,6 +277,18 @@ let customers = [
             category: "necklace",
             price: 97.3,
             profit: 20.7, 
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: Rose/Yellow/White</p>
+            <p>Round Emerald 0.99</p>
+            <p>Oval Emerald 1.02</p>
+        `,
+        images: [
+            "assets/User/img/necklace/1.png",
+            "assets/User/img/necklace/2.png",
+            "assets/User/img/necklace/3.png",
+            "assets/User/img/necklace/4.png"
+        ],
             receipttime: "10-08-2024", 
             completiontime: "17-08-2024",
             amount:5
@@ -159,6 +303,18 @@ let customers = [
             category: "necklace",
             price: 97.3,
             profit: 20.7,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: Rose/Yellow/White</p>
+            <p>Round Emerald 0.99</p>
+            <p>Oval Emerald 1.02</p>
+        `,
+        images: [
+            "assets/User/img/necklace/1.png",
+            "assets/User/img/necklace/2.png",
+            "assets/User/img/necklace/3.png",
+            "assets/User/img/necklace/4.png"
+        ],
             receipttime: "16-08-2024", 
             completiontime: "25-08-2024",
             amount:4
@@ -169,6 +325,18 @@ let customers = [
             category: "ring",
             price: 167.46,
             profit: 40.9,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: Rose/Yellow/White</p>
+            <p>Round Ruby 0.99</p>
+            <p>Oval Emerald 1.02</p>
+        `,
+        images: [
+            "assets/User/img/ring/1.png",
+            "assets/User/img/ring/2.png",
+            "assets/User/img/ring/3.png",
+            "assets/User/img/ring/4.png"
+        ],
             receipttime: "20-08-2024", 
             completiontime: "27-08-2024",
             amount:5
@@ -183,6 +351,18 @@ let customers = [
             category: "necklace",
             price: 46,
             profit: 15.9,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: White</p>
+            <p>Stones: Round Diamond 9.19</p>
+            <p>Length: 7" Width:1/2"</p>
+        `,
+        images: [
+            "assets/User/img/necklace/1.png",
+            "assets/User/img/necklace/2.png",
+            "assets/User/img/necklace/3.png",
+            "assets/User/img/necklace/4.png"
+        ],
             receipttime: "20-03-2024", 
             completiontime: "27-03-2024",
             amount:12
@@ -197,6 +377,18 @@ let customers = [
             category: "bracelet",
             price: 22,
             profit: 12.9,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: White</p>
+            <p>Emerald Cut Blue Sapphire 1.52</p>
+            <p>Natural Diffused Ceylon Sapphire</p>
+        `,
+        images: [
+            "assets/User/img/bracelet/1.png",
+            "assets/User/img/bracelet/2.png",
+            "assets/User/img/bracelet/3.png",
+            "assets/User/img/bracelet/4.png"
+        ],
             receipttime: "30-03-2024", 
             completiontime: "07-04-2024",
             amount:15
@@ -211,6 +403,18 @@ let customers = [
             category: "bracelet",
             price: 22,
             profit: 12.9,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: White</p>
+            <p>Emerald Cut Blue Sapphire 1.52</p>
+            <p>Natural Diffused Ceylon Sapphire</p>
+        `,
+        images: [
+            "assets/User/img/bracelet/1.png",
+            "assets/User/img/bracelet/2.png",
+            "assets/User/img/bracelet/3.png",
+            "assets/User/img/bracelet/4.png"
+        ],
             receipttime: "01-11-2024", 
             completiontime: "07-11-2024",
             amount:14
@@ -221,6 +425,18 @@ let customers = [
             category: "necklace",
             price: 46,
             profit: 15.9,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: White</p>
+            <p>Stones: Round Diamond 9.19</p>
+            <p>Length: 7" Width:1/2"</p>
+        `,
+        images: [
+            "assets/User/img/necklace/1.png",
+            "assets/User/img/necklace/2.png",
+            "assets/User/img/necklace/3.png",
+            "assets/User/img/necklace/4.png"
+        ],
             receipttime: "21-12-2024", 
             completiontime: "29-12-2024",
             amount:13
@@ -235,6 +451,18 @@ let customers = [
             category: "watch",
             price: 34,
             profit: 10.5,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: Yellow/Rose/Green</p>
+            <p>Stones: Round Yellow Sapphire 0.23</p>
+            <p>Round Diamond 0.09</p>
+        `,
+        images: [
+            "assets/User/img/watch/1.png",
+            "assets/User/img/watch/2.png",
+            "assets/User/img/watch/3.png",
+            "assets/User/img/watch/4.png"
+        ],
             receipttime: "24-12-2024", 
             completiontime: "30-12-2024",
             amount:16
@@ -249,6 +477,18 @@ let customers = [
             category: "watch",
             price: 34,
             profit: 10.5,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: Yellow/Rose/Green</p>
+            <p>Stones: Round Yellow Sapphire 0.23</p>
+            <p>Round Diamond 0.09</p>
+        `,
+        images: [
+            "assets/User/img/watch/1.png",
+            "assets/User/img/watch/2.png",
+            "assets/User/img/watch/3.png",
+            "assets/User/img/watch/4.png"
+        ],
             receipttime: "25-12-2024", 
             completiontime: "31-12-2024",
             amount:5
@@ -259,6 +499,18 @@ let customers = [
             category: "necklace",
             price: 46,
             profit: 15.9,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: White</p>
+            <p>Stones: Round Diamond 9.19</p>
+            <p>Length: 7" Width:1/2"</p>
+        `,
+        images: [
+            "assets/User/img/necklace/1.png",
+            "assets/User/img/necklace/2.png",
+            "assets/User/img/necklace/3.png",
+            "assets/User/img/necklace/4.png"
+        ],
             receipttime: "29-10-2024", 
             completiontime: "10-11-2024",
             amount:7
@@ -268,11 +520,24 @@ let customers = [
       { id: 15, name: "Jean Kirstein", img:"./thenganhangimage/jean.jfif", phone: "0958 901 234", email: "Jean@gmail.com", status: "None",
         product: [
           {  
+
             id: 3,
             name: "Vòng tay(Hàng tặng)",
             category: "bracelet",
             price: 22,
             profit: 12.9,
+            description: `
+                <p>Metal: 14K Gold</p>
+                <p>Metal Color: White</p>
+                <p>Emerald Cut Blue Sapphire 1.52</p>
+                <p>Natural Diffused Ceylon Sapphire</p>
+            `,
+            images: [
+                "assets/User/img/bracelet/1.png",
+                "assets/User/img/bracelet/2.png",
+                "assets/User/img/bracelet/3.png",
+                "assets/User/img/bracelet/4.png"
+            ],
             receipttime: "11-10-2024", 
             completiontime: "20-10-2024",
             amount:4
@@ -297,6 +562,18 @@ let customers = [
             category: "ring",
             price:  10.5,
             profit: 2.4,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: Rose</p>
+            <p>Stones: Round Diamond 0.95</p>
+            <p>18" Chain Included. Pendant Length: 1.25"</p>
+        `,
+        images: [
+            "assets/User/img/ring/1.png",
+            "assets/User/img/ring/2.png",
+            "assets/User/img/ring/3.png",
+            "assets/User/img/ring/4.png"
+        ],
             receipttime: "10-11-2024", 
             completiontime: "20-11-2024",
             amount:10
@@ -307,6 +584,18 @@ let customers = [
             category: "bracelet",
             price: 22,
             profit: 12.9,
+            description: `
+                <p>Metal: 14K Gold</p>
+                <p>Metal Color: White</p>
+                <p>Emerald Cut Blue Sapphire 1.52</p>
+                <p>Natural Diffused Ceylon Sapphire</p>
+            `,
+            images: [
+                "assets/User/img/bracelet/1.png",
+                "assets/User/img/bracelet/2.png",
+                "assets/User/img/bracelet/3.png",
+                "assets/User/img/bracelet/4.png"
+            ],
             receipttime: "20-02-2024", 
             completiontime: "27-02-2024",
             amount:12
@@ -321,6 +610,18 @@ let customers = [
             category: "necklace",
             price: 46,
             profit: 15.9,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: White</p>
+            <p>Stones: Round Diamond 9.19</p>
+            <p>Length: 7" Width:1/2"</p>
+        `,
+        images: [
+            "assets/User/img/necklace/1.png",
+            "assets/User/img/necklace/2.png",
+            "assets/User/img/necklace/3.png",
+            "assets/User/img/necklace/4.png"
+        ],
             receipttime: "05-02-2024", 
             completiontime: "13-02-2024",
             amount:20
@@ -345,6 +646,18 @@ let customers = [
             category: "necklace",
             price: 46,
             profit: 15.9,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: White</p>
+            <p>Stones: Round Diamond 9.19</p>
+            <p>Length: 7" Width:1/2"</p>
+        `,
+        images: [
+            "assets/User/img/necklace/1.png",
+            "assets/User/img/necklace/2.png",
+            "assets/User/img/necklace/3.png",
+            "assets/User/img/necklace/4.png"
+        ],
             receipttime: "05-01-2024", 
             completiontime: "12-02-2024",
             amount:2
@@ -355,6 +668,18 @@ let customers = [
             category: "watch",
             price: 429.888,
             profit: 90.7,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: Yellow/Rose/Green</p>
+            <p>Stones: Round Yellow Sapphire 0.23</p>
+            <p>Round Diamond 0.09</p>
+        `,
+        images: [
+            "assets/User/img/watch/1.png",
+            "assets/User/img/watch/2.png",
+            "assets/User/img/watch/3.png",
+            "assets/User/img/watch/4.png"
+        ],
             receipttime: "10-05-2024", 
             completiontime: "17-05-2024",
             amount:1
@@ -369,6 +694,18 @@ let customers = [
             category: "watch",
             price: 429.888,
             profit: 90.7,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: Yellow/Rose/Green</p>
+            <p>Stones: Round Yellow Sapphire 0.23</p>
+            <p>Round Diamond 0.09</p>
+        `,
+        images: [
+            "assets/User/img/watch/1.png",
+            "assets/User/img/watch/2.png",
+            "assets/User/img/watch/3.png",
+            "assets/User/img/watch/4.png"
+        ],
             receipttime: "12-05-2024", 
             completiontime: "20-05-2024",
             amount:1
@@ -397,6 +734,18 @@ let customers = [
             category: "necklace",
             price: 371.67,
             profit: 34.8,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: Rose/Yellow/White</p>
+            <p>Round Emerald 0.99</p>
+            <p>Oval Emerald 1.02</p>
+        `,
+        images: [
+            "assets/User/img/necklace/1.png",
+            "assets/User/img/necklace/2.png",
+            "assets/User/img/necklace/3.png",
+            "assets/User/img/necklace/4.png"
+        ],
             receipttime: "27-06-2024", 
             completiontime: "05-07-2024",
             amount:1
@@ -411,6 +760,18 @@ let customers = [
             category: "ring",
             price: 76.8,
             profit: 20.9,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: Rose/Yellow/White</p>
+            <p>Round Ruby 0.99</p>
+            <p>Oval Emerald 1.02</p>
+        `,
+        images: [
+            "assets/User/img/ring/1.png",
+            "assets/User/img/ring/2.png",
+            "assets/User/img/ring/3.png",
+            "assets/User/img/ring/4.png"
+        ],
             receipttime: "12-06-2024", 
             completiontime: "20-06-2024",
             amount:6
@@ -425,6 +786,18 @@ let customers = [
             category: "necklace",
             price: 46,
             profit: 15.9,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: White</p>
+            <p>Stones: Round Diamond 9.19</p>
+            <p>Length: 7" Width:1/2"</p>
+        `,
+        images: [
+            "assets/User/img/necklace/1.png",
+            "assets/User/img/necklace/2.png",
+            "assets/User/img/necklace/3.png",
+            "assets/User/img/necklace/4.png"
+        ],
             receipttime: "09-10-2024", 
             completiontime: "15-10-2024",
             amount:8
@@ -435,6 +808,18 @@ let customers = [
             category: "bracelet",
             price: 22,
             profit: 12.9,
+            description: `
+                <p>Metal: 14K Gold</p>
+                <p>Metal Color: White</p>
+                <p>Emerald Cut Blue Sapphire 1.52</p>
+                <p>Natural Diffused Ceylon Sapphire</p>
+            `,
+            images: [
+                "assets/User/img/bracelet/1.png",
+                "assets/User/img/bracelet/2.png",
+                "assets/User/img/bracelet/3.png",
+                "assets/User/img/bracelet/4.png"
+            ],
             receipttime: "10-07-2024", 
             completiontime: "19-07-2024",
             amount:6
@@ -449,6 +834,18 @@ let customers = [
             category: "ring",
             price:  10.5,
             profit: 2.4,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: Rose</p>
+            <p>Stones: Round Diamond 0.95</p>
+            <p>18" Chain Included. Pendant Length: 1.25"</p>
+        `,
+        images: [
+            "assets/User/img/ring/1.png",
+            "assets/User/img/ring/2.png",
+            "assets/User/img/ring/3.png",
+            "assets/User/img/ring/4.png"
+        ],
             receipttime: "20-09-2024", 
             completiontime: "29-09-2024",
             amount:6
@@ -459,6 +856,18 @@ let customers = [
             category: "watch",
             price: 429.888,
             profit: 40.9,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: Yellow/Rose/Green</p>
+            <p>Stones: Round Yellow Sapphire 0.23</p>
+            <p>Round Diamond 0.09</p>
+        `,
+        images: [
+            "assets/User/img/watch/1.png",
+            "assets/User/img/watch/2.png",
+            "assets/User/img/watch/3.png",
+            "assets/User/img/watch/4.png"
+        ],
             receipttime: "01-08-2024", 
             completiontime: "10-08-2024",
             amount:1
@@ -473,6 +882,18 @@ let customers = [
             category: "ring",
             price: 167.46,
             profit: 40.9,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: Rose/Yellow/White</p>
+            <p>Round Ruby 0.99</p>
+            <p>Oval Emerald 1.02</p>
+        `,
+        images: [
+            "assets/User/img/ring/1.png",
+            "assets/User/img/ring/2.png",
+            "assets/User/img/ring/3.png",
+            "assets/User/img/ring/4.png"
+        ],
             receipttime: "06-09-2024", 
             completiontime: "17-09-2024",
             amount:3
@@ -487,6 +908,18 @@ let customers = [
             category: "ring",
             price: 76.8,
             profit: 20.9,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: Rose/Yellow/White</p>
+            <p>Round Ruby 0.99</p>
+            <p>Oval Emerald 1.02</p>
+        `,
+        images: [
+            "assets/User/img/ring/1.png",
+            "assets/User/img/ring/2.png",
+            "assets/User/img/ring/3.png",
+            "assets/User/img/ring/4.png"
+        ],
             receipttime: "21-09-2024", 
             completiontime: "29-09-2024",
             amount:5
@@ -501,6 +934,18 @@ let customers = [
             category: "necklace",
             price: 46,
             profit: 15.9,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: White</p>
+            <p>Stones: Round Diamond 9.19</p>
+            <p>Length: 7" Width:1/2"</p>
+        `,
+        images: [
+            "assets/User/img/necklace/1.png",
+            "assets/User/img/necklace/2.png",
+            "assets/User/img/necklace/3.png",
+            "assets/User/img/necklace/4.png"
+        ],
             receipttime: "30-09-2024", 
             completiontime: "04-10-2024",
             amount:13
@@ -515,6 +960,18 @@ let customers = [
             category: "ring",
             price: 76.8,
             profit: 20.9,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: Rose/Yellow/White</p>
+            <p>Round Ruby 0.99</p>
+            <p>Oval Emerald 1.02</p>
+        `,
+        images: [
+            "assets/User/img/ring/1.png",
+            "assets/User/img/ring/2.png",
+            "assets/User/img/ring/3.png",
+            "assets/User/img/ring/4.png"
+        ],
             receipttime: "14-03-2024", 
             completiontime: "20-04-2024",
             amount:1
@@ -525,6 +982,18 @@ let customers = [
             category: "ring",
             price: 76.8,
             profit: 20.9,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: Rose/Yellow/White</p>
+            <p>Round Ruby 0.99</p>
+            <p>Oval Emerald 1.02</p>
+        `,
+        images: [
+            "assets/User/img/ring/1.png",
+            "assets/User/img/ring/2.png",
+            "assets/User/img/ring/3.png",
+            "assets/User/img/ring/4.png"
+        ],
             receipttime: "22-02-2025", 
             completiontime: "04-03-2025",
             amount:1
@@ -539,6 +1008,18 @@ let customers = [
             category: "bracelet",
             price: 22,
             profit: 12.9,
+            description: `
+                <p>Metal: 14K Gold</p>
+                <p>Metal Color: White</p>
+                <p>Emerald Cut Blue Sapphire 1.52</p>
+                <p>Natural Diffused Ceylon Sapphire</p>
+            `,
+            images: [
+                "assets/User/img/bracelet/1.png",
+                "assets/User/img/bracelet/2.png",
+                "assets/User/img/bracelet/3.png",
+                "assets/User/img/bracelet/4.png"
+            ],
             receipttime: "08-12-2024", 
             completiontime: "19-12-2024",
             amount:2
@@ -549,6 +1030,18 @@ let customers = [
             category: "watch",
             price: 34,
             profit: 10.5,
+            description: `
+            <p>Metal: 14K Gold</p>
+            <p>Metal Color: Yellow/Rose/Green</p>
+            <p>Stones: Round Yellow Sapphire 0.23</p>
+            <p>Round Diamond 0.09</p>
+        `,
+        images: [
+            "assets/User/img/watch/1.png",
+            "assets/User/img/watch/2.png",
+            "assets/User/img/watch/3.png",
+            "assets/User/img/watch/4.png"
+        ],
             receipttime: "24-12-2024", 
             completiontime: "30-12-2024",
             amount:1
@@ -821,7 +1314,7 @@ function taohangthongke(newarray,countuser){
                         <div>${theproductwithlowestprofit.id}</div>
                         <div>${theproductwithlowestprofit.category}</div>
                         <div>${theproductwithlowestprofit.name}</div>
-                        <div>${theproductwithlowestprofit.image}</div>
+                        <div ><image class="imagethongke"src="${theproductwithlowestprofit.images[0]}"></div>
                         <div>${theproductwithlowestprofit.profit}</div>
                         <div>${theproductwithlowestprofit.amount}</div>
                     </div>
@@ -840,7 +1333,7 @@ function taohangthongke(newarray,countuser){
                         <div>${theproductwithhighestprofit.id}</div>
                         <div>${theproductwithhighestprofit.category}</div>
                         <div>${theproductwithhighestprofit.name}</div>
-                        <div>${theproductwithhighestprofit.image}</div>
+                        <div ><image class="imagethongke" src="${theproductwithhighestprofit.images[0]}"></div>
                         <div>${theproductwithhighestprofit.profit}</div>
                         <div>${theproductwithhighestprofit.amount}</div>
                     </div>
@@ -931,7 +1424,7 @@ function taohangthongke(newarray,countuser){
                     <div >
                         <div>${customerwithlowestprofit.rank}</div>
                         <div>${customerwithlowestprofit.name}</div>
-                        <div>${customerwithlowestprofit.image}</div>
+                        <div ><image class="imagethongke" src="${customerwithlowestprofit.img}"></div>
                         <div>${lowestprofit}</div>
                         <div>${customerwithlowestprofit.phone}</div>
                         <div>${customerwithlowestprofit.email}</div>
@@ -950,7 +1443,7 @@ function taohangthongke(newarray,countuser){
                     <div>
                         <div>${customerwithhighestprofit.rank}</div>
                         <div>${customerwithhighestprofit.name}</div>
-                        <div>${customerwithhighestprofit.image}</div>
+                        <div ><image class="imagethongke"src="${customerwithhighestprofit.img}"></div>
                         <div>${highestprofit}</div>
                         <div>${customerwithhighestprofit.phone}</div>
                         <div>${customerwithhighestprofit.email}</div>

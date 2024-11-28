@@ -8,7 +8,7 @@ let next = document.getElementById('next');
 let active = 0;
 let lengthItems = items.length - 1;
 
-next.onclick = function() {
+next.onclick = function() {    
     if ( (active + 1) > lengthItems )
         active = 0;
     else 
@@ -335,20 +335,23 @@ search.addEventListener('click', () => {
     let dropdownsearch= document.querySelector('.navbar_search-dropdown');
     if ( dropdownsearch.style.display === 'block' )
         dropdownsearch.style.display = 'none';
-    else
+    else{
         dropdownsearch.style.display = 'block';
+        let dropdownaccount = document.querySelector('.navbar_user-items');
+        dropdownaccount.style.display = 'none';
+    }
 })
 
 // ======================cart ====================
-let cart = document.querySelector('.navbar_cart');
+// let cart = document.querySelector('.navbar_cart');
 
-cart.addEventListener('click', () => {
-    let dropdowncart = document.querySelector('.navbar_cart-dropdown-nocart');
-    if ( dropdowncart.style.display === 'block' )
-        dropdowncart.style.display = 'none';
-    else
-        dropdowncart.style.display = 'block';
-})
+// cart.addEventListener('click', () => {
+//     let dropdowncart = document.querySelector('.navbar_cart-dropdown-nocart');
+//     if ( dropdowncart.style.display === 'block' )
+//         dropdowncart.style.display = 'none';
+//     else
+//         dropdowncart.style.display = 'block';
+// })
 
 // =====================account ==================
 let account = document.querySelector('.navbar_user');
@@ -357,8 +360,11 @@ account.addEventListener('click', () => {
     let dropdownaccount = document.querySelector('.navbar_user-items');
     if ( dropdownaccount.style.display === 'block' )
         dropdownaccount.style.display = 'none';
-    else
+    else{
         dropdownaccount.style.display = 'block';
+        let dropdownsearch= document.querySelector('.navbar_search-dropdown');
+        dropdownsearch.style.display = 'none';
+    }
 })
 
 // ==============menuicon==========
@@ -368,6 +374,14 @@ let menuButton = document.querySelector('.navbar__menu');
 menuButton.addEventListener('click', () => {
     menu.classList.toggle('navbar__open');
 })
+
+// ==========fix lỗi đề lên nhau khi sử dụng các thanh công cụ
+
+
+
+
+
+
 
 
 
@@ -484,10 +498,6 @@ if (savedProducts) {
     // Nếu không có dữ liệu, bạn có thể sử dụng mảng sản phẩm mặc định hoặc gọi API để lấy dữ liệu
     Product = []; // hoặc gọi API
 }
-
-
-
-
 
 
 function hienthi(){

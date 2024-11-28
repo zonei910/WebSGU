@@ -65,4 +65,5 @@ Menu_order.onclick = ()=>{
     Display_revenue.style.display = "none";
     Display_userlist.style.display = "none";
     Display_order.style.display = "block";
+    showDonHang();
 }

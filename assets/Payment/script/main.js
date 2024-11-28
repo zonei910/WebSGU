@@ -1,8 +1,56 @@
 
-let user = JSON.parse(localStorage.getItem("currentUser"));
+let currentUser = JSON.parse(localStorage.getItem("currentUser"));
 let display = document.querySelector("#Display");
 let form = document.querySelector("#Form");
 let purchase = document.querySelector("#Purchase");
+
+function showTomtatsp(){
+    if(JSON.parse(localStorage.getItem("giohang")) != null){
+    let product = currentUser.giohang;
+    let a = '';
+    let s = 0;
+    let n = 0;
+    for(let i = 0 ; i < product.length ; i++){
+        n += product[i].soLuong;
+        let gia = parseInt(product[i].gia);
+        let thanhtien = gia * parseInt(product[i].soLuong);
+        s += thanhtien;
+        a += `
+        <div class="cartinner">
+            <div class="cart">
+                <div>${product[i].ten}</div>
+                <div>${product[i].gia} * ${product[i].soLuong} </div>
+            </div>
+            <div class="sumofcart">
+                ${thanhtien}
+            </div>
+            <div class="button clear">
+            <div class="plusbtn" onclick="tang(this)" name="${product[i].id}">Tăng</div>
+            <div class="subbtn" onclick="giam(this)" name="${product[i].id}">Giảm</div>
+            <div class="deletebtn"  onclick="xoasp(this)" name="${product[i].id}">Xóa</div>
+            </div>
+             <div style="clear:both"></div>
+        </div>
+        
+
+        `
+    }
+   
+ 
+
+    let showCount = document.querySelector(".inner2right .countcart");
+    let showSP = document.querySelector(".inner2right .cartoutter .item");
+    let showTong = document.querySelector(".sumoutter .suminner");
+    showCount.innerHTML = n;
+    showSP.innerHTML = a;
+    showTong.textContent = `${s} đ`;
+}else{
+    
+}
+}
+
+showTomtatsp();
+
 
 display.style.display = "none";
 purchase.style.display = "none";
@@ -49,8 +97,8 @@ function showSanPham(){
                                             <option value="small">Small</option>
                                         </select>
                                         <div class="add">
-                                        <input type="number" value="1" min="1">
-                                        <div name = "${Product[i].id}">Thêm vào giỏ</div>
+                                        <input type="number" value="1" min="1" name = "${Product[i].id}" id="soluong">
+                                        <div name = "${Product[i].id}" onclick="themsp(this)">Thêm vào giỏ</div>
                                         </div>
                                     </div>
             </div>
@@ -114,8 +162,8 @@ let a = ``;
                                             <option value="small">Small</option>
                                         </select>
                                         <div class="add">
-                                        <input type="number" value="1" min="1">
-                                        <div>Thêm vào giỏ</div>
+                                        <input type="number" value="1" min="1" name = "${Product[i].id}" id="soluong">
+                                        <div onclick="themsp(this)" name = "${Product[i].id}">Thêm vào giỏ</div>
                                         </div>
                                     </div>
             </div>
@@ -130,18 +178,27 @@ let a = ``;
 
 
 
+
+
+
     let ten = document.querySelector("#name");
     let email = document.querySelector("#email");
     let phone = document.querySelector("#tele");
     let address = document.querySelector("#address");
     let gender = document.querySelector("#sex");
 
-    console.log(ten);
 
-    ten.value = user.name;
-    email.value = user.email;
-    phone.value = user.phone;
-    address.value = user.address;
-    gender.value = user.gender;
+    ten.value = currentUser.name;
+    email.value = currentUser.email;
+    phone.value = currentUser.phone;
+    address.value = currentUser.address;
+    gender.value = currentUser.gender;
+
+  
+  
+
+
+
+
 
 

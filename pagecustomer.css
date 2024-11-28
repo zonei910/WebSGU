@@ -9,11 +9,7 @@
     height: 100vh;
     overflow-y: scroll;
     overflow-x: hidden;
-    /* height: 500px; */
     background-color: white;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
 }
 .container3>input{
     width: 300px;
@@ -150,7 +146,7 @@
     border-radius: 0px;
 }
 #container4 >.orderouter{
-    /* display: flex; */
+
     /* grid-template-columns:1000px; */
     /* grid-template-rows: 50px 50px; */
     /* grid-auto-rows: 50px; */
@@ -174,6 +170,7 @@
     height: 40px;
     /*  */
     width: 100%;
+    display: flex;
 }
 .orderouter>div>div{
     width: 14%;
@@ -370,11 +367,13 @@
     /* width: 15px; */
     padding:2px;
     border: none;
+    border-radius: 5px;
 }
 .divchoosetime{
     border: black;
     background-color:white;
-    /* width: 120px; */
+    border-radius: 5px;
+    width: 120px;
 }
 .imageofcustomer{
     border-radius: 100%;
