@@ -312,6 +312,14 @@ function showFind(){
 
 
 function themsp(a){
+    let islogin = JSON.parse(localStorage.getItem("isLoggedIn"));
+    if(islogin == null){
+        alert("Vui lòng dăng nhập trước khi thanh toán");
+        window.location.href="index.html";
+        return 0;
+    }
+
+
    let temp = document.querySelectorAll("#soluong");
    let soluong;
     for(let i = 0 ; i<temp.length;i++){

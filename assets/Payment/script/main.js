@@ -127,6 +127,10 @@ function showThanhToan(){
 
 
 function showMethodPurchase(){
+    if(JSON.parse(localStorage.getItem("isLoggedIn"))  == null ){
+        alert("Vui lòng đăng nhập trước khi đặt hàng");
+        window.location.href = "index.html";
+    }
     form.style.display = "none";
     display.style.display = "none";
     purchase.style.display = "block";
@@ -202,3 +206,21 @@ let a = ``;
 
 
 
+function dangxuat() {
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("currentUser");
+
+    // Ẩn giao diện người dùng đã đăng nhập
+    const navbarUser = document.querySelector('.navbar_user');
+    if (navbarUser) 
+        navbarUser.style.display = 'none';
+
+    // Hiển thị lại nút đăng nhập
+    const navbarAccount = document.querySelector('.navbar_account');
+    if (navbarAccount) 
+        navbarAccount.style.display = 'block';
+
+
+    alert("Đã đăng xuất khỏi tài khoản");
+    window.location.href="index.html";
+}

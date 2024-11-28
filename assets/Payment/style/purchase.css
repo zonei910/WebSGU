@@ -1,3 +1,16 @@
+#Purchase{
+    margin-top: 10px;
+}
+
+#Purchase div:nth-child(1) {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#Purchase div:nth-child(2){
+    font-weight: bold;
+    font-size: 20px;
+}
 
 .downer{
     padding:10px;

@@ -19,7 +19,7 @@
             <li onclick= "showSanPham()">Sản phẩm</li>
             <li onclick="showThanhToan()">Thanh toán </li>
             <li>Liên hệ</li>
-            <li onclick="">Đăng xuất</li>
+            <li onclick="dangxuat()">Đăng xuất</li>
         </ul>
     </div>
 </header>
@@ -122,6 +122,8 @@
                     </div>
                     
                     <div id ="Purchase">
+                        <div>Nếu chuyển tiền quý khách vui lòng thanh toán vào số tài khoản này trước khi đặt hàng</div>
+                        <div>AgriBank: 12345678910</div>
                         <div class="downer">
                             <div>Chọn phương thức thanh toán</div>
                             <div><input type="radio" id="zalopay"  name="method" style="margin-left:0;" onclick="showPurchase()"><label for="zalopay"><img src="assets/Payment/image/thenganhangimage/zalopay.png" alt="" style="position: absolute; left: 15px;">Zalopay</label></div>
