@@ -9,6 +9,7 @@
 // console.log('Dữ liệu khách hàng hiện tại:', Customer);
 
 let Customer = [
+
     {
             phone: "123",
             name: "Nguyễn Hiền",
@@ -354,3 +355,4 @@ let Customer = [
     }
 
     
+
