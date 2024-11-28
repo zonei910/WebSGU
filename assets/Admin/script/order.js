@@ -5,7 +5,7 @@ function showDonHang(){
 	if(donhang == null){
 		alert("Chưa có đơn hàng nào");
 	}else{
-		let sosanphammoitrang = 8;
+		let sosanphammoitrang = 5;
 		let sotranghientai = 1;
 		let tongsotrang = Math.ceil(donhang.length/sosanphammoitrang);
 		let vitrihientai = (sotranghientai - 1) * sosanphammoitrang;
@@ -28,6 +28,8 @@ function showDonHang(){
 				trangthai = "Đã duyệt";
 			}else if(donhang[i].status == 2){
 				trangthai = "Đã giao hàng thành công";
+			}else if(donhang[i].status == 3){
+				trangthai = `Đã hủy vì ${donhang[i].lydo}`;
 			}
 			n++;
 			a += `
@@ -58,7 +60,7 @@ function showDonHang(){
 
 function nuttrang_order(a){
 	let donhang = JSON.parse(localStorage.getItem("donhang"));
-	let sosanphammoitrang = 8;
+	let sosanphammoitrang = 5;
 	let vitrihientai = (a - 1) * sosanphammoitrang;
 
 	let n = 0;
@@ -128,7 +130,7 @@ function filter_order(){
 				filterarr.push(donhang[i]);
 			}
 		}
-		let sosanphammoitrang = 8;
+		let sosanphammoitrang = 5;
 		let sotranghientai = 1;
 		let tongsotrang = Math.ceil(filterarr.length/sosanphammoitrang);
 		let vitrihientai = (sotranghientai - 1) * sosanphammoitrang;
@@ -179,13 +181,13 @@ function filter_order(){
 		showbtn.innerHTML = btn;
 		let showdon = document.querySelector("#Display .order .main table tbody");
 		showdon.innerHTML = a;
-		console.log(filterarr);
+	
 	}
 }
 
 
 function nuttrangfilter_order(a){
-	let sosanphammoitrang = 8;
+	let sosanphammoitrang = 5;
 	let vitrihientai = (a - 1) * sosanphammoitrang;
 
 	let n = 0;
@@ -244,7 +246,7 @@ function find_order(){
 
 
 	}else{
-		console.log("hi");
+
 		if(find.value == ""){
 			filter_order();
 			return 0;
@@ -261,7 +263,7 @@ function find_order(){
 	}
 	filterarr = findarr;
 
-	let sosanphammoitrang = 8;
+	let sosanphammoitrang = 5;
 	let sotranghientai = 1;
 	let tongsotrang = Math.ceil(filterarr.length/sosanphammoitrang);
 	let vitrihientai = (sotranghientai - 1) * sosanphammoitrang;
@@ -310,7 +312,7 @@ function find_order(){
 	showbtn.innerHTML = btn;
 	let showdon = document.querySelector("#Display .order .main table tbody");
 	showdon.innerHTML = a;
-	console.log(filterarr);
+
 }
 
 
@@ -324,7 +326,7 @@ function xulydonhang(a){
 	let thongtindon = document.querySelector("#Display .order .all");
 	thongtindon.style.display = "block";
 	let madon = a.getAttribute("name");
-	console.log (madon);
+	
 	let donhang = JSON.parse(localStorage.getItem("donhang"));
 
 	let donhientai;
@@ -360,7 +362,7 @@ function xulydonhang(a){
 
 	left.innerHTML = `
 		 <div class="left">
-                                <p>Mã đơn: <span>${donhientai.id}</span></p>
+                                <p>Mã đơn: <span class="madon">${donhientai.id}</span></p>
                                 <p>Trạng thái: <span>${trangthai}</span></p>
                                 <p>Tổng tiền: <span>${donhientai.tongtien} đ</span></p>
                                 <p>Mã khuyến mãi: <span>Không có</span></p>
@@ -502,7 +504,7 @@ if(bracelet.length !=0){
 	let showBracelet = document.querySelector("#sp-giohang-bracelet");
 	showBracelet.innerHTML = temp; 
 	let showBraceletSum = document.querySelector("#Display .order .all .bracelet_sum");
-	shownBraceletSum.innerHTML = braceletsum;
+	showBraceletSum.innerHTML = braceletsum;
 
 }
 
@@ -545,6 +547,152 @@ if(earring.length !=0){
 }
 
 
-function duyet(madon){
+function duyet(){
 	let donhang = JSON.parse(localStorage.getItem("donhang"));
+	let madon = document.querySelector("#Display .order .all .form-donhang .khachhang .left .madon");
+	let luudon ={};
+	for(let i = 0 ; i<donhang.length ; i++){
+		if(parseInt(madon.textContent) == donhang[i].id){
+			if(donhang[i].status == 1){
+				alert("Đơn hàng đã được duyệt trước đó");
+				return 0;
+			}
+			if(donhang[i].status == 2){
+				alert("Đơn hàng đã được hủy trước đó");
+				return 0;
+			}
+			if(donhang[i].status == 3){
+				alert("Đơn hàng đã giao thành công trước đó");
+				return 0;
+			}
+
+			let choice = confirm("Bạn có chắc muốn duyệt đơn hàng");
+			if(choice == true){
+			let today = new Date();
+			donhang[i].status = 1;	
+			donhang[i].ngayduyet = `${today.getDate()}/${today.getMonth()+1}/${today.getFullYear()}` ;
+			luudon = donhang[i];
+			alert("Đã duyệt thành công");
+			tatdonhang();
+
+		}
+		}
+	}
+
+	let users = JSON.parse(localStorage.getItem("users"));
+	for(let i = 0 ; i<users.length ; i++){
+		for(let j = 0 ; j < users[i].lichsuMuaHang.length ; j++){
+			if(parseInt(users[i].lichsuMuaHang[j].id) == parseInt(madon.textContent)){
+					users[i].lichsuMuaHang[j] = luudon;
+			}
+		}
+	}
+
+	localStorage.setItem("users" , JSON.stringify(users));
+	localStorage.setItem("donhang" , JSON.stringify(donhang));
+	showDonHang();	
+}
+
+
+function huy(){
+	let donhang = JSON.parse(localStorage.getItem("donhang"));
+	let madon = document.querySelector("#Display .order .all .form-donhang .khachhang .left .madon");
+	let luudon = {};
+	for(let i = 0 ; i<donhang.length ; i++){
+		if(parseInt(madon.textContent) == donhang[i].id){
+			if(donhang[i].status == 1){
+				alert("Đơn hàng đã được duyệt trước đó");
+				return 0;
+			}
+			if(donhang[i].status == 2){
+				alert("Đơn hàng đã được hủy trước đó");
+				return 0;
+			}
+			if(donhang[i].status == 3){
+				alert("Đơn hàng đã giao thành công trước đó");
+				return 0;
+			}
+
+			let choice = confirm("Bạn có chắc muốn hủy đơn hàng");
+			if(choice == true){
+			let nhap = prompt("Nhập lý do hủy đơn hàng");
+			let today = new Date();
+			donhang[i].status = 3;	
+			donhang[i].lydo = nhap;
+			donhang[i].ngayduyet = `${today.getDate()}/${today.getMonth()+1}/${today.getFullYear()}` ;
+			luudon = donhang[i];
+			alert("Đã hủy thành công");
+			tatdonhang();
+		}
+		}
+	}
+
+let users = JSON.parse(localStorage.getItem("users"));
+	for(let i = 0 ; i<users.length ; i++){
+		for(let j = 0 ; j < users[i].lichsuMuaHang.length ; j++){
+			if(parseInt(users[i].lichsuMuaHang[j].id) == parseInt(madon.textContent)){
+					users[i].lichsuMuaHang[j] = luudon;
+			}
+		}
+	}
+
+	localStorage.setItem("users" , JSON.stringify(users));
+	localStorage.setItem("donhang" , JSON.stringify(donhang));
+	showDonHang();
+}
+
+
+function giaothanhcong(){
+	let donhang = JSON.parse(localStorage.getItem("donhang"));
+	let madon = document.querySelector("#Display .order .all .form-donhang .khachhang .left .madon");
+	let luudon ={};
+	for(let i = 0 ; i<donhang.length ; i++){
+		if(parseInt(madon.textContent) == donhang[i].id){
+			if(donhang[i].status == 0){
+				alert("Đơn hàng cần được duyệt trước khi đánh dấu giao thành công");
+				return 0;
+			}
+			if(donhang[i].status == 1){
+				let choice = confirm("Bạn có chắc muốn duyệt đơn hàng đã giao thành công");
+			if(choice == true){
+			let today = new Date();
+			donhang[i].status = 2;	
+			donhang[i].ngayduyet = `${today.getDate()}/${today.getMonth()+1}/${today.getFullYear()}` ;
+			luudon = donhang[i];
+			alert("Đã duyệt thành công");
+			tatdonhang();
+
+		}
+}
+
+			if(donhang[i].status == 3){
+				alert("Đơn hàng đã được hủy trước đó");
+				return 0;
+			}
+		
+
+			
+		}
+	}
+
+	let users = JSON.parse(localStorage.getItem("users"));
+	for(let i = 0 ; i<users.length ; i++){
+		for(let j = 0 ; j < users[i].lichsuMuaHang.length ; j++){
+			if(parseInt(users[i].lichsuMuaHang[j].id) == parseInt(madon.textContent)){
+					users[i].lichsuMuaHang[j] = luudon;
+			}
+		}
+	}
+
+	localStorage.setItem("users" , JSON.stringify(users));
+	localStorage.setItem("donhang" , JSON.stringify(donhang));
+	showDonHang();	
+}
+
+
+
+function findtime(){
+	
+
+	
 }
