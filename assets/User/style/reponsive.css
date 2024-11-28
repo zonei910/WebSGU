@@ -86,6 +86,9 @@
     .hide-on-mobile-tablet{
         display: none;
     }
+    .navbar_logo-link{
+        top:0;
+    }
 }
 
 /* Tablet: width >= 740 and width < 1024 */
@@ -109,6 +112,9 @@
         width: 100%;
     }
 
+    .navbar_logo-link{
+        top:0;
+    }
     .grid__column35 {
         width: 100%
     }

@@ -105,7 +105,7 @@ function showOrderDetail(orderId) {
 
     if (detailOrderItems.length >= 5) {
         detailOrderItems[0].textContent = order.ngaydat;           // Ngày đặt hàng
-        detailOrderItems[1].textContent = getPaymentMethod(order.paymentMethod); // Hình thức thanh toán
+        detailOrderItems[1].textContent = getPaymentMethod(order); // Hình thức thanh toán
         detailOrderItems[2].textContent = order.diachiKH;          // Địa chỉ nhận
         detailOrderItems[3].textContent = order.tenKH;             // Người nhận
         detailOrderItems[4].textContent = order.phoneKH;           // Số điện thoại
@@ -129,14 +129,14 @@ function closeProductDetail() {
     }
 }
 
-function getPaymentMethod(paymentMethod) {
-    if (paymentMethod === "zalopay") {
-        return "Thanh toán bằng ZaloPay";
-    } else if (paymentMethod === "cash") {
+function getPaymentMethod(order) {
+    if (order.stk !== -1 && order.bank === -1) {
+        return `Thanh toán bằng ZaloPay (STK: ${order.stk})`;
+    } else if (order.stk === -1 && order.bank === -1) {
         return "Thanh toán khi nhận hàng";
-    } else if (paymentMethod === "card") {
-        return "Thanh toán bằng thẻ ngân hàng";
+    } else if (order.stk !== -1 && order.bank !== -1) {
+        return `Thanh toán bằng ${order.bank} (STK: ${order.stk})`;
     } else {
-        return "Chưa xác định";
+        return "Hình thức thanh toán không xác định";
     }
 }
