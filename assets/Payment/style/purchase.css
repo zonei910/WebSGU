@@ -26,6 +26,8 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    HEIGHT: 300px;
+    overflow-y: auto;
 }
 #thecard>div{
     align-items: center;
@@ -154,6 +156,7 @@
 
 #bank{
     display:block;
+    margin:7px;
 }
 
 #stk{
@@ -163,6 +166,8 @@
 #stk input{
     width: 100%;
     text-align: center;
+    padding:5px;
+    margin:7px;
 }
 
 .confirm{
