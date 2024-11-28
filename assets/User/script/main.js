@@ -486,10 +486,6 @@ if (savedProducts) {
 }
 
 
-
-
-
-
 function hienthi(){
     document.getElementById("dang-nhap").style.display="flex";
 }

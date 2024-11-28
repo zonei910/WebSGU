@@ -319,6 +319,8 @@ function themsp(a){
             soluong = parseInt(temp[i].value);
         }
     }
+
+    if(currentUser.giohang != null){
     let co = 0;
     let product = JSON.parse(localStorage.getItem("products"));
     for(let i = 0 ; i<currentUser.giohang.length;i++){
@@ -347,6 +349,37 @@ function themsp(a){
               
         }
     }
+}else{
+    currentUser.giohang = [];
+    let co = 0;
+    let product = JSON.parse(localStorage.getItem("products"));
+    for(let i = 0 ; i<currentUser.giohang.length;i++){
+        if(a.getAttribute("name") == currentUser.giohang[i].id){
+            currentUser.giohang[i].soLuong = parseInt(currentUser.giohang[i].soLuong) + soluong;
+            co = 1;
+            break;
+        }
+    }
+
+    if(co == 0){
+        for(let i = 0 ; i<product.length ; i ++){
+            if(a.getAttribute("name") == product[i].id){
+                let sp = {
+                    hinh: product[i].images[0],
+                    ten: product[i].name,
+                    id: product[i].id,
+                    loai: product[i].category,
+                    soLuong: soluong,
+                    gia: product[i].price,
+                };
+                console.log(sp);
+                currentUser.giohang.push(sp);
+                break;
+            }
+              
+        }
+    }
+}
     let giohang = currentUser.giohang;
     localStorage.setItem("currentUser", JSON.stringify(currentUser));
     localStorage.setItem("giohang", JSON.stringify(giohang));

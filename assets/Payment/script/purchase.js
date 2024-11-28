@@ -95,8 +95,13 @@ if(donhang == null){
 
 let diachi = document.querySelector("#address").value;
 
-let phieumua = {
+
+let phieumua;
+if(chooseZalopay.checked == true){
+ phieumua = {
     id: madon,
+    stk: stk.value,
+    bank: -1,
     ngaydat: `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}` ,
     ngayduyet: 0 ,
     diachiKH: diachi,
@@ -108,6 +113,55 @@ let phieumua = {
     genderKH: currentUser.gender,
     giohang: currentUser.giohang,
 }
+}
+
+if(chooseCash.checked == true){
+    phieumua = {
+        id: madon,
+        stk: -1,
+        bank: -1,
+        ngaydat: `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}` ,
+        ngayduyet: 0 ,
+        diachiKH: diachi,
+        tongtien: s,
+        status: 0,
+        tenKH: currentUser.name,
+        phoneKH: currentUser.phone,
+        emailKH: currentUser.email,
+        genderKH: currentUser.gender,
+        giohang: currentUser.giohang,
+    }
+}
+
+if(chooseCard.checked == true){
+let nganhang = document.querySelectorAll("#bank .choose_bank");
+let bank;
+for(let i = 0 ; i < nganhang.length;i++){
+    if(nganhang[i].checked == true){
+        bank = nganhang[i].value;
+        break;
+    }
+}
+
+    phieumua = {
+        id: madon,
+        stk: stk.value,
+        bank: bank,
+        ngaydat: `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}` ,
+        ngayduyet: 0 ,
+        diachiKH: diachi,
+        tongtien: s,
+        status: 0,
+        tenKH: currentUser.name,
+        phoneKH: currentUser.phone,
+        emailKH: currentUser.email,
+        genderKH: currentUser.gender,
+        giohang: currentUser.giohang,
+    }
+}
+
+
+
 donhang.push(phieumua);
 localStorage.setItem("donhang", JSON.stringify(donhang));
 let users = JSON.parse(localStorage.getItem("users"));
@@ -126,7 +180,7 @@ localStorage.setItem("users" , JSON.stringify(users));
 
 
 showTomtatsp();
-// alert("Đặt hàng thành công quay về trang chủ");
-// window.location.href = "index.html";
+alert("Đặt hàng thành công quay về trang chủ");
+window.location.href = "index.html";
 }
 

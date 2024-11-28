@@ -1,46 +1,3 @@
-// function generateOrderId() {
-//     return "DH" + Date.now(); // Ví dụ: DH1698771826271
-// }
-
-// function confirmOrder() {
-//     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-
-//     if (!currentUser) {
-//         alert("Bạn cần đăng nhập để thanh toán!");
-//         return;
-//     }
-
-//     const orderId = generateOrderId();
-//     const order = {
-//         id: orderId,
-//         khachhang: currentUser.phone, // Hoặc bất kỳ thông tin định danh nào
-//         sanpham: [...giohang], // Sao chép toàn bộ giỏ hàng
-//         tongtien: giohang.reduce((sum, sp) => sum + parseInt(sp.gia) * sp.soLuong, 0),
-//         trangthai: 0 // 0: Đang xử lý, 1: Đã xử lý
-//     };
-
-//     let orders = JSON.parse(localStorage.getItem("orders") || "[]");
-//     orders.push(order);
-//     localStorage.setItem("orders", JSON.stringify(orders));
-
-//     // Xóa giỏ hàng sau khi đặt
-//     giohang = [];
-//     localStorage.setItem("giohang", JSON.stringify(giohang));
-
-//     alert(`Đơn hàng của bạn (${orderId}) đã được tạo thành công!`);
-//     showMyCart(); // Cập nhật giao diện
-// }
-
-// function getOrderDetails(madon) {
-//     let orderDetails = JSON.parse(localStorage.getItem("orderDetails") || "[]");
-//     return orderDetails.filter(item => item.madon === madon);  // Lọc chi tiết đơn hàng theo mã đơn
-// }
-
-// function getProductInfo(productId) {
-//     let products = JSON.parse(localStorage.getItem("products") || "[]");
-//     return products.find(product => product.id === productId) || {};  // Trả về thông tin sản phẩm
-// }
-
 function renderOrderHistory() {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     const donhang = JSON.parse(localStorage.getItem('donhang')) || [];
@@ -53,8 +10,8 @@ function renderOrderHistory() {
     if (userOrders.length === 0) {
         orderHtml = `
             <div class="order-history-empty">
-                <h3>Không có đơn hàng nào!</h3>
-                <p>Hiện tại bạn chưa có đơn hàng nào.</p>
+                <img src="./assets/User/img/download.png" alt="" class="empty-order-img">
+                <p>Chưa có đơn hàng nào</p>
             </div>`;
     } else {
         userOrders.forEach(order => {
@@ -125,6 +82,8 @@ function renderOrderHistory() {
     if (orderHistoryDiv) {
         orderHistoryDiv.style.display = "block"; // Hiển thị phần lịch sử đơn hàng
     }
+
+    console.log(localStorage.getItem('donhang'));
 }
 
 // Định dạng tiền tệ VND
@@ -132,4 +91,52 @@ function vnd(price) {
     return price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
 }
 
-console.log(localStorage.getItem('donhang'));
+function showOrderDetail(orderId) {
+    // Lấy dữ liệu đơn hàng từ localStorage
+    const donhang = JSON.parse(localStorage.getItem('donhang')) || [];
+    const order = donhang.find(o => o.id == orderId);
+
+    if (!order) {
+        console.error("Không tìm thấy đơn hàng với ID:", orderId);
+        return;
+    }
+
+    const detailOrderItems = document.querySelectorAll(".detail-order-item-right");
+
+    if (detailOrderItems.length >= 5) {
+        detailOrderItems[0].textContent = order.ngaydat;           // Ngày đặt hàng
+        detailOrderItems[1].textContent = getPaymentMethod(order.paymentMethod); // Hình thức thanh toán
+        detailOrderItems[2].textContent = order.diachiKH;          // Địa chỉ nhận
+        detailOrderItems[3].textContent = order.tenKH;             // Người nhận
+        detailOrderItems[4].textContent = order.phoneKH;           // Số điện thoại
+    } else {
+        console.error("Không tìm thấy đủ các phần tử .detail-order-item-right");
+    }
+
+       // Hiển thị modal chi tiết đơn hàng
+    const modal = document.querySelector(".detail_order");
+    if (modal) {
+        modal.style.display = "block";
+    }
+    
+    console.log("Mã đơn hàng: ", orderId);
+}
+
+function closeProductDetail() {
+    const modal = document.querySelector(".detail_order");
+    if (modal) {
+        modal.style.display = "none"; // Ẩn modal chi tiết đơn hàng
+    }
+}
+
+function getPaymentMethod(paymentMethod) {
+    if (paymentMethod === "zalopay") {
+        return "Thanh toán bằng ZaloPay";
+    } else if (paymentMethod === "cash") {
+        return "Thanh toán khi nhận hàng";
+    } else if (paymentMethod === "card") {
+        return "Thanh toán bằng thẻ ngân hàng";
+    } else {
+        return "Chưa xác định";
+    }
+}
