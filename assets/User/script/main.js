@@ -369,6 +369,30 @@ menuButton.addEventListener('click', () => {
     menu.classList.toggle('navbar__open');
 })
 
+// ==========fix lỗi đề lên nhau khi sử dụng các thanh công cụ
+document.addEventListener('click', (event) => {
+    // Đóng tất cả menu trước khi xử lý sự kiện nhấp
+    document.querySelectorAll('.navbar_search-dropdown, .navbar_user-items').forEach(menu => {
+        if (menu.style.display === 'block') {
+            menu.style.display = 'none';
+        }
+    });
+
+    // Kiểm tra sự kiện nhấp cho thanh tìm kiếm
+    const search = document.querySelector('.navbar_search');
+    const dropdownSearch = document.querySelector('.navbar_search-dropdown');
+    if (search.contains(event.target)) {
+        dropdownSearch.style.display = dropdownSearch.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // Kiểm tra sự kiện nhấp cho tài khoản
+    const account = document.querySelector('.navbar_user');
+    const dropdownAccount = document.querySelector('.navbar_user-items');
+    if (account.contains(event.target)) {
+        dropdownAccount.style.display = dropdownAccount.style.display === 'block' ? 'none' : 'block';
+    }
+});
+
 
 
 
