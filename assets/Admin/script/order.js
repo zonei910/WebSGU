@@ -238,11 +238,16 @@ function find_order(){
 				}
 			});
 		
-			
+			if(find.value == ""){
+				showDonHang();
+				return 0;
+			}
+
+
 	}else{
-		if(findarr.value == ""){
+		console.log("hi");
+		if(find.value == ""){
 			filter_order();
-			console.log("hihi");
 			return 0;
 		}
 
