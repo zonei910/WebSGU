@@ -17,7 +17,8 @@ Display_viewpage.style.display = "none";
 Display_merchandise.style.display = "none";
 Display_revenue.style.display = "none";
 Display_userlist.style.display = "none";
-Display_order.style.display = "none";
+Display_order.style.display = "block";
+showDonHang();
 
 
 
