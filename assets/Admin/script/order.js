@@ -365,7 +365,7 @@ function xulydonhang(a){
                                 <p>Mã đơn: <span class="madon">${donhientai.id}</span></p>
                                 <p>Trạng thái: <span>${trangthai}</span></p>
                                 <p>Tổng tiền: <span>${donhientai.tongtien} đ</span></p>
-                                <p>Mã khuyến mãi: <span>Không có</span></p>
+
                                 <p>Ngày đặt hàng: <span>${donhientai.ngaydat}</span></p>
                                 <p style="width:500px">Hình thức thanh toán: <span width="100%">${nganhang}</span></p>
                                 <p>Số tài khoản (nếu có): <span>${stk}</span></p>
