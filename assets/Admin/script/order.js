@@ -344,8 +344,6 @@ function xulydonhang(a){
 	if(donhientai.status == 2) trangthai = "Đã giao";
 	if(donhientai.status == 3) trangthai = "Đã hủy";
 	let nganhang , stk;
-	nganhang = "không"
-	stk = "không";
 
 	if(donhientai.bank == -1 && donhientai.stk == -1){
 		nganhang = "Trả bằng tiền mặt";
@@ -353,11 +351,11 @@ function xulydonhang(a){
 	}
 
 	 if(parseInt(donhientai.bank) == -1 && parseInt(donhientai.stk) != -1){
-		nganhang += "Zalopay";
+		nganhang = "Zalopay";
 		stk = parseInt(donhientai.stk);
 	}
 	 if(parseInt(donhientai.bank) != -1 && parseInt(donhientai.stk) != -1){
-		nganhang = `Nganhang: ${donhientai.bank}`; 
+		nganhang = `Nganhang:${donhientai.bank}`; 
 		stk = donhientai.stk;   
 	}
 
@@ -368,7 +366,7 @@ function xulydonhang(a){
                                 <p>Tổng tiền: <span>${donhientai.tongtien} đ</span></p>
                                 <p>Mã khuyến mãi: <span>Không có</span></p>
                                 <p>Ngày đặt hàng: <span>${donhientai.ngaydat}</span></p>
-                                <p>Hình thức thanh toán: <span>${nganhang}</span></p>
+                                <p>Hình thức thanh toán: <span> ${nganhang}</span></p>
                                 <p>Số tài khoản (nếu có): <span>${stk}</span></p>
         </div>
 	`;
