@@ -605,7 +605,7 @@
     color: var(--xanhdam);
 }
 
-/* ===============footer=========== */
+/* =============================================footer=================================== */
 .footer {
     background: #f2f5fa;
 }
@@ -773,7 +773,7 @@
     box-shadow: 0 5px 5px 5 var(--xanhnhat) rgba(0, 0, 0, 0.5);
 }
 
-/* =================detail product========= */
+/* ====================================================detail product====================================== */
 .main_img {
     width: 100%;
     background-size: cover;
@@ -886,7 +886,7 @@
     line-height: 21px
 }
 
-/* ===================account-info========= */
+/* ========================================================account-info==================================================== */
 .account-app {
     margin: 20px 0 20px 0;
 }
@@ -896,21 +896,23 @@
     padding: 20px;
     max-height: 620px;
     overflow-y: auto;
+    margin-top:90px;
 }
 
 .tittle-main_account {
     padding-bottom: 15px;
     border-bottom: 1px solid #eee;
+
 }
 
 .tittle-main_account h3{
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 700;
-    margin: 0;
+    margin-bottom: 10px;;
 }
 
 .tittle-main_account p{
-    font-size: 15px;
+    font-size: 12px;
     margin: 0;
 }
 
@@ -960,7 +962,7 @@
     cursor: pointer;
     border-radius: 5px;
 }
-/*========== payment history========== */
+/*===================================================== payment history======================================== */
 .order-history-group {
     border: 1px solid #e5e5e5;
     padding: 15px;
