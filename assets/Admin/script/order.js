@@ -314,3 +314,65 @@ function find_order(){
 	console.log(filterarr);
 }
 
+
+function tatdonhang(){
+	let a = document.querySelector("#Display .order .all");
+	a.style.display = "none";
+}
+
+
+function xulydonhang(a){
+	let thongtindon = document.querySelector("#Display .order .all");
+	thongtindon.style.display = "block";
+	let madon = a.getAttribute("name");
+	console.log (madon);
+	let donhang = JSON.parse(localStorage.getItem("donhang"));
+
+	let donhientai;
+	for(let i = 0 ; i<donhang.length;i++){
+		if(parseInt(madon) == parseInt(donhang[i].id) ){
+			donhientai = donhang[i];
+		}
+	}
+
+	let left = document.querySelector("#Display .order .all .khachhang .left");
+	let right = document.querySelector("#Display .order .all .khachhang .right");
+
+	let trangthai;
+	if(donhientai.status == 0) trangthai = "Chưa xử lý";
+	if(donhientai.status == 1) trangthai = "Đã duyệt";
+	if(donhientai.status == 2) trangthai = "Đã giao";
+	if(donhientai.status == 3) trangthai = "Đã hủy";
+	let nganhang , stk;
+	nganhang = "không"
+	stk = "không";
+
+	if(donhientai.bank == -1 && donhientai.stk == -1){
+		nganhang = "Trả bằng tiền mặt";
+		stk = "Không có";
+	}
+
+	 if(parseInt(donhientai.bank) == -1 && parseInt(donhientai.stk) != -1){
+		nganhang += "Zalopay";
+		stk = parseInt(donhientai.stk);
+	}
+	 if(parseInt(donhientai.bank) != -1 && parseInt(donhientai.stk) != -1){
+		nganhang = `Nganhang: ${donhientai.bank}`; 
+		stk = donhientai.stk;   
+	}
+
+	left.innerHTML = `
+		 <div class="left">
+                                <p>Mã đơn: <span>${donhientai.id}</span></p>
+                                <p>Trạng thái: <span>${trangthai}</span></p>
+                                <p>Tổng tiền: <span>${donhientai.tongtien} đ</span></p>
+                                <p>Mã khuyến mãi: <span>Không có</span></p>
+                                <p>Ngày đặt hàng: <span>${donhientai.ngaydat}</span></p>
+                                <p>Hình thức thanh toán: <span>${nganhang}</span></p>
+                                <p>Số tài khoản (nếu có): <span>${stk}</span></p>
+        </div>
+	`;
+	
+
+
+}

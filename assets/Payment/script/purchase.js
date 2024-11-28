@@ -77,6 +77,14 @@ if(currentUser.giohang.length == 0){
     return 0;
 }
 
+if(stk.value <= 0){
+    alert("Vui lòng nhập đúng số tài khoản");
+    return 0;
+}
+
+
+
+
 let s = 0;
 for(let i = 0; i < currentUser.giohang.length ;i++){
     let thanhtien = currentUser.giohang[i].gia * currentUser.giohang[i].soLuong;
