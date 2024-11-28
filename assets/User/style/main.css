@@ -886,6 +886,8 @@
 .main_account {
     border: 1px solid #dae2e6;
     padding: 20px;
+    max-height: 620px;
+    overflow-y: auto;
 }
 
 .tittle-main_account {
