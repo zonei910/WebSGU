@@ -355,7 +355,7 @@ function xulydonhang(a){
 		stk = parseInt(donhientai.stk);
 	}
 	 if(parseInt(donhientai.bank) != -1 && parseInt(donhientai.stk) != -1){
-		nganhang = `Nganhang:${donhientai.bank}`; 
+		nganhang = `Nganhang: ` + `${donhientai.bank}`; 
 		stk = donhientai.stk;   
 	}
 
@@ -366,11 +366,15 @@ function xulydonhang(a){
                                 <p>Tổng tiền: <span>${donhientai.tongtien} đ</span></p>
                                 <p>Mã khuyến mãi: <span>Không có</span></p>
                                 <p>Ngày đặt hàng: <span>${donhientai.ngaydat}</span></p>
-                                <p>Hình thức thanh toán: <span> ${nganhang}</span></p>
+                                <p style="width:500px">Hình thức thanh toán: <span width="100%">${nganhang}</span></p>
                                 <p>Số tài khoản (nếu có): <span>${stk}</span></p>
         </div>
 	`;
 	
+	right.innerHTML = `
+			
+	
+	`
 
 
 }
