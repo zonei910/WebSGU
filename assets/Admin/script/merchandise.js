@@ -56,7 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
             mainContent.appendChild(productDiv);
         }
 
-        updateActiveButton(page);
+        
+        // updateActiveButton(page);
     }
 
     // Function to handle search functionality
