@@ -1,5 +1,5 @@
 let customers = [
-    { id: 1, name: "Mikasa Chan", phone: "0901 234 567", email: "chanka@gmail.com", status: "None",img:"./thenganhangimage/mikasachan.jfif",
+    { rank: 1, name: "Mikasa Chan", phone: "0901 234 567", email: "mikasachan@gmail.com", status: "None",
       product: [
         {  
             id: 1,
@@ -91,7 +91,7 @@ let customers = [
         },
       ],
     },
-    { id: 2, name: "Uzumaki Naruto", img:"./thenganhangimage/naruto.jfif",phone: "0912 345 678", email: "naruto@gmail.com", status: "not received the order",
+    { rank: 2, name: "Uzumaki Naruto", phone: "0912 345 678", email: "naruto@gmail.com", status: "not received the order",
       product: [
         {  
             id: 6,
@@ -139,7 +139,7 @@ let customers = [
         }
       ],
     },
-    { id: 3, name: "Sasuke Uchiha", img:"./thenganhangimage/sasuke.jfif", phone: "0978 901 234", email: "Sasuke@gmail.com", status: "not received the order",
+    { rank: 3, name: "Sasuke Uchiha", phone: "0978 901 234", email: "Sasuke@gmail.com", status: "not received the order",
       product: [
         {  
             id: 9,
@@ -165,7 +165,7 @@ let customers = [
         }
       ],
     },
-    { id: 4, name: "Sakura Haruno", img:"./thenganhangimage/sakura.jfif", phone: "0923 456 789", email: "Sakura@gmail.com", status: "not received the order",
+    { rank: 4, name: "Sakura Haruno", phone: "0923 456 789", email: "Sakura@gmail.com", status: "not received the order",
       product: [
         {  
             id: 8,
@@ -191,7 +191,7 @@ let customers = [
          }
       ],
     },
-    { id: 5, name: "Hinata Hyuga", img:"./thenganhangimage/hinata.jfif", phone: "0934 567 890", email: "Hinata@gmail.com", status: "not received the order",
+    { rank: 5, name: "Hinata Hyuga", phone: "0934 567 890", email: "Hinata@gmail.com", status: "not received the order",
       product: [
         {  
             id: 8,
@@ -217,7 +217,7 @@ let customers = [
         }
       ],
     },
-    { id: 6, name: "Itachi Uchiha", img:"./thenganhangimage/itachi.jfif", phone: "0934 567 890", email: "Itachi@gmail.com", status: "not received the order",
+    { rank: 6, name: "Itachi Uchiha", phone: "0934 567 890", email: "Itachi@gmail.com", status: "not received the order",
       product: [
         {  
             id: 7,
@@ -243,7 +243,7 @@ let customers = [
          }
       ],
     },
-    { id: 7, name: "Sasori", img:"./thenganhangimage/sasori.jfif", phone: "0956 789 012", email: "Sasori@gmail.com", status: "not received the order",
+    { rank: 7, name: "Sasori", phone: "0956 789 012", email: "Sasori@gmail.com", status: "not received the order",
         product: [
           {  
             id: 7,
@@ -269,7 +269,7 @@ let customers = [
         }
         ],
       },
-      { id: 8, name: "Kakashi Hatake", img:"./thenganhangimage/kakashi.jfif", phone: "0967 890 123", email: "Kakashi@gmail.com", status: "not received the order",
+      { rank: 8, name: "Kakashi Hatake", phone: "0967 890 123", email: "Kakashi@gmail.com", status: "not received the order",
         product: [
           {  
             id: 6,
@@ -295,7 +295,7 @@ let customers = [
            }
         ],
       },
-      { id: 9, name: "Eren Yeager", img:"./thenganhangimage/eren.jfif", phone: "0901 234 567", email: "Eren@gmail.com", status: "None",
+      { rank: 9, name: "Eren Yeager", phone: "0901 234 567", email: "Eren@gmail.com", status: "None",
         product: [
           {  
             id: 6,
@@ -343,7 +343,7 @@ let customers = [
         }
         ],
       },
-      { id: 10, name: "Mikasa Ackerman", img:"./thenganhangimage/mikasa.jfif", phone: "0903 456 789", email: "Ackerman@gmail.com", status: "None",
+      { rank: 10, name: "Mikasa Ackerman", phone: "0903 456 789", email: "Ackerman@gmail.com", status: "None",
         product: [
           {  
             id: 4,
@@ -369,7 +369,7 @@ let customers = [
            }
         ],
       },
-      { id: 11, name: "Armin Arlert", img:"./thenganhangimage/armin.jfif", phone: "0914 567 890", email: "Armin@gmail.com", status: "None",
+      { rank: 11, name: "Armin Arlert", phone: "0914 567 890", email: "Armin@gmail.com", status: "None",
         product: [
           {  
             id: 3,
@@ -395,7 +395,7 @@ let customers = [
            }
         ],
       },
-      { id: 12, name: "Levi Ackerman", img:"./thenganhangimage/levi.jfif", phone: "0925 678 901", email: "Levi@gmail.com", status: "None",
+      { rank: 12, name: "Levi Ackerman", phone: "0925 678 901", email: "Levi@gmail.com", status: "None",
         product: [
           {  
             id: 3,
@@ -443,7 +443,7 @@ let customers = [
            }
         ],
       },
-      { id: 13, name: "Historia Reiss", img:"./thenganhangimage/historia.jfif", phone: "0936 789 012", email: "Historia@gmail.com", status: "None",
+      { rank: 13, name: "Historia Reiss", phone: "0936 789 012", email: "Historia@gmail.com", status: "None",
         product: [
           {  
             id: 2,
@@ -469,7 +469,7 @@ let customers = [
            }
         ],
       },
-      { id: 14, name: "Erwin Smith", img:"./thenganhangimage/erwin.jfif", phone: "0947 890 123", email: "Erwin@gmail.com", status: "None",
+      { rank: 14, name: "Erwin Smith", phone: "0947 890 123", email: "Erwin@gmail.com", status: "None",
         product: [
           {  
             id: 2,
@@ -517,7 +517,7 @@ let customers = [
            }
         ],
       },
-      { id: 15, name: "Jean Kirstein", img:"./thenganhangimage/jean.jfif", phone: "0958 901 234", email: "Jean@gmail.com", status: "None",
+      { rank: 15, name: "Jean Kirstein", phone: "0958 901 234", email: "Jean@gmail.com", status: "None",
         product: [
           {  
 
@@ -554,7 +554,7 @@ let customers = [
            },
         ],
       },
-      { id: 16, name: "Sasha Blouse", img:"./thenganhangimage/sasha.jfif", phone: "0969 012 345", email: "Sasha@gmail.com", status: "None",
+      { rank: 16, name: "Sasha Blouse", phone: "0969 012 345", email: "Sasha@gmail.com", status: "None",
         product: [
           {  
             id: 1,
@@ -602,7 +602,7 @@ let customers = [
         },
         ],
       },
-      { id: 17, name: "Connie Springer", img:"./thenganhangimage/conie.jfif", phone: "0970 123 456", email: "Connie@gmail.com", status: "None",
+      { rank: 17, name: "Connie Springer", phone: "0970 123 456", email: "Connie@gmail.com", status: "None",
         product: [
           {  
             id: 4,
@@ -638,7 +638,7 @@ let customers = [
            }
         ],
       },
-      { id: 18, name: "Hange Zoë", img:"./thenganhangimage/hange.jfif", phone: "0981 234 567", email: "Hange@gmail.com", status: "None",
+      { rank: 18, name: "Hange Zoë", phone: "0981 234 567", email: "Hange@gmail.com", status: "None",
         product: [
           {   
             id: 4,
@@ -686,7 +686,7 @@ let customers = [
            }
         ],
       },
-      { id: 19, name: "Reiner Braun", img:"./thenganhangimage/reiner.jfif", phone: "0992 345 678", email: "Reiner@gmail.com", status: "None",
+      { rank: 19, name: "Reiner Braun", phone: "0992 345 678", email: "Reiner@gmail.com", status: "None",
         product: [
           {  
             id: 9,
@@ -712,7 +712,7 @@ let customers = [
            }
         ],
       },
-      { id: 20, name: "Annie Leonhart", img:"./thenganhangimage/annie.jfif", phone: "0904 456 789", email: "Annie@gmail.com", status: "None",
+      { rank: 20, name: "Annie Leonhart", phone: "0904 456 789", email: "Annie@gmail.com", status: "None",
         product: [
           {  
             id: 6,
@@ -726,7 +726,7 @@ let customers = [
            }
         ],
       },
-      { id: 21, name: "Zeke Yeager", img:"./thenganhangimage/zeke.jfif", phone: "0915 567 890", email: "Zeke@gmail.com", status: "None",
+      { rank: 21, name: "Zeke Yeager", phone: "0915 567 890", email: "Zeke@gmail.com", status: "None",
         product: [
           {
             id: 8,
@@ -752,7 +752,7 @@ let customers = [
           }
         ],
       },
-      { id: 22, name: "Gabi Braun", img:"./thenganhangimage/gabi.jfif", phone: "0926 678 901", email: "Gabi@gmail.com", status: "None",
+      { rank: 22, name: "Gabi Braun", phone: "0926 678 901", email: "Gabi@gmail.com", status: "None",
         product: [
           {  
             id: 5,
@@ -778,7 +778,7 @@ let customers = [
            }
         ],
       },
-      { id: 23, name: "Falco Grice", img:"./thenganhangimage/falco.jfif", phone: "0937 789 012", email: "Falco@gmail.com", status: "None",
+      { rank: 23, name: "Falco Grice", phone: "0937 789 012", email: "Falco@gmail.com", status: "None",
         product: [
           {  
             id: 4,
@@ -826,7 +826,7 @@ let customers = [
            }
         ],
       },
-      { id: 24, name: "Porco Galliard", img:"./thenganhangimage/porco.jfif", phone: "0948 890 123", email: "Porco@gmail.com", status: "None",
+      { rank: 24, name: "Porco Galliard", phone: "0948 890 123", email: "Porco@gmail.com", status: "None",
         product: [
           {  
             id: 1,
@@ -874,7 +874,7 @@ let customers = [
            }
         ],
       },
-      { id: 25, name: "Pieck Finger", img:"./thenganhangimage/pieck.jfif", phone: "0959 901 234", email: "Pieck@gmail.com", status: "None",
+      { rank: 25, name: "Pieck Finger", phone: "0959 901 234", email: "Pieck@gmail.com", status: "None",
         product: [
           {  
             id: 7,
@@ -900,7 +900,7 @@ let customers = [
            }
         ],
       },
-      { id: 26, name: "Ymir Fritz", img:"./thenganhangimage/ymir.jfif", phone: "0960 012 345", email: "Ymir@gmail.com", status: "None",
+      { rank: 26, name: "Ymir Fritz", phone: "0960 012 345", email: "Ymir@gmail.com", status: "None",
         product: [
           {  
             id: 5,
@@ -926,7 +926,7 @@ let customers = [
            }
         ],
       },
-      { id: 27, name: "Bertholdt Hoover", img:"./thenganhangimage/berthold.jfif", phone: "0971 123 456", email: "Bertholdt@gmail.com", status: "None",
+      { rank: 27, name: "Bertholdt Hoover", phone: "0971 123 456", email: "Bertholdt@gmail.com", status: "None",
         product: [
           {  
             id: 4,
@@ -952,7 +952,7 @@ let customers = [
           }
         ],
       },
-      { id: 28, name: "chikara", img:"./thenganhangimage/chikara.jfif", phone: "0982 234 567", email: "chikara@gmail.com", status: "None",
+      { rank: 28, name: "chikara", phone: "0982 234 567", email: "chikara@gmail.com", status: "None",
         product: [
           {  
             id: 5,
@@ -1000,7 +1000,7 @@ let customers = [
           }
         ],
       },
-      { id: 29, name: "Light Yagami", img:"./thenganhangimage/light.jfif", phone: "0993 345 678", email: "Light@gmail.com", status: "None",
+      { rank: 29, name: "Light Yagami", phone: "0993 345 678", email: "Light@gmail.com", status: "None",
         product: [
           {  
             id: 3,
