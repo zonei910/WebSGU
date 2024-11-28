@@ -346,4 +346,8 @@ function chuyenFormLichSuDonHang() {
     if (accountContainer) {
         accountContainer.style.display = "none"; 
     }
+
+
+    // Gọi hàm renderOrderProduct để hiển thị lịch sử đơn hàng
+    renderOrderHistory();
 }

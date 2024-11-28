@@ -5,6 +5,7 @@ let form = document.querySelector("#Form");
 let purchase = document.querySelector("#Purchase");
 
 function showTomtatsp(){
+    if(JSON.parse(localStorage.getItem("giohang")) != null){
     let product = currentUser.giohang;
     let a = '';
     let s = 0;
@@ -43,6 +44,9 @@ function showTomtatsp(){
     showCount.innerHTML = n;
     showSP.innerHTML = a;
     showTong.textContent = `${s} đ`;
+}else{
+    
+}
 }
 
 showTomtatsp();

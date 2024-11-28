@@ -214,7 +214,7 @@
                 <div class="row grid_app">
                     <div class="grid__column"> 
                         <div class="tilte-product">
-                            <h1 class="title">Tất cả sản phẩm</h1>
+                            <h1 class="title">✨Tất cả sản phẩm</h1>
                         </div>
                         <div class="home-product">
                             <div class="row" id="product-container">
@@ -458,7 +458,7 @@
                                 <div class="order-history-control">
                                     <div class="order-history-status">
                                         <span class="order-history-status-sp no-complete">Đang xử lý</span>
-                                        <button id="order-history-detail" onclick="detailOrder('DH1')"><i class="fa-regular fa-eye"></i> Xem chi tiết</button>
+                                        <button id="order-history-detail" onclick="showOrderDetail('${order.id}')"><i class="fa-regular fa-eye"></i> Xem chi tiết</button>
                                     </div>
                                     <div class="order-history-total">
                                         <span class="order-history-total-desc">Tổng tiền: </span>
@@ -663,7 +663,7 @@
     </div>
 
     <!--  thanh toán -->
-    <div id="payment">
+    <!-- <div id="payment">
         <div id="paymentForm">
             <h2>Thông tin thanh toán</h2>
             <form id="paymentFormContent">
@@ -702,7 +702,7 @@
                 <button id="nutHuyTT" type="button" onclick="cancelPayment()">Hủy</button>
             </form>
         </div>
-    </div>
+    </div> -->
 
     <!-- modal -->
     <div id="dang-nhap" style="display:none;">
@@ -809,6 +809,7 @@ function chuyenFormDangNhap() {
 =======
     <script src="./product.js"></script>
     <script src="./customer.js"></script>
+    <script src="./assets/User/script/history.js"></script>
     <script src="./assets/User/script/main.js"></script>
     <script src="./assets/User/script/Login_Signin.js"></script>
 >>>>>>> aa05287a9a5146965f36dcae2fb89d209693809d

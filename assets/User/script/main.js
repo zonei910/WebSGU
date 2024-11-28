@@ -8,7 +8,7 @@ let next = document.getElementById('next');
 let active = 0;
 let lengthItems = items.length - 1;
 
-next.onclick = function() {
+next.onclick = function() {    
     if ( (active + 1) > lengthItems )
         active = 0;
     else 
@@ -292,9 +292,9 @@ choose.forEach(link => {
 
         // Cập nhật tiêu đề
         if ( category === 'all')
-            categoryTitle.textContent = `${categoryName} sản phẩm`;
+            categoryTitle.textContent = `✨${categoryName} sản phẩm`;
         else    
-            categoryTitle.textContent = `Sản phẩm ${categoryName}`;
+            categoryTitle.textContent = `✨Sản phẩm ${categoryName}`;
 
         choose.forEach(item => item.parentElement.classList.remove('active'));
         link.parentElement.classList.add('active');
@@ -335,8 +335,11 @@ search.addEventListener('click', () => {
     let dropdownsearch= document.querySelector('.navbar_search-dropdown');
     if ( dropdownsearch.style.display === 'block' )
         dropdownsearch.style.display = 'none';
-    else
+    else{
         dropdownsearch.style.display = 'block';
+        let dropdownaccount = document.querySelector('.navbar_user-items');
+        dropdownaccount.style.display = 'none';
+    }
 })
 
 // ======================cart ====================
@@ -357,8 +360,11 @@ account.addEventListener('click', () => {
     let dropdownaccount = document.querySelector('.navbar_user-items');
     if ( dropdownaccount.style.display === 'block' )
         dropdownaccount.style.display = 'none';
-    else
+    else{
         dropdownaccount.style.display = 'block';
+        let dropdownsearch= document.querySelector('.navbar_search-dropdown');
+        dropdownsearch.style.display = 'none';
+    }
 })
 
 // ==============menuicon==========
@@ -368,6 +374,14 @@ let menuButton = document.querySelector('.navbar__menu');
 menuButton.addEventListener('click', () => {
     menu.classList.toggle('navbar__open');
 })
+
+// ==========fix lỗi đề lên nhau khi sử dụng các thanh công cụ
+
+
+
+
+
+
 
 
 
@@ -484,10 +498,6 @@ if (savedProducts) {
     // Nếu không có dữ liệu, bạn có thể sử dụng mảng sản phẩm mặc định hoặc gọi API để lấy dữ liệu
     Product = []; // hoặc gọi API
 }
-
-
-
-
 
 
 function hienthi(){
