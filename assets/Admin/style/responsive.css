@@ -1,7 +1,13 @@
 @media (max-width: 768px){
+	body{
+		overflow: auto;
+		height: 100px;
+	}
+
+
 	#Menu{
 		display: none;
-
+		height: 100%;
 		top:0;
 		left: 0;
 		z-index: 1;
@@ -19,6 +25,20 @@
 	#Header img{
 		display:none;
 	}
+
+	#Header{
+		width: 1000px;
+	}
+
+	#Header .inner-container{
+		width: 60%;
+	}
+
+	#Header .inner{
+		width: 1000px;
+		justify-content: space-between;
+	}
+
 
 	#Header .menu-bar{
 		display:block;
@@ -57,7 +77,7 @@
 		
 
 		#Display .merchandise{
-		width: 768px;
+		width: 1000px;
 		}	
 
 		#Display .merchandise #main-content{
@@ -67,13 +87,13 @@
 
 
 		#Display .order .form-donhang{
-			width: 700px;
+			width: 1000px;
 			overflow: auto;
 		}
 
 
 		#Display .order .form-donhang .khachhang{
-			width: max-content;
+			width: 1000px;
 			padding: 15px;
 		}
 
@@ -81,9 +101,35 @@
 			width: 1000px;
 		}
 
+		#Display .order .sanpham{
+		width: 1000px;
+        padding: 0px;
 
-		#Header .inner{
-			width: 768px;
-		}
+    }
+
+    #Menu div div{
+    	width: 100%;
+    }
+
+    #Display .viewpage iframe{
+    	width: 1000px;
+    	height: 100vh;
+    }
+
+    #Display .merchandise .button-group{
+    	width: 300px;
+    	display: flex;
+    	justify-content: space-between;
+    }
+
+    #Display .merchandise .edit-buttons1, .edit-buttons2{
+    	width: 100%;
+    }
+
+    #Display .merchandise .product-info span{
+    	height: 100%;
+    }
+
 
 }
+
