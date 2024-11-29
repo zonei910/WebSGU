@@ -94,21 +94,24 @@ function vnd(price) {
 function showOrderDetail(orderId) {
     // Lấy dữ liệu đơn hàng từ localStorage
     const donhang = JSON.parse(localStorage.getItem('donhang')) || [];
-    const order = donhang.find(o => o.id == orderId);
-
+   
+    for(let i = 0 ; i<donhang.length ; i++){
+        if(donhang[i].id == parseInt(orderId))
+            order = donhang[i];
+    }
     if (!order) {
         console.error("Không tìm thấy đơn hàng với ID:", orderId);
         return;
     }
-
     const detailOrderItems = document.querySelectorAll(".detail-order-item-right");
+    if (detailOrderItems.length >= 6) {
 
-    if (detailOrderItems.length >= 5) {
         detailOrderItems[0].textContent = order.ngaydat;           // Ngày đặt hàng
         detailOrderItems[1].textContent = getPaymentMethod(order); // Hình thức thanh toán
-        detailOrderItems[2].textContent = order.diachiKH;          // Địa chỉ nhận
-        detailOrderItems[3].textContent = order.tenKH;             // Người nhận
-        detailOrderItems[4].textContent = order.phoneKH;           // Số điện thoại
+        detailOrderItems[2].textContent = order.diachiKH;
+        detailOrderItems[3].textContent = order.quanKH;          // Địa chỉ nhận
+        detailOrderItems[4].textContent = order.tenKH;             // Người nhận
+        detailOrderItems[5].textContent = order.phoneKH;           // Số điện thoại
     } else {
         console.error("Không tìm thấy đủ các phần tử .detail-order-item-right");
     }

@@ -1,6 +1,7 @@
 <!-- web for user design -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +23,7 @@
     <link rel="stylesheet" href="./assets/User/style/cart.css">
     <link rel="stylesheet" href="./assets/User/style/payment.css">
 </head>
+
 <body>
     <!-- block element modifier -->
     <div class="app">
@@ -81,30 +83,27 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>   
-                        </div>  
-
-                            <div class="navbar_account" onclick="moDangNhap()">
-                                <i class="fa-regular fa-user"></i>
                             </div>
-
-                            <div class="navbar_user" style="display: none;">
-                                <img src="https://lh3.googleusercontent.com/ogw/AF2bZygaTCHJ0-cu_s_w-JZ4EqMjLBVHkul4IqhfoF-_D2Nok74=s32-c-mo" alt="" class="navbar__user-avata">
-                                <span class="navbar_user-name">Hi, Duy</span>
-                                <ul class="navbar_user-items">
-                                    <li class="navbar_user-item">
-                                        <a href="#" onclick="chuyenFormThongTin()">Tài khoản của tôi</a>
-                                    </li>
-                                    <li class="navbar_user-item">
-                                        <a href="#" onclick="chuyenFormLichSuDonHang()">Đơn mua</a>
-                                    </li>
-                                    <li class="navbar_user-item navbar_user-item-out">
-                                        <a href="" onclick="dangxuat()">Đăng xuất</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <!-- <div class="navbar_user" onclick="moDangNhap()">
+                        </div>
+                        <div class="navbar_account" onclick="moDangNhap()">
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+                        <div class="navbar_user" style="display: none;">
+                            <img src="https://lh3.googleusercontent.com/ogw/AF2bZygaTCHJ0-cu_s_w-JZ4EqMjLBVHkul4IqhfoF-_D2Nok74=s32-c-mo" alt="" class="navbar__user-avata">
+                            <span class="navbar_user-name">Hi, Duy</span>
+                            <ul class="navbar_user-items">
+                                <li class="navbar_user-item">
+                                    <a href="#" onclick="chuyenFormThongTin()">Tài khoản của tôi</a>
+                                </li>
+                                <li class="navbar_user-item">
+                                    <a href="#" onclick="chuyenFormLichSuDonHang()">Đơn mua</a>
+                                </li>
+                                <li class="navbar_user-item navbar_user-item-out">
+                                    <a href="" onclick="dangxuat()">Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- <div class="navbar_user" onclick="moDangNhap()">
                                 <i class="fa-solid fa-user"></i>
                             </div>
                             -->
@@ -121,14 +120,15 @@
                                 </span>
                             </div> -->
                         </div>
-                        <div class="navbar__menu"> 
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>
-                        </div>                        
+                        <div class="navbar__menu">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" /></svg>
+                        </div>
                     </div>
                 </nav>
-
                 <nav class="navbar_two">
-                    <div  class="fa-solid fa-xmark"></div>
+                    <div class="fa-solid fa-xmark"></div>
                     <ul class="navbar_link">
                         <li class="active">
                             <a href="index.html" class="navbar_link-name">
@@ -154,19 +154,19 @@
                                 <li class="active" style="display: none;">
                                     <a href="" data-category="all">Tất cả</a>
                                 </li>
-                                <li >
+                                <li>
                                     <a href="" data-category="ring">Nhẫn</a>
                                 </li>
-                                <li >
+                                <li>
                                     <a href="" data-category="watch">Đồng hồ</a>
                                 </li>
-                                <li >
+                                <li>
                                     <a href="" data-category="bracelet">Vòng tay</a>
                                 </li>
-                                <li >
+                                <li>
                                     <a href="" data-category="necklace">Vòng cổ</a>
                                 </li>
-                                <li >
+                                <li>
                                     <a href="" data-category="earring">Khuyên tai</a>
                                 </li>
                             </ul>
@@ -180,7 +180,6 @@
                 </nav>
             </div>
         </header>
-
         <!-- slider -->
         <div class="slider">
             <div class="list">
@@ -196,8 +195,9 @@
             </div>
             <!-- button prev and next -->
             <div class="buttons">
-                <button id ="prev"><</button>
-                <button id ="next">></button>
+                <button id="prev">
+                    <</button> <button id="next">>
+                </button>
             </div>
             <!-- dots -->
             <ul class="dots">
@@ -206,13 +206,12 @@
                 <li></li>
             </ul>
         </div>
-
         <!-- body -->
         <div class="container">
             <!-- cố định 1 trang web 80% -->
             <div class="grid wide">
                 <div class="row grid_app">
-                    <div class="grid__column"> 
+                    <div class="grid__column">
                         <div class="tilte-product">
                             <h1 class="title">✨Tất cả sản phẩm</h1>
                         </div>
@@ -335,7 +334,6 @@
                 </div>
             </div>
         </div>
-
         <!-- body account info -->
         <div class="container_account" style="display: none;">
             <div class="grid wide1">
@@ -365,6 +363,23 @@
                                         <div class="form-group">
                                             <label for="infoaddress" class="form-label">Địa chỉ</label>
                                             <input class="form-control" type="text" name="infoaddress" id="infoaddress" placeholder="Thêm địa chỉ giao hàng của bạn">
+                                            <select id="infoquan" required syle="text-align:center">
+                                                <option value="Quận 1">Quận 1</option>
+                                                <option value="Quận 2">Quận 2</option>
+                                                <option value="Quận 3">Quận 3</option>
+                                                <option value="Quận 4">Quận 4</option>
+                                                <option value="Quận 5">Quận 5</option>
+                                                <option value="Quận 6">Quận 6</option>
+                                                <option value="Quận 7">Quận 7</option>
+                                                <option value="Quận 8">Quận 8</option>
+                                                <option value="Quận 9">Quận 9</option>
+                                                <option value="Quận 10">Quận 10</option>
+                                                <option value="Quận 11">Quận 11</option>
+                                                <option value="Quận 12">Quận 12</option>
+                                                <option value="Quận Bình Thạnh">Bình Thạnh</option>
+                                                <option value="Quận Gò Vấp">Gò Vấp</option>
+                                                <option value="Quận Phú Nhuận">Phú Nhuận</option>
+                                            </select>
                                         </div>
                                     </form>
                                 </div>
@@ -389,7 +404,7 @@
                                 </div>
                                 <div class="body-main_account-action ">
                                     <div class="grid__column5">
-                                        <button id="save-info-user" onclick="changeInformation()"><i class="fa-solid fa-floppy-disk"></i> Lưu thay đổi</button> 
+                                        <button id="save-info-user" onclick="changeInformation()"><i class="fa-solid fa-floppy-disk"></i> Lưu thay đổi</button>
                                     </div>
                                     <div class="grid__column5">
                                         <button id="save-password" onclick="changePassword()"><i class="fa-solid fa-key"></i> Đổi mật khẩu</button>
@@ -401,9 +416,8 @@
                 </div>
             </div>
         </div>
-
         <!-- body payment history -->
-        <div class="order_history" style="display: none;" >
+        <div class="order_history" style="display: none;">
             <div class="grid wide1">
                 <div class="row account-app">
                     <div class="grid__column">
@@ -471,7 +485,6 @@
                 </div>
             </div>
         </div>
-
         <!-- footer -->
         <footer class="footer" id="footerpage">
             <div class="grid wide">
@@ -575,61 +588,56 @@
                 </div>
             </div>
         </footer>
-
         <!-- detail product -->
         <div class="detail_product">
             <div class="overlay">
                 <div class="product__body">
                     <i class="fa-solid fa-xmark"></i>
                     <div class="row">
-                            <div class="grid__column35">
-                                <div class="product_img">
-                                    <img src="assets/User/img/earrings/1.png" alt="" class="main_img" id="product-main-img">
-                                    <div class="small_img-group" id="product-small-imgs">
-                                        <div class="small_img-col">
-                                            <img src="assets/User/img/earrings/3.png" alt="" class="small_img">
-                                        </div>
-                                        <div class="small_img-col">
-                                            <img src="assets/User/img/earrings/4.png" alt="" class="small_img">
-                                        </div>
-                                        <div class="small_img-col">
-                                            <img src="assets/User/img/earrings/2.png" alt="" class="small_img">
-                                        </div>
-                                        <div class="small_img-col">
-                                            <img src="assets/User/img/earrings/5.png" alt="" class="small_img">
-                                        </div>
+                        <div class="grid__column35">
+                            <div class="product_img">
+                                <img src="assets/User/img/earrings/1.png" alt="" class="main_img" id="product-main-img">
+                                <div class="small_img-group" id="product-small-imgs">
+                                    <div class="small_img-col">
+                                        <img src="assets/User/img/earrings/3.png" alt="" class="small_img">
+                                    </div>
+                                    <div class="small_img-col">
+                                        <img src="assets/User/img/earrings/4.png" alt="" class="small_img">
+                                    </div>
+                                    <div class="small_img-col">
+                                        <img src="assets/User/img/earrings/2.png" alt="" class="small_img">
+                                    </div>
+                                    <div class="small_img-col">
+                                        <img src="assets/User/img/earrings/5.png" alt="" class="small_img">
                                     </div>
                                 </div>
-                                
                             </div>
-                            <div class="grid__column65">
-                                <div class="product_info">
-                                    <h1 id="product-name">Rose Gold Diamond Vine Pendant</h1>
-                                    <h4 id="product-price">1,650,000₫</h4>
-                                    <select>
-                                        <!-- <option value="">Select Size</option> -->
-                                        <!-- <option value="">XXL</option>
+                        </div>
+                        <div class="grid__column65">
+                            <div class="product_info">
+                                <h1 id="product-name">Rose Gold Diamond Vine Pendant</h1>
+                                <h4 id="product-price">1,650,000₫</h4>
+                                <select>
+                                    <!-- <option value="">Select Size</option> -->
+                                    <!-- <option value="">XXL</option>
                                         <option value="">XL</option>
                                         <option value="">Large</option> -->
-                                        <option value="">Medium</option>
-                                        <!-- <option value="">Small</option> -->
-                                    </select>
-                                    <input type="number" value="1" id="product-quantity" min="1">
-                                    <button  id="add-to-cart" class="btn">Thêm vào giỏ</button>
-                                    <h2>Mô tả</h2>
-                                    <p id="product-description">Metal: 14K Gold</p>
-                                    <!-- <p>Metal Color: Rose</p> -->
-                                    <!-- <p>Stones: Round Diamond 0.95</p> -->
-                                    <!-- <p>18" Chain Included. Pendant Length: 1.25"</p> -->
-                                </div> 
+                                    <option value="">Medium</option>
+                                    <!-- <option value="">Small</option> -->
+                                </select>
+                                <input type="number" value="1" id="product-quantity" min="1">
+                                <button id="add-to-cart" class="btn">Thêm vào giỏ</button>
+                                <h2>Mô tả</h2>
+                                <p id="product-description">Metal: 14K Gold</p>
+                                <!-- <p>Metal Color: Rose</p> -->
+                                <!-- <p>Stones: Round Diamond 0.95</p> -->
+                                <!-- <p>18" Chain Included. Pendant Length: 1.25"</p> -->
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            
         </div>
-
-    
         <!-- detail order -->
         <div class="detail_order">
             <div class="overlay">
@@ -649,7 +657,13 @@
                             <li class="detail-order-item">
                                 <span class="detail-order-item-left"><i class="fa-solid fa-location-dot"></i> Địa điểm nhận</span>
                                 <span class="detail-order-item-right">ădwa</span>
+                            </li class="detail-order-item">
+
+                            <li class="detail-order-item">
+                                 <span class="detail-order-item-left"><i class="fa-solid fa-location-dot"></i> Quận </span>
+                                <span class="detail-order-item-right">hihihi</span>
                             </li>
+
                             <li class="detail-order-item">
                                 <span class="detail-order-item-left"><i class="fa-solid fa-person"></i> Người nhận</span>
                                 <span class="detail-order-item-right">nhd</span>
@@ -663,10 +677,7 @@
                 </div>
             </div>
         </div>
-
-    
     </div>
-
     <!-- giỏ hàng -->
     <div id="giohang">
         <div class="showcart">
@@ -682,9 +693,7 @@
                     <th>Sửa</th>
                 </tr>
                 <tbody id="myCart">
-
                 </tbody>
-                
                 <!-- <tr class="row-end">
                     <th colspan="4">Tổng đơn giá</th>
                     <th>
@@ -692,13 +701,10 @@
                     </th>
                 </tr> -->
             </table>
-            
             <button id="deleteAll" onclick="deleteAll()">Xóa tất cả</button>
-            <button id="thanhtoan" onclick="openPayment()">Thanh toán</button>
-            
+            <button id="thanhtoan" onclick="openPayment()">Tiến hành đặt hàng</button>
         </div>
     </div>
-
     <!--  thanh toán -->
     <!-- <div id="payment">
         <div id="paymentForm">
@@ -740,7 +746,6 @@
             </form>
         </div>
     </div> -->
-
     <!-- modal -->
     <div id="dang-nhap" style="display:none;">
         <form class="form-dang-nhap" onsubmit="return dang_nhap()">
@@ -758,7 +763,6 @@
             <p>Chưa Có Tài Khoản? <a href="javascript:void(0)" onclick="chuyenFormDangKy()">Đăng Ký</a></p>
         </form>
     </div>
-    
     <div id="dang-ky" style="display:none;">
         <form class="form-dang-ky" onsubmit= "return dang_ky()" >
             <div onclick="tatDangKy()" class="nut-tat-dk">X</div>
@@ -795,7 +799,24 @@
             </div>
             <div>
                 <label for="address">Địa Chỉ:</label>
-                <input type="text" id="register-address" name="address" placeholder="số nhà, phường, quận..." required>
+                <input type="text" id="register-address" name="address" placeholder="Số nhà,Đường,Phường" required style="width: 80%;">
+                <select id="register-quan" required syle="text-align:center">
+                    <option value="Quận 1">Quận 1</option>
+                    <option value="Quận 2">Quận 2</option>
+                    <option value="Quận 3">Quận 3</option>
+                    <option value="Quận 4">Quận 4</option>
+                    <option value="Quận 5">Quận 5</option>
+                    <option value="Quận 6">Quận 6</option>
+                    <option value="Quận 7">Quận 7</option>
+                    <option value="Quận 8">Quận 8</option>
+                    <option value="Quận 9">Quận 9</option>
+                    <option value="Quận 10">Quận 10</option>
+                    <option value="Quận 11">Quận 11</option>
+                    <option value="Quận 12">Quận 12</option>
+                    <option value="Quận Bình Thạnh">Bình Thạnh</option>
+                    <option value="Quận Gò Vấp">Gò Vấp</option>
+                    <option value="Quận Phú Nhuận">Phú Nhuận</option>
+                </select>
             </div>
             <div>
                 <label for="password">Mật khẩu:</label>
@@ -809,34 +830,30 @@
             <p>Đã có tài khoản? <a href="javascript:void(0)" onclick="chuyenFormDangNhap()">Đăng nhập</a></p>
         </form>
     </div>
-    
     <script>
-        function moDangNhap() {
-    document.getElementById("dang-nhap").style.display = "flex";
-    document.getElementById("dang-ky").style.display = "none";
-}
+    function moDangNhap() {
+        document.getElementById("dang-nhap").style.display = "flex";
+        document.getElementById("dang-ky").style.display = "none";
+    }
 
-function tatDangNhap() {
-    document.getElementById("dang-nhap").style.display = "none";
-}
+    function tatDangNhap() {
+        document.getElementById("dang-nhap").style.display = "none";
+    }
 
-function tatDangKy() {
-    document.getElementById("dang-ky").style.display = "none";
-}
+    function tatDangKy() {
+        document.getElementById("dang-ky").style.display = "none";
+    }
 
-function chuyenFormDangKy() {
-    document.getElementById("dang-nhap").style.display = "none";
-    document.getElementById("dang-ky").style.display = "flex";
-}
+    function chuyenFormDangKy() {
+        document.getElementById("dang-nhap").style.display = "none";
+        document.getElementById("dang-ky").style.display = "flex";
+    }
 
-function chuyenFormDangNhap() {
-    document.getElementById("dang-ky").style.display = "none";
-    document.getElementById("dang-nhap").style.display = "flex";
-}
-
+    function chuyenFormDangNhap() {
+        document.getElementById("dang-ky").style.display = "none";
+        document.getElementById("dang-nhap").style.display = "flex";
+    }
     </script>
-
-
     <!-- js -->
 <<<<<<< HEAD
     <script src="product.js"></script>
@@ -856,4 +873,5 @@ function chuyenFormDangNhap() {
     <script src="https://kit.fontawesome.com/097a4985d9.js" crossorigin="anonymous"></script>
    
 </body>
+
 </html>

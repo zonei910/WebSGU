@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
             mainContent.appendChild(productDiv);
         }
 
-        updateActiveButton(page);
+        // updateActiveButton(page);
     }
 
     // Function to handle search functionality
@@ -190,10 +190,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to validate and update/add the item
     window.updateItem = function() {
-        const id = document.getElementById('idInput').value.trim();
+        let id = document.getElementById('idInput').value.trim();
         const name = document.getElementById('nameInput').value.trim();
         const category = document.getElementById('categoryInput').value.trim();
-        const price = document.getElementById('priceInput').value.trim();
+        let price = document.getElementById('priceInput').value.trim();
         const desc = document.getElementById('descInput').value.trim();
         const imageUploaded = document.getElementById('uploadedImage').src !== '';
 
@@ -201,6 +201,11 @@ document.addEventListener("DOMContentLoaded", () => {
             alert('Please fill in all fields and upload an image.');
             return false;
         }
+
+        let maso = parseInt(id);
+        id = maso
+        let gia = parseInt(price);
+        price = gia;
 
         if (editingItemIndex !== null) {
             // Update existing item
@@ -225,6 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 description: desc, // Use lowercase 'description'
                 images: [document.getElementById('uploadedImage').src]
             });
+
             localStorage.setItem("products", JSON.stringify(products));
             alert('Item added successfully!');
             displayPage(1);
@@ -232,8 +238,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         displayPage(currentPage);
         closeEditBlock();
+            loadData();
     };
-    loadData();
+
     // Function to confirm deletion of a product
     window.confirmDelete = function(index) {
         const confirmation = confirm("Are you sure that you want to delete this?");
@@ -243,10 +250,11 @@ document.addEventListener("DOMContentLoaded", () => {
             displayPage(1);  // Refresh the page after deletion
             displayPaginationButtons(); // Update pagination if needed
         }
+        loadData();
     };
 
     // Load initial data and set up pagination
-    loadData();
+
 });
 
 // Event listener for the image file input

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,340 +16,299 @@
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <title>Admin</title>
 </head>
-<body>
-    
 
+<body>
     <!-- Bắt đầu Header -->
     <header id="Header">
         <div class="inner">
-            <a href ="admin.html">
-            <img src="assets/Admin/image/logo.png" alt="">
+            <a href="admin.html">
+                <img src="assets/Admin/image/logo.png" alt="">
             </a>
             <div class="inner-container">
                 <div class="item">
                     <i class="fa-solid fa-note-sticky"></i>
                     <p>Ghi chú</p>
                 </div>
-
                 <div class="item">
                     <i class="fa-solid fa-bell"></i>
                     <p>Thông báo</p>
                 </div>
-
-
-                <div class="item">        
-                      Xin chào,<div style="display:inline;color:blue;cursor:pointer" class="admin-info">Admin
-                             <!-- Admin info -->
-                             <ul id="Admin-info">
-                                <div>Thông tin</div>
-                                <li>Email: example@gmail.com</li>
-                                <li>Cấp độ: Quản lý</li> 
-                                <!-- Quản lý -> Nhân viên nhận đơn-->
-                                <li>Chi nhánh: Q1</li>
-                                
-                                <li class="button">
-                                    <div class="edit"><i class="fa-regular fa-pen-to-square"></i></div>
-                                    <a href="index.html" class="logout"><i class="fa-solid fa-right-from-bracket"></i></a>
-                                </li>   
-                                                   
-                              </ul>
-                           <!-- Kết thúc Admin info -->
-                        </div>              
-                    
+                <div class="item">
+                    Xin chào,<div style="display:inline;color:blue;cursor:pointer" class="admin-info">Admin
+                        <!-- Admin info -->
+                        <ul id="Admin-info">
+                            <div>Thông tin</div>
+                            <li>Email: example@gmail.com</li>
+                            <li>Cấp độ: Quản lý</li>
+                            <!-- Quản lý -> Nhân viên nhận đơn-->
+                            <li>Chi nhánh: Q1</li>
+                            <li class="button">
+                                <div class="edit"><i class="fa-regular fa-pen-to-square"></i></div>
+                                <a href="index.html" class="logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+                            </li>
+                        </ul>
+                        <!-- Kết thúc Admin info -->
+                    </div>
                 </div>
-                
-
             </div>
         </div>
     </header>
-<!-- Kết thúc Header -->
-
-<!-- Bắt đầu Main -->
+    <!-- Kết thúc Header -->
+    <!-- Bắt đầu Main -->
     <main id="Main">
-
         <Section id="Menu">
-        <div>
-            <div class="viewpage">
-                <i class="fa-solid fa-file-code"></i>
-                <p>Trang Chủ</p>
+            <div>
+                <div class="viewpage">
+                    <i class="fa-solid fa-file-code"></i>
+                    <p>Trang Chủ</p>
+                </div>
+                <div class="merchandise">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                    <p>Hàng Hóa</p>
+                </div>
+                <div class="order">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <p>Đơn hàng</p>
+                </div>
+                <div class="revenue">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <p>Thống Kê</p>
+                </div>
+                <div class="userlist">
+                    <i class="fa-solid fa-users"></i>
+                    <p>Danh Sách Khách Hàng</p>
+                </div>
+                <div class="adminlist">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <p>Danh Sách Quản Trị Viên</p>
+                </div>
+                <!-- Thêm list ở đây -->
             </div>
-
-            <div class="merchandise">
-                <i class="fa-solid fa-boxes-stacked"></i>
-               <p>Hàng Hóa</p>
-            </div>
-
-            <div class="order">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <p>Đơn hàng</p>
-            </div>
-
-            <div class="revenue">
-                <i class="fa-solid fa-chart-simple"></i>
-                <p>Thống Kê</p>
-            </div>
-            <div class="userlist">
-                <i class="fa-solid fa-users"></i>
-                <p>Danh Sách Khách Hàng</p>
-            </div>
-            <div class="adminlist">
-                <i class="fa-solid fa-user-tie"></i>
-                <p>Danh Sách Quản Trị Viên</p>
-            </div>
-            <!-- Thêm list ở đây -->
-         </div>
         </Section>
-
-
-
-
-
         <!-- Sẽ bị none cho đến khi học javascript nên sửa lại nhé -->
         <Section id="Display">
-
-
-        <!-- View page nè -->
+            <!-- View page nè -->
             <div class="viewpage">
                 <iframe src="index.html"></iframe>
             </div>
-
-        <div class="order">
-            <div class="head">
-                <div class="filter">
-                    <select name="loc" class="loc" onchange="filter_order()">
-                        <option value="none" selected="true">Tất cả</option>
-                        <option value="0">Chưa xử lý</option>
-                        <option value="1">Đã xử lý</option>
-                        <option value="2">Giao hàng thành công</option>
-                        <option value="3">Đơn hàng bị hủy</option>
-                        <option value="time">Thời gian đặt hàng</option>
-                    </select>
-                    <div class="time hide">
-                        <div>
-                        <div>Từ ngày<input type="date" class="tu_ngay"></div>
-                        <div>Đến ngày<input type="date" class="den_ngay"></div>
-                        <div class="filterbtn hide" onclick="findtime()">Lọc</div>
+            <div class="order">
+                <div class="head">
+                    <div class="filter">
+                        <select name="loc" class="loc" onchange="filter_order()">
+                            <option value="none" selected="true">Tất cả</option>
+                            <option value="0">Chưa xử lý</option>
+                            <option value="1">Đã xử lý</option>
+                            <option value="2">Giao hàng thành công</option>
+                            <option value="3">Đơn hàng bị hủy</option>
+                            <option value="time">Thời gian đặt hàng</option>
+                        </select>
+                        <div class="time hide">
+                            <div>
+                                <div>Từ ngày<input type="date" class="tu_ngay"></div>
+                                <div>Đến ngày<input type="date" class="den_ngay"></div>
+                                <div class="filterbtn hide" onclick="findtime()">Lọc</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-
-              
+                    <div class="sort">
+                        <select id="sort">
+                            <option value="none">Chọn quận</option>
+                            <option value="Heare">Quận gần nhất</option>
+                            <option value="Quận 1">Quận 1</option>
+                            <option value="Quận 2">Quận 2</option>
+                            <option value="Quận 3">Quận 3</option>
+                            <option value="Quận 4">Quận 4</option>
+                            <option value="Quận 5">Quận 5</option>
+                            <option value="Quận 6">Quận 6</option>
+                            <option value="Quận 7">Quận 7</option>
+                            <option value="Quận 8">Quận 8</option>
+                            <option value="Quận 9">Quận 9</option>
+                            <option value="Quận 10">Quận 10</option>
+                            <option value="Quận 11">Quận 11</option>
+                            <option value="Quận 12">Quận 12</option>
+                            <option value="Quận Bình Thạnh">Bình Thạnh</option>
+                            <option value="Quận Gò Vấp">Gò Vấp</option>
+                            <option value="Quận Phú Nhuận">Phú Nhuận</option>
+                        </select>
+                    </div>
                     <input type="text" class="timkiem" placeholder="Nhập mã đơn hàng" onkeyup="find_order()">
-              
                 </div>
-          
-
-
-            <div class="main">
-                <table>
-                    <thead>
-                       <tr>
-                            <th>Mã đơn hàng</th>
-                            <th>Tên khách hàng</th>
-                            <th>Tổng tiền</th>
-                            <th>Ngày đặt hàng</th>
-                            <th>Ngày duyệt đơn hàng</th>
-                            <th>Trạng thái</th>
-                        </tr> 
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Hiền hehe</td>
-                            <td>100</td>
-                            <td>22/2</td>
-                            <td>0</td>
-                            <td>chưa xử lý</td>
-                            <td class="button">
-                                <div>Xử lý đơn hàng</div>
-                            </td>
-                    </tr>   
-                    </tbody>
-                </table>
-
-
-                <div class="all">
-                    <div class="form-donhang">
-                        <i class="fa-solid fa-x closeform" onclick="tatdonhang()"></i>
-                        <h1>Thông tin đơn hàng</h1>
-                        <div class="khachhang">
-                            <div class="left">
-  
+                <div class="main">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mã đơn hàng</th>
+                                <th>Tên khách hàng</th>
+                                <th>Tổng tiền</th>
+                                <th>Ngày đặt hàng</th>
+                                <th>Ngày duyệt đơn hàng</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Hiền hehe</td>
+                                <td>100</td>
+                                <td>22/2</td>
+                                <td>0</td>
+                                <td>chưa xử lý</td>
+                                <td class="button">
+                                    <div>Xử lý đơn hàng</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="all">
+                        <div class="form-donhang">
+                            <i class="fa-solid fa-x closeform" onclick="tatdonhang()"></i>
+                            <h1>Thông tin đơn hàng</h1>
+                            <div class="khachhang">
+                                <div class="left">
+                                </div>
+                                <div class="right">
+                                </div>
                             </div>
-                            <div class="right">
-
+                            <hr>
+                            <div style="text-align: center;font-size:20px;font-weight: bold;">Đồng hồ</div>
+                            <div class="sanpham">
+                                <table class="sp-item">
+                                    <thead class="row-head">
+                                        <tr>
+                                            <th>Hình</th>
+                                            <th>Mã sản phẩm</th>
+                                            <th>Tên sản phẩm</th>
+                                            <th>Số lượng</th>
+                                            <th>Đơn giá</th>
+                                            <th>Thành tiền</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="sp-giohang-watch">
+                                    </tbody>
+                                    <tr class="row-foot">
+                                        <td colspan="4">Tổng đơn giá</td>
+                                        <td>
+                                            <div class="watch_sum"></div>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
-                        </div>
-            <hr>
-            <div style="text-align: center;font-size:20px;font-weight: bold;">Đồng hồ</div>
-                        <div class="sanpham">
-                          
-                            <table class="sp-item">
-                                <thead class="row-head">
-                                <tr>
-                                    <th>Hình</th>
-                                    <th>Mã sản phẩm</th>
-                                    <th>Tên sản phẩm</th>
-                                    <th>Số lượng</th>
-                                    <th>Đơn giá</th>
-                                    <th>Thành tiền</th>
-                                </tr>
-                                </thead>
-                                <tbody id="sp-giohang-watch">
-                                   
-                                </tbody>
-                                
-                                <tr class="row-foot">
-                                    <td colspan="4">Tổng đơn giá</td>
-                                    <td>
-                                        <div class="watch_sum"></div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-            <br>
-            <div style="text-align: center;font-size:20px;font-weight: bold;" >Nhẫn</div>
-            
-            <div class="sanpham">
-                <table class="sp-item">
-                    <thead class="row-head">
-                    <tr>
-                        <th>Hình</th>
-                        <th>Mã sản phẩm</th>
-                        <th>Tên sản phẩm</th>
-                        <th>Số lượng</th>
-                        <th>Đơn giá</th>
-                        <th>Thành tiền</th>
-                    </tr>
-                    </thead>
-                    <tbody id="sp-giohang-ring">
-                      
-                    </tbody>
-                    
-                    <tr class="row-foot">
-                        <td colspan="4">Tổng đơn giá</td>
-                        <td>
-                            <div class="ring_sum"></div>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            
-            <br>
-            <div style="text-align: center;font-size:20px;font-weight: bold;">Vòng cổ</div>
-                        <div class="sanpham">
-                          
-                            <table class="sp-item">
-                                <thead class="row-head">
-                                <tr>
-                                    <th>Hình</th>
-                                    <th>Mã sản phẩm</th>
-                                    <th>Tên sản phẩm</th>
-                                    <th>Số lượng</th>
-                                    <th>Đơn giá</th>
-                                    <th>Thành tiền</th>
-                                </tr>
-                                </thead>
-                                <tbody id="sp-giohang-necklace">
-                                </tbody>
-                                
-                                <tr class="row-foot">
-                                    <td colspan="4">Tổng đơn giá</td>
-                                    <td>
-                                        <div class="necklace_sum"></div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-            
-                  <br>
-            <div style="text-align: center;font-size:20px;font-weight: bold;">Vòng tay</div>
-                        <div class="sanpham">
-                          
-                            <table class="sp-item">
-                                <thead class="row-head">
-                                <tr>
-                                    <th>Hình</th>
-                                    <th>Mã sản phẩm</th>
-                                    <th>Tên sản phẩm</th>
-                                    <th>Số lượng</th>
-                                    <th>Đơn giá</th>
-                                    <th>Thành tiền</th>
-                                </tr>
-                                </thead>
-                                <tbody id="sp-giohang-bracelet">
-                                
-                
-                                </tbody>
-                                
-                                <tr class="row-foot">
-                                    <td colspan="4">Tổng đơn giá</td>
-                                    <td>
-                                        <div class="bracelet_sum"></div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-            
-
-  <br>
-            <div style="text-align: center;font-size:20px;font-weight: bold;">Khuyên tai</div>
-                        <div class="sanpham">
-                          
-                            <table class="sp-item">
-                                <thead class="row-head">
-                                <tr>
-                                    <th>Hình</th>
-                                    <th>Mã sản phẩm</th>
-                                    <th>Tên sản phẩm</th>
-                                    <th>Số lượng</th>
-                                    <th>Đơn giá</th>
-                                    <th>Thành tiền</th>
-                                </tr>
-                                </thead>
-                                <tbody id="sp-giohang-earring">
-                                    
-                                </tbody>
-                                
-                                <tr class="row-foot">
-                                    <td colspan="4">Tổng đơn giá</td>
-                                    <td>
-                                        <div class="earring_sum"></div>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-            
-
-                        <div class="bonus">
-                            <button onclick="duyet()">Duyệt</button>
-                            <button onclick="huy()">Hủy</button>
-                            <button onclick="giaothanhcong()">Đã giao hàng</button>
+                            <br>
+                            <div style="text-align: center;font-size:20px;font-weight: bold;">Nhẫn</div>
+                            <div class="sanpham">
+                                <table class="sp-item">
+                                    <thead class="row-head">
+                                        <tr>
+                                            <th>Hình</th>
+                                            <th>Mã sản phẩm</th>
+                                            <th>Tên sản phẩm</th>
+                                            <th>Số lượng</th>
+                                            <th>Đơn giá</th>
+                                            <th>Thành tiền</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="sp-giohang-ring">
+                                    </tbody>
+                                    <tr class="row-foot">
+                                        <td colspan="4">Tổng đơn giá</td>
+                                        <td>
+                                            <div class="ring_sum"></div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <br>
+                            <div style="text-align: center;font-size:20px;font-weight: bold;">Vòng cổ</div>
+                            <div class="sanpham">
+                                <table class="sp-item">
+                                    <thead class="row-head">
+                                        <tr>
+                                            <th>Hình</th>
+                                            <th>Mã sản phẩm</th>
+                                            <th>Tên sản phẩm</th>
+                                            <th>Số lượng</th>
+                                            <th>Đơn giá</th>
+                                            <th>Thành tiền</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="sp-giohang-necklace">
+                                    </tbody>
+                                    <tr class="row-foot">
+                                        <td colspan="4">Tổng đơn giá</td>
+                                        <td>
+                                            <div class="necklace_sum"></div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <br>
+                            <div style="text-align: center;font-size:20px;font-weight: bold;">Vòng tay</div>
+                            <div class="sanpham">
+                                <table class="sp-item">
+                                    <thead class="row-head">
+                                        <tr>
+                                            <th>Hình</th>
+                                            <th>Mã sản phẩm</th>
+                                            <th>Tên sản phẩm</th>
+                                            <th>Số lượng</th>
+                                            <th>Đơn giá</th>
+                                            <th>Thành tiền</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="sp-giohang-bracelet">
+                                    </tbody>
+                                    <tr class="row-foot">
+                                        <td colspan="4">Tổng đơn giá</td>
+                                        <td>
+                                            <div class="bracelet_sum"></div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <br>
+                            <div style="text-align: center;font-size:20px;font-weight: bold;">Khuyên tai</div>
+                            <div class="sanpham">
+                                <table class="sp-item">
+                                    <thead class="row-head">
+                                        <tr>
+                                            <th>Hình</th>
+                                            <th>Mã sản phẩm</th>
+                                            <th>Tên sản phẩm</th>
+                                            <th>Số lượng</th>
+                                            <th>Đơn giá</th>
+                                            <th>Thành tiền</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="sp-giohang-earring">
+                                    </tbody>
+                                    <tr class="row-foot">
+                                        <td colspan="4">Tổng đơn giá</td>
+                                        <td>
+                                            <div class="earring_sum"></div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="bonus">
+                                <button onclick="duyet()">Duyệt</button>
+                                <button onclick="huy()">Hủy</button>
+                                <button onclick="giaothanhcong()">Đã giao hàng</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-            </div>
-
-
-            <div class="foot">
-                <div class="pagination">
-                    <div class="item">1</div>
+                <div class="foot">
+                    <div class="pagination">
+                        <div class="item">1</div>
+                    </div>
                 </div>
             </div>
-        </div>
-
             <!-- Thống kê -->
             <div class="revenue" id="revenue">
                 <div>
                     <div class="outer">
                         <div class="container0">
-                            <div><input type="text" placeholder="Search hear" > <i class="fa-solid fa-magnifying-glass"></i></div>
+                            <div><input type="text" placeholder="Search hear"> <i class="fa-solid fa-magnifying-glass"></i></div>
                             <div>
                                 <div><input type="date" id="timefirst" onclick="gettimefirst()"></div>
                                 <div>-</div>
@@ -358,48 +318,97 @@
                         <div class="container">
                             <div class="container1">
                                 <div>
-                                    <div >Total Price</div>
+                                    <div>Total Price</div>
                                     <div id="totalprice">0$</div>
                                     <!-- <div>Saved 25%</div> -->
                                 </div>
-                                <div >
-                                    <div>Total Product Sold</div> 
+                                <div>
+                                    <div>Total Product Sold</div>
                                     <div id="totalproduct">0</div>
                                     <!-- <div>Saved 25%</div> -->
                                 </div>
-                                <div >
+                                <div>
                                     <div>Total Profit</div>
                                     <div id="totalprofit">0$</div>
                                     <!-- <div>Saved 25%</div> -->
                                 </div>
-                                <div >
-                                    <div>Total User</div> 
+                                <div>
+                                    <div>Total User</div>
                                     <div id="totaluser">0</div>
                                     <!-- <div>Saved 25%</div> -->
                                 </div>
                             </div>
-                        </div>        <div class="container2">
+                        </div>
+                        <div class="container2">
                             <div class="thongke1">
                                 <div>Amount of product</div>
-                    
                                 <table id="tableabove">
                                     <tr>
-                                        <td class="none1"><div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="t1" >.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="t2" >.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="t3">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="t4">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="t5">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="t6">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="t7">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="t8">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="t9">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="t10">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="t11">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="t12">.</div></div></td>
+                                        <td class="none1">
+                                            <div></div>
+                                        </td>
+                                        <td class="none1" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="t1">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none1" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="t2">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none1" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="t3">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none1" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="t4">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none1" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="t5">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none1" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="t6">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none1" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="t7">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none1" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="t8">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none1" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="t9">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none1" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="t10">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none1" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="t11">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none1" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="t12">.</div>
+                                            </div>
+                                        </td>
                                         <td class="none"></td>
                                     </tr>
-                
                                 </table>
                                 <table>
                                     <tr>
@@ -584,19 +593,69 @@
                                 <div>Cost of goods </div>
                                 <table id="tableabove">
                                     <tr>
-                                        <td class="none1"><div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="tt1" >.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="tt2" >.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="tt3">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="tt4">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="tt5">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="tt6">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="tt7">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="tt8">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="tt9">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="tt10">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="tt11">.</div></div></td>
-                                        <td class="none1" class="empty" class="tdabove"><div class="divout"><div id="tt12">.</div></div></td>
+                                        <td class="none1">
+                                            <div></div>
+                                        </td>
+                                        <td class="none1" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="tt1">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none1" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="tt2">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none1" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="tt3">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none1" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="tt4">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none1" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="tt5">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none1" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="tt6">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none1" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="tt7">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none1" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="tt8">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none1" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="tt9">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none1" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="tt10">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none1" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="tt11">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none1" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="tt12">.</div>
+                                            </div>
+                                        </td>
                                         <td class="none"></td>
                                     </tr>
                                 </table>
@@ -782,11 +841,7 @@
                         </div>
                         <div class="thongkecustom">
                         </div>
-                
-                
-                
                         <div class="thongkesanpham">
-               
                         </div>
                         <div class="header">List of product</div>
                         <div class="container3">
@@ -802,18 +857,12 @@
                     </div>
                     <script src="newnewthongke.js"></script>
                 </div>
-
-        </div>
-
-
-        <!-- Danh sách user -->
-    <div class="userlist">
-        
-    </div>
-
-
-        <!-- Danh sách sản phẩm -->
-        <div class="merchandise">       
+            </div>
+            <!-- Danh sách user -->
+            <div class="userlist">
+            </div>
+            <!-- Danh sách sản phẩm -->
+            <div class="merchandise">
                 <div id="prod-edit-display">
                     <div id="prod-edit-header">
                         <nav>
@@ -828,7 +877,7 @@
                             <button id="searchSubmitButton">Search</button>
                             <!-- Filter options -->
                             <select id="searchFilter">
-                                <option value="0">Sort by: </option> 
+                                <option value="0">Sort by: </option>
                                 <option value="id">ID</option>
                                 <option value="name">Name</option>
                                 <option value="Price">Price</option>
@@ -849,7 +898,6 @@
                         <button class="addItem" onclick="openEditBlock()">Add Item</button>
                     </nav>
                 </div>
-            
                 <!-- Edit Item Block (Initially Hidden) -->
                 <div class="DisplayEditItemBlock" style="display: none;">
                     <div class="EditItemHeader">
@@ -880,17 +928,12 @@
                         <button class="update-button" onclick="updateItem()">Update</button>
                     </div>
                 </div>
-
-
-
-
             </div>
-        </div>
-    </div>
-
+            </div>
+            </div>
         </Section>
-
     </main>
+<<<<<<< HEAD
 <!-- Kết thúc Main -->
 
 
@@ -916,5 +959,16 @@
 
 
 </script>
+=======
+    <!-- Kết thúc Main -->
+    <script language="javascript" src="product.js"></script>
+    <script language="javascript" src="customer.js"></script>
+    <script language="javascript" src="assets/Admin/script/order.js"></script>
+    <script language="javascript" src="assets/Admin/script/navbar.js"></script>
+    <script language="javascript" src="assets/Admin/script/merchandise.js"></script>
+    <script language="javascript" src="assets/Admin/script/order.js"></script>
+    </script>
+>>>>>>> d89fa021ed347c936cf4666b3184a4e9a3e286e7
 </body>
+
 </html>

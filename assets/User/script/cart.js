@@ -138,7 +138,7 @@ function showMyCart() {
             '<td>' + giohang[i].soLuong + '</td>' +
             '<td>' + giohang[i].gia + 'đ</td>' +
             '<td>' + thanhtien + 'đ</td>' +
-            '<td>' +
+            '<td class="column-end">' +
                 '<button onclick="xoasp(this)">Xóa</button>' +
                 '<button onclick="tangsp(this)">Tăng</button>' +
                 '<button onclick="giamsp(this)">Giảm</button>' +
