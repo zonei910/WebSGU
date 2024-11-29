@@ -111,9 +111,9 @@
                         </div>
                     </div>
                     <div class="sort">
-                        <select id="sort">
+                        <select id="sort" onchange="sortgiaohang()">
                             <option value="none">Chọn quận</option>
-                            <option value="Heare">Quận gần nhất</option>
+                            <option value="Here">Quận gần nhất</option>
                             <option value="Quận 1">Quận 1</option>
                             <option value="Quận 2">Quận 2</option>
                             <option value="Quận 3">Quận 3</option>
@@ -139,6 +139,7 @@
                             <tr>
                                 <th>Mã đơn hàng</th>
                                 <th>Tên khách hàng</th>
+                                <th>Quận</th>
                                 <th>Tổng tiền</th>
                                 <th>Ngày đặt hàng</th>
                                 <th>Ngày duyệt đơn hàng</th>
@@ -146,17 +147,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Hiền hehe</td>
-                                <td>100</td>
-                                <td>22/2</td>
-                                <td>0</td>
-                                <td>chưa xử lý</td>
-                                <td class="button">
-                                    <div>Xử lý đơn hàng</div>
-                                </td>
-                            </tr>
+                          
                         </tbody>
                     </table>
                     <div class="all">
@@ -939,7 +930,6 @@
     <script language="javascript" src="assets/Admin/script/order.js"></script>
     <script language="javascript" src="assets/Admin/script/navbar.js"></script>
     <script language="javascript" src="assets/Admin/script/merchandise.js"></script>
-    <script language="javascript" src="assets/Admin/script/order.js"></script>
     </script>
 </body>
 

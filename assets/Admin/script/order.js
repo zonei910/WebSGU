@@ -38,6 +38,7 @@ function showDonHang(){
 			<tr>
 				  <td>${donhang[i].id}</td>
                             <td>${donhang[i].tenKH}</td>
+                             <td>${donhang[i].quanKH}</td>
                             <td>${donhang[i].tongtien}</td>
                             <td>${donhang[i].ngaydat}</td>
                             <td>${donhang[i].ngayduyet == 0?"Chưa duyệt": donhang[i].ngayduyet}</td>
@@ -81,6 +82,7 @@ function nuttrang_order(a){
 			<tr>
 				  <td>${donhang[i].id}</td>
                             <td>${donhang[i].tenKH}</td>
+                            <td>${donhang[i].quanKH}</td>
                             <td>${donhang[i].tongtien}</td>
                             <td>${donhang[i].ngaydat}</td>
                             <td>${donhang[i].ngayduyet == 0?"Chưa duyệt": donhang[i].ngayduyet}</td>
@@ -165,6 +167,7 @@ function filter_order(){
 			<tr>
 				  <td>${filterarr[i].id}</td>
                             <td>${filterarr[i].tenKH}</td>
+                            <td>${filterarr[i].quanKH}</td>
                             <td>${filterarr[i].tongtien}</td>
                             <td>${filterarr[i].ngaydat}</td>
                             <td>${filterarr[i].ngayduyet == 0?"Chưa duyệt": filterarr[i].ngayduyet}</td>
@@ -208,6 +211,7 @@ function nuttrangfilter_order(a){
 			<tr>
 				  <td>${filterarr[i].id}</td>
                             <td>${filterarr[i].tenKH}</td>
+                             <td>${filterarr[i].quanKH}</td>
                             <td>${filterarr[i].tongtien}</td>
                             <td>${filterarr[i].ngaydat}</td>
                             <td>${filterarr[i].ngayduyet == 0?"Chưa duyệt": filterarr[i].ngayduyet}</td>
@@ -302,6 +306,7 @@ function find_order(){
 		<tr>
 			  <td>${filterarr[i].id}</td>
 						<td>${filterarr[i].tenKH}</td>
+						<td>${filterarr[i].quanKH}</td>
 						<td>${filterarr[i].tongtien}</td>
 						<td>${filterarr[i].ngaydat}</td>
 						<td>${filterarr[i].ngayduyet == 0?"Chưa duyệt": filterarr[i].ngayduyet}</td>
@@ -386,7 +391,7 @@ function xulydonhang(a){
                                 <p>Số điện thoại: <span>${donhientai.phoneKH}</span></p>
                                 <p>Email: <span>${donhientai.emailKH}</span></p>
                                 <p style="width: max-content">Địa chỉ: <span>${donhientai.diachiKH}</span></p>
-                                <p>Quận: <span><${donhientai.quan}/span></p>
+                                <span style="color:#007acc;font-weight:bold">${donhientai.quanKH}</span>
                                 <p>Giới tính: <span>${donhientai.genderKH == 'nu'?'Nữ':'Nam'}</span></p>
                             </div>
 	
@@ -796,6 +801,7 @@ alert("Không có đơn hàng nào được đặt trong khoảng thời gian n�
 			<tr>
 				  <td>${filterarr[i].id}</td>
                             <td>${filterarr[i].tenKH}</td>
+                              <td>${filterarr[i].quanKH}</td>
                             <td>${filterarr[i].tongtien}</td>
                             <td>${filterarr[i].ngaydat}</td>
                             <td>${filterarr[i].ngayduyet == 0?"Chưa duyệt": filterarr[i].ngayduyet}</td>
@@ -820,3 +826,132 @@ alert("Không có đơn hàng nào được đặt trong khoảng thời gian n�
 
 
 
+function sortgiaohang(){
+
+	let selectsort = document.querySelector("#sort").value;
+	let select = document.querySelector("#Display .order .loc").value;
+	let donhang = JSON.parse(localStorage.getItem("donhang"));
+	let arr = [];
+	if(donhang == null){
+		alert("Không có đơn hàng");
+		return 0;
+	}
+
+	if(selectsort == "none"){
+		showDonHang();
+		return 0;
+	}
+
+
+
+	if(selectsort == "Here" || selectsort == "Quận 1"){
+		if(select == "none"){
+			filterarr = donhang;
+			for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == "Quận 1")
+					arr.push(filterarr[i]);
+			}
+			for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH != "Quận 1")
+					arr.push(filterarr[i]);
+			}
+			filterarr = arr;
+		}else{
+			for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == selectsort)
+					arr.push(filterarr[i]);
+			}
+			for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH != selectsort)
+					arr.push(filterarr[i]);
+			}
+			filterarr = arr;
+
+		}
+	}else{
+		if(select == "none"){
+			filterarr = donhang;
+			for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == selectsort)
+					arr.push(filterarr[i]);
+			}
+			for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH != selectsort)
+					arr.push(filterarr[i]);
+			}
+			filterarr = arr;
+
+		}else{
+
+			for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == selectsort)
+					arr.push(filterarr[i]);
+			}
+			for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH != selectsort)
+					arr.push(filterarr[i]);
+			}
+			filterarr = arr;
+		}
+	}
+
+	let sosanphammoitrang = 5;
+		let sotranghientai = 1;
+		let tongsotrang = Math.ceil(filterarr.length/sosanphammoitrang);
+		let vitrihientai = (sotranghientai - 1) * sosanphammoitrang;
+		let btn = '';
+		if(tongsotrang != 1){
+		for(let i = 1 ; i<=tongsotrang ; i ++){
+			btn += `
+				<div class="item" onclick="nuttrangfilter_order(${i})">${i}</div>	
+
+			`
+		}
+	}	
+
+
+	
+
+		let a ='';
+		let n = 0;
+		for(let i = vitrihientai ; i<filterarr.length;i++){
+			let trangthai;
+			if(filterarr[i].status == 0){
+				trangthai = "Chưa xử lý";
+			}else if(filterarr[i].status == 1){
+				trangthai = "Đã duyệt";
+			}else if(filterarr[i].status == 2){
+				trangthai = "Đã giao hàng thành công";
+			}
+			n++;
+			a += `
+			<tr>
+				  <td>${filterarr[i].id}</td>
+                            <td>${filterarr[i].tenKH}</td>
+                            <td>${filterarr[i].quanKH}</td>
+                            <td>${filterarr[i].tongtien}</td>
+                            <td>${filterarr[i].ngaydat}</td>
+                            <td>${filterarr[i].ngayduyet == 0?"Chưa duyệt": filterarr[i].ngayduyet}</td>
+                            <td>${trangthai}</td>
+                            <td class="button">
+                                <div name="${filterarr[i].id}" onclick="xulydonhang(this)">Xem chi tiết đơn hàng</div>
+                            </td>
+                    </tr>   
+			
+			`;
+			if(n == sosanphammoitrang) break;
+		}
+
+
+		let showbtn = document.querySelector("#Display .order .foot .pagination");
+		showbtn.innerHTML = btn;
+		let showdon = document.querySelector("#Display .order .main table tbody");
+		showdon.innerHTML = a;
+
+
+
+
+
+
+
+}
