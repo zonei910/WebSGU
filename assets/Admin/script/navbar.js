@@ -1,4 +1,3 @@
-
 // Khai báo các đối tượng cần thiết
 var Menu_viewpage = document.querySelector("#Menu .viewpage");
 var Menu_merchandise = document.querySelector("#Menu .merchandise");
@@ -21,14 +20,14 @@ Display_order.style.display = "block";
 showDonHang();
 
 function reloadIframe() {
-            var iframe = document.querySelector(".viewpage iframe");
-            // iframe.contentWindow.location.reload(); // Reload iframe
-            iframe.setAttribute("src" , "index.html");
-        }
+    var iframe = document.querySelector(".viewpage iframe");
+    // iframe.contentWindow.location.reload(); // Reload iframe
+    iframe.setAttribute("src", "index.html");
+}
 
 
 // Bật tắt bật tắt
-Menu_viewpage.onclick = ()=>{
+Menu_viewpage.onclick = () => {
     Display_viewpage.style.display = "block";
     Display_merchandise.style.display = "none";
     Display_revenue.style.display = "none";
@@ -37,19 +36,19 @@ Menu_viewpage.onclick = ()=>{
     reloadIframe();
 }
 
-Menu_merchandise.onclick = ()=>{
+Menu_merchandise.onclick = () => {
     Display_viewpage.style.display = "none";
     Display_merchandise.style.display = "block";
     Display_revenue.style.display = "none";
     Display_userlist.style.display = "none";
     Display_order.style.display = "none";
     // showSanPham();
-    
+
 
 
 }
 
-Menu_revenue.onclick = ()=>{
+Menu_revenue.onclick = () => {
     Display_viewpage.style.display = "none";
     Display_merchandise.style.display = "none";
     Display_revenue.style.display = "block";
@@ -57,7 +56,7 @@ Menu_revenue.onclick = ()=>{
     Display_order.style.display = "none";
 }
 
-Menu_userlist.onclick = ()=>{
+Menu_userlist.onclick = () => {
     Display_viewpage.style.display = "none";
     Display_merchandise.style.display = "none";
     Display_revenue.style.display = "none";
@@ -65,7 +64,7 @@ Menu_userlist.onclick = ()=>{
     Display_order.style.display = "none";
 }
 
-Menu_order.onclick = ()=>{
+Menu_order.onclick = () => {
     Display_viewpage.style.display = "none";
     Display_merchandise.style.display = "none";
     Display_revenue.style.display = "none";
@@ -74,3 +73,34 @@ Menu_order.onclick = ()=>{
     showDonHang();
 }
 
+
+
+function tat_mo_navbar() {
+    let menu = document.querySelector("#Menu");
+    if (menu.style.display == "") {
+        menu.style.display = "block";
+        menu.style.position = "fixed";
+        menu.style.top = "0";
+        menu.style.left = "0";
+        menu.style.zIndex = "100";
+        console.log("hihi");
+        return 0;
+    }
+
+    if (menu.style.display == "none") {
+        menu.style.display = "block";
+        menu.style.position = "fixed";
+        menu.style.top = "0";
+        menu.style.left = "0";
+        menu.style.zIndex = "100";
+        return 0;
+    }
+
+    if (menu.style.display == "block") {
+        menu.style.display = "none";
+        return 0;
+    }
+
+
+
+}

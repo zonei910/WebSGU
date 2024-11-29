@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="assets/Admin/style/order.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/Admin/style/responsive.css">
     <title>Admin</title>
 </head>
 
@@ -21,6 +22,7 @@
     <!-- Bắt đầu Header -->
     <header id="Header">
         <div class="inner">
+            <div class="menu-bar" onclick="tat_mo_navbar()"><i class="fa-solid fa-bars"></i></div>
             <a href="admin.html">
                 <img src="assets/Admin/image/logo.png" alt="">
             </a>
@@ -34,14 +36,13 @@
                     <p>Thông báo</p>
                 </div>
                 <div class="item">
-                    Xin chào,<div style="display:inline;color:blue;cursor:pointer" class="admin-info">Admin
+                    Xin chào,<div style="display:inline;color:blue;cursor:pointer" class="admin-info" onclick="thongtinadmin()">Admin
                         <!-- Admin info -->
                         <ul id="Admin-info">
                             <div>Thông tin</div>
-                            <li>Email: example@gmail.com</li>
-                            <li>Cấp độ: Quản lý</li>
+                            <li>Số điện thoại: 12345678</li>
                             <!-- Quản lý -> Nhân viên nhận đơn-->
-                            <li>Chi nhánh: Q1</li>
+                            <li>Chi nhánh: <span>Quận 1</span></li>
                             <li class="button">
                                 <div class="edit"><i class="fa-regular fa-pen-to-square"></i></div>
                                 <a href="index.html" class="logout"><i class="fa-solid fa-right-from-bracket"></i></a>
@@ -58,6 +59,9 @@
     <main id="Main">
         <Section id="Menu">
             <div>
+                <div class="close_menu">
+                    <i class="fa-solid fa-x " onclick="tat_mo_navbar()"></i>
+                </div>
                 <div class="viewpage">
                     <i class="fa-solid fa-file-code"></i>
                     <p>Trang Chủ</p>
@@ -111,9 +115,9 @@
                         </div>
                     </div>
                     <div class="sort">
-                        <select id="sort">
+                        <select id="sort" onchange="sortgiaohang()">
                             <option value="none">Chọn quận</option>
-                            <option value="Heare">Quận gần nhất</option>
+                            <option value="Here">Quận gần nhất</option>
                             <option value="Quận 1">Quận 1</option>
                             <option value="Quận 2">Quận 2</option>
                             <option value="Quận 3">Quận 3</option>
@@ -139,6 +143,7 @@
                             <tr>
                                 <th>Mã đơn hàng</th>
                                 <th>Tên khách hàng</th>
+                                <th>Quận</th>
                                 <th>Tổng tiền</th>
                                 <th>Ngày đặt hàng</th>
                                 <th>Ngày duyệt đơn hàng</th>
@@ -146,17 +151,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Hiền hehe</td>
-                                <td>100</td>
-                                <td>22/2</td>
-                                <td>0</td>
-                                <td>chưa xử lý</td>
-                                <td class="button">
-                                    <div>Xử lý đơn hàng</div>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
                     <div class="all">
@@ -866,23 +860,19 @@
                 <div id="prod-edit-display">
                     <div id="prod-edit-header">
                         <nav>
-                            <div>Edit Products</div>
                             <!-- Search button to show the search block -->
                             <button class="searchbar" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
-                            <a href="#"><i class="fa-solid fa-xmark"></i></a>
                             <!-- Search block, initially hidden -->
                         </nav>
                         <div id="searchBlock" style="display: none; padding: 10px;">
-                            <input type="text" id="searchInput" placeholder="Search..." style="width: 70%; padding: 5px;">
-                            <button id="searchSubmitButton">Search</button>
+                            <input type="text" id="searchInput" placeholder="Tìm..." style="width: 70%; padding: 5px;">
+                            <button id="searchSubmitButton">Tìm</button>
                             <!-- Filter options -->
                             <select id="searchFilter">
-                                <option value="0">Sort by: </option>
+                                <option value="0">Tìm theo: </option>
                                 <option value="id">ID</option>
-                                <option value="name">Name</option>
-                                <option value="Price">Price</option>
-                                <option value="Quantity">Quantity</option>
-                                <option value="Description">Description</option>
+                                <option value="name">Tên</option>
+                                <option value="Price">Giá</option>
                             </select>
                         </div>
                     </div>
@@ -895,31 +885,31 @@
                             <button class="page-button">3</button>
                             <button class="page-button"><i class="fa-solid fa-chevron-right"></i></button>
                         </div>
-                        <button class="addItem" onclick="openEditBlock()">Add Item</button>
+                        <button class="addItem" onclick="openEditBlock()">Thêm sản phẩm</button>
                     </nav>
                 </div>
                 <!-- Edit Item Block (Initially Hidden) -->
                 <div class="DisplayEditItemBlock" style="display: none;">
                     <div class="EditItemHeader">
                         <div class="ProperHeaderDisplay">
-                            <div>Edit Item</div>
+                            <div>Sửa sản phẩm</div>
                             <button onclick="closeEditBlock()"><i class="fa-solid fa-xmark"></i></button>
                         </div>
                         <div class="DisplayEditItemBody" id="imageDropArea">
-                            <p id="uploadText">Drag and drop the picture here or choose an image below</p>
+                            <p id="uploadText">Thả hình ảnh vào đây hoặc ấn vào nút choose image bên dưới</p>
                             <!-- Image preview will be displayed here -->
                             <img id="uploadedImage" style="display: none;" alt="Uploaded Preview">
                         </div>
                         <form id="itemForm">
                             <label for="id">ID: </label>
                             <input type="text" name="id" id="idInput">
-                            <label for="name">Name: </label>
+                            <label for="name">Tên sản phẩm: </label>
                             <input type="text" name="name" id="nameInput">
-                            <label for="category">Category: </label>
+                            <label for="category">Loại sản phẩm: </label>
                             <input type="text" name="category" id="categoryInput">
-                            <label for="price">Price: </label>
+                            <label for="price">Giá tiền: </label>
                             <input type="text" name="price" id="priceInput">
-                            <label for="desc">Desc: </label>
+                            <label for="desc">Mô tả: </label>
                             <input type="text" name="desc" id="descInput">
                             <!-- Image upload input -->
                             <input type="file" id="imageInput" accept="image/*" style="margin-top: 10px; display: none;">
@@ -939,7 +929,6 @@
     <script language="javascript" src="assets/Admin/script/order.js"></script>
     <script language="javascript" src="assets/Admin/script/navbar.js"></script>
     <script language="javascript" src="assets/Admin/script/merchandise.js"></script>
-    <script language="javascript" src="assets/Admin/script/order.js"></script>
     </script>
 </body>
 

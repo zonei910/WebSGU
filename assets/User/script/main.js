@@ -351,6 +351,8 @@ search.addEventListener('click', () => {
         dropdownsearch.style.display = 'block';
         let dropdownaccount = document.querySelector('.navbar_user-items');
         dropdownaccount.style.display = 'none';
+        let x = document.getElementById('giohang');
+        x.style.display = 'none';
     }
 })
 
@@ -376,6 +378,8 @@ account.addEventListener('click', () => {
         dropdownaccount.style.display = 'block';
         let dropdownsearch= document.querySelector('.navbar_search-dropdown');
         dropdownsearch.style.display = 'none';
+        let x = document.getElementById('giohang');
+        x.style.display = 'none';
     }
 })
 
