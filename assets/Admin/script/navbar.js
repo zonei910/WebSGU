@@ -20,7 +20,11 @@ Display_userlist.style.display = "none";
 Display_order.style.display = "block";
 showDonHang();
 
-
+function reloadIframe() {
+            var iframe = document.querySelector(".viewpage iframe");
+            // iframe.contentWindow.location.reload(); // Reload iframe
+            iframe.setAttribute("src" , "index.html");
+        }
 
 
 // Bật tắt bật tắt
@@ -30,6 +34,7 @@ Menu_viewpage.onclick = ()=>{
     Display_revenue.style.display = "none";
     Display_userlist.style.display = "none";
     Display_order.style.display = "none";
+    reloadIframe();
 }
 
 Menu_merchandise.onclick = ()=>{
@@ -68,3 +73,4 @@ Menu_order.onclick = ()=>{
     Display_order.style.display = "block";
     showDonHang();
 }
+
