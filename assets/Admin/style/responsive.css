@@ -1,12 +1,20 @@
 @media (max-width: 768px){
 	#Menu{
 		display: none;
+
 		top:0;
 		left: 0;
 		z-index: 1;
-		width: 50%%;
+		width: max-content;
 		background-color: #F3EFEF;
 	}
+
+	#Menu div{
+		margin-top: 15px;
+		width: max-content;
+	}
+
+
 
 	#Header img{
 		display:none;
@@ -22,12 +30,54 @@
 	}
 
 
+	#Display .order{
+		width: 100%;
+		padding: 0px;
+	}
 
 
+	#Display .order .head{
+		width: 768px;
+	}
+
+	#Menu .close_menu{
+		display: block;
+		left: 262px;
+		top: -7px;
+	}
+
+	#Display .order .foot .pagination{
+		width: 768px;
+	}
+
+		#Display .order .foot{
+			width: 768px;
+		}
+
+		#Display .order .main table *{
+			width: max-content;
+		}
 
 
+		#Display .merchandise{
+			margin-left: 150px;
+		}	
+
+		#Display .merchandise #main-content{
+			width: 100%;
+			padding: 0px;
+		}
 
 
+		#Display .order .form-donhang{
+			width: 700px;
+			overflow: auto;
+		}
 
+
+		#Display .order .form-donhang .khachhang{
+			width: max-content;
+			padding: 15px;
+		}
 
 }
