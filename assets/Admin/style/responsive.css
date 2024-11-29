@@ -54,13 +54,10 @@
 			width: 768px;
 		}
 
-		#Display .order .main table *{
-			width: max-content;
-		}
-
+		
 
 		#Display .merchandise{
-			margin-left: 150px;
+		width: 768px;
 		}	
 
 		#Display .merchandise #main-content{
@@ -78,6 +75,15 @@
 		#Display .order .form-donhang .khachhang{
 			width: max-content;
 			padding: 15px;
+		}
+
+		#Display .order .main table{
+			width: 1000px;
+		}
+
+
+		#Header .inner{
+			width: 768px;
 		}
 
 }
