@@ -386,6 +386,7 @@ function xulydonhang(a){
                                 <p>Số điện thoại: <span>${donhientai.phoneKH}</span></p>
                                 <p>Email: <span>${donhientai.emailKH}</span></p>
                                 <p style="width: max-content">Địa chỉ: <span>${donhientai.diachiKH}</span></p>
+                                <p>Quận: <span><${donhientai.quan}/span></p>
                                 <p>Giới tính: <span>${donhientai.genderKH == 'nu'?'Nữ':'Nam'}</span></p>
                             </div>
 	
@@ -816,4 +817,6 @@ alert("Không có đơn hàng nào được đặt trong khoảng thời gian n�
 }
 
 }
+
+
 

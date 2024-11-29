@@ -34,7 +34,8 @@ function dangky(event) {
     let address = document.getElementById('register-address').value.trim();
     let password = document.getElementById('register-password').value.trim();
     let confirmpassword = document.getElementById('register-confirm-password').value.trim();
-
+    let quanne = document.getElementById('register-quan').value;
+    console.log(quanne);
     // kiem tra nhap lai mat khau
     if ( password !== confirmpassword ){
         alert("Mật khẩu không khớp!");
@@ -68,7 +69,8 @@ function dangky(event) {
         gender: sex, 
         address: address, 
         password: password,
-        status: 0
+        status: 0,
+        quan: quanne,
     };
 
     Customer.push(user);
@@ -212,6 +214,7 @@ function hienThiThongTin() {
         document.getElementById("infoname").value = currentUser.name || "";
         document.getElementById("infophone").value = currentUser.phone || "";
         document.getElementById("infoaddress").value = currentUser.address || "";
+        document.getElementById("infoquan").value = currentUser.quan || "";
     } 
     // else {
     //     alert("Không tìm thấy thông tin tài khoản!");
@@ -236,11 +239,11 @@ function changeInformation() {
     // lay giá trị của các ô ng dùng nhập để chỉnh sửa
     const newName = document.getElementById("infoname").value.trim();
     const newAddress = document.getElementById("infoaddress").value.trim();
-
+    const newQuan = document.getElementById("infoquan").value;
     // cap nhap thong tin ngdung da thay doi
     users[index].name = newName;
     users[index].address = newAddress;
-
+    users[index].quan = newQuan;
     // Cập nhật lại trong localStorage
     localStorage.setItem("users", JSON.stringify(users));
     localStorage.setItem("currentUser", JSON.stringify(users[index]));

@@ -9,6 +9,9 @@ window.onload = () =>{
 chooseZalopay.checked = false;
 chooseCash.checked = false;
 chooseCard.checked = false;
+Bank.style.display = "none";
+stk.style.display = "none";
+confirm.style.display = "none";
 }
 
 stk.style.display = "none";
@@ -102,7 +105,7 @@ if(donhang == null){
 }
 
 let diachi = document.querySelector("#address").value;
-
+let quanmoi = document.querySelector("#newquan").value;
 
 let phieumua;
 if(chooseZalopay.checked == true){
@@ -113,6 +116,7 @@ if(chooseZalopay.checked == true){
     ngaydat: `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()} `,
     ngayduyet: 0 ,
     diachiKH: diachi,
+    quanKH: quanmoi,
     tongtien: s,
     status: 0,
     tenKH: currentUser.name,
@@ -131,6 +135,7 @@ if(chooseCash.checked == true){
         ngaydat: `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()} ` ,
         ngayduyet: 0 ,
         diachiKH: diachi,
+        quanKH: quanmoi,
         tongtien: s,
         status: 0,
         tenKH: currentUser.name,
@@ -158,6 +163,7 @@ for(let i = 0 ; i < nganhang.length;i++){
         ngaydat: `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}` ,
         ngayduyet: 0 ,
         diachiKH: diachi,
+        quanKH: quanmoi,
         tongtien: s,
         status: 0,
         tenKH: currentUser.name,
@@ -175,7 +181,12 @@ localStorage.setItem("donhang", JSON.stringify(donhang));
 let users = JSON.parse(localStorage.getItem("users"));
 for(let i = 0 ; i<users.length;i++){
     if(users[i].phone == currentUser.phone){
+        if(users[i].lichsuMuaHang == null){
+            users[i].lichsuMuaHang = [];
+            users[i].lichsuMuaHang.push(phieumua);
+        } else{
         users[i].lichsuMuaHang.push(phieumua);
+    }
     }
 }
 
