@@ -1,8 +1,7 @@
 @media (max-width: 768px){
 	body{
-overflow-x: auto;     /* Cho phép cuộn ngang */
-  overflow-y: hidden;   /* Tắt cuộn dọc */
-  max-height: 700px;
+		overflow: auto;
+		height: 100px;
 	}
 
 
