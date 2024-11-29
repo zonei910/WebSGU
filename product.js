@@ -468,16 +468,6 @@ if(JSON.parse(localStorage.getItem("products")) == null){
     localStorage.setItem("products", JSON.stringify(Product));
 }
 
-// Chuyển mảng sản phẩm thành JSON và lưu vào localStorage
-// Lấy mảng sản phẩm từ localStorage và chuyển lại thành mảng
-const savedProducts = JSON.parse(localStorage.getItem('products'));
 
-if (savedProducts) {
-    // Nếu dữ liệu có sẵn trong localStorage, sử dụng nó
-    Product = savedProducts;
-} else {
-    // Nếu không có dữ liệu, bạn có thể sử dụng mảng sản phẩm mặc định hoặc gọi API để lấy dữ liệu
-    Product = []; // hoặc gọi API
-}
 
 
