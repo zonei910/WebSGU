@@ -684,9 +684,9 @@ Customer = [
         ]}];
 
 // let  date=null,month=null,year=null,datesecond=null,monthsecond=null,yearsecond=null;
-localStorage.setItem('newsave', JSON.stringify(Customer));
+// localStorage.setItem('newsave', JSON.stringify(Customer));
 // function thecheck
-Customer = JSON.parse(localStorage.getItem('newsave'));
+Customer = JSON.parse(localStorage.getItem('users'));
 function checktimedate(receiptime){
     let arraycopy=JSON.parse(JSON.stringify(receiptime));
     receipt=arraycopy.split("/");
@@ -739,17 +739,17 @@ function editclient(){
             let phone=document.getElementById("editphoneofkh").value.trim();
             let email=document.getElementById("editemailofkh").value.trim();
             if(!hoten){
-                alert("Name is required");
+                alert("Vui lòng nhập tên");
                 document.getElementById("editnameofkh").focus();
                 return;
             }
             if(!phone){
-                alert("phone is required");
+                alert("Vui lòng nhập số điện thoại");
                 document.getElementById("editphoneofkh").focus();
                 return;
             }
             if(!email){
-                alert("email is required");
+                alert("Vui lòng nhập email");
                 document.getElementById("editemailofkh").focus();
                 return;
             }
@@ -774,7 +774,7 @@ function printinfororder(id) {
     document.getElementById("printorder").style.display="flex";
     const section=document.querySelector("#printorder >div");
     for(let i=0;i<Customer.length;i++){
-        if(Customer[i].id==id){
+        if(Customer[i].phone==id){
             for(let j=0;j<Customer[i].lichsuMuaHang.length;j++){
                 const product=Customer[i].lichsuMuaHang[j];
                 for(let k=0;k<product.giohang.length;k++){
@@ -798,21 +798,19 @@ function printinfororder(id) {
     const newCustomer=Customer.slice(start,end);
     container4Node.innerHTML="";
     container4Node.innerHTML=`<div class="clientouter" id="clientouter">
-        <div>Id</div>
         <div>Client name</div>
         <div>Telephone</div>
         <div>Email</div>
     </div>`;
     newCustomer.forEach(customer=>{
-        const clientouterr= `<div class="clientouter" id="clientouter-${customer.id}">
-            <div >${customer.id}</div>
+        const clientouterr= `<div class="clientouter" id="clientouter-${customer.phone}">
             <div>${customer.name}</div>
             <div>${customer.phone}</div>
             <div>${customer.email}</div>
-            <div><i class="fa-solid fa-key" id="khoa-${customer.id}" onclick="hienkhoa(${customer.id})"></i> <i class="fa-regular fa-pen-to-square edit"  onclick="editclient(${customer.id})"></i> <i id="show" class="fa-solid fa-angle-down angle" onclick="printinfororder(${customer.id})"></i></div>
+            <div><i class="fa-solid fa-key" id="khoa-${customer.phone}" onclick="hienkhoa(${customer.phone})"></i> <i class="fa-regular fa-pen-to-square edit"  onclick="editclient(${customer.phone})"></i> <i id="show" class="fa-solid fa-angle-down angle" onclick="printinfororder(${customer.phone})"></i></div>
         </div>`;
         container4Node.innerHTML+=clientouterr;
-        const a="khoa-"+customer.id;
+        const a="khoa-"+customer.phone;
         if(customer.status==1){
             document.getElementById(a).style.color="#bcbcbc";
         }
@@ -821,7 +819,6 @@ function printinfororder(id) {
         }
     })
 
-    console.log("hii");
 }
 
 
@@ -830,7 +827,8 @@ function closedkhoa(){
 }
 function khoanguoidung(id){
     for(let i=0;i<Customer.length;i++){
-        if(Customer[i].id==id){
+        if(Customer[i].phone==id){
+            console.log("helo");
             Customer[i].status=1;
             const a="khoa-"+id;
             document.getElementById(a).style.color="#bcbcbc";
@@ -857,13 +855,13 @@ function search() {
     let uniqueRanks = new Set();
 
     namesearch.forEach(customer => {
-        uniqueRanks.add(customer.id);
+        uniqueRanks.add(customer.phone);
         newarray.push(customer);
     });
 
     emailsearch.forEach(customer => {
-        if (!uniqueRanks.has(customer.id)) {
-            uniqueRanks.add(customer.id);
+        if (!uniqueRanks.has(customer.phone)) {
+            uniqueRanks.add(customer.phone);
             newarray.push(customer);
         }
     });
@@ -880,21 +878,19 @@ function printsearcharray(newarray){
     container4Node.innerHTML="";
     container4Node.innerHTML=`            
     <div class="clientouter" id="clientouter">
-        <div>Id</div>
         <div>Client name</div>
         <div>Telephone</div>
         <div>Email</div>
     </div>`;
     newarray.forEach(customer=>{
-        const clientouterr= `<div class="clientouter" id="clientouter-${customer.id}">
-            <div class="rank" id="rank${customer.id}">${customer.id}</div>
+        const clientouterr= `<div class="clientouter" id="clientouter-${customer.phone}">
             <div>${customer.name}</div>
             <div>${customer.phone}</div>
             <div>${customer.email}</div>
-            <div><i class="fa-solid fa-key" id="khoa-${customer.id}" onclick="hienkhoa(${customer.id})"></i> <i class="fa-regular fa-pen-to-square edit"  onclick="editclient(${customer.id})"></i> <i id="show" class="fa-solid fa-angle-down angle" onclick="printinfororder(${customer.id})"></i></div>
+            <div><i class="fa-solid fa-key" id="khoa-${customer.phone}" onclick="hienkhoa(${customer.phone})"></i> <i class="fa-regular fa-pen-to-square edit"  onclick="editclient(${customer.phone})"></i> <i id="show" class="fa-solid fa-angle-down angle" onclick="printinfororder(${customer.phone})"></i></div>
         </div>`;
         container4Node.innerHTML+=clientouterr;
-        const a="khoa-"+customer.id;
+        const a="khoa-"+customer.phone;
         if(customer.status==1){
             document.getElementById(a).style.color="#bcbcbc";
         }
@@ -969,14 +965,14 @@ function hienkhoa(id) {
     document.getElementById("contentkhoa").innerHTML = ''; 
 
     for (let i = 0; i < Customer.length; i++) { // Sửa điều kiện vòng lặp
-        if (Customer[i].id == id) {
+        if (Customer[i].phone == id) {
             if (Customer[i].status == 0) {
                 const creatediv = document.createElement("div");
                 creatediv.innerHTML = `
                     <div>Người dùng sẽ bị khóa cho đến khi admin mở lại</div>
                     <label for="inputkhoand">Hãy nhập lý do khóa người dùng: </label> 
                     <input type="text" id="inputkhoand" placeholder="Enter"> 
-                    <input type="submit" id="submitkhoa"><br>
+                    <input type="submit" id="submitkhoa" onclick="submitkhoa(${Customer[i].phone})"><br>
                 `;
                 document.getElementById("contentkhoa").appendChild(creatediv); // Thay đổi từ innerHTML sang appendChild
             } else if (Customer[i].status == 1) {
@@ -989,7 +985,6 @@ function hienkhoa(id) {
             // Hiển thị thông tin khách hàng
             let creatediv = document.createElement("div");
             creatediv.innerHTML = `
-                <div>${Customer[i].id}</div>
                 <div>${Customer[i].name}</div>
                 <div>${Customer[i].phone}</div>
                 <div>${Customer[i].email}</div>
@@ -1015,26 +1010,49 @@ function hienkhoa(id) {
     }
 
     // Thêm sự kiện cho nút submit
-    const submit = document.getElementById("submitkhoa");
-    if (submit) {
-        submit.addEventListener("click", function(event) {
-            const reason = document.getElementById("inputkhoand").value.trim();
+    // const submit = document.getElementById("submitkhoa");
+  
+    //     submit.addEventListener("click", function(event) {
+    //         const reason = document.getElementById("inputkhoand").value.trim();
+    //         if (!reason) {
+    //             alert("Bạn chưa nhập lý do khóa người dùng");
+    //             return;
+    //         }
+    //         // Cập nhật thông tin khóa
+    //         for (let i = 0; i < Customer.length; i++) {
+    //             if (Customer[i].phone == id) {
+    //                 console.log("heheh");
+    //                 Customer[i].status = 1; // Cập nhật trạng thái
+    //                 Customer[i].reasonkhoa = reason; // Cập nhật lý do khóa
+    //                 break; // Thoát khỏi vòng lặp khi đã cập nhật
+    //             }
+    //         }
+    //         alert("đã khóa người dùng");
+    //     });
+    
+}
+
+
+function submitkhoa(id){
+     const reason = document.getElementById("inputkhoand").value.trim();
             if (!reason) {
                 alert("Bạn chưa nhập lý do khóa người dùng");
                 return;
             }
             // Cập nhật thông tin khóa
             for (let i = 0; i < Customer.length; i++) {
-                if (Customer[i].id == id) {
+                if (Customer[i].phone == id) {
+                    console.log("heheh");
                     Customer[i].status = 1; // Cập nhật trạng thái
                     Customer[i].reasonkhoa = reason; // Cập nhật lý do khóa
                     break; // Thoát khỏi vòng lặp khi đã cập nhật
                 }
             }
             alert("đã khóa người dùng");
-        });
-    }
+            localStorage.setItem("users",JSON.stringify(Customer));
 }
+
+
 function nutphantrang(){
     const slnutphantrang =Math.ceil(Customer.length/7);
     const nutphantrangouterNode=document.getElementById("phantrangouter");

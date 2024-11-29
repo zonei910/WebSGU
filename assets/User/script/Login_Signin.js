@@ -112,6 +112,11 @@ function dangnhap(event) {
     if (user) {
         if (user.password === userpassword){
             // Nếu tìm thấy người dùng, hiển thị thông báo và cập nhật giao diện
+            if(parseInt(user.status) == 1){
+                alert(`Người dùng đã bị khóa vì ${user.reasonkhoa}`);
+                return 0;
+            }
+
             alert("Đăng nhập thành công");
 
             // Lưu trạng thái đăng nhập
