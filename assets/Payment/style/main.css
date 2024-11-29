@@ -2,6 +2,16 @@
     box-sizing: border-box;
 }
 
+
+html {
+    font-size: 100%;
+    line-height: 1.6rem;
+    font-family: "Roboto", sans-serif;
+    font-family:'Libre Baskerville', serif;
+    scroll-behavior: smooth;
+}
+
+
 body{
     margin: 0;
     padding: 0;
@@ -245,12 +255,13 @@ body{
 
 #Header ul li{
     display: inline-block;
+    color:black;
 }
 
 #Header{
     padding: 10px;
     color: white;
-    background-color: #363A3F;
+    background-color: #E2F1F2;
     margin-bottom: 10px;
 }
 
@@ -283,7 +294,7 @@ body{
 
 #Header li a{
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 .cartinner .button{
@@ -307,4 +318,8 @@ body{
 .cartinner .button div:hover{
     background-color: #6c6a6b;
     color: white;
+}
+
+#Contact{
+    display: none;
 }

@@ -3,6 +3,16 @@ let currentUser = JSON.parse(localStorage.getItem("currentUser"));
 let display = document.querySelector("#Display");
 let form = document.querySelector("#Form");
 let purchase = document.querySelector("#Purchase");
+let contact = document.querySelector("#Contact");
+
+
+ function showContact(){
+    contact.style.display = "block";
+    purchase.style.display = "none";
+    form.style.display = "none";
+    display.style.display = "none"
+}
+
 
 function showTomtatsp(){
     if(JSON.parse(localStorage.getItem("giohang")) != null){
@@ -57,6 +67,7 @@ purchase.style.display = "none";
 
 
 function showSanPham(){
+     contact.style.display = "none";
     form.style.display = "none"; 
     display.style.display = "block";
     purchase.style.display = "none";
@@ -88,14 +99,6 @@ function showSanPham(){
                                         <p>Giá: ${Product[i].price} VNĐ</p>
                                     </div>
                                     <div class="button">
-                                        <select name="size">
-                                            <option value="none" selected>Select Size</option>
-                                            <option value="xxl">XXL</option>
-                                            <option value="xl">XL</option>
-                                            <option value="large">Large</option>
-                                            <option value="medium">Medium</option>
-                                            <option value="small">Small</option>
-                                        </select>
                                         <div class="add">
                                         <input type="number" value="1" min="1" name = "${Product[i].id}" id="soluong">
                                         <div name = "${Product[i].id}" onclick="themsp(this)">Thêm vào giỏ</div>
@@ -120,6 +123,7 @@ function showSanPham(){
 
 function showThanhToan(){
     form.style.display  = "block";
+     contact.style.display = "none";
     display.style.display = "none";
     purchase.style.display = "none";
 }
@@ -134,6 +138,7 @@ function showMethodPurchase(){
     form.style.display = "none";
     display.style.display = "none";
     purchase.style.display = "block";
+     contact.style.display = "none";
 }
 
 
@@ -196,9 +201,8 @@ let a = ``;
     email.value = currentUser.email;
     phone.value = currentUser.phone;
     address.value = currentUser.address;
-    gender.value = currentUser.gender;
     quan.value = currentUser.quan;
-  
+    gender.value = currentUser.gender;
   
 
 

@@ -66,14 +66,6 @@ if(select.value == "ring" || select.value == "watch" || select.value == "bracele
                                         <p>Giá: ${filterarr[i].price} VNĐ</p>
                                     </div>
                                     <div class="button">
-                                        <select name="size">
-                                            <option value="none" selected>Select Size</option>
-                                            <option value="xxl">XXL</option>
-                                            <option value="xl">XL</option>
-                                            <option value="large">Large</option>
-                                            <option value="medium">Medium</option>
-                                            <option value="small">Small</option>
-                                        </select>
                                         <div class="add">
                                         <input type="number" value="1" min="1" name = "${filterarr[i].id}" id ="soluong">
                                         <div name="${filterarr[i].id}" onclick="themsp(this)" >Thêm vào giỏ</div>
@@ -218,14 +210,6 @@ for(let i = 4 ; i < 8 ; i++){
                                         <p>Giá: ${filterarr[i].price} VNĐ</p>
                                     </div>
                                     <div class="button">
-                                        <select name="size">
-                                            <option value="none" selected>Select Size</option>
-                                            <option value="xxl">XXL</option>
-                                            <option value="xl">XL</option>
-                                            <option value="large">Large</option>
-                                            <option value="medium">Medium</option>
-                                            <option value="small">Small</option>
-                                        </select>
                                         <div class="add">
                                         <input type="number" value="1" min="1"  name="${filterarr[i].id}" id="soluong">
                                         <div name="${filterarr[i].id}" onclick="themsp(this)">Thêm vào giỏ</div>
@@ -270,14 +254,6 @@ let a = ``;
                                         <p>Giá: ${filterarr[i].price} VNĐ</p>
                                     </div>
                                     <div class="button">
-                                        <select name="size" class="select-size">
-                                            <option value="none" selected>Select Size</option>
-                                            <option value="xxl">XXL</option>
-                                            <option value="xl">XL</option>
-                                            <option value="large">Large</option>
-                                            <option value="medium">Medium</option>
-                                            <option value="small">Small</option>
-                                        </select>
                                         <div class="add">
                                          <input type="number" value="1" min="1"  name="${filterarr[i].id}" id="soluong">
                                          <div name= "${filterarr[i].id}" onclick="themsp(this)">Thêm vào giỏ</div>

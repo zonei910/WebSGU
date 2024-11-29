@@ -1,6 +1,6 @@
 let currentpage=1;
 const container4Node=document.getElementById("container4");
-let Customer = [
+Customer = [
     { 
         id: 1,
          name: "Mikasa Chan",
@@ -681,496 +681,12 @@ let Customer = [
                      }
                   ],
             }
-        ]
-      },
-  //     { id: 20, name: "Annie Leonhart", img:"./thenganhangimage/annie.jfif", phone: "0904 456 789", email: "Annie@gmail.com", status: "None",
-  //       lichsuMuaHang:[
-  //           {
-  //               "id": 29,
-  //               "stk": "12345",
-  //               "bank": "AGB",
-  //               "ngaydat": "28/11/2024",
-  //               "ngayduyet": 0,
-  //               "diachiKH": "789 Đường Nguyễn Bình, Quận 7, TP. HCM, Việt Nam",
-  //               "tongtien": 93100000,
-  //               "status": 0,
-  //               "name": "Nguyễn Hiền",
-  //               "phone": "0904 456 789",
-  //               "emailKH": "nguyenhien@gmail.com",
-  //               "genderKH": "nu",
-  //               giohang: [
-  //                   {  
-  //                     id: 6,
-  //                     name: "Vòng cổ(Hàng tặng)",
-  //                     loai: "necklace",
-  //                     gia: 97.3,
-  //                     profit: 20.7,
-  //                     description: `
-  //                     <p>Metal: 14K Gold</p>
-  //                     <p>Metal Color: Rose/Yellow/White</p>
-  //                     <p>Round Emerald 0.99</p>
-  //                     <p>Oval Emerald 1.02</p>
-  //                 `,
-  //                 images: [
-  //                     "assets/User/img/necklace/1.png",
-  //                     "assets/User/img/necklace/2.png",
-  //                     "assets/User/img/necklace/3.png",
-  //                     "assets/User/img/necklace/4.png"
-  //                 ],
-  //                     ngaydat: "28-08-2024", 
-  //                     completiontime: "10-09-2024",
-  //                     soLuong:4
-  //                    }
-  //                 ],
-  //           }
-  //       ]
-  //     },
-  //     { id: 21, name: "Zeke Yeager", img:"./thenganhangimage/zeke.jfif", phone: "0915 567 890", email: "Zeke@gmail.com", status: "None",
-  //       lichsuMuaHang:[
-  //           {
-  //               "id": 30,
-  //               "stk": "12345",
-  //               "bank": "AGB",
-  //               "ngaydat": "28/11/2024",
-  //               "ngayduyet": 0,
-  //               "diachiKH": "852 Đường Trần Não, Quận 2, TP. HCM, Việt Nam",
-  //               "tongtien": 93100000,
-  //               "status": 0,
-  //               "name": "Nguyễn Hiền",
-  //               "phone": "0915 567 890",
-  //               "emailKH": "nguyenhien@gmail.com",
-  //               "genderKH": "nam",
-  //               giohang: [
-  //                   {
-  //                     id: 8,
-  //                     name: "Vòng cổ(Hàng tặng)",
-  //                     loai: "necklace",
-  //                     gia: 371.67,
-  //                     profit: 34.8,
-  //                     description: `
-  //                     <p>Metal: 14K Gold</p>
-  //                     <p>Metal Color: Rose/Yellow/White</p>
-  //                     <p>Round Emerald 0.99</p>
-  //                     <p>Oval Emerald 1.02</p>
-  //                 `,
-  //                 images: [
-  //                     "assets/User/img/necklace/1.png",
-  //                     "assets/User/img/necklace/2.png",
-  //                     "assets/User/img/necklace/3.png",
-  //                     "assets/User/img/necklace/4.png"
-  //                 ],
-  //                     ngaydat: "27-06-2024", 
-  //                     completiontime: "05-07-2024",
-  //                     soLuong:1
-  //                   }
-  //                 ],
-  //           }
-  //       ]
-  //     },
-  //     { id: 22, name: "Gabi Braun", img:"./thenganhangimage/gabi.jfif", phone: "0926 678 901", email: "Gabi@gmail.com", status: "None",
-  //       lichsuMuaHang:[
-  //           {
-  //               "id": 31,
-  //               "stk": "12345",
-  //               "bank": "AGB",
-  //               "ngaydat": "28/11/2024",
-  //               "ngayduyet": 0,
-  //               "diachiKH": "963 Đường Phú Nhuận, Quận Phú Nhuận, TP. HCM, Việt Nam",
-  //               "tongtien": 93100000,
-  //               "status": 0,
-  //               "name": "Nguyễn Hiền",
-  //               "phone": "0926 678 901",
-  //               "emailKH": "nguyenhien@gmail.com",
-  //               "genderKH": "nam",
-  //               giohang: [
-  //                   {  
-  //                     id: 5,
-  //                     name: "White Sapphire Band Ring",
-  //                     loai: "ring",
-  //                     gia: 76.8,
-  //                     profit: 20.9,
-  //                 images: [
-  //                     "assets/User/img/ring/1.png",
-  //                     "assets/User/img/ring/2.png",
-  //                     "assets/User/img/ring/3.png",
-  //                     "assets/User/img/ring/4.png"
-  //                 ],
-  //                     ngaydat: "12-06-2024", 
-  //                     completiontime: "20-06-2024",
-  //                     soLuong:6
-  //                    }
-  //                 ],
-  //           }
-  //       ]
-  //     },
-  //     { id: 23, name: "Falco Grice", img:"./thenganhangimage/falco.jfif", phone: "0937 789 012", email: "Falco@gmail.com", status: "None",
-  //       lichsuMuaHang:[
-  //           {
-  //               "id": 32,
-  //               "stk": "12345",
-  //               "bank": "AGB",
-  //               "ngaydat": "28/11/2024",
-  //               "ngayduyet": 0,
-  //               "diachiKH": "147 Đường Đinh Bộ Lĩnh, Quận Bình Thạnh, TP. HCM, Việt Nam",
-  //               "tongtien": 93100000,
-  //               "status": 0,
-  //               "name": "Nguyễn Hiền",
-  //               "phone": "0937 789 012",
-  //               "emailKH": "nguyenhien@gmail.com",
-  //               "genderKH": "nam",
-  //               giohang: [
-  //                   {  
-  //                     id: 4,
-  //                     name: "White Gold Diamond Palm Tree Necklace",
-  //                     loai: "necklace",
-  //                     gia: 46,
-  //                     profit: 15.9,
-  //                     description: `
-  //                     <p>Metal: 14K Gold</p>
-  //                     <p>Metal Color: White</p>
-  //                     <p>Stones: Round Diamond 9.19</p>
-  //                     <p>Length: 7" Width:1/2"</p>
-  //                 `,
-  //                 images: [
-  //                     "assets/User/img/necklace/1.png",
-  //                     "assets/User/img/necklace/2.png",
-  //                     "assets/User/img/necklace/3.png",
-  //                     "assets/User/img/necklace/4.png"
-  //                 ],
-  //                     ngaydat: "09-10-2024", 
-  //                     completiontime: "15-10-2024",
-  //                     soLuong:8
-  //                    },
-  //                    {
-  //                     id: 3,
-  //                     "hinh": "assets/User/img/watch/3-1.jpg",
-  //                     "gia": 114000000,
-  //                     ten: "Vòng tay(Hàng tặng)",
-  //                     loai: "bracelet",
-  //                     gia: 22,
-  //                     profit: 12.9,
-  //                     ngaydat: "10-07-2024", 
-  //                     completiontime: "19-07-2024",
-  //                     soLuong:6
-  //                    }
-  //                 ],
-  //           }
-  //       ]
-  //     },
-  //     { id: 24, name: "Porco Galliard", img:"./thenganhangimage/porco.jfif", phone: "0948 890 123", email: "Porco@gmail.com", status: "None",
-  //       lichsuMuaHang:[
-  //           {
-  //               "id": 33,
-  //               "stk": "12345",
-  //               "bank": "AGB",
-  //               "ngaydat": "28/11/2024",
-  //               "ngayduyet": 0,
-  //               "diachiKH": "258 Đường Lê Văn Quới, Quận Bình Tân, TP. HCM, Việt Nam",
-  //               "tongtien": 93100000,
-  //               "status": 0,
-  //               "name": "Nguyễn Hiền",
-  //               "phone": "0948 890 123",
-  //               "emailKH": "nguyenhien@gmail.com",
-  //               "genderKH": "nam",
-  //               giohang: [
-  //                   {  
-  //                     id: 1,
-  //                     name: "Yellow Gold Multi Sapphire & Diamond Ring",
-  //                     loai: "ring",
-  //                     "gia": 47500000,
-  //                     "hinh": "assets/User/img/watch/1-1.jpg",
-  //                     profit: 2.4,
-  //                     ngaydat: "20-09-2024", 
-  //                     completiontime: "29-09-2024",
-  //                     soLuong:6
-  //                    },
-  //                    {
-  //                     id: 9,
-  //                     name: "Đồng hồ(Hàng tặng)",
-  //                     loai: "watch",
-  //                     gia: 429.888,
-  //                     profit: 40.9,
-  //                     description: `
-  //                     <p>Metal: 14K Gold</p>
-  //                     <p>Metal Color: White</p>
-  //                     <p>Emerald Cut Blue Sapphire 1.52</p>
-  //                     <p>Natural Diffused Ceylon Sapphire</p>
-  //                 `,
-  //                 images: [
-  //                     "assets/User/img/bracelet/1.png",
-  //                     "assets/User/img/bracelet/2.png",
-  //                     "assets/User/img/bracelet/3.png",
-  //                     "assets/User/img/bracelet/4.png"
-  //                 ],
-  //                     ngaydat: "01-08-2024", 
-  //                     completiontime: "10-08-2024",
-  //                     soLuong:1
-  //                    }
-  //                 ],
-  //           }
-  //       ]
-  //     },
-  //     { id: 25, name: "Pieck Finger", img:"./thenganhangimage/pieck.jfif", phone: "0959 901 234", email: "Pieck@gmail.com", status: "None",
-  //       lichsuMuaHang:[
-  //           {
-  //               "id": 34,
-  //               "stk": "12345",
-  //               "bank": "AGB",
-  //               "ngaydat": "28/11/2024",
-  //               "ngayduyet": 0,
-  //               "diachiKH": "369 Đường Kinh Dương Vương, Quận Bình Tân, TP. HCM, Việt Nam",
-  //               "tongtien": 93100000,
-  //               "status": 0,
-  //               "name": "Nguyễn Hiền",
-  //               "phone": "0959 901 234",
-  //               "emailKH": "nguyenhien@gmail.com",
-  //               "genderKH": "nam",
-  //               giohang: [
-  //                   {  
-  //                     id: 7,
-  //                     name: "Diamond Ring",
-  //                     loai: "ring",
-  //                     gia: 167.46,
-  //                     profit: 40.9,
-  //                     description: `
-  //                     <p>Metal: 14K Gold</p>
-  //                     <p>Metal Color: Rose/Yellow/White</p>
-  //                     <p>Round Ruby 0.99</p>
-  //                     <p>Oval Emerald 1.02</p>
-  //                 `,
-  //                 images: [
-  //                     "assets/User/img/ring/1.png",
-  //                     "assets/User/img/ring/2.png",
-  //                     "assets/User/img/ring/3.png",
-  //                     "assets/User/img/ring/4.png"
-  //                 ],
-  //                     ngaydat: "06-09-2024", 
-  //                     completiontime: "17-09-2024",
-  //                     soLuong:3
-  //                    }
-  //                 ],
-  //           }
-  //       ]
-  //     },
-  //     { id: 26, name: "Ymir Fritz", img:"./thenganhangimage/ymir.jfif", phone: "0960 012 345", email: "Ymir@gmail.com", status: "None",
-  //       lichsuMuaHang:[
-  //           {
-  //               "id": 35,
-  //               "stk": "12345",
-  //               "bank": "AGB",
-  //               "ngaydat": "28/11/2024",
-  //               "ngayduyet": 0,
-  //               "diachiKH": "741 Đường Lê Trọng Tấn, Quận Tân Phú, TP. HCM, Việt Nam",
-  //               "tongtien": 93100000,
-  //               "status": 0,
-  //               "name": "Nguyễn Hiền",
-  //               "phone": "0960 012 345",
-  //               "emailKH": "nguyenhien@gmail.com",
-  //               "genderKH": "nam",
-  //               giohang: [
-  //                   {  
-  //                     id: 5,
-  //                     name: "White Sapphire Band Ring",
-  //                     loai: "ring",
-  //                     gia: 76.8,
-  //                     profit: 20.9,
-  //                     description: `
-  //                     <p>Metal: 14K Gold</p>
-  //                     <p>Metal Color: Rose/Yellow/White</p>
-  //                     <p>Round Ruby 0.99</p>
-  //                     <p>Oval Emerald 1.02</p>
-  //                 `,
-  //                 images: [
-  //                     "assets/User/img/ring/1.png",
-  //                     "assets/User/img/ring/2.png",
-  //                     "assets/User/img/ring/3.png",
-  //                     "assets/User/img/ring/4.png"
-  //                 ],
-  //                     ngaydat: "21-09-2024", 
-  //                     completiontime: "29-09-2024",
-  //                     soLuong:5
-  //                    }
-  //                 ],
-  //           }
-  //       ]
-  //     },
-  //     { id: 27, name: "Bertholdt Hoover", img:"./thenganhangimage/berthold.jfif", phone: "0971 123 456", email: "Bertholdt@gmail.com", status: "None",
-  //       lichsuMuaHang:[
-  //           {
-  //               "id": 36,
-  //               "stk": "12345",
-  //               "bank": "AGB",
-  //               "ngaydat": "28/11/2024",
-  //               "ngayduyet": 0,
-  //               "diachiKH": "123 Đường Trần Phú, Quận 5, TP. HCM, Việt Nam",
-  //               "tongtien": 93100000,
-  //               "status": 0,
-  //               "name": "Nguyễn Hiền",
-  //               "phone": "0971 123 456",
-  //               "emailKH": "nguyenhien@gmail.com",
-  //               "genderKH": "nam",
-  //               giohang: [
-  //                   {  
-  //                     id: 4,
-  //                     name: "White Gold Diamond Palm Tree Necklace",
-  //                     loai: "necklace",
-  //                     gia: 46,
-  //                     profit: 15.9,
-  //                     description: `
-  //                     <p>Metal: 14K Gold</p>
-  //                     <p>Metal Color: White</p>
-  //                     <p>Stones: Round Diamond 9.19</p>
-  //                     <p>Length: 7" Width:1/2"</p>
-  //                 `,
-  //                 images: [
-  //                     "assets/User/img/necklace/1.png",
-  //                     "assets/User/img/necklace/2.png",
-  //                     "assets/User/img/necklace/3.png",
-  //                     "assets/User/img/necklace/4.png"
-  //                 ],
-  //                     ngaydat: "30-09-2024", 
-  //                     completiontime: "04-10-2024",
-  //                     soLuong:13
-  //                   }
-  //                 ],
-  //           }
-  //       ]
-  //     },
-  //     { id: 28, name: "chikara", img:"./thenganhangimage/chikara.jfif", phone: "0982 234 567", email: "chikara@gmail.com", status: "None",
-  //       lichsuMuaHang:[
-  //           {
-  //               "id": 10,
-  //               "stk": "12345",
-  //               "bank": "AGB",
-  //               "ngaydat": "28/11/2024",
-  //               "ngayduyet": 0,
-  //               "diachiKH": "123 Đường Trần Phú, Quận 5, TP. HCM, Việt Nam",
-  //               "tongtien": 93100000,
-  //               "status": 0,
-  //               "name": "Nguyễn Hiền",
-  //               "phone": "0982 234 567",
-  //               "emailKH": "nguyenhien@gmail.com",
-  //               "genderKH": "nam",
-  //               giohang: [
-  //                   {  
-  //                     id: 5,
-  //                     name: "White Sapphire Band Ring",
-  //                     loai: "ring",
-  //                     gia: 76.8,
-  //                     profit: 20.9,
-  //                     description: `
-  //                     <p>Metal: 14K Gold</p>
-  //                     <p>Metal Color: Rose/Yellow/White</p>
-  //                     <p>Round Ruby 0.99</p>
-  //                     <p>Oval Emerald 1.02</p>
-  //                 `,
-  //                 images: [
-  //                     "assets/User/img/ring/1.png",
-  //                     "assets/User/img/ring/2.png",
-  //                     "assets/User/img/ring/3.png",
-  //                     "assets/User/img/ring/4.png"
-  //                 ],
-  //                     ngaydat: "14-03-2024", 
-  //                     completiontime: "20-04-2024",
-  //                     soLuong:1
-  //                   },
-  //                   {
-  //                     id: 5,
-  //                     name: "White Sapphire Band Ring",
-  //                     loai: "ring",
-  //                     gia: 76.8,
-  //                     profit: 20.9,
-  //                     description: `
-  //                     <p>Metal: 14K Gold</p>
-  //                     <p>Metal Color: Rose/Yellow/White</p>
-  //                     <p>Round Ruby 0.99</p>
-  //                     <p>Oval Emerald 1.02</p>
-  //                 `,
-  //                 images: [
-  //                     "assets/User/img/ring/1.png",
-  //                     "assets/User/img/ring/2.png",
-  //                     "assets/User/img/ring/3.png",
-  //                     "assets/User/img/ring/4.png"
-  //                 ],
-  //                     ngaydat: "22-02-2025", 
-  //                     completiontime: "04-03-2025",
-  //                     soLuong:1
-  //                   }
-  //                 ],
-  //           }
-  //       ]
-  //     },
-  //     { id: 29, name: "Light Yagami", img:"./thenganhangimage/light.jfif", phone: "0993 345 678", email: "Light@gmail.com", status: "None",
-  //       lichsuMuaHang:[
-  //           {
-  //               "id": 37,
-  //               "stk": "12345",
-  //               "bank": "AGB",
-  //               "ngaydat": "28/11/2024",
-  //               "ngayduyet": 0,
-  //               "diachiKH": "123 Đường Lê Lợi, Quận 1, TP. HCM",
-  //               "tongtien": 93100000,
-  //               "status": 0,
-  //               "name": "Nguyễn Hiền",
-  //               "phone": "0993 345 678",
-  //               "emailKH": "nguyenhien@gmail.com",
-  //               "genderKH": "nam",
-  //               giohang: [
-  //                   {  
-  //                     id: 3,
-  //                     "gia": 114000000,
-  //                     "hinh": "assets/User/img/watch/3-1.jpg",
-  //                     ten: "Vòng tay(Hàng tặng)",
-  //                     loai: "bracelet",
-  //                     profit: 12.9,
-  //                     description: `
-  //                     <p>Metal: 14K Gold</p>
-  //                     <p>Metal Color: White</p>
-  //                     <p>Emerald Cut Blue Sapphire 1.52</p>
-  //                     <p>Natural Diffused Ceylon Sapphire</p>
-  //                 `,
-  //                 images: [
-  //                     "assets/User/img/bracelet/1.png",
-  //                     "assets/User/img/bracelet/2.png",
-  //                     "assets/User/img/bracelet/3.png",
-  //                     "assets/User/img/bracelet/4.png"
-  //                 ],
-  //                     ngaydat: "08-12-2024", 
-  //                     completiontime: "19-12-2024",
-  //                     soLuong:2
-  //                    },
-  //                    {
-  //                     id: 2,
-  //                     name: "Đồng hồ(Hàng tặng)",
-  //                     loai: "watch",
-  //                     gia: 34,
-  //                     profit: 10.5,
-  //                     description: `
-  //                     <p>Metal: 14K Gold</p>
-  //                     <p>Metal Color: Yellow/Rose/Green</p>
-  //                     <p>Stones: Round Yellow Sapphire 0.23</p>
-  //                     <p>Round Diamond 0.09</p>
-  //                 `,
-  //                 images: [
-  //                     "assets/User/img/watch/1.png",
-  //                     "assets/User/img/watch/2.png",
-  //                     "assets/User/img/watch/3.png",
-  //                     "assets/User/img/watch/4.png"
-  //                 ],
-  //                     ngaydat: "24-12-2024", 
-  //                     completiontime: "30-12-2024",
-  //                     soLuong:1
-  //                    }
-  //                 ],
-  //           }
-  //       ]
-  //   }
-  ];
+        ]}];
 
 // let  date=null,month=null,year=null,datesecond=null,monthsecond=null,yearsecond=null;
-// date=null,month=null,year=null,datesecond=null,monthsecond=null,yearsecond=null;
+// localStorage.setItem('newsave', JSON.stringify(Customer));
 // function thecheck
-
+Customer = JSON.parse(localStorage.getItem('users'));
 function checktimedate(receiptime){
     let arraycopy=JSON.parse(JSON.stringify(receiptime));
     receipt=arraycopy.split("/");
@@ -1223,17 +739,17 @@ function editclient(){
             let phone=document.getElementById("editphoneofkh").value.trim();
             let email=document.getElementById("editemailofkh").value.trim();
             if(!hoten){
-                alert("Name is required");
+                alert("Vui lòng nhập tên");
                 document.getElementById("editnameofkh").focus();
                 return;
             }
             if(!phone){
-                alert("phone is required");
+                alert("Vui lòng nhập số điện thoại");
                 document.getElementById("editphoneofkh").focus();
                 return;
             }
             if(!email){
-                alert("email is required");
+                alert("Vui lòng nhập email");
                 document.getElementById("editemailofkh").focus();
                 return;
             }
@@ -1258,7 +774,7 @@ function printinfororder(id) {
     document.getElementById("printorder").style.display="flex";
     const section=document.querySelector("#printorder >div");
     for(let i=0;i<Customer.length;i++){
-        if(Customer[i].id==id){
+        if(Customer[i].phone==id){
             for(let j=0;j<Customer[i].lichsuMuaHang.length;j++){
                 const product=Customer[i].lichsuMuaHang[j];
                 for(let k=0;k<product.giohang.length;k++){
@@ -1282,21 +798,19 @@ function printinfororder(id) {
     const newCustomer=Customer.slice(start,end);
     container4Node.innerHTML="";
     container4Node.innerHTML=`<div class="clientouter" id="clientouter">
-        <div>Id</div>
         <div>Client name</div>
         <div>Telephone</div>
         <div>Email</div>
     </div>`;
     newCustomer.forEach(customer=>{
-        const clientouterr= `<div class="clientouter" id="clientouter-${customer.id}">
-            <div >${customer.id}</div>
+        const clientouterr= `<div class="clientouter" id="clientouter-${customer.phone}">
             <div>${customer.name}</div>
             <div>${customer.phone}</div>
             <div>${customer.email}</div>
-            <div><i class="fa-solid fa-key" id="khoa-${customer.id}" onclick="hienkhoa(${customer.id})"></i> <i class="fa-regular fa-pen-to-square edit"  onclick="editclient(${customer.id})"></i> <i id="show" class="fa-solid fa-angle-down angle" onclick="printinfororder(${customer.id})"></i></div>
+            <div><i class="fa-solid fa-key" id="khoa-${customer.phone}" onclick="hienkhoa(${customer.phone})"></i> <i class="fa-regular fa-pen-to-square edit"  onclick="editclient(${customer.phone})"></i> <i id="show" class="fa-solid fa-angle-down angle" onclick="printinfororder(${customer.phone})"></i></div>
         </div>`;
         container4Node.innerHTML+=clientouterr;
-        const a="khoa-"+customer.id;
+        const a="khoa-"+customer.phone;
         if(customer.status==1){
             document.getElementById(a).style.color="#bcbcbc";
         }
@@ -1305,7 +819,6 @@ function printinfororder(id) {
         }
     })
 
-    console.log("hii");
 }
 
 
@@ -1314,7 +827,8 @@ function closedkhoa(){
 }
 function khoanguoidung(id){
     for(let i=0;i<Customer.length;i++){
-        if(Customer[i].id==id){
+        if(Customer[i].phone==id){
+            console.log("helo");
             Customer[i].status=1;
             const a="khoa-"+id;
             document.getElementById(a).style.color="#bcbcbc";
@@ -1341,13 +855,13 @@ function search() {
     let uniqueRanks = new Set();
 
     namesearch.forEach(customer => {
-        uniqueRanks.add(customer.id);
+        uniqueRanks.add(customer.phone);
         newarray.push(customer);
     });
 
     emailsearch.forEach(customer => {
-        if (!uniqueRanks.has(customer.id)) {
-            uniqueRanks.add(customer.id);
+        if (!uniqueRanks.has(customer.phone)) {
+            uniqueRanks.add(customer.phone);
             newarray.push(customer);
         }
     });
@@ -1364,21 +878,19 @@ function printsearcharray(newarray){
     container4Node.innerHTML="";
     container4Node.innerHTML=`            
     <div class="clientouter" id="clientouter">
-        <div>Id</div>
         <div>Client name</div>
         <div>Telephone</div>
         <div>Email</div>
     </div>`;
     newarray.forEach(customer=>{
-        const clientouterr= `<div class="clientouter" id="clientouter-${customer.id}">
-            <div class="rank" id="rank${customer.id}">${customer.id}</div>
+        const clientouterr= `<div class="clientouter" id="clientouter-${customer.phone}">
             <div>${customer.name}</div>
             <div>${customer.phone}</div>
             <div>${customer.email}</div>
-            <div><i class="fa-solid fa-key" id="khoa-${customer.id}" onclick="hienkhoa(${customer.id})"></i> <i class="fa-regular fa-pen-to-square edit"  onclick="editclient(${customer.id})"></i> <i id="show" class="fa-solid fa-angle-down angle" onclick="printinfororder(${customer.id})"></i></div>
+            <div><i class="fa-solid fa-key" id="khoa-${customer.phone}" onclick="hienkhoa(${customer.phone})"></i> <i class="fa-regular fa-pen-to-square edit"  onclick="editclient(${customer.phone})"></i> <i id="show" class="fa-solid fa-angle-down angle" onclick="printinfororder(${customer.phone})"></i></div>
         </div>`;
         container4Node.innerHTML+=clientouterr;
-        const a="khoa-"+customer.id;
+        const a="khoa-"+customer.phone;
         if(customer.status==1){
             document.getElementById(a).style.color="#bcbcbc";
         }
@@ -1453,14 +965,14 @@ function hienkhoa(id) {
     document.getElementById("contentkhoa").innerHTML = ''; 
 
     for (let i = 0; i < Customer.length; i++) { // Sửa điều kiện vòng lặp
-        if (Customer[i].id == id) {
+        if (Customer[i].phone == id) {
             if (Customer[i].status == 0) {
                 const creatediv = document.createElement("div");
                 creatediv.innerHTML = `
                     <div>Người dùng sẽ bị khóa cho đến khi admin mở lại</div>
                     <label for="inputkhoand">Hãy nhập lý do khóa người dùng: </label> 
-                    <input type="text" id="inputkhoand"> 
-                    <input type="submit" id="submitkhoa"><br>
+                    <input type="text" id="inputkhoand" placeholder="Enter"> 
+                    <input type="submit" id="submitkhoa" onclick="submitkhoa(${Customer[i].phone})"><br>
                 `;
                 document.getElementById("contentkhoa").appendChild(creatediv); // Thay đổi từ innerHTML sang appendChild
             } else if (Customer[i].status == 1) {
@@ -1473,7 +985,6 @@ function hienkhoa(id) {
             // Hiển thị thông tin khách hàng
             let creatediv = document.createElement("div");
             creatediv.innerHTML = `
-                <div>${Customer[i].id}</div>
                 <div>${Customer[i].name}</div>
                 <div>${Customer[i].phone}</div>
                 <div>${Customer[i].email}</div>
@@ -1494,30 +1005,54 @@ function hienkhoa(id) {
                     document.querySelector(".printorderkh").appendChild(orderDiv); // Sử dụng appendChild
                 }
             }
+            return;
         }
     }
 
     // Thêm sự kiện cho nút submit
-    const submit = document.getElementById("submitkhoa");
-    if (submit) {
-        submit.addEventListener("click", function(event) {
-            const reason = document.getElementById("inputkhoand").value.trim();
+    // const submit = document.getElementById("submitkhoa");
+  
+    //     submit.addEventListener("click", function(event) {
+    //         const reason = document.getElementById("inputkhoand").value.trim();
+    //         if (!reason) {
+    //             alert("Bạn chưa nhập lý do khóa người dùng");
+    //             return;
+    //         }
+    //         // Cập nhật thông tin khóa
+    //         for (let i = 0; i < Customer.length; i++) {
+    //             if (Customer[i].phone == id) {
+    //                 console.log("heheh");
+    //                 Customer[i].status = 1; // Cập nhật trạng thái
+    //                 Customer[i].reasonkhoa = reason; // Cập nhật lý do khóa
+    //                 break; // Thoát khỏi vòng lặp khi đã cập nhật
+    //             }
+    //         }
+    //         alert("đã khóa người dùng");
+    //     });
+    
+}
+
+
+function submitkhoa(id){
+     const reason = document.getElementById("inputkhoand").value.trim();
             if (!reason) {
                 alert("Bạn chưa nhập lý do khóa người dùng");
                 return;
             }
             // Cập nhật thông tin khóa
             for (let i = 0; i < Customer.length; i++) {
-                if (Customer[i].id == id) {
+                if (Customer[i].phone == id) {
+                    console.log("heheh");
                     Customer[i].status = 1; // Cập nhật trạng thái
                     Customer[i].reasonkhoa = reason; // Cập nhật lý do khóa
                     break; // Thoát khỏi vòng lặp khi đã cập nhật
                 }
             }
             alert("đã khóa người dùng");
-        });
-    }
+            localStorage.setItem("users",JSON.stringify(Customer));
 }
+
+
 function nutphantrang(){
     const slnutphantrang =Math.ceil(Customer.length/7);
     const nutphantrangouterNode=document.getElementById("phantrangouter");
