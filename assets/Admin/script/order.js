@@ -44,7 +44,7 @@ function showDonHang(){
                             <td>${donhang[i].ngayduyet == 0?"Chưa duyệt": donhang[i].ngayduyet}</td>
                             <td>${trangthai}</td>
                             <td class="button">
-                                <div name="${donhang[i].id}" onclick="xulydonhang(this)">Xem chi tiết đơn hang</div>
+                                <div name="${donhang[i].id}" onclick="xulydonhang(this)">Xem chi tiết đơn hàng</div>
                             </td>
                     </tr>   
 			
@@ -844,7 +844,7 @@ function sortgiaohang(){
 
 
 
-	if(selectsort == "Here" || selectsort == "Quận 1"){
+	if(selectsort == "Here"){
 		if(select == "none"){
 			filterarr = donhang;
 			for(let i = 0 ; i<filterarr.length ; i++){
@@ -852,22 +852,166 @@ function sortgiaohang(){
 					arr.push(filterarr[i]);
 			}
 			for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH != "Quận 1")
+				if(filterarr[i].quanKH == "Quận 3")
 					arr.push(filterarr[i]);
 			}
+
+				for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == "Quận 4")
+					arr.push(filterarr[i]);
+			}
+
+				for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == "Quận 5")
+					arr.push(filterarr[i]);
+			}
+
+				for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == "Quận 8")
+					arr.push(filterarr[i]);
+			}
+
+				for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == "Quận 10")
+					arr.push(filterarr[i]);
+			}
+
+
+				for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == "Quận 11")
+					arr.push(filterarr[i]);
+			}
+
+					for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == "Quận 6")
+					arr.push(filterarr[i]);
+			}
+
+				for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == "Quận 7")
+					arr.push(filterarr[i]);
+			}
+
+
+				for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == "Quận 2")
+					arr.push(filterarr[i]);
+			}
+
+
+				for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == "Quận Phú Nhuận")
+					arr.push(filterarr[i]);
+			}
+
+				for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == "Quận Bình Thạnh")
+					arr.push(filterarr[i]);
+			}
+
+				for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == "Quận Gò Vấp")
+					arr.push(filterarr[i]);
+			}
+
+				for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == "Quận 12")
+					arr.push(filterarr[i]);
+			}
+
+					for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == "Quận 9")
+					arr.push(filterarr[i]);
+			}
+
 			filterarr = arr;
 		}else{
 			for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == selectsort)
+				if(filterarr[i].quanKH == "Quận 1")
 					arr.push(filterarr[i]);
 			}
 			for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH != selectsort)
+				if(filterarr[i].quanKH == "Quận 3")
 					arr.push(filterarr[i]);
 			}
+
+				for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == "Quận 4")
+					arr.push(filterarr[i]);
+			}
+
+				for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == "Quận 5")
+					arr.push(filterarr[i]);
+			}
+
+				for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == "Quận 8")
+					arr.push(filterarr[i]);
+			}
+
+				for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == "Quận 10")
+					arr.push(filterarr[i]);
+			}
+
+
+				for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == "Quận 11")
+					arr.push(filterarr[i]);
+			}
+
+					for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == "Quận 6")
+					arr.push(filterarr[i]);
+			}
+
+				for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == "Quận 7")
+					arr.push(filterarr[i]);
+			}
+
+
+				for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == "Quận 2")
+					arr.push(filterarr[i]);
+			}
+
+
+				for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == "Quận Phú Nhuận")
+					arr.push(filterarr[i]);
+			}
+
+				for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == "Quận Bình Thạnh")
+					arr.push(filterarr[i]);
+			}
+
+				for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == "Quận Gò Vấp")
+					arr.push(filterarr[i]);
+			}
+
+				for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == "Quận 12")
+					arr.push(filterarr[i]);
+			}
+
+					for(let i = 0 ; i<filterarr.length ; i++){
+				if(filterarr[i].quanKH == "Quận 9")
+					arr.push(filterarr[i]);
+			}
+
+
+
+
 			filterarr = arr;
 
 		}
+
+
+		
 	}else{
 		if(select == "none"){
 			filterarr = donhang;

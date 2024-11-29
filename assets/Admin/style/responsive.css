@@ -1,0 +1,33 @@
+@media (max-width: 768px){
+	#Menu{
+		display: none;
+		top:0;
+		left: 0;
+		z-index: 1;
+		width: 50%%;
+		background-color: #F3EFEF;
+	}
+
+	#Header img{
+		display:none;
+	}
+
+	#Header .menu-bar{
+		display:block;
+		text-align: center;
+		cursor:pointer;
+		height: 55px;
+		width: 10%;
+		line-height: 55px;
+	}
+
+
+
+
+
+
+
+
+
+
+}
