@@ -76,7 +76,7 @@
 		
 
 		#Display .merchandise{
-		width: 768px;
+		width: 1000px;
 		}	
 
 		#Display .merchandise #main-content{
@@ -103,5 +103,11 @@
 		#Display .order .sanpham{
 		width: 1000px;
         padding: 0px;
+
+    }
+
+    #Menu div div{
+    	width: 100%;
+    }
 
 }
