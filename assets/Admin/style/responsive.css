@@ -119,11 +119,18 @@ overflow-x: auto;     /* Cho phép cuộn ngang */
 
     #Display .merchandise .button-group{
     	width: 300px;
+    	display: flex;
+    	justify-content: space-between;
     }
 
     #Display .merchandise .edit-buttons1, .edit-buttons2{
     	width: 100%;
     }
 
+    #Display .merchandise .product-info span{
+    	height: 100%;
+    }
+
 
 }
+
