@@ -289,3 +289,13 @@ ul,li{
 
 /* Kết thúc display */
 /* Kết thúc Main */
+
+#Header .menu-bar{
+    display:none;
+}
+
+#Menu .close-menu{
+    margin-left: 1000px;
+
+    cursor: pointer;
+}

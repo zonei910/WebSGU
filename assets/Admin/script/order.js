@@ -44,7 +44,7 @@ function showDonHang(){
                             <td>${donhang[i].ngayduyet == 0?"Chưa duyệt": donhang[i].ngayduyet}</td>
                             <td>${trangthai}</td>
                             <td class="button">
-                                <div name="${donhang[i].id}" onclick="xulydonhang(this)">Xem chi tiết đơn hang</div>
+                                <div name="${donhang[i].id}" onclick="xulydonhang(this)">Xem chi tiết đơn hàng</div>
                             </td>
                     </tr>   
 			

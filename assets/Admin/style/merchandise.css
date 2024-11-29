@@ -6,7 +6,7 @@
 #Display .merchandise #prod-edit-header{
     border-bottom: 1px solid black;
     padding: 5px;
-    background-color: #1f314d;
+    background-color:#E2F1F2 ;
 }
 #Display .merchandise #prod-edit-header nav{
     display: flex;
@@ -14,8 +14,10 @@
     margin-left: 2rem;
     margin-right: 1rem;
     padding: 1rem;
+    background-color: #E2F1F2;
 }
 #Display .merchandise #prod-edit-header div{
+
     border: 1px solid black;
     background-color: #f5ed51;
     border-radius: 10px;
@@ -45,7 +47,7 @@
 }
 #Display .merchandise #buttons{
     border-top: 1px solid black;
-    background-color: #1f314d;
+    background-color: #E2F1F2;
     padding: 10px;
     display: flex; 
     justify-content: center;
@@ -216,7 +218,7 @@
 #Display .merchandise .ProperHeaderDisplay div {
     margin-left: 20px; 
     background-color: rgb(230, 241, 66);
-    width: 80px;
+    width: 100px;
     border: 1px solid black;
     padding: 5px;
     text-align: center;
