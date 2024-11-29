@@ -59,22 +59,110 @@ document.addEventListener("DOMContentLoaded", () => {
         // updateActiveButton(page);
     }
 
+    document.getElementById("searchInput").addEventListener("input", dynamicSearch);
+    // Function to handle search functionality
+    function dynamicSearch() {
+        const searchInput = document.getElementById("searchInput").value.toLowerCase();
+        filteredProducts = products.filter(product => {
+            return product.name.toLowerCase().includes(searchInput) ||
+                product.category.toLowerCase().includes(searchInput) ||
+                product.description.toLowerCase().includes(searchInput);
+        });
+
+        // If search input is empty, reset to original products
+        if (searchInput === "") {
+            filteredProducts = null;
+        }
+
+        // Reset pagination and display filtered results
+        currentPage = 1;
+        displayPaginationButtons(filteredProducts || products);
+        displayPage(currentPage);
+    }
     // Function to handle search functionality
     function searchProducts() {
         const searchInput = document.getElementById("searchInput").value.toLowerCase();
         const searchFilter = document.getElementById("searchFilter").value;
-
+    
+        // Handle case where search filter is not valid
+        if (searchFilter === "0" || !searchFilter) {
+            alert("Please select a valid filter to search by.");
+            return;
+        }
+    
         // Filter products based on the search criteria
         filteredProducts = products.filter(product => {
-            const value = product[searchFilter].toString().toLowerCase();
-            return value.includes(searchInput);
+            const value = product[searchFilter]?.toString().toLowerCase();
+            return value?.includes(searchInput);
         });
-
+    
+        if (filteredProducts.length === 0) {
+            alert("No products found matching your search.");
+        }
+    
         // Update pagination and display the first page of filtered results
         currentPage = 1;
         displayPaginationButtons(filteredProducts);
         displayPage(currentPage);
     }
+    function sortProducts() {
+        const sortFilter = document.getElementById("searchFilter").value;
+    
+        // Reset to original state if "Sort by: " is selected
+        if (sortFilter === "0") {
+            filteredProducts = null; // Reset any filtered products
+            displayPaginationButtons(products); // Reset pagination
+            displayPage(currentPage); // Show original products
+            return;
+        }
+    
+        // Sorting logic
+        const dataToSort = filteredProducts || products; // Sort filtered or all products
+        switch (sortFilter) {
+            case "id":
+                dataToSort.sort((a, b) => b.id - a.id);
+                break;
+            case "name":
+                dataToSort.sort((a, b) => a.name.localeCompare(b.name));
+                break;
+            case "category":
+                dataToSort.sort((a, b) => a.category.localeCompare(b.category));
+                break;
+            case "low-price":
+                dataToSort.sort((a, b) => a.price - b.price);
+                break;
+            case "high-price":
+                dataToSort.sort((a, b) => b.price - a.price);
+                break;
+            case "recent":
+                dataToSort.sort((a, b) => b.id - a.id);
+                break;
+            case "description":
+                dataToSort.sort((a, b) => a.description.localeCompare(b.description));
+                break;
+            default:
+                console.log("Invalid sort option.");
+                return;
+        }
+    
+        // Re-render sorted products
+        currentPage = 1;
+        displayPaginationButtons(dataToSort);
+        displayPage(currentPage);
+    }
+    
+    document.addEventListener("DOMContentLoaded", () => {
+        loadData(); // Ensure products are loaded
+        document.getElementById("searchFilter").addEventListener("change", sortProducts);
+    });
+    
+    document.getElementById("searchSubmitButton").addEventListener("click", () => {
+        searchProducts();
+        sortProducts();
+    });
+    document.getElementById("searchFilter").addEventListener("change", () => {
+        sortProducts(); // Trigger sorting
+    });
     
     // Function to display filtered results
     function displayFilteredResults(filteredProducts) {
@@ -161,22 +249,23 @@ document.addEventListener("DOMContentLoaded", () => {
     // Function to open the Edit block (for editing or adding an item)
     window.openEditBlock = function(index = null) {
         editingItemIndex = index;
-        const editBlock = document.querySelector('#Display .merchandise .DisplayEditItemBlock');
-        editBlock.style.display = 'flex';
-
+        const overlay = document.getElementById("modalOverlay");
+        const editBlock = overlay.querySelector(".DisplayEditItemBlock");
+    
+        overlay.style.display = "block"; // Show overlay
+        editBlock.style.display = "flex"; // Show the block
+    
         if (index !== null) {
-            // Pre-fill form for editing
             const product = products[index];
             document.getElementById('idInput').value = product.id;
             document.getElementById('nameInput').value = product.name;
             document.getElementById('categoryInput').value = product.category;
-            document.getElementById('priceInput').value = product.price; // Use lowercase 'price'
-            document.getElementById('descInput').value = stripHtml(product.description); // Use lowercase 'description'
+            document.getElementById('priceInput').value = product.price;
+            document.getElementById('descInput').value = stripHtml(product.description);
             document.getElementById('uploadedImage').src = product.images[0];
             document.getElementById('uploadedImage').style.display = 'block';
             document.getElementById('uploadText').style.display = 'none';
         } else {
-            // Clear form for adding a new item
             document.getElementById('itemForm').reset();
             document.getElementById('uploadedImage').style.display = 'none';
             document.getElementById('uploadText').style.display = 'block';
@@ -185,7 +274,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to close the Edit block
     window.closeEditBlock = function() {
-        document.querySelector('#Display .merchandise .DisplayEditItemBlock').style.display = 'none';
+        const overlay = document.getElementById("modalOverlay");
+        overlay.style.display = "none"; // Hide overlay
     };
 
     // Function to validate and update/add the item
@@ -242,15 +332,29 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // Function to confirm deletion of a product
-    window.confirmDelete = function(index) {
-        const confirmation = confirm("Are you sure that you want to delete this?");
-        if (confirmation) {
-            products.splice(index, 1); // Remove the product from the array
-            localStorage.setItem("products", JSON.stringify(products));
-            displayPage(1);  // Refresh the page after deletion
-            displayPaginationButtons(); // Update pagination if needed
+    window.confirmDelete = function (index) {
+        const dataToDisplay = filteredProducts || products; // Use filtered data if available
+        const productToDelete = dataToDisplay[index]; // Identify product to delete
+    
+        // Find the product in the original list
+        const originalIndex = products.findIndex(product => product.id === productToDelete.id);
+        if (originalIndex === -1) {
+            alert("Error: Could not find the product in the original list.");
+            return;
         }
-        loadData();
+    
+        // Confirm deletion
+        const confirmation = confirm(`Are you sure you want to delete "${productToDelete.name}"?`);
+        if (confirmation) {
+            products.splice(originalIndex, 1); // Remove from original array
+            if (filteredProducts) {
+                filteredProducts.splice(index, 1); // Remove from filtered array
+            }
+    
+            // Update UI
+            displayPaginationButtons(filteredProducts || products);
+            displayPage(currentPage);
+        }
     };
 
     // Load initial data and set up pagination
