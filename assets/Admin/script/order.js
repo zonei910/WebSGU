@@ -1,5 +1,7 @@
 
 
+
+let filterarr = [];
 function showDonHang(){
 	let donhang = JSON.parse(localStorage.getItem("donhang"));
 	if(donhang == null){
@@ -97,7 +99,7 @@ function nuttrang_order(a){
 
 }
 
-let filterarr = [];
+
 
 function filter_order(){
 	filterarr = [];
@@ -245,24 +247,30 @@ function find_order(){
 			}
 
 
-	}else{
+	}
 
+	if(select.value != "none"){
+		console.log(filterarr , findarr , find.value);
 		if(find.value == ""){
 			filter_order();
 			return 0;
 		}
-
-		filterarr.forEach((item)=>{
-			if(item.id == parseInt(find.value)){
-				findarr.push(item);
+		else{
+		for(let i = 0 ; i <filterarr.length ; i++){
+			if(find.value == filterarr[i].id){
+				findarr.push(filterarr[i]);
 			}
-		});
+		}
+	}
 
-	
 		
 	}
-	filterarr = findarr;
 
+	if(findarr.length != 0){
+		filterarr = findarr;
+	}
+	
+	console.log(filterarr , findarr , find.value);
 	let sosanphammoitrang = 5;
 	let sotranghientai = 1;
 	let tongsotrang = Math.ceil(filterarr.length/sosanphammoitrang);
@@ -365,7 +373,7 @@ function xulydonhang(a){
                                 <p>Mã đơn: <span class="madon">${donhientai.id}</span></p>
                                 <p>Trạng thái: <span>${trangthai}</span></p>
                                 <p>Tổng tiền: <span>${donhientai.tongtien} đ</span></p>
-                                <p>Mã khuyến mãi: <span>Không có</span></p>
+
                                 <p>Ngày đặt hàng: <span>${donhientai.ngaydat}</span></p>
                                 <p style="width:500px">Hình thức thanh toán: <span width="100%">${nganhang}</span></p>
                                 <p>Số tài khoản (nếu có): <span>${stk}</span></p>
@@ -570,7 +578,7 @@ function duyet(){
 			if(choice == true){
 			let today = new Date();
 			donhang[i].status = 1;	
-			donhang[i].ngayduyet = `${today.getDate()}/${today.getMonth()+1}/${today.getFullYear()}` ;
+			donhang[i].ngayduyet =  `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()} `;
 			luudon = donhang[i];
 			alert("Đã duyệt thành công");
 			tatdonhang();
@@ -619,7 +627,7 @@ function huy(){
 			let today = new Date();
 			donhang[i].status = 3;	
 			donhang[i].lydo = nhap;
-			donhang[i].ngayduyet = `${today.getDate()}/${today.getMonth()+1}/${today.getFullYear()}` ;
+			donhang[i].ngayduyet =  `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()} ` ;
 			luudon = donhang[i];
 			alert("Đã hủy thành công");
 			tatdonhang();
@@ -657,7 +665,7 @@ function giaothanhcong(){
 			if(choice == true){
 			let today = new Date();
 			donhang[i].status = 2;	
-			donhang[i].ngayduyet = `${today.getDate()}/${today.getMonth()+1}/${today.getFullYear()}` ;
+			donhang[i].ngayduyet =  `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()} ` ;
 			luudon = donhang[i];
 			alert("Đã duyệt thành công");
 			tatdonhang();
@@ -692,7 +700,120 @@ function giaothanhcong(){
 
 
 function findtime(){
+	let tungay = document.querySelector("#Display .order .head .time .tu_ngay").value.split("-");
+	let denngay = document.querySelector("#Display .order .head .time .den_ngay").value.split("-");
+	filterarr = [];
 	
+	let donhang = JSON.parse(localStorage.getItem("donhang"));
+
+	date_tungay = tungay[2];
+	month_tungay = tungay[1];
+	year_tungay = tungay[0];
+
+	date_denngay = denngay[2];
+	month_denngay = denngay[1];
+	year_denngay = denngay[0];
+	
+	if((date_tungay > date_denngay) && (month_tungay >=month_denngay ) && (year_tungay >= year_denngay)){
+		alert("Vui lòng chọn từ ngày bé hơn đến ngày");
+		return 0;
+	}
+
+	if((date_tungay == date_denngay) && (month_tungay == month_denngay ) && (year_tungay == year_denngay)){
+		for(let i = 0 ; i< donhang.length ; i++){
+			let donhangngay = donhang[i].ngaydat.split("/");
+			let ngay = donhangngay[0];
+			let thang = donhangngay[1];
+			let nam = donhangngay[2];
+			if((date_tungay == ngay) && (month_tungay == thang) && (year_tungay == year)){
+				filterarr.push(donhang[i]);
+			}
+		}
+
+	}
+
+if((date_tungay < date_denngay) && (month_tungay <= month_denngay ) && (year_tungay <= year_denngay)){
+		for(let i = 0 ; i< donhang.length ; i++){
+			let donhangngay = donhang[i].ngaydat.split("/");
+			let ngay = donhangngay[0];
+			let thang = donhangngay[1];
+			let nam = donhangngay[2];
+			if((date_tungay == ngay && ngay <= date_denngay) && (month_tungay == thang && thang <= month_denngay) && (year_tungay == year && year <= year_denngay)){
+				filterarr.push(donhang[i]);
+			}
+		}
+
+		for(let i = 0 ; i< donhang.length ; i++){
+			let donhangngay = donhang[i].ngaydat.split("/");
+			let ngay = donhangngay[0];
+			let thang = donhangngay[1];
+			let nam = donhangngay[2];
+			if((date_tungay < ngay && ngay <= date_denngay) && (month_tungay <= thang && thang <= month_denngay) && (year_tungay <= year && year <= year_denngay)){
+				filterarr.push(donhang[i]);
+			}
+		}
+
+	}
+
+
+
+
+if(filterarr.length == 0){
+alert("Không có đơn hàng nào được đặt trong khoảng thời gian này");
+ return 0;
+}else{
+	let sosanphammoitrang = 5;
+		let sotranghientai = 1;
+		let tongsotrang = Math.ceil(filterarr.length/sosanphammoitrang);
+		let vitrihientai = (sotranghientai - 1) * sosanphammoitrang;
+		let btn = '';
+		if(tongsotrang != 1){
+		for(let i = 1 ; i<=tongsotrang ; i ++){
+			btn += `
+				<div class="item" onclick="nuttrangfilter_order(${i})">${i}</div>	
+
+			`
+		}
+	}	
+
 
 	
+
+		let a ='';
+		let n = 0;
+		for(let i = vitrihientai ; i<filterarr.length;i++){
+			let trangthai;
+			if(filterarr[i].status == 0){
+				trangthai = "Chưa xử lý";
+			}else if(filterarr[i].status == 1){
+				trangthai = "Đã duyệt";
+			}else if(filterarr[i].status == 2){
+				trangthai = "Đã giao hàng thành công";
+			}
+			n++;
+			a += `
+			<tr>
+				  <td>${filterarr[i].id}</td>
+                            <td>${filterarr[i].tenKH}</td>
+                            <td>${filterarr[i].tongtien}</td>
+                            <td>${filterarr[i].ngaydat}</td>
+                            <td>${filterarr[i].ngayduyet == 0?"Chưa duyệt": filterarr[i].ngayduyet}</td>
+                            <td>${trangthai}</td>
+                            <td class="button">
+                                <div name="${filterarr[i].id}" onclick="xulydonhang(this)">Xem chi tiết đơn hàng</div>
+                            </td>
+                    </tr>   
+			
+			`;
+			if(n == sosanphammoitrang) break;
+		}
+
+
+		let showbtn = document.querySelector("#Display .order .foot .pagination");
+		showbtn.innerHTML = btn;
+		let showdon = document.querySelector("#Display .order .main table tbody");
+		showdon.innerHTML = a;
 }
+
+}
+

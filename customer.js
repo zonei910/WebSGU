@@ -26,7 +26,7 @@ let Customer = [
         "id": 10,
         "stk": "12345",
         "bank": "AGB",
-        "ngaydat": "28/11/2024",
+        "ngaydat": "27/11/2024",
         "ngayduyet": 0,
         "diachiKH": "123 Đường Lê Lợi, Quận 1, TP. HCM",
         "tongtien": 93100000,
