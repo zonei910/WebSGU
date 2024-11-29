@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="newthongke.css">
+    <link rel="stylesheet" href="pagecustomer.css">
     <link rel="stylesheet" href="assets/Admin/style/navbar.css">
     <link rel="stylesheet" href="assets/Admin/style/display.css">
     <link rel="stylesheet" href="assets/Admin/style/viewpage.css">
@@ -297,354 +298,274 @@
                 <div>
                     <div class="outer">
                         <div class="container0">
-                            <div><input type="text" placeholder="Search hear"> <i class="fa-solid fa-magnifying-glass"></i></div>
+                            <div><input type="text" placeholder="Search hear" > <i class="fa-solid fa-magnifying-glass"></i></div>
                             <div>
                                 <div><input type="date" id="timefirst" onclick="gettimefirst()"></div>
                                 <div>-</div>
                                 <div><input type="date" id="timesecond" onclick="gettimesecond()"></div>
                             </div>
+                 
                         </div>
                         <div class="container">
                             <div class="container1">
                                 <div>
-                                    <div>Total Price</div>
+                                    <div >Total Price</div>
                                     <div id="totalprice">0$</div>
                                     <!-- <div>Saved 25%</div> -->
                                 </div>
-                                <div>
-                                    <div>Total Product Sold</div>
+                                <div >
+                                    <div>Total Product Sold</div> 
                                     <div id="totalproduct">0</div>
                                     <!-- <div>Saved 25%</div> -->
                                 </div>
-                                <div>
+                                <div >
                                     <div>Total Profit</div>
                                     <div id="totalprofit">0$</div>
                                     <!-- <div>Saved 25%</div> -->
                                 </div>
-                                <div>
-                                    <div>Total User</div>
+                                <div >
+                                    <div>Total User</div> 
                                     <div id="totaluser">0</div>
                                     <!-- <div>Saved 25%</div> -->
                                 </div>
                             </div>
-                        </div>
-                        <div class="container2">
+                        </div>        <div class="container2">
                             <div class="thongke1">
                                 <div>Amount of product</div>
-                                <table id="tableabove">
-                                    <tr>
-                                        <td class="none1">
-                                            <div></div>
-                                        </td>
-                                        <td class="none1" class="empty" class="tdabove">
-                                            <div class="divout">
-                                                <div id="t1">.</div>
-                                            </div>
-                                        </td>
-                                        <td class="none1" class="empty" class="tdabove">
-                                            <div class="divout">
-                                                <div id="t2">.</div>
-                                            </div>
-                                        </td>
-                                        <td class="none1" class="empty" class="tdabove">
-                                            <div class="divout">
-                                                <div id="t3">.</div>
-                                            </div>
-                                        </td>
-                                        <td class="none1" class="empty" class="tdabove">
-                                            <div class="divout">
-                                                <div id="t4">.</div>
-                                            </div>
-                                        </td>
-                                        <td class="none1" class="empty" class="tdabove">
-                                            <div class="divout">
-                                                <div id="t5">.</div>
-                                            </div>
-                                        </td>
-                                        <td class="none1" class="empty" class="tdabove">
-                                            <div class="divout">
-                                                <div id="t6">.</div>
-                                            </div>
-                                        </td>
-                                        <td class="none1" class="empty" class="tdabove">
-                                            <div class="divout">
-                                                <div id="t7">.</div>
-                                            </div>
-                                        </td>
-                                        <td class="none1" class="empty" class="tdabove">
-                                            <div class="divout">
-                                                <div id="t8">.</div>
-                                            </div>
-                                        </td>
-                                        <td class="none1" class="empty" class="tdabove">
-                                            <div class="divout">
-                                                <div id="t9">.</div>
-                                            </div>
-                                        </td>
-                                        <td class="none1" class="empty" class="tdabove">
-                                            <div class="divout">
-                                                <div id="t10">.</div>
-                                            </div>
-                                        </td>
-                                        <td class="none1" class="empty" class="tdabove">
-                                            <div class="divout">
-                                                <div id="t11">.</div>
-                                            </div>
-                                        </td>
-                                        <td class="none1" class="empty" class="tdabove">
-                                            <div class="divout">
-                                                <div id="t12">.</div>
-                                            </div>
-                                        </td>
-                                        <td class="none"></td>
-                                    </tr>
-                                </table>
-                                <table>
-                                    <tr>
-                                        <td class="none2"><span>90%</span></td>
-                                        <td class="left" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none1" class="empty"></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none2"><span>80%</span></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none2"><span>70%</span></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none2"><span>60%</span></td>
-                                        <td class="empty"></td>
-                                        <td class="empty"></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none2"><span>50%</span></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none2"><span>40%</span></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none2"><span>30%</span></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none2"><span>20%</span></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none2"><span>10%</span></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="none"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none2"><span>0%</span></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="bottom"></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="none3"></td>
-                                        <td class="none3">Jan</td>
-                                        <td class="none3">Feb</td>
-                                        <td class="none3">Mar</td>
-                                        <td class="none3">Apr</td>
-                                        <td class="none3">May</td>
-                                        <td class="none3">Jun</td>
-                                        <td class="none3">Jul</td>
-                                        <td class="none3">Aug</td>
-                                        <td class="none3">Sep</td>
-                                        <td class="none3">Oct</td>
-                                        <td class="none3">Nov</td>
-                                        <td class="none3">Dec</td>
-                                        <td class="none"></td>
-                                    </tr>
-                                </table>
+                                <div>
+                                    <table class="tableabove">
+                                        <tr>
+                                            <td class="none"><div></div></td>
+                                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t1" >.</div></div></td>
+                                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t2" >.</div></div></td>
+                                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t3">.</div></div></td>
+                                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t4">.</div></div></td>
+                                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t5">.</div></div></td>
+                                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t6">.</div></div></td>
+                                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t7">.</div></div></td>
+                                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t8">.</div></div></td>
+                                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t9">.</div></div></td>
+                                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t10">.</div></div></td>
+                                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t11">.</div></div></td>
+                                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t12">.</div></div></td>
+                                            <td class="none"></td>
+                                        </tr>
+                                                    <!-- <table id="tableabove">
+                                        <tr>
+                                            <td class="none1"><div></div></td>
+                                            <td class="none1" class="empty" class="tdabove"><div class="t1">.</div></td>
+                                            <td class="none1" class="empty" class="tdabove"><div class="t2">.</div></td>
+                                            <td class="none1" class="empty" class="tdabove"><div class="t3">.</div></td>
+                                            <td class="none1" class="empty" class="tdabove"><div class="t4">.</div></td>
+                                            <td class="none1" class="empty" class="tdabove"><div class="t5">.</div></td>
+                                            <td class="none1" class="empty" class="tdabove"><div class="t6">.</div></td>
+                                            <td class="none1" class="empty" class="tdabove"><div class="t7">.</div></td>
+                                            <td class="none1" class="empty" class="tdabove"><div class="t8">.</div></td>
+                                            <td class="none1" class="empty" class="tdabove"><div class="t9">.</div></td>
+                                            <td class="none1" class="empty" class="tdabove"><div class="t10">.</div></td>
+                                            <td class="none1" class="empty" class="tdabove"><div class="t11">.</div></td>
+                                            <td class="none1" class="empty" class="tdabove"><div class="t12">.</div></td>
+                                            <td class="none"></td>
+                                        </tr>
+                                    </table> -->
+                                    </table>
+                                    <table>
+                                        <tr>
+                                            <td class="none2"><span>90%</span></td>
+                                            <td class="left" class="empty"></td>
+                                            <td class="none1" class="empty"></td>
+                                            <td class="none1" class="empty"></td>
+                                            <td class="none1" class="empty"></td>
+                                            <td class="none1" class="empty"></td>
+                                            <td class="none1" class="empty"></td>
+                                            <td class="none1" class="empty"></td>
+                                            <td class="none1" class="empty"></td>
+                                            <td class="none1" class="empty"></td>
+                                            <td class="none1" class="empty"></td>
+                                            <td class="none1" class="empty"></td>
+                                            <td class="none1" class="empty"></td>
+                                            <td class="none"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="none2"><span>80%</span></td>
+                                            <td class="empty"></td>
+                                            <td class="empty"></td>
+                                            <td class="empty"></td>
+                                            <td class="empty"></td>
+                                            <td class="empty"></td>
+                                            <td class="empty"></td>
+                                            <td class="empty"></td>
+                                            <td class="empty"></td>
+                                            <td class="empty"></td>
+                                            <td class="empty"></td>
+                                            <td class="empty"></td>
+                                            <td class="empty"></td>
+                                            <td class="none"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="none2"><span>70%</span></td>
+                                            <td class="empty"></td>
+                                            <td class="empty"></td>
+                                            <td class="empty"></td>
+                                            <td class="empty"></td>
+                                            <td class="empty"></td>
+                                            <td class="empty"></td>
+                                            <td class="empty"></td>
+                                            <td class="empty"></td>
+                                            <td class="empty"></td>
+                                            <td class="empty"></td>
+                                            <td class="empty"></td>
+                                            <td class="empty"></td>
+                                            <td class="none"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="none2"><span>60%</span></td>
+                                            <td class="empty"></td>
+                                            <td class="empty"></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="none"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="none2"><span>50%</span></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="none"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="none2"><span>40%</span></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="none"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="none2"><span>30%</span></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="none"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="none2"><span>20%</span></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="none"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="none2"><span>10%</span></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="none"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="none2"><span>0%</span></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="bottom"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="none3"></td>
+                                            <td class="none3" class="month">Jan</td>
+                                            <td class="none3" class="month">Feb</td>
+                                            <td class="none3" class="month">Mar</td>
+                                            <td class="none3" class="month">Apr</td>
+                                            <td class="none3" class="month">May</td>
+                                            <td class="none3" class="month">Jun</td>
+                                            <td class="none3" class="month">Jul</td>
+                                            <td class="none3" class="month">Aug</td>
+                                            <td class="none3" class="month">Sep</td>
+                                            <td class="none3" class="month">Oct</td>
+                                            <td class="none3" class="month">Nov</td>
+                                            <td class="none3" class="month">Dec</td>
+                                            <td class="none"></td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
                             <div class="thongke2">
                                 <div>Cost of goods </div>
-                                <table id="tableabove">
+                                <table class="tableabove">
                                     <tr>
-                                        <td class="none1">
-                                            <div></div>
-                                        </td>
-                                        <td class="none1" class="empty" class="tdabove">
-                                            <div class="divout">
-                                                <div id="tt1">.</div>
-                                            </div>
-                                        </td>
-                                        <td class="none1" class="empty" class="tdabove">
-                                            <div class="divout">
-                                                <div id="tt2">.</div>
-                                            </div>
-                                        </td>
-                                        <td class="none1" class="empty" class="tdabove">
-                                            <div class="divout">
-                                                <div id="tt3">.</div>
-                                            </div>
-                                        </td>
-                                        <td class="none1" class="empty" class="tdabove">
-                                            <div class="divout">
-                                                <div id="tt4">.</div>
-                                            </div>
-                                        </td>
-                                        <td class="none1" class="empty" class="tdabove">
-                                            <div class="divout">
-                                                <div id="tt5">.</div>
-                                            </div>
-                                        </td>
-                                        <td class="none1" class="empty" class="tdabove">
-                                            <div class="divout">
-                                                <div id="tt6">.</div>
-                                            </div>
-                                        </td>
-                                        <td class="none1" class="empty" class="tdabove">
-                                            <div class="divout">
-                                                <div id="tt7">.</div>
-                                            </div>
-                                        </td>
-                                        <td class="none1" class="empty" class="tdabove">
-                                            <div class="divout">
-                                                <div id="tt8">.</div>
-                                            </div>
-                                        </td>
-                                        <td class="none1" class="empty" class="tdabove">
-                                            <div class="divout">
-                                                <div id="tt9">.</div>
-                                            </div>
-                                        </td>
-                                        <td class="none1" class="empty" class="tdabove">
-                                            <div class="divout">
-                                                <div id="tt10">.</div>
-                                            </div>
-                                        </td>
-                                        <td class="none1" class="empty" class="tdabove">
-                                            <div class="divout">
-                                                <div id="tt11">.</div>
-                                            </div>
-                                        </td>
-                                        <td class="none1" class="empty" class="tdabove">
-                                            <div class="divout">
-                                                <div id="tt12">.</div>
-                                            </div>
-                                        </td>
+                                        <td class="none"><div></div></td>
+                                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt1" >.</div></div></td>
+                                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt2" >.</div></div></td>
+                                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt3">.</div></div></td>
+                                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt4">.</div></div></td>
+                                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt5">.</div></div></td>
+                                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt6">.</div></div></td>
+                                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt7">.</div></div></td>
+                                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt8">.</div></div></td>
+                                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt9">.</div></div></td>
+                                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt10">.</div></div></td>
+                                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt11">.</div></div></td>
+                                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt12">.</div></div></td>
                                         <td class="none"></td>
                                     </tr>
                                 </table>
@@ -829,8 +750,13 @@
                             </div>
                         </div>
                         <div class="thongkecustom">
+                
                         </div>
+                
+                
+                
                         <div class="thongkesanpham">
+                
                         </div>
                         <div class="header">List of product</div>
                         <div class="container3">
@@ -849,6 +775,82 @@
             </div>
             <!-- Danh sách user -->
             <div class="userlist">
+                <div class="outer">
+                    <div class="container3" ><input type="text" id="search" placeholder="Search content here" oninput="search()">  <i class="fa-solid fa-magnifying-glass"></i> </div>
+                    <div class="outercontainer4">
+                        <div id="container4">
+                            <div class="clientouter" id="clientouter">
+                            </div>
+                            <div class="printorder"></div>
+                            <div class="addorder"></div>
+                            <div class="editorder"></div>
+                        </div>
+                
+                        <div id="phantrangouter"></div>
+                    </div>
+                    <div id="printorder">
+                        <div id="innerorder">
+                            <i class="fa-solid fa-x" onclick="closedproduct()"></i>
+                            <div>
+                                <div>id</div>
+                                <div>name</div>
+                                <div>catergory</div>
+                                <div>order receiptime</div>
+                                <div><input type="date" id="taketimesecond"> <input type="date" id="taketimefirst"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="sectioneditclient">
+                        <div>
+                            <div>EDIT CLIENT</div>
+                            <i class="fa-solid fa-x" onclick="closededitclient()"></i>
+                            <div>
+                                <form action="">
+                                    <label for="editnameofkh">Edit name</label> <input type="text" id="editnameofkh"> <br>
+                                    <label for="editemailofkh">Edit email</label> <input type="email" id="editemailofkh"> <br>
+                                    <label for="editphoneofkh">Edit phone</label> <input type="phone" id="editphoneofkh"><br>
+                                </form>
+                                <div>                <input type="submit" id="editkh" value="click"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="sectionaddclient">
+                        <div>
+                            <div>ADD CLIENT</div>
+                            <i class="fa-solid fa-x"></i>
+                            <div>
+                                <form action="">
+                                    <label for="nameofkh">Client name</label> <input type="text" id="nameofkh"> <br>
+                                    <label for="emailofkh">Client email</label> <input type="email" id="emailofkh"> <br>
+                                    <label for="phoneofkh">Client phone</label> <input type="phone" id="phoneofkh"><br>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="khoaclient">
+                        <div>
+                            <i class="fa-solid fa-x" onclick="closedkhoa()"></i>
+                            <div id="contentkhoa"></div>
+                            <div class="printkh">
+                                <div >
+                                    <div>id</div>
+                                    <div>name</div>
+                                    <div>phone</div>
+                                    <div>email</div>
+                                </div>
+                            </div>
+                            <div class="printorderkh">
+                                <div >
+                                    <div>id</div>
+                                    <div>name</div>
+                                    <div>catergory</div>
+                                    <div>order receiptime</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script src="thetheew.js"></script>
+                    </div>
             </div>
             <!-- Danh sách sản phẩm -->
             <div class="merchandise">
