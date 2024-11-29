@@ -1,6 +1,8 @@
 @media (max-width: 768px){
 	body{
-		overflow: auto;
+overflow-x: auto;     /* Cho phép cuộn ngang */
+  overflow-y: hidden;   /* Tắt cuộn dọc */
+  max-height: 700px;
 	}
 
 
@@ -109,5 +111,19 @@
     #Menu div div{
     	width: 100%;
     }
+
+    #Display .viewpage iframe{
+    	width: 1000px;
+    	height: 100vh;
+    }
+
+    #Display .merchandise .button-group{
+    	width: 300px;
+    }
+
+    #Display .merchandise .edit-buttons1, .edit-buttons2{
+    	width: 100%;
+    }
+
 
 }
