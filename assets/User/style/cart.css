@@ -1,6 +1,8 @@
 :root{
     --xamdam: rgb(197, 196, 196);
     --xanhdam: rgb(112, 227, 227);
+    --nua: #463a41;
+    --xanhduongdam: #c8d9e6;
 }
 
 th{
@@ -22,14 +24,14 @@ th{
     margin:2.5px;
     width:40px;
     padding:2px;
-    background-color: var(--xanhnhat) ;
+    /* background-color: var(--xanhnhat) ; */
     border: solid black 1px;
     border-radius: 2px;
 }
 
-.column-end > button:hover{
+/* .column-end > button:hover{
     background-color: var(--xanhdam);
-}
+} */
 
 .navbar_cart-warp {
     position: relative;
@@ -98,25 +100,26 @@ th{
 #deleteAll{
     padding: 7px;
     margin-top: 20px;
-    background-color: var(--xanhnhat);
+    /* background-color: var(--xanhnhat); */
     border: solid 1px black;
     border-radius: 5px;
     margin-left: 35%;
 }
-#deleteAll:hover{
-    background-color: var(--xanhdam);
+#giohang button:hover{
+    background-color: var(--xanhduongdam);
+    /* color:white; */
 }
 #thanhtoan{
     padding:7px;
     margin-top: 20px;
-    background-color: var(--xanhnhat);
+    /* background-color: var(--xanhnhat); */
     border: solid 1px black;
     border-radius: 5px;
     margin-left: 5%;
 }
-#thanhtoan:hover{
+/* #thanhtoan:hover{
     background-color: var(--xanhdam);
-}
+} */
 
 
 
