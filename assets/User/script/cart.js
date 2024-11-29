@@ -168,6 +168,10 @@ function hienthiGiohang() {
         dropdownaccount.style.display = 'none';
     } else {
         x.style.display = 'none';
+        let dropdownsearch= document.querySelector('.navbar_search-dropdown');
+        dropdownsearch.style.display = 'none';
+        let dropdownaccount = document.querySelector('.navbar_user-items');
+        dropdownaccount.style.display = 'none';
     }
 
     // if (noCart) {

@@ -471,6 +471,7 @@ if(JSON.parse(localStorage.getItem("products")) == null){
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> aa05287a9a5146965f36dcae2fb89d209693809d
 =======
 // Chuyển mảng sản phẩm thành JSON và lưu vào localStorage
@@ -484,6 +485,9 @@ if (savedProducts) {
     // Nếu không có dữ liệu, bạn có thể sử dụng mảng sản phẩm mặc định hoặc gọi API để lấy dữ liệu
     Product = []; // hoặc gọi API
 }
+=======
+
+>>>>>>> 32fdd653a2648f98fd55c77cf35e7edbf7d62cf5
 
 
 >>>>>>> d89fa021ed347c936cf4666b3184a4e9a3e286e7
