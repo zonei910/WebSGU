@@ -399,10 +399,14 @@ menuButton.addEventListener('click', () => {
 
 // Hàm để hiển thị thông tin chi tiết sản phẩm khi click vào sản phẩm
 function showProductDetail(productId) {
+     // Lấy danh sách sản phẩm từ localStorage
+   // const Product = JSON.parse(localStorage.getItem('products')) || [];
+
     // Tìm sản phẩm tương ứng trong mảng products
     const product = Product.find(p => p.id === productId);
 
     if (product) {
+        console.log("Thông tin sản phẩm:", product);
         // Cập nhật thông tin vào div chi tiết sản phẩm
         document.getElementById('product-name').innerText = product.name;
         document.getElementById('product-price').innerText = product.price + '₫';
@@ -445,6 +449,8 @@ function showProductDetail(productId) {
         document.querySelector('.product__body i').onclick = function() {
             detail.style.display = 'none';
         }
+    }else {
+        console.error("Không tìm thấy sản phẩm với productId:", productId);
     }
 }
 
@@ -457,8 +463,12 @@ function addClickEventToProducts() {
             // Lấy id sản phẩm từ data-id
             const productId = item.parentElement.getAttribute('data-id');//.closest('.grid__column3')
 
-            if (productId)
-            showProductDetail(parseInt(productId));
+            if (productId){
+                console.log(`Product ID: ${productId}`);
+                showProductDetail(parseInt(productId));
+            } else {
+                console.error('Không tìm thấy data-id cho sản phẩm này!');
+            }
         });
     });
     console.log('Trang đã tải xong!');
@@ -487,17 +497,7 @@ Product.forEach(product => {
 })
 console.log(document.querySelectorAll('.grid__column3'));
 
-// Chuyển mảng sản phẩm thành JSON và lưu vào localStorage
-// Lấy mảng sản phẩm từ localStorage và chuyển lại thành mảng
-const savedProducts = JSON.parse(localStorage.getItem('products'));
 
-if (savedProducts) {
-    // Nếu dữ liệu có sẵn trong localStorage, sử dụng nó
-    Product = savedProducts;
-} else {
-    // Nếu không có dữ liệu, bạn có thể sử dụng mảng sản phẩm mặc định hoặc gọi API để lấy dữ liệu
-    Product = []; // hoặc gọi API
-}
 
 
 function hienthi(){
