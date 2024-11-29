@@ -19,7 +19,7 @@ body{
 .outter{
     margin:0;
     padding:0px 100px 0px 100px;
-    min-height: 1000px;
+    min-height: 750px;
     /* height: 100%; */
 }
 .inner1>div:nth-child(1){
@@ -51,6 +51,7 @@ body{
 /* form */
 .inner2left>div>div{
     color: #817b7b;
+    width:85%;
 }
 .inner2left>div:nth-child(2)>div{
     margin:10px 0px;
@@ -78,17 +79,29 @@ body{
 
 #Form .sub-button{
     
-    color: #6c6a6b ;
+    color: black ;
     outline: none;
     border:none;
-    background-color:#3778f7;
-    width: 100%;
+    /* background-color:#3778f7; */
+    width: 15%;
     border-radius: 2px;
     height: 15px;
     padding:5px;
     height: 100%;
-    color: white;
     cursor: pointer;
+    float:right;
+    margin-right: 20%;
+    padding: 8px;
+    margin-top: 10px;
+    font-size: medium;
+}
+
+#Form .sub-button:hover{
+    color: white;
+    background-color:#6c6a6b ;
+}
+#Form > div{
+    font-size:large;
 }
 .inner2left>div>div>select{
     border: none;
@@ -120,14 +133,15 @@ body{
     display: inline-block;
 }
 .inner2right>div:nth-child(1)>div:nth-child(2){
-    width: 30px;
+    width: 20px;
     border-radius: 10px;
-    height: 20px;
+    height: 18px;
     background-color: #6d7278;
     display: inline;
-    float: right;
+    float: left;
     color:white;
     text-align: center;
+    font-size: small;
 }
 .inner2right>div:nth-child(1)>div:nth-child(2)::after{
     clear: both;
@@ -135,8 +149,10 @@ body{
 .cartoutter{
     border-radius: 5px;
     border: 1px #ceced6 solid;
-    color: #6c6a6b ;
-    height: 400px;
+    color: black ;
+    height: 410px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .cartoutter .item{
     height: 370px;
@@ -154,6 +170,7 @@ body{
 }
 .sumofcart>div{
     margin: 5px;
+    padding: 10px;
 }
 .cart>div{
     margin:5px;
@@ -171,10 +188,11 @@ body{
     clear: both;
  }
 .sumoutter{
-    border-bottom: 1px solid #ceced6;
     border-top : 1px solid #ceced6;
-    padding: 5px;
+    padding: 10px;
     height: 28px;
+    color: black;
+    font-weight: bold;
 }
 .sumoutter>div:nth-child(1){
     float: left;
@@ -272,15 +290,21 @@ body{
     display:flex;
     justify-content: space-between;
     align-items: center;
-    width: 50%;
+    width: 40%;
     float:right;
+
 }
+
+
 
 .cartinner .button div{
     cursor: pointer;
     border:1px solid #363A3F;
+    padding: 2px 3px;
+    border-radius: 2px;
 }
 
 .cartinner .button div:hover{
-    background-color: red;
+    background-color: #6c6a6b;
+    color: white;
 }
