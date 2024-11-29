@@ -52,6 +52,18 @@ dots.forEach((li, key) => {
 // let buttonNext = document.querySelector('.buttonNext');
 // let numbers = document.querySelectorAll('.pagination .page-note')
 
+// Chuyển mảng sản phẩm thành JSON và lưu vào localStorage
+// Lấy mảng sản phẩm từ localStorage và chuyển lại thành mảng
+const savedProducts = JSON.parse(localStorage.getItem('products'));
+
+if (savedProducts) {
+    // Nếu dữ liệu có sẵn trong localStorage, sử dụng nó
+    Product = savedProducts;
+} else {
+    // Nếu không có dữ liệu, bạn có thể sử dụng mảng sản phẩm mặc định hoặc gọi API để lấy dữ liệu
+    Product = []; // hoặc gọi API
+}
+
 let current = 0;
 // // add eventlisteners to the numberslist
 // numbers.forEach((number,numIndex) => {
@@ -109,7 +121,7 @@ let current = 0;
 document.addEventListener('DOMContentLoaded', () => {
 // let products =Array.from(document.querySelectorAll('.grid__column3'));
 const products = Product;
-console.log(products);
+console.log(products);  
 // số sản phẩm mỗi trang
 const itemsPerPage = 6;
 let filteredProducts = products;

@@ -80,7 +80,7 @@ if(currentUser.giohang.length == 0){
     return 0;
 }
 
-if(stk.value <= 0){
+if(stk.value <= 0 && stk.style.display == "block"){
     alert("Vui lòng nhập đúng số tài khoản");
     return 0;
 }

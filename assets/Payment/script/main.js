@@ -190,14 +190,14 @@ let a = ``;
     let phone = document.querySelector("#tele");
     let address = document.querySelector("#address");
     let gender = document.querySelector("#sex");
-
+    let quan = document.querySelector("#newquan");
 
     ten.value = currentUser.name;
     email.value = currentUser.email;
     phone.value = currentUser.phone;
     address.value = currentUser.address;
     gender.value = currentUser.gender;
-
+    quan.value = currentUser.quan;
   
   
 
