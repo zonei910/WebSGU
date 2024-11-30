@@ -1,4 +1,4 @@
-.container3{
+#Display .userlist .container3{
     background-color: rgb(247, 250, 255);
     margin:10px;
     padding:20px;
@@ -334,7 +334,6 @@
     border: #75ba75 2px solid;
 }
 #printorder{
-
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0,0.5);
@@ -345,10 +344,11 @@
     align-items: center;
     justify-content: center;
     display: none;
-
 }
 #innerorder{
     background-color: #fec76f;
+    overflow: auto;
+    max-height: 400px;
 }
 #printorder > div{
     width: 80%;
@@ -551,4 +551,5 @@
     font-weight: bold;
     top: 5px;
 }
+
 
