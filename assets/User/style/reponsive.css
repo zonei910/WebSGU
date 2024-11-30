@@ -113,7 +113,7 @@
 }
 
 /* Mobile: width < 740 */
-@media only screen and (min-width: 400px) and (max-width: 739px) {
+@media only screen and (max-width: 739px) {
 
     .hide-on-mobile {
         display: none;
