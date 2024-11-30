@@ -101,7 +101,10 @@ if(donhang == null){
     madon = 1;
     donhang = [];
 }else{
-    madon = donhang.length + 1;
+    let max = 0;
+    for(let i = 0 ; i < donhang.length ; i++)
+        if(max < donhang[i].id) max = donhang[i].id;
+    madon = max+1;
 }
 
 let diachi = document.querySelector("#address").value;

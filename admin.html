@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="assets/Admin/style/merchandise.css">
     <link rel="stylesheet" href="assets/Admin/style/order.css">
     <link rel="stylesheet" href="assets/Admin/style/pagecustomer.css">
+    <link rel="stylesheet" href="./assets/User/style/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -147,6 +148,7 @@
                                 <th>Ngày đặt hàng</th>
                                 <th>Ngày duyệt đơn hàng</th>
                                 <th>Trạng thái</th>
+                                <th>Chi tiết đơn hàng</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -946,25 +948,31 @@
                     <script src="thetheew.js"></script>
                 </div>
             </div>
-            <!-- Danh sách sản phẩm -->
-            <div class="merchandise">
+<!-- Danh sách sản phẩm -->
+        <div class="merchandise">       
                 <div id="prod-edit-display">
                     <div id="prod-edit-header">
                         <nav>
                             <!-- Search button to show the search block -->
                             <button class="searchbar" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            
                             <!-- Search block, initially hidden -->
                         </nav>
                         <div id="searchBlock" style="display: none; padding: 10px;">
-                            <input type="text" id="searchInput" placeholder="Tìm..." style="width: 70%; padding: 5px;">
-                            <button id="searchSubmitButton">Tìm</button>
-                            <!-- Filter options -->
+                            <input type="text" id="searchInput" placeholder="Search..." style="width: 70%; padding: 5px;">
+                            <button id="searchSubmitButton">Tìm kiếm</button>
                             <select id="searchFilter">
-                                <option value="0">Tìm theo: </option>
-                                <option value="id">ID</option>
+                                <option value="0">Lọc theo: </option> 
+                                <option value="id">ID từ thấp đến cao</option>
                                 <option value="name">Tên</option>
+                                <option value="category">Loại</option>
+                                <option value="low-price">Giá từ thấp đến cao</option>
+                                <option value="high-price">Giá từ cao đến thấp</option>
+                                <option value="recent">Sản phẩm mới</option>
+                                <option value="description">Mô tả</option>
                             </select>
                         </div>
+                        
                     </div>
                     <div id="main-content"></div>
                     <nav id="buttons">
@@ -978,39 +986,119 @@
                         <button class="addItem" onclick="openEditBlock()">Thêm sản phẩm</button>
                     </nav>
                 </div>
+            
                 <!-- Edit Item Block (Initially Hidden) -->
-                <div class="DisplayEditItemBlock" style="display: none;">
-                    <div class="EditItemHeader">
-                        <div class="ProperHeaderDisplay">
-                            <div>Sửa sản phẩm</div>
-                            <button onclick="closeEditBlock()"><i class="fa-solid fa-xmark"></i></button>
+                <div class="overlay" id="modalOverlay">
+                    <div class="DisplayEditItemBlock" style="display: none;">
+                        <div class="EditItemHeader">
+                            <div class="ProperHeaderDisplay">
+                                <div>Edit Item</div>
+                                <button onclick="closeEditBlock()"><i class="fa-solid fa-xmark"></i></button>
+                            </div>
+                            <div class="DisplayEditItemBody" id="imageDropArea"><p id="uploadText">Ném ảnh vào đây hoặc chọn ảnh phía dưới</p>
+                                <!-- Image preview will be displayed here -->
+                                <img id="uploadedImage" style="display: none;" alt="Uploaded Preview">
+                            </div>
+                            <form id="itemForm">
+                                <label for="name">Tên: </label>
+                                <input type="text" name="name" id="nameInput">
+                                <label for="category">Loại: </label>
+                                <input type="text" name="category" id="categoryInput">
+                                <label for="price">Giá: </label>
+                                <input type="text" name="price" id="priceInput">
+                                <label for="desc">Mô tả: </label>
+                                <input type="text" name="desc" id="descInput">
+                                <!-- Image upload input -->
+                                <input type="file" id="imageInput" accept="image/*" style="margin-top: 10px; display: none;">
+                            </form>
+                            <button class="choose-button" onclick="document.getElementById('imageInput').click();">Chọn ảnh</button>
+                            <button class="update-button" onclick="updateItem()">Cập nhật</button>
                         </div>
-                        <div class="DisplayEditItemBody" id="imageDropArea">
-                            <p id="uploadText">Thả hình ảnh vào đây hoặc ấn vào nút choose image bên dưới</p>
-                            <!-- Image preview will be displayed here -->
-                            <img id="uploadedImage" style="display: none;" alt="Uploaded Preview">
-                        </div>
-                        <form id="itemForm">
-                            <label for="id">ID: </label>
-                            <input type="text" name="id" id="idInput">
-                            <label for="name">Tên sản phẩm: </label>
-                            <input type="text" name="name" id="nameInput">
-                            <label for="category">Loại sản phẩm: </label>
-                            <input type="text" name="category" id="categoryInput">
-                            <label for="price">Giá tiền: </label>
-                            <input type="text" name="price" id="priceInput">
-                            <label for="desc">Mô tả: </label>
-                            <input type="text" name="desc" id="descInput">
-                            <!-- Image upload input -->
-                            <input type="file" id="imageInput" accept="image/*" style="margin-top: 10px; display: none;">
-                        </form>
-                        <button class="choose-button" onclick="document.getElementById('imageInput').click();">Choose image</button>
-                        <button class="update-button" onclick="updateItem()">Update</button>
                     </div>
                 </div>
             </div>
-            </div>
-            </div>
+        </div>
+            <!-- </div>
+            </div> -->
+
+            <!------------------------- Thông tin Admin ----------------------->
+            <!-- <div class="container_account" style="display: none;">
+                <div class="grid wide1">
+                    <div class="row account-app">
+                        <div class="grid__column">
+                            <div class="main_account">
+                                <div class="tittle-main_account">
+                                    <h3>Thông tin tài khoản của bạn</h3>
+                                    <p>Quản lý thông tin để bảo mật tài khoản</p>
+                                </div>
+                                <div class="body-main_account row">
+                                    <div class="grid__column5">
+                                        <form action="" class="info-user">
+                                            <div class="form-group">
+                                                <label for="infoname" class="form-label">Họ và tên</label>
+                                                <input class="form-control" type="text" name="infoname" id="infoname" placeholder="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="infophone" class="form-label">Số điện thoại</label>
+                                                <input class="form-control" type="text" name="infophone" id="infophone" disabled="true" placeholder="">
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label for="infoaddress" class="form-label">Địa chỉ</label>
+                                                <input class="form-control" type="text" name="infoaddress" id="infoaddress" placeholder="Thêm địa chỉ giao hàng của bạn">
+                                                <select id="infoquan" required syle="text-align:center">
+                                                    <option value="Quận 1">Quận 1</option>
+                                                    <option value="Quận 2">Quận 2</option>
+                                                    <option value="Quận 3">Quận 3</option>
+                                                    <option value="Quận 4">Quận 4</option>
+                                                    <option value="Quận 5">Quận 5</option>
+                                                    <option value="Quận 6">Quận 6</option>
+                                                    <option value="Quận 7">Quận 7</option>
+                                                    <option value="Quận 8">Quận 8</option>
+                                                    <option value="Quận 9">Quận 9</option>
+                                                    <option value="Quận 10">Quận 10</option>
+                                                    <option value="Quận 11">Quận 11</option>
+                                                    <option value="Quận 12">Quận 12</option>
+                                                    <option value="Quận Bình Thạnh">Bình Thạnh</option>
+                                                    <option value="Quận Gò Vấp">Gò Vấp</option>
+                                                    <option value="Quận Phú Nhuận">Phú Nhuận</option>
+                                                </select>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="grid__column5">
+                                        <form action="" class="change-password">
+                                            <div class="form-group">
+                                                <label for="" class="form-label w60">Mật khẩu hiện tại</label>
+                                                <input class="form-control" type="password" name="" id="password-cur-info" placeholder="Nhập mật khẩu hiện tại">
+                                                <span class="password-cur-info-error form-message"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="" class="form-label w60">Mật khẩu mới </label>
+                                                <input class="form-control" type="password" name="" id="password-after-info" placeholder="Nhập mật khẩu mới">
+                                                <span class="password-after-info-error form-message"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="" class="form-label w60">Xác nhận mật khẩu mới</label>
+                                                <input class="form-control" type="password" name="" id="password-comfirm-info" placeholder="Nhập lại mật khẩu mới">
+                                                <span class="password-after-comfirm-error form-message"></span>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="body-main_account-action ">
+                                        <div class="grid__column5">
+                                            <button id="save-info-user" onclick="changeInformation()"><i class="fa-solid fa-floppy-disk"></i> Lưu thay đổi</button>
+                                        </div>
+                                        <div class="grid__column5">
+                                            <button id="save-password" onclick="changePassword()"><i class="fa-solid fa-key"></i> Đổi mật khẩu</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
         </Section>
     </main>
     <!-- Kết thúc Main -->
