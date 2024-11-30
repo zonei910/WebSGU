@@ -946,25 +946,31 @@
                     <script src="thetheew.js"></script>
                 </div>
             </div>
-            <!-- Danh sách sản phẩm -->
-            <div class="merchandise">
+<!-- Danh sách sản phẩm -->
+        <div class="merchandise">       
                 <div id="prod-edit-display">
                     <div id="prod-edit-header">
                         <nav>
                             <!-- Search button to show the search block -->
                             <button class="searchbar" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            
                             <!-- Search block, initially hidden -->
                         </nav>
                         <div id="searchBlock" style="display: none; padding: 10px;">
-                            <input type="text" id="searchInput" placeholder="Tìm..." style="width: 70%; padding: 5px;">
-                            <button id="searchSubmitButton">Tìm</button>
-                            <!-- Filter options -->
+                            <input type="text" id="searchInput" placeholder="Search..." style="width: 70%; padding: 5px;">
+                            <button id="searchSubmitButton">Tìm kiếm</button>
                             <select id="searchFilter">
-                                <option value="0">Tìm theo: </option>
-                                <option value="id">ID</option>
+                                <option value="0">Lọc theo: </option> 
+                                <option value="id">ID từ thấp đến cao</option>
                                 <option value="name">Tên</option>
+                                <option value="category">Loại</option>
+                                <option value="low-price">Giá từ thấp đến cao</option>
+                                <option value="high-price">Giá từ cao đến thấp</option>
+                                <option value="recent">Sản phẩm mới</option>
+                                <option value="description">Mô tả</option>
                             </select>
                         </div>
+                        
                     </div>
                     <div id="main-content"></div>
                     <nav id="buttons">
@@ -978,39 +984,38 @@
                         <button class="addItem" onclick="openEditBlock()">Thêm sản phẩm</button>
                     </nav>
                 </div>
+            
                 <!-- Edit Item Block (Initially Hidden) -->
-                <div class="DisplayEditItemBlock" style="display: none;">
-                    <div class="EditItemHeader">
-                        <div class="ProperHeaderDisplay">
-                            <div>Sửa sản phẩm</div>
-                            <button onclick="closeEditBlock()"><i class="fa-solid fa-xmark"></i></button>
+                <div class="overlay" id="modalOverlay">
+                    <div class="DisplayEditItemBlock" style="display: none;">
+                        <div class="EditItemHeader">
+                            <div class="ProperHeaderDisplay">
+                                <div>Edit Item</div>
+                                <button onclick="closeEditBlock()"><i class="fa-solid fa-xmark"></i></button>
+                            </div>
+                            <div class="DisplayEditItemBody" id="imageDropArea"><p id="uploadText">Ném ảnh vào đây hoặc chọn ảnh phía dưới</p>
+                                <!-- Image preview will be displayed here -->
+                                <img id="uploadedImage" style="display: none;" alt="Uploaded Preview">
+                            </div>
+                            <form id="itemForm">
+                                <label for="name">Tên: </label>
+                                <input type="text" name="name" id="nameInput">
+                                <label for="category">Loại: </label>
+                                <input type="text" name="category" id="categoryInput">
+                                <label for="price">Giá: </label>
+                                <input type="text" name="price" id="priceInput">
+                                <label for="desc">Mô tả: </label>
+                                <input type="text" name="desc" id="descInput">
+                                <!-- Image upload input -->
+                                <input type="file" id="imageInput" accept="image/*" style="margin-top: 10px; display: none;">
+                            </form>
+                            <button class="choose-button" onclick="document.getElementById('imageInput').click();">Chọn ảnh</button>
+                            <button class="update-button" onclick="updateItem()">Cập nhật</button>
                         </div>
-                        <div class="DisplayEditItemBody" id="imageDropArea">
-                            <p id="uploadText">Thả hình ảnh vào đây hoặc ấn vào nút choose image bên dưới</p>
-                            <!-- Image preview will be displayed here -->
-                            <img id="uploadedImage" style="display: none;" alt="Uploaded Preview">
-                        </div>
-                        <form id="itemForm">
-                            <label for="id">ID: </label>
-                            <input type="text" name="id" id="idInput">
-                            <label for="name">Tên sản phẩm: </label>
-                            <input type="text" name="name" id="nameInput">
-                            <label for="category">Loại sản phẩm: </label>
-                            <input type="text" name="category" id="categoryInput">
-                            <label for="price">Giá tiền: </label>
-                            <input type="text" name="price" id="priceInput">
-                            <label for="desc">Mô tả: </label>
-                            <input type="text" name="desc" id="descInput">
-                            <!-- Image upload input -->
-                            <input type="file" id="imageInput" accept="image/*" style="margin-top: 10px; display: none;">
-                        </form>
-                        <button class="choose-button" onclick="document.getElementById('imageInput').click();">Choose image</button>
-                        <button class="update-button" onclick="updateItem()">Update</button>
                     </div>
                 </div>
             </div>
-            </div>
-            </div>
+        </div>
         </Section>
     </main>
     <!-- Kết thúc Main -->
