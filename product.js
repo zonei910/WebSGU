@@ -462,32 +462,11 @@ let Product = [
         ]
     },
 ];
-<<<<<<< HEAD
-=======
+
 
 
 if(JSON.parse(localStorage.getItem("products")) == null){
     localStorage.setItem("products", JSON.stringify(Product));
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> aa05287a9a5146965f36dcae2fb89d209693809d
-=======
-// Chuyển mảng sản phẩm thành JSON và lưu vào localStorage
-// Lấy mảng sản phẩm từ localStorage và chuyển lại thành mảng
-const savedProducts = JSON.parse(localStorage.getItem('products'));
 
-if (savedProducts) {
-    // Nếu dữ liệu có sẵn trong localStorage, sử dụng nó
-    Product = savedProducts;
-} else {
-    // Nếu không có dữ liệu, bạn có thể sử dụng mảng sản phẩm mặc định hoặc gọi API để lấy dữ liệu
-    Product = []; // hoặc gọi API
-}
-=======
-
->>>>>>> 32fdd653a2648f98fd55c77cf35e7edbf7d62cf5
-
-
->>>>>>> d89fa021ed347c936cf4666b3184a4e9a3e286e7
