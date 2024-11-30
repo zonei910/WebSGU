@@ -343,9 +343,10 @@ function xulydonhang(a){
 	let donhang = JSON.parse(localStorage.getItem("donhang"));
 
 	let donhientai;
-	for(let i = 0 ; i<donhang.length;i++){
+	for(let i = 0 ; i < donhang.length;i++){
 		if(parseInt(madon) == parseInt(donhang[i].id) ){
 			donhientai = donhang[i];
+			break;
 		}
 	}
 
@@ -372,6 +373,8 @@ function xulydonhang(a){
 		nganhang = `Nganhang: ` + `${donhientai.bank}`; 
 		stk = donhientai.stk;   
 	}
+
+	console.log(donhientai);
 
 	left.innerHTML = `
 		 <div class="left">
@@ -500,7 +503,7 @@ for(let i = 0 ; i< donhientai.giohang.length ; i ++){
 			braceletsum += (donhientai.giohang[i].gia * donhientai.giohang[i].soLuong);
 		}
 	}
-if(bracelet.length !=0){
+if(bracelet.length !=0 ){
 	 temp = ``;
 	for(let i = 0 ; i<necklace.length ; i++){
 		temp += `
@@ -587,6 +590,7 @@ function duyet(){
 			donhang[i].ngayduyet =  `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()} `;
 			luudon = donhang[i];
 			alert("Đã duyệt thành công");
+			break;
 		}
 		}
 	}
@@ -736,7 +740,7 @@ function findtime(){
 			let ngay = donhangngay[0];
 			let thang = donhangngay[1];
 			let nam = donhangngay[2];
-			if((date_tungay == ngay) && (month_tungay == thang) && (year_tungay == year)){
+			if((date_tungay == ngay) && (month_tungay == thang) && (year_tungay == nam)){
 				filterarr.push(donhang[i]);
 			}
 		}
@@ -749,7 +753,7 @@ if((date_tungay < date_denngay) && (month_tungay <= month_denngay ) && (year_tun
 			let ngay = donhangngay[0];
 			let thang = donhangngay[1];
 			let nam = donhangngay[2];
-			if((date_tungay == ngay && ngay <= date_denngay) && (month_tungay == thang && thang <= month_denngay) && (year_tungay == year && year <= year_denngay)){
+			if((date_tungay == ngay && ngay <= date_denngay) && (month_tungay == thang && thang <= month_denngay) && (year_tungay == nam && nam <= year_denngay)){
 				filterarr.push(donhang[i]);
 			}
 		}
@@ -759,7 +763,7 @@ if((date_tungay < date_denngay) && (month_tungay <= month_denngay ) && (year_tun
 			let ngay = donhangngay[0];
 			let thang = donhangngay[1];
 			let nam = donhangngay[2];
-			if((date_tungay < ngay && ngay <= date_denngay) && (month_tungay <= thang && thang <= month_denngay) && (year_tungay <= year && year <= year_denngay)){
+			if((date_tungay < ngay && ngay <= date_denngay) && (month_tungay <= thang && thang <= month_denngay) && (year_tungay <= nam && nam <= year_denngay)){
 				filterarr.push(donhang[i]);
 			}
 		}
