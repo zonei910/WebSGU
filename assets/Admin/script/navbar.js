@@ -101,6 +101,30 @@ function tat_mo_navbar() {
         return 0;
     }
 
-
-
 }
+
+
+
+window.onload = () =>{
+    let a = document.querySelector(".noti");
+    if(JSON.parse(localStorage.getItem("donmoi")) == null){
+        a.innerHTML = 0;
+    }else{
+        a.innerHTML = JSON.parse(localStorage.getItem("donmoi"));
+    }
+}
+
+
+
+
+function bat_tat_neworder(){
+    
+}
+
+
+
+
+
+
+
+
