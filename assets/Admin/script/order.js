@@ -44,7 +44,7 @@ function showDonHang(){
                             <td>${donhang[i].ngayduyet == 0?"Chưa duyệt": donhang[i].ngayduyet}</td>
                             <td>${trangthai}</td>
                             <td class="button">
-                                <div name="${donhang[i].id}" onclick="xulydonhang(this)">Xem chi tiết đơn hàng</div>
+                                <div name="${donhang[i].id}" onclick="xulydonhang(this)">Xem</div>
                             </td>
                     </tr>   
 			
@@ -88,7 +88,7 @@ function nuttrang_order(a){
                             <td>${donhang[i].ngayduyet == 0?"Chưa duyệt": donhang[i].ngayduyet}</td>
                             <td>${trangthai}</td>
                             <td class="button">
-                                <div name="${donhang[i].id}" onclick="xulydonhang(this)">Xem chi tiết đơn hàng</div>
+                                <div name="${donhang[i].id}" onclick="xulydonhang(this)">Xem</div>
                             </td>
                     </tr>   
 			
@@ -173,7 +173,7 @@ function filter_order(){
                             <td>${filterarr[i].ngayduyet == 0?"Chưa duyệt": filterarr[i].ngayduyet}</td>
                             <td>${trangthai}</td>
                             <td class="button">
-                                <div name="${filterarr[i].id}" onclick="xulydonhang(this)">Xem chi tiết đơn hàng</div>
+                                <div name="${filterarr[i].id}" onclick="xulydonhang(this)">Xem</div>
                             </td>
                     </tr>   
 			
@@ -217,7 +217,7 @@ function nuttrangfilter_order(a){
                             <td>${filterarr[i].ngayduyet == 0?"Chưa duyệt": filterarr[i].ngayduyet}</td>
                             <td>${trangthai}</td>
                             <td class="button">
-                                <div name="${filterarr[i].id}" onclick="xulydonhang(this)">Xem chi tiết đơn hàng</div>
+                                <div name="${filterarr[i].id}" onclick="xulydonhang(this)">Xem</div>
                             </td>
                     </tr>   
 			
@@ -312,7 +312,7 @@ function find_order(){
 						<td>${filterarr[i].ngayduyet == 0?"Chưa duyệt": filterarr[i].ngayduyet}</td>
 						<td>${trangthai}</td>
 						<td class="button">
-							<div name="${filterarr[i].id}" onclick="xulydonhang(this)">Xem chi tiết đơn hàng</div>
+							<div name="${filterarr[i].id}" onclick="xulydonhang(this)">Xem</div>
 						</td>
 				</tr>   
 		
@@ -816,7 +816,7 @@ alert("Không có đơn hàng nào được đặt trong khoảng thời gian n�
                             <td>${filterarr[i].ngayduyet == 0?"Chưa duyệt": filterarr[i].ngayduyet}</td>
                             <td>${trangthai}</td>
                             <td class="button">
-                                <div name="${filterarr[i].id}" onclick="xulydonhang(this)">Xem chi tiết đơn hàng</div>
+                                <div name="${filterarr[i].id}" onclick="xulydonhang(this)">Xem</div>
                             </td>
                     </tr>   
 			
@@ -1087,7 +1087,7 @@ function sortgiaohang(){
                             <td>${filterarr[i].ngayduyet == 0?"Chưa duyệt": filterarr[i].ngayduyet}</td>
                             <td>${trangthai}</td>
                             <td class="button">
-                                <div name="${filterarr[i].id}" onclick="xulydonhang(this)">Xem chi tiết đơn hàng</div>
+                                <div name="${filterarr[i].id}" onclick="xulydonhang(this)">Xem</div>
                             </td>
                     </tr>   
 			
