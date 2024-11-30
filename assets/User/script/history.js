@@ -50,7 +50,7 @@ function renderOrderHistory() {
             }else if(statusText == 2){
                 statusText = "Đã giao thành công";
             }else{
-                statusText = `Đã hủy vì ${order.lydo}`
+                statusText = `Đã hủy vì ${order.lydo}`;
             }            
 
             let orderDate = order.ngaydat;
@@ -152,4 +152,9 @@ function getPaymentMethod(order) {
     } else {
         return "Hình thức thanh toán không xác định";
     }
+}
+
+
+window.onload = () =>{
+    renderOrderHistory();
 }
