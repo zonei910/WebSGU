@@ -103,7 +103,7 @@ th{
     /* background-color: var(--xanhnhat); */
     border: solid 1px black;
     border-radius: 5px;
-    margin-left: 35%;
+    margin-left: 30%;
 }
 #giohang button:hover{
     background-color: var(--xanhduongdam);
