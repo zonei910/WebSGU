@@ -587,8 +587,6 @@ function duyet(){
 			donhang[i].ngayduyet =  `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()} `;
 			luudon = donhang[i];
 			alert("Đã duyệt thành công");
-			tatdonhang();
-
 		}
 		}
 	}
@@ -614,16 +612,16 @@ function huy(){
 	let luudon = {};
 	for(let i = 0 ; i<donhang.length ; i++){
 		if(parseInt(madon.textContent) == donhang[i].id){
-			if(donhang[i].status == 1){
-				alert("Đơn hàng đã được duyệt trước đó");
+			if(donhang[i].status == 0){
+				alert("Đơn hàng cần được duyệt trước khi hủy");
 				return 0;
 			}
 			if(donhang[i].status == 2){
-				alert("Đơn hàng đã được hủy trước đó");
+				alert("Đơn hàng đã được giao thành công trước đó");
 				return 0;
 			}
 			if(donhang[i].status == 3){
-				alert("Đơn hàng đã giao thành công trước đó");
+				alert("Đơn hàng đã được hủy trước đó");
 				return 0;
 			}
 
@@ -666,6 +664,13 @@ function giaothanhcong(){
 				alert("Đơn hàng cần được duyệt trước khi đánh dấu giao thành công");
 				return 0;
 			}
+
+			if(donhang[i].status == 2){
+				alert("Đơn hàng đã bị hủy trước đó");
+				return 0;
+			}
+
+
 			if(donhang[i].status == 1){
 				let choice = confirm("Bạn có chắc muốn duyệt đơn hàng đã giao thành công");
 			if(choice == true){
