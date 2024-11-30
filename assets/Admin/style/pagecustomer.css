@@ -1,8 +1,8 @@
 #Display .userlist .container3{
     background-color: #D9F3F3;
-    margin:10px;
     padding:20px;
     border-radius: 5px;
+    border: 1px solid black;
 }
 #Display .userlist .outer{
     width:100%;
@@ -38,7 +38,7 @@
     padding-bottom: 70px;
     background-color: rgb(247, 250, 255);
     /* background-color: #75ba75; */
-    margin:10px;
+
     position: relative;
     border-radius: 5px;
 }
@@ -49,18 +49,12 @@
     transform: translate(-50%,50%);
 }
 #Display .userlist #container4{
-    /* position: absolute; */
-    padding-top:20px;
-    /* padding:0x; */
-    /* display: flex; */
-    /* display:grid; */
-    /* grid-template-columns: 1190px; */
-    /* grid-template-rows: 50px 50px 100px 200px 50px; */
-    /* grid-auto-rows: 50px; */
+    margin: 0;
 }
 #Display .userlist .nutphantrang{
     /* border-radius: 10px; */
     text-align: center;
+    cursor: pointer;
     line-height: 30px;
     display: inline-block;
     width: 50px;
@@ -71,6 +65,12 @@
     transform: translate(-50%,-50%);
     color:rgb(87, 82, 88) ;
 }
+
+#Display .userlist .nutphantrang:hover{
+      background-color: salmon;
+}
+
+
 #Display .userlist #container4 >.clientouter{
     width: 100%;
     margin: 20px;
@@ -203,9 +203,7 @@
     height: 30px;
     padding: 5px;
 }
-#Display .userlist .active{
-    background-color: salmon;
-}
+
 #Display .userlist #yes:hover{
     cursor: pointer;
 }
