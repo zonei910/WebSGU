@@ -37,8 +37,8 @@ function dangky(event) {
     let quanne = document.getElementById('register-quan').value;
     console.log(quanne);
 
-    if (Number(phone).toString() !== phone) {
-        alert("Số điện thoại không hợp lệ! Số điện thoại chỉ được chứa các chữ số");
+    if (isNaN(phone)) {
+        alert("Số điện thoại chỉ được chứa các chữ số!");
         return false;
     }
 
