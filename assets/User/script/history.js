@@ -42,7 +42,17 @@ function renderOrderHistory() {
             });
 
             // Trạng thái đơn hàng
-            let statusText = order.status === 1 ? "Đã xử lý" : "Đang xử lý";
+            let statusText = order.status;
+            if(statusText == 0){
+                statusText = "Chưa xử lý";
+            }else if(statusText == 1){
+                statusText = "Đã dhuyệt";
+            }else if(statusText == 2){
+                statusText = "Đã giao thành công";
+            }else{
+                statusText = `Đã hủy vì ${order.lydo}`;
+            }            
+
             let orderDate = order.ngaydat;
             let deliveryDate = order.ngayduyet !== 0 ? order.ngayduyet : "Chưa duyệt";
 
@@ -142,4 +152,9 @@ function getPaymentMethod(order) {
     } else {
         return "Hình thức thanh toán không xác định";
     }
+}
+
+
+window.onload = () =>{
+    renderOrderHistory();
 }

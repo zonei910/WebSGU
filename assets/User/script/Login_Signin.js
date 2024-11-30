@@ -36,6 +36,12 @@ function dangky(event) {
     let confirmpassword = document.getElementById('register-confirm-password').value.trim();
     let quanne = document.getElementById('register-quan').value;
     console.log(quanne);
+
+    if (isNaN(phone)) {
+        alert("Số điện thoại chỉ được chứa các chữ số!");
+        return false;
+    }
+
     // kiem tra nhap lai mat khau
     if ( password !== confirmpassword ){
         alert("Mật khẩu không khớp!");

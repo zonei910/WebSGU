@@ -780,8 +780,8 @@ function printinfororder(id) {
                 for(let k=0;k<product.giohang.length;k++){
                     const creatediv=document.createElement("div");
                     creatediv.innerHTML=`
+                    <div>${product.giohang[k].id}</div>
                     <div>${product.giohang[k].ten}</div>
-                    <div>${product.giohang[k].loai}</div>
                     <div>${product.giohang[k].loai}</div>
                     <div>${product.ngaydat}</div>
                     `
@@ -798,8 +798,8 @@ function printinfororder(id) {
     const newCustomer=Customer.slice(start,end);
     container4Node.innerHTML="";
     container4Node.innerHTML=`<div class="clientouter" id="clientouter">
-        <div>Client name</div>
-        <div>Telephone</div>
+        <div>Tên khách hàng</div>
+        <div>Số điện thoại</div>
         <div>Email</div>
     </div>`;
     newCustomer.forEach(customer=>{
@@ -837,6 +837,11 @@ function khoanguoidung(id){
 }
 function search() {
     let valuesearchinput = document.getElementById("search").value.toUpperCase(); // Chuyển đổi giá trị tìm kiếm thành chữ hoa
+    if(valuesearchinput == ""){
+    printinfor(0);
+    return 0;   
+    }
+
 
     let namesearch = Customer.filter(customer => {
         return customer.name.toUpperCase().includes(valuesearchinput);
@@ -878,8 +883,8 @@ function printsearcharray(newarray){
     container4Node.innerHTML="";
     container4Node.innerHTML=`            
     <div class="clientouter" id="clientouter">
-        <div>Client name</div>
-        <div>Telephone</div>
+        <div>Tên khách hàng</div>
+        <div>Số điện thoại</div>
         <div>Email</div>
     </div>`;
     newarray.forEach(customer=>{

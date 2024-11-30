@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="newthongke.css">
-    <link rel="stylesheet" href="pagecustomer.css">
     <link rel="stylesheet" href="assets/Admin/style/navbar.css">
     <link rel="stylesheet" href="assets/Admin/style/display.css">
     <link rel="stylesheet" href="assets/Admin/style/viewpage.css">
@@ -13,7 +12,10 @@
     <link rel="stylesheet" href="assets/Admin/style/userlist.css">
     <link rel="stylesheet" href="assets/Admin/style/merchandise.css">
     <link rel="stylesheet" href="assets/Admin/style/order.css">
+    <link rel="stylesheet" href="assets/Admin/style/pagecustomer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/Admin/style/responsive.css">
     <title>Admin</title>
@@ -298,59 +300,109 @@
                 <div>
                     <div class="outer">
                         <div class="container0">
-                            <div><input type="text" placeholder="Search hear" > <i class="fa-solid fa-magnifying-glass"></i></div>
+                            <div><input type="text" placeholder="Search hear"> <i class="fa-solid fa-magnifying-glass"></i></div>
                             <div>
                                 <div><input type="date" id="timefirst" onclick="gettimefirst()"></div>
                                 <div>-</div>
                                 <div><input type="date" id="timesecond" onclick="gettimesecond()"></div>
                             </div>
-                 
                         </div>
                         <div class="container">
                             <div class="container1">
                                 <div>
-                                    <div >Total Price</div>
+                                    <div>Total Price</div>
                                     <div id="totalprice">0$</div>
                                     <!-- <div>Saved 25%</div> -->
                                 </div>
-                                <div >
-                                    <div>Total Product Sold</div> 
+                                <div>
+                                    <div>Total Product Sold</div>
                                     <div id="totalproduct">0</div>
                                     <!-- <div>Saved 25%</div> -->
                                 </div>
-                                <div >
+                                <div>
                                     <div>Total Profit</div>
                                     <div id="totalprofit">0$</div>
                                     <!-- <div>Saved 25%</div> -->
                                 </div>
-                                <div >
-                                    <div>Total User</div> 
+                                <div>
+                                    <div>Total User</div>
                                     <div id="totaluser">0</div>
                                     <!-- <div>Saved 25%</div> -->
                                 </div>
                             </div>
-                        </div>        <div class="container2">
+                        </div>
+                        <div class="container2">
                             <div class="thongke1">
                                 <div>Amount of product</div>
                                 <div>
                                     <table class="tableabove">
                                         <tr>
-                                            <td class="none"><div></div></td>
-                                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t1" >.</div></div></td>
-                                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t2" >.</div></div></td>
-                                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t3">.</div></div></td>
-                                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t4">.</div></div></td>
-                                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t5">.</div></div></td>
-                                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t6">.</div></div></td>
-                                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t7">.</div></div></td>
-                                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t8">.</div></div></td>
-                                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t9">.</div></div></td>
-                                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t10">.</div></div></td>
-                                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t11">.</div></div></td>
-                                            <td class="none" class="empty" class="tdabove"><div class="divout"><div id="t12">.</div></div></td>
+                                            <td class="none">
+                                                <div></div>
+                                            </td>
+                                            <td class="none" class="empty" class="tdabove">
+                                                <div class="divout">
+                                                    <div id="t1">.</div>
+                                                </div>
+                                            </td>
+                                            <td class="none" class="empty" class="tdabove">
+                                                <div class="divout">
+                                                    <div id="t2">.</div>
+                                                </div>
+                                            </td>
+                                            <td class="none" class="empty" class="tdabove">
+                                                <div class="divout">
+                                                    <div id="t3">.</div>
+                                                </div>
+                                            </td>
+                                            <td class="none" class="empty" class="tdabove">
+                                                <div class="divout">
+                                                    <div id="t4">.</div>
+                                                </div>
+                                            </td>
+                                            <td class="none" class="empty" class="tdabove">
+                                                <div class="divout">
+                                                    <div id="t5">.</div>
+                                                </div>
+                                            </td>
+                                            <td class="none" class="empty" class="tdabove">
+                                                <div class="divout">
+                                                    <div id="t6">.</div>
+                                                </div>
+                                            </td>
+                                            <td class="none" class="empty" class="tdabove">
+                                                <div class="divout">
+                                                    <div id="t7">.</div>
+                                                </div>
+                                            </td>
+                                            <td class="none" class="empty" class="tdabove">
+                                                <div class="divout">
+                                                    <div id="t8">.</div>
+                                                </div>
+                                            </td>
+                                            <td class="none" class="empty" class="tdabove">
+                                                <div class="divout">
+                                                    <div id="t9">.</div>
+                                                </div>
+                                            </td>
+                                            <td class="none" class="empty" class="tdabove">
+                                                <div class="divout">
+                                                    <div id="t10">.</div>
+                                                </div>
+                                            </td>
+                                            <td class="none" class="empty" class="tdabove">
+                                                <div class="divout">
+                                                    <div id="t11">.</div>
+                                                </div>
+                                            </td>
+                                            <td class="none" class="empty" class="tdabove">
+                                                <div class="divout">
+                                                    <div id="t12">.</div>
+                                                </div>
+                                            </td>
                                             <td class="none"></td>
                                         </tr>
-                                                    <!-- <table id="tableabove">
+                                        <!-- <table id="tableabove">
                                         <tr>
                                             <td class="none1"><div></div></td>
                                             <td class="none1" class="empty" class="tdabove"><div class="t1">.</div></td>
@@ -553,19 +605,69 @@
                                 <div>Cost of goods </div>
                                 <table class="tableabove">
                                     <tr>
-                                        <td class="none"><div></div></td>
-                                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt1" >.</div></div></td>
-                                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt2" >.</div></div></td>
-                                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt3">.</div></div></td>
-                                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt4">.</div></div></td>
-                                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt5">.</div></div></td>
-                                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt6">.</div></div></td>
-                                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt7">.</div></div></td>
-                                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt8">.</div></div></td>
-                                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt9">.</div></div></td>
-                                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt10">.</div></div></td>
-                                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt11">.</div></div></td>
-                                        <td class="none" class="empty" class="tdabove"><div class="divout"><div id="tt12">.</div></div></td>
+                                        <td class="none">
+                                            <div></div>
+                                        </td>
+                                        <td class="none" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="tt1">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="tt2">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="tt3">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="tt4">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="tt5">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="tt6">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="tt7">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="tt8">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="tt9">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="tt10">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="tt11">.</div>
+                                            </div>
+                                        </td>
+                                        <td class="none" class="empty" class="tdabove">
+                                            <div class="divout">
+                                                <div id="tt12">.</div>
+                                            </div>
+                                        </td>
                                         <td class="none"></td>
                                     </tr>
                                 </table>
@@ -750,13 +852,8 @@
                             </div>
                         </div>
                         <div class="thongkecustom">
-                
                         </div>
-                
-                
-                
                         <div class="thongkesanpham">
-                
                         </div>
                         <div class="header">List of product</div>
                         <div class="container3">
@@ -776,7 +873,7 @@
             <!-- Danh sách user -->
             <div class="userlist">
                 <div class="outer">
-                    <div class="container3" ><input type="text" id="search" placeholder="Search content here" oninput="search()">  <i class="fa-solid fa-magnifying-glass"></i> </div>
+                    <div class="container3"><input type="text" id="search" placeholder="Search content here" oninput="search()"> <i class="fa-solid fa-magnifying-glass"></i> </div>
                     <div class="outercontainer4">
                         <div id="container4">
                             <div class="clientouter" id="clientouter">
@@ -785,17 +882,16 @@
                             <div class="addorder"></div>
                             <div class="editorder"></div>
                         </div>
-                
                         <div id="phantrangouter"></div>
                     </div>
                     <div id="printorder">
                         <div id="innerorder">
                             <i class="fa-solid fa-x" onclick="closedproduct()"></i>
                             <div>
-                                <div>id</div>
-                                <div>name</div>
-                                <div>catergory</div>
-                                <div>order receiptime</div>
+                                <div>ID</div>
+                                <div>Tên</div>
+                                <div>Loại</div>
+                                <div>Ngày đặt hàng</div>
                                 <div><input type="date" id="taketimesecond"> <input type="date" id="taketimefirst"></div>
                             </div>
                         </div>
@@ -810,7 +906,7 @@
                                     <label for="editemailofkh">Sửa email</label><input type="email" id="editemailofkh"><br>
                                     <label for="editphoneofkh">Sửa số điện thoại</label><input type="phone" id="editphoneofkh"><br>
                                 </form>
-                                <div>                <input type="submit" id="editkh" value="click"></div>
+                                <div> <input type="submit" id="editkh" value="click"></div>
                             </div>
                         </div>
                     </div>
@@ -832,14 +928,14 @@
                             <i class="fa-solid fa-x" onclick="closedkhoa()"></i>
                             <div id="contentkhoa"></div>
                             <div class="printkh">
-                                <div >
+                                <div>
                                     <div>name</div>
                                     <div>phone</div>
                                     <div>email</div>
                                 </div>
                             </div>
                             <div class="printorderkh">
-                                <div >
+                                <div>
                                     <div>name</div>
                                     <div>catergory</div>
                                     <div>order receiptime</div>
@@ -848,7 +944,7 @@
                         </div>
                     </div>
                     <script src="thetheew.js"></script>
-                    </div>
+                </div>
             </div>
             <!-- Danh sách sản phẩm -->
             <div class="merchandise">
@@ -867,7 +963,6 @@
                                 <option value="0">Tìm theo: </option>
                                 <option value="id">ID</option>
                                 <option value="name">Tên</option>
-                                <option value="Price">Giá</option>
                             </select>
                         </div>
                     </div>
@@ -933,6 +1028,7 @@
     <script language="javascript" src="product.js"></script>
     <script language="javascript" src="customer.js"></script>
     <script language="javascript" src="assets/Admin/script/order.js"></script>
+    <script language="javascript" src="assets/Admin/script/thetheew.js"></script>
     <script language="javascript" src="assets/Admin/script/navbar.js"></script>
     <script language="javascript" src="assets/Admin/script/merchandise.js"></script>    
 

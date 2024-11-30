@@ -5,7 +5,9 @@
 
 *{
     box-sizing: border-box;
-    font-family:'Libre Baskerville', serif;;
+    font-family: "Roboto", sans-serif;
+    font-family:'Libre Baskerville', serif;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -13,6 +15,10 @@ body{
     overflow: hidden;
     position: relative;
 }
+
+
+
+
 
 ul,li{
     margin: 0px;
