@@ -37,7 +37,7 @@ function dangky(event) {
     let quanne = document.getElementById('register-quan').value;
     console.log(quanne);
 
-    if (!/^\d+$/.test(phone)) {
+    if (isNaN(phone)) {
         alert("Số điện thoại chỉ được chứa các chữ số!");
         return false;
     }
