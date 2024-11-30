@@ -1,162 +1,152 @@
 
-#Display .revenue .outer{
-    /* width:80%; */
+.outer{
+    width:100%;
+    background-color: white;
     overflow-y: scroll;
-    overflow: scroll;
-    /* height: 1000px; */
+    height:  100vh;
+    /* overflow: hidden; */
+    overflow-x: scroll;
 }
-#Display .revenue .container0{
+.container0{
+    background-color: white;
     display: grid;
-    grid-template-columns: 510px 510px;
+    grid-template-columns: 670px 670px;
 }
-#Display .revenue .container1{
+.container1{
     display: grid;
-    grid-template-columns: 510px 510px;
+    grid-template-columns: 670px 670px;
     grid-template-rows: 185px 185px ;
     gap:10px;
 }
-#Display .revenue .container1 > div{
-    /*padding:20px;
-    */border-radius: 5px;
+.container1 > div{
+    /* padding:20px; */
+    border-radius: 5px;
     color:white;
- 
 }
-#Display .revenue .container1>div>div{
+.container1>div>div{
     margin:10px;
     padding: 5px;
     /* --------------------------------------------------------------- */
 }
-#Display .revenue .container1 > div >div:nth-child(1){
+.container1 > div >div:nth-child(1){
     font-size: 15px;
 }
-#Display .revenue .container1 > div >div:nth-child(2){
+.container1 > div >div:nth-child(2){
     font-size: 20px;
 }
-#Display .revenue .container1 > div >div:nth-child(1){
+.container1 > div >div:nth-child(1){
     font-size: 13px;
 }
-#Display .revenue .container1 > div:nth-child(1){
+.container1 > div:nth-child(1){
     background-color: rgb(59, 118, 238);
 }
-#Display .revenue .container1 > div:nth-child(2){
+.container1 > div:nth-child(2){
     background-color: rgb(98, 199, 255);
 }
-#Display .revenue .container1 > div:nth-child(3){
+.container1 > div:nth-child(3){
     background-color: rgb(166, 109, 212);
 }
-#Display .revenue .container1 > div:nth-child(4){
+.container1 > div:nth-child(4){
     background-color: rgb(108, 212, 177);
 }
-#Display .revenue .container0>div:nth-child(1){
+.container0>div:nth-child(1){
     border: none;
     position: relative;
     /* background-color: aqua; */
     height: 60px;
 }
-#Display .revenue .container0 >div:nth-child(1)>input{
-    /*margin-left: 20px;
-    */width: 300px;
+.container0 >div:nth-child(1)>input{
+    /* margin-left: 20px; */
+    width: 300px;
     height: 60px;
     border-radius: 20px;
     outline: none;
-    /*background-color: rgb(247, 250, 255);
-    */border:none;
+    /* background-color: rgb(247, 250, 255); */
+    border:none;
     background-color: white;
     padding:5px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
 }
 
 
-#Display .revenue .container0 >div:nth-child(2)>div{
+.container0 >div:nth-child(2)>div{
     padding:5px;
-    /*position: relative;
-    left: 570px;
-    *//*height: 60px;
-    */border-radius: 5px;
+    /* position: relative;
+    left: 570px; */
+    /* height: 60px; */
+    border-radius: 5px;
     float: left;
     outline: none;
     border-width: 1px;
-    /*border:rgb(131, 140, 145) 1px solid;
-    */border: none;
+    /* border:rgb(131, 140, 145) 1px solid; */
+    border: none;
     margin-left: 2px;
     color: rgb(131, 140, 145);
     width: 120px;
     display: flex;
     justify-content: center;
-    /*background-color: aqua;
-    */align-items: center;
-    /*line-height: 60px;
-    */
-
+    /* background-color: aqua; */
+    align-items: center;
+    /* line-height: 60px; */
 }
-#Display .revenue .container0 >div:nth-child(2)>div:nth-child(2){
+.container0 >div:nth-child(2)>div:nth-child(2){
     width: 5px;
     border-radius: 0px;
     height: 30px;
-    /*background-color: white;
-     */
+    /* background-color: white; */
 }
-#Display .revenue .container0 >div:nth-child(2)>div>select{
+.container0 >div:nth-child(2)>div>select{
     border: none;
     outline:none;
 }
-#Display .revenue .container0>div:nth-child(2){
+.container0>div:nth-child(2){
     display: flex;
     justify-content: right;
     border: none;
     outline:none;
 }
-#Display .revenue .container0>div:nth-child(2)>div>input{
+.container0>div:nth-child(2)>div>input{
     border: none;
     outline:none;
     /* height: 30px; */
 }
-#Display .revenue .container0 >div:nth-child(1)>i{
+.container0 >div:nth-child(1)>i{
     font-size: 30px;
     color: rgb(131, 140, 145);
     position: absolute;
     top:50%;
     transform: translateY(-50%);
     left: 280px;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
 }
-#Display .revenue .container0{
+.container0{
     padding:20px;
     margin:10px;
     background-color: rgb(247, 250, 255);
     position: relative;
 }
-#Display .revenue .container{
+.container{
     padding:20px;
     margin:10px;
     background-color: rgb(247, 250, 255);
 }
-#Display .revenue .container2{
+.container2{
     padding:20px;
     margin:10px;
     background-color: rgb(247, 250, 255);
     /* background-color: blue; */
     display: grid;
-    grid-template-columns: 510px 510px;
+    grid-template-columns: 670px 670px;
     grid-template-rows: 300px;
     gap:10px;
 }
-#Display .revenue .container2>div >div:nth-child(1){
+.container2>div >div:nth-child(1){
     padding: 20px;
 }
-#Display .revenue .container2>.thongke1{
+.container2>.thongke1{
     background-color: white;
     padding: 10px;
     border-radius:5px ;
-
 }
-#Display .revenue .container2>.thongke2{
+.container2>.thongke2{
     padding: 10px;
     background-color:white;
     border-radius:5px ;
@@ -165,57 +155,79 @@
 /* .thongke1{
     padding:10px;
 } */
-#Display .revenue .thongke1{
+ .thongke1{
     position: relative;
  }
- #Display .revenue .thongke1 > div:nth-child(1){
+.thongke1 > div:nth-child(1){
     margin-bottom:10px ;
     color: rgb(87, 82, 88);
 }
-#Display .revenue .thongke2 > div:nth-child(1){
+.thongke2 > div:nth-child(1){
     margin-bottom:10px ;
     color: rgb(87, 82, 88);
 }
-#Display .revenue table {
+.tableabove{
+    position: absolute;
+    /* height: calc(100% - 28px); */
+    height: 207.3px;
+    bottom: 0;
+    left: 2;
+    border-collapse: collapse;
+    /* display: flex;
+    justify-content: center; */
+    /* align-items: center; */
+    /* padding: 0px; */
+}
+/* .tableabove td{
+    width: 46px;
+} */
+table {
+    height: 207.3px;
     width: 100%;
     /* height: 207.4px; */
     height: 70%;
     border-collapse: collapse;
 }
-#Display .revenue table, td {
+table, td {
     border: 1px solid #ccc;
 }
-#Display .revenue td{
-    width: 5px;
+td{
+    min-width: 50px;
+    width: 50px;
     height: 20px;
     padding: 0px;
 }
-#Display .revenue .none{
+.none{
+    width: 46px;
     border-color: transparent;
     width: 6%;
 }
-#Display .revenue .none1{
+.none1{
+    width: 46px;
     /* bottom khác màu */
     border-left-color:transparent ;
     border-right-color:transparent;
     border-top-color:transparent;
     border-bottom-color:#ccc ;
 }
-#Display .revenue .left{
+.left{
+    width: 46px;
     /* left khác màu */
     border-left-color:#ccc ;
     border-right-color:transparent;
     border-top-color:transparent;
     border-bottom-color:#ccc ;
 }
-#Display .revenue .bottom{
+.bottom{
+    width: 46px;
     /* bottom khác màu */
     border-bottom-color:#ccc ;
     border-left-color:transparent;
     border-right-color:transparent;
     border-top-color:transparent;
 }
-#Display .revenue .none2{ 
+.none2{ 
+    width: 46px;
     /* right khác màu */
     border-bottom-color:transparent ;
     border-left-color:transparent;
@@ -224,36 +236,31 @@
     width: 5%;
     position: relative;
 }
-#Display .revenue .none3{
+.none3{
+    width: 46px;
     /* top khác màu */
     border-bottom-color:transparent ;
     border-left-color:transparent;
     border-top-color:#ccc;
     border-right-color:transparent;
 }
-#Display .revenue .empty{
+/* .empty{
     width: 7.4%;
-}
-#Display .revenue tr>td>span{
+} */
+tr>td>span{
     text-align: right;
     width: 10px;
     position: absolute;
     bottom:-8px;
     right: 20px;
 }
-#Display .revenue td{
+td{
+    min-width: 50px;
     color:rgb(135, 136, 140);
     font-size:13px;
 }
-#Display .revenue #tableabove{
-    position: absolute;
-    /* height: calc(100% - 28px); */
-    height: 207.3px;
-    /* display: flex;
-    justify-content: center; */
-    /* align-items: center; */
-}
-#Display .revenue .tdabove{
+
+.tdabove{
     /* display: flex;
     align-items: flex-end; */
     display: flex;
@@ -265,77 +272,77 @@
     display: flex;
     align-items: flex-end;
 } */
-#Display .revenue .divout{
-    width: 100%;
+.divout{
+    width: 50%;
     height: 100%;
     display: flex;
     align-items: flex-end;
 }
-#Display .revenue #t1,#tt1{
+#t1,#tt1{
     background-color: aqua;
-    width: 50%;
+    width: 100%;
     height: 100%;
 }
-#Display .revenue #t2,#tt2{
+#t2,#tt2{
     background-color: aqua;
-    width: 50%;
+    width: 100%;
     height: 90%;
 }
-#Display .revenue #t3,#tt3{
+#t3,#tt3{
     background-color: aqua;
-    width: 50%;
+    width: 100%;
     height: 80%;
 }
-#Display .revenue #t4,#tt4{
+#t4,#tt4{
     background-color: aqua;
-    width: 50%;
+    width: 100%;
     height: 70%;
 }
-#Display .revenue #t5,#tt5{
+#t5,#tt5{
     background-color: aqua;
-    width: 50%;
+    width: 100%;
     height: 60%;
 }
-#Display .revenue #t6,#tt6{
+#t6,#tt6{
     background-color: aqua;
-    width: 50%;
+    width: 100%;
     height: 50%;
 }
-#Display .revenue #t7,#tt7{
+#t7,#tt7{
     background-color: aqua;
-    width: 50%;
+    width: 100%;
     height: 40%;
 }
-#Display .revenue #t8,#tt8{
+#t8,#tt8{
     background-color: aqua;
-    width: 50%;
+    width: 100%;
     height: 30%;
 }
-#Display .revenue #t9,#tt9{
+#t9,#tt9{
     background-color: aqua;
-    width: 50%;
+    width: 100%;
     height: 10%;
 }
-#Display .revenue #t10,#tt10{
+#t10,#tt10{
     background-color: aqua;
-    width: 50%;
+    width: 100%;
     height: 30%;
 }
-#Display .revenue #t11,#tt11{
+#t11,#tt11{
     background-color: aqua;
-    width: 50%;
+    width: 100%;
     height: 70%;
 }
-#Display .revenue #t12,#tt12{
+#t12,#tt12{
     background-color: aqua;
-    width: 50%;
+    width: 100%;
     height: 80%;
 }
-#Display .revenue .doanhthu{
+.doanhthu{
     display:flex;
     /* background-color: aqua; */
 }
-#Display .revenue .doanhthu>div{
+.doanhthu>div{
     height: 50px;
     border:none;
     /* color:white; */
@@ -343,20 +350,20 @@
     font-size:18px;
     padding:10px
 }
-#Display .revenue .doanhthu>div:nth-child(1){
+.doanhthu>div:nth-child(1){
     width:50%;
     border-radius: 5px 0px 0px 5px;
     display: flex;
     align-items: center;
 }
-#Display .revenue .doanhthu>div:nth-child(2){
+.doanhthu>div:nth-child(2){
     width:25%;
     /* background-color: aqua; */
     /* border: #534936 1px solid; */
     display: flex;
     align-items: center;
 }
-#Display .revenue .doanhthu>div:nth-child(3){
+.doanhthu>div:nth-child(3){
     width:25%;
     border-radius: 0px 5px 5px 0px;
     display: flex;
@@ -364,13 +371,13 @@
     /* background-color: aqua; */
     /* border: #534936 1px solid; */
 }
-#Display .revenue .container3{
+.container3{
     padding:20px;
     margin:10px;
     background-color: rgb(247, 250, 255);
     
 }
-#Display .revenue .inputdate{
+.inputdate{
     height:40px;
     padding:5px;
     border-radius: 20px;
@@ -378,7 +385,7 @@
     border-width: 1px;
     margin-left:5px;
 }
-#Display .revenue .getyearmonth{
+.getyearmonth{
     height:40px;
     padding:5px;
     border-radius: 20px;
@@ -386,44 +393,44 @@
     border-width: 1px;
     margin-left:5px;
 }
-#Display .revenue .thongkecustom{
+.thongkecustom{
     margin:10px;
     border: #244561 solid 1px;
     padding: 10px;
     border-radius: 5px;
     display: none;
 }
-#Display .revenue .thongkesanpham{
+.thongkesanpham{
     margin:10px;
     border: #244561 solid 1px;
     padding: 10px;
     border-radius: 5px;
     display: none;
 }
-#Display .revenue .thongkecustom>div>div{
+.thongkecustom>div>div{
     display: flex;
     position: relative;
     margin:10px;
 }
-#Display .revenue .thongkesanpham>div>div{
+.thongkesanpham>div>div{
     display: flex;
     position: relative;
     margin:10px;
 }
-#Display .revenue .cuswithhighestprofit,.cuswithlowestprofit{
+.cuswithhighestprofit,.cuswithlowestprofit{
     background-color: #ef9f9f;
     padding:20px;
     margin-top: 10px;
     border-radius: 5px;
     /* color: w; */
 }
-#Display .revenue .productwithhighestprofit,.productwithlowestprofit{
+.productwithhighestprofit,.productwithlowestprofit{
     background-color: #dbf0ff;
     padding:20px;
     margin-top: 10px;
     border-radius: 5px;
 }
-#Display .revenue .thongkecustom>div>div>div{
+.thongkecustom>div>div>div{
     width: 16.6%;
     /* vertical-align: middle; */
     height: 100px;
@@ -432,7 +439,7 @@
     color:rgb(62, 75, 82);
     font-size: 17px;
 }
-#Display .revenue .thongkesanpham>div>div>div{
+.thongkesanpham>div>div>div{
     width: 16.6%;
     /* vertical-align: middle; */
     height: 100px;
@@ -442,17 +449,17 @@
     font-size: 17px;
 }
 
-#Display .revenue .thongkecustom>div>div:nth-child(1)>div {
+.thongkecustom>div>div:nth-child(1)>div {
     height: 50px;
     font-weight: bold;
     font-size: 20px;
 }
-#Display .revenue .thongkesanpham>div>div:nth-child(1)>div {
+.thongkesanpham>div>div:nth-child(1)>div {
     height: 50px;
     font-weight: bold;
     font-size: 20px;
 }
-#Display .revenue .header{
+.header{
     margin-top: 10px;
     margin-left: 10px;
     font-weight: bold;
@@ -460,31 +467,36 @@
     color: #244561;
     padding: 0px;
 }
-#Display .revenue .thongkecustom>div>div:nth-child(1){
+.thongkecustom>div>div:nth-child(1){
     height: 50px;
     font-weight: bold;
     font-size: 20px;
     color:rgb(62, 75, 82);
 }
-#Display .revenue .thongkesanpham>div>div:nth-child(1){
+.thongkesanpham>div>div:nth-child(1){
     height: 50px;
     font-weight: bold;
     font-size: 20px;
     color:rgb(62, 75, 82);
 }
-#Display .revenue .imgofcustomer{
+.imgofcustomer{
     width: 80px;
     height: 80px;
     border-radius: 100%;
 }
-#Display .revenue #timefirst{
+#timefirst{
     /* width: 50px;
     height: 50px; */
     /* background-color: aquamarine; */
     background-color: white;
     height: 30px;
 }
-#Display .revenue #timesecond{
+#timesecond{
     background-color: white;
     height: 30px;
+}
+.imagethongke{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
 }

@@ -1,12 +1,12 @@
-#Display .userlist .container3{
+.container3{
     background-color: rgb(247, 250, 255);
     margin:10px;
     padding:20px;
     border-radius: 5px;
 }
-#Display .userlist .outer{
-    width:100vw;
-    height: 100vh;
+.outer{
+    width:100%;
+    height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
     /* height: 500px; */
@@ -15,7 +15,7 @@
     align-items: center;
     justify-content: center; */
 }
-#Display .userlist .container3>input{
+.container3>input{
     width: 300px;
     height: 60px;
     border-radius: 20px;
@@ -23,55 +23,33 @@
     border:none;
     background-color: white;
     padding:5px;
-    -webkit-border-radius:;
-    -moz-border-radius:;
-    -ms-border-radius:;
-    -o-border-radius:;
 }
-#Display .userlist .container3{
+.container3{
     position: relative;
 }
-#Display .userlist .container3>i{
+.container3>i{
     font-size: 30px;
     color: rgb(131, 140, 145);
     position: absolute;
     top:50%;
     transform: translateY(-50%);
     left: 260px;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
 }
-#Display .userlist .outercontainer4{
+.outercontainer4{
     padding-bottom: 70px;
     background-color: rgb(247, 250, 255);
-    /*background-color: #75ba75;
-    */margin:10px;
+    /* background-color: #75ba75; */
+    margin:10px;
     position: relative;
     border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
 }
-#Display .userlist #phantrang{
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-#Display .userlist #phantrangouter{
+#phantrangouter{
     position: absolute;
-    /* left: 50%;
+    left: 50%;
     bottom:20px; 
-    transform: translate(-50%,50%); */
+    transform: translate(-50%,50%);
 }
-#Display .userlist #phantrangouter:hover{
-    cursor: pointer;
-}
-#Display .userlist #container4{
+#container4{
     /* position: absolute; */
     padding-top:20px;
     /* padding:0x; */
@@ -81,24 +59,20 @@
     /* grid-template-rows: 50px 50px 100px 200px 50px; */
     /* grid-auto-rows: 50px; */
 }
-#Display .userlist .nutphantrang{
-    /*border-radius: 10px;
-    */text-align: center;
+.nutphantrang{
+    /* border-radius: 10px; */
+    text-align: center;
     line-height: 30px;
     display: inline-block;
     width: 50px;
     height: 30px;
     border: 1px solid salmon;
-    /*border:none;
-    */background-color: white;
+    /* border:none; */
+    background-color: white;
     transform: translate(-50%,-50%);
     color:rgb(87, 82, 88) ;
-    -webkit-transform: translate(-50%,-50%);
-    -moz-transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    -o-transform: translate(-50%,-50%);
 }
-#Display .userlist #container4 >.clientouter{
+#container4 >.clientouter{
     width: 100%;
     margin: 20px;
     display: flex;
@@ -107,109 +81,80 @@
     /* gap:10px; */
     /* background-color: blue; */
 }
-#Display .userlist .clientouter>div{
-    width: 14%;
+.clientouter>div{
+    width: 20%;
 }
-#Display .userlist #clientouter{
+#clientouter{
     padding-bottom:10px;
 }
-#Display .userlist #container4>#editclient{
+#container4>#editclient{
     padding: 20px;
     display: flex;
-    /*grid-template-columns:repeat(7,168.33px);
-    *//*background-color: aqua;
-    */background-color: rgb(254, 199, 111);
+    /* grid-template-columns:repeat(7,168.33px); */
+
+    /* background-color: aqua; */
+    background-color: rgb(254, 199, 111);
     border-radius: 0px 0px 10px 10px;
-    /*grid-template-columns:168.33px 168.33px 168.33px 168.33px 168.33px 168.33px;
-    *//*grid-auto-rows: 50px;
-    *//*gap:10px;
-    *//*width: 100%;
-    */:;
-    -webkit-border-radius: 0px 0px 10px 10px;
-    -moz-border-radius: 0px 0px 10px 10px;
-    -ms-border-radius: 0px 0px 10px 10px;
-    -o-border-radius: 0px 0px 10px 10px;
+    /* grid-template-columns:168.33px 168.33px 168.33px 168.33px 168.33px 168.33px; */
+    /* grid-auto-rows: 50px; */
+    /* gap:10px; */
+    /* width: 100%; */
 }
-#Display .userlist #container4>#addclient{
+#container4>#addclient{
     position: relative;
     padding: 20px;
     display: flex;
-    /*grid-template-columns:repeat(7,168.33px);
-    *//*background-color: aqua;
-    */background-color: rgb(254, 199, 111);
+    /* grid-template-columns:repeat(7,168.33px); */
+    /* background-color: aqua; */
+    background-color: rgb(254, 199, 111);
     border-radius: 0px 0px 10px 10px;
-    /*grid-template-columns:168.33px 168.33px 168.33px 168.33px 168.33px 168.33px;
-    *//*grid-auto-rows: 50px;
-    *//*gap:10px;
-    *//*width: 100%;
-    */:;
-    -webkit-border-radius: 0px 0px 10px 10px;
-    -moz-border-radius: 0px 0px 10px 10px;
-    -ms-border-radius: 0px 0px 10px 10px;
-    -o-border-radius: 0px 0px 10px 10px;
+    /* grid-template-columns:168.33px 168.33px 168.33px 168.33px 168.33px 168.33px; */
+    /* grid-auto-rows: 50px; */
+    /* gap:10px; */
+    /* width: 100%; */
 }
-#Display .userlist #container4 > #editclient>input{
+#container4 > #editclient>input{
     border-radius: 10px;
     outline:none;
     border: none;
     width: 70%;
     padding:10px;
     color:rgb(87, 82, 88);
-    -webkit-border-radius:;
-    -moz-border-radius:;
-    -ms-border-radius:;
-    -o-border-radius:;
 }
-#Display .userlist #container4 > #addclient>input{
+#container4 > #addclient>input{
     border-radius: 10px;
     outline:none;
     border: none;
     width: 70%;
     padding:10px;
     color:rgb(87, 82, 88);
-    -webkit-border-radius:;
-    -moz-border-radius:;
-    -ms-border-radius:;
-    -o-border-radius:;
 }
-#Display .userlist #container4 > #editclient>input:nth-child(6){
+#container4 > #editclient>input:nth-child(6){
     background-color: #75ba75;
     border: 1px solid black;
     border-radius: 0px;
-    -webkit-border-radius:;
-    -moz-border-radius:;
-    -ms-border-radius:;
-    -o-border-radius:;
 }
-#Display .userlist #container4 > #addclient>input:nth-child(6){
+#container4 > #addclient>input:nth-child(6){
     background-color: #75ba75;
     border: 1px solid black;
     border-radius: 0px;
-    -webkit-border-radius:;
-    -moz-border-radius:;
-    -ms-border-radius:;
-    -o-border-radius:;
 }
-#Display .userlist #container4 >.orderouter{
-    /*display: flex;
-    *//*grid-template-columns:1000px;
-    *//*grid-template-rows: 50px 50px;
-    *//*grid-auto-rows: 50px;
-    *//*gap:10px;
-    *//*background-color: rgb(166, 109, 212);
-    */background-color: #62c7ff;
-    /*width: 100%;
-    */border-radius: 0px 0px 10px 10px;
-    -webkit-border-radius:;
-    -moz-border-radius:;
-    -ms-border-radius:;
-    -o-border-radius:;
+#container4 >.orderouter{
+    /* display: flex; */
+    /* grid-template-columns:1000px; */
+    /* grid-template-rows: 50px 50px; */
+    /* grid-auto-rows: 50px; */
+    /* gap:10px; */
+    /* background-color: rgb(166, 109, 212); */
+    background-color: #62c7ff;
+    /* width: 100%; */
+    border-radius: 0px 0px 10px 10px;
 }
-#Display .userlist #container4>.orderouter>div:nth-child(1)>div{
+#container4>.orderouter>div:nth-child(1)>div{
     font-weight: bold;
     width: 14%;
 }
-#Display .userlist .orderouter > div{
+.orderouter > div{
     /* display:grid; */
     /* grid-template-columns:repeat(7,168.33px); */
     /* grid-template-columns:168.33px 168.33px 168.33px 168.33px 168.33px 168.33px; */
@@ -219,163 +164,109 @@
     height: 40px;
     /*  */
     width: 100%;
+    display: flex;
 }
-#Display .userlist .orderouter>div>div{
+.orderouter>div>div{
     width: 14%;
 }
-#Display .userlist #container4>div:nth-child(1)>div{
+#container4>div:nth-child(1)>div{
     font-weight: bold;
 }
-#Display .userlist #container4>.clientouter>div{
+#container4>.clientouter>div{
     color:rgb(87, 82, 88) ;
 }
-#Display .userlist .outerorder>.clientouter>div{
+.outerorder>.clientouter>div{
     /* color:white; */
     color:rgb(87, 82, 88) ;
 }
-#Display .userlist .orderouter>div >div{
+.orderouter>div >div{
     /* /* color:white; */
     color:rgb(87, 82, 88) ;
 }
-#Display .userlist #container4>.clientouter>div>i{
+#container4>.clientouter>div>i{
     margin:5px;
     color:rgb(87, 82, 88) ;
 }
-#Display .userlist #container4>div>div> i{
+#container4>div>div> i{
     margin:5px;
     color:rgb(87, 82, 88) ;
 }
-#Display .userlist #container4>div>div>div> i{
+#container4>div>div>div> i{
     margin:5px;
     color:rgb(87, 82, 88) ;
 }
 /* .container4>div> i:hover{
     cursor: pointer;
 } */
-#Display .userlist .orderouter > div > div>input{
+.orderouter > div > div>input{
     border-radius: 10px;
     border: none;
     height: 30px;
     padding: 5px;
-    -webkit-border-radius:;
-    -moz-border-radius:;
-    -ms-border-radius:;
-    -o-border-radius:;
 }
-#Display .userlist .active{
+.active{
     background-color: salmon;
 }
-#Display .userlist #askbeforedeleting{
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0,0.5);
-    position: fixed;
-    width:100vw;
-    height:100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    display: none;
-}
-#Display .userlist #askbeforedeleting > div{
-    background-color: white;
-    text-align: center;
-    color: rgb(87, 82, 88) ;
-    border: none;
-    border-radius: 5px;
-    padding:10px;
-    -webkit-border-radius:;
-    -moz-border-radius:;
-    -ms-border-radius:;
-    -o-border-radius:;
-}
-#Display .userlist #no{
-    border: none;
-    border-radius: 5px;
-    background-color: #6cd4b1;
-    color: white;
-    text-align: center;
-    display: inline-block;
-    margin: 10px;
-    padding: 10px;
-    width: 20px;
-    -webkit-border-radius:;
-    -moz-border-radius:;
-    -ms-border-radius:;
-    -o-border-radius:;
-}
-#Display .userlist #yes{
-    width: 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #fec76f;
-    color: white;
-    text-align: center;
-    display: inline-block;
-    margin: 10px;
-    padding: 10px;
-
-}
-#Display .userlist #yes:hover{
+#yes:hover{
     cursor: pointer;
 }
-#Display .userlist #no:hover{
+#no:hover{
     cursor: pointer;
 }
-#Display .userlist .delete:hover{
+.delete:hover{
     cursor: pointer;
 }
-#Display .userlist #editclient{
+#editclient{
     position: relative;
 }
-#Display .userlist #editclient > .alertdivedit:nth-child(7){
+#editclient > .alertdivedit:nth-child(7){
     position: absolute;
     left: 16%;
     top:0;
 }
-#Display .userlist #addclient > .alertdiv:nth-child(7){
+#addclient > .alertdiv:nth-child(7){
     position: absolute;
     left: 16%;
     top:0;
 }
-#Display .userlist #editclient > .alertdivedit:nth-child(8){
+#editclient > .alertdivedit:nth-child(8){
     position: absolute;
     left: 30%;
     top:0;
 }
-#Display .userlist #addclient > .alertdiv:nth-child(8){
+#addclient > .alertdiv:nth-child(8){
     position: absolute;
     left: 30%;
     top:0;
 }
-#Display .userlist #editclient > .alertdivedit:nth-child(9){
+#editclient > .alertdivedit:nth-child(9){
     position: absolute;
     left: 44%;
     top:0;
 }
-#Display .userlist #addclient > .alertdiv:nth-child(9){
+#addclient > .alertdiv:nth-child(9){
     position: absolute;
     left: 44%;
 }
-#Display .userlist #addclient > .alertdiv:nth-child(10){
+#addclient > .alertdiv:nth-child(10){
     position: absolute;
     left: 58%;
     top:0;
 }
-#Display .userlist #editclient > .alertdivedit:nth-child(10){
+#editclient > .alertdivedit:nth-child(10){
     position: absolute;
     left: 58%;
     top:0;
 }
-#Display .userlist #addclient>div>i{
+#addclient>div>i{
     color:red;
     font-size: 12px;
 }
-#Display .userlist #editclient> .alertdivedit>i{
+#editclient> .alertdivedit>i{
     color:red;
     font-size: 12px;
 }
-#Display .userlist .editstatus>div{
+.editstatus>div{
     border: none;
     border-radius: 5px;
     background-color: white;
@@ -388,26 +279,26 @@
     background-color: white;
     color: palevioletred;
 }
-#Display .userlist .editstatus>div>i::before ,.delivering>i::before ,.delivered>i::before{
+.editstatus>div>i::before ,.delivering>i::before ,.delivered>i::before{
     color: palevioletred;
     margin:2px;
     font-size: 13px;
 }
-#Display .userlist .delivery{
+.delivery{
     display: none;
 }
 
-#Display .userlist .editstatus>div,.delivering,.delivered{
+.editstatus>div,.delivering,.delivered{
     color: #be95be;
     background-color: white;
     margin-top:2px;
     width: 120px;
     height: 20px;
 }
-#Display .userlist .clientstatus> div,.paid> div,.unpaid> div {
+.clientstatus> div,.paid> div,.unpaid> div {
     color: #be95be;
 }
-#Display .userlist .paid,.unpaid,.innerclientstatus{
+.paid,.unpaid,.innerclientstatus{
     text-align: center;
     /* border-radius: 5px; */
     border:1px solid #be95be;
@@ -416,26 +307,248 @@
     padding:2px;
 }
 
-#Display .userlist .paid:hover,.unpaid:hover,.clientstatus:hover{
+.paid:hover,.unpaid:hover,.clientstatus:hover{
     cursor: pointer;
 }
-#Display .userlist .paid > i,.unpaid > i,.clientstatus >div> i::before{
+.paid > i,.unpaid > i,.clientstatus >div> i::before{
     color: #be95be;
     font-size: 10px;
 }
-#Display .userlist .choosetime{
+.choosetime{
     /* width: 15px; */
     padding:2px;
     border: none;
+    border-radius: 5px;
+    
 }
-#Display .userlist .divchoosetime{
+.divchoosetime{
     border: black;
     background-color:white;
-    /* width: 120px; */
+    border-radius: 5px;
+    width: 120px;
 }
-#Display .userlist .imageofcustomer{
+.imageofcustomer{
     border-radius: 100%;
     width: 60px;
     height: 60px;
     border: #75ba75 2px solid;
 }
+#printorder{
+
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0,0.5);
+    position: fixed;
+    width:100%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+
+}
+#innerorder{
+    background-color: #fec76f;
+}
+#printorder > div{
+    width: 80%;
+    position: relative;
+    border-radius: 10px;
+}
+#printorder>div>i{
+    position: absolute;
+    right: 5px;
+    font-weight: bold;
+    top: 5px;
+
+}
+#editkh{
+    border-radius: 5px;
+    background-color: #be95be;
+    padding:5px;
+}
+#printorder > div>div:nth-child(2){
+    font-weight: bold;
+    color: black;
+}
+#printorder > div>div{
+    display: flex;
+    color: rgb(87, 82, 88) ;
+    border: none;
+    /* border-radius: 5px; */
+    padding:20px;
+}
+#taketimefirst,#taketimesecond{
+    border: 1px rgb(138, 106, 145) solid;
+    border-radius: 5px;
+}
+#printorder>div>div>div{
+    width: 20%;
+    text-align: center;
+}
+#sectioneditclient{
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0,0.5);
+    position: fixed;
+    width:100%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    display: none;
+}
+#sectioneditclient> div{
+    padding:20px;
+    border-radius: 5px;
+    background-color: #fec76f;
+    width: 30%;
+    position: relative;
+    text-align: center;
+    color: rgb(87, 82, 88) ; 
+    border: 1px solid rgba(0, 0, 0,0.5);
+}
+#sectioneditclient> div>div:nth-child(1){
+    text-align: center;
+    color: #6dbfb8 ; 
+    font-weight: bold;
+    padding: 10px;
+}
+#sectioneditclient>div>i{
+    position: absolute;
+    right: 5px;
+    font-weight: bold;
+    top: 5px;
+}
+#sectioneditclient>div>div>form>label{
+    color: rgb(87, 82, 88) ;   
+}
+#sectioneditclient>div>div>form>input{
+    padding:5px;
+    border-radius: 10px;
+    outline:none;
+    margin:5px;
+}
+#sectionaddclient{
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0,0.5);
+    position: fixed;
+    width:100%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    display: none;
+}
+#submitkhoa{
+    background-color: #6dbfb8;
+    border-radius: 5px;
+    width: 60px;
+    height: 30px;
+}
+#sectionaddclient> div{
+    padding:20px;
+    border-radius: 5px;
+    background-color: #fec76f;
+    width: 30%;
+    position: relative;
+    text-align: center;
+    color: rgb(87, 82, 88) ; 
+    border: 1px solid rgba(0, 0, 0,0.5);
+}
+#sectionaddclient>div>i{
+    position: absolute;
+    right: 5px;
+    font-weight: bold;
+    top: 5px;
+}
+#sectionaddclient>div>div>form>label{
+    color: rgb(87, 82, 88) ;   
+}
+#sectionaddclient>div>div>form>input{
+    padding:5px;
+    border-radius: 10px;
+    outline:none;
+    margin:5px;
+}
+#khoaclient{
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0,0.5);
+    position: fixed;
+    width:100%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+#khoaclient >div>div:nth-child(1){
+    font-weight: bold;
+}
+#khoaclient >div{
+    padding:20px;
+    border-radius: 5px;
+    background-color: #fec76f;
+    width: 50%;
+    position: relative;
+    color: rgb(87, 82, 88) ; 
+    border: 1px solid rgba(0, 0, 0,0.5);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 600px;
+
+}
+#khoaclient>div>label{
+    padding: 10px;
+}
+#khoaclient>div>div{
+    margin:10px;
+}
+.printkh{
+    padding:10px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+.printkh>div{
+    display: flex;
+    margin: 10px;
+}
+.printorderkh{
+    padding:10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 200px;
+
+}
+.printkh>div>div{
+    width: 25%;
+}
+.printorderkh>div>div{
+    width: 25%;
+}
+.printorderkh>div{
+    display: flex;
+    margin: 10px;
+}
+#inputkhoand{
+    border-radius: 5px;
+    outline:none;
+    width: 50%;
+}
+#khoaclient>div>i{
+    position: absolute;
+    right: 5px;
+    font-weight: bold;
+    top: 5px;
+}
+#khoaclient>div>i{
+    position: absolute;
+    right: 5px;
+    font-weight: bold;
+    top: 5px;
+}
+
