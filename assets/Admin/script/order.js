@@ -1,382 +1,381 @@
-
-
-
 let filterarr = [];
-function showDonHang(){
-	let donhang = JSON.parse(localStorage.getItem("donhang"));
-	if(donhang == null){
-		alert("Chưa có đơn hàng nào");
-	}else{
-		let sosanphammoitrang = 5;
-		let sotranghientai = 1;
-		let tongsotrang = Math.ceil(donhang.length/sosanphammoitrang);
-		let vitrihientai = (sotranghientai - 1) * sosanphammoitrang;
-		let btn = '';
-		if(tongsotrang != 1){
-		for(let i = 1 ; i<=tongsotrang ; i ++){
-			btn += `
+function showDonHang() {
+  let donhang = JSON.parse(localStorage.getItem("donhang"));
+  if (donhang == null) {
+    alert("Chưa có đơn hàng nào");
+  } else {
+    let sosanphammoitrang = 5;
+    let sotranghientai = 1;
+    let tongsotrang = Math.ceil(donhang.length / sosanphammoitrang);
+    let vitrihientai = (sotranghientai - 1) * sosanphammoitrang;
+    let btn = "";
+    if (tongsotrang != 1) {
+      for (let i = 1; i <= tongsotrang; i++) {
+        btn += `
 				<div class="item" onclick="nuttrang_order(${i})">${i}</div>	
 
-			`
-		}
-	}
-		let a ='';
-		let n = 0;
-		for(let i = vitrihientai ; i<donhang.length;i++){
-			let trangthai;
-			if(donhang[i].status == 0){
-				trangthai = "Chưa xử lý";
-			}else if(donhang[i].status == 1){
-				trangthai = "Đã duyệt";
-			}else if(donhang[i].status == 2){
-				trangthai = "Đã giao hàng thành công";
-			}else if(donhang[i].status == 3){
-				trangthai = `Đã hủy vì ${donhang[i].lydo}`;
-			}
-			n++;
-			a += `
+			`;
+      }
+    }
+    let a = "";
+    let n = 0;
+    for (let i = vitrihientai; i < donhang.length; i++) {
+      let trangthai;
+      if (donhang[i].status == 0) {
+        trangthai = "Chưa xử lý";
+      } else if (donhang[i].status == 1) {
+        trangthai = "Đã duyệt";
+      } else if (donhang[i].status == 2) {
+        trangthai = "Đã giao hàng thành công";
+      } else if (donhang[i].status == 3) {
+        trangthai = `Đã hủy vì ${donhang[i].lydo}`;
+      }
+      n++;
+      a += `
 			<tr>
 				  <td>${donhang[i].id}</td>
                             <td>${donhang[i].tenKH}</td>
                              <td>${donhang[i].quanKH}</td>
                             <td>${donhang[i].tongtien}</td>
                             <td>${donhang[i].ngaydat}</td>
-                            <td>${donhang[i].ngayduyet == 0?"Chưa duyệt": donhang[i].ngayduyet}</td>
+                            <td>${
+                              donhang[i].ngayduyet == 0
+                                ? "Chưa duyệt"
+                                : donhang[i].ngayduyet
+                            }</td>
                             <td>${trangthai}</td>
                             <td class="button">
-                                <div name="${donhang[i].id}" onclick="xulydonhang(this)">Xem chi tiết đơn hàng</div>
+                                <div name="${
+                                  donhang[i].id
+                                }" onclick="xulydonhang(this)">Xem</div>
                             </td>
                     </tr>   
 			
 			`;
-			if(n == sosanphammoitrang) break;
-		}
+      if (n == sosanphammoitrang) break;
+    }
 
-
-		let showbtn = document.querySelector("#Display .order .foot .pagination");
-		showbtn.innerHTML = btn;
-		let showdon = document.querySelector("#Display .order .main table tbody");
-		showdon.innerHTML = a;
-
-	}
+    let showbtn = document.querySelector("#Display .order .foot .pagination");
+    showbtn.innerHTML = btn;
+    let showdon = document.querySelector("#Display .order .main table tbody");
+    showdon.innerHTML = a;
+  }
 }
 
-function nuttrang_order(a){
-	let donhang = JSON.parse(localStorage.getItem("donhang"));
-	let sosanphammoitrang = 5;
-	let vitrihientai = (a - 1) * sosanphammoitrang;
+function nuttrang_order(a) {
+  let donhang = JSON.parse(localStorage.getItem("donhang"));
+  let sosanphammoitrang = 5;
+  let vitrihientai = (a - 1) * sosanphammoitrang;
 
-	let n = 0;
-	let b = ``;
-	for(let i = vitrihientai ; i < donhang.length ; i ++){
-		let trangthai;
-			if(donhang[i].status == 0){
-				trangthai = "Chưa xử lý";
-			}else if(donhang[i].status == 1){
-				trangthai = "Đã duyệt";
-			}else if(donhang[i].status == 2){
-				trangthai = "Đã giao hàng thành công";
-			}
-			n++;
-			b += `
+  let n = 0;
+  let b = ``;
+  for (let i = vitrihientai; i < donhang.length; i++) {
+    let trangthai;
+    if (donhang[i].status == 0) {
+      trangthai = "Chưa xử lý";
+    } else if (donhang[i].status == 1) {
+      trangthai = "Đã duyệt";
+    } else if (donhang[i].status == 2) {
+      trangthai = "Đã giao hàng thành công";
+    }
+    n++;
+    b += `
 			<tr>
 				  <td>${donhang[i].id}</td>
                             <td>${donhang[i].tenKH}</td>
                             <td>${donhang[i].quanKH}</td>
                             <td>${donhang[i].tongtien}</td>
                             <td>${donhang[i].ngaydat}</td>
-                            <td>${donhang[i].ngayduyet == 0?"Chưa duyệt": donhang[i].ngayduyet}</td>
+                            <td>${
+                              donhang[i].ngayduyet == 0
+                                ? "Chưa duyệt"
+                                : donhang[i].ngayduyet
+                            }</td>
                             <td>${trangthai}</td>
                             <td class="button">
-                                <div name="${donhang[i].id}" onclick="xulydonhang(this)">Xem chi tiết đơn hàng</div>
+                                <div name="${
+                                  donhang[i].id
+                                }" onclick="xulydonhang(this)">Xem</div>
                             </td>
                     </tr>   
 			
 			`;
-			if(n == sosanphammoitrang) break;
-	} 
+    if (n == sosanphammoitrang) break;
+  }
 
-	let showdon = document.querySelector("#Display .order .main table tbody");
-		showdon.innerHTML = b;
-
+  let showdon = document.querySelector("#Display .order .main table tbody");
+  showdon.innerHTML = b;
 }
 
+function filter_order() {
+  filterarr = [];
+  let donhang = JSON.parse(localStorage.getItem("donhang"));
+  let select = document.querySelector("#Display .order .loc");
+  if (select.value == "time") {
+    let time = document.querySelector("#Display .order .time");
+    time.classList.remove("hide");
+    let timebtn = document.querySelector("#Display .order .filterbtn");
+    timebtn.classList.remove("hide");
+    return 0;
+  } else {
+    let time = document.querySelector("#Display .order .time");
+    time.classList.add("hide");
+    let timebtn = document.querySelector("#Display .order .filterbtn");
+    timebtn.classList.add("hide");
+  }
 
+  if (donhang == null) {
+    alert("Chưa có đơn hàng nào");
+  } else {
+    if (select.value == "none") {
+      showDonHang();
+      return 0;
+    }
 
-function filter_order(){
-	filterarr = [];
-	let donhang = JSON.parse(localStorage.getItem("donhang"));
-	let select = document.querySelector("#Display .order .loc");
-	if(select.value == "time"){
-		let time = document.querySelector("#Display .order .time");
-		time.classList.remove("hide");
-		let timebtn = document.querySelector("#Display .order .filterbtn");
-		timebtn.classList.remove("hide");
-		return 0;
-	}
-	else{
-		let time = document.querySelector("#Display .order .time");
-		time.classList.add("hide");
-		let timebtn = document.querySelector("#Display .order .filterbtn");
-		timebtn.classList.add("hide");
-	}
-
-	if(donhang == null){
-		alert("Chưa có đơn hàng nào");
-	}else{
-		if(select.value == "none"){
-			showDonHang();
-			return 0;
-		}
-
-		for(let i = 0 ; i < donhang.length ; i++){
-			if(select.value == donhang[i].status){
-				filterarr.push(donhang[i]);
-			}
-		}
-		let sosanphammoitrang = 5;
-		let sotranghientai = 1;
-		let tongsotrang = Math.ceil(filterarr.length/sosanphammoitrang);
-		let vitrihientai = (sotranghientai - 1) * sosanphammoitrang;
-		let btn = '';
-		if(tongsotrang != 1){
-		for(let i = 1 ; i<=tongsotrang ; i ++){
-			btn += `
+    for (let i = 0; i < donhang.length; i++) {
+      if (select.value == donhang[i].status) {
+        filterarr.push(donhang[i]);
+      }
+    }
+    let sosanphammoitrang = 5;
+    let sotranghientai = 1;
+    let tongsotrang = Math.ceil(filterarr.length / sosanphammoitrang);
+    let vitrihientai = (sotranghientai - 1) * sosanphammoitrang;
+    let btn = "";
+    if (tongsotrang != 1) {
+      for (let i = 1; i <= tongsotrang; i++) {
+        btn += `
 				<div class="item" onclick="nuttrangfilter_order(${i})">${i}</div>	
 
-			`
-		}
-	}	
+			`;
+      }
+    }
 
-
-	
-
-		let a ='';
-		let n = 0;
-		for(let i = vitrihientai ; i<filterarr.length;i++){
-			let trangthai;
-			if(filterarr[i].status == 0){
-				trangthai = "Chưa xử lý";
-			}else if(filterarr[i].status == 1){
-				trangthai = "Đã duyệt";
-			}else if(filterarr[i].status == 2){
-				trangthai = "Đã giao hàng thành công";
-			}
-			n++;
-			a += `
+    let a = "";
+    let n = 0;
+    for (let i = vitrihientai; i < filterarr.length; i++) {
+      let trangthai;
+      if (filterarr[i].status == 0) {
+        trangthai = "Chưa xử lý";
+      } else if (filterarr[i].status == 1) {
+        trangthai = "Đã duyệt";
+      } else if (filterarr[i].status == 2) {
+        trangthai = "Đã giao hàng thành công";
+      }
+      n++;
+      a += `
 			<tr>
 				  <td>${filterarr[i].id}</td>
                             <td>${filterarr[i].tenKH}</td>
                             <td>${filterarr[i].quanKH}</td>
                             <td>${filterarr[i].tongtien}</td>
                             <td>${filterarr[i].ngaydat}</td>
-                            <td>${filterarr[i].ngayduyet == 0?"Chưa duyệt": filterarr[i].ngayduyet}</td>
+                            <td>${
+                              filterarr[i].ngayduyet == 0
+                                ? "Chưa duyệt"
+                                : filterarr[i].ngayduyet
+                            }</td>
                             <td>${trangthai}</td>
                             <td class="button">
-                                <div name="${filterarr[i].id}" onclick="xulydonhang(this)">Xem chi tiết đơn hàng</div>
+                                <div name="${
+                                  filterarr[i].id
+                                }" onclick="xulydonhang(this)">Xem</div>
                             </td>
                     </tr>   
 			
 			`;
-			if(n == sosanphammoitrang) break;
-		}
+      if (n == sosanphammoitrang) break;
+    }
 
-
-		let showbtn = document.querySelector("#Display .order .foot .pagination");
-		showbtn.innerHTML = btn;
-		let showdon = document.querySelector("#Display .order .main table tbody");
-		showdon.innerHTML = a;
-	
-	}
+    let showbtn = document.querySelector("#Display .order .foot .pagination");
+    showbtn.innerHTML = btn;
+    let showdon = document.querySelector("#Display .order .main table tbody");
+    showdon.innerHTML = a;
+  }
 }
 
+function nuttrangfilter_order(a) {
+  let sosanphammoitrang = 5;
+  let vitrihientai = (a - 1) * sosanphammoitrang;
 
-function nuttrangfilter_order(a){
-	let sosanphammoitrang = 5;
-	let vitrihientai = (a - 1) * sosanphammoitrang;
-
-	let n = 0;
-	let b = ``;
-	for(let i = vitrihientai ; i < filterarr.length ; i ++){
-		let trangthai;
-			if(filterarr[i].status == 0){
-				trangthai = "Chưa xử lý";
-			}else if(filterarr[i].status == 1){
-				trangthai = "Đã duyệt";
-			}else if(filterarr[i].status == 2){
-				trangthai = "Đã giao hàng thành công";
-			}
-			n++;
-			b += `
+  let n = 0;
+  let b = ``;
+  for (let i = vitrihientai; i < filterarr.length; i++) {
+    let trangthai;
+    if (filterarr[i].status == 0) {
+      trangthai = "Chưa xử lý";
+    } else if (filterarr[i].status == 1) {
+      trangthai = "Đã duyệt";
+    } else if (filterarr[i].status == 2) {
+      trangthai = "Đã giao hàng thành công";
+    }
+    n++;
+    b += `
 			<tr>
 				  <td>${filterarr[i].id}</td>
                             <td>${filterarr[i].tenKH}</td>
                              <td>${filterarr[i].quanKH}</td>
                             <td>${filterarr[i].tongtien}</td>
                             <td>${filterarr[i].ngaydat}</td>
-                            <td>${filterarr[i].ngayduyet == 0?"Chưa duyệt": filterarr[i].ngayduyet}</td>
+                            <td>${
+                              filterarr[i].ngayduyet == 0
+                                ? "Chưa duyệt"
+                                : filterarr[i].ngayduyet
+                            }</td>
                             <td>${trangthai}</td>
                             <td class="button">
-                                <div name="${filterarr[i].id}" onclick="xulydonhang(this)">Xem chi tiết đơn hàng</div>
+                                <div name="${
+                                  filterarr[i].id
+                                }" onclick="xulydonhang(this)">Xem</div>
                             </td>
                     </tr>   
 			
 			`;
-			if(n == sosanphammoitrang) break;
-}
-let showdon = document.querySelector("#Display .order .main table tbody");
-showdon.innerHTML = b;
+    if (n == sosanphammoitrang) break;
+  }
+  let showdon = document.querySelector("#Display .order .main table tbody");
+  showdon.innerHTML = b;
 }
 
 let findarr = [];
-function find_order(){
-	findarr = [];
-	let select = document.querySelector("#Display .order .loc");
-	let find = document.querySelector("#Display .order .timkiem");
-	if(select.value == "none"){
-		let donhang = JSON.parse(localStorage.getItem("donhang"));
-		if(donhang == null){
-			alert("Không có đơn hàng nào");
-			return 0;
-		}
-			donhang.forEach((item)=>{
-				if(item.id == parseInt(find.value)){
-					findarr.push(item);
-				}
-			});
-		
-			if(find.value == ""){
-				showDonHang();
-				return 0;
-			}
+function find_order() {
+  findarr = [];
+  let select = document.querySelector("#Display .order .loc");
+  let find = document.querySelector("#Display .order .timkiem");
+  if (select.value == "none") {
+    let donhang = JSON.parse(localStorage.getItem("donhang"));
+    if (donhang == null) {
+      alert("Không có đơn hàng nào");
+      return 0;
+    }
+    donhang.forEach((item) => {
+      if (item.id == parseInt(find.value)) {
+        findarr.push(item);
+      }
+    });
 
+    if (find.value == "") {
+      showDonHang();
+      return 0;
+    }
+  }
 
-	}
+  if (select.value != "none") {
+    console.log(filterarr, findarr, find.value);
+    if (find.value == "") {
+      filter_order();
+      return 0;
+    } else {
+      for (let i = 0; i < filterarr.length; i++) {
+        if (find.value == filterarr[i].id) {
+          findarr.push(filterarr[i]);
+        }
+      }
+    }
+  }
 
-	if(select.value != "none"){
-		console.log(filterarr , findarr , find.value);
-		if(find.value == ""){
-			filter_order();
-			return 0;
-		}
-		else{
-		for(let i = 0 ; i <filterarr.length ; i++){
-			if(find.value == filterarr[i].id){
-				findarr.push(filterarr[i]);
-			}
-		}
-	}
+  if (findarr.length != 0) {
+    filterarr = findarr;
+  }
 
-		
-	}
-
-	if(findarr.length != 0){
-		filterarr = findarr;
-	}
-	
-	console.log(filterarr , findarr , find.value);
-	let sosanphammoitrang = 5;
-	let sotranghientai = 1;
-	let tongsotrang = Math.ceil(filterarr.length/sosanphammoitrang);
-	let vitrihientai = (sotranghientai - 1) * sosanphammoitrang;
-	let btn = '';
-	if(tongsotrang != 1){
-	for(let i = 1 ; i<=tongsotrang ; i ++){
-		btn += `
+  console.log(filterarr, findarr, find.value);
+  let sosanphammoitrang = 5;
+  let sotranghientai = 1;
+  let tongsotrang = Math.ceil(filterarr.length / sosanphammoitrang);
+  let vitrihientai = (sotranghientai - 1) * sosanphammoitrang;
+  let btn = "";
+  if (tongsotrang != 1) {
+    for (let i = 1; i <= tongsotrang; i++) {
+      btn += `
 			<div class="item" onclick="nuttrangfilter_order(${i})">${i}</div>	
 
-		`
-	}
-}	
+		`;
+    }
+  }
 
-
-	let a ='';
-	let n = 0;
-	for(let i = 0 ; i<filterarr.length;i++){
-		let trangthai;
-		if(filterarr[i].status == 0){
-			trangthai = "Chưa xử lý";
-		}else if(filterarr[i].status == 1){
-			trangthai = "Đã duyệt";
-		}else if(filterarr[i].status == 2){
-			trangthai = "Đã giao hàng thành công";
-		}
-		n++;
-		a += `
+  let a = "";
+  let n = 0;
+  for (let i = 0; i < filterarr.length; i++) {
+    let trangthai;
+    if (filterarr[i].status == 0) {
+      trangthai = "Chưa xử lý";
+    } else if (filterarr[i].status == 1) {
+      trangthai = "Đã duyệt";
+    } else if (filterarr[i].status == 2) {
+      trangthai = "Đã giao hàng thành công";
+    }
+    n++;
+    a += `
 		<tr>
 			  <td>${filterarr[i].id}</td>
 						<td>${filterarr[i].tenKH}</td>
 						<td>${filterarr[i].quanKH}</td>
 						<td>${filterarr[i].tongtien}</td>
 						<td>${filterarr[i].ngaydat}</td>
-						<td>${filterarr[i].ngayduyet == 0?"Chưa duyệt": filterarr[i].ngayduyet}</td>
+						<td>${filterarr[i].ngayduyet == 0 ? "Chưa duyệt" : filterarr[i].ngayduyet}</td>
 						<td>${trangthai}</td>
 						<td class="button">
-							<div name="${filterarr[i].id}" onclick="xulydonhang(this)">Xem chi tiết đơn hàng</div>
+							<div name="${filterarr[i].id}" onclick="xulydonhang(this)">Xem</div>
 						</td>
 				</tr>   
 		
 		`;
-		if(n == sosanphammoitrang) break;
-	}
+    if (n == sosanphammoitrang) break;
+  }
 
-
-	let showbtn = document.querySelector("#Display .order .foot .pagination");
-	showbtn.innerHTML = btn;
-	let showdon = document.querySelector("#Display .order .main table tbody");
-	showdon.innerHTML = a;
-
+  let showbtn = document.querySelector("#Display .order .foot .pagination");
+  showbtn.innerHTML = btn;
+  let showdon = document.querySelector("#Display .order .main table tbody");
+  showdon.innerHTML = a;
 }
 
-
-function tatdonhang(){
-	let a = document.querySelector("#Display .order .all");
-	a.style.display = "none";
+function tatdonhang() {
+  let a = document.querySelector("#Display .order .all");
+  a.style.display = "none";
 }
 
+function xulydonhang(a) {
+  let thongtindon = document.querySelector("#Display .order .all");
+  thongtindon.style.display = "block";
+  let madon = a.getAttribute("name");
 
-function xulydonhang(a){
-	let thongtindon = document.querySelector("#Display .order .all");
-	thongtindon.style.display = "block";
-	let madon = a.getAttribute("name");
-	
-	let donhang = JSON.parse(localStorage.getItem("donhang"));
+  let donhang = JSON.parse(localStorage.getItem("donhang"));
 
-	let donhientai;
-	for(let i = 0 ; i < donhang.length;i++){
-		if(parseInt(madon) == parseInt(donhang[i].id) ){
-			donhientai = donhang[i];
-			break;
-		}
-	}
+  let donhientai;
+  for (let i = 0; i < donhang.length; i++) {
+    if (parseInt(madon) == parseInt(donhang[i].id)) {
+      donhientai = donhang[i];
+      break;
+    }
+  }
 
-	let left = document.querySelector("#Display .order .all .khachhang .left");
-	let right = document.querySelector("#Display .order .all .khachhang .right");
+  let left = document.querySelector("#Display .order .all .khachhang .left");
+  let right = document.querySelector("#Display .order .all .khachhang .right");
 
-	let trangthai;
-	if(donhientai.status == 0) trangthai = "Chưa xử lý";
-	if(donhientai.status == 1) trangthai = "Đã duyệt";
-	if(donhientai.status == 2) trangthai = "Đã giao";
-	if(donhientai.status == 3) trangthai = "Đã hủy";
-	let nganhang , stk;
+  let trangthai;
+  if (donhientai.status == 0) trangthai = "Chưa xử lý";
+  if (donhientai.status == 1) trangthai = "Đã duyệt";
+  if (donhientai.status == 2) trangthai = "Đã giao";
+  if (donhientai.status == 3) trangthai = "Đã hủy";
+  let nganhang, stk;
 
-	if(donhientai.bank == -1 && donhientai.stk == -1){
-		nganhang = "Trả bằng tiền mặt";
-		stk = "Không có";
-	}
+  if (donhientai.bank == -1 && donhientai.stk == -1) {
+    nganhang = "Trả bằng tiền mặt";
+    stk = "Không có";
+  }
 
-	 if(parseInt(donhientai.bank) == -1 && parseInt(donhientai.stk) != -1){
-		nganhang = "Zalopay";
-		stk = parseInt(donhientai.stk);
-	}
-	 if(parseInt(donhientai.bank) != -1 && parseInt(donhientai.stk) != -1){
-		nganhang = `Nganhang: ` + `${donhientai.bank}`; 
-		stk = donhientai.stk;   
-	}
+  if (parseInt(donhientai.bank) == -1 && parseInt(donhientai.stk) != -1) {
+    nganhang = "Zalopay";
+    stk = parseInt(donhientai.stk);
+  }
+  if (parseInt(donhientai.bank) != -1 && parseInt(donhientai.stk) != -1) {
+    nganhang = `Nganhang: ` + `${donhientai.bank}`;
+    stk = donhientai.stk;
+  }
 
-	console.log(donhientai);
+  console.log(donhientai);
 
-	left.innerHTML = `
+  left.innerHTML = `
 		 <div class="left">
                                 <p>Mã đơn: <span class="madon">${donhientai.id}</span></p>
                                 <p>Trạng thái: <span>${trangthai}</span></p>
@@ -387,724 +386,724 @@ function xulydonhang(a){
                                 <p>Số tài khoản (nếu có): <span>${stk}</span></p>
         </div>
 	`;
-	
-	right.innerHTML = `
+
+  right.innerHTML = `
 			  <div class="right">
                                 <p>Tên: <span>${donhientai.tenKH}</span></p>
-                                <p>Số điện thoại: <span>${donhientai.phoneKH}</span></p>
+                                <p>Số điện thoại: <span>${
+                                  donhientai.phoneKH
+                                }</span></p>
                                 <p>Email: <span>${donhientai.emailKH}</span></p>
-                                <p style="width: max-content">Địa chỉ: <span>${donhientai.diachiKH}</span></p>
-                                <span style="color:#007acc;font-weight:bold">${donhientai.quanKH}</span>
-                                <p>Giới tính: <span>${donhientai.genderKH == 'nu'?'Nữ':'Nam'}</span></p>
+                                <p style="width: max-content">Địa chỉ: <span>${
+                                  donhientai.diachiKH
+                                }</span></p>
+                                <span style="color:#007acc;font-weight:bold">${
+                                  donhientai.quanKH
+                                }</span>
+                                <p>Giới tính: <span>${
+                                  donhientai.genderKH == "nu" ? "Nữ" : "Nam"
+                                }</span></p>
                             </div>
 	
 	`;
-	
-	let watch = [];
-	let watchsum = 0;
-	for(let i = 0 ; i< donhientai.giohang.length ; i ++){
-		if(donhientai.giohang[i].loai == "watch"){
-			watch.push(donhientai.giohang[i]);
-			watchsum += (donhientai.giohang[i].gia * donhientai.giohang[i].soLuong);
-		}
-	}
-if(watch.length!=0){
-	let temp = ``;
-	for(let i = 0 ; i<watch.length ; i++){
-		temp += `
+
+  let watch = [];
+  let watchsum = 0;
+  for (let i = 0; i < donhientai.giohang.length; i++) {
+    if (donhientai.giohang[i].loai == "watch") {
+      watch.push(donhientai.giohang[i]);
+      watchsum += donhientai.giohang[i].gia * donhientai.giohang[i].soLuong;
+    }
+  }
+  if (watch.length != 0) {
+    let temp = ``;
+    for (let i = 0; i < watch.length; i++) {
+      temp += `
 				<tr>
-                                        <td><img src="${watch[i].hinh}" alt=""></td>
+                                        <td><img src="${
+                                          watch[i].hinh
+                                        }" alt=""></td>
                                         <td>${watch[i].id}</td>
                                         <td>${watch[i].ten}</td>
                                         <td>${watch[i].soLuong}</td>
                                         <td>${watch[i].gia}</td>
-                                        <td>${watch[i].gia * watch[i].soLuong}</td>
+                                        <td>${
+                                          watch[i].gia * watch[i].soLuong
+                                        }</td>
                                     </tr>
 		 `;
-	}
+    }
 
-	let showWatch = document.querySelector("#sp-giohang-watch");
-	showWatch.innerHTML = temp; 
-	let showWatchSum = document.querySelector("#Display .order .all .watch_sum");
-	showWatchSum.innerHTML = watchsum;
-}
+    let showWatch = document.querySelector("#sp-giohang-watch");
+    showWatch.innerHTML = temp;
+    let showWatchSum = document.querySelector(
+      "#Display .order .all .watch_sum"
+    );
+    showWatchSum.innerHTML = watchsum;
+  }
 
+  let ring = [];
+  let ringsum = 0;
 
-
-	let ring = [];
-	let ringsum = 0;
-
-for(let i = 0 ; i< donhientai.giohang.length ; i ++){
-		if(donhientai.giohang[i].loai == "ring"){
-			ring.push(donhientai.giohang[i]);
-			ringsum += (donhientai.giohang[i].gia * donhientai.giohang[i].soLuong);
-		}
-	}
-if(ring.length != 0){
-	 temp = ``;
-	for(let i = 0 ; i<ring.length ; i++){
-		temp += `
+  for (let i = 0; i < donhientai.giohang.length; i++) {
+    if (donhientai.giohang[i].loai == "ring") {
+      ring.push(donhientai.giohang[i]);
+      ringsum += donhientai.giohang[i].gia * donhientai.giohang[i].soLuong;
+    }
+  }
+  if (ring.length != 0) {
+    temp = ``;
+    for (let i = 0; i < ring.length; i++) {
+      temp += `
 				<tr>
-                                        <td><img src="${ring[i].hinh}" alt=""></td>
+                                        <td><img src="${
+                                          ring[i].hinh
+                                        }" alt=""></td>
                                         <td>${ring[i].id}</td>
                                         <td>${ring[i].ten}</td>
                                         <td>${ring[i].soLuong}</td>
                                         <td>${ring[i].gia}</td>
-                                        <td>${ring[i].gia * ring[i].soLuong}</td>
+                                        <td>${
+                                          ring[i].gia * ring[i].soLuong
+                                        }</td>
                                     </tr>
 		 `;
-	}
+    }
 
-	let showRing = document.querySelector("#sp-giohang-ring");
-	showRing.innerHTML = temp; 
-	let showRingSum = document.querySelector("#Display .order .all .ring_sum");
-	showRingSum.innerHTML = ringsum;
-}
+    let showRing = document.querySelector("#sp-giohang-ring");
+    showRing.innerHTML = temp;
+    let showRingSum = document.querySelector("#Display .order .all .ring_sum");
+    showRingSum.innerHTML = ringsum;
+  }
 
+  let necklace = [];
+  let necklacesum = 0;
 
-	let necklace = [];
-	let necklacesum = 0;
-
-for(let i = 0 ; i< donhientai.giohang.length ; i ++){
-		if(donhientai.giohang[i].loai == "necklace"){
-			necklace.push(donhientai.giohang[i]);
-			necklacesum += (donhientai.giohang[i].gia * donhientai.giohang[i].soLuong);
-		}
-	}
-if(necklace.length !=0){
-	 temp = ``;
-	for(let i = 0 ; i<necklace.length ; i++){
-		temp += `
+  for (let i = 0; i < donhientai.giohang.length; i++) {
+    if (donhientai.giohang[i].loai == "necklace") {
+      necklace.push(donhientai.giohang[i]);
+      necklacesum += donhientai.giohang[i].gia * donhientai.giohang[i].soLuong;
+    }
+  }
+  if (necklace.length != 0) {
+    temp = ``;
+    for (let i = 0; i < necklace.length; i++) {
+      temp += `
 				<tr>
-                                        <td><img src="${necklace[i].hinh}" alt=""></td>
+                                        <td><img src="${
+                                          necklace[i].hinh
+                                        }" alt=""></td>
                                         <td>${necklace[i].id}</td>
                                         <td>${necklace[i].ten}</td>
                                         <td>${necklace[i].soLuong}</td>
                                         <td>${necklace[i].gia}</td>
-                                        <td>${necklace[i].gia * necklace[i].soLuong}</td>
+                                        <td>${
+                                          necklace[i].gia * necklace[i].soLuong
+                                        }</td>
                                     </tr>
 		 `;
-	}
+    }
 
-	let showNecklace = document.querySelector("#sp-giohang-necklace");
-	showNecklace.innerHTML = temp; 
-	let showNecklaceSum = document.querySelector("#Display .order .all .necklace_sum");
-	showNecklaceSum.innerHTML = necklacesum;
+    let showNecklace = document.querySelector("#sp-giohang-necklace");
+    showNecklace.innerHTML = temp;
+    let showNecklaceSum = document.querySelector(
+      "#Display .order .all .necklace_sum"
+    );
+    showNecklaceSum.innerHTML = necklacesum;
+  }
 
-}
+  let bracelet = [];
+  let braceletsum = 0;
 
-
-	let bracelet = [];
-	let braceletsum = 0;
-
-for(let i = 0 ; i< donhientai.giohang.length ; i ++){
-		if(donhientai.giohang[i].loai == "bracelet"){
-			bracelet.push(donhientai.giohang[i]);
-			braceletsum += (donhientai.giohang[i].gia * donhientai.giohang[i].soLuong);
-		}
-	}
-if(bracelet.length !=0 ){
-	 temp = ``;
-	for(let i = 0 ; i<necklace.length ; i++){
-		temp += `
+  for (let i = 0; i < donhientai.giohang.length; i++) {
+    if (donhientai.giohang[i].loai == "bracelet") {
+      bracelet.push(donhientai.giohang[i]);
+      braceletsum += donhientai.giohang[i].gia * donhientai.giohang[i].soLuong;
+    }
+  }
+  if (bracelet.length != 0) {
+    temp = ``;
+    for (let i = 0; i < necklace.length; i++) {
+      temp += `
 				<tr>
-                                        <td><img src="${bracelet[i].hinh}" alt=""></td>
+                                        <td><img src="${
+                                          bracelet[i].hinh
+                                        }" alt=""></td>
                                         <td>${bracelet[i].id}</td>
                                         <td>${bracelet[i].ten}</td>
                                         <td>${bracelet[i].soLuong}</td>
                                         <td>${bracelet[i].gia}</td>
-                                        <td>${bracelet[i].gia * bracelet[i].soLuong}</td>
+                                        <td>${
+                                          bracelet[i].gia * bracelet[i].soLuong
+                                        }</td>
                                     </tr>
 		 `;
-	}
+    }
 
-	let showBracelet = document.querySelector("#sp-giohang-bracelet");
-	showBracelet.innerHTML = temp; 
-	let showBraceletSum = document.querySelector("#Display .order .all .bracelet_sum");
-	showBraceletSum.innerHTML = braceletsum;
+    let showBracelet = document.querySelector("#sp-giohang-bracelet");
+    showBracelet.innerHTML = temp;
+    let showBraceletSum = document.querySelector(
+      "#Display .order .all .bracelet_sum"
+    );
+    showBraceletSum.innerHTML = braceletsum;
+  }
 
-}
+  let earring = [];
+  let earringsum = 0;
 
-
-
-	let earring = [];
-	let earringsum = 0;
-	
-	for(let i = 0 ; i< donhientai.giohang.length ; i ++){
-		if(donhientai.giohang[i].loai == "earring"){
-		earring.push(donhientai.giohang[i]);
-		earringsum += (donhientai.giohang[i].gia * donhientai.giohang[i].soLuong);
-		}
-	}
-if(earring.length !=0){
-	 temp = ``;
-	for(let i = 0 ; i<earring.length ; i++){
-		temp += `
+  for (let i = 0; i < donhientai.giohang.length; i++) {
+    if (donhientai.giohang[i].loai == "earring") {
+      earring.push(donhientai.giohang[i]);
+      earringsum += donhientai.giohang[i].gia * donhientai.giohang[i].soLuong;
+    }
+  }
+  if (earring.length != 0) {
+    temp = ``;
+    for (let i = 0; i < earring.length; i++) {
+      temp += `
 				<tr>
-                                        <td><img src="${earring[i].hinh}" alt=""></td>
+                                        <td><img src="${
+                                          earring[i].hinh
+                                        }" alt=""></td>
                                         <td>${earring[i].id}</td>
                                         <td>${earring[i].ten}</td>
                                         <td>${earring[i].soLuong}</td>
                                         <td>${earring[i].gia}</td>
-                                        <td>${earring[i].gia * earring[i].soLuong}</td>
+                                        <td>${
+                                          earring[i].gia * earring[i].soLuong
+                                        }</td>
                                     </tr>
 		 `;
-	}
+    }
 
-	let showEarring = document.querySelector("#sp-giohang-earring");
-	showEarring.innerHTML = temp; 
-	let showEarringSum = document.querySelector("#Display .order .all .earring_sum");
-	showEarringSum.innerHTML = earringsum;
-
+    let showEarring = document.querySelector("#sp-giohang-earring");
+    showEarring.innerHTML = temp;
+    let showEarringSum = document.querySelector(
+      "#Display .order .all .earring_sum"
+    );
+    showEarringSum.innerHTML = earringsum;
+  }
 }
 
+function duyet() {
+  let donhang = JSON.parse(localStorage.getItem("donhang"));
+  let madon = document.querySelector(
+    "#Display .order .all .form-donhang .khachhang .left .madon"
+  );
+  let luudon = {};
+  for (let i = 0; i < donhang.length; i++) {
+    if (parseInt(madon.textContent) == donhang[i].id) {
+      if (donhang[i].status == 1) {
+        alert("Đơn hàng đã được duyệt trước đó");
+        return 0;
+      }
+      if (donhang[i].status == 2) {
+        alert("Đơn hàng đã được hủy trước đó");
+        return 0;
+      }
+      if (donhang[i].status == 3) {
+        alert("Đơn hàng đã giao thành công trước đó");
+        return 0;
+      }
 
+      let choice = confirm("Bạn có chắc muốn duyệt đơn hàng");
+      if (choice == true) {
+        let today = new Date();
+        donhang[i].status = 1;
+        donhang[i].ngayduyet = `${today.getDate()}/${
+          today.getMonth() + 1
+        }/${today.getFullYear()} `;
+        luudon = donhang[i];
+        alert("Đã duyệt thành công");
+        break;
+      }
+    }
+  }
 
+  let users = JSON.parse(localStorage.getItem("users"));
+  for (let i = 0; i < users.length; i++) {
+    for (let j = 0; j < users[i].lichsuMuaHang.length; j++) {
+      if (
+        parseInt(users[i].lichsuMuaHang[j].id) == parseInt(madon.textContent)
+      ) {
+        users[i].lichsuMuaHang[j] = luudon;
+      }
+    }
+  }
 
+  localStorage.setItem("users", JSON.stringify(users));
+  localStorage.setItem("donhang", JSON.stringify(donhang));
+  showDonHang();
 }
 
+function huy() {
+  let donhang = JSON.parse(localStorage.getItem("donhang"));
+  let madon = document.querySelector(
+    "#Display .order .all .form-donhang .khachhang .left .madon"
+  );
+  let luudon = {};
+  for (let i = 0; i < donhang.length; i++) {
+    if (parseInt(madon.textContent) == donhang[i].id) {
+      if (donhang[i].status == 0) {
+        alert("Đơn hàng cần được duyệt trước khi hủy");
+        return 0;
+      }
+      if (donhang[i].status == 2) {
+        alert("Đơn hàng đã được giao thành công trước đó");
+        return 0;
+      }
+      if (donhang[i].status == 3) {
+        alert("Đơn hàng đã được hủy trước đó");
+        return 0;
+      }
 
-function duyet(){
-	let donhang = JSON.parse(localStorage.getItem("donhang"));
-	let madon = document.querySelector("#Display .order .all .form-donhang .khachhang .left .madon");
-	let luudon ={};
-	for(let i = 0 ; i<donhang.length ; i++){
-		if(parseInt(madon.textContent) == donhang[i].id){
-			if(donhang[i].status == 1){
-				alert("Đơn hàng đã được duyệt trước đó");
-				return 0;
-			}
-			if(donhang[i].status == 2){
-				alert("Đơn hàng đã được hủy trước đó");
-				return 0;
-			}
-			if(donhang[i].status == 3){
-				alert("Đơn hàng đã giao thành công trước đó");
-				return 0;
-			}
+      let choice = confirm("Bạn có chắc muốn hủy đơn hàng");
+      if (choice == true) {
+        let nhap = prompt("Nhập lý do hủy đơn hàng");
+        let today = new Date();
+        donhang[i].status = 3;
+        donhang[i].lydo = nhap;
+        donhang[i].ngayduyet = `${today.getDate()}/${
+          today.getMonth() + 1
+        }/${today.getFullYear()} `;
+        luudon = donhang[i];
+        alert("Đã hủy thành công");
+        tatdonhang();
+      }
+    }
+  }
 
-			let choice = confirm("Bạn có chắc muốn duyệt đơn hàng");
-			if(choice == true){
-			let today = new Date();
-			donhang[i].status = 1;	
-			donhang[i].ngayduyet =  `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()} `;
-			luudon = donhang[i];
-			alert("Đã duyệt thành công");
-			break;
-		}
-		}
-	}
+  let users = JSON.parse(localStorage.getItem("users"));
+  for (let i = 0; i < users.length; i++) {
+    for (let j = 0; j < users[i].lichsuMuaHang.length; j++) {
+      if (
+        parseInt(users[i].lichsuMuaHang[j].id) == parseInt(madon.textContent)
+      ) {
+        users[i].lichsuMuaHang[j] = luudon;
+      }
+    }
+  }
 
-	let users = JSON.parse(localStorage.getItem("users"));
-	for(let i = 0 ; i<users.length ; i++){
-		for(let j = 0 ; j < users[i].lichsuMuaHang.length ; j++){
-			if(parseInt(users[i].lichsuMuaHang[j].id) == parseInt(madon.textContent)){
-					users[i].lichsuMuaHang[j] = luudon;
-			}
-		}
-	}
-
-	localStorage.setItem("users" , JSON.stringify(users));
-	localStorage.setItem("donhang" , JSON.stringify(donhang));
-	showDonHang();	
+  localStorage.setItem("users", JSON.stringify(users));
+  localStorage.setItem("donhang", JSON.stringify(donhang));
+  showDonHang();
 }
 
+function giaothanhcong() {
+  let donhang = JSON.parse(localStorage.getItem("donhang"));
+  let madon = document.querySelector(
+    "#Display .order .all .form-donhang .khachhang .left .madon"
+  );
+  let luudon = {};
+  for (let i = 0; i < donhang.length; i++) {
+    if (parseInt(madon.textContent) == donhang[i].id) {
+      if (donhang[i].status == 0) {
+        alert("Đơn hàng cần được duyệt trước khi đánh dấu giao thành công");
+        return 0;
+      }
 
-function huy(){
-	let donhang = JSON.parse(localStorage.getItem("donhang"));
-	let madon = document.querySelector("#Display .order .all .form-donhang .khachhang .left .madon");
-	let luudon = {};
-	for(let i = 0 ; i<donhang.length ; i++){
-		if(parseInt(madon.textContent) == donhang[i].id){
-			if(donhang[i].status == 0){
-				alert("Đơn hàng cần được duyệt trước khi hủy");
-				return 0;
-			}
-			if(donhang[i].status == 2){
-				alert("Đơn hàng đã được giao thành công trước đó");
-				return 0;
-			}
-			if(donhang[i].status == 3){
-				alert("Đơn hàng đã được hủy trước đó");
-				return 0;
-			}
+      if (donhang[i].status == 2) {
+        alert("Đơn hàng đã bị hủy trước đó");
+        return 0;
+      }
 
-			let choice = confirm("Bạn có chắc muốn hủy đơn hàng");
-			if(choice == true){
-			let nhap = prompt("Nhập lý do hủy đơn hàng");
-			let today = new Date();
-			donhang[i].status = 3;	
-			donhang[i].lydo = nhap;
-			donhang[i].ngayduyet =  `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()} ` ;
-			luudon = donhang[i];
-			alert("Đã hủy thành công");
-			tatdonhang();
-		}
-		}
-	}
+      if (donhang[i].status == 1) {
+        let choice = confirm(
+          "Bạn có chắc muốn duyệt đơn hàng đã giao thành công"
+        );
+        if (choice == true) {
+          let today = new Date();
+          donhang[i].status = 2;
+          donhang[i].ngayduyet = `${today.getDate()}/${
+            today.getMonth() + 1
+          }/${today.getFullYear()} `;
+          luudon = donhang[i];
+          alert("Đã duyệt thành công");
+          tatdonhang();
+        }
+      }
 
-let users = JSON.parse(localStorage.getItem("users"));
-	for(let i = 0 ; i<users.length ; i++){
-		for(let j = 0 ; j < users[i].lichsuMuaHang.length ; j++){
-			if(parseInt(users[i].lichsuMuaHang[j].id) == parseInt(madon.textContent)){
-					users[i].lichsuMuaHang[j] = luudon;
-			}
-		}
-	}
+      if (donhang[i].status == 3) {
+        alert("Đơn hàng đã được hủy trước đó");
+        return 0;
+      }
+    }
+  }
 
-	localStorage.setItem("users" , JSON.stringify(users));
-	localStorage.setItem("donhang" , JSON.stringify(donhang));
-	showDonHang();
+  let users = JSON.parse(localStorage.getItem("users"));
+  for (let i = 0; i < users.length; i++) {
+    for (let j = 0; j < users[i].lichsuMuaHang.length; j++) {
+      if (
+        parseInt(users[i].lichsuMuaHang[j].id) == parseInt(madon.textContent)
+      ) {
+        users[i].lichsuMuaHang[j] = luudon;
+      }
+    }
+  }
+
+  localStorage.setItem("users", JSON.stringify(users));
+  localStorage.setItem("donhang", JSON.stringify(donhang));
+  showDonHang();
 }
 
+function findtime() {
+  let tungay = document
+    .querySelector("#Display .order .head .time .tu_ngay")
+    .value.split("-");
+  let denngay = document
+    .querySelector("#Display .order .head .time .den_ngay")
+    .value.split("-");
+  filterarr = [];
 
-function giaothanhcong(){
-	let donhang = JSON.parse(localStorage.getItem("donhang"));
-	let madon = document.querySelector("#Display .order .all .form-donhang .khachhang .left .madon");
-	let luudon ={};
-	for(let i = 0 ; i<donhang.length ; i++){
-		if(parseInt(madon.textContent) == donhang[i].id){
-			if(donhang[i].status == 0){
-				alert("Đơn hàng cần được duyệt trước khi đánh dấu giao thành công");
-				return 0;
-			}
+  let donhang = JSON.parse(localStorage.getItem("donhang"));
 
-			if(donhang[i].status == 2){
-				alert("Đơn hàng đã bị hủy trước đó");
-				return 0;
-			}
+  date_tungay = tungay[2];
+  month_tungay = tungay[1];
+  year_tungay = tungay[0];
 
+  date_denngay = denngay[2];
+  month_denngay = denngay[1];
+  year_denngay = denngay[0];
 
-			if(donhang[i].status == 1){
-				let choice = confirm("Bạn có chắc muốn duyệt đơn hàng đã giao thành công");
-			if(choice == true){
-			let today = new Date();
-			donhang[i].status = 2;	
-			donhang[i].ngayduyet =  `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()} ` ;
-			luudon = donhang[i];
-			alert("Đã duyệt thành công");
-			tatdonhang();
+  if (
+    date_tungay > date_denngay &&
+    month_tungay >= month_denngay &&
+    year_tungay >= year_denngay
+  ) {
+    alert("Vui lòng chọn từ ngày bé hơn đến ngày");
+    return 0;
+  }
 
-		}
-}
+  if (
+    date_tungay == date_denngay &&
+    month_tungay == month_denngay &&
+    year_tungay == year_denngay
+  ) {
+    for (let i = 0; i < donhang.length; i++) {
+      let donhangngay = donhang[i].ngaydat.split("/");
+      let ngay = donhangngay[0];
+      let thang = donhangngay[1];
+      let nam = donhangngay[2];
+      if (date_tungay == ngay && month_tungay == thang && year_tungay == nam) {
+        filterarr.push(donhang[i]);
+      }
+    }
+  }
 
-			if(donhang[i].status == 3){
-				alert("Đơn hàng đã được hủy trước đó");
-				return 0;
-			}
-		
+  if (
+    date_tungay < date_denngay &&
+    month_tungay <= month_denngay &&
+    year_tungay <= year_denngay
+  ) {
+    for (let i = 0; i < donhang.length; i++) {
+      let donhangngay = donhang[i].ngaydat.split("/");
+      let ngay = donhangngay[0];
+      let thang = donhangngay[1];
+      let nam = donhangngay[2];
+      if (
+        date_tungay == ngay &&
+        ngay <= date_denngay &&
+        month_tungay == thang &&
+        thang <= month_denngay &&
+        year_tungay == nam &&
+        nam <= year_denngay
+      ) {
+        filterarr.push(donhang[i]);
+      }
+    }
 
-			
-		}
-	}
+    for (let i = 0; i < donhang.length; i++) {
+      let donhangngay = donhang[i].ngaydat.split("/");
+      let ngay = donhangngay[0];
+      let thang = donhangngay[1];
+      let nam = donhangngay[2];
+      if (
+        date_tungay < ngay &&
+        ngay <= date_denngay &&
+        month_tungay <= thang &&
+        thang <= month_denngay &&
+        year_tungay <= nam &&
+        nam <= year_denngay
+      ) {
+        filterarr.push(donhang[i]);
+      }
+    }
+  }
 
-	let users = JSON.parse(localStorage.getItem("users"));
-	for(let i = 0 ; i<users.length ; i++){
-		for(let j = 0 ; j < users[i].lichsuMuaHang.length ; j++){
-			if(parseInt(users[i].lichsuMuaHang[j].id) == parseInt(madon.textContent)){
-					users[i].lichsuMuaHang[j] = luudon;
-			}
-		}
-	}
-
-	localStorage.setItem("users" , JSON.stringify(users));
-	localStorage.setItem("donhang" , JSON.stringify(donhang));
-	showDonHang();	
-}
-
-
-
-function findtime(){
-	let tungay = document.querySelector("#Display .order .head .time .tu_ngay").value.split("-");
-	let denngay = document.querySelector("#Display .order .head .time .den_ngay").value.split("-");
-	filterarr = [];
-	
-	let donhang = JSON.parse(localStorage.getItem("donhang"));
-
-	date_tungay = tungay[2];
-	month_tungay = tungay[1];
-	year_tungay = tungay[0];
-
-	date_denngay = denngay[2];
-	month_denngay = denngay[1];
-	year_denngay = denngay[0];
-	
-	if((date_tungay > date_denngay) && (month_tungay >=month_denngay ) && (year_tungay >= year_denngay)){
-		alert("Vui lòng chọn từ ngày bé hơn đến ngày");
-		return 0;
-	}
-
-	if((date_tungay == date_denngay) && (month_tungay == month_denngay ) && (year_tungay == year_denngay)){
-		for(let i = 0 ; i< donhang.length ; i++){
-			let donhangngay = donhang[i].ngaydat.split("/");
-			let ngay = donhangngay[0];
-			let thang = donhangngay[1];
-			let nam = donhangngay[2];
-			if((date_tungay == ngay) && (month_tungay == thang) && (year_tungay == nam)){
-				filterarr.push(donhang[i]);
-			}
-		}
-
-	}
-
-if((date_tungay < date_denngay) && (month_tungay <= month_denngay ) && (year_tungay <= year_denngay)){
-		for(let i = 0 ; i< donhang.length ; i++){
-			let donhangngay = donhang[i].ngaydat.split("/");
-			let ngay = donhangngay[0];
-			let thang = donhangngay[1];
-			let nam = donhangngay[2];
-			if((date_tungay == ngay && ngay <= date_denngay) && (month_tungay == thang && thang <= month_denngay) && (year_tungay == nam && nam <= year_denngay)){
-				filterarr.push(donhang[i]);
-			}
-		}
-
-		for(let i = 0 ; i< donhang.length ; i++){
-			let donhangngay = donhang[i].ngaydat.split("/");
-			let ngay = donhangngay[0];
-			let thang = donhangngay[1];
-			let nam = donhangngay[2];
-			if((date_tungay < ngay && ngay <= date_denngay) && (month_tungay <= thang && thang <= month_denngay) && (year_tungay <= nam && nam <= year_denngay)){
-				filterarr.push(donhang[i]);
-			}
-		}
-
-	}
-
-
-
-
-if(filterarr.length == 0){
-alert("Không có đơn hàng nào được đặt trong khoảng thời gian này");
- return 0;
-}else{
-	let sosanphammoitrang = 5;
-		let sotranghientai = 1;
-		let tongsotrang = Math.ceil(filterarr.length/sosanphammoitrang);
-		let vitrihientai = (sotranghientai - 1) * sosanphammoitrang;
-		let btn = '';
-		if(tongsotrang != 1){
-		for(let i = 1 ; i<=tongsotrang ; i ++){
-			btn += `
+  if (filterarr.length == 0) {
+    alert("Không có đơn hàng nào được đặt trong khoảng thời gian này");
+    return 0;
+  } else {
+    let sosanphammoitrang = 5;
+    let sotranghientai = 1;
+    let tongsotrang = Math.ceil(filterarr.length / sosanphammoitrang);
+    let vitrihientai = (sotranghientai - 1) * sosanphammoitrang;
+    let btn = "";
+    if (tongsotrang != 1) {
+      for (let i = 1; i <= tongsotrang; i++) {
+        btn += `
 				<div class="item" onclick="nuttrangfilter_order(${i})">${i}</div>	
 
-			`
-		}
-	}	
+			`;
+      }
+    }
 
-
-	
-
-		let a ='';
-		let n = 0;
-		for(let i = vitrihientai ; i<filterarr.length;i++){
-			let trangthai;
-			if(filterarr[i].status == 0){
-				trangthai = "Chưa xử lý";
-			}else if(filterarr[i].status == 1){
-				trangthai = "Đã duyệt";
-			}else if(filterarr[i].status == 2){
-				trangthai = "Đã giao hàng thành công";
-			}
-			n++;
-			a += `
+    let a = "";
+    let n = 0;
+    for (let i = vitrihientai; i < filterarr.length; i++) {
+      let trangthai;
+      if (filterarr[i].status == 0) {
+        trangthai = "Chưa xử lý";
+      } else if (filterarr[i].status == 1) {
+        trangthai = "Đã duyệt";
+      } else if (filterarr[i].status == 2) {
+        trangthai = "Đã giao hàng thành công";
+      }
+      n++;
+      a += `
 			<tr>
 				  <td>${filterarr[i].id}</td>
                             <td>${filterarr[i].tenKH}</td>
                               <td>${filterarr[i].quanKH}</td>
                             <td>${filterarr[i].tongtien}</td>
                             <td>${filterarr[i].ngaydat}</td>
-                            <td>${filterarr[i].ngayduyet == 0?"Chưa duyệt": filterarr[i].ngayduyet}</td>
+                            <td>${
+                              filterarr[i].ngayduyet == 0
+                                ? "Chưa duyệt"
+                                : filterarr[i].ngayduyet
+                            }</td>
                             <td>${trangthai}</td>
                             <td class="button">
-                                <div name="${filterarr[i].id}" onclick="xulydonhang(this)">Xem chi tiết đơn hàng</div>
+                                <div name="${
+                                  filterarr[i].id
+                                }" onclick="xulydonhang(this)">Xem</div>
                             </td>
                     </tr>   
 			
 			`;
-			if(n == sosanphammoitrang) break;
-		}
+      if (n == sosanphammoitrang) break;
+    }
 
-
-		let showbtn = document.querySelector("#Display .order .foot .pagination");
-		showbtn.innerHTML = btn;
-		let showdon = document.querySelector("#Display .order .main table tbody");
-		showdon.innerHTML = a;
+    let showbtn = document.querySelector("#Display .order .foot .pagination");
+    showbtn.innerHTML = btn;
+    let showdon = document.querySelector("#Display .order .main table tbody");
+    showdon.innerHTML = a;
+  }
 }
 
-}
+function sortgiaohang() {
+  let selectsort = document.querySelector("#sort").value;
+  let select = document.querySelector("#Display .order .loc").value;
+  let donhang = JSON.parse(localStorage.getItem("donhang"));
+  let arr = [];
+  if (donhang == null) {
+    alert("Không có đơn hàng");
+    return 0;
+  }
 
+  if (selectsort == "none") {
+    showDonHang();
+    return 0;
+  }
 
+  if (selectsort == "Here") {
+    if (select == "none") {
+      filterarr = donhang;
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận 1") arr.push(filterarr[i]);
+      }
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận 3") arr.push(filterarr[i]);
+      }
 
-function sortgiaohang(){
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận 4") arr.push(filterarr[i]);
+      }
 
-	let selectsort = document.querySelector("#sort").value;
-	let select = document.querySelector("#Display .order .loc").value;
-	let donhang = JSON.parse(localStorage.getItem("donhang"));
-	let arr = [];
-	if(donhang == null){
-		alert("Không có đơn hàng");
-		return 0;
-	}
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận 5") arr.push(filterarr[i]);
+      }
 
-	if(selectsort == "none"){
-		showDonHang();
-		return 0;
-	}
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận 8") arr.push(filterarr[i]);
+      }
 
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận 10") arr.push(filterarr[i]);
+      }
 
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận 11") arr.push(filterarr[i]);
+      }
 
-	if(selectsort == "Here"){
-		if(select == "none"){
-			filterarr = donhang;
-			for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận 1")
-					arr.push(filterarr[i]);
-			}
-			for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận 3")
-					arr.push(filterarr[i]);
-			}
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận 6") arr.push(filterarr[i]);
+      }
 
-				for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận 4")
-					arr.push(filterarr[i]);
-			}
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận 7") arr.push(filterarr[i]);
+      }
 
-				for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận 5")
-					arr.push(filterarr[i]);
-			}
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận 2") arr.push(filterarr[i]);
+      }
 
-				for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận 8")
-					arr.push(filterarr[i]);
-			}
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận Phú Nhuận") arr.push(filterarr[i]);
+      }
 
-				for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận 10")
-					arr.push(filterarr[i]);
-			}
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận Bình Thạnh") arr.push(filterarr[i]);
+      }
 
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận Gò Vấp") arr.push(filterarr[i]);
+      }
 
-				for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận 11")
-					arr.push(filterarr[i]);
-			}
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận 12") arr.push(filterarr[i]);
+      }
 
-					for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận 6")
-					arr.push(filterarr[i]);
-			}
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận 9") arr.push(filterarr[i]);
+      }
 
-				for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận 7")
-					arr.push(filterarr[i]);
-			}
+      filterarr = arr;
+    } else {
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận 1") arr.push(filterarr[i]);
+      }
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận 3") arr.push(filterarr[i]);
+      }
 
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận 4") arr.push(filterarr[i]);
+      }
 
-				for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận 2")
-					arr.push(filterarr[i]);
-			}
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận 5") arr.push(filterarr[i]);
+      }
 
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận 8") arr.push(filterarr[i]);
+      }
 
-				for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận Phú Nhuận")
-					arr.push(filterarr[i]);
-			}
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận 10") arr.push(filterarr[i]);
+      }
 
-				for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận Bình Thạnh")
-					arr.push(filterarr[i]);
-			}
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận 11") arr.push(filterarr[i]);
+      }
 
-				for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận Gò Vấp")
-					arr.push(filterarr[i]);
-			}
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận 6") arr.push(filterarr[i]);
+      }
 
-				for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận 12")
-					arr.push(filterarr[i]);
-			}
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận 7") arr.push(filterarr[i]);
+      }
 
-					for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận 9")
-					arr.push(filterarr[i]);
-			}
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận 2") arr.push(filterarr[i]);
+      }
 
-			filterarr = arr;
-		}else{
-			for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận 1")
-					arr.push(filterarr[i]);
-			}
-			for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận 3")
-					arr.push(filterarr[i]);
-			}
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận Phú Nhuận") arr.push(filterarr[i]);
+      }
 
-				for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận 4")
-					arr.push(filterarr[i]);
-			}
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận Bình Thạnh") arr.push(filterarr[i]);
+      }
 
-				for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận 5")
-					arr.push(filterarr[i]);
-			}
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận Gò Vấp") arr.push(filterarr[i]);
+      }
 
-				for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận 8")
-					arr.push(filterarr[i]);
-			}
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận 12") arr.push(filterarr[i]);
+      }
 
-				for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận 10")
-					arr.push(filterarr[i]);
-			}
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == "Quận 9") arr.push(filterarr[i]);
+      }
 
+      filterarr = arr;
+    }
+  } else {
+    if (select == "none") {
+      filterarr = donhang;
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == selectsort) arr.push(filterarr[i]);
+      }
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH != selectsort) arr.push(filterarr[i]);
+      }
+      filterarr = arr;
+    } else {
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH == selectsort) arr.push(filterarr[i]);
+      }
+      for (let i = 0; i < filterarr.length; i++) {
+        if (filterarr[i].quanKH != selectsort) arr.push(filterarr[i]);
+      }
+      filterarr = arr;
+    }
+  }
 
-				for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận 11")
-					arr.push(filterarr[i]);
-			}
-
-					for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận 6")
-					arr.push(filterarr[i]);
-			}
-
-				for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận 7")
-					arr.push(filterarr[i]);
-			}
-
-
-				for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận 2")
-					arr.push(filterarr[i]);
-			}
-
-
-				for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận Phú Nhuận")
-					arr.push(filterarr[i]);
-			}
-
-				for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận Bình Thạnh")
-					arr.push(filterarr[i]);
-			}
-
-				for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận Gò Vấp")
-					arr.push(filterarr[i]);
-			}
-
-				for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận 12")
-					arr.push(filterarr[i]);
-			}
-
-					for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == "Quận 9")
-					arr.push(filterarr[i]);
-			}
-
-
-
-
-			filterarr = arr;
-
-		}
-
-
-		
-	}else{
-		if(select == "none"){
-			filterarr = donhang;
-			for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == selectsort)
-					arr.push(filterarr[i]);
-			}
-			for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH != selectsort)
-					arr.push(filterarr[i]);
-			}
-			filterarr = arr;
-
-		}else{
-
-			for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH == selectsort)
-					arr.push(filterarr[i]);
-			}
-			for(let i = 0 ; i<filterarr.length ; i++){
-				if(filterarr[i].quanKH != selectsort)
-					arr.push(filterarr[i]);
-			}
-			filterarr = arr;
-		}
-	}
-
-	let sosanphammoitrang = 5;
-		let sotranghientai = 1;
-		let tongsotrang = Math.ceil(filterarr.length/sosanphammoitrang);
-		let vitrihientai = (sotranghientai - 1) * sosanphammoitrang;
-		let btn = '';
-		if(tongsotrang != 1){
-		for(let i = 1 ; i<=tongsotrang ; i ++){
-			btn += `
+  let sosanphammoitrang = 5;
+  let sotranghientai = 1;
+  let tongsotrang = Math.ceil(filterarr.length / sosanphammoitrang);
+  let vitrihientai = (sotranghientai - 1) * sosanphammoitrang;
+  let btn = "";
+  if (tongsotrang != 1) {
+    for (let i = 1; i <= tongsotrang; i++) {
+      btn += `
 				<div class="item" onclick="nuttrangfilter_order(${i})">${i}</div>	
 
-			`
-		}
-	}	
+			`;
+    }
+  }
 
-
-	
-
-		let a ='';
-		let n = 0;
-		for(let i = vitrihientai ; i<filterarr.length;i++){
-			let trangthai;
-			if(filterarr[i].status == 0){
-				trangthai = "Chưa xử lý";
-			}else if(filterarr[i].status == 1){
-				trangthai = "Đã duyệt";
-			}else if(filterarr[i].status == 2){
-				trangthai = "Đã giao hàng thành công";
-			}
-			n++;
-			a += `
+  let a = "";
+  let n = 0;
+  for (let i = vitrihientai; i < filterarr.length; i++) {
+    let trangthai;
+    if (filterarr[i].status == 0) {
+      trangthai = "Chưa xử lý";
+    } else if (filterarr[i].status == 1) {
+      trangthai = "Đã duyệt";
+    } else if (filterarr[i].status == 2) {
+      trangthai = "Đã giao hàng thành công";
+    }
+    n++;
+    a += `
 			<tr>
 				  <td>${filterarr[i].id}</td>
                             <td>${filterarr[i].tenKH}</td>
                             <td>${filterarr[i].quanKH}</td>
                             <td>${filterarr[i].tongtien}</td>
                             <td>${filterarr[i].ngaydat}</td>
-                            <td>${filterarr[i].ngayduyet == 0?"Chưa duyệt": filterarr[i].ngayduyet}</td>
+                            <td>${
+                              filterarr[i].ngayduyet == 0
+                                ? "Chưa duyệt"
+                                : filterarr[i].ngayduyet
+                            }</td>
                             <td>${trangthai}</td>
                             <td class="button">
-                                <div name="${filterarr[i].id}" onclick="xulydonhang(this)">Xem chi tiết đơn hàng</div>
+                                <div name="${
+                                  filterarr[i].id
+                                }" onclick="xulydonhang(this)">Xem</div>
                             </td>
                     </tr>   
 			
 			`;
-			if(n == sosanphammoitrang) break;
-		}
+    if (n == sosanphammoitrang) break;
+  }
 
-
-		let showbtn = document.querySelector("#Display .order .foot .pagination");
-		showbtn.innerHTML = btn;
-		let showdon = document.querySelector("#Display .order .main table tbody");
-		showdon.innerHTML = a;
-
-
-
-
-
-
-
+  let showbtn = document.querySelector("#Display .order .foot .pagination");
+  showbtn.innerHTML = btn;
+  let showdon = document.querySelector("#Display .order .main table tbody");
+  showdon.innerHTML = a;
 }

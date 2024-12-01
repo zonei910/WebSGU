@@ -44,6 +44,13 @@ confirm.style.display = "block";
 
 
 confirm.onclick = () =>{
+
+if(currentUser.status == 1){
+    alert("Người dùng đang bị khóa");
+    return 0;
+}
+
+
 stk.value = stk.value.replace(/\.$/, '');
 if(stk.value == "" && stk.style.display == "block"){
     alert("Vui lòng nhập số tài khoản");
@@ -74,9 +81,7 @@ if (co == 0){
 
 if(currentUser.giohang.length == 0){
     alert("Vui lòng chọn sản phẩm cần mua");
-    form.style.display = "none"; 
-    display.style.display = "block";
-    purchase.style.display = "none";
+    showSanPham();
     return 0;
 }
 
@@ -199,6 +204,14 @@ currentUser.giohang = giohang;
 localStorage.setItem("giohang", JSON.stringify(giohang));
 localStorage.setItem("currentUser", JSON.stringify(currentUser));
 localStorage.setItem("users" , JSON.stringify(users));
+
+if(JSON.parse(localStorage.getItem("donmoi")) == null){
+    localStorage.setItem("donmoi" , JSON.stringify(1));
+}else{
+    let n = JSON.parse(localStorage.getItem("donmoi")) + 1;
+    localStorage.setItem("donmoi" , JSON.stringify(n));
+}
+
 
 
 showTomtatsp();

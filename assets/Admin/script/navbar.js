@@ -10,14 +10,14 @@ var Display_merchandise = document.querySelector("#Display .merchandise");
 var Display_revenue = document.querySelector("#Display .revenue");
 var Display_userlist = document.querySelector("#Display .userlist");
 var Display_order = document.querySelector("#Display .order");
-
+// var Customer;
 
 Display_viewpage.style.display = "none";
 Display_merchandise.style.display = "none";
 Display_revenue.style.display = "none";
 Display_userlist.style.display = "none";
 Display_order.style.display = "block";
-showDonHang();
+// showDonHang();
 
 function reloadIframe() {
     var iframe = document.querySelector(".viewpage iframe");
@@ -42,10 +42,6 @@ Menu_merchandise.onclick = () => {
     Display_revenue.style.display = "none";
     Display_userlist.style.display = "none";
     Display_order.style.display = "none";
-    // showSanPham();
-
-
-
 }
 
 Menu_revenue.onclick = () => {
@@ -101,6 +97,30 @@ function tat_mo_navbar() {
         return 0;
     }
 
-
-
 }
+
+
+
+window.onload = () =>{
+    let a = document.querySelector(".noti");
+    if(JSON.parse(localStorage.getItem("donmoi")) == null){
+        a.innerHTML = 0;
+    }else{
+        a.innerHTML = JSON.parse(localStorage.getItem("donmoi"));
+    }
+}
+
+
+
+
+function bat_tat_neworder(){
+    
+}
+
+
+
+
+
+
+
+

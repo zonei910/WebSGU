@@ -1,0 +1,37 @@
+*{
+     font-family:'Libre Baskerville', serif;;
+}
+
+body{
+    overflow: hidden;
+}
+
+.show{
+    display:block;
+}
+.hide{
+    display:none;
+}
+
+.noti{
+    border: 3px solid red;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    border-radius: 100%;
+    left: 1137px;
+    top: 28px;
+    text-align: center;
+    color: black;
+    background-color: red;
+}
+
+.neworder{
+    position:absolute;
+    top: 50px;
+    right: 305px;
+    z-index: 100;
+    background-color: white;
+
+}

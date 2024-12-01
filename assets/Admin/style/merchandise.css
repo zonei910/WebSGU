@@ -54,8 +54,8 @@
 }
 #Display .merchandise #main-content{
     flex-grow: 1;
-    max-height: 60vh;
-    overflow-y: auto;
+    max-height: 350px;
+    overflow: auto;
     padding: 1rem;
 }
 #Display .merchandise #buttons button{
