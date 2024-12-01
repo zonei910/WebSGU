@@ -339,6 +339,14 @@
 }
 #innerorder{
     background-color: #fec76f;
+    max-height: 70%;
+    overflow-y: scroll;
+    overflow: auto;
+}
+#innerorder>div:hover{
+    background-color: #fdd6d7;
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
 }
 #printorder > div{
     width: 60%;
