@@ -373,7 +373,6 @@ let Customer = JSON.parse(localStorage.getItem("users"));
     for(let i=0;i<slnutphantrang;i++){
         const nutphantrangNode=document.createElement("span");
         nutphantrangNode.innerText=i;
-
         nutphantrangNode.className="nutphantrang";
         nutphantrangNode.onclick=function(){
             currentpage=i;

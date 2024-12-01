@@ -94,7 +94,7 @@
     border: none;
     outline:none;
 }
-.container0>div:nth-child(2)>div>input{
+#timefirst,#timesecond{
     border: none;
     outline:none;
 }
@@ -331,4 +331,15 @@
 }
 .cuswithlowestprofit>div,.cuswithhighestprofit>div{
     color: #77655b;
+}
+#buttondate{
+    border: #534936 1px solid;
+    background-color: #ef9f9f;
+    border-radius: 50x;
+    padding:5px;
+    border-radius: 5px;
+}
+#buttondate:hover{
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
 }

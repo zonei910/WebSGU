@@ -324,7 +324,6 @@
     border: #75ba75 2px solid;
 }
 #printorder{
-
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0,0.5);
@@ -343,11 +342,11 @@
     overflow-y: scroll;
     overflow: auto;
 }
-#innerorder>div:hover{
+/* #innerorder>div:hover{
     background-color: #fdd6d7;
     transform: translateY(-10px); 
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
-}
+} */
 #printorder > div{
     width: 60%;
     position: relative;
