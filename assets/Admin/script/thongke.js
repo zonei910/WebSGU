@@ -680,11 +680,12 @@ Customer = [
         ]}];
 
 
-function taohangthongke(Customer,product){
+        function taohangthongke(Customer,product){
             console.log(Customer);
             const doanhthu=document.querySelector(".container3");
             doanhthu.innerHTML=`
             <div class="doanhthu">
+            <div>id</div>
                 <div>name</div>
                 <div>sales volumn</div>
                 <div>sales</div>
@@ -693,7 +694,11 @@ function taohangthongke(Customer,product){
                 const createrow=document.createElement("div");
                 createrow.className="doanhthu";
                 createrow.innerHTML+=
-                `<div>
+                `
+                <div>
+                    ${giohang.id}
+                </div>
+                <div>
                     ${giohang.ten}
                 </div>
                 <div>
@@ -710,88 +715,67 @@ function taohangthongke(Customer,product){
             const customerwithhighestprofit=cushighest(arraycustomerwithtotalprofit(Customer));
             const customerwithlowestprofit=cuslowest(arraycustomerwithtotalprofit(Customer));
             const creatediv=document.createElement("div");
-            creatediv.innerHTML=`          
-            <div class="cuswithlowestprofit">  
-                    <div class="header"> the customer with the lowest profit </div>            
-                    <div class="head">
-                        <div>id</div>
-                        <div>client name</div>
-                        <div>amount product</div>
-                        <div>amount spent</div>
-                        <div>telephone</div>
-                        <div>email</div>
-                    </div>
-                    <div >
-                        <div>${customerwithlowestprofit.id}</div>
-                        <div>${customerwithlowestprofit.name}</div>
-                        <div>${customerwithlowestprofit.totalproduct}</div>
-                        <div>${customerwithlowestprofit.totalprofit}</div>
-                        <div>${customerwithlowestprofit.phone}</div>
-                        <div>${customerwithlowestprofit.email}</div>
-                    </div>
-            </div>
-                <div class="cuswithhighestprofit">  
-                    <div class="header">the customer with the highest profit</div>             
-                        <div class="head">
-                            <div>id</div>
-                            <div>client name</div>
-                            <div>amount product</div>
-                            <div>amount spent</div>
-                            <div>telephone</div>
-                            <div>email</div>
+            creatediv.className=""
+            creatediv.innerHTML=`
+                        <div class="thongkesanpham">
+                <div class="productwithhighestprofit">   
+                    <div><div class="header">highest profit</div>  </div>
+                    <div>
+                        <div class="productinner"> 
+                            <div class="divimage"><image  class="imagethongke"src="${productwithhighestprofit.hinh}"></image></div>
+                            <div><div>id</div><div>${productwithhighestprofit.id}</div></div>
+                            <div><div>catergory</div><div>${productwithhighestprofit.loai}</div></div>
+                            <div><div>name</div><div>${productwithhighestprofit.ten}</div></div>
+                            <div><div>total profit</div><div>${productwithhighestprofit.profit}</div></div>
+                            <div><div>amount</div><div>${productwithhighestprofit.soLuong}</div></div>
                         </div>
-                        <div>
+                    </div>
+                </div>
+                <div class="productwithlowestprofit">   
+                    <div><div class="header">Lowest profit</div>  </div>
+                    <div>
+                        <div class="productinner"> 
+                            <div class="divimage"><image  class="imagethongke"src="${productwithlowestprofit.hinh}"></image></div>
+                            <div><div>id</div><div>${productwithlowestprofit.id}</div></div>
+                            <div><div>catergory</div><div>${productwithlowestprofit.loai}</div></div>
+                            <div><div>name</div><div>${productwithlowestprofit.ten}</div></div>
+                            <div><div>total profit</div><div>${productwithlowestprofit.profit}</div></div>
+                            <div><div>amount</div><div>${productwithlowestprofit.soLuong}</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="thongkecustom">
+                <p>Customer</p>
+                <div class="head">
+                    <div>Customer</div><div>id</div><div>client name</div><div>amount product</div><div>amount spent</div><div>telephone</div><div>email</div>
+                </div>
+                <div class="cuswithlowestprofit"> 
+                        <div >
+                            <div class="head">Highest profit</div>
                             <div>${customerwithhighestprofit.id}</div>
                             <div>${customerwithhighestprofit.name}</div>
                             <div>${customerwithhighestprofit.totalproduct}</div>
-                            <div>${customerwithhighestprofit.totalprofit}</div>
+                            <div>${customerwithhighestprofit.totalprice}</div>
                             <div>${customerwithhighestprofit.phone}</div>
                             <div>${customerwithhighestprofit.email}</div>
                         </div>
                 </div>
-            `
-            document.querySelector(".thongkecustom").innerHTML+=creatediv.outerHTML;
-            const createdivElement=document.createElement("div");
-            createdivElement.innerHTML=                
-            `<div class="productwithhighestprofit">   
-                <div class="header">the product with the highest profit</div>             
-                <div class="head">
-                    <div >id</div>
-                    <div>catergory</div>
-                    <div>product name</div>
-                    <div>image</div>
-                    <div>total profit</div>
-                    <div>amount</div>
-                </div>
-                <div>
-                    <div>${productwithhighestprofit.id}</div>
-                    <div>${productwithhighestprofit.loai}</div>
-                    <div>${productwithhighestprofit.ten}</div>
-                    <div><image src="${productwithhighestprofit.hinh}" class="imagethongke"></div>
-                    <div>${productwithhighestprofit.profit}</div>
-                    <div>${productwithhighestprofit.soLuong}</div>
-                </div>
+                    <div class="cuswithhighestprofit">              
+                            <div>
+                                <div class="head">Lowest profit</div>
+                                <div>${customerwithlowestprofit.id}</div>
+                                <div>${customerwithlowestprofit.name}</div>
+                                <div>${customerwithlowestprofit.totalproduct}</div>
+                                <div>${customerwithlowestprofit.totalprice}</div>
+                                <div>${customerwithlowestprofit.phone}</div>
+                                <div>${customerwithlowestprofit.email}</div>
+                            </div>
+                    </div>
             </div>
-            <div class="productwithlowestprofit">   
-            <div class="header">the product with the lowest profit</div>             
-                <div class="head">
-                    <div >id</div>
-                    <div>catergory</div>
-                    <div>product name</div>
-                    <div>image</div>
-                    <div>total profit</div>
-                    <div>amount</div>
-                </div>
-                <div>
-                    <div>${productwithlowestprofit.id}</div>
-                    <div>${productwithlowestprofit.loai}</div>
-                    <div>${productwithlowestprofit.ten}</div>
-                    <div><image src="${productwithhighestprofit.hinh}" class="imagethongke"></div>
-                    <div>${productwithlowestprofit.profit}</div>
-                    <div>${productwithlowestprofit.soLuong}</div>
-                </div>
-            </div>`;
-            document.querySelector(".thongkesanpham").innerHTML=createdivElement.innerHTML;
+            `;
+            document.querySelector(".thongke").innerHTML=``;
+            document.querySelector(".thongke").innerHTML+=creatediv.innerHTML;
             let a=gettotal(arraycustomerwithtotalprofit(Customer));
             document.getElementById("totalprofit").innerText=a.totalprofit;
             document.getElementById("totalproduct").innerText=a.totalproduct;
