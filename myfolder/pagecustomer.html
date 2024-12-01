@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/Admin/style/customerpage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>page customer</title>
+</head>
+<body>
+    <div class="outer">
+    <div class="container3" ><input type="text" id="search" placeholder="Search content here" oninput="search()">  <i class="fa-solid fa-magnifying-glass"></i> </div>
+    <div class="outercontainer4">
+        <div id="container4">
+            <div class="clientouter" id="clientouter">
+            </div>
+            <div class="printorder"></div>
+            <div class="addorder"></div>
+            <div class="editorder"></div>
+        </div>
+        <div id="phantrangouter"></div>
+    </div>
+    <div id="printorder">
+        <div id="innerorder">
+            <i class="fa-solid fa-x" onclick="closedproduct()"></i>
+            <div>
+                <div>id</div>
+                <div>name</div>
+                <div>catergory</div>
+                <div>order receiptime</div>
+                <div><input type="date" id="taketimefirst" onclick="timefirst()"> <input type="date" id="taketimesecond" onclick="timesecond()"> </div>
+            </div>
+        </div>
+    </div>
+    <div id="sectioneditclient">
+        <div>
+            <div>EDIT CLIENT</div>
+            <i class="fa-solid fa-x" onclick="closededitclient()"></i>
+            <div>
+                <form action="">
+                    <label for="editnameofkh">Edit name</label> <input type="text" id="editnameofkh"> <br>
+                    <label for="editemailofkh">Edit email</label> <input type="email" id="editemailofkh"> <br>
+                    <label for="editphoneofkh">Edit phone</label> <input type="phone" id="editphoneofkh"><br>
+                </form>
+                <div>                <input type="submit" id="editkh" value="click"></div>
+            </div>
+        </div>
+    </div>
+    <div id="sectionaddclient">
+        <div>
+            <div>ADD CLIENT</div>
+            <i class="fa-solid fa-x"></i>
+            <div>
+                <form action="">
+                    <label for="nameofkh">Client name</label> <input type="text" id="nameofkh"> <br>
+                    <label for="emailofkh">Client email</label> <input type="email" id="emailofkh"> <br>
+                    <label for="phoneofkh">Client phone</label> <input type="phone" id="phoneofkh"><br>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="khoaclient">
+        <div>
+            <i class="fa-solid fa-x" onclick="closedkhoa()"></i>
+            <div id="contentkhoa"></div>
+            <div class="printkh">
+                <div >
+                    <div>id</div>
+                    <div>name</div>
+                    <div>phone</div>
+                    <div>email</div>
+                </div>
+            </div>
+            <div class="printorderkh">
+                <div >
+                    <div>id</div>
+                    <div>name</div>
+                    <div>catergory</div>
+                    <div>order receiptime</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/Admin/script/customerpage.js"></script>
+    </div>
+</body>
+</html>

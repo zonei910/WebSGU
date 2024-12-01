@@ -1,688 +1,8 @@
-// Customer = [
-//     { 
-//         id: 1,
-//          name: "Mikasa Chan",
-//          address: "0901 234 567", 
-//          email: "mikasachan@gmail.com", 
-//          status:0,
-//          lichsuMuaHang:[
-//             {
-//                 "id": 1,
-//                 "stk": "12345",
-//                 "bank": "AGB",
-//                 ngaydat: "13/08/2024", 
-//                 "ngayduyet": 0,
-//                 "diachiKH": "123 Đường Lê Lợi, Quận 1, TP. HCM",
-//                 "tongtien": 93100000,
-//                 "status": 0,
-//                 "name": "mikasachan",
-//                 "address": "0901 234 567",
-//                 "emailKH": "mikasachan@gmail.com",
-//                 "genderKH": "nu",
-//                 giohang: [
-//                     {  
-//                       "hinh": "http://127.0.0.1:5500/Bonus/WebSGU/assets/User/img/watch/1-1.jpg",
-//                       "id": 1,
-//                       "ten": "Đồng Hồ Vàng Sang Trọng",
-//                       "gia": "47500000",
-//                       profit:4000000,
-//                       "soLuong": 1,
-//                       "loai": "watch"
-//                     },
-//                     {   
-//                       "hinh": "assets/User/img/watch/2-1.jpg",
-//                       "ten": "Đồng Hồ Đính Kim Cương",
-//                       "id": 2,
-//                       "loai": "watch",
-//                       "soLuong": 1,
-//                       "gia": 71250000,
-//                       profit:7000000
-//                     }
-//                   ],
-//             },
-//             {
-//                 "id": 2,
-//                 "stk": "12345",
-//                 "bank": "VCB",
-//                 "ngaydat": "28/11/2024",
-//                 // "ngayduyet": 0,
-//                 "diachiKH": "123 Đường Lê Lợi, Quận 1, TP. HCM, Việt Nam",
-//                 "tongtien": 93100000,
-//                 "status": 0,
-//                 "name": "mikasachan",
-//                 "address": "0901 234 567",
-//                 "emailKH": "mikasachan@gmail.com",
-//                 "genderKH": "nu",
-//                 giohang:[
-//                     {  
-//                       "hinh": "assets/User/img/watch/2-1.jpg",
-//                       "ten": "Đồng Hồ Đính Kim Cương",
-//                       "id": 2,
-//                       "loai": "watch",
-//                       "soLuong": 1,
-//                       "gia": 71250000,
-//                       profit:7000000
-//                     },
-//                     {  
-//                       "hinh": "http://127.0.0.1:5500/Bonus/WebSGU/assets/User/img/watch/1-1.jpg",
-//                       "id": 1,
-//                       "ten": "Đồng Hồ Vàng Sang Trọng",
-//                       "gia": "47500000",
-//                       profit:4000000,
-//                       "soLuong": 1,
-//                       "loai": "watch"
-//                     },
-//                 ]
-//             }
-//          ]
-//     },
-//     { id: 2, 
-//         status:1,
-//         name: "Uzumaki Naruto", 
-//         address: "0912 345 678", 
-//         email: "naruto@gmail.com", 
-//         lichsuMuaHang: [
-        
-//         {  
-//             "id": 36,
-//             "stk": "12345",
-//             "bank": "AGB",
-//             "ngaydat": "28/11/2024",
-//             "ngayduyet": 0,
-//             "diachiKH": "456 Đường Nguyễn Văn Cừ, Quận 5, TP. HCM, Việt Nam",
-//             "tongtien": 93100000,
-//             "status": 0,
-//             "name": "Nguyễn Hiền",
-//             "address": "0912 345 678",
-//             "emailKH": "nguyenhien@gmail.com",
-//             "genderKH": "nam",
-//             giohang:[
-//                 {
-//                   "hinh": "assets/User/img/ring/1-1.jpg",
-//                   "ten": "Nhẫn Đính Hôn Kim Cương",
-//                   "id": 6,
-//                   "loai": "ring",
-//                   "soLuong": 2,
-//                   "gia": 142500000,
-//                   profit:10000000
-//                 }
-//             ]
-//         },
-//         {  
-//             "id": 11,
-//             "stk": "12345",
-//             "bank": "VCB",
-//             "ngaydat": "28/11/2024",
-//             "ngayduyet": 0,
-//             "diachiKH": "789 Đường Trần Hưng Đạo, Quận 1, TP. HCM, Việt Nam",
-//             "tongtien": 93100000,
-//             "status": 0,
-//             "name": "Nguyễn Hiền",
-//             "address": "0912 345 678",
-//             "emailKH": "nguyenhien@gmail.com",
-//             "genderKH": "nam",
-//             giohang:[
-//                 {
-//                   "hinh": "assets/User/img/bracelet/18-1.jpg",
-//                   "ten": "Vòng Tay Vàng K10",
-//                   "id": 18,
-//                   "loai": "bracelet",
-//                   "soLuong": 3,
-//                   "gia": 2100000,profit:200000
-//                 }
-//             ]
-//         }
-//       ],
-//     },
-//     { id: 3,status:1, name: "Sasuke Uchiha", address: "0978 901 234", email: "Sasuke@gmail.com",
-//         status:0,
-//         lichsuMuaHang:[
-//             {
-//                 "id": 12,
-//                 "stk": "12345",
-//                 "bank": "VCB",
-//                 "ngaydat": "28/11/2024",
-//                 "ngayduyet": 0,
-//                 "diachiKH": "321 Đường Lê Duẩn, Quận 3, TP. HCM, Việt Nam",
-//                 "tongtien": 93100000,
-//                 "status": 0,
-//                 "name": "Nguyễn Hiền",
-//                 "address": "0978 901 234",
-//                 "emailKH": "nguyenhien@gmail.com",
-//                 "genderKH": "nam",
-//                 giohang: [
-//                     {  
-//                       "hinh": "assets/User/img/bracelet/18-1.jpg",
-//                       "ten": "Vòng Tay Vàng K10",
-//                       "id": 18,
-//                       "loai": "bracelet",
-//                       "soLuong": 3,
-//                       "gia": 2100000,
-//                       profit:200000
-//                     }
-//                   ]
-//             }
-//         ],
-//     },
-//     { id: 4, name: "Sakura Haruno", address: "0923 456 789", email: "Sakura@gmail.com", 
-//         status:0,
-//         lichsuMuaHang:[
-  
-//             {
-//                 "id": 15,
-//                 "stk": "12345",
-//                 "bank": "AGB",
-//                 "ngaydat": "28/11/2024",
-//                 "ngayduyet": 0,
-//                 "diachiKH": "654 Đường Nguyễn Thị Minh Khai, Quận 3, TP. HCM, Việt Nam",
-//                 "tongtien": 93100000,
-//                 "status": 0,
-//                 "name": "Nguyễn Hiền",
-//                 "address": "0923 456 789",
-//                 "emailKH": "nguyenhien@gmail.com",
-//                 "genderKH": "nu",
-//                 giohang: [
-//                     {  
-//                       "hinh": "assets/User/img/bracelet/18-1.jpg",
-//                       "ten": "Vòng Tay Vàng K10",
-//                       "id": 18,
-//                       "loai": "bracelet",
-//                       "soLuong": 3,
-//                       "gia": 2100000,profit:200000
-//                      }
-//                   ],
-//             }
-//         ]
-//     },
-//     { id: 5, name: "Hinata Hyuga", address: "0934 567 890", email: "Hinata@gmail.com",
-//         status:0,
-//         lichsuMuaHang:[
-//             {
-//                 "id": 13,
-//                 "stk": "12345",
-//                 "bank": "AGB",
-//                 "ngaydat": "28/11/2024",
-//                 "ngayduyet": 0,
-//                 "diachiKH": "135 Đường Đinh Tiên Hoàng, Quận 1, TP. HCM, Việt Nam",
-//                 "tongtien": 93100000,
-//                 "status": 0,
-//                 "name": "Nguyễn Hiền",
-//                 "address": "0934 567 890",
-//                 "emailKH": "nguyenhien@gmail.com",
-//                 "genderKH": "nu",
-//                 giohang: [
-//                     {  
-//                       "hinh": "assets/User/img/watch/1-1.jpg",
-//                       "ten": "Đồng Hồ Vàng Sang Trọng",
-//                       "id": 1,
-//                       "loai": "watch",
-//                       "soLuong": 1,
-//                       "gia": 47500000,profit:4000000
-//                     }
-//                   ],
-//             }
-//         ]
-//     },
-//     { id: 6, name: "Itachi Uchiha", address: "0934 567 890", email: "Itachi@gmail.com",
-//         status:0,
-//         lichsuMuaHang:[
-//             {
-//                 "id": 14,
-//                 "stk": "12345",
-//                 "bank": "AGB",
-//                 "ngaydat": "28/11/2024",
-//                 "ngayduyet": 0,
-//                 "diachiKH": "246 Đường Nguyễn Huệ, Quận 1, TP. HCM, Việt Nam",
-//                 "tongtien": 93100000,
-//                 "status": 0,
-//                 "name": "Nguyễn Hiền",
-//                 "address": "0934 567 890",
-//                 "emailKH": "nguyenhien@gmail.com",
-//                 "genderKH": "nam",
-//                 giohang: [
-//                     {  
-//                       "hinh": "assets/User/img/watch/1-1.jpg",
-//                       "ten": "Đồng Hồ Vàng Sang Trọng",
-//                       "id": 1,
-//                       "loai": "watch",
-//                       "soLuong": 1,
-//                       "gia": 47500000,profit:4000000
-//                      }
-//                   ],
-//             }
-//         ]
-//     },
-//     { id: 7, name: "Sasori", address: "0956 789 012", email: "Sasori@gmail.com",
-//         status:0,
-//         lichsuMuaHang:[
-//             {
-//                 "id": 16,
-//                 "stk": "12345",
-//                 "bank": "VCB",
-//                 "ngaydat": "28/11/2024",
-//                 "ngayduyet": 0,
-//                 "diachiKH": "369 Đường Nguyễn Thái Học, Quận 1, TP. HCM, Việt Nam",
-//                 "tongtien": 93100000,
-//                 "status": 0,
-//                 "name": "Nguyễn Hiền",
-//                 "address": "0956 789 012",
-//                 "emailKH": "nguyenhien@gmail.com",
-//                 "genderKH": "nam",
-//                 giohang: [
-//                     {  
-//                       "hinh": "assets/User/img/earrings/21-1.jpg",
-//                       "ten": "Bông Tai 2 Trái Tim Vàng Hồng",
-//                       "id": 21,
-//                       "loai": "earring",
-//                       "soLuong": 1,
-//                       "gia": 4000000,profit:400000
-//                   }
-//                   ],
-//             }
-//         ]
-//       },
-//       { id: 8, name: "Kakashi Hatake", address: "0967 890 123", email: "Kakashi@gmail.com",
-//         status:1,
-//         lichsuMuaHang:[
-//             {
-//                 "id": 17,
-//                 "stk": "12345",
-//                 "bank": "AGB",
-//                 "ngaydat": "28/11/2024",
-//                 "ngayduyet": 0,
-//                 "diachiKH": "147 Đường Lê Văn Sỹ, Quận 3, TP. HCM, Việt Nam",
-//                 "tongtien": 93100000,
-//                 "status": 0,
-//                 "name": "Nguyễn Hiền",
-//                 "address": "0967 890 123",
-//                 "emailKH": "nguyenhien@gmail.com",
-//                 "genderKH": "nam",
-//                 giohang: [
-//                     {  
-//                       "hinh": "assets/User/img/bracelet/20-1.jpg",
-//                       "ten": "Vòng Tay Vàng K18",
-//                       "id": 20,
-//                       "loai": "bracelet",
-//                       "soLuong": 1,
-//                       "gia": 1400000,profit:300000
-//                      }
-//                   ],
-//             }
-//         ]
-//       },
-//       { id: 9, name: "Eren Yeager", address: "0901 234 567", email: "Eren@gmail.com",
-//         status:0,
-//         lichsuMuaHang:[
-//             {
-//                 "id": 18,
-//                 "stk": "12345",
-//                 "bank": "AGB",
-//                 "ngaydat": "28/11/2024",
-//                 "ngayduyet": 0,
-//                 "diachiKH": "258 Đường Võ Văn Tần, Quận 3, TP. HCM, Việt Nam",
-//                 "tongtien": 93100000,
-//                 "status": 0,
-//                 "name": "Nguyễn Hiền",
-//                 "address": "0901 234 567",
-//                 "emailKH": "nguyenhien@gmail.com",
-//                 "genderKH": "nam",
-//                 giohang: [
-//                     {  
-//                       "hinh": "assets/User/img/bracelet/20-1.jpg",
-//                       "ten": "Vòng Tay Vàng K18",
-//                       "id": 20,
-//                       "loai": "bracelet",
-//                       "soLuong": 1,
-//                       "gia": 1400000,profit:140000
-//                      },
-//                      {  
-//                       "hinh": "assets/User/img/watch/2-1.jpg",
-//                       "ten": "Đồng Hồ Đính Kim Cương",
-//                       "id": 2,
-//                       "loai": "watch",
-//                       "soLuong": 1,
-//                       "gia": 71250000,profit:7000000
-//                   }
-//                   ],
-//             }
-//         ]
-//       },
-//       { id: 10, name: "Mikasa Ackerman", address: "0903 456 789", email: "Ackerman@gmail.com",
-//         status:0,
-//         lichsuMuaHang:[
-//             {
-//                 "id": 19,
-//                 "stk": "12345",
-//                 "bank": "AGB",
-//                 "ngaydat": "28/11/2024",
-//                 "ngayduyet": 0,
-//                 "diachiKH": "369 Đường 3/2, Quận 10, TP. HCM, Việt Nam",
-//                 "tongtien": 93100000,
-//                 "status": 0,
-//                 "name": "Nguyễn Hiền",
-//                 "address": "0903 456 789",
-//                 "emailKH": "nguyenhien@gmail.com",
-//                 "genderKH": "nu",
-//                 giohang: [
-//                     {  
-//                       "hinh": "assets/User/img/watch/2-1.jpg",
-//                       "ten": "Đồng Hồ Đính Kim Cương",
-//                       "id": 2,
-//                       "loai": "watch",
-//                       "soLuong": 1,
-//                       "gia": 71250000,profit:7000000
-//                      }
-//                   ],
-//             }
-//         ]
-//       },
-//       { id: 11, name: "Armin Arlert", address: "0914 567 890", email: "Armin@gmail.com", 
-//         status:0,
-//         lichsuMuaHang:[
-//             {
-//                 "id": 20,
-//                 "stk": "12345",
-//                 "bank": "AGB",
-//                 "ngaydat": "28/11/2024",
-//                 "ngayduyet": 0,
-//                 "diachiKH": "852 Đường Trường Chinh, Quận Tân Bình, TP. HCM, Việt Nam",
-//                 "tongtien": 93100000,
-//                 "status": 0,
-//                 "name": "Nguyễn Hiền",
-//                 "address": "0914 567 890",
-//                 "emailKH": "nguyenhien@gmail.com",
-//                 "genderKH": "nam",
-//                 giohang: [
-//                     {  
-//                       "hinh": "assets/User/img/ring/1-1.jpg",
-//                       "ten": "Nhẫn Đính Hôn Kim Cương",
-//                       "id": 6,
-//                       "loai": "ring",
-//                       "soLuong": 1,
-//                       "gia": 142500000,profit:14000000
-//                      }
-//                   ],
-//             }
-//         ]
-//       },
-//       { id: 12, name: "Levi Ackerman", address: "0925 678 901", email: "Levi@gmail.com",
-//         status:0,
-//         lichsuMuaHang:[
-//             {
-//                 "id": 21,
-//                 "stk": "12345",
-//                 "bank": "AGB",
-//                 "ngaydat": "28/11/2024",
-//                 "ngayduyet": 0,
-//                 "diachiKH": "963 Đường Nguyễn Trãi, Quận 5, TP. HCM, Việt Nam",
-//                 "tongtien": 93100000,
-//                 "status": 0,
-//                 "name": "Nguyễn Hiền",
-//                 "address": "0925 678 901",
-//                 "emailKH": "nguyenhien@gmail.com",
-//                 "genderKH": "nam",
-//                 giohang: [
-//                     {  
-//                       "hinh": "assets/User/img/watch/5-1.jpg",
-//                       "ten": "Đồng Hồ Mặt Sapphire",
-//                       "id": 5,
-//                       "loai": "watch",
-//                       "soLuong": 1,
-//                       "gia": 93100000,profit:9000000
-//                      },
-//                      {  
-//                       "hinh": "assets/User/img/watch/4-1.jpg",
-//                       "ten": "Đồng Hồ Vàng Hồng Sang Trọng",
-//                       "id": 4,
-//                       "loai": "watch",
-//                       "soLuong": 1,
-//                       "gia": 80750000,profit:8000000
-//                      }
-//                   ],
-//             }
-//         ]
-//       },
-//       { id: 13, name: "Historia Reiss", address: "0936 789 012", email: "Historia@gmail.com",
-//         status:0,
-//         lichsuMuaHang:[
-//             {
-//                 "id": 22,
-//                 "stk": "12345",
-//                 "bank": "AGB",
-//                 "ngaydat": "28/11/2024",
-//                 "ngayduyet": 0,
-//                 "diachiKH": "741 Đường Cách Mạng Tháng Tám, Quận 10, TP. HCM, Việt Nam",
-//                 "tongtien": 93100000,
-//                 "status": 0,
-//                 "name": "Nguyễn Hiền",
-//                 "address": "0936 789 012",
-//                 "emailKH": "nguyenhien@gmail.com",
-//                 "genderKH": "nu",
-//                 giohang: [
-//                     {  
-//                       "hinh": "assets/User/img/ring/4-1.jpg",
-//                       "ten": "Nhẫn Ngọc Lục Bảo và Kim Cương",
-//                       "id": 9,
-//                       "loai": "ring",
-//                       "soLuong": 1,
-//                       "gia": 104500000
-//                       ,profit:10000000
-//                      }
-//                   ],
-//             }
-//         ]
-//       },
-//       { id: 14, name: "Erwin Smith", address: "0947 890 123", email: "Erwin@gmail.com"
-//         , status: 0,
-//         lichsuMuaHang:[
-//             {
-//                 "id": 23,
-//                 "stk": "12345",
-//                 "bank": "AGB",
-//                 "ngaydat": "28/11/2024",
-//                 "ngayduyet": 0,
-//                 "diachiKH": "159 Đường Lê Lai, Quận 1, TP. HCM, Việt Nam",
-//                 "tongtien": 93100000,
-//                 "status": 0,
-//                 "name": "Nguyễn Hiền",
-//                 "address": "0947 890 123",
-//                 "emailKH": "nguyenhien@gmail.com",
-//                 "genderKH": "nam",
-//                 giohang: [
-//                     {  
-//                       "hinh": "assets/User/img/ring/4-1.jpg",
-//                       "ten": "Nhẫn Ngọc Lục Bảo và Kim Cương",
-//                       "id": 9,
-//                       "loai": "ring",
-//                       "soLuong": 1,
-//                       "gia": 104500000,profit:10000000
-//                      },
-//                      {  
-//                       "hinh": "assets/User/img/necklace/12-1.jpg",
-//                       "ten": "Dây Chuyền Bạc Mặt Tròn",
-//                       "id": 12,
-//                       "loai": "necklace",
-//                       "soLuong": 1,
-//                       "gia": 1200000,profit:100000
-                    
-//                      }
-//                   ],
-//             }
-//         ]
-//       },
-//       { id: 15, name: "Jean Kirstein", address: "0958 901 234", email: "Jean@gmail.com"
-//         , status: 0,
-//         lichsuMuaHang:[
-//             {
-//                 "id": 24,
-//                 "stk": "12345",
-//                 "bank": "AGB",
-//                 "ngaydat": "28/11/2024",
-//                 "ngayduyet": 0,
-//                 "diachiKH": "753 Đường Nguyễn Đình Chiểu, Quận 3, TP. HCM, Việt Nam",
-//                 "tongtien": 93100000,
-//                 "status": 0,
-//                 "name": "Nguyễn Hiền",
-//                 "address": "0958 901 234",
-//                 "emailKH": "nguyenhien@gmail.com",
-//                 "genderKH": "nam",
-//                 giohang: [
-//                     {  
-//                       "hinh": "assets/User/img/necklace/12-1.jpg",
-//                       "ten": "Dây Chuyền Bạc Mặt Tròn",
-//                       "id": 12,
-//                       "loai": "necklace",
-//                       "soLuong": 1,
-//                       "gia": 1200000,profit:100000
-//                      },
-//                      {  
-//                       "hinh": "assets/User/img/necklace/11-1.jpg",
-//                       "ten": "Dây Chuyền Bạc Họa Tiết Móng Ngựa",
-//                       "id": 11,
-//                       "loai": "necklace",
-//                       "soLuong": 1,
-//                       "gia": 750000,profit:70000
-//                      },
-//                   ],
-//             }
-//         ]
-//       },
-//       { id: 16, name: "Sasha Blouse", address: "0969 012 345", email: "Sasha@gmail.com"
-//         , status: 0,
-//         lichsuMuaHang:[
-//             {
-//                 "id": 25,
-//                 "stk": "12345",
-//                 "bank": "AGB",
-//                 "ngaydat": "28/11/2024",
-//                 "ngayduyet": 0,
-//                 "diachiKH": "159 Đường Hùng Vương, Quận 5, TP. HCM, Việt Nam",
-//                 "tongtien": 93100000,
-//                 "status": 0,
-//                 "name": "Nguyễn Hiền",
-//                 "address": "0969 012 345",
-//                 "emailKH": "nguyenhien@gmail.com",
-//                 "genderKH": "nu",
-//                 giohang: [
-//                     {  
-//                       "hinh": "assets/User/img/ring/5-1.jpg",
-//                       "ten": "Bộ Nhẫn Cưới Bạch Kim",
-//                       "id": 10,
-//                       "loai": "ring",
-//                       "soLuong": 1,
-//                       "gia": 161500000,profit:16000000
-//                   },
-//                   ],
-//             }
-//         ]
-//       },
-//       { id: 17, name: "Connie Springer", address: "0970 123 456", email: "Connie@gmail.com", 
-//         status: 0,
-//         lichsuMuaHang:[
-//             {
-//                 "id": 26,
-//                 "stk": "12345",
-//                 "bank": "AGB",
-//                 "ngaydat": "28/11/2024",
-//                 "ngayduyet": 0,
-//                 "diachiKH": "258 Đường Lê Thánh Tôn, Quận 1, TP. HCM, Việt Nam",
-//                 "tongtien": 93100000,
-//                 "status": 0,
-//                 "name": "Nguyễn Hiền",
-//                 "address": "0970 123 456",
-//                 "emailKH": "nguyenhien@gmail.com",
-//                 "genderKH": "nam",
-//                 giohang: [
-//                     {  
-//                       "hinh": "assets/User/img/necklace/15-1.jpg",
-//                       "ten": "Dây Chuyền Bạc Dancing Stone",
-//                       "id": 15,
-//                       "loai": "necklace",
-//                       "soLuong": 2,
-//                       "gia": 450000,profit:60000
-//                      },
-//                      {  
-//                       "hinh": "assets/User/img/necklace/14-1.jpg",
-//                       "ten": "Dây Chuyền Bạc Mặt Trăng",
-//                       "id": 14,
-//                       "loai": "necklace",
-//                       "soLuong": 1,
-//                       "gia": 650000,profit:60000
-//                      }
-//                   ],
-//             }
-//         ]
-//       },
-//       { id: 18, name: "Hange Zoë", address: "0981 234 567", email: "Hange@gmail.com"
-//         , status: 0,
-//         lichsuMuaHang:[
-//             {
-//                 "id": 27,
-//                 "stk": "12345",
-//                 "bank": "AGB",
-//                 "ngaydat": "28/11/2024",
-//                 "ngayduyet": 0,
-//                 "diachiKH": "369 Đường Bùi Viện, Quận 1, TP. HCM, Việt Nam",
-//                 "tongtien": 93100000,
-//                 "status": 0,
-//                 "name": "Nguyễn Hiền",
-//                 "address": "0981 234 567",
-//                 "emailKH": "nguyenhien@gmail.com",
-//                 "genderKH": "nu",
-//                 giohang: [
-//                     {   
-//                           "hinh": "assets/User/img/necklace/13-1.jpg",
-//                           "ten": "Dây Chuyền Bạc Trái Tim Nhỏ",
-//                           "id": 13,
-//                           "loai": "necklace",
-//                           "soLuong": 1,
-//                           "gia": 550000,profit:50000
-//                      },
-//                      {
-//                       "hinh": "assets/User/img/bracelet/18-1.jpg",
-//                       "ten": "Vòng Tay Vàng K10",
-//                       "id": 18,
-//                       "loai": "bracelet",
-//                       "soLuong": 3,
-//                       "gia": 2100000,profit:200000
-//                      }
-//                   ],
-//             }
-//         ]
-//       },
-//       { id: 19, name: "Reiner Braun", address: "0992 345 678", email: "Reiner@gmail.com"
-//         , status: 0,
-//         lichsuMuaHang:[
-//             {
-//                 "id": 28,
-//                 "stk": "12345",
-//                 "bank": "AGB",
-//                 "ngaydat": "28/11/2024",
-//                 "ngayduyet": 0,
-//                 "diachiKH": "456 Đường Lê Thị Riêng, Quận 1, TP. HCM, Việt Nam",
-//                 "tongtien": 93100000,
-//                 "status": 0,
-//                 "name": "Nguyễn Hiền",
-//                 "address": "0992 345 678",
-//                 "emailKH": "nguyenhien@gmail.com",
-//                 "genderKH": "nam",
-//                 giohang: [
-//                     {  
-//                       "hinh": "assets/User/img/bracelet/18-1.jpg",
-//                       "ten": "Vòng Tay Vàng K10",
-//                       "id": 18,
-//                       "loai": "bracelet",
-//                       "soLuong": 3,
-//                       "gia": 2100000,profit:200000
-//                      }
-//                   ],
-//             }
-//         ]}];
 
-
-Customer = JSON.parse(localStorage.getItem('users'));
-        function taohangthongke(Customer,product){
-            console.log(Customer);
+ Customers = JSON.parse(localStorage.getItem("users"));
+        function taohangthongke(Customers,product){
+          console.log(product);
+            console.log(Customers);
             const doanhthu=document.querySelector(".container3");
             doanhthu.innerHTML=`
             <div class="doanhthu">
@@ -713,8 +33,8 @@ Customer = JSON.parse(localStorage.getItem('users'));
             });
             const productwithhighestprofit=highest(product);
             const productwithlowestprofit=lowest(product);
-            const customerwithhighestprofit=cushighest(arraycustomerwithtotalprofit(Customer));
-            const customerwithlowestprofit=cuslowest(arraycustomerwithtotalprofit(Customer));
+            const Customerswithhighestprofit=cushighest(arrayCustomerswithtotalprofit(Customers));
+            const Customerswithlowestprofit=cuslowest(arrayCustomerswithtotalprofit(Customers));
             const creatediv=document.createElement("div");
             creatediv.className=""
             creatediv.innerHTML=`
@@ -747,79 +67,79 @@ Customer = JSON.parse(localStorage.getItem('users'));
                 </div>
             </div> 
             <div class="thongkecustom">
-                <p>Customer</p>
+                <p>Customers</p>
                 <div class="head">
-                    <div>Customer</div><div>id</div><div>client name</div><div>amount product</div><div>amount spent</div><div>teleaddress</div><div>email</div>
+                    <div>Customers</div><div>id</div><div>client name</div><div>amount product</div><div>amount spent</div><div>teleaddress</div><div>email</div>
                 </div>
                 <div class="cuswithlowestprofit"> 
                         <div >
                             <div class="head">Highest profit</div>
-                            <div>${customerwithhighestprofit.id}</div>
-                            <div>${customerwithhighestprofit.name}</div>
-                            <div>${customerwithhighestprofit.totalproduct}</div>
-                            <div>${customerwithhighestprofit.totalprice}</div>
-                            <div>${customerwithhighestprofit.address}</div>
-                            <div>${customerwithhighestprofit.email}</div>
+                            <div>${Customerswithhighestprofit.id}</div>
+                            <div>${Customerswithhighestprofit.name}</div>
+                            <div>${Customerswithhighestprofit.totalproduct}</div>
+                            <div>${Customerswithhighestprofit.totalprice}</div>
+                            <div>${Customerswithhighestprofit.address}</div>
+                            <div>${Customerswithhighestprofit.email}</div>
                         </div>
                 </div>
                     <div class="cuswithhighestprofit">              
                             <div>
                                 <div class="head">Lowest profit</div>
-                                <div>${customerwithlowestprofit.id}</div>
-                                <div>${customerwithlowestprofit.name}</div>
-                                <div>${customerwithlowestprofit.totalproduct}</div>
-                                <div>${customerwithlowestprofit.totalprice}</div>
-                                <div>${customerwithlowestprofit.address}</div>
-                                <div>${customerwithlowestprofit.email}</div>
+                                <div>${Customerswithlowestprofit.id}</div>
+                                <div>${Customerswithlowestprofit.name}</div>
+                                <div>${Customerswithlowestprofit.totalproduct}</div>
+                                <div>${Customerswithlowestprofit.totalprice}</div>
+                                <div>${Customerswithlowestprofit.address}</div>
+                                <div>${Customerswithlowestprofit.email}</div>
                             </div>
                     </div>
             </div>
             `;
             document.querySelector(".thongke").innerHTML=``;
             document.querySelector(".thongke").innerHTML+=creatediv.innerHTML;
-            let a=gettotal(arraycustomerwithtotalprofit(Customer));
+            let a=gettotal(arrayCustomerswithtotalprofit(Customers));
+
             document.getElementById("totalprofit").innerText=a.totalprofit;
             document.getElementById("totalproduct").innerText=a.totalproduct;
             document.getElementById("totaluser").innerText=a.totaluser;
             document.getElementById("totalprice").innerText=a.totalprice;
         }
-function gettotal(Customer){
+function gettotal(Customers){
     let sumprofit=0;
     let sumproduct=0;
     let sumprice=0;
-    Customer.forEach(customer=>{
-    sumprofit+=customer.totalprofit;
-    sumproduct+=customer.totalproduct;
-    sumprice+=customer.totalprice;
-
+    Customers.forEach(Customers=>{
+    sumprofit+=Customers.totalprofit;
+    sumproduct+=Customers.totalproduct;
+    sumprice+=Customers.totalprice;
     })
     return {
     totalprofit:sumprofit,
     totalproduct:sumproduct,
     totalprice:sumprice,
-    totaluser:Customer.length
+    totaluser:Customers.length
 
     }
 }
-function cushighest(Customer){
+function cushighest(Customers){
     let max=-Infinity;
     let cus;
-    Customer.forEach(customer=>{
-        if(customer.totalprofit>max){
-            max=customer.totalprofit;
-            cus=customer;
+    Customers.forEach(Customers=>{
+        if(Customers.totalprofit>max){
+            max=Customers.totalprofit;
+            cus=Customers;
         }
     })
     return cus;
 }  
 
-function cuslowest(Customer){
+function cuslowest(Customers){
     let min=Infinity;
     let cus;
-    Customer.forEach(customer=>{
-        if(min>customer.totalprofit){
-            min=customer.totalprofit;
-            cus=customer;
+    Customers.forEach(Customers=>{
+        if(min>Customers.totalprofit){
+            min=Customers.totalprofit;
+            cus=Customers;
         }
     })
     return cus;
@@ -880,34 +200,35 @@ let yearsecond=2024;
 let year=2024
 let monthsecond=11;
 let month=8
-//lấy mảng customer mới với lịch sử mua hàng thỏa điều kiện 
-function arraycustomer(Customer){
-    return Customer.map(customer => {
-        const filteredlichsuMuaHangs = customer.lichsuMuaHang.filter(lichsuMuaHang => {
+//lấy mảng Customers mới với lịch sử mua hàng thỏa điều kiện 
+function arrayCustomers(Customers){
+  console.log(Customers)
+    return Customers.map(Customers => {
+        const filteredlichsuMuaHangs = Customers.lichsuMuaHang.filter(lichsuMuaHang => {
             return checktimeday(lichsuMuaHang.ngaydat);
         }
         );
         if (filteredlichsuMuaHangs.length > 0) {
             return { 
-                ...customer, 
+                ...Customers, 
                 lichsuMuaHang: filteredlichsuMuaHangs
             };
         }
-    }).filter(customer => customer); 
+    }).filter(Customers => Customers); 
 }
 //khách hàng với tổng doanh thu,tổng product
-function arraycustomerwithtotalprofit(Customer){
-    // let deepCopy=arraycustomer(Customer);
-    const array = JSON.parse(JSON.stringify(Customer));
-    array.forEach(customer=>{
-        customer.lichsuMuaHang.forEach(lichsuMuaHang=>{
-            customer.totalprice=0;
-            customer.totalproduct=0;
-            customer.totalprofit=0;
+function arrayCustomerswithtotalprofit(Customers){
+    const array = JSON.parse(JSON.stringify(Customers));
+    array.forEach(Customers=>{
+        Customers.lichsuMuaHang.forEach(lichsuMuaHang=>{
+            Customers.totalprice=0;
+            Customers.totalproduct=0;
+            Customers.totalprofit=0;
             lichsuMuaHang.giohang.forEach(product=>{
-                customer.totalprofit+=product.soLuong*product.profit;
-                customer.totalproduct+=product.soLuong;
-                customer.totalprice+=product.soLuong*parseInt(product.gia);
+              console.log(product.profit);
+                Customers.totalprofit+=product.soLuong*product.profit;
+                Customers.totalproduct+=product.soLuong;
+                Customers.totalprice+=product.soLuong*parseInt(product.gia);
             })
         })
     })
@@ -918,10 +239,10 @@ function bang(){
 }
 
 // lấy mảng product mới id phân biệt
-//   function aggregateCartItems(customers) {
+//   function aggregateCartItems(Customerss) {
 //     const aggregatedItems = {};
-//     customers.forEach(customer => {
-//         customer.lichsuMuaHang.forEach(order => {
+//     Customerss.forEach(Customers => {
+//         Customers.lichsuMuaHang.forEach(order => {
 //             let uni=new Set();
 //             let i=0;
 //             order.giohang.forEach(item => {
@@ -942,10 +263,10 @@ function bang(){
 //     });
 //     return Object.values(aggregatedItems);
 //   }
-function aggregateCartItems(customers) {
+function aggregateCartItems(Customerss) {
     const aggregatedItems = {};
-    customers.forEach(customer => {
-        customer.lichsuMuaHang.forEach(order => {
+    Customerss.forEach(Customers => {
+        Customers.lichsuMuaHang.forEach(order => {
             order.giohang.forEach(item => {
                 if (aggregatedItems[item.id]) {
                     aggregatedItems[item.id].soLuong += item.soLuong;
@@ -989,8 +310,8 @@ function gettimesecond(){
         if(yearsecond==year && monthsecond==month && daysecond<day){
             alert("Bạn nhập sai ngày");
         }
-    console.log(aggregateCartItems(Customer));
-    taohangthongke(arraycustomer(Customer),aggregateCartItems(Customer));
+    console.log(aggregateCartItems(Customers));
+    taohangthongke(arrayCustomers(Customers),aggregateCartItems(Customers));
 
     }
 }
@@ -1010,4 +331,17 @@ function gettimesecond(){
     yearsecond=year+1;
     daysecond=1;
     monthsecond=1;
-taohangthongke(arraycustomer(Customer),aggregateCartItems(Customer));
+  console.log(Customers);
+  console.log(arrayCustomerswithtotalprofit(Customers));
+//thêm thuộc tính profit
+function addprofit(){
+  Customers.forEach(Customers=>{
+    Customers.lichsuMuaHang.forEach(lichsu=>{
+      lichsu.giohang.forEach(product=>{
+        product.profit=(product.gia*10)/100 ;
+      })
+    })
+  })
+}
+addprofit();
+taohangthongke(arrayCustomerswithtotalprofit(Customers),aggregateCartItems(Customers));

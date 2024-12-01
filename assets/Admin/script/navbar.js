@@ -10,7 +10,7 @@ var Display_merchandise = document.querySelector("#Display .merchandise");
 var Display_revenue = document.querySelector("#Display .revenue");
 var Display_userlist = document.querySelector("#Display .userlist");
 var Display_order = document.querySelector("#Display .order");
-
+let Customer;
 
 Display_viewpage.style.display = "none";
 Display_merchandise.style.display = "none";
@@ -42,10 +42,6 @@ Menu_merchandise.onclick = () => {
     Display_revenue.style.display = "none";
     Display_userlist.style.display = "none";
     Display_order.style.display = "none";
-    // showSanPham();
-
-
-
 }
 
 Menu_revenue.onclick = () => {
