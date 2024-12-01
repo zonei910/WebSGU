@@ -10,7 +10,6 @@ var Display_merchandise = document.querySelector("#Display .merchandise");
 var Display_revenue = document.querySelector("#Display .revenue");
 var Display_userlist = document.querySelector("#Display .userlist");
 var Display_order = document.querySelector("#Display .order");
-let Customer;
 
 Display_viewpage.style.display = "none";
 Display_merchandise.style.display = "none";
