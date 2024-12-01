@@ -6,12 +6,8 @@
 }
 .outer{
     width:100%;
-    height: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-
+    height: 100vh;
     background-color: white;
-
 }
 .container3>input{
     width: 300px;
@@ -36,10 +32,10 @@
 .outercontainer4{
     padding-bottom: 70px;
     background-color: rgb(247, 250, 255);
-    /* background-color: #75ba75; */
     margin:10px;
     position: relative;
     border-radius: 5px;
+    max-height: 100vh;
 }
 #phantrangouter{
     position: absolute;
@@ -48,14 +44,9 @@
     transform: translate(-50%,50%);
 }
 #container4{
-    /* position: absolute; */
+    overflow-y: scroll;
+    overflow-x: hidden;
     padding-top:20px;
-    /* padding:0x; */
-    /* display: flex; */
-    /* display:grid; */
-    /* grid-template-columns: 1190px; */
-    /* grid-template-rows: 50px 50px 100px 200px 50px; */
-    /* grid-auto-rows: 50px; */
 }
 .nutphantrang{
     /* border-radius: 10px; */
@@ -349,7 +340,7 @@
     background-color: #fec76f;
 }
 #printorder > div{
-    width: 80%;
+    width: 60%;
     position: relative;
     border-radius: 10px;
 }

@@ -1,12 +1,9 @@
-let currentpage=1;
-const container4Node=document.getElementById("container4");
 Customer = [
     { 
         id: 1,
          name: "Mikasa Chan",
          phone: "0901 234 567", 
          email: "mikasachan@gmail.com", 
-         img:"./thenganhangimage/mikasachan.jfif",
          status:0,
          lichsuMuaHang:[
             {
@@ -82,7 +79,6 @@ Customer = [
     { id: 2, 
         status:1,
         name: "Uzumaki Naruto", 
-        img:"./thenganhangimage/naruto.jfif",
         phone: "0912 345 678", 
         email: "naruto@gmail.com", 
         lichsuMuaHang: [
@@ -138,7 +134,7 @@ Customer = [
         }
       ],
     },
-    { id: 3,status:1, name: "Sasuke Uchiha", img:"./thenganhangimage/sasuke.jfif", phone: "0978 901 234", email: "Sasuke@gmail.com",
+    { id: 3,status:1, name: "Sasuke Uchiha", phone: "0978 901 234", email: "Sasuke@gmail.com",
         status:0,
         lichsuMuaHang:[
             {
@@ -168,7 +164,7 @@ Customer = [
             }
         ],
     },
-    { id: 4, name: "Sakura Haruno", img:"./thenganhangimage/sakura.jfif", phone: "0923 456 789", email: "Sakura@gmail.com", 
+    { id: 4, name: "Sakura Haruno", phone: "0923 456 789", email: "Sakura@gmail.com", 
         status:0,
         lichsuMuaHang:[
   
@@ -198,7 +194,7 @@ Customer = [
             }
         ]
     },
-    { id: 5, name: "Hinata Hyuga", img:"./thenganhangimage/hinata.jfif", phone: "0934 567 890", email: "Hinata@gmail.com",
+    { id: 5, name: "Hinata Hyuga", phone: "0934 567 890", email: "Hinata@gmail.com",
         status:0,
         lichsuMuaHang:[
             {
@@ -227,7 +223,7 @@ Customer = [
             }
         ]
     },
-    { id: 6, name: "Itachi Uchiha", img:"./thenganhangimage/itachi.jfif", phone: "0934 567 890", email: "Itachi@gmail.com",
+    { id: 6, name: "Itachi Uchiha", phone: "0934 567 890", email: "Itachi@gmail.com",
         status:0,
         lichsuMuaHang:[
             {
@@ -256,7 +252,7 @@ Customer = [
             }
         ]
     },
-    { id: 7, name: "Sasori", img:"./thenganhangimage/sasori.jfif", phone: "0956 789 012", email: "Sasori@gmail.com",
+    { id: 7, name: "Sasori", phone: "0956 789 012", email: "Sasori@gmail.com",
         status:0,
         lichsuMuaHang:[
             {
@@ -285,7 +281,7 @@ Customer = [
             }
         ]
       },
-      { id: 8, name: "Kakashi Hatake", img:"./thenganhangimage/kakashi.jfif", phone: "0967 890 123", email: "Kakashi@gmail.com",
+      { id: 8, name: "Kakashi Hatake", phone: "0967 890 123", email: "Kakashi@gmail.com",
         status:1,
         lichsuMuaHang:[
             {
@@ -314,7 +310,7 @@ Customer = [
             }
         ]
       },
-      { id: 9, name: "Eren Yeager", img:"./thenganhangimage/eren.jfif", phone: "0901 234 567", email: "Eren@gmail.com",
+      { id: 9, name: "Eren Yeager", phone: "0901 234 567", email: "Eren@gmail.com",
         status:0,
         lichsuMuaHang:[
             {
@@ -351,7 +347,7 @@ Customer = [
             }
         ]
       },
-      { id: 10, name: "Mikasa Ackerman", img:"./thenganhangimage/mikasa.jfif", phone: "0903 456 789", email: "Ackerman@gmail.com",
+      { id: 10, name: "Mikasa Ackerman", phone: "0903 456 789", email: "Ackerman@gmail.com",
         status:0,
         lichsuMuaHang:[
             {
@@ -380,7 +376,7 @@ Customer = [
             }
         ]
       },
-      { id: 11, name: "Armin Arlert", img:"./thenganhangimage/armin.jfif", phone: "0914 567 890", email: "Armin@gmail.com", 
+      { id: 11, name: "Armin Arlert", phone: "0914 567 890", email: "Armin@gmail.com", 
         status:0,
         lichsuMuaHang:[
             {
@@ -409,7 +405,7 @@ Customer = [
             }
         ]
       },
-      { id: 12, name: "Levi Ackerman", img:"./thenganhangimage/levi.jfif", phone: "0925 678 901", email: "Levi@gmail.com",
+      { id: 12, name: "Levi Ackerman", phone: "0925 678 901", email: "Levi@gmail.com",
         status:0,
         lichsuMuaHang:[
             {
@@ -446,7 +442,7 @@ Customer = [
             }
         ]
       },
-      { id: 13, name: "Historia Reiss", img:"./thenganhangimage/historia.jfif", phone: "0936 789 012", email: "Historia@gmail.com",
+      { id: 13, name: "Historia Reiss", phone: "0936 789 012", email: "Historia@gmail.com",
         status:0,
         lichsuMuaHang:[
             {
@@ -476,7 +472,7 @@ Customer = [
             }
         ]
       },
-      { id: 14, name: "Erwin Smith", img:"./thenganhangimage/erwin.jfif", phone: "0947 890 123", email: "Erwin@gmail.com"
+      { id: 14, name: "Erwin Smith", phone: "0947 890 123", email: "Erwin@gmail.com"
         , status: 0,
         lichsuMuaHang:[
             {
@@ -514,7 +510,7 @@ Customer = [
             }
         ]
       },
-      { id: 15, name: "Jean Kirstein", img:"./thenganhangimage/jean.jfif", phone: "0958 901 234", email: "Jean@gmail.com"
+      { id: 15, name: "Jean Kirstein", phone: "0958 901 234", email: "Jean@gmail.com"
         , status: 0,
         lichsuMuaHang:[
             {
@@ -551,7 +547,7 @@ Customer = [
             }
         ]
       },
-      { id: 16, name: "Sasha Blouse", img:"./thenganhangimage/sasha.jfif", phone: "0969 012 345", email: "Sasha@gmail.com"
+      { id: 16, name: "Sasha Blouse", phone: "0969 012 345", email: "Sasha@gmail.com"
         , status: 0,
         lichsuMuaHang:[
             {
@@ -580,7 +576,7 @@ Customer = [
             }
         ]
       },
-      { id: 17, name: "Connie Springer", img:"./thenganhangimage/conie.jfif", phone: "0970 123 456", email: "Connie@gmail.com", 
+      { id: 17, name: "Connie Springer", phone: "0970 123 456", email: "Connie@gmail.com", 
         status: 0,
         lichsuMuaHang:[
             {
@@ -617,7 +613,7 @@ Customer = [
             }
         ]
       },
-      { id: 18, name: "Hange Zoë", img:"./thenganhangimage/hange.jfif", phone: "0981 234 567", email: "Hange@gmail.com"
+      { id: 18, name: "Hange Zoë", phone: "0981 234 567", email: "Hange@gmail.com"
         , status: 0,
         lichsuMuaHang:[
             {
@@ -654,7 +650,7 @@ Customer = [
             }
         ]
       },
-      { id: 19, name: "Reiner Braun", img:"./thenganhangimage/reiner.jfif", phone: "0992 345 678", email: "Reiner@gmail.com"
+      { id: 19, name: "Reiner Braun", phone: "0992 345 678", email: "Reiner@gmail.com"
         , status: 0,
         lichsuMuaHang:[
             {
@@ -683,405 +679,350 @@ Customer = [
             }
         ]}];
 
-// let  date=null,month=null,year=null,datesecond=null,monthsecond=null,yearsecond=null;
-// localStorage.setItem('newsave', JSON.stringify(Customer));
-// function thecheck
-Customer = JSON.parse(localStorage.getItem('users'));
-function checktimedate(receiptime){
+
+function taohangthongke(Customer,product){
+            console.log(Customer);
+            const doanhthu=document.querySelector(".container3");
+            doanhthu.innerHTML=`
+            <div class="doanhthu">
+                <div>name</div>
+                <div>sales volumn</div>
+                <div>sales</div>
+            </div>`;
+            product.forEach(giohang => {
+                const createrow=document.createElement("div");
+                createrow.className="doanhthu";
+                createrow.innerHTML+=
+                `<div>
+                    ${giohang.ten}
+                </div>
+                <div>
+                    ${giohang.soLuong}
+                </div>
+                <div>
+                    ${giohang.profit} $
+                </div>
+                `
+                doanhthu.innerHTML+=createrow.outerHTML;
+            });
+            const productwithhighestprofit=highest(product);
+            const productwithlowestprofit=lowest(product);
+            const customerwithhighestprofit=cushighest(arraycustomerwithtotalprofit(Customer));
+            const customerwithlowestprofit=cuslowest(arraycustomerwithtotalprofit(Customer));
+            const creatediv=document.createElement("div");
+            creatediv.innerHTML=`          
+            <div class="cuswithlowestprofit">  
+                    <div class="header"> the customer with the lowest profit </div>            
+                    <div class="head">
+                        <div>id</div>
+                        <div>client name</div>
+                        <div>amount product</div>
+                        <div>amount spent</div>
+                        <div>telephone</div>
+                        <div>email</div>
+                    </div>
+                    <div >
+                        <div>${customerwithlowestprofit.id}</div>
+                        <div>${customerwithlowestprofit.name}</div>
+                        <div>${customerwithlowestprofit.totalproduct}</div>
+                        <div>${customerwithlowestprofit.totalprofit}</div>
+                        <div>${customerwithlowestprofit.phone}</div>
+                        <div>${customerwithlowestprofit.email}</div>
+                    </div>
+            </div>
+                <div class="cuswithhighestprofit">  
+                    <div class="header">the customer with the highest profit</div>             
+                        <div class="head">
+                            <div>id</div>
+                            <div>client name</div>
+                            <div>amount product</div>
+                            <div>amount spent</div>
+                            <div>telephone</div>
+                            <div>email</div>
+                        </div>
+                        <div>
+                            <div>${customerwithhighestprofit.id}</div>
+                            <div>${customerwithhighestprofit.name}</div>
+                            <div>${customerwithhighestprofit.totalproduct}</div>
+                            <div>${customerwithhighestprofit.totalprofit}</div>
+                            <div>${customerwithhighestprofit.phone}</div>
+                            <div>${customerwithhighestprofit.email}</div>
+                        </div>
+                </div>
+            `
+            document.querySelector(".thongkecustom").innerHTML+=creatediv.outerHTML;
+            const createdivElement=document.createElement("div");
+            createdivElement.innerHTML=                
+            `<div class="productwithhighestprofit">   
+                <div class="header">the product with the highest profit</div>             
+                <div class="head">
+                    <div >id</div>
+                    <div>catergory</div>
+                    <div>product name</div>
+                    <div>image</div>
+                    <div>total profit</div>
+                    <div>amount</div>
+                </div>
+                <div>
+                    <div>${productwithhighestprofit.id}</div>
+                    <div>${productwithhighestprofit.loai}</div>
+                    <div>${productwithhighestprofit.ten}</div>
+                    <div><image src="${productwithhighestprofit.hinh}" class="imagethongke"></div>
+                    <div>${productwithhighestprofit.profit}</div>
+                    <div>${productwithhighestprofit.soLuong}</div>
+                </div>
+            </div>
+            <div class="productwithlowestprofit">   
+            <div class="header">the product with the lowest profit</div>             
+                <div class="head">
+                    <div >id</div>
+                    <div>catergory</div>
+                    <div>product name</div>
+                    <div>image</div>
+                    <div>total profit</div>
+                    <div>amount</div>
+                </div>
+                <div>
+                    <div>${productwithlowestprofit.id}</div>
+                    <div>${productwithlowestprofit.loai}</div>
+                    <div>${productwithlowestprofit.ten}</div>
+                    <div><image src="${productwithhighestprofit.hinh}" class="imagethongke"></div>
+                    <div>${productwithlowestprofit.profit}</div>
+                    <div>${productwithlowestprofit.soLuong}</div>
+                </div>
+            </div>`;
+            document.querySelector(".thongkesanpham").innerHTML=createdivElement.innerHTML;
+            let a=gettotal(arraycustomerwithtotalprofit(Customer));
+            document.getElementById("totalprofit").innerText=a.totalprofit;
+            document.getElementById("totalproduct").innerText=a.totalproduct;
+            document.getElementById("totaluser").innerText=a.totaluser;
+            document.getElementById("totalprice").innerText=a.totalprice;
+        }
+function gettotal(Customer){
+    let sumprofit=0;
+    let sumproduct=0;
+    let sumprice=0;
+    Customer.forEach(customer=>{
+    sumprofit+=customer.totalprofit;
+    sumproduct+=customer.totalproduct;
+    sumprice+=customer.totalprice;
+
+    })
+    return {
+    totalprofit:sumprofit,
+    totalproduct:sumproduct,
+    totalprice:sumprice,
+    totaluser:Customer.length
+
+    }
+}
+function cushighest(Customer){
+    let max=-Infinity;
+    let cus;
+    Customer.forEach(customer=>{
+        if(customer.totalprofit>max){
+            max=customer.totalprofit;
+            cus=customer;
+        }
+    })
+    return cus;
+}  
+
+function cuslowest(Customer){
+    let min=Infinity;
+    let cus;
+    Customer.forEach(customer=>{
+        if(min>customer.totalprofit){
+            min=customer.totalprofit;
+            cus=customer;
+        }
+    })
+    return cus;
+}    
+    function highest(product){
+        let max=-Infinity;
+        let productwithmax;
+        product.forEach(product=>{
+            if(product.profit>max){
+                max=product.profit;
+                productwithmax=product
+            }
+        })
+        return productwithmax;
+    }
+    function lowest(product){
+        let productwithmin;
+        let min=Infinity;
+        product.forEach(product=>{
+            if(product.profit<min){
+                min=product.profit;
+                productwithmin=product;
+            }
+        })
+        return productwithmin;
+    }
+
+  function checktimeday(receiptime){
     let arraycopy=JSON.parse(JSON.stringify(receiptime));
     receipt=arraycopy.split("/");
-    // console.log(receipt[0].replace(/^0+/, '')+"  " +receipt[1].replace(/^0+/, '')+" "+receipt[2].replace(/^0+/, ''));
 
-    if(receipt[2].replace(/^0+/, '')<year){//nhỏ hơn năm đầu
-        // console.log("nhỏ hơn năm đầu");
+    if(receipt[2].replace(/^0+/, '')<year){
          return false;
     } 
-    if(receipt[2].replace(/^0+/, '')>yearsecond){ //lớn hơn năm thứ 2
-        // console.log("lớn hơn năm thứ 2");
+    if(receipt[2].replace(/^0+/, '')>yearsecond){
         return false;
     }
-    if(receipt[2].replace(/^0+/, '')<yearsecond && receipt[2].replace(/^0+/, '')>year){//trong khoảng năm đầu và năm thứ 2
-        // console.log("trong khoảng năm đầu và năm thứ 2");
+    if(receipt[2].replace(/^0+/, '')<yearsecond && receipt[2].replace(/^0+/, '')>year){
         return true;
     }
-    if(receipt[1].replace(/^0+/, '')<month && receipt[2].replace(/^0+/, '')==year){// bằng năm đầu ,nhỏ hơn tháng
-        // console.log("bằng năm đầu ,nhỏ hơn tháng");
+    if(receipt[1].replace(/^0+/, '')<month && receipt[2].replace(/^0+/, '')==year){
         return false;
     }
-    if(receipt[1].replace(/^0+/, '')>monthsecond && receipt[2].replace(/^0+/, '')==yearsecond){//bằng năm 2 lớn hơn tháng
-        // console.log("bằng năm 2 lớn hơn tháng");
+    if(receipt[1].replace(/^0+/, '')>monthsecond && receipt[2].replace(/^0+/, '')==yearsecond){
         return false;
     }
-    if(receipt[0].replace(/^0+/, '')<date && receipt[1].replace(/^0+/, '')==month && receipt[2].replace(/^0+/, '')==year){//bằng năm tháng đầu ,nhỏ hơn ngày
-        // console.log("bằng năm tháng đầu ,nhỏ hơn ngày");
+    if(receipt[0].replace(/^0+/, '')<day && receipt[1].replace(/^0+/, '')==month && receipt[2].replace(/^0+/, '')==year){
         return false;
     }
-    if(receipt[0].replace(/^0+/, '')>datesecond && receipt[1].replace(/^0+/, '')==monthsecond &&receipt[2].replace(/^0+/, '')==yearsecond){ //bằng năm tháng thứ 2 ,lơn hơn ngày
-        // console.log("bằng năm tháng thứ 2 ,lơn hơn ngày");
+    if(receipt[0].replace(/^0+/, '')>daysecond && receipt[1].replace(/^0+/, '')==monthsecond &&receipt[2].replace(/^0+/, '')==yearsecond){
         return false;
     }
-    // console.log("trường hợp còn lại");
-
-    return true; //trường hợp còn lại
+    return true; 
 }
-function closedproduct(){
-    document.getElementById("printorder").style.display="none";
-}
-function closededitclient(){
-    document.getElementById("sectioneditclient").style.display="none";
-}
-// const submit=document.getElementById('');
-function editclient(){
-    document.getElementById("sectioneditclient").style.display="flex";
-    document.getElementById("editkh").addEventListener("click",function(event){
-        if(event.target.id=="editkh"){
-            let hoten=document.getElementById("editnameofkh").value.trim();
-            let phone=document.getElementById("editphoneofkh").value.trim();
-            let email=document.getElementById("editemailofkh").value.trim();
-            if(!hoten){
-                alert("Vui lòng nhập tên");
-                document.getElementById("editnameofkh").focus();
-                return;
-            }
-            if(!phone){
-                alert("Vui lòng nhập số điện thoại");
-                document.getElementById("editphoneofkh").focus();
-                return;
-            }
-            if(!email){
-                alert("Vui lòng nhập email");
-                document.getElementById("editemailofkh").focus();
-                return;
-            }
-            Customer.name=hoten;
-            Customer.phone=phone;
-            Customer.email=email;
-            // Customer.push(
-            //     {
-            //         ten:hoten,
-            //         phone:phone,
-            //         email:email
-            //     }
-            // );
-            document.getElementById("sectioneditclient").style="none";
+let day=1;
+let daysecond=10;
+let yearsecond=2024;
+let year=2024
+let monthsecond=11;
+let month=8
+//lấy mảng customer mới với lịch sử mua hàng thỏa điều kiện 
+function arraycustomer(Customer){
+    return Customer.map(customer => {
+        const filteredlichsuMuaHangs = customer.lichsuMuaHang.filter(lichsuMuaHang => {
+            return checktimeday(lichsuMuaHang.ngaydat);
         }
+        );
+        if (filteredlichsuMuaHangs.length > 0) {
+            return { 
+                ...customer, 
+                lichsuMuaHang: filteredlichsuMuaHangs
+            };
+        }
+    }).filter(customer => customer); 
+}
+//khách hàng với tổng doanh thu,tổng product
+function arraycustomerwithtotalprofit(Customer){
+    // let deepCopy=arraycustomer(Customer);
+    const array = JSON.parse(JSON.stringify(Customer));
+    array.forEach(customer=>{
+        customer.lichsuMuaHang.forEach(lichsuMuaHang=>{
+            customer.totalprice=0;
+            customer.totalproduct=0;
+            customer.totalprofit=0;
+            lichsuMuaHang.giohang.forEach(product=>{
+                customer.totalprofit+=product.soLuong*product.profit;
+                customer.totalproduct+=product.soLuong;
+                customer.totalprice+=product.soLuong*parseInt(product.gia);
+            })
+        })
     })
-
+    return array;
 }
-function printinfororder(id) {
-    // let a="orderofcustomindex"+id;
-    // console.log(a);
-    document.getElementById("printorder").style.display="flex";
-    const section=document.querySelector("#printorder >div");
-    for(let i=0;i<Customer.length;i++){
-        if(Customer[i].phone==id){
-            for(let j=0;j<Customer[i].lichsuMuaHang.length;j++){
-                const product=Customer[i].lichsuMuaHang[j];
-                for(let k=0;k<product.giohang.length;k++){
-                    const creatediv=document.createElement("div");
-                    creatediv.innerHTML=`
-                    <div>${product.giohang[k].id}</div>
-                    <div>${product.giohang[k].ten}</div>
-                    <div>${product.giohang[k].loai}</div>
-                    <div>${product.ngaydat}</div>
-                    `
-                    section.innerHTML+=creatediv.outerHTML;
-                }
-            }
-        }
-    }
-
-}
-  function printinfor(page){
-    const start=(page)*7;
-    const end=start+7;
-    const newCustomer=Customer.slice(start,end);
-    container4Node.innerHTML="";
-    container4Node.innerHTML=`<div class="clientouter" id="clientouter">
-        <div>Tên khách hàng</div>
-        <div>Số điện thoại</div>
-        <div>Email</div>
-    </div>`;
-    newCustomer.forEach(customer=>{
-        const clientouterr= `<div class="clientouter" id="clientouter-${customer.phone}">
-            <div>${customer.name}</div>
-            <div>${customer.phone}</div>
-            <div>${customer.email}</div>
-            <div><i class="fa-solid fa-key" id="khoa-${customer.phone}" onclick="hienkhoa(${customer.phone})"></i> <i class="fa-regular fa-pen-to-square edit"  onclick="editclient(${customer.phone})"></i> <i id="show" class="fa-solid fa-angle-down angle" onclick="printinfororder(${customer.phone})"></i></div>
-        </div>`;
-        container4Node.innerHTML+=clientouterr;
-        const a="khoa-"+customer.phone;
-        if(customer.status==1){
-            document.getElementById(a).style.color="#bcbcbc";
-        }
-        if(customer.status==0){
-            document.getElementById(a).style.color="#62c7ff";
-        }
-    })
+function bang(){
 
 }
 
-
-function closedkhoa(){
-    document.getElementById("khoaclient").style.display="none";
-}
-function khoanguoidung(id){
-    for(let i=0;i<Customer.length;i++){
-        if(Customer[i].phone==id){
-            console.log("helo");
-            Customer[i].status=1;
-            const a="khoa-"+id;
-            document.getElementById(a).style.color="#bcbcbc";
-        }
-    }
-}
-function search() {
-    let valuesearchinput = document.getElementById("search").value.toUpperCase(); // Chuyển đổi giá trị tìm kiếm thành chữ hoa
-    if(valuesearchinput == ""){
-    printinfor(0);
-    return 0;   
-    }
-
-
-    let namesearch = Customer.filter(customer => {
-        return customer.name.toUpperCase().includes(valuesearchinput);
-    });
-
-    let emailsearch = Customer.filter(customer => {
-        return customer.email.toUpperCase().includes(valuesearchinput);
-    });
-
-    let phonesearch = Customer.filter(customer => {
-        return customer.phone.includes(valuesearchinput);
-    });
-
-
-    let newarray = [];
-    let uniqueRanks = new Set();
-
-    namesearch.forEach(customer => {
-        uniqueRanks.add(customer.phone);
-        newarray.push(customer);
-    });
-
-    emailsearch.forEach(customer => {
-        if (!uniqueRanks.has(customer.phone)) {
-            uniqueRanks.add(customer.phone);
-            newarray.push(customer);
-        }
-    });
-
-    phonesearch.forEach(customer => {
-        if (!uniqueRanks.has(customer.rank)) {
-            uniqueRanks.add(customer.rank);
-            newarray.push(customer);
-        }
-    });
-    printsearcharray(newarray)
-}
-function printsearcharray(newarray){
-    container4Node.innerHTML="";
-    container4Node.innerHTML=`            
-    <div class="clientouter" id="clientouter">
-        <div>Tên khách hàng</div>
-        <div>Số điện thoại</div>
-        <div>Email</div>
-    </div>`;
-    newarray.forEach(customer=>{
-        const clientouterr= `<div class="clientouter" id="clientouter-${customer.phone}">
-            <div>${customer.name}</div>
-            <div>${customer.phone}</div>
-            <div>${customer.email}</div>
-            <div><i class="fa-solid fa-key" id="khoa-${customer.phone}" onclick="hienkhoa(${customer.phone})"></i> <i class="fa-regular fa-pen-to-square edit"  onclick="editclient(${customer.phone})"></i> <i id="show" class="fa-solid fa-angle-down angle" onclick="printinfororder(${customer.phone})"></i></div>
-        </div>`;
-        container4Node.innerHTML+=clientouterr;
-        const a="khoa-"+customer.phone;
-        if(customer.status==1){
-            document.getElementById(a).style.color="#bcbcbc";
-        }
-        if(customer.status==0){
-            document.getElementById(a).style.color="#62c7ff";
-        }
-    })
-}
-// function hienkhoa(id){
-//     console.log(id);
-//     document.getElementById("khoaclient").style.display="flex";
-//     let hienkh=document.querySelector(".printkh");
-//     for(let i=0;i<Customer.length;i++){
-//         if(Customer[i].id==id){
-//             if(Customer[i].status==0){
-//                 console.log("hiiiiiiiiiiiiiii");
-//                 document.getElementById("contentkhoa").innerHTML`
-//                 <div>Người dùng sẽ bị khóa cho đến khi admin mở lại</div>
-//                     <label for="inputkhoand">Hãy nhập lí do khóa người dùng : </label> 
-//                     <input type="text" id="inputkhoand"> <input type="submit" id="submitkhoa"><br>
-//                 `;
-//             }
-//             if(Customer[i].status==1){
-//                 document.getElementById("contentkhoa").innerHTML=`
-//                 <div>Người dùng sẽ bị khóa cho đến khi admin mở lại Bạn có muốn khóa người dùng ?  <input type="button" onclick="khoanguoidung(id)"></div>
-//                 `;
-//             }
-//         }
-//     }
-//     for(let i=0;i<Customer.length;i++){
-//         if(Customer[i].id==id){
-//             let creatediv=document.createElement("div");
-//             creatediv.innerHTML=`<div>${Customer[i].id}</div>
-//             <div>${Customer[i].name}</div>
-//             <div>${Customer[i].phone}</div>
-//             <div>${Customer[i].email}</div>
-//             `
-//             hienkh.innerHTML+=creatediv.outerHTML;
-//             for(let j=0;j<Customer[i].lichsuMuaHang.length;j++){
-//                 const product=Customer[i].lichsuMuaHang[j];
-//                 for(let k=0;k<product.giohang.length;k++){
-//                     const creatediv=document.createElement("div");
-//                     creatediv.innerHTML=`<div>${product.giohang[k].id}</div>
-//                     <div>${product.giohang[k].ten}</div>
-//                     <div>${product.giohang[k].loai}</div>
-//                     <div>${product.ngaydat}</div>
-//                     `
-//                     document.querySelector(".printorderkh").innerHTML+=creatediv.outerHTML;
+// lấy mảng product mới id phân biệt
+//   function aggregateCartItems(customers) {
+//     const aggregatedItems = {};
+//     customers.forEach(customer => {
+//         customer.lichsuMuaHang.forEach(order => {
+//             let uni=new Set();
+//             let i=0;
+//             order.giohang.forEach(item => {
+//                 uni.add(item.id);
+//                 if (uni.has(item.id)) {
+//                     aggregatedItems[i].soLuong += item.soLuong;
+//                     aggregatedItems[i].profit=item.profit*item.soLuong
+//                     aggregatedItems[i].gia=item.gia*item.soLuong
+//                 } else {
+//                     aggregatedItems[i] = { ...item };
+//                     aggregatedItems[i].profit=item.profit*item.soLuong;
+//                     aggregatedItems[i].gia=item.gia*item.soLuong;
+//                     aggregatedItems[i].soLuong+=product.soLuong
+//                     i++;
 //                 }
-//             }
-//         }
-//     }
-//     if(document.getElementById("submitkhoa")){
-//         let submit=document.getElementById("submitkhoa");
-//         submit.addEventListener("click",function(event){
-//             const reason=document.getElementById("inputkhoand").value.trim();
-//             if(!reason){
-//                 alert("Bạn chưa nhập lí do khóa người dùng");
-//                 return;
-//             }
-//             Customer.status=1;
-//             Customer.reasonkhoa=reason.value;
-//         })
-//     }
-// }
-function hienkhoa(id) {
-    console.log(id);
-    document.getElementById("khoaclient").style.display = "flex";
-    let hienkh = document.querySelector(".printkh");
-
-    // Xóa nội dung trước đó trong contentkhoa
-    document.getElementById("contentkhoa").innerHTML = ''; 
-
-    for (let i = 0; i < Customer.length; i++) { // Sửa điều kiện vòng lặp
-        if (Customer[i].phone == id) {
-            if (Customer[i].status == 0) {
-                const creatediv = document.createElement("div");
-                creatediv.innerHTML = `
-                    <div>Người dùng sẽ bị khóa cho đến khi admin mở lại</div>
-                    <label for="inputkhoand">Hãy nhập lý do khóa người dùng: </label> 
-                    <input type="text" id="inputkhoand" placeholder="Enter"> 
-                    <input type="submit" id="submitkhoa" onclick="submitkhoa(${Customer[i].phone})"><br>
-                `;
-                document.getElementById("contentkhoa").appendChild(creatediv); // Thay đổi từ innerHTML sang appendChild
-            } else if (Customer[i].status == 1) {
-                document.getElementById("contentkhoa").innerHTML = `
-                    <div>Người dùng sẽ bị khóa cho đến khi admin mở lại. Bạn có muốn khóa người dùng?  
-                    <input type="button" onclick="khoanguoidung(${id})"></div>
-                `;
-            }
-
-            // Hiển thị thông tin khách hàng
-            let creatediv = document.createElement("div");
-            creatediv.innerHTML = `
-                <div>${Customer[i].name}</div>
-                <div>${Customer[i].phone}</div>
-                <div>${Customer[i].email}</div>
-            `;
-            hienkh.appendChild(creatediv); // Đổi từ innerHTML sang appendChild
-
-            // Hiển thị lịch sử mua hàng
-            for (let j = 0; j < Customer[i].lichsuMuaHang.length; j++) {
-                const product = Customer[i].lichsuMuaHang[j];
-                for (let k = 0; k < product.giohang.length; k++) {
-                    const orderDiv = document.createElement("div");
-                    orderDiv.innerHTML = `
-                        <div>${product.giohang[k].id}</div>
-                        <div>${product.giohang[k].ten}</div>
-                        <div>${product.giohang[k].loai}</div>
-                        <div>${product.ngaydat}</div>
-                    `;
-                    document.querySelector(".printorderkh").appendChild(orderDiv); // Sử dụng appendChild
+//             });
+//         });
+//     });
+//     return Object.values(aggregatedItems);
+//   }
+function aggregateCartItems(customers) {
+    const aggregatedItems = {};
+    customers.forEach(customer => {
+        customer.lichsuMuaHang.forEach(order => {
+            order.giohang.forEach(item => {
+                if (aggregatedItems[item.id]) {
+                    aggregatedItems[item.id].soLuong += item.soLuong;
+                    aggregatedItems[item.id].profit += item.profit * item.soLuong; 
+                    aggregatedItems[item.id].gia += item.gia * item.soLuong;
+                } else {
+                    aggregatedItems[item.id] = { 
+                        ...item, 
+                        soLuong: item.soLuong, 
+                        profit: item.profit * item.soLuong, 
+                        gia: item.gia * item.soLuong 
+                    };
                 }
-            }
-            return;
-        }
-    }
-
-    // Thêm sự kiện cho nút submit
-    // const submit = document.getElementById("submitkhoa");
-  
-    //     submit.addEventListener("click", function(event) {
-    //         const reason = document.getElementById("inputkhoand").value.trim();
-    //         if (!reason) {
-    //             alert("Bạn chưa nhập lý do khóa người dùng");
-    //             return;
-    //         }
-    //         // Cập nhật thông tin khóa
-    //         for (let i = 0; i < Customer.length; i++) {
-    //             if (Customer[i].phone == id) {
-    //                 console.log("heheh");
-    //                 Customer[i].status = 1; // Cập nhật trạng thái
-    //                 Customer[i].reasonkhoa = reason; // Cập nhật lý do khóa
-    //                 break; // Thoát khỏi vòng lặp khi đã cập nhật
-    //             }
-    //         }
-    //         alert("đã khóa người dùng");
-    //     });
-    
-}
-
-
-function submitkhoa(id){
-     const reason = document.getElementById("inputkhoand").value.trim();
-            if (!reason) {
-                alert("Bạn chưa nhập lý do khóa người dùng");
-                return;
-            }
-            // Cập nhật thông tin khóa
-            for (let i = 0; i < Customer.length; i++) {
-                if (Customer[i].phone == id) {
-                    console.log("heheh");
-                    Customer[i].status = 1; // Cập nhật trạng thái
-                    Customer[i].reasonkhoa = reason; // Cập nhật lý do khóa
-                    break; // Thoát khỏi vòng lặp khi đã cập nhật
-                }
-            }
-            alert("đã khóa người dùng");
-            localStorage.setItem("users",JSON.stringify(Customer));
-}
-
-
-function nutphantrang(){
-    const slnutphantrang =Math.ceil(Customer.length/7);
-    const nutphantrangouterNode=document.getElementById("phantrangouter");
-    for(let i=0;i<slnutphantrang;i++){
-        const nutphantrangNode=document.createElement("span");
-        nutphantrangNode.innerText=i;
-
-        nutphantrangNode.className="nutphantrang";
-        nutphantrangNode.onclick=function(){
-            currentpage=i;
-            printinfor(currentpage);
-            customnutphantrang(currentpage);
-        }
-        nutphantrangouterNode.appendChild(nutphantrangNode);
-    }
-}
-function customnutphantrang(page){
-    const nutphantrangNode=document.querySelectorAll(".nutphantrang");
-    nutphantrangNode.forEach(nut=>{
-        nut.classList.remove("active");
+            });
+        });
     });
-    nutphantrangNode[page].classList.add("active");
+    return Object.values(aggregatedItems);
 }
-printinfor(0);
-nutphantrang();
+function gettimefirst(){
+    const time=document.getElementById("timefirst").value;
+    if(time){
+        day=parseInt(time.split("-")[2].replace(/^0+/, ''),10);
+        month=parseInt(time.split("-")[1].replace(/^0+/, ''),10);
+        year=parseInt(time.split("-")[0].replace(/^0+/, ''),10);
+    }
+}
+function gettimesecond(){
+    const time=document.getElementById("timesecond").value;
+    if(time){
+        daysecond=parseInt(time.split("-")[2].replace(/^0+/, ''),10);
+        monthsecond=parseInt(time.split("-")[1].replace(/^0+/, ''),10);
+        yearsecond=parseInt(time.split("-")[0].replace(/^0+/, ''),10);
+    }
+    if(time && document.getElementById("timefirst").value){
+        if(yearsecond<year){
+            alert("Bạn nhập sai năm");
+        }
+        if(yearsecond==year && monthsecond<month){
+            alert("Bạn nhập sai tháng")
+        }
+        if(yearsecond==year && monthsecond==month && daysecond<day){
+            alert("Bạn nhập sai ngày");
+        }
+    console.log(aggregateCartItems(Customer));
+    taohangthongke(arraycustomer(Customer),aggregateCartItems(Customer));
 
-
+    }
+}
+// function getcurrentyear(){
+//     const currentday=new Date();
+//     year=currentday.getFullYear();
+//     day=1;
+//     month=1;
+//     yearsecond=year+1;
+//     daysecond=1;
+//     monthsecond=1;
+// }
+// getcurrentyear();
+    year=2024;
+    day=1;
+    month=1;
+    yearsecond=year+1;
+    daysecond=1;
+    monthsecond=1;
+taohangthongke(arraycustomer(Customer),aggregateCartItems(Customer));
