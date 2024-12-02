@@ -129,7 +129,7 @@ let monthsecond=1;
                     <div><div class="header">highest profit</div>  </div>
                     <div>
                         <div class="productinner"> 
-                            <div class="divimage"><image  class="imagethongke"src="no ìn"></image></div>
+                            <div class="divimage"></image></div>
                             <div><div>id</div><div>no infor</div></div>
                             <div><div>catergory</div><div>no infor</div></div>
                             <div><div>name</div><div>no infor</div></div>
@@ -142,7 +142,7 @@ let monthsecond=1;
                     <div><div class="header">Lowest profit</div>  </div>
                     <div>
                         <div class="productinner"> 
-                            <div class="divimage">no infor</div>
+                            <div class="divimage"></div>
                             <div><div>id</div><div>no infor</div></div>
                             <div><div>catergory</div><div>no infor</div></div>
                             <div><div>name</div><div>no infor</div></div>
@@ -388,11 +388,11 @@ function inputdate(){
   }
   if(timesec && document.getElementById("timefirst").value){
       if(yearsecond<year){
-          alert("Bạn nhập sai năm");
+          alert("Bạn nhập sai ngày");
           return;
       }
       if(yearsecond==year && monthsecond<month){
-          alert("Bạn nhập sai tháng");
+          alert("Bạn nhập sai ngày");
           return;
       }
       if(yearsecond==year && monthsecond==month && daysecond<day){
