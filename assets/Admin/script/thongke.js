@@ -397,22 +397,6 @@ function inputdate() {
     monthsecond = parseInt(timesec.split("-")[1].replace(/^0+/, ""), 10);
     yearsecond = parseInt(timesec.split("-")[0].replace(/^0+/, ""), 10);
   }
-<<<<<<< HEAD
-  if(timesec && document.getElementById("timefirst").value){
-      if(yearsecond<year){
-          alert("Bạn nhập sai ngày");
-          return;
-      }
-      if(yearsecond==year && monthsecond<month){
-          alert("Bạn nhập sai ngày");
-          return;
-      }
-      if(yearsecond==year && monthsecond==month && daysecond<day){
-          alert("Bạn nhập sai ngày");
-          return;
-      }
-  taohangthongke(arrayCustomer(Customer),aggregateCartItems(Customer));
-=======
   if (timesec && document.getElementById("timefirst").value) {
     if (yearsecond < year) {
       alert("Bạn nhập sai năm");
@@ -427,7 +411,6 @@ function inputdate() {
       return;
     }
     taohangthongke(arrayCustomer(Customer), aggregateCartItems(Customer));
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
   }
 }
 // getcurrentyear();

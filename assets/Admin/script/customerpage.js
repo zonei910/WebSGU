@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-// let currentpage = 1;
-=======
 let currentpage = 1;
 const container4Node = document.getElementById("container4");
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
 // date=null,month=null,year=null,datesecond=null,monthsecond=null,yearsecond=null;
 
 function checktimedate(receiptime) {
@@ -92,70 +88,6 @@ function editclient() {
     }
   });
 }
-<<<<<<< HEAD
-function buttoninput(phone) {
-  let Customer = JSON.parse(localStorage.getItem("users"));
-  const time = document.getElementById("taketimefirst").value;
-  if (time) {
-    day = parseInt(time.split("-")[2].replace(/^0+/, ""), 10);
-    month = parseInt(time.split("-")[1].replace(/^0+/, ""), 10);
-    year = parseInt(time.split("-")[0].replace(/^0+/, ""), 10);
-  }
-  const timesec = document.getElementById("taketimesecond").value;
-  if (timesec) {
-    daysecond = parseInt(timesec.split("-")[2].replace(/^0+/, ""), 10);
-    monthsecond = parseInt(timesec.split("-")[1].replace(/^0+/, ""), 10);
-    yearsecond = parseInt(timesec.split("-")[0].replace(/^0+/, ""), 10);
-  }
-  if (timesec && document.getElementById("taketimefirst").value) {
-    if (yearsecond < year) {
-      alert("Bạn nhập sai ngày");
-      return;
-    }
-    if (yearsecond == year && monthsecond < month) {
-      alert("Bạn nhập sai ngày");
-      return;
-    }
-    if (yearsecond == year && monthsecond == month && daysecond < day) {
-      alert("Bạn nhập sai ngày");
-      return;
-    }
-    printinforordernew(phone,arrayCustomer(Customer));
-  }
-}
-function printinforordernew(phone,Customer){
-  console.log(Customer);
-  document.getElementById("printorder").style.display = "flex";
-  const section = document.getElementById("printorder").innerHTML=`                        
-  <div id="innerorder">
-                            <i class="fa-solid fa-x" onclick="closedproduct()"></i>
-                            <div>
-                                <div>id</div>
-                                <div>name</div>
-                                <div>catergory</div>
-                                <div>order receiptime</div>
-                                <div><input type="date" id="taketimefirst"> <input type="date" id="taketimesecond"><input type="button" id="buttonclick" onclick="buttoninput(${phone})" value="click">  </div>
-                            </div>
-                        </div>`;
-                        let a=0;
-  for (let i = 0; i < Customer.length; i++) {
-    if (Customer[i].phone == phone) {
-      for (let j = 0; j < Customer[i].lichsuMuaHang.length; j++) {
-        a=1;
-        const product = Customer[i].lichsuMuaHang[j];
-        for (let k = 0; k < product.giohang.length; k++) {
-          let a;
-          if(product.status==0){
-              a="delivered";
-          }
-          else if(product.status==1){
-              a="delivering";
-          }
-          else{
-            a="no infor"
-          }
-          console.log("delivering-"+Customer[i].phone);
-=======
 function printinfororder(id) {
   let Customer = JSON.parse(localStorage.getItem("users"));
   document.getElementById("printorder").style.display = "flex";
@@ -165,251 +97,12 @@ function printinfororder(id) {
       for (let j = 0; j < Customer[i].lichsuMuaHang.length; j++) {
         const product = Customer[i].lichsuMuaHang[j];
         for (let k = 0; k < product.giohang.length; k++) {
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
           const creatediv = document.createElement("div");
           creatediv.innerHTML = `
                     <div>${product.giohang[k].id}</div>
                     <div>${product.giohang[k].ten}</div>
                     <div>${product.giohang[k].loai}</div>
                     <div>${product.ngaydat}</div>
-<<<<<<< HEAD
-                    <div id="outerdelivery-${Customer[i].phone}${k}" class="outerdelivery">
-                        <div id="deliver-${Customer[i].phone}${k}" class="deliver" onclick="changedelivery(${Customer[i].phone},${k})">${a}</div>
-                        <div class="Delivering" id="delivering-${Customer[i].phone}${k}" onclick="newstatus(${Customer[i].phone},${1})">
-                          delivering  
-                        </div>
-                        <div class="Delivered" id="delivered-${Customer[i].phone}${k}" onclick="newstatus(${Customer[i].phone},${0})">
-                          delivered
-                        </div>
-                    </div>
-                    `;
-                    console.log(Customer[i]);
-          document.getElementById("innerorder").appendChild(creatediv);
-        }
-        console.log(section);
-      }
-    }
-  }
-  if(a==0){
-    const creatediv = document.createElement("div");
-    creatediv.innerHTML = `
-              <div>no infor</div>
-              <div>no infor</div>
-              <div>no infor</div>
-              <div>no infor</div>
-              `;
-              document.getElementById("innerorder").appendChild(creatediv);
-  }
-}
-// function printinforordernew(phone, Customer) {
-//   console.log(Customer);
-//   document.getElementById("printorder").style.display = "flex";
-
-//   // Cập nhật nội dung cho #printorder
-//   const section = document.querySelector("#printorder");
-//   section.innerHTML = `                        
-//       <div id="innerorder">
-//           <i class="fa-solid fa-x" onclick="closedproduct()"></i>
-//           <div>
-//               <div>id</div>
-//               <div>name</div>
-//               <div>category</div> <!-- Sửa chính tả từ "catergory" thành "category" -->
-//               <div>order receipt time</div> <!-- Sửa chính tả từ "receiptime" thành "receipt time" -->
-//               <div>
-//                   <input type="date" id="taketimefirst">
-//                   <input type="date" id="taketimesecond">
-//                   <input type="button" id="buttonclick" onclick="buttoninput(${phone})" value="click">  
-//               </div>
-//           </div>
-//       </div>`;
-
-//   let hasOrders = false; // Biến kiểm tra nếu có đơn hàng
-
-//   // Tìm và hiển thị thông tin đơn hàng cho khách hàng
-//   for (let i = 0; i < Customer.length; i++) {
-//       if (Customer[i].phone == phone) {
-//           console.log("Customer found");
-//           for (let j = 0; j < Customer[i].lichsuMuaHang.length; j++) {
-//               hasOrders = true; // Đã tìm thấy đơn hàng
-//               const product = Customer[i].lichsuMuaHang[j];
-//               for (let k = 0; k < product.giohang.length; k++) {
-//                   const creatediv = document.createElement("div");
-//                   creatediv.innerHTML = `
-//                       <div>${product.giohang[k].id}</div>
-//                       <div>${product.giohang[k].ten}</div>
-//                       <div>${product.giohang[k].loai}</div>
-//                       <div>${product.ngaydat}</div>
-//                   `;
-//                   section.appendChild(creatediv); // Sử dụng appendChild để thêm phần tử
-//               }
-//           }
-//           break; // Ra khỏi vòng lặp nếu đã tìm thấy khách hàng
-//       }
-//   }
-
-//   // Nếu không có đơn hàng, hiển thị thông báo
-//   if (!hasOrders) {
-//       const creatediv = document.createElement("div");
-//       creatediv.innerHTML = `
-//           <div>No information available</div>
-//       `;
-//       section.appendChild(creatediv); // Thêm thông điệp vào section
-//   }
-// }
-function printinfororder(phone) {
-  console.log(phone);
-  let Customer = JSON.parse(localStorage.getItem("users"));
-  document.getElementById("printorder").style.display = "flex";
-  document.querySelector("#printorder").innerHTML=`
-                <div id="innerorder"><i class="fa-solid fa-x" onclick="closedproduct()"></i>
-                            <div>
-                                <div>id</div>
-                                <div>name</div>
-                                <div>catergory</div>
-                                <div>order receiptime</div>
-                                <div><input type="date" id="taketimefirst"> <input type="date" id="taketimesecond"><input type="button" id="buttonclick" onclick="buttoninput(${phone})" value="click">  </div>
-                            </div></div>
-    `;
-    const section=document.getElementById("innerorder");
-  for (let i = 0; i < Customer.length; i++) {
-    if (Customer[i].phone == phone) {
-      for (let j = 0; j < Customer[i].lichsuMuaHang.length; j++) {
-        const product = Customer[i].lichsuMuaHang[j];
-        for (let k = 0; k < product.giohang.length; k++) {
-            let a;
-            if(product.status==0){
-                a="delivered";
-            }
-            else if(product.status==1){
-                a="delivering";
-            }
-            else{
-              a="no infor"
-            }
-            console.log("delivering-"+Customer[i].phone);
-          const creatediv = document.createElement("div");
-          let thecustomer=Customer[i];
-          creatediv.innerHTML = `
-                    <div>${product.giohang[k].id}</div>
-                    <div>${product.giohang[k].ten}</div>
-                    <div>${product.giohang[k].loai}</div>
-                    <div>${product.ngaydat}</div>
-                    <div id="outerdelivery-${Customer[i].phone}${k}" class="outerdelivery">
-                        <div id="deliver-${Customer[i].phone}${k}" class="deliver" onclick="changedelivery(${Customer[i].phone},${k})">${a}</div>
-                        <div class="Delivering" id="delivering-${Customer[i].phone}${k}" onclick="newstatus(${Customer[i].phone},${1})">
-                          delivering  
-                        </div>
-                        <div class="Delivered" id="delivered-${Customer[i].phone}${k}" onclick="newstatus(${Customer[i].phone},${0})">
-                          delivered
-                        </div>
-                    </div>
-                    `;
-                    console.log(Customer[i]);
-          section.appendChild(creatediv);
-          // let o="outerdelivery-"+Customer[i].phone;
-          // console.log(document.getElementById(o));
-          console.log(section);
-          return;
-        }
-      }
-    }
-  }
-  console.log(section);
-}
-function changedelivery(Phone,key){
-  let phone="0"+Phone;
-  console.log("fdsfd");
-  let k="outerdelivery-"+phone+key;
-    let a="deliver-"+phone+key;
-    console.log(document.getElementById(a));
-    let b="delivering-"+phone+key;
-    let c="delivered-"+phone+key;
-    console.log(document.getElementById(b));
-    console.log(document.getElementById(c));
-    document.getElementById(b).style.display="flex";
-    document.getElementById(c).style.display="flex";
-}
-function newstatus(phone,key,status){
-  let Customer = JSON.parse(localStorage.getItem("users"));
-    let b="delivering-"+"0"+phone+key;
-    let c="delivered-"+"0"+phone+key;
-    let d="outerdelivery-"+"0"+phone+key;
-    Customer.forEach(customer=>{
-      if(customer.phone==phone){
-        if(status==0){
-                  customer.status=status
-                  document.getElementById(b).style.display="none";
-                  document.getElementById(c).style.display="none";
-                  document.getElementById(d).innerHTML=`                        
-                  <div id="deliver-${customer.phone}" class="deliver" onclick="changedelivery(${customer.phone})">delivered</div>
-                  <div class="Delivering" id="delivering-${customer.phone}" onclick="newstatus(${customer.phone},${1})">
-                    delivering  
-                  </div>
-                  <div class="Delivered" id="delivered-${customer.phone}" onclick="newstatus(${customer.phone},${0})">
-                    delivered
-                  </div>`;
-              }
-              else if(status==1){
-                customer.status=status
-                document.getElementById(b).style.display="none";
-                document.getElementById(c).style.display="none";
-                document.getElementById(d).innerHTML=`                        
-                <div id="deliver-${customer.phone}" class="deliver" onclick="changedelivery(${customer.phone})">delivering</div>
-                <div class="Delivering" id="delivering-${customer.phone}" onclick="newstatus(${customer.phone},${1})">
-                  delivering  
-                </div>
-                <div class="Delivered" id="delivered-${customer.phone}" onclick="newstatus(${customer.phone},${0})">
-                  delivered
-                </div>`;
-              }
-      }
-    })
-}
-// function newstatus(customer,status){
-//   console.log(customer);
-//     let b="delivering-"+"0"+customer.phone;
-//     let c="delivered-"+"0"+customer.phone;
-//     let d="outerdelivery-"+"0"+customer.phone;
-//     console.log(d);
-//     console.log(a);
-//     if(status==0){
-//         customer.status=status
-//         document.getElementById(b).style.display="none";
-//         document.getElementById(c).style.display="none";
-//         document.getElementById(d).innerHTML=`                        
-//         <div id="deliver-${customer.phone}" class="deliver" onclick="changedelivery(${customer.phone})">delivered</div>
-//         <div class="Delivering" id="delivering-${customer.phone}" onclick="newstatus(${customer.phone},${1})">
-//           delivering  
-//         </div>
-//         <div class="Delivered" id="delivered-${customer.phone}" onclick="newstatus(${customer.phone},${0})">
-//           delivered
-//         </div>`;
-//     }
-//     else if(status==1){
-//       customer.status=status
-//       document.getElementById(b).style.display="none";
-//       document.getElementById(c).style.display="none";
-//       document.getElementById(d).innerHTML=`                        
-//       <div id="deliver-${customer.phone}" class="deliver" onclick="changedelivery(${customer.phone})">delivering</div>
-//       <div class="Delivering" id="delivering-${customer.phone}" onclick="newstatus(${customer.phone},${1})">
-//         delivering  
-//       </div>
-//       <div class="Delivered" id="delivered-${customer.phone}" onclick="newstatus(${customer.phone},${0})">
-//         delivered
-//       </div>`;
-//     }
-// }
-
-function printinfor(page) {
-
-  let Customer = JSON.parse(localStorage.getItem("users"));
-
-  const start = page * 7;
-  const end = start + 7;
-  const newCustomer = Customer.slice(start, end);
-  document.getElementById("container4").innerHTML = "";
-  document.getElementById("container4").innerHTML = `<div class="clientouter" id="clientouter">
-=======
                     `;
           section.innerHTML += creatediv.outerHTML;
         }
@@ -425,7 +118,6 @@ function printinfor(page) {
   const newCustomer = Customer.slice(start, end);
   container4Node.innerHTML = "";
   container4Node.innerHTML = `<div class="clientouter" id="clientouter">
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
         <div>Tên khách hàng</div>
         <div>Số điện thoại</div>
         <div>Email</div>
@@ -437,16 +129,8 @@ function printinfor(page) {
             <div>${Customer.email}</div>
             <div><i class="fa-solid fa-key" id="khoa-${Customer.phone}" onclick="hienkhoa(${Customer.phone})"></i> <i class="fa-regular fa-pen-to-square edit"  onclick="editclient(${Customer.phone})"></i> <i id="show" class="fa-solid fa-angle-down angle" onclick="printinfororder(${Customer.phone})"></i></div>
         </div>`;
-<<<<<<< HEAD
-        document.getElementById("container4").innerHTML += clientouterr;
-    const a = "khoa-" + Customer.phone;
-    console.log("hihi");
-    console.log(a);
-    console.log(Customer.status);
-=======
     container4Node.innerHTML += clientouterr;
     const a = "khoa-" + Customer.phone;
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
     if (Customer.status == 1) {
       document.getElementById(a).style.color = "#bcbcbc";
     }
@@ -459,18 +143,6 @@ function printinfor(page) {
 function closedkhoa() {
   document.getElementById("khoaclient").style.display = "none";
 }
-<<<<<<< HEAD
-function khoanguoidung(phone) {
-  let Customer = JSON.parse(localStorage.getItem("users"));
-  for (let i = 0; i < Customer.length; i++) {
-    if (Customer[i].phone == phone) {
-      console.log("helo");
-      Customer[i].status = 0;
-      localStorage.setItem('users', JSON.stringify(Customer));
-      const a = "khoa-" + "0"+phone;
-      document.getElementById(a).style.color = "#62c7ff";
-      alert("đã bỏ khóa");
-=======
 function khoanguoidung(id) {
   let Customer = JSON.parse(localStorage.getItem("users"));
 
@@ -480,7 +152,6 @@ function khoanguoidung(id) {
       Customer[i].status = 1;
       const a = "khoa-" + id;
       document.getElementById(a).style.color = "#bcbcbc";
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
     }
   }
 }
@@ -529,13 +200,8 @@ function search() {
   printsearcharray(newarray);
 }
 function printsearcharray(newarray) {
-<<<<<<< HEAD
-    document.getElementById("container4").innerHTML = "";
-    document.getElementById("container4").innerHTML = `            
-=======
   container4Node.innerHTML = "";
   container4Node.innerHTML = `            
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
     <div class="clientouter" id="clientouter">
         <div>Tên khách hàng</div>
         <div>Số điện thoại</div>
@@ -548,11 +214,7 @@ function printsearcharray(newarray) {
             <div>${Customer.email}</div>
             <div><i class="fa-solid fa-key" id="khoa-${Customer.phone}" onclick="hienkhoa(${Customer.phone})"></i> <i class="fa-regular fa-pen-to-square edit"  onclick="editclient(${Customer.phone})"></i> <i id="show" class="fa-solid fa-angle-down angle" onclick="printinfororder(${Customer.phone})"></i></div>
         </div>`;
-<<<<<<< HEAD
-        document.getElementById("container4").innerHTML += clientouterr;
-=======
     container4Node.innerHTML += clientouterr;
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
     const a = "khoa-" + Customer.phone;
     if (Customer.status == 1) {
       document.getElementById(a).style.color = "#bcbcbc";
@@ -562,19 +224,6 @@ function printsearcharray(newarray) {
     }
   });
 }
-<<<<<<< HEAD
-function hienkhoa(phone) {
-  let Customer=JSON.parse(localStorage.getItem("users"));
-  document.getElementById("khoaclient").style.display = "flex";
-  let hienkh = document.querySelector(".printkh");
-  document.getElementById("contentkhoa").innerHTML = "";
-
-  for (let i = 0; i < Customer.length; i++) {
-    if (Customer[i].phone == phone) {
-      if (Customer[i].status == 0) {
-        console.log(Customer[i]);
-        document.getElementById("contentkhoa").innerHTML="";
-=======
 // function hienkhoa(id){
 //     console.log(id);
 //     document.getElementById("khoaclient").style.display="flex";
@@ -643,7 +292,6 @@ function hienkhoa(id) {
   for (let i = 0; i < Customer.length; i++) {
     if (Customer[i].phone == id) {
       if (Customer[i].status == 0) {
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
         const creatediv = document.createElement("div");
         creatediv.innerHTML = `
                     <div>Người dùng sẽ bị khóa cho đến khi admin mở lại</div>
@@ -652,19 +300,10 @@ function hienkhoa(id) {
                     <input type="submit" id="submitkhoa" onclick="submitkhoa(${Customer[i].phone})"><br>
                 `;
         document.getElementById("contentkhoa").appendChild(creatediv);
-<<<<<<< HEAD
-      } 
-      else if (Customer[i].status == 1) {
-        document.getElementById("contentkhoa").innerHTML="";
-        document.getElementById("contentkhoa").innerHTML = `
-                    <div>Bỏ khóa người dùng  
-                    <input type="button" onclick="khoanguoidung(${phone})" class="bokhoa" value="click"></div>
-=======
       } else if (Customer[i].status == 1) {
         document.getElementById("contentkhoa").innerHTML = `
                     <div>Người dùng sẽ bị khóa cho đến khi admin mở lại. Bạn có muốn khóa người dùng?  
                     <input type="button" onclick="khoanguoidung(${id})"></div>
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
                 `;
       }
 
@@ -706,11 +345,7 @@ function hienkhoa(id) {
   //         }
   //         // Cập nhật thông tin khóa
   //         for (let i = 0; i < Customer.length; i++) {
-<<<<<<< HEAD
-  //             if (Customer[i].phone == phone) {
-=======
   //             if (Customer[i].phone == id) {
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
   //                 console.log("heheh");
   //                 Customer[i].status = 1; // Cập nhật trạng thái
   //                 Customer[i].reasonkhoa = reason; // Cập nhật lý do khóa
@@ -721,11 +356,7 @@ function hienkhoa(id) {
   //     });
 }
 
-<<<<<<< HEAD
-function submitkhoa(phone) {
-=======
 function submitkhoa(id) {
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
   let Customer = JSON.parse(localStorage.getItem("users"));
   const reason = document.getElementById("inputkhoand").value.trim();
   if (!reason) {
@@ -733,20 +364,9 @@ function submitkhoa(id) {
     return;
   }
   for (let i = 0; i < Customer.length; i++) {
-<<<<<<< HEAD
-    if (Customer[i].phone == phone) {
-      let a="khoa-"+"0"+phone;
-      document.getElementById(a).style.color="#bcbcbc"
-      Customer[i].status = 1;
-      localStorage.setItem('users', JSON.stringify(Customer));
-      console.log(JSON.parse(localStorage.getItem("users")));
-      Customer[i].reasonkhoa = reason;
-      console.log(Customer[i]);
-=======
     if (Customer[i].phone == id) {
       Customer[i].status = 1;
       Customer[i].reasonkhoa = reason;
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
       break;
     }
   }
@@ -778,8 +398,4 @@ function customnutphantrang(page) {
   nutphantrangNode[page].classList.add("active");
 }
 printinfor(0);
-<<<<<<< HEAD
-// nutphantrang();
-=======
 nutphantrang();
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
