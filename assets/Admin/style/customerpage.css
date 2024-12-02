@@ -50,14 +50,12 @@
     padding-top:20px;
 }
 .nutphantrang{
-    /* border-radius: 10px; */
     text-align: center;
     line-height: 30px;
     display: inline-block;
     width: 50px;
     height: 30px;
     border: 1px solid salmon;
-    /* border:none; */
     background-color: white;
     transform: translate(-50%,-50%);
     color:rgb(87, 82, 88) ;
@@ -66,10 +64,6 @@
     width: 100%;
     margin: 20px;
     display: flex;
-    /* grid-template-columns:168.33px 168.33px 168.33px 168.33px 168.33px 168.33px; */
-    /* grid-auto-rows: 50px; */
-    /* gap:10px; */
-    /* background-color: blue; */
 }
 .clientouter>div{
     width: 20%;
@@ -80,28 +74,15 @@
 #container4>#editclient{
     padding: 20px;
     display: flex;
-    /* grid-template-columns:repeat(7,168.33px); */
-
-    /* background-color: aqua; */
     background-color: rgb(254, 199, 111);
     border-radius: 0px 0px 10px 10px;
-    /* grid-template-columns:168.33px 168.33px 168.33px 168.33px 168.33px 168.33px; */
-    /* grid-auto-rows: 50px; */
-    /* gap:10px; */
-    /* width: 100%; */
 }
 #container4>#addclient{
     position: relative;
     padding: 20px;
     display: flex;
-    /* grid-template-columns:repeat(7,168.33px); */
-    /* background-color: aqua; */
     background-color: rgb(254, 199, 111);
     border-radius: 0px 0px 10px 10px;
-    /* grid-template-columns:168.33px 168.33px 168.33px 168.33px 168.33px 168.33px; */
-    /* grid-auto-rows: 50px; */
-    /* gap:10px; */
-    /* width: 100%; */
 }
 #container4 > #editclient>input{
     border-radius: 10px;
@@ -130,14 +111,7 @@
     border-radius: 0px;
 }
 #container4 >.orderouter{
-    /* display: flex; */
-    /* grid-template-columns:1000px; */
-    /* grid-template-rows: 50px 50px; */
-    /* grid-auto-rows: 50px; */
-    /* gap:10px; */
-    /* background-color: rgb(166, 109, 212); */
     background-color: #62c7ff;
-    /* width: 100%; */
     border-radius: 0px 0px 10px 10px;
 }
 #container4>.orderouter>div:nth-child(1)>div{
@@ -145,14 +119,8 @@
     width: 14%;
 }
 .orderouter > div{
-    /* display:grid; */
-    /* grid-template-columns:repeat(7,168.33px); */
-    /* grid-template-columns:168.33px 168.33px 168.33px 168.33px 168.33px 168.33px; */
-    /* grid-template-rows: 50px; */
-    /* gap:10px; */
     padding: 20px;
     height: 40px;
-    /*  */
     width: 100%;
     display: flex;
 }
@@ -166,11 +134,9 @@
     color:rgb(87, 82, 88) ;
 }
 .outerorder>.clientouter>div{
-    /* color:white; */
     color:rgb(87, 82, 88) ;
 }
 .orderouter>div >div{
-    /* /* color:white; */
     color:rgb(87, 82, 88) ;
 }
 #container4>.clientouter>div>i{
@@ -185,9 +151,6 @@
     margin:5px;
     color:rgb(87, 82, 88) ;
 }
-/* .container4>div> i:hover{
-    cursor: pointer;
-} */
 .orderouter > div > div>input{
     border-radius: 10px;
     border: none;
@@ -261,62 +224,12 @@
     border-radius: 5px;
     background-color: white;
     text-align: center;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
     width: 120px;
     height: 30px;
     background-color: white;
     color: palevioletred;
 }
-.editstatus>div>i::before ,.delivering>i::before ,.delivered>i::before{
-    color: palevioletred;
-    margin:2px;
-    font-size: 13px;
-}
-.delivery{
-    display: none;
-}
 
-.editstatus>div,.delivering,.delivered{
-    color: #be95be;
-    background-color: white;
-    margin-top:2px;
-    width: 120px;
-    height: 20px;
-}
-.clientstatus> div,.paid> div,.unpaid> div {
-    color: #be95be;
-}
-.paid,.unpaid,.innerclientstatus{
-    text-align: center;
-    /* border-radius: 5px; */
-    border:1px solid #be95be;
-    height: 25px;
-    width: 70px;
-    padding:2px;
-}
-
-.paid:hover,.unpaid:hover,.clientstatus:hover{
-    cursor: pointer;
-}
-.paid > i,.unpaid > i,.clientstatus >div> i::before{
-    color: #be95be;
-    font-size: 10px;
-}
-.choosetime{
-    /* width: 15px; */
-    padding:2px;
-    border: none;
-    border-radius: 5px;
-    
-}
-.divchoosetime{
-    border: black;
-    background-color:white;
-    border-radius: 5px;
-    width: 120px;
-}
 .imageofcustomer{
     border-radius: 100%;
     width: 60px;
@@ -337,16 +250,16 @@
 
 }
 #innerorder{
+    max-width: 50%;
     background-color: #fec76f;
     max-height: 70%;
     overflow-y: scroll;
     overflow: auto;
 }
-/* #innerorder>div:hover{
-    background-color: #fdd6d7;
-    transform: translateY(-10px); 
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
-} */
+#buttonclick{
+    padding:5px;
+    background-color: #be95be;
+}
 #printorder > div{
     width: 60%;
     position: relative;
@@ -356,8 +269,11 @@
     position: absolute;
     right: 5px;
     font-weight: bold;
-    top: 5px;
+  top: 5px;
 
+}
+#innerorder >div{
+    padding:5px;
 }
 #editkh{
     border-radius: 5px;
@@ -368,20 +284,23 @@
     font-weight: bold;
     color: black;
 }
-#printorder > div>div{
-    display: flex;
+.print{
     color: rgb(87, 82, 88) ;
     border: none;
-    /* border-radius: 5px; */
-    padding:20px;
+    padding:5px;
 }
 #taketimefirst,#taketimesecond{
-    border: 1px rgb(138, 106, 145) solid;
+    border: none;
     border-radius: 5px;
 }
 #printorder>div>div>div{
-    width: 20%;
+    width: 10%;
     text-align: center;
+}
+#printorder>div>div>div:nth-child(5){
+    width: 400px;
+    text-align: center;
+    padding: 5px;
 }
 #sectioneditclient{
     top: 0;
@@ -397,7 +316,7 @@
     display: none;
 }
 #sectioneditclient> div{
-    padding:20px;
+    padding:5px;
     border-radius: 5px;
     background-color: #fec76f;
     width: 30%;
@@ -447,7 +366,7 @@
     height: 30px;
 }
 #sectionaddclient> div{
-    padding:20px;
+    padding:5px;
     border-radius: 5px;
     background-color: #fec76f;
     width: 30%;
@@ -523,8 +442,6 @@
     padding:10px;
     border-radius: 5px;
     border: 1px solid black;
-    /* height: 200px; */
-
 }
 .contenthienkhoa{
     font-weight: bold;
@@ -562,4 +479,32 @@
     width: 60px;
     height: 30px;
     background-color: #75ba75;
+}
+.Delivering{
+    display: none;
+}
+.Delivered{
+    display: none;
+}
+.Delivering,.Delivered,.Deliver{
+    border:none;
+    border-radius: 5px;
+    padding:5px;
+    background-color: #75ba75;
+    text-align: center;
+}
+.Delivering:hover,.Delivered:hover,.Deliver:hover{
+    cursor: pointer;
+}
+.outerdelivery{
+    background-color: #75ba75;
+    display: flex;
+}
+.outerdelivery{
+    display: block;
+}
+.bokhoa{
+    background-color: #be95be;
+    padding:5px;
+    width: fit-content;
 }

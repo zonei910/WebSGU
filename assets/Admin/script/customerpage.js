@@ -311,6 +311,7 @@ function hienkhoa(id) {
       creatediv.innerHTML = `
                 <div>${Customer[i].name}</div>
                 <div>${Customer[i].phone}</div>
+                <div>${Customer[i].address}</div>
                 <div>${Customer[i].email}</div>
             `;
       hienkh.appendChild(creatediv);
