@@ -1,29 +1,26 @@
-let year=2024;
-let day=1;
-let month=1;
-let yearsecond=year+1;
+let year = 2024;
+let day = 1;
+let month = 1;
+let yearsecond = year + 1;
 let daysecond;
-let monthsecond=1;
+let monthsecond = 1;
 
-
-        function taohangthongke(Customer,product){
-          if(Customer.length>0){
-            console.log(Customer);
-            addprofitforcustomer(Customer);
-            addprofitforproduct(product);
-              const doanhthu=document.querySelector(".container3");
-              doanhthu.innerHTML=`
+function taohangthongke(Customer, product) {
+  if (Customer.length > 0) {
+    addprofitforcustomer(Customer);
+    addprofitforproduct(product);
+    const doanhthu = document.querySelector(".container3");
+    doanhthu.innerHTML = `
               <div class="doanhthu">
               <div>id</div>
                   <div>name</div>
                   <div>sales volumn</div>
                   <div>sales</div>
               </div>`;
-              product.forEach(giohang => {
-                  const createrow=document.createElement("div");
-                  createrow.className="doanhthu";
-                  createrow.innerHTML+=
-                  `
+    product.forEach((giohang) => {
+      const createrow = document.createElement("div");
+      createrow.className = "doanhthu";
+      createrow.innerHTML += `
                   <div>
                       ${giohang.id}
                   </div>
@@ -36,16 +33,20 @@ let monthsecond=1;
                   <div>
                       ${giohang.profit} $
                   </div>
-                  `
-                  doanhthu.innerHTML+=createrow.outerHTML;
-              });
-              const productwithhighestprofit=highest(product);
-              const productwithlowestprofit=lowest(product);
-              const Customerwithhighestprofit=cushighest(arrayCustomerwithtotalprofit(Customer));
-              const Customerwithlowestprofit=cuslowest(arrayCustomerwithtotalprofit(Customer));
-              const creatediv=document.createElement("div");
-              creatediv.className=""
-              creatediv.innerHTML=`
+                  `;
+      doanhthu.innerHTML += createrow.outerHTML;
+    });
+    const productwithhighestprofit = highest(product);
+    const productwithlowestprofit = lowest(product);
+    const Customerwithhighestprofit = cushighest(
+      arrayCustomerwithtotalprofit(Customer)
+    );
+    const Customerwithlowestprofit = cuslowest(
+      arrayCustomerwithtotalprofit(Customer)
+    );
+    const creatediv = document.createElement("div");
+    creatediv.className = "";
+    creatediv.innerHTML = `
                           <div class="thongkesanpham">
                   <div class="productwithhighestprofit">   
                       <div><div class="header">highest profit</div>  </div>
@@ -103,27 +104,26 @@ let monthsecond=1;
                       </div>
               </div>
               `;
-              document.querySelector(".thongke").innerHTML=``;
-              document.querySelector(".thongke").innerHTML+=creatediv.innerHTML;
-              let a=gettotal(arrayCustomerwithtotalprofit(Customer));
-  
-              document.getElementById("totalprofit").innerText=a.totalprofit;
-              document.getElementById("totalproduct").innerText=a.totalproduct;
-              document.getElementById("totaluser").innerText=a.totaluser;
-              document.getElementById("totalprice").innerText=a.totalprice;
-          }
-          else{
-            const doanhthu=document.querySelector(".container3");
-            doanhthu.innerHTML=`
+    document.querySelector(".thongke").innerHTML = ``;
+    document.querySelector(".thongke").innerHTML += creatediv.innerHTML;
+    let a = gettotal(arrayCustomerwithtotalprofit(Customer));
+
+    document.getElementById("totalprofit").innerText = a.totalprofit;
+    document.getElementById("totalproduct").innerText = a.totalproduct;
+    document.getElementById("totaluser").innerText = a.totaluser;
+    document.getElementById("totalprice").innerText = a.totalprice;
+  } else {
+    const doanhthu = document.querySelector(".container3");
+    doanhthu.innerHTML = `
             <div class="doanhthu">
             <div>id</div>
                 <div>name</div>
                 <div>sales volumn</div>
                 <div>sales</div>
             </div>`;
-            const creatediv=document.createElement("div");
-            creatediv.className=""
-            creatediv.innerHTML=`
+    const creatediv = document.createElement("div");
+    creatediv.className = "";
+    creatediv.innerHTML = `
                         <div class="thongkesanpham">
                 <div class="productwithhighestprofit">   
                     <div><div class="header">highest profit</div>  </div>
@@ -181,146 +181,160 @@ let monthsecond=1;
                     </div>
             </div>
             `;
-            document.querySelector(".thongke").innerHTML=``;
-            document.querySelector(".thongke").innerHTML+=creatediv.innerHTML;
-            let a=gettotal(arrayCustomerwithtotalprofit(Customer));
+    document.querySelector(".thongke").innerHTML = ``;
+    document.querySelector(".thongke").innerHTML += creatediv.innerHTML;
+    let a = gettotal(arrayCustomerwithtotalprofit(Customer));
 
-            document.getElementById("totalprofit").innerText=a.totalprofit;
-            document.getElementById("totalproduct").innerText=a.totalproduct;
-            document.getElementById("totaluser").innerText=a.totaluser;
-            document.getElementById("totalprice").innerText=a.totalprice;
-          }
-        }
-function gettotal(Customer){
-    let sumprofit=0;
-    let sumproduct=0;
-    let sumprice=0;
-    Customer.forEach(Customer=>{
-    sumprofit+=Customer.totalprofit;
-    sumproduct+=Customer.totalproduct;
-    sumprice+=Customer.totalprice;
-    })
-    return {
-    totalprofit:sumprofit,
-    totalproduct:sumproduct,
-    totalprice:sumprice,
-    totaluser:Customer.length
-
-    }
+    document.getElementById("totalprofit").innerText = a.totalprofit;
+    document.getElementById("totalproduct").innerText = a.totalproduct;
+    document.getElementById("totaluser").innerText = a.totaluser;
+    document.getElementById("totalprice").innerText = a.totalprice;
+  }
 }
-function cushighest(Customer){
-    let max=-Infinity;
-    let cus;
-    Customer.forEach(Customer=>{
-        if(Customer.totalprofit>max){
-            max=Customer.totalprofit;
-            cus=Customer;
-        }
-    })
-    return cus;
-}  
-
-function cuslowest(Customer){
-    let min=Infinity;
-    let cus;
-    Customer.forEach(Customer=>{
-        if(min>Customer.totalprofit){
-            min=Customer.totalprofit;
-            cus=Customer;
-        }
-    })
-    return cus;
-}    
-    function highest(product){
-        let max=-Infinity;
-        let productwithmax;
-        product.forEach(product=>{
-            if(product.profit>max){
-                max=product.profit;
-                productwithmax=product
-            }
-        })
-        return productwithmax;
-    }
-    function lowest(product){
-        let productwithmin;
-        let min=Infinity;
-        product.forEach(product=>{
-            if(product.profit<min){
-                min=product.profit;
-                productwithmin=product;
-            }
-        })
-        return productwithmin;
-    }
-
-  function checktimeday(receiptime){
-    let arraycopy=JSON.parse(JSON.stringify(receiptime));
-    receipt=arraycopy.split("/");
-
-    if(receipt[2].replace(/^0+/, '')<year){
-         return false;
-    } 
-    if(receipt[2].replace(/^0+/, '')>yearsecond){
-        return false;
-    }
-    if(receipt[2].replace(/^0+/, '')<yearsecond && receipt[2].replace(/^0+/, '')>year){
-        return true;
-    }
-    if(receipt[1].replace(/^0+/, '')<month && receipt[2].replace(/^0+/, '')==year){
-        return false;
-    }
-    if(receipt[1].replace(/^0+/, '')>monthsecond && receipt[2].replace(/^0+/, '')==yearsecond){
-        return false;
-    }
-    if(receipt[0].replace(/^0+/, '')<day && receipt[1].replace(/^0+/, '')==month && receipt[2].replace(/^0+/, '')==year){
-        return false;
-    }
-    if(receipt[0].replace(/^0+/, '')>daysecond && receipt[1].replace(/^0+/, '')==monthsecond &&receipt[2].replace(/^0+/, '')==yearsecond){
-        return false;
-    }
-    return true; 
+function gettotal(Customer) {
+  let sumprofit = 0;
+  let sumproduct = 0;
+  let sumprice = 0;
+  Customer.forEach((Customer) => {
+    sumprofit += Customer.totalprofit;
+    sumproduct += Customer.totalproduct;
+    sumprice += Customer.totalprice;
+  });
+  return {
+    totalprofit: sumprofit,
+    totalproduct: sumproduct,
+    totalprice: sumprice,
+    totaluser: Customer.length,
+  };
 }
-console.log(checktimeday("1/1/2024"));
+function cushighest(Customer) {
+  let max = -Infinity;
+  let cus;
+  Customer.forEach((Customer) => {
+    if (Customer.totalprofit > max) {
+      max = Customer.totalprofit;
+      cus = Customer;
+    }
+  });
+  return cus;
+}
 
-//lấy mảng Customer mới với lịch sử mua hàng thỏa điều kiện 
-function arrayCustomer(Customer){
+function cuslowest(Customer) {
+  let min = Infinity;
+  let cus;
+  Customer.forEach((Customer) => {
+    if (min > Customer.totalprofit) {
+      min = Customer.totalprofit;
+      cus = Customer;
+    }
+  });
+  return cus;
+}
+function highest(product) {
+  let max = -Infinity;
+  let productwithmax;
+  product.forEach((product) => {
+    if (product.profit > max) {
+      max = product.profit;
+      productwithmax = product;
+    }
+  });
+  return productwithmax;
+}
+function lowest(product) {
+  let productwithmin;
+  let min = Infinity;
+  product.forEach((product) => {
+    if (product.profit < min) {
+      min = product.profit;
+      productwithmin = product;
+    }
+  });
+  return productwithmin;
+}
+
+function checktimeday(receiptime) {
+  let arraycopy = JSON.parse(JSON.stringify(receiptime));
+  receipt = arraycopy.split("/");
+
+  if (receipt[2].replace(/^0+/, "") < year) {
+    return false;
+  }
+  if (receipt[2].replace(/^0+/, "") > yearsecond) {
+    return false;
+  }
+  if (
+    receipt[2].replace(/^0+/, "") < yearsecond &&
+    receipt[2].replace(/^0+/, "") > year
+  ) {
+    return true;
+  }
+  if (
+    receipt[1].replace(/^0+/, "") < month &&
+    receipt[2].replace(/^0+/, "") == year
+  ) {
+    return false;
+  }
+  if (
+    receipt[1].replace(/^0+/, "") > monthsecond &&
+    receipt[2].replace(/^0+/, "") == yearsecond
+  ) {
+    return false;
+  }
+  if (
+    receipt[0].replace(/^0+/, "") < day &&
+    receipt[1].replace(/^0+/, "") == month &&
+    receipt[2].replace(/^0+/, "") == year
+  ) {
+    return false;
+  }
+  if (
+    receipt[0].replace(/^0+/, "") > daysecond &&
+    receipt[1].replace(/^0+/, "") == monthsecond &&
+    receipt[2].replace(/^0+/, "") == yearsecond
+  ) {
+    return false;
+  }
+  return true;
+}
+
+//lấy mảng Customer mới với lịch sử mua hàng thỏa điều kiện
+function arrayCustomer(Customer) {
   // console.log(Customer)
-    return Customer.filter(Customer => {
-        const filteredlichsuMuaHangs = Customer.lichsuMuaHang.filter(lichsuMuaHang => {
-            return checktimeday(lichsuMuaHang.ngaydat);
-        }
-        );
-        if (filteredlichsuMuaHangs.length > 0) {
-            return { 
-               ...Customer, 
-                lichsuMuaHang: filteredlichsuMuaHangs
-            };
-        }
-    }).filter(Customer => Customer); 
+  return Customer.filter((Customer) => {
+    const filteredlichsuMuaHangs = Customer.lichsuMuaHang.filter(
+      (lichsuMuaHang) => {
+        return checktimeday(lichsuMuaHang.ngaydat);
+      }
+    );
+    if (filteredlichsuMuaHangs.length > 0) {
+      return {
+        ...Customer,
+        lichsuMuaHang: filteredlichsuMuaHangs,
+      };
+    }
+  }).filter((Customer) => Customer);
 }
 //khách hàng với tổng doanh thu,tổng product
-function arrayCustomerwithtotalprofit(Customer){
-  if(Customer){
+function arrayCustomerwithtotalprofit(Customer) {
+  if (Customer) {
     const array = JSON.parse(JSON.stringify(Customer));
-    array.forEach(Customer=>{
-        Customer.lichsuMuaHang.forEach(lichsuMuaHang=>{
-            Customer.totalprice=0;
-            Customer.totalproduct=0;
-            Customer.totalprofit=0;
-            lichsuMuaHang.giohang.forEach(product=>{
-                Customer.totalprofit+=product.soLuong*product.profit;
-                Customer.totalproduct+=product.soLuong;
-                Customer.totalprice+=product.soLuong*parseInt(product.gia);
-            })
-        })
-    })
+    array.forEach((Customer) => {
+      Customer.lichsuMuaHang.forEach((lichsuMuaHang) => {
+        Customer.totalprice = 0;
+        Customer.totalproduct = 0;
+        Customer.totalprofit = 0;
+        lichsuMuaHang.giohang.forEach((product) => {
+          Customer.totalprofit += product.soLuong * product.profit;
+          Customer.totalproduct += product.soLuong;
+          Customer.totalprice += product.soLuong * parseInt(product.gia);
+        });
+      });
+    });
     return array;
   }
 }
-function bang(){
-
-}
+function bang() {}
 
 // lấy mảng product mới id phân biệt
 //   function aggregateCartItems(Customers) {
@@ -348,44 +362,42 @@ function bang(){
 //     return Object.values(aggregatedItems);
 //   }
 function aggregateCartItems(Customers) {
-    const aggregatedItems = {};
-    Customers.forEach(Customer => {
-        Customer.lichsuMuaHang.forEach(order => {
-            order.giohang.forEach(item => {
-                if (aggregatedItems[item.id]) {
-                    aggregatedItems[item.id].soLuong += item.soLuong;
-                    aggregatedItems[item.id].profit += item.profit * item.soLuong; 
-                    aggregatedItems[item.id].gia += item.gia * item.soLuong;
-                } else {
-                    aggregatedItems[item.id] = { 
-                        ...item, 
-                        soLuong: item.soLuong, 
-                        profit: item.profit * item.soLuong, 
-                        gia: item.gia * item.soLuong 
-                    };
-                }
-            });
-        });
+  const aggregatedItems = {};
+  Customers.forEach((Customer) => {
+    Customer.lichsuMuaHang.forEach((order) => {
+      order.giohang.forEach((item) => {
+        if (aggregatedItems[item.id]) {
+          aggregatedItems[item.id].soLuong += item.soLuong;
+          aggregatedItems[item.id].profit += item.profit * item.soLuong;
+          aggregatedItems[item.id].gia += item.gia * item.soLuong;
+        } else {
+          aggregatedItems[item.id] = {
+            ...item,
+            soLuong: item.soLuong,
+            profit: item.profit * item.soLuong,
+            gia: item.gia * item.soLuong,
+          };
+        }
+      });
     });
-    return Object.values(aggregatedItems);
+  });
+  return Object.values(aggregatedItems);
 }
-function inputdate(){
-  let Customer=JSON.parse(localStorage.getItem("users"));
-  console.log(arrayCustomer(Customer));
-  alert("jjj");
-  console.log("hiiii");
-  const time=document.getElementById("timefirst").value;
-  if(time){
-      day=parseInt(time.split("-")[2].replace(/^0+/, ''),10);
-      month=parseInt(time.split("-")[1].replace(/^0+/, ''),10);
-      year=parseInt(time.split("-")[0].replace(/^0+/, ''),10);
+function inputdate() {
+  let Customer = JSON.parse(localStorage.getItem("users"));
+  const time = document.getElementById("timefirst").value;
+  if (time) {
+    day = parseInt(time.split("-")[2].replace(/^0+/, ""), 10);
+    month = parseInt(time.split("-")[1].replace(/^0+/, ""), 10);
+    year = parseInt(time.split("-")[0].replace(/^0+/, ""), 10);
   }
-  const timesec=document.getElementById("timesecond").value;
-  if(timesec){
-      daysecond=parseInt(timesec.split("-")[2].replace(/^0+/, ''),10);
-      monthsecond=parseInt(timesec.split("-")[1].replace(/^0+/, ''),10);
-      yearsecond=parseInt(timesec.split("-")[0].replace(/^0+/, ''),10);
+  const timesec = document.getElementById("timesecond").value;
+  if (timesec) {
+    daysecond = parseInt(timesec.split("-")[2].replace(/^0+/, ""), 10);
+    monthsecond = parseInt(timesec.split("-")[1].replace(/^0+/, ""), 10);
+    yearsecond = parseInt(timesec.split("-")[0].replace(/^0+/, ""), 10);
   }
+<<<<<<< HEAD
   if(timesec && document.getElementById("timefirst").value){
       if(yearsecond<year){
           alert("Bạn nhập sai ngày");
@@ -400,23 +412,42 @@ function inputdate(){
           return;
       }
   taohangthongke(arrayCustomer(Customer),aggregateCartItems(Customer));
+=======
+  if (timesec && document.getElementById("timefirst").value) {
+    if (yearsecond < year) {
+      alert("Bạn nhập sai năm");
+      return;
+    }
+    if (yearsecond == year && monthsecond < month) {
+      alert("Bạn nhập sai tháng");
+      return;
+    }
+    if (yearsecond == year && monthsecond == month && daysecond < day) {
+      alert("Bạn nhập sai ngày");
+      return;
+    }
+    taohangthongke(arrayCustomer(Customer), aggregateCartItems(Customer));
+>>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
   }
 }
 // getcurrentyear();
 
-function addprofitforcustomer(Customer){
-  Customer.forEach(Customer=>{
-    Customer.lichsuMuaHang.forEach(lichsu=>{
-      lichsu.giohang.forEach(product=>{
-        product.profit=(product.gia*10)/100 ;
-      })
-    })
-  })
+function addprofitforcustomer(Customer) {
+  Customer.forEach((Customer) => {
+    Customer.lichsuMuaHang.forEach((lichsu) => {
+      lichsu.giohang.forEach((product) => {
+        product.profit = (product.gia * 10) / 100;
+      });
+    });
+  });
 }
-function addprofitforproduct(Product){
-  Product.forEach(product=>{
-    product.profit=(product.gia*10)/100 ;
-  })
+function addprofitforproduct(Product) {
+  Product.forEach((product) => {
+    product.profit = (product.gia * 10) / 100;
+  });
 }
 addprofitforcustomer(JSON.parse(localStorage.getItem("users")));
-taohangthongke(arrayCustomer(JSON.parse(localStorage.getItem("users"))),aggregateCartItems(JSON.parse(localStorage.getItem("users"))));
+taohangthongke(
+  arrayCustomer(JSON.parse(localStorage.getItem("users"))),
+  aggregateCartItems(JSON.parse(localStorage.getItem("users")))
+);

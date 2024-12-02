@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 // let currentpage = 1;
+=======
+let currentpage = 1;
+const container4Node = document.getElementById("container4");
+>>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
 // date=null,month=null,year=null,datesecond=null,monthsecond=null,yearsecond=null;
 
 function checktimedate(receiptime) {
@@ -87,6 +92,7 @@ function editclient() {
     }
   });
 }
+<<<<<<< HEAD
 function buttoninput(phone) {
   let Customer = JSON.parse(localStorage.getItem("users"));
   const time = document.getElementById("taketimefirst").value;
@@ -149,12 +155,24 @@ function printinforordernew(phone,Customer){
             a="no infor"
           }
           console.log("delivering-"+Customer[i].phone);
+=======
+function printinfororder(id) {
+  let Customer = JSON.parse(localStorage.getItem("users"));
+  document.getElementById("printorder").style.display = "flex";
+  const section = document.querySelector("#printorder >div");
+  for (let i = 0; i < Customer.length; i++) {
+    if (Customer[i].phone == id) {
+      for (let j = 0; j < Customer[i].lichsuMuaHang.length; j++) {
+        const product = Customer[i].lichsuMuaHang[j];
+        for (let k = 0; k < product.giohang.length; k++) {
+>>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
           const creatediv = document.createElement("div");
           creatediv.innerHTML = `
                     <div>${product.giohang[k].id}</div>
                     <div>${product.giohang[k].ten}</div>
                     <div>${product.giohang[k].loai}</div>
                     <div>${product.ngaydat}</div>
+<<<<<<< HEAD
                     <div id="outerdelivery-${Customer[i].phone}${k}" class="outerdelivery">
                         <div id="deliver-${Customer[i].phone}${k}" class="deliver" onclick="changedelivery(${Customer[i].phone},${k})">${a}</div>
                         <div class="Delivering" id="delivering-${Customer[i].phone}${k}" onclick="newstatus(${Customer[i].phone},${1})">
@@ -391,6 +409,23 @@ function printinfor(page) {
   const newCustomer = Customer.slice(start, end);
   document.getElementById("container4").innerHTML = "";
   document.getElementById("container4").innerHTML = `<div class="clientouter" id="clientouter">
+=======
+                    `;
+          section.innerHTML += creatediv.outerHTML;
+        }
+      }
+    }
+  }
+}
+function printinfor(page) {
+  let Customer = JSON.parse(localStorage.getItem("users"));
+
+  const start = page * 7;
+  const end = start + 7;
+  const newCustomer = Customer.slice(start, end);
+  container4Node.innerHTML = "";
+  container4Node.innerHTML = `<div class="clientouter" id="clientouter">
+>>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
         <div>Tên khách hàng</div>
         <div>Số điện thoại</div>
         <div>Email</div>
@@ -402,11 +437,16 @@ function printinfor(page) {
             <div>${Customer.email}</div>
             <div><i class="fa-solid fa-key" id="khoa-${Customer.phone}" onclick="hienkhoa(${Customer.phone})"></i> <i class="fa-regular fa-pen-to-square edit"  onclick="editclient(${Customer.phone})"></i> <i id="show" class="fa-solid fa-angle-down angle" onclick="printinfororder(${Customer.phone})"></i></div>
         </div>`;
+<<<<<<< HEAD
         document.getElementById("container4").innerHTML += clientouterr;
     const a = "khoa-" + Customer.phone;
     console.log("hihi");
     console.log(a);
     console.log(Customer.status);
+=======
+    container4Node.innerHTML += clientouterr;
+    const a = "khoa-" + Customer.phone;
+>>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
     if (Customer.status == 1) {
       document.getElementById(a).style.color = "#bcbcbc";
     }
@@ -419,6 +459,7 @@ function printinfor(page) {
 function closedkhoa() {
   document.getElementById("khoaclient").style.display = "none";
 }
+<<<<<<< HEAD
 function khoanguoidung(phone) {
   let Customer = JSON.parse(localStorage.getItem("users"));
   for (let i = 0; i < Customer.length; i++) {
@@ -429,6 +470,17 @@ function khoanguoidung(phone) {
       const a = "khoa-" + "0"+phone;
       document.getElementById(a).style.color = "#62c7ff";
       alert("đã bỏ khóa");
+=======
+function khoanguoidung(id) {
+  let Customer = JSON.parse(localStorage.getItem("users"));
+
+  for (let i = 0; i < Customer.length; i++) {
+    if (Customer[i].phone == id) {
+      console.log("helo");
+      Customer[i].status = 1;
+      const a = "khoa-" + id;
+      document.getElementById(a).style.color = "#bcbcbc";
+>>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
     }
   }
 }
@@ -477,8 +529,13 @@ function search() {
   printsearcharray(newarray);
 }
 function printsearcharray(newarray) {
+<<<<<<< HEAD
     document.getElementById("container4").innerHTML = "";
     document.getElementById("container4").innerHTML = `            
+=======
+  container4Node.innerHTML = "";
+  container4Node.innerHTML = `            
+>>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
     <div class="clientouter" id="clientouter">
         <div>Tên khách hàng</div>
         <div>Số điện thoại</div>
@@ -491,7 +548,11 @@ function printsearcharray(newarray) {
             <div>${Customer.email}</div>
             <div><i class="fa-solid fa-key" id="khoa-${Customer.phone}" onclick="hienkhoa(${Customer.phone})"></i> <i class="fa-regular fa-pen-to-square edit"  onclick="editclient(${Customer.phone})"></i> <i id="show" class="fa-solid fa-angle-down angle" onclick="printinfororder(${Customer.phone})"></i></div>
         </div>`;
+<<<<<<< HEAD
         document.getElementById("container4").innerHTML += clientouterr;
+=======
+    container4Node.innerHTML += clientouterr;
+>>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
     const a = "khoa-" + Customer.phone;
     if (Customer.status == 1) {
       document.getElementById(a).style.color = "#bcbcbc";
@@ -501,6 +562,7 @@ function printsearcharray(newarray) {
     }
   });
 }
+<<<<<<< HEAD
 function hienkhoa(phone) {
   let Customer=JSON.parse(localStorage.getItem("users"));
   document.getElementById("khoaclient").style.display = "flex";
@@ -512,6 +574,76 @@ function hienkhoa(phone) {
       if (Customer[i].status == 0) {
         console.log(Customer[i]);
         document.getElementById("contentkhoa").innerHTML="";
+=======
+// function hienkhoa(id){
+//     console.log(id);
+//     document.getElementById("khoaclient").style.display="flex";
+//     let hienkh=document.querySelector(".printkh");
+//     for(let i=0;i<Customer.length;i++){
+//         if(Customer[i].id==id){
+//             if(Customer[i].status==0){
+//                 console.log("hiiiiiiiiiiiiiii");
+//                 document.getElementById("contentkhoa").innerHTML`
+//                 <div>Người dùng sẽ bị khóa cho đến khi admin mở lại</div>
+//                     <label for="inputkhoand">Hãy nhập lí do khóa người dùng : </label>
+//                     <input type="text" id="inputkhoand"> <input type="submit" id="submitkhoa"><br>
+//                 `;
+//             }
+//             if(Customer[i].status==1){
+//                 document.getElementById("contentkhoa").innerHTML=`
+//                 <div>Người dùng sẽ bị khóa cho đến khi admin mở lại Bạn có muốn khóa người dùng ?  <input type="button" onclick="khoanguoidung(id)"></div>
+//                 `;
+//             }
+//         }
+//     }
+//     for(let i=0;i<Customer.length;i++){
+//         if(Customer[i].id==id){
+//             let creatediv=document.createElement("div");
+//             creatediv.innerHTML=`<div>${Customer[i].id}</div>
+//             <div>${Customer[i].name}</div>
+//             <div>${Customer[i].phone}</div>
+//             <div>${Customer[i].email}</div>
+//             `
+//             hienkh.innerHTML+=creatediv.outerHTML;
+//             for(let j=0;j<Customer[i].lichsuMuaHang.length;j++){
+//                 const product=Customer[i].lichsuMuaHang[j];
+//                 for(let k=0;k<product.giohang.length;k++){
+//                     const creatediv=document.createElement("div");
+//                     creatediv.innerHTML=`<div>${product.giohang[k].id}</div>
+//                     <div>${product.giohang[k].ten}</div>
+//                     <div>${product.giohang[k].loai}</div>
+//                     <div>${product.ngaydat}</div>
+//                     `
+//                     document.querySelector(".printorderkh").innerHTML+=creatediv.outerHTML;
+//                 }
+//             }
+//         }
+//     }
+//     if(document.getElementById("submitkhoa")){
+//         let submit=document.getElementById("submitkhoa");
+//         submit.addEventListener("click",function(event){
+//             const reason=document.getElementById("inputkhoand").value.trim();
+//             if(!reason){
+//                 alert("Bạn chưa nhập lí do khóa người dùng");
+//                 return;
+//             }
+//             Customer.status=1;
+//             Customer.reasonkhoa=reason.value;
+//         })
+//     }
+// }
+function hienkhoa(id) {
+  let Customer = JSON.parse(localStorage.getItem("users"));
+  document.getElementById("khoaclient").style.display = "flex";
+  let hienkh = document.querySelector(".printkh");
+  console.log(Customer);
+  console.log(Customer[0].phone, id);
+  document.getElementById("contentkhoa").innerHTML = "";
+
+  for (let i = 0; i < Customer.length; i++) {
+    if (Customer[i].phone == id) {
+      if (Customer[i].status == 0) {
+>>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
         const creatediv = document.createElement("div");
         creatediv.innerHTML = `
                     <div>Người dùng sẽ bị khóa cho đến khi admin mở lại</div>
@@ -520,12 +652,19 @@ function hienkhoa(phone) {
                     <input type="submit" id="submitkhoa" onclick="submitkhoa(${Customer[i].phone})"><br>
                 `;
         document.getElementById("contentkhoa").appendChild(creatediv);
+<<<<<<< HEAD
       } 
       else if (Customer[i].status == 1) {
         document.getElementById("contentkhoa").innerHTML="";
         document.getElementById("contentkhoa").innerHTML = `
                     <div>Bỏ khóa người dùng  
                     <input type="button" onclick="khoanguoidung(${phone})" class="bokhoa" value="click"></div>
+=======
+      } else if (Customer[i].status == 1) {
+        document.getElementById("contentkhoa").innerHTML = `
+                    <div>Người dùng sẽ bị khóa cho đến khi admin mở lại. Bạn có muốn khóa người dùng?  
+                    <input type="button" onclick="khoanguoidung(${id})"></div>
+>>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
                 `;
       }
 
@@ -567,7 +706,11 @@ function hienkhoa(phone) {
   //         }
   //         // Cập nhật thông tin khóa
   //         for (let i = 0; i < Customer.length; i++) {
+<<<<<<< HEAD
   //             if (Customer[i].phone == phone) {
+=======
+  //             if (Customer[i].phone == id) {
+>>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
   //                 console.log("heheh");
   //                 Customer[i].status = 1; // Cập nhật trạng thái
   //                 Customer[i].reasonkhoa = reason; // Cập nhật lý do khóa
@@ -578,7 +721,11 @@ function hienkhoa(phone) {
   //     });
 }
 
+<<<<<<< HEAD
 function submitkhoa(phone) {
+=======
+function submitkhoa(id) {
+>>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
   let Customer = JSON.parse(localStorage.getItem("users"));
   const reason = document.getElementById("inputkhoand").value.trim();
   if (!reason) {
@@ -586,6 +733,7 @@ function submitkhoa(phone) {
     return;
   }
   for (let i = 0; i < Customer.length; i++) {
+<<<<<<< HEAD
     if (Customer[i].phone == phone) {
       let a="khoa-"+"0"+phone;
       document.getElementById(a).style.color="#bcbcbc"
@@ -594,6 +742,11 @@ function submitkhoa(phone) {
       console.log(JSON.parse(localStorage.getItem("users")));
       Customer[i].reasonkhoa = reason;
       console.log(Customer[i]);
+=======
+    if (Customer[i].phone == id) {
+      Customer[i].status = 1;
+      Customer[i].reasonkhoa = reason;
+>>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
       break;
     }
   }
@@ -625,4 +778,8 @@ function customnutphantrang(page) {
   nutphantrangNode[page].classList.add("active");
 }
 printinfor(0);
+<<<<<<< HEAD
 // nutphantrang();
+=======
+nutphantrang();
+>>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
