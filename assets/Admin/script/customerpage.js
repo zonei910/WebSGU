@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-// let currentpage = 1;
-=======
-let currentpage = 1;
-const container4Node = document.getElementById("container4");
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
-// date=null,month=null,year=null,datesecond=null,monthsecond=null,yearsecond=null;
 
 function checktimedate(receiptime) {
   let arraycopy = JSON.parse(JSON.stringify(receiptime));
@@ -92,7 +85,6 @@ function editclient() {
     }
   });
 }
-<<<<<<< HEAD
 function buttoninput(phone) {
   let Customer = JSON.parse(localStorage.getItem("users"));
   const time = document.getElementById("taketimefirst").value;
@@ -124,70 +116,68 @@ function buttoninput(phone) {
   }
 }
 function printinforordernew(phone,Customer){
-  console.log(Customer);
   document.getElementById("printorder").style.display = "flex";
-  const section = document.getElementById("printorder").innerHTML=`                        
-  <div id="innerorder">
-                            <i class="fa-solid fa-x" onclick="closedproduct()"></i>
-                            <div>
-                                <div>id</div>
-                                <div>name</div>
-                                <div>catergory</div>
-                                <div>order receiptime</div>
-                                <div><input type="date" id="taketimefirst"> <input type="date" id="taketimesecond"><input type="button" id="buttonclick" onclick="buttoninput(${phone})" value="click">  </div>
-                            </div>
-                        </div>`;
-                        let a=0;
+  document.querySelector("#printorder").innerHTML=`
+      <div id="innerorder"><i class="fa-solid fa-x" onclick="closedproduct()"></i>
+        <div>
+            <div class="thehead">
+              <div>id</div>
+              <div>name</div>
+              <div>catergory</div>
+              <div>receiptime</div>
+              <div>
+                <input type="date" id="taketimefirst">-<input type="date" id="taketimesecond"><input type="button" id="buttonclick" onclick="buttoninput(${phone})" value="click">  
+              </div>
+          </div>
+        </div>
+      </div>
+    `;
+    let a=0;
   for (let i = 0; i < Customer.length; i++) {
     if (Customer[i].phone == phone) {
       for (let j = 0; j < Customer[i].lichsuMuaHang.length; j++) {
-        a=1;
         const product = Customer[i].lichsuMuaHang[j];
+        const outercreatediv=document.createElement("div");
+        let a;
+        if(product.status==0){
+            a="delivered";
+        }
+        else if(product.status==1){
+            a="delivering";
+        }
+        else{
+          a="no infor"
+        }
         for (let k = 0; k < product.giohang.length; k++) {
-          let a;
-          if(product.status==0){
-              a="delivered";
-          }
-          else if(product.status==1){
-              a="delivering";
-          }
-          else{
-            a="no infor"
-          }
-          console.log("delivering-"+Customer[i].phone);
-=======
-function printinfororder(id) {
-  let Customer = JSON.parse(localStorage.getItem("users"));
-  document.getElementById("printorder").style.display = "flex";
-  const section = document.querySelector("#printorder >div");
-  for (let i = 0; i < Customer.length; i++) {
-    if (Customer[i].phone == id) {
-      for (let j = 0; j < Customer[i].lichsuMuaHang.length; j++) {
-        const product = Customer[i].lichsuMuaHang[j];
-        for (let k = 0; k < product.giohang.length; k++) {
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
           const creatediv = document.createElement("div");
           creatediv.innerHTML = `
                     <div>${product.giohang[k].id}</div>
                     <div>${product.giohang[k].ten}</div>
                     <div>${product.giohang[k].loai}</div>
                     <div>${product.ngaydat}</div>
-<<<<<<< HEAD
-                    <div id="outerdelivery-${Customer[i].phone}${k}" class="outerdelivery">
-                        <div id="deliver-${Customer[i].phone}${k}" class="deliver" onclick="changedelivery(${Customer[i].phone},${k})">${a}</div>
-                        <div class="Delivering" id="delivering-${Customer[i].phone}${k}" onclick="newstatus(${Customer[i].phone},${1})">
-                          delivering  
-                        </div>
-                        <div class="Delivered" id="delivered-${Customer[i].phone}${k}" onclick="newstatus(${Customer[i].phone},${0})">
-                          delivered
-                        </div>
-                    </div>
                     `;
-                    console.log(Customer[i]);
-          document.getElementById("innerorder").appendChild(creatediv);
+          outercreatediv.appendChild(creatediv);
         }
-        console.log(section);
+        let k=j;
+        let thestatus=document.createElement("div");
+        thestatus.className="thestatus";
+        thestatus.innerHTML=`     
+        <div>
+          <div id="outerdelivery-${Customer[i].phone}${k}" class="outerdelivery">
+                <div id="deliver-${Customer[i].phone}${k}" class="deliver" onclick="changedelivery(${Customer[i].phone},${k})">${a} <i class="fa-solid fa-angle-down"></i></div>
+                <div class="Delivering" id="delivering-${Customer[i].phone}${k}" onclick="newstatus(${Customer[i].phone},${k},${1})">
+                  delivering  
+                </div>
+                <div class="Delivered" id="delivered-${Customer[i].phone}${k}" onclick="newstatus(${Customer[i].phone},${k},${0})">
+                  delivered
+                </div>
+          </div>
+        </div>               
+`;
+        outercreatediv.appendChild(thestatus);
+        document.getElementById("innerorder").appendChild(outercreatediv);
       }
+
     }
   }
   if(a==0){
@@ -200,6 +190,74 @@ function printinfororder(id) {
               `;
               document.getElementById("innerorder").appendChild(creatediv);
   }
+}
+function printinfororder(phone) {
+  let Customer = JSON.parse(localStorage.getItem("users"));
+  document.getElementById("printorder").style.display = "flex";
+  document.querySelector("#printorder").innerHTML=`
+      <div id="innerorder"><i class="fa-solid fa-x" onclick="closedproduct()"></i>
+        <div>
+            <div class="thehead">
+              <div>id</div>
+              <div>name</div>
+              <div>catergory</div>
+              <div>receiptime</div>
+              <div>
+                <input type="date" id="taketimefirst">-<input type="date" id="taketimesecond"><input type="button" id="buttonclick" onclick="buttoninput(${phone})" value="click">  
+              </div>
+          </div>
+        </div>
+      </div>
+    `;
+    const section=document.getElementById("innerorder");
+  for (let i = 0; i < Customer.length; i++) {
+    if (Customer[i].phone == phone) {
+      for (let j = 0; j < Customer[i].lichsuMuaHang.length; j++) {
+        const product = Customer[i].lichsuMuaHang[j];
+        const outercreatediv=document.createElement("div");
+        let u;
+        let a;
+        if(product.status==0){
+            a="delivered";
+        }
+        else if(product.status==1){
+            a="delivering";
+        }
+        else{
+          a="no infor"
+        }
+        for (let k = 0; k < product.giohang.length; k++) {
+          const creatediv = document.createElement("div");
+          creatediv.innerHTML = `
+                    <div>${product.giohang[k].id}</div>
+                    <div>${product.giohang[k].ten}</div>
+                    <div>${product.giohang[k].loai}</div>
+                    <div>${product.ngaydat}</div>
+                    `;
+          outercreatediv.appendChild(creatediv);
+        }
+        let k=j;
+        let thestatus=document.createElement("div");
+        thestatus.className="thestatus";
+        thestatus.innerHTML=`     
+        <div>
+          <div id="outerdelivery-${Customer[i].phone}${k}" class="outerdelivery">
+                <div id="deliver-${Customer[i].phone}${k}" class="deliver" onclick="changedelivery(${Customer[i].phone},${k})">${a} <i class="fa-solid fa-angle-down"></i></div>
+                <div class="Delivering" id="delivering-${Customer[i].phone}${k}" onclick="newstatus(${Customer[i].phone},${k},${1})">
+                  delivering  
+                </div>
+                <div class="Delivered" id="delivered-${Customer[i].phone}${k}" onclick="newstatus(${Customer[i].phone},${k},${0})">
+                  delivered
+                </div>
+          </div>
+        </div>               
+`;
+        outercreatediv.appendChild(thestatus);
+        section.appendChild(outercreatediv);
+      }
+    }
+  }
+  console.log(section);
 }
 // function printinforordernew(phone, Customer) {
 //   console.log(Customer);
@@ -256,66 +314,7 @@ function printinfororder(id) {
 //       section.appendChild(creatediv); // Thêm thông điệp vào section
 //   }
 // }
-function printinfororder(phone) {
-  console.log(phone);
-  let Customer = JSON.parse(localStorage.getItem("users"));
-  document.getElementById("printorder").style.display = "flex";
-  document.querySelector("#printorder").innerHTML=`
-                <div id="innerorder"><i class="fa-solid fa-x" onclick="closedproduct()"></i>
-                            <div>
-                                <div>id</div>
-                                <div>name</div>
-                                <div>catergory</div>
-                                <div>order receiptime</div>
-                                <div><input type="date" id="taketimefirst"> <input type="date" id="taketimesecond"><input type="button" id="buttonclick" onclick="buttoninput(${phone})" value="click">  </div>
-                            </div></div>
-    `;
-    const section=document.getElementById("innerorder");
-  for (let i = 0; i < Customer.length; i++) {
-    if (Customer[i].phone == phone) {
-      for (let j = 0; j < Customer[i].lichsuMuaHang.length; j++) {
-        const product = Customer[i].lichsuMuaHang[j];
-        for (let k = 0; k < product.giohang.length; k++) {
-            let a;
-            if(product.status==0){
-                a="delivered";
-            }
-            else if(product.status==1){
-                a="delivering";
-            }
-            else{
-              a="no infor"
-            }
-            console.log("delivering-"+Customer[i].phone);
-          const creatediv = document.createElement("div");
-          let thecustomer=Customer[i];
-          creatediv.innerHTML = `
-                    <div>${product.giohang[k].id}</div>
-                    <div>${product.giohang[k].ten}</div>
-                    <div>${product.giohang[k].loai}</div>
-                    <div>${product.ngaydat}</div>
-                    <div id="outerdelivery-${Customer[i].phone}${k}" class="outerdelivery">
-                        <div id="deliver-${Customer[i].phone}${k}" class="deliver" onclick="changedelivery(${Customer[i].phone},${k})">${a}</div>
-                        <div class="Delivering" id="delivering-${Customer[i].phone}${k}" onclick="newstatus(${Customer[i].phone},${1})">
-                          delivering  
-                        </div>
-                        <div class="Delivered" id="delivered-${Customer[i].phone}${k}" onclick="newstatus(${Customer[i].phone},${0})">
-                          delivered
-                        </div>
-                    </div>
-                    `;
-                    console.log(Customer[i]);
-          section.appendChild(creatediv);
-          // let o="outerdelivery-"+Customer[i].phone;
-          // console.log(document.getElementById(o));
-          console.log(section);
-          return;
-        }
-      }
-    }
-  }
-  console.log(section);
-}
+
 function changedelivery(Phone,key){
   let phone="0"+Phone;
   console.log("fdsfd");
@@ -330,40 +329,45 @@ function changedelivery(Phone,key){
     document.getElementById(c).style.display="flex";
 }
 function newstatus(phone,key,status){
+  console.log(status);
   let Customer = JSON.parse(localStorage.getItem("users"));
-    let b="delivering-"+"0"+phone+key;
-    let c="delivered-"+"0"+phone+key;
-    let d="outerdelivery-"+"0"+phone+key;
-    Customer.forEach(customer=>{
-      if(customer.phone==phone){
+  let b="delivering-"+"0"+phone+key;
+  let c="delivered-"+"0"+phone+key;
+  let d="outerdelivery-"+"0"+phone+key;
+  Customer.forEach(customer=>{
+    if(customer.phone==phone){
+      customer.lichsuMuaHang.forEach(lichsu=>{
         if(status==0){
-                  customer.status=status
-                  document.getElementById(b).style.display="none";
-                  document.getElementById(c).style.display="none";
-                  document.getElementById(d).innerHTML=`                        
-                  <div id="deliver-${customer.phone}" class="deliver" onclick="changedelivery(${customer.phone})">delivered</div>
-                  <div class="Delivering" id="delivering-${customer.phone}" onclick="newstatus(${customer.phone},${1})">
-                    delivering  
-                  </div>
-                  <div class="Delivered" id="delivered-${customer.phone}" onclick="newstatus(${customer.phone},${0})">
-                    delivered
-                  </div>`;
-              }
-              else if(status==1){
-                customer.status=status
-                document.getElementById(b).style.display="none";
-                document.getElementById(c).style.display="none";
-                document.getElementById(d).innerHTML=`                        
-                <div id="deliver-${customer.phone}" class="deliver" onclick="changedelivery(${customer.phone})">delivering</div>
-                <div class="Delivering" id="delivering-${customer.phone}" onclick="newstatus(${customer.phone},${1})">
-                  delivering  
-                </div>
-                <div class="Delivered" id="delivered-${customer.phone}" onclick="newstatus(${customer.phone},${0})">
-                  delivered
-                </div>`;
-              }
-      }
-    })
+          lichsu=0;
+          document.getElementById(b).style.display="none";
+          document.getElementById(c).style.display="none";
+          document.getElementById(d).innerHTML=`                        
+            <div id="deliver-${customer.phone}${key}" class="deliver" onclick="changedelivery(${customer.phone},${key})">delivered <i class="fa-solid fa-angle-down"></i></div>
+            <div class="Delivering" id="delivering-${customer.phone}${key}" onclick="newstatus(${customer.phone},${key},${1})">
+              delivering
+            </div>
+            <div class="Delivered" id="delivered-${customer.phone}${key}" onclick="newstatus(${customer.phone},${key},${0})">
+              delivered
+            </div>`;
+        }
+        else if(status==1){
+          lichsu.status=1;
+          document.getElementById(b).style.display="none";
+          document.getElementById(c).style.display="none";
+          document.getElementById(d).innerHTML=`                        
+            <div id="deliver-${customer.phone}${key}" class="deliver" onclick="changedelivery(${customer.phone},${key})">delivering <i class="fa-solid fa-angle-down"></i></div>
+            <div class="Delivering" id="delivering-${customer.phone}${key}" onclick="newstatus(${customer.phone},${key},${1})">
+              delivering
+            </div>
+            <div class="Delivered" id="delivered-${customer.phone}${key}" onclick="newstatus(${customer.phone},${key},${0})">
+              delivered
+            </div>`;
+        }
+      })
+    }
+  })
+  localStorage.setItem('users', JSON.stringify(Customer));
+  console.log(JSON.parse(localStorage.getItem("users")));
 }
 // function newstatus(customer,status){
 //   console.log(customer);
@@ -409,23 +413,6 @@ function printinfor(page) {
   const newCustomer = Customer.slice(start, end);
   document.getElementById("container4").innerHTML = "";
   document.getElementById("container4").innerHTML = `<div class="clientouter" id="clientouter">
-=======
-                    `;
-          section.innerHTML += creatediv.outerHTML;
-        }
-      }
-    }
-  }
-}
-function printinfor(page) {
-  let Customer = JSON.parse(localStorage.getItem("users"));
-
-  const start = page * 7;
-  const end = start + 7;
-  const newCustomer = Customer.slice(start, end);
-  container4Node.innerHTML = "";
-  container4Node.innerHTML = `<div class="clientouter" id="clientouter">
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
         <div>Tên khách hàng</div>
         <div>Số điện thoại</div>
         <div>Email</div>
@@ -437,16 +424,11 @@ function printinfor(page) {
             <div>${Customer.email}</div>
             <div><i class="fa-solid fa-key" id="khoa-${Customer.phone}" onclick="hienkhoa(${Customer.phone})"></i> <i class="fa-regular fa-pen-to-square edit"  onclick="editclient(${Customer.phone})"></i> <i id="show" class="fa-solid fa-angle-down angle" onclick="printinfororder(${Customer.phone})"></i></div>
         </div>`;
-<<<<<<< HEAD
         document.getElementById("container4").innerHTML += clientouterr;
     const a = "khoa-" + Customer.phone;
     console.log("hihi");
     console.log(a);
     console.log(Customer.status);
-=======
-    container4Node.innerHTML += clientouterr;
-    const a = "khoa-" + Customer.phone;
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
     if (Customer.status == 1) {
       document.getElementById(a).style.color = "#bcbcbc";
     }
@@ -459,7 +441,6 @@ function printinfor(page) {
 function closedkhoa() {
   document.getElementById("khoaclient").style.display = "none";
 }
-<<<<<<< HEAD
 function khoanguoidung(phone) {
   let Customer = JSON.parse(localStorage.getItem("users"));
   for (let i = 0; i < Customer.length; i++) {
@@ -470,29 +451,16 @@ function khoanguoidung(phone) {
       const a = "khoa-" + "0"+phone;
       document.getElementById(a).style.color = "#62c7ff";
       alert("đã bỏ khóa");
-=======
-function khoanguoidung(id) {
-  let Customer = JSON.parse(localStorage.getItem("users"));
-
-  for (let i = 0; i < Customer.length; i++) {
-    if (Customer[i].phone == id) {
-      console.log("helo");
-      Customer[i].status = 1;
-      const a = "khoa-" + id;
-      document.getElementById(a).style.color = "#bcbcbc";
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
     }
   }
 }
 function search() {
   let Customer = JSON.parse(localStorage.getItem("users"));
-
   let valuesearchinput = document.getElementById("search").value.toUpperCase();
   if (valuesearchinput == "") {
     printinfor(0);
     return 0;
   }
-
   let namesearch = Customer.filter((Customer) => {
     return Customer.name.toUpperCase().includes(valuesearchinput);
   });
@@ -529,13 +497,8 @@ function search() {
   printsearcharray(newarray);
 }
 function printsearcharray(newarray) {
-<<<<<<< HEAD
     document.getElementById("container4").innerHTML = "";
     document.getElementById("container4").innerHTML = `            
-=======
-  container4Node.innerHTML = "";
-  container4Node.innerHTML = `            
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
     <div class="clientouter" id="clientouter">
         <div>Tên khách hàng</div>
         <div>Số điện thoại</div>
@@ -548,11 +511,7 @@ function printsearcharray(newarray) {
             <div>${Customer.email}</div>
             <div><i class="fa-solid fa-key" id="khoa-${Customer.phone}" onclick="hienkhoa(${Customer.phone})"></i> <i class="fa-regular fa-pen-to-square edit"  onclick="editclient(${Customer.phone})"></i> <i id="show" class="fa-solid fa-angle-down angle" onclick="printinfororder(${Customer.phone})"></i></div>
         </div>`;
-<<<<<<< HEAD
         document.getElementById("container4").innerHTML += clientouterr;
-=======
-    container4Node.innerHTML += clientouterr;
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
     const a = "khoa-" + Customer.phone;
     if (Customer.status == 1) {
       document.getElementById(a).style.color = "#bcbcbc";
@@ -562,88 +521,41 @@ function printsearcharray(newarray) {
     }
   });
 }
-<<<<<<< HEAD
 function hienkhoa(phone) {
+  console.log("fdsfsdfffffffffffffffffffffffffffffffffffffffffffffffffffff");
   let Customer=JSON.parse(localStorage.getItem("users"));
   document.getElementById("khoaclient").style.display = "flex";
   let hienkh = document.querySelector(".printkh");
+  hienkh.innerHTML="";
   document.getElementById("contentkhoa").innerHTML = "";
-
+  Customer.forEach(customer=>{
+    customer.lichsuMuaHang.forEach(lichsu=>{
+      lichsu.giohang.forEach(product=>{
+        if(customer.status==0){
+          document.getElementById("contentkhoa").innerHTML="";
+          const creatediv = document.createElement("div");
+          creatediv.innerHTML = `
+                      <div><div>Người dùng sẽ bị khóa cho đến khi admin mở lại</div></div>
+                      <label for="inputkhoand">Hãy nhập lý do khóa người dùng: </label> 
+                      <input type="text" id="inputkhoand" placeholder="Enter"> 
+                      <input type="submit" id="submitkhoa" onclick="submitkhoa(${customer.phone})"><br>
+                  `;
+          document.getElementById("contentkhoa").appendChild(creatediv);
+        }
+        else if (customer.status == 1) {
+          document.getElementById("contentkhoa").innerHTML="";
+          document.getElementById("contentkhoa").innerHTML = `
+                      <div>Bỏ khóa người dùng  
+                      <input type="button" onclick="khoanguoidung(${phone})" class="bokhoa" value="click"></div>
+                  `;
+        }
+      })
+    })
+  })
   for (let i = 0; i < Customer.length; i++) {
     if (Customer[i].phone == phone) {
-      if (Customer[i].status == 0) {
-        console.log(Customer[i]);
+      if (Customer.status == 0) {
         document.getElementById("contentkhoa").innerHTML="";
-=======
-// function hienkhoa(id){
-//     console.log(id);
-//     document.getElementById("khoaclient").style.display="flex";
-//     let hienkh=document.querySelector(".printkh");
-//     for(let i=0;i<Customer.length;i++){
-//         if(Customer[i].id==id){
-//             if(Customer[i].status==0){
-//                 console.log("hiiiiiiiiiiiiiii");
-//                 document.getElementById("contentkhoa").innerHTML`
-//                 <div>Người dùng sẽ bị khóa cho đến khi admin mở lại</div>
-//                     <label for="inputkhoand">Hãy nhập lí do khóa người dùng : </label>
-//                     <input type="text" id="inputkhoand"> <input type="submit" id="submitkhoa"><br>
-//                 `;
-//             }
-//             if(Customer[i].status==1){
-//                 document.getElementById("contentkhoa").innerHTML=`
-//                 <div>Người dùng sẽ bị khóa cho đến khi admin mở lại Bạn có muốn khóa người dùng ?  <input type="button" onclick="khoanguoidung(id)"></div>
-//                 `;
-//             }
-//         }
-//     }
-//     for(let i=0;i<Customer.length;i++){
-//         if(Customer[i].id==id){
-//             let creatediv=document.createElement("div");
-//             creatediv.innerHTML=`<div>${Customer[i].id}</div>
-//             <div>${Customer[i].name}</div>
-//             <div>${Customer[i].phone}</div>
-//             <div>${Customer[i].email}</div>
-//             `
-//             hienkh.innerHTML+=creatediv.outerHTML;
-//             for(let j=0;j<Customer[i].lichsuMuaHang.length;j++){
-//                 const product=Customer[i].lichsuMuaHang[j];
-//                 for(let k=0;k<product.giohang.length;k++){
-//                     const creatediv=document.createElement("div");
-//                     creatediv.innerHTML=`<div>${product.giohang[k].id}</div>
-//                     <div>${product.giohang[k].ten}</div>
-//                     <div>${product.giohang[k].loai}</div>
-//                     <div>${product.ngaydat}</div>
-//                     `
-//                     document.querySelector(".printorderkh").innerHTML+=creatediv.outerHTML;
-//                 }
-//             }
-//         }
-//     }
-//     if(document.getElementById("submitkhoa")){
-//         let submit=document.getElementById("submitkhoa");
-//         submit.addEventListener("click",function(event){
-//             const reason=document.getElementById("inputkhoand").value.trim();
-//             if(!reason){
-//                 alert("Bạn chưa nhập lí do khóa người dùng");
-//                 return;
-//             }
-//             Customer.status=1;
-//             Customer.reasonkhoa=reason.value;
-//         })
-//     }
-// }
-function hienkhoa(id) {
-  let Customer = JSON.parse(localStorage.getItem("users"));
-  document.getElementById("khoaclient").style.display = "flex";
-  let hienkh = document.querySelector(".printkh");
-  console.log(Customer);
-  console.log(Customer[0].phone, id);
-  document.getElementById("contentkhoa").innerHTML = "";
-
-  for (let i = 0; i < Customer.length; i++) {
-    if (Customer[i].phone == id) {
-      if (Customer[i].status == 0) {
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
         const creatediv = document.createElement("div");
         creatediv.innerHTML = `
                     <div>Người dùng sẽ bị khóa cho đến khi admin mở lại</div>
@@ -652,22 +564,14 @@ function hienkhoa(id) {
                     <input type="submit" id="submitkhoa" onclick="submitkhoa(${Customer[i].phone})"><br>
                 `;
         document.getElementById("contentkhoa").appendChild(creatediv);
-<<<<<<< HEAD
       } 
-      else if (Customer[i].status == 1) {
+      else if (Customer.status == 1) {
         document.getElementById("contentkhoa").innerHTML="";
         document.getElementById("contentkhoa").innerHTML = `
                     <div>Bỏ khóa người dùng  
                     <input type="button" onclick="khoanguoidung(${phone})" class="bokhoa" value="click"></div>
-=======
-      } else if (Customer[i].status == 1) {
-        document.getElementById("contentkhoa").innerHTML = `
-                    <div>Người dùng sẽ bị khóa cho đến khi admin mở lại. Bạn có muốn khóa người dùng?  
-                    <input type="button" onclick="khoanguoidung(${id})"></div>
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
                 `;
-      }
-
+      }      
       let creatediv = document.createElement("div");
       creatediv.innerHTML = `
                 <div>${Customer[i].name}</div>
@@ -677,21 +581,23 @@ function hienkhoa(id) {
             `;
       hienkh.appendChild(creatediv);
 
-      // Hiển thị lịch sử mua hàng
-      for (let j = 0; j < Customer[i].lichsuMuaHang.length; j++) {
-        const product = Customer[i].lichsuMuaHang[j];
-        for (let k = 0; k < product.giohang.length; k++) {
-          const orderDiv = document.createElement("div");
-          orderDiv.innerHTML = `
-                        <div>${product.giohang[k].id}</div>
-                        <div>${product.giohang[k].ten}</div>
-                        <div>${product.giohang[k].loai}</div>
-                        <div>${product.ngaydat}</div>
-                    `;
-          document.querySelector(".printorderkh").appendChild(orderDiv); // Sử dụng appendChild
+      document.querySelector(".printorderkh").innerHTML="";
+        if(Customer[i].lichsuMuaHang){
+          Customer[i].lichsuMuaHang.forEach(lichsu=>{
+            if(lichsu.giohang){
+              lichsu.giohang.forEach(product=>{
+                const orderDiv = document.createElement("div");
+                orderDiv.innerHTML = `
+                              <div>${product.id}</div>
+                              <div>${product.ten}</div>
+                              <div>${product.loai}</div>
+                              <div>${lichsu.ngaydat}</div>
+                          `;
+                document.querySelector(".printorderkh").appendChild(orderDiv);
+              })
+            }
+          })
         }
-      }
-      return;
     }
   }
 
@@ -706,11 +612,7 @@ function hienkhoa(id) {
   //         }
   //         // Cập nhật thông tin khóa
   //         for (let i = 0; i < Customer.length; i++) {
-<<<<<<< HEAD
   //             if (Customer[i].phone == phone) {
-=======
-  //             if (Customer[i].phone == id) {
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
   //                 console.log("heheh");
   //                 Customer[i].status = 1; // Cập nhật trạng thái
   //                 Customer[i].reasonkhoa = reason; // Cập nhật lý do khóa
@@ -721,11 +623,7 @@ function hienkhoa(id) {
   //     });
 }
 
-<<<<<<< HEAD
 function submitkhoa(phone) {
-=======
-function submitkhoa(id) {
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
   let Customer = JSON.parse(localStorage.getItem("users"));
   const reason = document.getElementById("inputkhoand").value.trim();
   if (!reason) {
@@ -733,7 +631,6 @@ function submitkhoa(id) {
     return;
   }
   for (let i = 0; i < Customer.length; i++) {
-<<<<<<< HEAD
     if (Customer[i].phone == phone) {
       let a="khoa-"+"0"+phone;
       document.getElementById(a).style.color="#bcbcbc"
@@ -741,24 +638,17 @@ function submitkhoa(id) {
       localStorage.setItem('users', JSON.stringify(Customer));
       console.log(JSON.parse(localStorage.getItem("users")));
       Customer[i].reasonkhoa = reason;
-      console.log(Customer[i]);
-=======
-    if (Customer[i].phone == id) {
-      Customer[i].status = 1;
-      Customer[i].reasonkhoa = reason;
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
+      alert("đã khóa người dùng");
       break;
     }
   }
-  alert("đã khóa người dùng");
 }
-
+let currentpage;
 function nutphantrang() {
   let Customer = JSON.parse(localStorage.getItem("users"));
-
   const slnutphantrang = Math.ceil(Customer.length / 7);
   const nutphantrangouterNode = document.getElementById("phantrangouter");
-  for (let i = 0; i < slnutphantrang; i++) {
+  for (let i = 1; i <= slnutphantrang; i++) {
     const nutphantrangNode = document.createElement("span");
     nutphantrangNode.innerText = i;
     nutphantrangNode.className = "nutphantrang";
@@ -775,11 +665,12 @@ function customnutphantrang(page) {
   nutphantrangNode.forEach((nut) => {
     nut.classList.remove("active");
   });
-  nutphantrangNode[page].classList.add("active");
+  nutphantrangNode[page-1].classList.add("active");
 }
 printinfor(0);
-<<<<<<< HEAD
-// nutphantrang();
-=======
 nutphantrang();
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
+ 
+
+//thay đổi printinfor ,printsearch,newarray....
+//hàm search bị lỗi
+//

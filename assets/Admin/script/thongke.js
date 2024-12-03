@@ -1,7 +1,7 @@
-let year = 2024;
+let theyearr = 2024;
 let day = 1;
 let month = 1;
-let yearsecond = year + 1;
+let theyearrsecond = 2024 + 1;
 let daysecond;
 let monthsecond = 1;
 
@@ -49,7 +49,7 @@ function taohangthongke(Customer, product) {
     creatediv.innerHTML = `
                           <div class="thongkesanpham">
                   <div class="productwithhighestprofit">   
-                      <div><div class="header">highest profit</div>  </div>
+                      <div><div class="thheader">highest profit</div>  </div>
                       <div>
                           <div class="productinner"> 
                               <div class="divimage"><image  class="imagethongke"src="${productwithhighestprofit.hinh}"></image></div>
@@ -62,7 +62,7 @@ function taohangthongke(Customer, product) {
                       </div>
                   </div>
                   <div class="productwithlowestprofit">   
-                      <div><div class="header">Lowest profit</div>  </div>
+                      <div><div class="thheader">Lowest profit</div>  </div>
                       <div>
                           <div class="productinner"> 
                               <div class="divimage"><image  class="imagethongke"src="${productwithlowestprofit.hinh}"></image></div>
@@ -257,41 +257,41 @@ function checktimeday(receiptime) {
   let arraycopy = JSON.parse(JSON.stringify(receiptime));
   receipt = arraycopy.split("/");
 
-  if (receipt[2].replace(/^0+/, "") < year) {
+  if (receipt[2].replace(/^0+/, "") < theyearr) {
     return false;
   }
-  if (receipt[2].replace(/^0+/, "") > yearsecond) {
+  if (receipt[2].replace(/^0+/, "") > theyearrsecond) {
     return false;
   }
   if (
-    receipt[2].replace(/^0+/, "") < yearsecond &&
-    receipt[2].replace(/^0+/, "") > year
+    receipt[2].replace(/^0+/, "") < theyearrsecond &&
+    receipt[2].replace(/^0+/, "") > theyearr
   ) {
     return true;
   }
   if (
     receipt[1].replace(/^0+/, "") < month &&
-    receipt[2].replace(/^0+/, "") == year
+    receipt[2].replace(/^0+/, "") == theyearr
   ) {
     return false;
   }
   if (
     receipt[1].replace(/^0+/, "") > monthsecond &&
-    receipt[2].replace(/^0+/, "") == yearsecond
+    receipt[2].replace(/^0+/, "") == theyearrsecond
   ) {
     return false;
   }
   if (
     receipt[0].replace(/^0+/, "") < day &&
     receipt[1].replace(/^0+/, "") == month &&
-    receipt[2].replace(/^0+/, "") == year
+    receipt[2].replace(/^0+/, "") == theyearr
   ) {
     return false;
   }
   if (
     receipt[0].replace(/^0+/, "") > daysecond &&
     receipt[1].replace(/^0+/, "") == monthsecond &&
-    receipt[2].replace(/^0+/, "") == yearsecond
+    receipt[2].replace(/^0+/, "") == theyearrsecond
   ) {
     return false;
   }
@@ -389,48 +389,31 @@ function inputdate() {
   if (time) {
     day = parseInt(time.split("-")[2].replace(/^0+/, ""), 10);
     month = parseInt(time.split("-")[1].replace(/^0+/, ""), 10);
-    year = parseInt(time.split("-")[0].replace(/^0+/, ""), 10);
+    theyearr = parseInt(time.split("-")[0].replace(/^0+/, ""), 10);
   }
   const timesec = document.getElementById("timesecond").value;
   if (timesec) {
     daysecond = parseInt(timesec.split("-")[2].replace(/^0+/, ""), 10);
     monthsecond = parseInt(timesec.split("-")[1].replace(/^0+/, ""), 10);
-    yearsecond = parseInt(timesec.split("-")[0].replace(/^0+/, ""), 10);
+    theyearrsecond = parseInt(timesec.split("-")[0].replace(/^0+/, ""), 10);
   }
-<<<<<<< HEAD
   if(timesec && document.getElementById("timefirst").value){
-      if(yearsecond<year){
+      if(theyearrsecond<theyearr){
           alert("Bạn nhập sai ngày");
           return;
       }
-      if(yearsecond==year && monthsecond<month){
+      if(theyearrsecond==theyearr && monthsecond<month){
           alert("Bạn nhập sai ngày");
           return;
       }
-      if(yearsecond==year && monthsecond==month && daysecond<day){
+      if(theyearrsecond==theyearr && monthsecond==month && daysecond<day){
           alert("Bạn nhập sai ngày");
           return;
       }
   taohangthongke(arrayCustomer(Customer),aggregateCartItems(Customer));
-=======
-  if (timesec && document.getElementById("timefirst").value) {
-    if (yearsecond < year) {
-      alert("Bạn nhập sai năm");
-      return;
-    }
-    if (yearsecond == year && monthsecond < month) {
-      alert("Bạn nhập sai tháng");
-      return;
-    }
-    if (yearsecond == year && monthsecond == month && daysecond < day) {
-      alert("Bạn nhập sai ngày");
-      return;
-    }
-    taohangthongke(arrayCustomer(Customer), aggregateCartItems(Customer));
->>>>>>> 0905f8cc5b7f8141e97931320360d981f478fa8a
   }
 }
-// getcurrentyear();
+// getcurrenttheyearr();
 
 function addprofitforcustomer(Customer) {
   Customer.forEach((Customer) => {

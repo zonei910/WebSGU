@@ -124,6 +124,55 @@
     width: 100%;
     display: flex;
 }
+#innerorder>div{
+    min-height: 100px;
+    position: relative;
+    margin:20px;
+    padding:10px;
+    border: 1px solid #3b3737;
+    border-radius: 10px;
+    background-color: #ef9f9f;
+}
+.thehead>div{
+    font-size: 17px;
+    font-weight: bold;
+}
+/* #innerorder>div:hover{
+    margin:10px;
+    padding:10px;
+    border:none;
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+    background-color: #eabe76;
+} */
+#innerorder>div>div{
+    padding:10px;
+    display: flex;
+}
+#innerorder>div>div>div:nth-child(1){
+    width: 5%;
+}
+#innerorder>div>div>div:nth-child(2){
+    width: 40%;
+}
+#innerorder>div>div>div:nth-child(3){
+    width: 15%;
+}
+#innerorder>div>div>div:nth-child(4){
+    width: 15%;
+}
+#innerorder>div>div>div:nth-child(5){
+    width: 25%;
+}
+#innerorder{
+    width: 40%;
+    background-color: #fec76f;
+    max-height: 70%;
+    overflow-y: scroll;
+    overflow: auto;
+    position: relative;
+    border-radius: 10px;
+}
 .orderouter>div>div{
     width: 14%;
 }
@@ -159,15 +208,6 @@
 }
 .active{
     background-color: salmon;
-}
-#yes:hover{
-    cursor: pointer;
-}
-#no:hover{
-    cursor: pointer;
-}
-.delete:hover{
-    cursor: pointer;
 }
 #editclient{
     position: relative;
@@ -250,22 +290,28 @@
 
 }
 #innerorder{
-    max-width: 50%;
+    display: block;
+}
+#innerorder{
+    max-width: 60%;
     background-color: #fec76f;
     max-height: 70%;
     overflow-y: scroll;
     overflow: auto;
+    position: relative;
+    border-radius: 10px;
+}
+#innerorder>div:nth-child(1){
+    font-weight: bold;
+    color: black;
 }
 #buttonclick{
     padding:5px;
     background-color: #be95be;
+    width: fit-content;
 }
-#printorder > div{
-    width: 60%;
-    position: relative;
-    border-radius: 10px;
-}
-#printorder>div>i{
+
+#printorder>#innerorder>i{
     position: absolute;
     right: 5px;
     font-weight: bold;
@@ -280,10 +326,6 @@
     background-color: #be95be;
     padding:5px;
 }
-#printorder > div>div:nth-child(2){
-    font-weight: bold;
-    color: black;
-}
 .print{
     color: rgb(87, 82, 88) ;
     border: none;
@@ -292,16 +334,19 @@
 #taketimefirst,#taketimesecond{
     border: none;
     border-radius: 5px;
+    width:40px;
+    margin: 5px;
+
 }
-#printorder>div>div>div{
+/* #printorder>#innerorder>div>div>div>div{
     width: 10%;
     text-align: center;
-}
-#printorder>div>div>div:nth-child(5){
+} */
+/* #printorder>div>div>div:nth-child(5){
     width: 400px;
     text-align: center;
     padding: 5px;
-}
+} */
 #sectioneditclient{
     top: 0;
     left: 0;
@@ -337,9 +382,13 @@
     font-weight: bold;
     top: 5px;
 }
+#editkh{
+    float: right;
+}
 #sectioneditclient>div>div>form>label{
     color: rgb(87, 82, 88) ;   
 }
+
 #sectioneditclient>div>div>form>input{
     padding:5px;
     border-radius: 10px;
@@ -428,6 +477,7 @@
     margin:10px;
 }
 .printkh{
+    width: 100%;
     padding:10px;
     border-radius: 5px;
     border: 1px solid black;
@@ -488,7 +538,7 @@
 }
 .Delivering,.Delivered,.Deliver{
     border:none;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     padding:5px;
     background-color: #75ba75;
     text-align: center;
@@ -507,4 +557,53 @@
     background-color: #be95be;
     padding:5px;
     width: fit-content;
+}
+.thestatus{
+    position: absolute;
+    right: 6px;
+    top: -10px;
+    display: inline-block;
+    width: fit-content;
+    z-index: 100px;
+}
+.outerdelivery{
+    border-radius: 5px;
+    /* background-color: #e2564d; */
+    width: 130px;
+    padding:5px;
+}
+.deliver{
+    border-bottom: 1px solid black;
+    background-color: #be95be;
+    width: 120px;
+    padding:5px;
+}
+.delivering{
+    border-bottom: 1px solid black;
+    width: 120px;
+    padding:5px;
+}
+#contentkhoa{
+    font-size: 20px;
+    font-weight: bold;
+    color:#e2564d;
+}
+#contentkhoa>div:nth-child(1)>div:nth-child(1){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius:10px ;
+    /* background-color: white; */
+}
+#contentkhoa>div:nth-child(1)>div:nth-child(1)>div{
+    background-color: #6dbfb8;
+    border-radius: 5px;
+    padding:10px
+}
+#contentkhoa>div:nth-child(1)>label{
+    margin-top:10px;
+}
+#khoaclient>div{
+    border-radius: 10px;
 }
