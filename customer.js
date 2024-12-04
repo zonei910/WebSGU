@@ -23,7 +23,7 @@ let Customer = [
         "id": 18,
         "stk": -1,
         "bank": -1,
-        "ngaydat": "29/11/2024 ",
+        "ngaydat": "27/11/2024 ",
         "ngayduyet": 0,
         "diachiKH": "178 Nguyễn Chí Thanh phường 5 quận 11 HCM",
         "quanKH": "Quận 11",

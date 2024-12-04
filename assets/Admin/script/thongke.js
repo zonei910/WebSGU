@@ -383,6 +383,9 @@ function aggregateCartItems(Customers) {
   });
   return Object.values(aggregatedItems);
 }
+
+
+
 function inputdate() {
   let Customer = JSON.parse(localStorage.getItem("users"));
   const time = document.getElementById("timefirst").value;
