@@ -1,6 +1,11 @@
 let filterarr = [];
+
+
+
 function nuttrang_order(a) {
   let donhang = JSON.parse(localStorage.getItem("donhang"));
+  donhang = giamdan(donhang);
+
   let sosanphammoitrang = 5;
   let vitrihientai = (a - 1) * sosanphammoitrang;
 
@@ -21,7 +26,7 @@ function nuttrang_order(a) {
 				  <td>${donhang[i].id}</td>
                             <td>${donhang[i].tenKH}</td>
                             <td>${donhang[i].quanKH}</td>
-                            <td>${donhang[i].tongtien}</td>
+                            <td>${formatVND(donhang[i].tongtien)}</td>
                             <td>${donhang[i].ngaydat}</td>
                             <td>${
                               donhang[i].ngayduyet == 0
@@ -47,6 +52,7 @@ function nuttrang_order(a) {
 function filter_order() {
   filterarr = [];
   let donhang = JSON.parse(localStorage.getItem("donhang"));
+  donhang = giamdan(donhang);
   let select = document.querySelector("#Display .order .loc");
   if (select.value == "time") {
     let time = document.querySelector("#Display .order .time");
@@ -105,7 +111,7 @@ function filter_order() {
 				  <td>${filterarr[i].id}</td>
                             <td>${filterarr[i].tenKH}</td>
                             <td>${filterarr[i].quanKH}</td>
-                            <td>${filterarr[i].tongtien}</td>
+                            <td>${formatVND(filterarr[i].tongtien)}</td>
                             <td>${filterarr[i].ngaydat}</td>
                             <td>${
                               filterarr[i].ngayduyet == 0
@@ -152,7 +158,7 @@ function nuttrangfilter_order(a) {
 				  <td>${filterarr[i].id}</td>
                             <td>${filterarr[i].tenKH}</td>
                              <td>${filterarr[i].quanKH}</td>
-                            <td>${filterarr[i].tongtien}</td>
+                            <td>${formatVND(filterarr[i].tongtien)}</td>
                             <td>${filterarr[i].ngaydat}</td>
                             <td>${
                               filterarr[i].ngayduyet == 0
@@ -247,7 +253,7 @@ function find_order() {
 			  <td>${filterarr[i].id}</td>
 						<td>${filterarr[i].tenKH}</td>
 						<td>${filterarr[i].quanKH}</td>
-						<td>${filterarr[i].tongtien}</td>
+						<td>${formatVND(filterarr[i].tongtien)}</td>
 						<td>${filterarr[i].ngaydat}</td>
 						<td>${filterarr[i].ngayduyet == 0 ? "Chưa duyệt" : filterarr[i].ngayduyet}</td>
 						<td>${trangthai}</td>
@@ -316,7 +322,7 @@ function xulydonhang(a) {
 		 <div class="left">
                                 <p>Mã đơn: <span class="madon">${donhientai.id}</span></p>
                                 <p>Trạng thái: <span>${trangthai}</span></p>
-                                <p>Tổng tiền: <span>${donhientai.tongtien} đ</span></p>
+                                <p>Tổng tiền: <span>${formatVND(donhientai.tongtien)}</span></p>
 
                                 <p>Ngày đặt hàng: <span>${donhientai.ngaydat}</span></p>
                                 <p style="width:500px">Hình thức thanh toán: <span width="100%">${nganhang}</span></p>
@@ -363,9 +369,9 @@ function xulydonhang(a) {
                                         <td>${watch[i].id}</td>
                                         <td>${watch[i].ten}</td>
                                         <td>${watch[i].soLuong}</td>
-                                        <td>${watch[i].gia}</td>
+                                        <td>${formatVND(watch[i].gia)}</td>
                                         <td>${
-                                          watch[i].gia * watch[i].soLuong
+                                          formatVND(watch[i].gia * watch[i].soLuong)
                                         }</td>
                                     </tr>
 		 `;
@@ -376,7 +382,7 @@ function xulydonhang(a) {
     let showWatchSum = document.querySelector(
       "#Display .order .all .watch_sum"
     );
-    showWatchSum.innerHTML = watchsum;
+    showWatchSum.innerHTML = formatVND(watchsum);
   }
 
   let ring = [];
@@ -399,9 +405,9 @@ function xulydonhang(a) {
                                         <td>${ring[i].id}</td>
                                         <td>${ring[i].ten}</td>
                                         <td>${ring[i].soLuong}</td>
-                                        <td>${ring[i].gia}</td>
+                                        <td>${formatVND(ring[i].gia)}</td>
                                         <td>${
-                                          ring[i].gia * ring[i].soLuong
+                                          formatVND(ring[i].gia * ring[i].soLuong)
                                         }</td>
                                     </tr>
 		 `;
@@ -410,7 +416,7 @@ function xulydonhang(a) {
     let showRing = document.querySelector("#sp-giohang-ring");
     showRing.innerHTML = temp;
     let showRingSum = document.querySelector("#Display .order .all .ring_sum");
-    showRingSum.innerHTML = ringsum;
+    showRingSum.innerHTML = formatVND(ringsum);
   }
 
   let necklace = [];
@@ -433,9 +439,9 @@ function xulydonhang(a) {
                                         <td>${necklace[i].id}</td>
                                         <td>${necklace[i].ten}</td>
                                         <td>${necklace[i].soLuong}</td>
-                                        <td>${necklace[i].gia}</td>
+                                        <td>${formatVND(necklace[i].gia)}</td>
                                         <td>${
-                                          necklace[i].gia * necklace[i].soLuong
+                                         formatVND( necklace[i].gia * necklace[i].soLuong)
                                         }</td>
                                     </tr>
 		 `;
@@ -446,7 +452,7 @@ function xulydonhang(a) {
     let showNecklaceSum = document.querySelector(
       "#Display .order .all .necklace_sum"
     );
-    showNecklaceSum.innerHTML = necklacesum;
+    showNecklaceSum.innerHTML = formatVND(necklacesum);
   }
 
   let bracelet = [];
@@ -469,9 +475,9 @@ function xulydonhang(a) {
                                         <td>${bracelet[i].id}</td>
                                         <td>${bracelet[i].ten}</td>
                                         <td>${bracelet[i].soLuong}</td>
-                                        <td>${bracelet[i].gia}</td>
+                                        <td>${formatVND(bracelet[i].gia)}</td>
                                         <td>${
-                                          bracelet[i].gia * bracelet[i].soLuong
+                                          formatVND(bracelet[i].gia * bracelet[i].soLuong)
                                         }</td>
                                     </tr>
 		 `;
@@ -482,7 +488,7 @@ function xulydonhang(a) {
     let showBraceletSum = document.querySelector(
       "#Display .order .all .bracelet_sum"
     );
-    showBraceletSum.innerHTML = braceletsum;
+    showBraceletSum.innerHTML = formatVND(braceletsum);
   }
 
   let earring = [];
@@ -505,9 +511,9 @@ function xulydonhang(a) {
                                         <td>${earring[i].id}</td>
                                         <td>${earring[i].ten}</td>
                                         <td>${earring[i].soLuong}</td>
-                                        <td>${earring[i].gia}</td>
+                                        <td>${formatVND(earring[i].gia)}</td>
                                         <td>${
-                                          earring[i].gia * earring[i].soLuong
+                                          formatVND(earring[i].gia * earring[i].soLuong)
                                         }</td>
                                     </tr>
 		 `;
@@ -518,7 +524,7 @@ function xulydonhang(a) {
     let showEarringSum = document.querySelector(
       "#Display .order .all .earring_sum"
     );
-    showEarringSum.innerHTML = earringsum;
+    showEarringSum.innerHTML = formatVND(earringsum);
   }
 }
 
@@ -683,89 +689,48 @@ function giaothanhcong() {
   showDonHang();
 }
 
+function parseDate(date){
+  let data = date.split("-");
+  let day = parseInt(data[2]);
+  let month = parseInt(data[1]);
+  let year = parseInt(data[0]);
+  console.log(day , month , year);
+  return new Date(year  , month - 1  , day);
+}
+
+
+
+
 function findtime() {
-  let tungay = document
-    .querySelector("#Display .order .head .time .tu_ngay")
-    .value.split("-");
-  let denngay = document
-    .querySelector("#Display .order .head .time .den_ngay")
-    .value.split("-");
+  let tungay = parseDate(document.querySelector("#Display .order .head .time .tu_ngay").value);
+  let denngay = parseDate(document.querySelector("#Display .order .head .time .den_ngay").value);
   filterarr = [];
 
+
+if(tungay.getTime() > denngay.getTime()){
+  alert("Từ ngày phải bé hơn Đến ngày");
+  return 0;
+}
+
   let donhang = JSON.parse(localStorage.getItem("donhang"));
-
-  date_tungay = tungay[2];
-  month_tungay = tungay[1];
-  year_tungay = tungay[0];
-
-  date_denngay = denngay[2];
-  month_denngay = denngay[1];
-  year_denngay = denngay[0];
-
-  if (
-    date_tungay > date_denngay &&
-    month_tungay >= month_denngay &&
-    year_tungay >= year_denngay
-  ) {
-    alert("Vui lòng chọn từ ngày bé hơn đến ngày");
+  if(donhang.length == 0){
+    alert("Không có đơn hàng nào được đặt trong khoảng thời gian này");
     return 0;
   }
 
-  if (
-    date_tungay == date_denngay &&
-    month_tungay == month_denngay &&
-    year_tungay == year_denngay
-  ) {
-    for (let i = 0; i < donhang.length; i++) {
-      let donhangngay = donhang[i].ngaydat.split("/");
-      let ngay = donhangngay[0];
-      let thang = donhangngay[1];
-      let nam = donhangngay[2];
-      if (date_tungay == ngay && month_tungay == thang && year_tungay == nam) {
-        filterarr.push(donhang[i]);
-      }
+for(let i = 0 ; i < donhang.length ; i++){
+    let date = donhang[i].ngaydat.split("/");
+    let ngay = parseInt(date[0]);
+    let thang = parseInt(date[1]);
+    let nam = parseInt(date[2]);
+    let check = new Date(nam , thang - 1 , ngay);
+    if(tungay.getTime() <= check.getTime() && check.getTime() <= denngay.getTime()){
+      filterarr.push(donhang[i]);
     }
-  }
+      
+}
 
-  if (
-    date_tungay < date_denngay &&
-    month_tungay <= month_denngay &&
-    year_tungay <= year_denngay
-  ) {
-    for (let i = 0; i < donhang.length; i++) {
-      let donhangngay = donhang[i].ngaydat.split("/");
-      let ngay = donhangngay[0];
-      let thang = donhangngay[1];
-      let nam = donhangngay[2];
-      if (
-        date_tungay == ngay &&
-        ngay <= date_denngay &&
-        month_tungay == thang &&
-        thang <= month_denngay &&
-        year_tungay == nam &&
-        nam <= year_denngay
-      ) {
-        filterarr.push(donhang[i]);
-      }
-    }
-
-    for (let i = 0; i < donhang.length; i++) {
-      let donhangngay = donhang[i].ngaydat.split("/");
-      let ngay = donhangngay[0];
-      let thang = donhangngay[1];
-      let nam = donhangngay[2];
-      if (
-        date_tungay < ngay &&
-        ngay <= date_denngay &&
-        month_tungay <= thang &&
-        thang <= month_denngay &&
-        year_tungay <= nam &&
-        nam <= year_denngay
-      ) {
-        filterarr.push(donhang[i]);
-      }
-    }
-  }
+  console.log(filterarr);
 
   if (filterarr.length == 0) {
     alert("Không có đơn hàng nào được đặt trong khoảng thời gian này");
@@ -802,7 +767,7 @@ function findtime() {
 				  <td>${filterarr[i].id}</td>
                             <td>${filterarr[i].tenKH}</td>
                               <td>${filterarr[i].quanKH}</td>
-                            <td>${filterarr[i].tongtien}</td>
+                            <td>${formatVND(filterarr[i].tongtien)}</td>
                             <td>${filterarr[i].ngaydat}</td>
                             <td>${
                               filterarr[i].ngayduyet == 0
@@ -826,7 +791,15 @@ function findtime() {
     let showdon = document.querySelector("#Display .order .main table tbody");
     showdon.innerHTML = a;
   }
+
 }
+
+
+
+
+
+
+
 
 function sortgiaohang() {
   let selectsort = document.querySelector("#sort").value;
@@ -1020,7 +993,7 @@ function sortgiaohang() {
 				  <td>${filterarr[i].id}</td>
                             <td>${filterarr[i].tenKH}</td>
                             <td>${filterarr[i].quanKH}</td>
-                            <td>${filterarr[i].tongtien}</td>
+                            <td>${formatVND(filterarr[i].tongtien)}</td>
                             <td>${filterarr[i].ngaydat}</td>
                             <td>${
                               filterarr[i].ngayduyet == 0

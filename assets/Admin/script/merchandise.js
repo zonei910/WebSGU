@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <span>ID: ${product.id}</span>
                     <span>Name: ${product.name}</span>
                     <span>Category: ${product.category}</span>
-                    <span>Price: ${product.price}</span>
+                    <span>Price: ${formatVND(product.price)}</span>
                     <span>Description: ${stripHtml(product.description)}</span>
                 </div>
                 <div class="button-group">
@@ -136,7 +136,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 dataToSort.sort((a, b) => a.description.localeCompare(b.description));
                 break;
             default:
-                console.log("Invalid sort option.");
                 return;
         }
     
@@ -173,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <span>ID: ${product.id}</span>
                     <span>Name: ${product.name}</span>
                     <span>Category: ${product.category}</span>
-                    <span>Price: ${product.price}</span>
+                    <span>Price: ${formatVND(product.price)}</span>
                     <span>Description: ${product.description}</span>
                 </div>
                 <div class="button-group">

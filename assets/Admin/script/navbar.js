@@ -70,11 +70,31 @@ Menu_userlist.onclick = () => {
     Display_order.style.display = "none";
 }
 
+function giamdan(arr){
+  for(let i = 0 ; i<arr.length - 1;i++){
+    for(let j = i+1 ; j<arr.length ; j++){
+      if(arr[i].id < arr[j].id){
+        let temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+      }
+    }
+  }
+  return arr;
+}
+
+
 function showDonHang() {
     let donhang = JSON.parse(localStorage.getItem("donhang"));
     if (donhang == null) {
       alert("Chưa có đơn hàng nào");
+      let showdon = document.querySelector("#Display .order .main table tbody");
+      showdon.innerHTML = "";
+      let showbtn = document.querySelector("#Display .order .foot .pagination");
+      showbtn.innerHTML = "";
+      return 0;
     } else {
+      donhang = giamdan(donhang);
       let sosanphammoitrang = 5;
       let sotranghientai = 1;
       let tongsotrang = Math.ceil(donhang.length / sosanphammoitrang);
@@ -107,7 +127,7 @@ function showDonHang() {
                     <td>${donhang[i].id}</td>
                               <td>${donhang[i].tenKH}</td>
                                <td>${donhang[i].quanKH}</td>
-                              <td>${donhang[i].tongtien}</td>
+                              <td>${formatVND(donhang[i].tongtien)}</td>
                               <td>${donhang[i].ngaydat}</td>
                               <td>${
                                 donhang[i].ngayduyet == 0
@@ -155,7 +175,6 @@ function tat_mo_navbar() {
         menu.style.top = "0";
         menu.style.left = "0";
         menu.style.zIndex = "100";
-        console.log("hihi");
         return 0;
     }
 
@@ -194,6 +213,16 @@ function bat_tat_neworder(){
 }
 
 
+
+
+function formatVND(money){
+let data =  money.toLocaleString('vi-VN' , {
+      style: `currency`,
+      currency: `VND`,
+      minimumFractionDigits: 0,
+    });
+    return data;
+}
 
 
 
