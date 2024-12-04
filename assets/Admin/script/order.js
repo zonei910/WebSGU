@@ -26,7 +26,7 @@ function nuttrang_order(a) {
 				  <td>${donhang[i].id}</td>
                             <td>${donhang[i].tenKH}</td>
                             <td>${donhang[i].quanKH}</td>
-                            <td>${donhang[i].tongtien}</td>
+                            <td>${formatVND(donhang[i].tongtien)}</td>
                             <td>${donhang[i].ngaydat}</td>
                             <td>${
                               donhang[i].ngayduyet == 0
@@ -111,7 +111,7 @@ function filter_order() {
 				  <td>${filterarr[i].id}</td>
                             <td>${filterarr[i].tenKH}</td>
                             <td>${filterarr[i].quanKH}</td>
-                            <td>${filterarr[i].tongtien}</td>
+                            <td>${formatVND(filterarr[i].tongtien)}</td>
                             <td>${filterarr[i].ngaydat}</td>
                             <td>${
                               filterarr[i].ngayduyet == 0
@@ -158,7 +158,7 @@ function nuttrangfilter_order(a) {
 				  <td>${filterarr[i].id}</td>
                             <td>${filterarr[i].tenKH}</td>
                              <td>${filterarr[i].quanKH}</td>
-                            <td>${filterarr[i].tongtien}</td>
+                            <td>${formatVND(filterarr[i].tongtien)}</td>
                             <td>${filterarr[i].ngaydat}</td>
                             <td>${
                               filterarr[i].ngayduyet == 0
@@ -253,7 +253,7 @@ function find_order() {
 			  <td>${filterarr[i].id}</td>
 						<td>${filterarr[i].tenKH}</td>
 						<td>${filterarr[i].quanKH}</td>
-						<td>${filterarr[i].tongtien}</td>
+						<td>${formatVND(filterarr[i].tongtien)}</td>
 						<td>${filterarr[i].ngaydat}</td>
 						<td>${filterarr[i].ngayduyet == 0 ? "Chưa duyệt" : filterarr[i].ngayduyet}</td>
 						<td>${trangthai}</td>
@@ -322,7 +322,7 @@ function xulydonhang(a) {
 		 <div class="left">
                                 <p>Mã đơn: <span class="madon">${donhientai.id}</span></p>
                                 <p>Trạng thái: <span>${trangthai}</span></p>
-                                <p>Tổng tiền: <span>${donhientai.tongtien} đ</span></p>
+                                <p>Tổng tiền: <span>${formatVND(donhientai.tongtien)}</span></p>
 
                                 <p>Ngày đặt hàng: <span>${donhientai.ngaydat}</span></p>
                                 <p style="width:500px">Hình thức thanh toán: <span width="100%">${nganhang}</span></p>
@@ -369,9 +369,9 @@ function xulydonhang(a) {
                                         <td>${watch[i].id}</td>
                                         <td>${watch[i].ten}</td>
                                         <td>${watch[i].soLuong}</td>
-                                        <td>${watch[i].gia}</td>
+                                        <td>${formatVND(watch[i].gia)}</td>
                                         <td>${
-                                          watch[i].gia * watch[i].soLuong
+                                          formatVND(watch[i].gia * watch[i].soLuong)
                                         }</td>
                                     </tr>
 		 `;
@@ -382,7 +382,7 @@ function xulydonhang(a) {
     let showWatchSum = document.querySelector(
       "#Display .order .all .watch_sum"
     );
-    showWatchSum.innerHTML = watchsum;
+    showWatchSum.innerHTML = formatVND(watchsum);
   }
 
   let ring = [];
@@ -405,9 +405,9 @@ function xulydonhang(a) {
                                         <td>${ring[i].id}</td>
                                         <td>${ring[i].ten}</td>
                                         <td>${ring[i].soLuong}</td>
-                                        <td>${ring[i].gia}</td>
+                                        <td>${formatVND(ring[i].gia)}</td>
                                         <td>${
-                                          ring[i].gia * ring[i].soLuong
+                                          formatVND(ring[i].gia * ring[i].soLuong)
                                         }</td>
                                     </tr>
 		 `;
@@ -416,7 +416,7 @@ function xulydonhang(a) {
     let showRing = document.querySelector("#sp-giohang-ring");
     showRing.innerHTML = temp;
     let showRingSum = document.querySelector("#Display .order .all .ring_sum");
-    showRingSum.innerHTML = ringsum;
+    showRingSum.innerHTML = formatVND(ringsum);
   }
 
   let necklace = [];
@@ -439,9 +439,9 @@ function xulydonhang(a) {
                                         <td>${necklace[i].id}</td>
                                         <td>${necklace[i].ten}</td>
                                         <td>${necklace[i].soLuong}</td>
-                                        <td>${necklace[i].gia}</td>
+                                        <td>${formatVND(necklace[i].gia)}</td>
                                         <td>${
-                                          necklace[i].gia * necklace[i].soLuong
+                                         formatVND( necklace[i].gia * necklace[i].soLuong)
                                         }</td>
                                     </tr>
 		 `;
@@ -452,7 +452,7 @@ function xulydonhang(a) {
     let showNecklaceSum = document.querySelector(
       "#Display .order .all .necklace_sum"
     );
-    showNecklaceSum.innerHTML = necklacesum;
+    showNecklaceSum.innerHTML = formatVND(necklacesum);
   }
 
   let bracelet = [];
@@ -475,9 +475,9 @@ function xulydonhang(a) {
                                         <td>${bracelet[i].id}</td>
                                         <td>${bracelet[i].ten}</td>
                                         <td>${bracelet[i].soLuong}</td>
-                                        <td>${bracelet[i].gia}</td>
+                                        <td>${formatVND(bracelet[i].gia)}</td>
                                         <td>${
-                                          bracelet[i].gia * bracelet[i].soLuong
+                                          formatVND(bracelet[i].gia * bracelet[i].soLuong)
                                         }</td>
                                     </tr>
 		 `;
@@ -488,7 +488,7 @@ function xulydonhang(a) {
     let showBraceletSum = document.querySelector(
       "#Display .order .all .bracelet_sum"
     );
-    showBraceletSum.innerHTML = braceletsum;
+    showBraceletSum.innerHTML = formatVND(braceletsum);
   }
 
   let earring = [];
@@ -511,9 +511,9 @@ function xulydonhang(a) {
                                         <td>${earring[i].id}</td>
                                         <td>${earring[i].ten}</td>
                                         <td>${earring[i].soLuong}</td>
-                                        <td>${earring[i].gia}</td>
+                                        <td>${formatVND(earring[i].gia)}</td>
                                         <td>${
-                                          earring[i].gia * earring[i].soLuong
+                                          formatVND(earring[i].gia * earring[i].soLuong)
                                         }</td>
                                     </tr>
 		 `;
@@ -524,7 +524,7 @@ function xulydonhang(a) {
     let showEarringSum = document.querySelector(
       "#Display .order .all .earring_sum"
     );
-    showEarringSum.innerHTML = earringsum;
+    showEarringSum.innerHTML = formatVND(earringsum);
   }
 }
 
@@ -767,7 +767,7 @@ for(let i = 0 ; i < donhang.length ; i++){
 				  <td>${filterarr[i].id}</td>
                             <td>${filterarr[i].tenKH}</td>
                               <td>${filterarr[i].quanKH}</td>
-                            <td>${filterarr[i].tongtien}</td>
+                            <td>${formatVND(filterarr[i].tongtien)}</td>
                             <td>${filterarr[i].ngaydat}</td>
                             <td>${
                               filterarr[i].ngayduyet == 0
@@ -993,7 +993,7 @@ function sortgiaohang() {
 				  <td>${filterarr[i].id}</td>
                             <td>${filterarr[i].tenKH}</td>
                             <td>${filterarr[i].quanKH}</td>
-                            <td>${filterarr[i].tongtien}</td>
+                            <td>${formatVND(filterarr[i].tongtien)}</td>
                             <td>${filterarr[i].ngaydat}</td>
                             <td>${
                               filterarr[i].ngayduyet == 0
