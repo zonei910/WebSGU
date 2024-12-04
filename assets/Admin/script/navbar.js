@@ -127,7 +127,7 @@ function showDonHang() {
                     <td>${donhang[i].id}</td>
                               <td>${donhang[i].tenKH}</td>
                                <td>${donhang[i].quanKH}</td>
-                              <td>${donhang[i].tongtien}</td>
+                              <td>${formatVND(donhang[i].tongtien)}</td>
                               <td>${donhang[i].ngaydat}</td>
                               <td>${
                                 donhang[i].ngayduyet == 0
@@ -224,7 +224,7 @@ let data =  money.toLocaleString('vi-VN' , {
     return data;
 }
 
-console.log(formatVND(1000000000));
+
 
 
 
