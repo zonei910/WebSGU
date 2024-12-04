@@ -136,7 +136,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 dataToSort.sort((a, b) => a.description.localeCompare(b.description));
                 break;
             default:
-                console.log("Invalid sort option.");
                 return;
         }
     
