@@ -348,8 +348,8 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
 }
 
-/* @media (max-width:300px) and (min-width:10px) {
+@media (max-width:300px) and (min-width:10px) {
     .container1>div{
         
     }
-} */
+}
