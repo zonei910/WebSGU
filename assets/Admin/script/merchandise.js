@@ -402,3 +402,57 @@ document.getElementById('imageInput').addEventListener('change', function () {
     }
 });
 
+//========================= thông báo đơn hàng mới ============================
+
+function hienthiTT() {
+    var tb = "";
+    var tongDHM = 0;
+    var donhang = JSON.parse(localStorage.getItem('donhang'));
+    if (donhang && donhang.length > 0){
+        for (let i = donhang.length - 1; i >= 0; i--) {
+
+            //        let thanhtien = gia * parseInt(giohang[i].soLuong);
+                    if (donhang[i].ngayduyet =='0'){
+                        // var orderDate = new Date(donhang[i].ngaydat);
+                        // var nowDate = new Date();
+                        // var timeD = nowDate - orderDate; 
+                        // var days = Math.floor(timeD / (100000 * 3600 * 24)); 
+
+                            tb += '<tr>' +
+                            '<td>' + donhang[i].id + '</td>' +
+                            '<td>' + donhang[i].tenKH + '</td>' +
+                            '<td>' + donhang[i].tongtien.toLocaleString() + '</td>' +
+                            '<td>' + donhang[i].ngaydat + '</td>' +
+                            '</tr>';
+                            tongDHM++;
+                        }
+                    
+                    
+                }
+    }
+    
+    
+    document.getElementById('donHangMoi').innerHTML = tb;
+    document.getElementById('noti').innerHTML = tongDHM;
+    if (tongDHM === 0) {
+        document.getElementById('donHangMoi').innerHTML = "<tr><td colspan='4'>Không có đơn hàng mới.</td></tr>";
+        document.getElementById('noti').style.backgroundColor='green';
+    }
+    else{
+        document.getElementById('noti').style.backgroundColor='red';
+    }
+
+}
+window.onload = function() {
+    hienthiTT();  
+};
+
+function showTB() {
+    var donHangMoi = document.getElementById('neworder');
+    
+    if (donHangMoi.style.display === "none" ) {
+        donHangMoi.style.display = "block";  
+    } else {
+        donHangMoi.style.display = "none";  
+    }
+}

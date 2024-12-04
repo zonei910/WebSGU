@@ -310,6 +310,87 @@ input {
 #Display .merchandise .searchbar{
     padding: 10px;
 }
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.viewneworder{
+position: relative;
+}
+
+.noti {
+    position: absolute;
+    top: 11px;
+    /* right: -13px; */
+    /* background-color: #ff4d4d;  */
+    color: white;
+    /* padding: 3px 3px; */
+    border-radius: 50%;
+    font-size: 11.5px;
+    /* font-weight: bold; */
+    left:78.7%;
+}
+#neworder{
+    display: none;
+}
+
+.neworder {
+    position: absolute;
+    top: 50px;
+    right: 11%;
+    width: auto;
+    max-width: 41%;
+    max-height: 370px;
+    overflow-y: auto;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 999;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    border-spacing: 10px;  
+}
+
+th, td {
+    padding: 11px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f9fc;
+    color: #333;
+}
+
+td {
+    background-color: #f9f9f9; 
+}
+.item {
+    margin-bottom: 10px; 
+}
+
+#donHangMoi tr td {
+    text-align: center;
+    color: #999;
+}
+
+#donHangMoi tr td[colspan='5'] {
+    font-style: italic;
+    color: #666;
+}
+
+
 @media (max-width: 1200px) {
     #Display .merchandise .product-info {
         font-size: 0.9rem;

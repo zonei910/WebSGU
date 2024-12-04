@@ -35,23 +35,25 @@
                     <i class="fa-solid fa-note-sticky"></i>
                     <p>Ghi chú</p>
                 </div>
-                <div class="item">
+                <div class="item"  onclick="showTB()">
                     <i class="fa-solid fa-bell"></i>
-                    <p class="viewneworder">Đơn hàng mới
-                        <div class="noti"></div>
-                        <div class="neworder">
+                    <p class="viewneworder" >Đơn hàng mới
+                        <div class="noti" id="noti"></div>
+                        <div class="neworder" id="neworder" >
                             <table>
                                 <thead>
                                     <tr>
                                         <th>Mã đơn</th>
+                                        <th>Tên khách hàng</th>
+                                        <th>Tổng tiền</th>
                                         <th>Ngày đặt</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
+                                <tbody  id="donHangMoi">
+                                    <!-- <tr>
                                         <td>1</td>
                                         <td>30/11/2024</td>
-                                    </tr>
+                                    </tr> -->
                                 </tbody>
                             </table>
                         </div>
