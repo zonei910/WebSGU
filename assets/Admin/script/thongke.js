@@ -12,10 +12,10 @@ function taohangthongke(Customer, product) {
     const doanhthu = document.querySelector(".container3");
     doanhthu.innerHTML = `
               <div class="doanhthu">
-              <div>id</div>
-                  <div>name</div>
-                  <div>sales volumn</div>
-                  <div>sales</div>
+              <div>ID</div>
+                  <div>Tên sản phẩm</div>
+                  <div>Số lượng đã bán</div>
+                  <div>Tổng tiền</div>
               </div>`;
     product.forEach((giohang) => {
       const createrow = document.createElement("div");
@@ -49,42 +49,41 @@ function taohangthongke(Customer, product) {
     creatediv.innerHTML = `
                           <div class="thongkesanpham">
                   <div class="productwithhighestprofit">   
-                      <div><div class="thheader">highest profit</div>  </div>
+                      <div><div class="thheader">Lợi nhuận cao nhất</div>  </div>
                       <div>
                           <div class="productinner"> 
                               <div class="divimage"><image  class="imagethongke"src="${productwithhighestprofit.hinh}"></image></div>
-                              <div><div>id</div><div>${productwithhighestprofit.id}</div></div>
-                              <div><div>catergory</div><div>${productwithhighestprofit.loai}</div></div>
-                              <div><div>name</div><div>${productwithhighestprofit.ten}</div></div>
-                              <div><div>total profit</div><div>${productwithhighestprofit.profit}</div></div>
-                              <div><div>amount</div><div>${productwithhighestprofit.soLuong}</div></div>
+                              <div><div>ID</div><div>${productwithhighestprofit.id}</div></div>
+                              <div><div>Loại sản phẩm</div><div>${productwithhighestprofit.loai}</div></div>
+                              <div><div>Tên sản phẩm</div><div>${productwithhighestprofit.ten}</div></div>
+                              <div><div>Tổng lợi nhuận</div><div>${productwithhighestprofit.profit}</div></div>
+                              <div><div>Số lượng đã bán</div><div>${productwithhighestprofit.soLuong}</div></div>
                           </div>
                       </div>
                   </div>
                   <div class="productwithlowestprofit">   
-                      <div><div class="thheader">Lowest profit</div>  </div>
+                      <div><div class="thheader">Lợi nhuận thấp nhất</div>  </div>
                       <div>
                           <div class="productinner"> 
                               <div class="divimage"><image  class="imagethongke"src="${productwithlowestprofit.hinh}"></image></div>
-                              <div><div>id</div><div>${productwithlowestprofit.id}</div></div>
-                              <div><div>catergory</div><div>${productwithlowestprofit.loai}</div></div>
-                              <div><div>name</div><div>${productwithlowestprofit.ten}</div></div>
-                              <div><div>total profit</div><div>${productwithlowestprofit.profit}</div></div>
-                              <div><div>amount</div><div>${productwithlowestprofit.soLuong}</div></div>
+                              <div><div>ID</div><div>${productwithlowestprofit.id}</div></div>
+                              <div><div>Loại sản phẩm</div><div>${productwithlowestprofit.loai}</div></div>
+                              <div><div>Tên sản phẩm</div><div>${productwithlowestprofit.ten}</div></div>
+                              <div><div>Tổng lợi nhuận</div><div>${productwithlowestprofit.profit}</div></div>
+                              <div><div>Số lượng dã bán</div><div>${productwithlowestprofit.soLuong}</div></div>
                           </div>
                       </div>
                   </div>
               </div> 
               <div class="thongkecustom">
-                  <p>Customer</p>
+                  <p>Khách hàng</p>
                   <div class="head">
-                      <div>Customer</div><div>id</div><div>Customer name</div><div>amount product</div><div>amount spent</div><div>teleaddress</div><div>email</div>
+                      <div>Thứ hạng</div><div>Tên khách hàng</div><div>Số sản phẩm đã mua</div><div>Số tiền đã bỏ ra</div><div>Địa chỉ</div><div>Email</div>
                   </div>
                   <div class="cuswithlowestprofit"> 
                           <div >
                               <div class="head">Highest profit</div>
                               <div>${Customerwithhighestprofit.name}</div>
-                              <div>${Customerwithhighestprofit.address}</div>
                               <div>${Customerwithhighestprofit.totalproduct}</div>
                               <div>${Customerwithhighestprofit.totalprice}</div>
                               <div>${Customerwithhighestprofit.address}</div>
@@ -94,7 +93,6 @@ function taohangthongke(Customer, product) {
                       <div class="cuswithhighestprofit">              
                               <div>
                                   <div class="head">Lowest profit</div>
-                                  <div>${Customerwithlowestprofit.id}</div>
                                   <div>${Customerwithlowestprofit.name}</div>
                                   <div>${Customerwithlowestprofit.totalproduct}</div>
                                   <div>${Customerwithlowestprofit.totalprice}</div>
@@ -116,10 +114,10 @@ function taohangthongke(Customer, product) {
     const doanhthu = document.querySelector(".container3");
     doanhthu.innerHTML = `
             <div class="doanhthu">
-            <div>id</div>
-                <div>name</div>
-                <div>sales volumn</div>
-                <div>sales</div>
+            <div>ID</div>
+                <div>Tên sản phẩm</div>
+                <div>Số lượng đã bán</div>
+                <div>Tổng tiền</div>
             </div>`;
     const creatediv = document.createElement("div");
     creatediv.className = "";
@@ -130,11 +128,11 @@ function taohangthongke(Customer, product) {
                     <div>
                         <div class="productinner"> 
                             <div class="divimage"></image></div>
-                            <div><div>id</div><div>no infor</div></div>
-                            <div><div>catergory</div><div>no infor</div></div>
-                            <div><div>name</div><div>no infor</div></div>
-                            <div><div>total profit</div><div>no infor</div></div>
-                            <div><div>amount</div><div>no infor</div></div>
+                            <div><div>ID</div><div>no infor</div></div>
+                            <div><div>Loại sản phẩm</div><div>no infor</div></div>
+                            <div><div>Tên sản phẩm</div><div>no infor</div></div>
+                            <div><div>Tổng lợi nhuận</div><div>no infor</div></div>
+                            <div><div>Số lượng</div><div>no infor</div></div>
                         </div>
                     </div>
                 </div>
@@ -383,6 +381,9 @@ function aggregateCartItems(Customers) {
   });
   return Object.values(aggregatedItems);
 }
+
+
+
 function inputdate() {
   let Customer = JSON.parse(localStorage.getItem("users"));
   const time = document.getElementById("timefirst").value;

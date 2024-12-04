@@ -257,7 +257,6 @@ function printinfororder(phone) {
       }
     }
   }
-  console.log(section);
 }
 // function printinforordernew(phone, Customer) {
 //   console.log(Customer);
@@ -317,19 +316,14 @@ function printinfororder(phone) {
 
 function changedelivery(Phone,key){
   let phone="0"+Phone;
-  console.log("fdsfd");
   let k="outerdelivery-"+phone+key;
     let a="deliver-"+phone+key;
-    console.log(document.getElementById(a));
     let b="delivering-"+phone+key;
     let c="delivered-"+phone+key;
-    console.log(document.getElementById(b));
-    console.log(document.getElementById(c));
     document.getElementById(b).style.display="flex";
     document.getElementById(c).style.display="flex";
 }
 function newstatus(phone,key,status){
-  console.log(status);
   let Customer = JSON.parse(localStorage.getItem("users"));
   let b="delivering-"+"0"+phone+key;
   let c="delivered-"+"0"+phone+key;
@@ -367,7 +361,6 @@ function newstatus(phone,key,status){
     }
   })
   localStorage.setItem('users', JSON.stringify(Customer));
-  console.log(JSON.parse(localStorage.getItem("users")));
 }
 // function newstatus(customer,status){
 //   console.log(customer);
@@ -408,7 +401,7 @@ function printinfor(page) {
 
   let Customer = JSON.parse(localStorage.getItem("users"));
 
-  const start = page * 7;
+  const start = (page-1) * 7;
   const end = start + 7;
   const newCustomer = Customer.slice(start, end);
   document.getElementById("container4").innerHTML = "";
@@ -426,9 +419,6 @@ function printinfor(page) {
         </div>`;
         document.getElementById("container4").innerHTML += clientouterr;
     const a = "khoa-" + Customer.phone;
-    console.log("hihi");
-    console.log(a);
-    console.log(Customer.status);
     if (Customer.status == 1) {
       document.getElementById(a).style.color = "#bcbcbc";
     }
@@ -445,7 +435,6 @@ function khoanguoidung(phone) {
   let Customer = JSON.parse(localStorage.getItem("users"));
   for (let i = 0; i < Customer.length; i++) {
     if (Customer[i].phone == phone) {
-      console.log("helo");
       Customer[i].status = 0;
       localStorage.setItem('users', JSON.stringify(Customer));
       const a = "khoa-" + "0"+phone;
@@ -522,7 +511,6 @@ function printsearcharray(newarray) {
   });
 }
 function hienkhoa(phone) {
-  console.log("fdsfsdfffffffffffffffffffffffffffffffffffffffffffffffffffff");
   let Customer=JSON.parse(localStorage.getItem("users"));
   document.getElementById("khoaclient").style.display = "flex";
   let hienkh = document.querySelector(".printkh");
@@ -636,7 +624,6 @@ function submitkhoa(phone) {
       document.getElementById(a).style.color="#bcbcbc"
       Customer[i].status = 1;
       localStorage.setItem('users', JSON.stringify(Customer));
-      console.log(JSON.parse(localStorage.getItem("users")));
       Customer[i].reasonkhoa = reason;
       alert("đã khóa người dùng");
       break;
@@ -667,7 +654,7 @@ function customnutphantrang(page) {
   });
   nutphantrangNode[page-1].classList.add("active");
 }
-printinfor(0);
+printinfor(1);
 nutphantrang();
  
 

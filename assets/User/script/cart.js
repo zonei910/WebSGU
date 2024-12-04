@@ -1,6 +1,9 @@
 // Lấy giỏ hàng từ storage hoặc mảng rỗng
-var giohang = JSON.parse(localStorage.getItem('giohang') || '[]'); 
+var giohang = JSON.parse(localStorage.getItem('giohang')); 
 
+if(giohang == null){
+    giohang = [];
+}
 
 
 //click vào nút "Thêm vào giỏ"
@@ -196,6 +199,7 @@ function openPayment() {
     }else{
 
     let currentUser  = JSON.parse(localStorage.getItem("currentUser"));
+    localStorage.setItem("giohang" , JSON.stringify(giohang));
     currentUser.giohang = JSON.parse(localStorage.getItem("giohang"));
     localStorage.setItem("currentUser", JSON.stringify(currentUser));
     window.location.href="payment.html";
