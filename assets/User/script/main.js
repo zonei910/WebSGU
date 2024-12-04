@@ -49,8 +49,6 @@ dots.forEach((li, key) => {
 
 
 //================= pagination==================
-// let buttonNext = document.querySelector('.buttonNext');
-// let numbers = document.querySelectorAll('.pagination .page-note')
 
 // Chuyển mảng sản phẩm thành JSON và lưu vào localStorage
 // Lấy mảng sản phẩm từ localStorage và chuyển lại thành mảng
@@ -65,57 +63,6 @@ if (savedProducts) {
 }
 
 let current = 0;
-// // add eventlisteners to the numberslist
-// numbers.forEach((number,numIndex) => {
-//     number.addEventListener("click", () => {
-//         //1. set the curent step to  the clicked number
-//         current = numIndex;
-//         //2. remove the "current" class from the prev number
-//         document.querySelector(".current").classList.remove('current');
-//         //3. add the "active" class to the clicked number link
-//         number.classList.add("current");
-//         // console.log(current);
-//         displayProducts(current,products);
-//     })
-// })
-
-// // add eventlisteners to the Next button
-// buttonNext.addEventListener('click', () => {
-//     if ( current === (numbers.length - 1))
-//         current = 0;
-//     else
-//         current += 1;
-//     document.querySelector(".current")?.classList.remove('current');
-//     numbers[current].classList.add("current");
-//     // console.log(current);
-//     displayProducts(current,products);
-// })
-
-// Hàm lọc sản phẩm
-// function chooseProducts(category) {
-//     products.forEach(product => {
-//         const productCategory = product.getAttribute('data-category');
-//         if ( category === 'all'){
-//             product.style.display = 'block';
-//         }
-//         else if (category === productCategory)  
-//             product.style.display = 'block';
-//         else
-//             product.style.display = 'none';
-// })
-// }
-
-// Cập nhật phân trang: làm nổi bật trang hiện tại
-// function updatePagination(page) {
-//     numbers.forEach((item, index) => {
-//         item.classList.remove('current');
-//         if (index === page)
-//             item.classList.add('current');
-//     })
-// }
-// Khởi tạo: hiển thị trang đầu tiên
-// displayProducts(current);
-
 
 // ==================product==============
 document.addEventListener('DOMContentLoaded', () => {
@@ -137,18 +84,6 @@ function displayProducts(page, filteredProducts) {
     const productContainer = document.getElementById('product-container');
     const productsToDisplay = filteredProducts.slice(start, end);
     productContainer.innerHTML = '';
-
-
-    // Ẩn tất cả các sản phẩm trước khi hiển thị trang mới
-    // filteredProducts.forEach((product, index) => {
-    //     if (index >= start && index < end) {
-    //         product.style.display = 'block'; // Hiển thị sản phẩm trong phạm vi
-    //         console.log(`Product at index ${index} is displayed.`);
-    //     } else {
-    //         product.style.display = 'none'; // Ẩn sản phẩm ngoài phạm vi
-    //         console.log(`Product at index ${index} is hidden.`);
-    //     }
-    // });
 
 //=============== tạo sản phẩm tự động ===============
     productsToDisplay.forEach(product => {
@@ -174,16 +109,25 @@ function displayProducts(page, filteredProducts) {
     // Cập nhật các nút phân trang
     updatePagination(page,filteredProducts);
 }
-// =========== tìm kiếm sản phẩm lọc theo tên
+// =========== tìm kiếm sản phẩm lọc theo tên,giá
     function searchProducts() {
         const searchTerm = document.getElementById('search-input').value.trim().toLowerCase();
         const priceCheckboxes = document.querySelectorAll('.check-box-list input[type="checkbox"]:checked');
+        const activeCategory = document.querySelector('.sub_menu .active a')?.getAttribute('data-category');
         console.log('Từ khóa tìm kiếm:', searchTerm);
+        console.log("Category dang active:",activeCategory);
+
+         // Lọc theo loại sản phẩm (nếu có)
+        let filteredProducts = activeCategory && activeCategory !== 'all' 
+        ? products.filter(product => product.category === activeCategory)
+        : products;
 
         // lọc theo tên
-        filteredProducts = products.filter(product =>
-            product.name.toLowerCase().includes(searchTerm)
-        );
+        if (searchTerm){
+            filteredProducts = filteredProducts.filter(product =>
+                product.name.toLowerCase().includes(searchTerm)
+            );
+        }
 
         // lọc theo giá
         if (priceCheckboxes.length > 0) {
@@ -211,9 +155,6 @@ function displayProducts(page, filteredProducts) {
             const productContainer = document.getElementById('product-container');
             productContainer.innerHTML = '<p>Không tìm thấy sản phẩm nào phù hợp!</p>';
         }
-
-        // Hiển thị sản phẩm đã lọc (nếu có)
-        // displayProducts(0, filteredProducts);
     }
     const buttonSearch = document.querySelector('.button_search');
     buttonSearch.addEventListener('click',searchProducts);
@@ -319,17 +260,6 @@ choose.forEach(link => {
 function chooseProducts(category) {
      // Lọc sản phẩm theo category
     const filteredProducts = products.filter(product => {
-        // const productCategory = product.getAttribute('data-category');
-        // if (category === 'all') {
-        //     product.style.display = 'block';  // Hiển thị tất cả sản phẩm
-        //     return true;
-        // } else if (category === productCategory) {
-        //     product.style.display = 'block';  // Hiển thị sản phẩm có category phù hợp
-        //     return true;
-        // } else {
-        //     product.style.display = 'none';  // Ẩn các sản phẩm không phù hợp
-        //     return false;
-        // }
         return category === 'all' || category === product.category;;
     })
 
@@ -339,6 +269,8 @@ function chooseProducts(category) {
 }
 
 });
+
+// ==========fix lỗi đề lên nhau khi sử dụng các thanh công cụ
 
 //=================== search ===================
 let search = document.querySelector('.navbar_search');
@@ -355,17 +287,6 @@ search.addEventListener('click', () => {
         x.style.display = 'none';
     }
 })
-
-// ======================cart ====================
-// let cart = document.querySelector('.navbar_cart');
-
-// cart.addEventListener('click', () => {
-//     let dropdowncart = document.querySelector('.navbar_cart-dropdown-nocart');
-//     if ( dropdowncart.style.display === 'block' )
-//         dropdowncart.style.display = 'none';
-//     else
-//         dropdowncart.style.display = 'block';
-// })
 
 // =====================account ==================
 let account = document.querySelector('.navbar_user');
@@ -391,19 +312,6 @@ menuButton.addEventListener('click', () => {
     menu.classList.toggle('navbar__open');
 })
 
-// ==========fix lỗi đề lên nhau khi sử dụng các thanh công cụ
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -411,13 +319,8 @@ menuButton.addEventListener('click', () => {
 //==========================================================================================================================================================================
 
 
-
-
 // Hàm để hiển thị thông tin chi tiết sản phẩm khi click vào sản phẩm
 function showProductDetail(productId) {
-     // Lấy danh sách sản phẩm từ localStorage
-   // const Product = JSON.parse(localStorage.getItem('products')) || [];
-
     // Tìm sản phẩm tương ứng trong mảng products
     const product = Product.find(p => p.id === productId);
 
