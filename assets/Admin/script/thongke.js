@@ -31,7 +31,7 @@ function taohangthongke(Customer, product) {
                       ${giohang.soLuong}
                   </div>
                   <div>
-                      ${formatVND(giohang.profit)} $
+                      ${formatVND(giohang.profit)} 
                   </div>
                   `;
       doanhthu.innerHTML += createrow.outerHTML;
