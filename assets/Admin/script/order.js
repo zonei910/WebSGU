@@ -1,6 +1,11 @@
 let filterarr = [];
+
+
+
 function nuttrang_order(a) {
   let donhang = JSON.parse(localStorage.getItem("donhang"));
+  donhang = giamdan(donhang);
+
   let sosanphammoitrang = 5;
   let vitrihientai = (a - 1) * sosanphammoitrang;
 
@@ -47,6 +52,7 @@ function nuttrang_order(a) {
 function filter_order() {
   filterarr = [];
   let donhang = JSON.parse(localStorage.getItem("donhang"));
+  donhang = giamdan(donhang);
   let select = document.querySelector("#Display .order .loc");
   if (select.value == "time") {
     let time = document.querySelector("#Display .order .time");

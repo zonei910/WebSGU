@@ -10,7 +10,7 @@
 
 let Customer = [
   {
-    "phone": "0918273645",
+    "phone": "123",
     "name": "Võ Văn Toàn",
     "email": "vovantoan@gmail.com",
     "gender": "male",
