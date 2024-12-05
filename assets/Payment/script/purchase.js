@@ -198,20 +198,23 @@ for(let i = 0 ; i<users.length;i++){
     }
 }
 
+if(JSON.parse(localStorage.getItem("donmoi")) == null){
+    let donmoi = [];
+    donmoi.push(phieumua);
+    localStorage.setItem("donmoi" , JSON.stringify(donmoi));
+}else{
+    let donmoi = JSON.parse(localStorage.getItem("donmoi"));
+    donmoi.push(phieumua);
+    localStorage.setItem("donmoi" , JSON.stringify(donmoi));
+}
+
+
 
 let giohang = [];
 currentUser.giohang = giohang;
 localStorage.setItem("giohang", JSON.stringify(giohang));
 localStorage.setItem("currentUser", JSON.stringify(currentUser));
 localStorage.setItem("users" , JSON.stringify(users));
-
-if(JSON.parse(localStorage.getItem("donmoi")) == null){
-    localStorage.setItem("donmoi" , JSON.stringify(1));
-}else{
-    let n = JSON.parse(localStorage.getItem("donmoi")) + 1;
-    localStorage.setItem("donmoi" , JSON.stringify(n));
-}
-
 
 
 showTomtatsp();

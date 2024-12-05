@@ -202,14 +202,15 @@ window.onload = function() {
         }
     }
 
-   
-
     const admin = JSON.parse(localStorage.getItem('admin'));
+
+    
     if (!admin) {
         const newAdmin = {
             phone: '12345678',
             name: 'Admin',
             password: '12345',
+            address: "Quận 1",
         };
     localStorage.setItem('admin', JSON.stringify(newAdmin));
     console.log("Tài khoản admin đã được tạo:", newAdmin);

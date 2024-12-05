@@ -12,7 +12,6 @@
 
 body{
     margin: 0px;
-    overflow: hidden;
     position: relative;
 }
 
@@ -126,6 +125,7 @@ ul,li{
     top: 60%;
     z-index: 1;
     background-color: white;
+    overflow: auto;
 
 }
 
@@ -303,7 +303,7 @@ ul,li{
 #Menu .close_menu{
     width: 30px;
     height: 30px;
-    list-heigth: 30px;
+    /* list-heigth: 30px; */
     position: fixed;
     left: 300px;
     top: 80px;

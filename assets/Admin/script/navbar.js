@@ -95,7 +95,7 @@ function showDonHang() {
       return 0;
     } else {
       donhang = giamdan(donhang);
-      let sosanphammoitrang = 5;
+      let sosanphammoitrang = 10;
       let sotranghientai = 1;
       let tongsotrang = Math.ceil(donhang.length / sosanphammoitrang);
       let vitrihientai = (sotranghientai - 1) * sosanphammoitrang;
@@ -201,16 +201,17 @@ window.onload = () =>{
     if(JSON.parse(localStorage.getItem("donmoi")) == null){
         a.innerHTML = 0;
     }else{
-        a.innerHTML = JSON.parse(localStorage.getItem("donmoi"));
+        a.innerHTML = JSON.parse(localStorage.getItem("donmoi")).length;
     }
+
+    let ad = JSON.parse(localStorage.getItem("admin"));
+    document.querySelector(".admin_name").innerHTML = ad.name;
+    document.querySelector(".admin_phone").innerHTML = `Số điện thoại: ${ad.phone}`;
+    document.querySelector(".admin_address").innerHTML = `Chi nhánh: ${ad.address}`;
 }
 
 
 
-
-function bat_tat_neworder(){
-    
-}
 
 
 
