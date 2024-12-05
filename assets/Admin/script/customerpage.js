@@ -663,16 +663,67 @@ nutphantrang();
 //
 
 
-//======= thoong tin admin ==========
+//================= thoong tin admin ==========
 function showAdmin(){
-  var formAdmin = document.getElementById('ttadmin');
+  var adm = document.getElementById('ttadmin');
     
-    if (formAdmin.style.display === "none" ) {
-        formAdmin.style.display = "flex";  
+    if (adm.style.display === "none" ) {
+        adm.style.display = "flex";  
     } else {
-        formAdmin.style.display = "none";  
+        adm.style.display = "none";  
     }
-};
+}
+
 function closettAdmin(){
   showAdmin();
 }
+
+function hienThiThongTinAdmin(){
+  let ad = JSON.parse(localStorage.getItem("admin"));
+  if (ad) {
+    document.getElementById('ad-taikhoan').value=ad.name;
+    document.getElementById('ad-sdt').value=ad.phone;
+    document.getElementById('ad-chinhanh').value=ad.address;
+  } else {
+    alert('Không có dữ liệu admin');
+  }
+}
+
+function luuAdminTT(){
+  let ad = JSON.parse(localStorage.getItem("admin"));
+  let tenad=document.getElementById('ad-taikhoan').value;
+  let sdtad=document.getElementById('ad-sdt').value;
+  let chinhanhad=document.getElementById('ad-chinhanh').value;
+  ad.name=tenad;
+  ad.phone=sdtad;
+  ad.address=chinhanhad;
+  localStorage.setItem('admin', JSON.stringify(ad));
+  alert("Cập nhật thông tin thành công.")
+}
+function doiAdminMk() {
+  let ad = JSON.parse(localStorage.getItem("admin"));
+  let adminMk = document.getElementById('ad-old').value;
+  let adminMkMoi1 = document.getElementById('ad-new').value;
+  let adminMkMoi2 = document.getElementById('ad-newnew').value;
+
+  if (ad) {
+    if (ad.password === adminMk) {
+      if (adminMkMoi1 === adminMkMoi2) {
+        ad.password = adminMkMoi1;
+        localStorage.setItem('admin', JSON.stringify(ad));
+        alert('Đổi mật khẩu thành công.');
+      } else {
+        alert('Mật khẩu mới không trùng khớp!');
+      }
+    } else {
+      alert('Mật khẩu cũ không đúng!');
+    }
+  } else {
+    alert('Không tìm thấy dữ liệu admin trong localStorage!');
+  }
+}
+
+
+
+
+hienThiThongTinAdmin();

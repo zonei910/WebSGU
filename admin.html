@@ -530,24 +530,26 @@
                     <div class="contaner-form">
                         <div class="thongtin">
                             <form action="">
-                                <p>Họ và tên: </p>
-                                <input type="text" id="ad-hoten" value=""><br>
+                                <p>Tên tài khoản: </p>
+                                <input type="text" id="ad-taikhoan" value=""><br>
                                 <p>Số điện thoại: </p>
                                 <input type="tel" name="" id="ad-sdt" value=""><br>
                                 <p>Chi nhánh: </p>
                                 <input type="text" name="" id="ad-chinhanh" value=""><br><br>
-                                <button>Lưu thay đổi</button>
+                                <button onclick="luuAdminTT()">Lưu thay đổi</button>
                             </form>
                         </div>
                         <div class="matkhau">
                             <form action="">
                                 <p>Mật khẩu hiện tại: </p>
-                                <input type="password" id="ad-old" value=""><br>
+                                <input type="password" id="ad-old" value="" placeholder="Nhập mật khẩu cũ ..."><br>
                                 <p>Mật khẩu mới: </p>
-                                <input type="password" id="ad-new" value=""><br>
+                                <input type="password" id="ad-new" value="" placeholder="Nhập mật khẩu mới ..."><br>
                                 <p>Nhập lại mật khẩu mới: </p>
-                                <input type="password" id="ad-newnew" value=""><br><br>
-                                <button>Đổi mật khẩu</button>
+                                <input type="password" id="ad-newnew" value="" placeholder="Nhập lại mật khẩu mới ..."><br><br>
+                                <button onclick="doiAdminMk()">Đổi mật khẩu</button>
+                                <div id="error-message" style="color: red;"></div>
+
                             </form>
                         </div>
                     </div>
