@@ -303,7 +303,7 @@ ul,li{
 #Menu .close_menu{
     width: 30px;
     height: 30px;
-    list-heigth: 30px;
+    /* list-heigth: 30px; */
     position: fixed;
     left: 300px;
     top: 80px;
