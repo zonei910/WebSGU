@@ -661,3 +661,18 @@ nutphantrang();
 //thay đổi printinfor ,printsearch,newarray....
 //hàm search bị lỗi
 //
+
+
+//======= thoong tin admin ==========
+function showAdmin(){
+  var formAdmin = document.getElementById('ttadmin');
+    
+    if (formAdmin.style.display === "none" ) {
+        formAdmin.style.display = "flex";  
+    } else {
+        formAdmin.style.display = "none";  
+    }
+};
+function closettAdmin(){
+  showAdmin();
+}

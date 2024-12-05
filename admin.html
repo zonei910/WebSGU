@@ -68,7 +68,7 @@
                             <!-- Quản lý -> Nhân viên nhận đơn-->
                             <li>Chi nhánh: <span>Quận 1</span></li>
                             <li class="button">
-                                <div class="edit"><i class="fa-regular fa-pen-to-square"></i></div>
+                                <div class="edit" onclick="showAdmin()"><i class="fa-regular fa-pen-to-square"></i></div>
                                 <a href="index.html" class="logout"><i class="fa-solid fa-right-from-bracket"></i></a>
                             </li>
                         </ul>
@@ -521,7 +521,39 @@
             </div> -->
 
             <!------------------------- Thông tin Admin ----------------------->
-            
+            <div id="ttadmin">
+                <div class="form-ttadmin">
+                    <div class="title-form">
+                        <h3>Thông tin tài khoản Admin</h3>
+                        <p>Quản lí thông tin và bảo mật</p>
+                    </div>
+                    <div class="contaner-form">
+                        <div class="thongtin">
+                            <form action="">
+                                <p>Họ và tên: </p>
+                                <input type="text" id="ad-hoten" value=""><br>
+                                <p>Số điện thoại: </p>
+                                <input type="tel" name="" id="ad-sdt" value=""><br>
+                                <p>Chi nhánh: </p>
+                                <input type="text" name="" id="ad-chinhanh" value=""><br><br>
+                                <button>Lưu thay đổi</button>
+                            </form>
+                        </div>
+                        <div class="matkhau">
+                            <form action="">
+                                <p>Mật khẩu hiện tại: </p>
+                                <input type="password" id="ad-old" value=""><br>
+                                <p>Mật khẩu mới: </p>
+                                <input type="password" id="ad-new" value=""><br>
+                                <p>Nhập lại mật khẩu mới: </p>
+                                <input type="password" id="ad-newnew" value=""><br><br>
+                                <button>Đổi mật khẩu</button>
+                            </form>
+                        </div>
+                    </div>
+                    <i id="close-tt-Admin" onclick="closettAdmin()" class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
         </Section>
     </main>
     <!-- Kết thúc Main -->
