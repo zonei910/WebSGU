@@ -97,7 +97,8 @@ function editclient(Phone) {
     }
   });
 }
-function buttoninput(phone) {
+function taketime(phone){
+  console.log(phone);
   let Customer = JSON.parse(localStorage.getItem("users"));
   const time = document.getElementById("taketimefirst").value;
   if (time) {
@@ -114,20 +115,42 @@ function buttoninput(phone) {
   if (timesec && document.getElementById("taketimefirst").value) {
     if (yearsecond < year) {
       alert("Bạn nhập sai ngày");
+      yearsecond=null;
+      year=null;
+      date=null;
+      datesecond=null;
+      month=null;
+      monthsecond=null;
       return;
     }
     if (yearsecond == year && monthsecond < month) {
       alert("Bạn nhập sai ngày");
+      yearsecond=null;
+      year=null;
+      date=null;
+      datesecond=null;
+      month=null;
+      monthsecond=null;
       return;
     }
     if (yearsecond == year && monthsecond == month && daysecond < day) {
       alert("Bạn nhập sai ngày");
+      yearsecond=null;
+      year=null;
+      date=null;
+      datesecond=null;
+      month=null;
+      monthsecond=null;
       return;
     }
     printinforordernew(phone,arrayCustomer(Customer));
   }
 }
 function printinforordernew(phone,Customer){
+  document.getElementById("innerorder").innerHTML="";
+  console.log(phone);
+  console.log(Customer);
+  console.log(phone);
   document.getElementById("printorder").style.display = "flex";
   document.querySelector("#printorder").innerHTML=`
       <div id="innerorder"><i class="fa-solid fa-x" onclick="closedproduct()"></i>
@@ -135,10 +158,12 @@ function printinforordernew(phone,Customer){
             <div class="thehead">
               <div>id</div>
               <div>name</div>
-              <div>catergory</div>
-              <div>receiptime</div>
-              <div>
-                <input type="date" id="taketimefirst">-<input type="date" id="taketimesecond"><input type="button" id="buttonclick" onclick="buttoninput('${phone}')" value="click">  
+              <div>cate</div>
+              <div >receip</div>
+              <div class="TheHide">
+                <div id="taketimeouter">
+                  <input type="date" id="taketimefirst">-<input type="date" id="taketimesecond" onclick="taketime('${phone}')">
+                </div>
               </div>
           </div>
         </div>
@@ -147,6 +172,7 @@ function printinforordernew(phone,Customer){
     let a=0;
   for (let i = 0; i < Customer.length; i++) {
     if (Customer[i].phone == phone) {
+
       for (let j = 0; j < Customer[i].lichsuMuaHang.length; j++) {
         const product = Customer[i].lichsuMuaHang[j];
         const outercreatediv=document.createElement("div");
@@ -161,6 +187,18 @@ function printinforordernew(phone,Customer){
           a="no infor"
         }
         for (let k = 0; k < product.giohang.length; k++) {
+          // if(!product.giohang[k].id){
+          //   product.giohang[k].id="no infor";
+          // }
+          // if(!product.giohang[k].ten){
+          //   product.giohang[k].ten="no infor";
+          // }
+          // if(!product.giohang[k].loai){
+          //   product.giohang[k].loai="no infor";
+          // }
+          // if(!product.giohang[k].ngaydat){
+          //   product.giohang[k].loai="no infor";
+          // }
           const creatediv = document.createElement("div");
           creatediv.innerHTML = `
                     <div>${product.giohang[k].id}</div>
@@ -169,6 +207,7 @@ function printinforordernew(phone,Customer){
                     <div>${product.ngaydat}</div>
                     `;
           outercreatediv.appendChild(creatediv);
+          console.log(outercreatediv);
         }
         let k=j;
         let thestatus=document.createElement("div");
@@ -184,7 +223,7 @@ function printinforordernew(phone,Customer){
                   delivered
                 </div>
           </div>
-        </div>               
+        </div>                
 `;
         outercreatediv.appendChild(thestatus);
         document.getElementById("innerorder").appendChild(outercreatediv);
@@ -192,16 +231,18 @@ function printinforordernew(phone,Customer){
 
     }
   }
-  if(a==0){
-    const creatediv = document.createElement("div");
-    creatediv.innerHTML = `
-              <div>no infor</div>
-              <div>no infor</div>
-              <div>no infor</div>
-              <div>no infor</div>
-              `;
-              document.getElementById("innerorder").appendChild(creatediv);
-  }
+  // if(a==0){
+  //   const creatediv = document.createElement("div");
+  //   creatediv.innerHTML = `
+  //   <div>
+  //             <div>no infor</div>
+  //             <div>no infor</div>
+  //             <div>no infor</div>
+  //             <div>no infor</div>
+  //             <div>no infor</div> </div>
+  //             `;
+  //             document.getElementById("innerorder").appendChild(creatediv);
+  // }
 }
 function printinfororder(phone) {
   console.log(phone);
@@ -213,10 +254,12 @@ function printinfororder(phone) {
             <div class="thehead">
               <div>id</div>
               <div>name</div>
-              <div>catergory</div>
-              <div>receiptime</div>
-              <div>
-                <input type="date" id="taketimefirst">-<input type="date" id="taketimesecond"><input type="button" id="buttonclick" onclick="buttoninput('${phone}')" value="click">  
+              <div>cate</div>
+              <div >receip</div>
+              <div class="TheHide">
+                <div id="taketimeouter">
+                  <input type="date" id="taketimefirst">-<input type="date" id="taketimesecond" onclick="taketime('${phone}')">
+                </div>
               </div>
           </div>
         </div>
@@ -228,6 +271,7 @@ function printinfororder(phone) {
       for (let j = 0; j < Customer[i].lichsuMuaHang.length; j++) {
         const product = Customer[i].lichsuMuaHang[j];
         const outercreatediv=document.createElement("div");
+        outercreatediv.className="outerdiv"
         let u;
         let a;
         if(product.status==0){
@@ -246,6 +290,7 @@ function printinfororder(phone) {
                     <div>${product.giohang[k].ten}</div>
                     <div>${product.giohang[k].loai}</div>
                     <div>${product.ngaydat}</div>
+                    <div class="TheHide"></div>
                     `;
           outercreatediv.appendChild(creatediv);
         }
@@ -326,7 +371,22 @@ function printinfororder(phone) {
 //       section.appendChild(creatediv); // Thêm thông điệp vào section
 //   }
 // }
-
+function arrayCustomer(Customer) {
+  // console.log(Customer)
+  return Customer.filter((Customer) => {
+    const filteredlichsuMuaHangs = Customer.lichsuMuaHang.filter(
+      (lichsuMuaHang) => {
+        return checktimedate(lichsuMuaHang.ngaydat);
+      }
+    );
+    if (filteredlichsuMuaHangs.length > 0) {
+      return {
+        ...Customer,
+        lichsuMuaHang: filteredlichsuMuaHangs,
+      };
+    }
+  }).filter((Customer) => Customer);
+}
 function changedelivery(Phone,key){
   // let phone="0"+Phone;
   let phone=Phone;
@@ -425,14 +485,14 @@ function printinfor(page) {
   document.getElementById("container4").innerHTML = `<div class="clientouter" id="clientouter">
         <div>Tên khách hàng</div>
         <div>Số điện thoại</div>
-        <div>Email</div>
+        <div class="Thehide">Email</div>
     </div>`;
   newCustomer.forEach((Customer) => {
     console.log(Customer.phone);
     const clientouterr = `<div class="clientouter" id="clientouter-${Customer.phone}">
             <div>${Customer.name}</div>
             <div>${Customer.phone}</div>
-            <div>${Customer.email}</div>
+            <div class="Thehide">${Customer.email}</div>
             <div><i class="fa-solid fa-key" id="khoa-${Customer.phone}" onclick="hienkhoa('${Customer.phone}')"></i> <i class="fa-regular fa-pen-to-square edit"  onclick="editclient('${Customer.phone}')"></i> <i id="show" class="fa-solid fa-angle-down angle" onclick="printinfororder('${Customer.phone.toString()}')"></i></div>
         </div>`;
         document.getElementById("container4").innerHTML += clientouterr;
@@ -517,7 +577,7 @@ function printsearcharray(newarray) {
     const clientouterr = `<div class="clientouter" id="clientouter-${Customer.phone}">
             <div>${Customer.name}</div>
             <div>${Customer.phone}</div>
-            <div>${Customer.email}</div>
+            <div class="Thehide">${Customer.email}</div>
             <div><i class="fa-solid fa-key" id="khoa-${Customer.phone}" onclick="hienkhoa('${Customer.phone}')"></i> <i class="fa-regular fa-pen-to-square edit"  onclick="editclient('${Customer.phone}')"></i> <i id="show" class="fa-solid fa-angle-down angle" onclick="printinfororder('${Customer.phone.toString()}')"></i></div>
         </div>`;
         document.getElementById("container4").innerHTML += clientouterr;
@@ -545,7 +605,7 @@ function hienkhoa(phone) {
             document.getElementById("contentkhoa").innerHTML="";
             const creatediv = document.createElement("div");
             creatediv.innerHTML = `
-                        <div><div>Người dùng sẽ bị khóa cho đến khi admin mở lại</div></div>
+                        <div><div class="TheHide">Người dùng sẽ bị khóa cho đến khi admin mở lại</div></div>
                         <label for="inputkhoand">Hãy nhập lý do khóa người dùng: </label> 
                         <input type="text" id="inputkhoand" placeholder="Enter"> 
                         <input type="submit" id="submitkhoa" onclick="submitkhoa('${customer.phone.toString()}')"><br>
@@ -565,28 +625,28 @@ function hienkhoa(phone) {
   })
   for (let i = 0; i < Customer.length; i++) {
     if (Customer[i].phone == phone) {
-      if (Customer.status == 0) {
-        document.getElementById("contentkhoa").innerHTML="";
-        const creatediv = document.createElement("div");
-        creatediv.innerHTML = `
-                    <div>Người dùng sẽ bị khóa cho đến khi admin mở lại</div>
-                    <label for="inputkhoand">Hãy nhập lý do khóa người dùng: </label> 
-                    <input type="text" id="inputkhoand" placeholder="Enter"> 
-                    <input type="submit" id="submitkhoa" onclick="submitkhoa('${Customer[i].phone}')"><br>
-                `;
-        document.getElementById("contentkhoa").appendChild(creatediv);
-      } 
-      else if (Customer.status == 1) {
-        document.getElementById("contentkhoa").innerHTML="";
-        document.getElementById("contentkhoa").innerHTML = `
-                    <div>Bỏ khóa người dùng  
-                    <input type="button" onclick="khoanguoidung('${phone}')" class="bokhoa" value="click"></div>
-                `;
-      }      
+      // if (Customer.status == 0) {
+      //   document.getElementById("contentkhoa").innerHTML="";
+      //   const creatediv = document.createElement("div");
+      //   creatediv.innerHTML = `
+      //               <div>Người dùng sẽ bị khóa cho đến khi admin mở lại</div>
+      //               <label for="inputkhoand">Hãy nhập lý do khóa người dùng: </label> 
+      //               <input type="text" id="inputkhoand" placeholder="Enter"> 
+      //               <input type="submit" id="submitkhoa" onclick="submitkhoa('${Customer[i].phone}')"><br>
+      //           `;
+      //   document.getElementById("contentkhoa").appendChild(creatediv);
+      // } 
+      // else if (Customer.status == 1) {
+      //   document.getElementById("contentkhoa").innerHTML="";
+      //   document.getElementById("contentkhoa").innerHTML = `
+      //               <div>Bỏ khóa người dùng  
+      //               <input type="button" onclick="khoanguoidung('${phone}')" class="bokhoa" value="click"></div>
+      //           `;
+      // }      
       let creatediv = document.createElement("div");
       creatediv.innerHTML = `
                 <div>${Customer[i].name}</div>
-                <div>${Customer[i].phone}</div>
+                <div class="theHide">${Customer[i].phone}</div>
                 <div>${Customer[i].address}</div>
                 <div>${Customer[i].email}</div>
             `;
@@ -599,7 +659,7 @@ function hienkhoa(phone) {
               lichsu.giohang.forEach(product=>{
                 const orderDiv = document.createElement("div");
                 orderDiv.innerHTML = `
-                              <div>${product.id}</div>
+                              <div class="theHide">${product.id}</div>
                               <div>${product.ten}</div>
                               <div>${product.loai}</div>
                               <div>${lichsu.ngaydat}</div>
@@ -611,27 +671,26 @@ function hienkhoa(phone) {
         }
     }
   }
+  // if(document.getElementById("submitkhoa")){
+  //   const submit = document.getElementById("submitkhoa");
+  //   submit.addEventListener("click", function(event) {
+  //       const reason = document.getElementById("inputkhoand").value.trim();
+  //       if (!reason) {
+  //           alert("Bạn chưa nhập lý do khóa người dùng");
+  //           return;
+  //       }
+  //       for (let i = 0; i < Customer.length; i++) {
+  //           if (Customer[i].phone == phone) {
+  //               console.log("heheh");
+  //               Customer[i].status = 1; 
+  //               Customer[i].reasonkhoa = reason;
+  //               break;
+  //           }
+  //       }
+  //       alert("đã khóa người dùng");
+  //   });
+  // }
 
-  // Thêm sự kiện cho nút submit
-  // const submit = document.getElementById("submitkhoa");
-
-  //     submit.addEventListener("click", function(event) {
-  //         const reason = document.getElementById("inputkhoand").value.trim();
-  //         if (!reason) {
-  //             alert("Bạn chưa nhập lý do khóa người dùng");
-  //             return;
-  //         }
-  //         // Cập nhật thông tin khóa
-  //         for (let i = 0; i < Customer.length; i++) {
-  //             if (Customer[i].phone == phone) {
-  //                 console.log("heheh");
-  //                 Customer[i].status = 1; // Cập nhật trạng thái
-  //                 Customer[i].reasonkhoa = reason; // Cập nhật lý do khóa
-  //                 break; // Thoát khỏi vòng lặp khi đã cập nhật
-  //             }
-  //         }
-  //         alert("đã khóa người dùng");
-  //     });
 }
 
 function submitkhoa(phone) {
@@ -644,7 +703,6 @@ function submitkhoa(phone) {
   }
   for (let i = 0; i < Customer.length; i++) {
     if (Customer[i].phone == phone) {
-      // let a="khoa-"+"0"+phone;
       let a="khoa-"+phone;
       console.log(document.getElementById(a));
       document.getElementById(a).style.color="#bcbcbc"
@@ -693,11 +751,6 @@ function customnutphantrang(page) {
 currentpage=1;
 printinfor(1);
 nutphantrang();
- 
-
-//thay đổi printinfor ,printsearch,newarray....
-//hàm search bị lỗi
-//
 
 
 //======= thoong tin admin ==========

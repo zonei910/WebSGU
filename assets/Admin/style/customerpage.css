@@ -6,7 +6,7 @@
 }
 .outer{
     width:100%;
-    height: 100vh;
+    height: 100%;
     overflow: auto;
     background-color: white;
 }
@@ -24,8 +24,7 @@
 }
 .productinner>div>div{
     /* white-space: nowrap;  */
-    /* Ngăn không cho xuống dòng */
-    overflow: hidden;    /* Ẩn nội dung tràn */
+    overflow: hidden; 
 } 
 .head>div{
     width: 16.6%;
@@ -50,7 +49,7 @@
     margin:10px;
     position: relative;
     border-radius: 5px;
-    max-height: 100vh;
+    height: 100%;
 }
 #phantrangouter{
     position: absolute;
@@ -59,8 +58,8 @@
     transform: translate(-50%,50%);
 }
 #container4{
-    overflow-y: scroll;
-    overflow-x: hidden;
+    /* overflow-y: scroll;
+    overflow-x: hidden; */
     padding-top:20px;
 }
 .nutphantrang{
@@ -170,19 +169,38 @@
     display: flex;
 }
 #innerorder>div>div>div:nth-child(1){
-    width: 5%;
+    width: 10%;
+}
+.outerdiv>div>div:nth-child(1){
+    width: 10%;
 }
 #innerorder>div>div>div:nth-child(2){
-    width: 40%;
+    width: 30%;
+}
+.outerdiv>div>div:nth-child(2){
+    width: 30%;
 }
 #innerorder>div>div>div:nth-child(3){
     width: 15%;
 }
+.outerdiv>div>div:nth-child(3){
+    width: 15%;
+}
 #innerorder>div>div>div:nth-child(4){
     width: 15%;
+    min-width: 70px !important;
+}
+.outerdiv>div>div:nth-child(4){
+    width: 15%;
+    min-width: 70px !important;
 }
 #innerorder>div>div>div:nth-child(5){
     width: 25%;
+    min-width: 130px !important;
+}
+.outerdiv>div>div:nth-child(5){
+    width: 25%;
+    min-width: 130px !important;
 }
 #innerorder{
     width: 40%;
@@ -313,7 +331,8 @@
     display: block;
 }
 #innerorder{
-    max-width: 60%;
+    max-width: 70%;
+    width: 40%;
     background-color: #fec76f;
     max-height: 70%;
     overflow-y: scroll;
@@ -480,10 +499,12 @@
     font-weight: bold;
 }
 #khoaclient >div{
+    /* max-height: 200px; */
+    height: 70%;
     padding:20px;
     border-radius: 5px;
     background-color: #fec76f;
-    width: 50%;
+    width: 60%;
     position: relative;
     color: rgb(87, 82, 88) ; 
     border: 1px solid rgba(0, 0, 0,0.5);
@@ -492,9 +513,6 @@
     max-height: 600px;
 
 }
-.printkh{
-    font-weight: bold;
-}
 #khoaclient>div>label{
     padding: 10px;
 }
@@ -502,7 +520,9 @@
     margin:10px;
 }
 .printkh{
-    width: 100%;
+    /* margin-right:10px ; */
+    font-weight: bold;
+    width: 90%;
     padding:10px;
     border-radius: 5px;
     border: 1px solid black;
@@ -513,7 +533,7 @@
 }
 .printorderkh{
     font-weight: bold;
-    width: 100%;
+    width: 90%;
     padding:10px;
     border-radius: 5px;
     border: 1px solid black;
@@ -534,7 +554,8 @@
 #inputkhoand{
     border-radius: 5px;
     outline:none;
-    width: 50%;
+    /* width: 40px; */
+    height: 25px;
 }
 #khoaclient>div>i{
     position: absolute;
@@ -572,44 +593,49 @@
     cursor: pointer;
 }
 .outerdelivery{
-    background-color: #75ba75;
+    width: 90px !important;
+    /* background-color: #75ba75; */
     display: flex;
-}
-.outerdelivery{
+    border-radius: 5px;
+    /* background-color: #e2564d; */
+    padding:5px;
     display: block;
 }
 .bokhoa{
     background-color: #be95be;
-    padding:5px;
+    padding:7px;
+    border-radius: 5px;
     width: fit-content;
 }
 .thestatus{
     position: absolute;
-    right: 6px;
+    right: -5px !important;
     top: -10px;
     display: inline-block;
     width: fit-content;
     z-index: 100px;
 }
-.outerdelivery{
-    border-radius: 5px;
-    /* background-color: #e2564d; */
-    width: 130px;
-    padding:5px;
+#taketimeouter{
+    float: right;
+    width: fit-content;
 }
 .deliver{
     border-bottom: 1px solid black;
     background-color: #be95be;
-    width: 120px;
+    min-width: 80px;
+    width: 80px;
     padding:5px;
+
 }
 .delivering{
     border-bottom: 1px solid black;
-    width: 120px;
+    width: 80px;
     padding:5px;
+    background-color: #6dbfb8;
+    width: 100%;
 }
 #contentkhoa{
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
     color:#e2564d;
 }
@@ -630,13 +656,26 @@
     margin-top:10px;
 }
 #khoaclient>div{
+    
     border-radius: 10px;
+    padding: 10px;
 }
-/* #printorder{
+@media(max-width:1000px){
+    .clientouter>div:nth-child(4){
+        width: 20% !important;
+    }
+}
+@media (max-width:720px) {
+    .Thehide{
+        display: none;
+        width: 0% !important;
+    }
+    .clientouter>div{
+        width: 33% !important;
+    }
 }
 
-#printorder.hide{
-} */
+
 
 /*==================thoong tin admin============*/
 #ttadmin{
@@ -695,4 +734,77 @@
 }
 #close-tt-Admin:hover{
     color:red;
+}
+.editouter >form>div>div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.editouter >form>div{
+    /* width: 100%; */
+    padding: 10px;
+}
+.editouter >form>div>div>label{
+    /* width: 100%; */
+    width: 40%;
+}
+.editouter >form>div>div>input{
+    width: 55%;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding:5px
+}
+#editkh{
+    width: 100%;
+    outline: none;
+}
+#editkhouter{
+    padding:10px;
+}
+.innerorder>div>div>div{
+    padding:5px;
+}
+@media(max-width:720px){
+    .theHide{
+        display: none;
+        width: 0% !important;
+    }
+    .editouter >form>div>div>input{
+        width: 100% !important;
+    }
+
+}
+@media (max-width:1000px) {
+    #innerorder{
+        width: 60%;
+    }
+}
+@media (max-width:670px) {
+    .TheHide{
+        display: none !important;
+        width: 0% !important;
+    }
+    #innerorder>div>div>div:nth-child(1){
+        width: 15%;
+    }
+    .outerdiv>div>div:nth-child(1){
+        width: 15%;
+    }
+    #innerorder>div>div>div:nth-child(2){
+        width: 50%;
+    }
+    .outerdiv>div>div:nth-child(2){
+        width: 50%;
+    }
+    #innerorder>div>div>div:nth-child(3){
+        width: 25%;
+    }
+    .outerdiv>div>div:nth-child(3){
+        width: 25%;
+    }
+    .thestatus,.outerdelivery{
+        display: none !important;
+        width: 0% !important;
+    }
 }

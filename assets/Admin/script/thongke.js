@@ -6,7 +6,7 @@ let daysecond;
 let monthsecond = 1;
 
 function taohangthongke(Customer, product) {
-  if (Customer.length > 0) {
+  if (true) {
     addprofitforcustomer(Customer);
     addprofitforproduct(product);
     const doanhthu = document.querySelector(".container3");
@@ -15,7 +15,7 @@ function taohangthongke(Customer, product) {
               <div>ID</div>
                   <div>Tên sản phẩm</div>
                   <div>Số lượng đã bán</div>
-                  <div>Tổng tiền</div>
+                  <div class="theehide">Tổng tiền</div>
               </div>`;
     product.forEach((giohang) => {
       const createrow = document.createElement("div");
@@ -30,8 +30,8 @@ function taohangthongke(Customer, product) {
                   <div>
                       ${giohang.soLuong}
                   </div>
-                  <div>
-                      ${formatVND(giohang.profit)} 
+                  <div class="theehide">
+                      ${(giohang.profit)} 
                   </div>
                   `;
       doanhthu.innerHTML += createrow.outerHTML;
@@ -52,12 +52,12 @@ function taohangthongke(Customer, product) {
                       <div><div class="thheader">Lợi nhuận cao nhất</div>  </div>
                       <div>
                           <div class="productinner"> 
-                              <div class="divimage"><image  class="imagethongke"src="${productwithhighestprofit.hinh}"></image></div>
-                              <div><div>ID</div><div>${productwithhighestprofit.id}</div></div>
-                              <div><div>Loại sản phẩm</div><div>${productwithhighestprofit.loai}</div></div>
-                              <div><div>Tên sản phẩm</div><div>${productwithhighestprofit.ten}</div></div>
-                              <div><div>Tổng lợi nhuận</div><div>${formatVND(productwithhighestprofit.profit)}</div></div>
-                              <div><div>Số lượng đã bán</div><div>${productwithhighestprofit.soLuong}</div></div>
+                              <div class="divimage thedisplay"><image  class="imagethongke"src="${productwithhighestprofit.hinh}"></image></div>
+                              <div><div >ID</div><div>${productwithhighestprofit.id}</div></div>
+                              <div><div >Loại sản phẩm</div><div>${productwithhighestprofit.loai}</div></div>
+                              <div><div >Tên sản phẩm</div><div>${productwithhighestprofit.ten}</div></div>
+                              <div ><div class="thehide">Tổng lợi nhuận</div><div class="thehide">${(productwithhighestprofit.profit)}</div></div>
+                              <div ><div class="thehide">Số lượng đã bán</div><div class="thehide">${productwithhighestprofit.soLuong}</div></div>
                           </div>
                       </div>
                   </div>
@@ -65,12 +65,12 @@ function taohangthongke(Customer, product) {
                       <div><div class="thheader">Lợi nhuận thấp nhất</div>  </div>
                       <div>
                           <div class="productinner"> 
-                              <div class="divimage"><image  class="imagethongke"src="${productwithlowestprofit.hinh}"></image></div>
-                              <div><div>ID</div><div>${productwithlowestprofit.id}</div></div>
-                              <div><div>Loại sản phẩm</div><div>${productwithlowestprofit.loai}</div></div>
-                              <div><div>Tên sản phẩm</div><div>${productwithlowestprofit.ten}</div></div>
-                              <div><div>Tổng lợi nhuận</div><div>${formatVND(productwithlowestprofit.profit)}</div></div>
-                              <div><div>Số lượng dã bán</div><div>${productwithlowestprofit.soLuong}</div></div>
+                              <div class="divimage thedisplay"><image  class="imagethongke"src="${productwithlowestprofit.hinh}"></image></div>
+                              <div><div >ID</div><div >${productwithlowestprofit.id}</div></div>
+                              <div><div >Loại sản phẩm</div><div >${productwithlowestprofit.loai}</div></div>
+                              <div><div >Tên sản phẩm</div><div >${productwithlowestprofit.ten}</div></div>
+                              <div ><div class="thehide">Tổng lợi nhuận</div><div class="thehide">${(productwithlowestprofit.profit)}</div></div>
+                              <div ><div class="thehide">Số lượng dã bán</div><div class="thehide">${productwithlowestprofit.soLuong}</div></div>
                           </div>
                       </div>
                   </div>
@@ -78,26 +78,26 @@ function taohangthongke(Customer, product) {
               <div class="thongkecustom">
                   <p>Khách hàng</p>
                   <div class="head">
-                      <div>Thứ hạng</div><div>Tên khách hàng</div><div>Số sản phẩm đã mua</div><div>Số tiền đã bỏ ra</div><div>Địa chỉ</div><div>Email</div>
+                      <div class="thedisplay">Thứ hạng</div><div class="thedisplay">Tên khách hàng</div><div class="thedisplay">Số sản phẩm đã mua</div><div class="thedisplay">Số tiền đã bỏ ra</div><div class="thehide">Địa chỉ</div><div class="thehide">Email</div>
                   </div>
                   <div class="cuswithlowestprofit"> 
                           <div >
-                              <div class="head">Highest profit</div>
-                              <div>${Customerwithhighestprofit.name}</div>
-                              <div>${Customerwithhighestprofit.totalproduct}</div>
-                              <div>${formatVND(Customerwithhighestprofit.totalprice)}</div>
-                              <div>${Customerwithhighestprofit.address}</div>
-                              <div>${Customerwithhighestprofit.email}</div>
+                              <div class="head thedisplay">Highest profit</div>
+                              <div class="thedisplay">${Customerwithhighestprofit.name}</div>
+                              <div class="thedisplay">${Customerwithhighestprofit.totalproduct}</div>
+                              <div class="thedisplay">${(Customerwithhighestprofit.totalprice)}</div>
+                              <div class="thehide">${Customerwithhighestprofit.address}</div>
+                              <div class="thehide">${Customerwithhighestprofit.email}</div>
                           </div>
                   </div>
                       <div class="cuswithhighestprofit">              
                               <div>
-                                  <div class="head">Lowest profit</div>
-                                  <div>${Customerwithlowestprofit.name}</div>
-                                  <div>${Customerwithlowestprofit.totalproduct}</div>
-                                  <div>${formatVND(Customerwithlowestprofit.totalprice)}</div>
-                                  <div>${Customerwithlowestprofit.address}</div>
-                                  <div>${Customerwithlowestprofit.email}</div>
+                                  <div class="head thedisplay">Lowest profit</div>
+                                  <div class="thedisplay">${Customerwithlowestprofit.name}</div>
+                                  <div class="thedisplay">${Customerwithlowestprofit.totalproduct}</div>
+                                  <div class="thedisplay">${(Customerwithlowestprofit.totalprice)}</div>
+                                  <div class="thehide">${Customerwithlowestprofit.address}</div>
+                                  <div class="thehide">${Customerwithlowestprofit.email}</div>
                               </div>
                       </div>
               </div>
@@ -106,11 +106,11 @@ function taohangthongke(Customer, product) {
     document.querySelector(".thongke").innerHTML += creatediv.innerHTML;
     let a = gettotal(arrayCustomerwithtotalprofit(Customer));
 
-    document.getElementById("totalprofit").innerText = formatVND(a.totalprofit);
+    document.getElementById("totalprofit").innerText = (a.totalprofit);
     document.getElementById("totalproduct").innerText = a.totalproduct;
     document.getElementById("totaluser").innerText = a.totaluser;
-    document.getElementById("totalprice").innerText = formatVND(a.totalprice);
-  } else {
+    document.getElementById("totalprice").innerText = (a.totalprice);
+  } else {/*
     const doanhthu = document.querySelector(".container3");
     doanhthu.innerHTML = `
             <div class="doanhthu">
@@ -183,10 +183,11 @@ function taohangthongke(Customer, product) {
     document.querySelector(".thongke").innerHTML += creatediv.innerHTML;
     let a = gettotal(arrayCustomerwithtotalprofit(Customer));
 
-    document.getElementById("totalprofit").innerText = formatVND(a.totalprofit);
+    document.getElementById("totalprofit").innerText = (a.totalprofit);
     document.getElementById("totalproduct").innerText = a.totalproduct;
     document.getElementById("totaluser").innerText = a.totaluser;
-    document.getElementById("totalprice").innerText = formatVND(a.totalprice);
+    document.getElementById("totalprice").innerText = (a.totalprice);
+    */
   }
 }
 function gettotal(Customer) {
@@ -194,9 +195,11 @@ function gettotal(Customer) {
   let sumproduct = 0;
   let sumprice = 0;
   Customer.forEach((Customer) => {
-    sumprofit += Customer.totalprofit;
-    sumproduct += Customer.totalproduct;
-    sumprice += Customer.totalprice;
+    if(Customer.totalprofit && Customer.totalproduct && Customer.totalprice){
+      sumprofit += Customer.totalprofit;
+      sumproduct += Customer.totalproduct;
+      sumprice += Customer.totalprice;
+    }
   });
   return {
     totalprofit: sumprofit,
@@ -205,29 +208,64 @@ function gettotal(Customer) {
     totaluser: Customer.length,
   };
 }
-function cushighest(Customer) {
+
+function cushighest(customers) {
   let max = -Infinity;
-  let cus;
-  Customer.forEach((Customer) => {
-    if (Customer.totalprofit > max) {
-      max = Customer.totalprofit;
-      cus = Customer;
-    }
-  });
-  return cus;
+  let highestCustomer = null;
+  if (customers && customers.length > 0) {
+    customers.forEach((customer) => {
+      if (customer.totalprofit > max) {
+        max = customer.totalprofit;
+        highestCustomer = customer;
+      }
+    });
+  }
+  return highestCustomer || {
+    name: "no info",
+    phone: "no info",
+    email: "no info",
+    address: "no info",
+    totalprofit: 0,
+    totalproduct: 0,
+    totalprice:0
+  }
+}
+function cuslowest(customers) {
+  let min = Infinity;
+  let lowestCustomer = null;
+  if (customers && customers.length > 0) {
+    customers.forEach((customer) => {
+      if (customer.totalprofit <min) {
+        min = customer.totalprofit;
+        highestCustomer = customer;
+      }
+    });
+  }
+  return lowestCustomer || {
+    name: "no info",
+    phone: "no info",
+    email: "no info",
+    address: "no info",
+    totalprofit: 0,
+    totalproduct: 0,
+    totalprice:0
+  };
 }
 
-function cuslowest(Customer) {
-  let min = Infinity;
-  let cus;
-  Customer.forEach((Customer) => {
-    if (min > Customer.totalprofit) {
-      min = Customer.totalprofit;
-      cus = Customer;
-    }
-  });
-  return cus;
-}
+// function cuslowest(Customer) {
+//   let min = Infinity;
+//   let cus;
+//   if(Customer){
+//     Customer.forEach((Customer) => {
+//       if (min > Customer.totalprofit) {
+//         min = Customer.totalprofit;
+//         cus = Customer;
+//       }
+//     });
+//     return cus;
+//   }
+//   return "no infor"
+// }
 function highest(product) {
   let max = -Infinity;
   let productwithmax;
@@ -237,24 +275,39 @@ function highest(product) {
       productwithmax = product;
     }
   });
-  return productwithmax;
+  return productwithmax || {
+    ten:"no infor",
+    loai:"no infor",
+    id:"no infor",
+    hinh:"no infor",
+    soLuong:0,
+    profit:0,
+    totalprice
+  };
 }
 function lowest(product) {
   let productwithmin;
-  let min = Infinity;
+  let min = +Infinity;
   product.forEach((product) => {
+    console.log(product.profit);
     if (product.profit < min) {
       min = product.profit;
       productwithmin = product;
     }
   });
-  return productwithmin;
+  return productwithmin || {
+    ten:"no infor",
+    loai:"no infor",
+    id:"no infor",
+    hinh:"no infor",
+    soLuong:0,
+    profit:0,
+  }
 }
 
 function checktimeday(receiptime) {
   let arraycopy = JSON.parse(JSON.stringify(receiptime));
   receipt = arraycopy.split("/");
-
   if (receipt[2].replace(/^0+/, "") < theyearr) {
     return false;
   }
@@ -332,7 +385,6 @@ function arrayCustomerwithtotalprofit(Customer) {
     return array;
   }
 }
-function bang() {}
 
 // lấy mảng product mới id phân biệt
 //   function aggregateCartItems(Customers) {
@@ -411,18 +463,20 @@ function inputdate() {
           alert("Bạn nhập sai ngày");
           return;
       }
-  taohangthongke(arrayCustomer(Customer),aggregateCartItems(Customer));
+  taohangthongke(arrayCustomer(Customer),aggregateCartItems(arrayCustomer(Customer)));
   }
 }
-// getcurrenttheyearr();
-
 function addprofitforcustomer(Customer) {
   Customer.forEach((Customer) => {
-    Customer.lichsuMuaHang.forEach((lichsu) => {
-      lichsu.giohang.forEach((product) => {
-        product.profit = (product.gia * 10) / 100;
+    if(Customer.lichsuMuaHang){
+      Customer.lichsuMuaHang.forEach((lichsu) => {
+        if(lichsu.giohang){
+          lichsu.giohang.forEach((product) => {
+            product.profit = (product.gia * 10) / 100;
+          });
+        }
       });
-    });
+    }
   });
 }
 function addprofitforproduct(Product) {
@@ -435,3 +489,4 @@ taohangthongke(
   arrayCustomer(JSON.parse(localStorage.getItem("users"))),
   aggregateCartItems(JSON.parse(localStorage.getItem("users")))
 );
+// console.log(lowest(aggregateCartItems(JSON.parse(localStorage.getItem("users"))))  );
