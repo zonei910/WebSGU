@@ -95,7 +95,7 @@ function showDonHang() {
       return 0;
     } else {
       donhang = giamdan(donhang);
-      let sosanphammoitrang = 5;
+      let sosanphammoitrang = 10;
       let sotranghientai = 1;
       let tongsotrang = Math.ceil(donhang.length / sosanphammoitrang);
       let vitrihientai = (sotranghientai - 1) * sosanphammoitrang;

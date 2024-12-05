@@ -21,8 +21,14 @@
 
 
 #Display .order .filterbtn{
-	border:  3px solid black;
-	cursor: pointer;
+    cursor: pointer;
+    text-align: center;
+    margin-left: 35%;
+    width: max-content;
+    background-color: #DEF2F2;
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 5px 8px;
 }	
 
 #Display .order .filterbtn:hover{
@@ -39,7 +45,7 @@
 #Display .order .main table{
     width: 100%;
     border: 1px solid black;
-    height: 300px;
+    height: 500px;
 }
 
 #Display .order .main th, td{

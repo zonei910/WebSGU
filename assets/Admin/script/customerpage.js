@@ -706,6 +706,7 @@ function showAdmin(){
     
     if (adm.style.display === "none" ) {
         adm.style.display = "flex";  
+        hienThiThongTinAdmin();
     } else {
         adm.style.display = "none";  
     }
@@ -758,9 +759,12 @@ function doiAdminMk() {
   } else {
     alert('Không tìm thấy dữ liệu admin trong localStorage!');
   }
+
+  
+
 }
 
 
 
 
-hienThiThongTinAdmin();
+// hienThiThongTinAdmin();

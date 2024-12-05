@@ -449,7 +449,7 @@ function hienthiTT() {
     var tongDHM = 0;
     var donhang = JSON.parse(localStorage.getItem('donmoi'));
     if(donhang == null){
-        alert("Chưa có đơn mới nào");
+        alert("Chưa có đơn hàng mới nào");
         return 0;
     }
     if (donhang && donhang.length > 0){
@@ -487,15 +487,13 @@ function hienthiTT() {
     }
 
 }
-window.onload = function() {
-    hienthiTT();  
-};
 
 function showTB() {
     var donHangMoi = document.getElementById('neworder');
     
-    if (donHangMoi.style.display === "none" ) {
+    if (donHangMoi.style.display == "none" ) {
         donHangMoi.style.display = "block";  
+        hienthiTT();  
     } else {
         donHangMoi.style.display = "none";  
     }
