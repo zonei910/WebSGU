@@ -22,6 +22,20 @@
 .container3{
     position: relative;
 }
+.productinner>div>div{
+    /* white-space: nowrap;  */
+    /* Ngăn không cho xuống dòng */
+    overflow: hidden;    /* Ẩn nội dung tràn */
+} 
+.head>div{
+    width: 16.6%;
+}
+.cuswithhighestprofit>div>div{
+    width: 16.6%;
+}
+.cuswithlowestprofit>div>div{
+    width: 16.6%;
+}
 .container3>i{
     font-size: 30px;
     color: rgb(131, 140, 145);
@@ -607,3 +621,8 @@
 #khoaclient>div{
     border-radius: 10px;
 }
+/* #printorder{
+}
+
+#printorder.hide{
+} */
