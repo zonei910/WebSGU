@@ -125,6 +125,7 @@ ul,li{
     top: 60%;
     z-index: 1;
     background-color: white;
+    overflow: auto;
 
 }
 

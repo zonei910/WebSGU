@@ -727,6 +727,7 @@ function hienThiThongTinAdmin(){
   }
 }
 
+
 function luuAdminTT(){
   let ad = JSON.parse(localStorage.getItem("admin"));
   let tenad=document.getElementById('ad-taikhoan').value;
@@ -735,6 +736,9 @@ function luuAdminTT(){
   ad.name=tenad;
   ad.phone=sdtad;
   ad.address=chinhanhad;
+  document.querySelector(".admin_name").innerHTML = ad.name;
+  document.querySelector(".admin_phone").innerHTML = `Số điện thoại: ${ad.phone}`;
+  document.querySelector(".admin_address").innerHTML = `Chi nhánh: ${ad.address}`;
   localStorage.setItem('admin', JSON.stringify(ad));
   alert("Cập nhật thông tin thành công.")
 }
