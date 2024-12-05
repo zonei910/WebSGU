@@ -35,11 +35,11 @@
                     <i class="fa-solid fa-note-sticky"></i>
                     <p>Ghi chú</p>
                 </div>
-                <div class="item"  onclick="showTB()">
+                <div class="item">
                     <i class="fa-solid fa-bell"></i>
-                    <p class="viewneworder" >Đơn hàng mới
+                    <p class="viewneworder" onclick="showTB()">Đơn hàng mới
                         <div class="noti" id="noti"></div>
-                        <div class="neworder" id="neworder" >
+                        <div class="neworder" id="neworder">
                             <table>
                                 <thead>
                                     <tr>
@@ -56,17 +56,18 @@
                                     </tr> -->
                                 </tbody>
                             </table>
+                            <button onclick = "checkdonmoi()" >Đã xem</button>
                         </div>
                     </p>
                 </div>
                 <div class="item">
-                    Xin chào,<div style="display:inline;color:blue;cursor:pointer" class="admin-info" onclick="thongtinadmin()">Admin
+                    Xin chào,<div style="display:inline;color:blue;cursor:pointer" class="admin-info"><span class="admin_name"></span>
                         <!-- Admin info -->
                         <ul id="Admin-info">
                             <div>Thông tin</div>
-                            <li>Số điện thoại: 12345678</li>
+                            <li class="admin_phone">Số điện thoại: 12345678</li>
                             <!-- Quản lý -> Nhân viên nhận đơn-->
-                            <li>Chi nhánh: <span>Quận 1</span></li>
+                            <li class="admin_address">Chi nhánh: Quận 1</li>
                             <li class="button">
                                 <div class="edit" onclick="showAdmin()"><i class="fa-regular fa-pen-to-square"></i></div>
                                 <a href="index.html" class="logout"><i class="fa-solid fa-right-from-bracket"></i></a>
@@ -120,8 +121,8 @@
                     <div class="filter">
                         <select name="loc" class="loc" onchange="filter_order()">
                             <option value="none" selected="true">Mới nhất</option>
-                            <option value="0">Chưa xử lý</option>
-                            <option value="1">Đã xử lý</option>
+                            <option value="0">Chưa duyệt</option>
+                            <option value="1">Đã duyệt</option>
                             <option value="2">Giao hàng thành công</option>
                             <option value="3">Đơn hàng bị hủy</option>
                             <option value="time">Thời gian đặt hàng</option>
@@ -130,7 +131,7 @@
                             <div>
                                 <div>Từ ngày<input type="date" class="tu_ngay"></div>
                                 <div>Đến ngày<input type="date" class="den_ngay"></div>
-                                <div class="filterbtn hide" onclick="findtime()">Lọc</div>
+                                <button class="filterbtn hide" onclick="findtime()">Lọc</button>
                             </div>
                         </div>
                     </div>
@@ -319,7 +320,7 @@
             </div>
             <!-- Thống kê -->
             <div class="revenue" id="revenue">
-                <div>
+                
                     <div class="outer">
                         <div class="container0">
                             <div><input type="text" placeholder="Search hear" > <i class="fa-solid fa-magnifying-glass"></i></div>
@@ -356,10 +357,10 @@
                             </div>
                         </div>       
                         <div class="thongke">
-                            .
+                            
                         </div>
                 
-                        <div class="header">List of product</div>
+                        <!-- <div class="header">List of product</div> -->
                         <div class="container3">
                             <div class="thongke3">
                                 <div class="doanhthu">
@@ -370,7 +371,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                
             </div>
             <!-- Danh sách user -->
             <div class="userlist">
@@ -467,7 +468,7 @@
                             <button id="searchSubmitButton">Tìm kiếm</button>
                             <select id="searchFilter">
                                 <option value="0">Lọc theo: </option> 
-                                <option value="id">ID từ thấp đến cao</option>
+                                <option value="id">ID từ cao đến thấp</option>
                                 <option value="name">Tên</option>
                                 <option value="category">Loại</option>
                                 <option value="low-price">Giá từ thấp đến cao</option>
@@ -535,24 +536,26 @@
                     <div class="contaner-form">
                         <div class="thongtin">
                             <form action="">
-                                <p>Họ và tên: </p>
-                                <input type="text" id="ad-hoten" value=""><br>
+                                <p>Tên tài khoản: </p>
+                                <input type="text" id="ad-taikhoan" value=""><br>
                                 <p>Số điện thoại: </p>
                                 <input type="tel" name="" id="ad-sdt" value=""><br>
                                 <p>Chi nhánh: </p>
                                 <input type="text" name="" id="ad-chinhanh" value=""><br><br>
-                                <button>Lưu thay đổi</button>
+                                <button onclick="luuAdminTT()">Lưu thay đổi</button>
                             </form>
                         </div>
                         <div class="matkhau">
                             <form action="">
                                 <p>Mật khẩu hiện tại: </p>
-                                <input type="password" id="ad-old" value=""><br>
+                                <input type="password" id="ad-old" value="" placeholder="Nhập mật khẩu cũ ..."><br>
                                 <p>Mật khẩu mới: </p>
-                                <input type="password" id="ad-new" value=""><br>
+                                <input type="password" id="ad-new" value="" placeholder="Nhập mật khẩu mới ..."><br>
                                 <p>Nhập lại mật khẩu mới: </p>
-                                <input type="password" id="ad-newnew" value=""><br><br>
-                                <button>Đổi mật khẩu</button>
+                                <input type="password" id="ad-newnew" value="" placeholder="Nhập lại mật khẩu mới ..."><br><br>
+                                <button onclick="doiAdminMk()">Đổi mật khẩu</button>
+                                <div id="error-message" style="color: red;"></div>
+
                             </form>
                         </div>
                     </div>
