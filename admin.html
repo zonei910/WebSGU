@@ -35,9 +35,9 @@
                     <i class="fa-solid fa-note-sticky"></i>
                     <p>Ghi chú</p>
                 </div>
-                <div class="item"  onclick="showTB()">
+                <div class="item"  >
                     <i class="fa-solid fa-bell"></i>
-                    <p class="viewneworder" >Đơn hàng mới
+                    <p class="viewneworder" onclick="showTB()">Đơn hàng mới
                         <div class="noti" id="noti"></div>
                         <div class="neworder" id="neworder" >
                             <table>
@@ -56,6 +56,7 @@
                                     </tr> -->
                                 </tbody>
                             </table>
+                            <button onclick = "checkdonmoi()" >Đã xem</button>
                         </div>
                     </p>
                 </div>

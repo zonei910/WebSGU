@@ -467,7 +467,7 @@ function search() {
   let Customer = JSON.parse(localStorage.getItem("users"));
   let valuesearchinput = document.getElementById("search").value.toUpperCase();
   if (valuesearchinput == "") {
-    printinfor(0);
+    printinfor(1);
     return 0;
   }
   let namesearch = Customer.filter((Customer) => {

@@ -201,16 +201,12 @@ window.onload = () =>{
     if(JSON.parse(localStorage.getItem("donmoi")) == null){
         a.innerHTML = 0;
     }else{
-        a.innerHTML = JSON.parse(localStorage.getItem("donmoi"));
+        a.innerHTML = JSON.parse(localStorage.getItem("donmoi")).length;
     }
 }
 
 
 
-
-function bat_tat_neworder(){
-    
-}
 
 
 

@@ -407,7 +407,11 @@ document.getElementById('imageInput').addEventListener('change', function () {
 function hienthiTT() {
     var tb = "";
     var tongDHM = 0;
-    var donhang = JSON.parse(localStorage.getItem('donhang'));
+    var donhang = JSON.parse(localStorage.getItem('donmoi'));
+    if(donhang == null){
+        alert("Chưa có đơn mới nào");
+        return 0;
+    }
     if (donhang && donhang.length > 0){
         for (let i = donhang.length - 1; i >= 0; i--) {
 

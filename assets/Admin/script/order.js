@@ -1017,3 +1017,15 @@ function sortgiaohang() {
   let showdon = document.querySelector("#Display .order .main table tbody");
   showdon.innerHTML = a;
 }
+
+
+function checkdonmoi(){
+  let a = document.querySelector("#donHangMoi");
+  a.innerHTML = "";
+  let donmoi = JSON.parse(localStorage.getItem("donmoi"));
+  donmoi = [];
+  localStorage.setItem("donmoi" , JSON.stringify(donmoi));
+
+  let b = document.querySelector("#neworder");
+  b.style.display = "block";
+}
