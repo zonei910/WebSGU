@@ -52,8 +52,8 @@
     width: 100%;
 }
 @media (max-width: 900px) {
-    .sidethongke{
-        display: block;
+    .sidethongke1{
+        background-color: #ef9f9f;
     }
 }
 .sidethongke{
@@ -391,4 +391,14 @@
     justify-content: center;
     align-items: center;
 }
-
+/* #container4{
+    height: 100%;
+    width: 100%;
+}
+.outercontainer4{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
