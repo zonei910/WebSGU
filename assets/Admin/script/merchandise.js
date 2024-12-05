@@ -58,22 +58,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function dynamicSearch() {
         const searchInput = document.getElementById("searchInput").value.toLowerCase();
+    
+        // Handle ID search if input is a number
+        const isNumeric = !isNaN(searchInput) && searchInput.trim() !== "";
+    
         filteredProducts = products.filter(product => {
-            return product.name.toLowerCase().includes(searchInput) ||
-                product.category.toLowerCase().includes(searchInput) ||
-                product.description.toLowerCase().includes(searchInput);
+            if (isNumeric) {
+                // Match numeric IDs
+                return product.id.toString().includes(searchInput);
+            } else {
+                // Match other fields (name, category, description)
+                return product.name.toLowerCase().includes(searchInput) ||
+                       product.category.toLowerCase().includes(searchInput) ||
+                       product.description.toLowerCase().includes(searchInput);
+            }
         });
-
+    
         // If search input is empty, reset to original products
         if (searchInput === "") {
             filteredProducts = null;
         }
-
+    
         // Reset pagination and display filtered results
         currentPage = 1;
         displayPaginationButtons(filteredProducts || products);
         displayPage(currentPage);
     }
+    
     // Function to handle search functionality
     function searchProducts() {
         const searchInput = document.getElementById("searchInput").value.toLowerCase();
@@ -81,18 +92,26 @@ document.addEventListener("DOMContentLoaded", () => {
     
         // Handle case where search filter is not valid
         if (searchFilter === "0" || !searchFilter) {
-            alert("Please select a valid filter to search by.");
+            alert("Vui lòng chọn giá trị để lọc trước khi tìm kiếm theo giá trị đã lọc");
             return;
         }
     
+        const isNumeric = !isNaN(searchInput) && searchInput.trim() !== "";
+    
         // Filter products based on the search criteria
         filteredProducts = products.filter(product => {
-            const value = product[searchFilter]?.toString().toLowerCase();
-            return value?.includes(searchInput);
+            if (searchFilter === "id" && isNumeric) {
+                // Match numeric IDs
+                return product.id.toString().includes(searchInput);
+            } else {
+                // Match selected filter field
+                const value = product[searchFilter]?.toString().toLowerCase();
+                return value?.includes(searchInput);
+            }
         });
     
         if (filteredProducts.length === 0) {
-            alert("No products found matching your search.");
+            alert("Không có giá trị nào trung với giá trị bạn muốn tìm");
         }
     
         // Update pagination and display the first page of filtered results
@@ -100,6 +119,10 @@ document.addEventListener("DOMContentLoaded", () => {
         displayPaginationButtons(filteredProducts);
         displayPage(currentPage);
     }
+
+
+
+
     function sortProducts() {
         const sortFilter = document.getElementById("searchFilter").value;
     
@@ -251,7 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
         if (index !== null) {
             const product = products[index];
-            document.getElementById('idInput').value = product.id;
+            // document.getElementById('idInput').value = product.id;
             document.getElementById('nameInput').value = product.name;
             document.getElementById('categoryInput').value = product.category;
             document.getElementById('priceInput').value = product.price;
@@ -277,40 +300,58 @@ document.addEventListener("DOMContentLoaded", () => {
     // Function to validate and update/add the item
     window.updateItem = function() {
         let id;
-        const name = document.getElementById('nameInput').value.trim();
-        const category = document.getElementById('categoryInput').value.trim();
+        let name = document.getElementById('nameInput').value.trim();
+        let category = document.getElementById('categoryInput').value.trim();
         let price = document.getElementById('priceInput').value.trim();
-        const desc = document.getElementById('descInput').value.trim();
-        const imageUploaded = document.getElementById('uploadedImage').src !== '';
+        let desc = document.getElementById('descInput').value.trim();
+        let imageUploaded = document.getElementById('uploadedImage').src;
 
-        if (!name || !category || !price || !desc || !imageUploaded) {
-            alert('Vui lòng thêm ảnh');
-            return false;
-        }
+     
 
         if (editingItemIndex !== null) {
             // Update existing item
-            let gia = parseInt(price);
-            price = gia;
+            let gia;
+            if(name == ""){
+                name =  products[editingItemIndex].name;
+            }
+            if(category == ""){
+                category ==  products[editingItemIndex].category;
+            }
+            if(price == ""){
+                price = parseInt(products[editingItemIndex].price);
+                console.log(price , typeof(price));
+            }
+            if(desc == ""){
+                desc = products[editingItemIndex].description;
+            }
+            if(imageUploaded == ""){
+                imageUploaded = products[editingItemIndex].images[0];
+            }
+            gia = parseInt(price);
+            id =  parseInt(products[editingItemIndex].id);
             products[editingItemIndex] = {
                 id,
                 name,
                 category,
-                price, // Use lowercase 'price'
-                description: desc, // Use lowercase 'description'
-                images: [document.getElementById('uploadedImage').src]
+                price: gia, // Use lowercase 'price'
+                description: desc,// Use lowercase 'description'
+                images: [imageUploaded],
             };
             localStorage.setItem("products", JSON.stringify(products));
-            displayPage(1);
-            alert('Sản phẩm thêm thành công');
+            displayPage(currentPage);
+            alert('Sản phẩm cập nhật thành công');
         } else {
             // Add a new item
+            if (!name || !category || !price || !desc || !imageUploaded) {
+                alert('Vui lòng thêm đầy đủ thuộc tính');
+                return 0;
+            }
             let max = 0;
             for(let i = 0 ; i<products.length;i++){
                 if(max < products[i].id) max = products[i].id;
             }
             let ma = parseInt(max) + 1;
-            id = ma;
+            id = parseInt(ma);
             let gia = parseInt(price);
             price = gia;
             products.push({
@@ -323,13 +364,12 @@ document.addEventListener("DOMContentLoaded", () => {
             });
             localStorage.setItem("products", JSON.stringify(products));
             alert('Sản phầm đã được thêm thành công');
-            displayPage(1);
         }
-
+        loadData();
         displayPage(currentPage);
         closeEditBlock();
     };
-    loadData();
+
     // Function to confirm deletion of a product
     window.confirmDelete = function (index) {
         const dataToDisplay = filteredProducts || products; // Use filtered data if available
@@ -338,18 +378,18 @@ document.addEventListener("DOMContentLoaded", () => {
         // Find the product in the original list
         const originalIndex = products.findIndex(product => product.id === productToDelete.id);
         if (originalIndex === -1) {
-            alert("Error: Could not find the product in the original list.");
+            alert("Không tìm thấy sản phẩm");
             return;
         }
     
         // Confirm deletion
-        const confirmation = confirm(`Are you sure you want to delete "${productToDelete.name}"?`);
+        const confirmation = confirm(`Bạn có chắc chắn muốn xóa sản phẩm "${productToDelete.name}"?`);
         if (confirmation) {
             products.splice(originalIndex, 1); // Remove from original array
             if (filteredProducts) {
                 filteredProducts.splice(index, 1); // Remove from filtered array
             }
-    
+            localStorage.setItem("products" , JSON.stringify(products));
             // Update UI
             displayPaginationButtons(filteredProducts || products);
             displayPage(currentPage);
