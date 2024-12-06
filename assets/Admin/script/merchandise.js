@@ -498,3 +498,8 @@ function showTB() {
         donHangMoi.style.display = "none";  
     }
 }
+
+// Gọi hàm hienthiTT để cập nhật thông tin về số lượng đơn mới ngay khi trang tải
+window.onload = () => {
+    hienthiTT();  
+}
