@@ -1,7 +1,7 @@
-let theyearr = 2024;
+let year = 2024;
 let day = 1;
 let month = 1;
-let theyearrsecond = 2024 + 1;
+let yearsecond = 2024 + 1;
 let daysecond;
 let monthsecond = 1;
 let donhang = [];
@@ -306,41 +306,41 @@ function lowest(product) {
 function checktimeday(receiptime) {
   let arraycopy = JSON.parse(JSON.stringify(receiptime));
   receipt = arraycopy.split("/");
-  if (receipt[2].replace(/^0+/, "") < theyearr) {
+  if (receipt[2].replace(/^0+/, "") < year) {
     return false;
   }
-  if (receipt[2].replace(/^0+/, "") > theyearrsecond) {
+  if (receipt[2].replace(/^0+/, "") > yearsecond) {
     return false;
   }
   if (
-    receipt[2].replace(/^0+/, "") < theyearrsecond &&
-    receipt[2].replace(/^0+/, "") > theyearr
+    receipt[2].replace(/^0+/, "") < yearsecond &&
+    receipt[2].replace(/^0+/, "") > year
   ) {
     return true;
   }
   if (
     receipt[1].replace(/^0+/, "") < month &&
-    receipt[2].replace(/^0+/, "") == theyearr
+    receipt[2].replace(/^0+/, "") == year
   ) {
     return false;
   }
   if (
     receipt[1].replace(/^0+/, "") > monthsecond &&
-    receipt[2].replace(/^0+/, "") == theyearrsecond
+    receipt[2].replace(/^0+/, "") == yearsecond
   ) {
     return false;
   }
   if (
     receipt[0].replace(/^0+/, "") < day &&
     receipt[1].replace(/^0+/, "") == month &&
-    receipt[2].replace(/^0+/, "") == theyearr
+    receipt[2].replace(/^0+/, "") == year
   ) {
     return false;
   }
   if (
     receipt[0].replace(/^0+/, "") > daysecond &&
     receipt[1].replace(/^0+/, "") == monthsecond &&
-    receipt[2].replace(/^0+/, "") == theyearrsecond
+    receipt[2].replace(/^0+/, "") == yearsecond
   ) {
     return false;
   }
@@ -348,14 +348,29 @@ function checktimeday(receiptime) {
 }
 
 //lấy mảng Customer mới với lịch sử mua hàng thỏa điều kiện
+// function arrayCustomer(Customer) {
+//   return Customer.filter((Customer) => {
+//     const filteredlichsuMuaHangs = Customer.lichsuMuaHang.filter(
+//       (lichsuMuaHang) => {
+//         return checktimeday(lichsuMuaHang.ngaydat);
+//       }
+//     );
+//     if (filteredlichsuMuaHangs.length > 0) {
+//       return {
+//         ...Customer,
+//         lichsuMuaHang: filteredlichsuMuaHangs,
+//       };
+//     }
+//   }).filter((Customer) => Customer);
+// }
 function arrayCustomer(Customer) {
-  return Customer.filter((Customer) => {
-    const filteredlichsuMuaHangs = Customer.lichsuMuaHang.filter(
-      (lichsuMuaHang) => {
-        return checktimeday(lichsuMuaHang.ngaydat);
-      }
-    );
+  return Customer.map((Customer) => {
+    let filteredlichsuMuaHangs=Customer.lichsuMuaHang.filter(lichsu=>{
+      return checktimedate(lichsu.ngaydat);
+    })
+    console.log(filteredlichsuMuaHangs);
     if (filteredlichsuMuaHangs.length > 0) {
+      console.log(Customer);
       return {
         ...Customer,
         lichsuMuaHang: filteredlichsuMuaHangs,
@@ -508,24 +523,24 @@ function inputdate() {
   if (time) {
     day = parseInt(time.split("-")[2].replace(/^0+/, ""), 10);
     month = parseInt(time.split("-")[1].replace(/^0+/, ""), 10);
-    theyearr = parseInt(time.split("-")[0].replace(/^0+/, ""), 10);
+    year = parseInt(time.split("-")[0].replace(/^0+/, ""), 10);
   }
   const timesec = document.getElementById("timesecond").value;
   if (timesec) {
     daysecond = parseInt(timesec.split("-")[2].replace(/^0+/, ""), 10);
     monthsecond = parseInt(timesec.split("-")[1].replace(/^0+/, ""), 10);
-    theyearrsecond = parseInt(timesec.split("-")[0].replace(/^0+/, ""), 10);
+    yearsecond = parseInt(timesec.split("-")[0].replace(/^0+/, ""), 10);
   }
   if(timesec && document.getElementById("timefirst").value){
-      if(theyearrsecond<theyearr){
+      if(yearsecond<year){
           alert("Bạn nhập sai ngày");
           return;
       }
-      if(theyearrsecond==theyearr && monthsecond<month){
+      if(yearsecond==year && monthsecond<month){
           alert("Bạn nhập sai ngày");
           return;
       }
-      if(theyearrsecond==theyearr && monthsecond==month && daysecond<day){
+      if(yearsecond==year && monthsecond==month && daysecond<day){
           alert("Bạn nhập sai ngày");
           return;
       }

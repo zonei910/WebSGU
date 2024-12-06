@@ -26,20 +26,68 @@ function checktimedate(receiptime) {
     return false;
   }
   if (
-    receipt[0].replace(/^0+/, "") < date &&
+    receipt[0].replace(/^0+/, "") < day &&
     receipt[1].replace(/^0+/, "") == month &&
     receipt[2].replace(/^0+/, "") == year
   ) {
     return false;
   }
   if (
-    receipt[0].replace(/^0+/, "") > datesecond &&
+    receipt[0].replace(/^0+/, "") > daysecond &&
     receipt[1].replace(/^0+/, "") == monthsecond &&
     receipt[2].replace(/^0+/, "") == yearsecond
   ) {
     return false;
   }
   return true;
+}
+function taketime(phone){
+  let Customer = JSON.parse(localStorage.getItem("users"));
+  const time = document.getElementById("taketimefirst").value;
+  if (time) {
+    day = parseInt(time.split("-")[2].replace(/^0+/, ""), 10);
+    month = parseInt(time.split("-")[1].replace(/^0+/, ""), 10);
+    year = parseInt(time.split("-")[0].replace(/^0+/, ""), 10);
+  }
+  const timesec = document.getElementById("taketimesecond").value;
+  if (timesec) {
+    daysecond = parseInt(timesec.split("-")[2].replace(/^0+/, ""), 10);
+    monthsecond = parseInt(timesec.split("-")[1].replace(/^0+/, ""), 10);
+    yearsecond = parseInt(timesec.split("-")[0].replace(/^0+/, ""), 10);
+  }
+  if (timesec && document.getElementById("taketimefirst").value) {
+    if (yearsecond < year) {
+      alert("Bạn nhập sai ngày");
+      yearsecond=null;
+      year=null;
+      day=null;
+      daysecond=null;
+      month=null;
+      monthsecond=null;
+      return;
+    }
+    if (yearsecond == year && monthsecond < month) {
+      alert("Bạn nhập sai ngày");
+      yearsecond=null;
+      year=null;
+      day=null;
+      daysecond=null;
+      month=null;
+      monthsecond=null;
+      return;
+    }
+    if (yearsecond == year && monthsecond == month && daysecond < day) {
+      alert("Bạn nhập sai ngày");
+      yearsecond=null;
+      year=null;
+      day=null;
+      daysecond=null;
+      month=null;
+      monthsecond=null;
+      return;
+    }
+    printinforordernew(phone,arrayCustomerr(Customer));
+  }
 }
 function closedproduct() {
   document.getElementById("printorder").style.display = "none";
@@ -94,55 +142,9 @@ function editclient(Phone) {
     }
   });
 }
-function taketime(phone){
-  let Customer = JSON.parse(localStorage.getItem("users"));
-  const time = document.getElementById("taketimefirst").value;
-  if (time) {
-    day = parseInt(time.split("-")[2].replace(/^0+/, ""), 10);
-    month = parseInt(time.split("-")[1].replace(/^0+/, ""), 10);
-    year = parseInt(time.split("-")[0].replace(/^0+/, ""), 10);
-  }
-  const timesec = document.getElementById("taketimesecond").value;
-  if (timesec) {
-    daysecond = parseInt(timesec.split("-")[2].replace(/^0+/, ""), 10);
-    monthsecond = parseInt(timesec.split("-")[1].replace(/^0+/, ""), 10);
-    yearsecond = parseInt(timesec.split("-")[0].replace(/^0+/, ""), 10);
-  }
-  if (timesec && document.getElementById("taketimefirst").value) {
-    if (yearsecond < year) {
-      alert("Bạn nhập sai ngày");
-      yearsecond=null;
-      year=null;
-      date=null;
-      datesecond=null;
-      month=null;
-      monthsecond=null;
-      return;
-    }
-    if (yearsecond == year && monthsecond < month) {
-      alert("Bạn nhập sai ngày");
-      yearsecond=null;
-      year=null;
-      date=null;
-      datesecond=null;
-      month=null;
-      monthsecond=null;
-      return;
-    }
-    if (yearsecond == year && monthsecond == month && daysecond < day) {
-      alert("Bạn nhập sai ngày");
-      yearsecond=null;
-      year=null;
-      date=null;
-      datesecond=null;
-      month=null;
-      monthsecond=null;
-      return;
-    }
-    printinforordernew(phone,arrayCustomer(Customer));
-  }
-}
+
 function printinforordernew(phone,Customer){
+  console.log(Customer);
   document.getElementById("innerorder").innerHTML="";
   document.getElementById("printorder").style.display = "flex";
   document.querySelector("#printorder").innerHTML=`
@@ -165,7 +167,6 @@ function printinforordernew(phone,Customer){
     let a=0;
   for (let i = 0; i < Customer.length; i++) {
     if (Customer[i].phone == phone) {
-
       for (let j = 0; j < Customer[i].lichsuMuaHang.length; j++) {
         const product = Customer[i].lichsuMuaHang[j];
         const outercreatediv=document.createElement("div");
@@ -362,14 +363,14 @@ function printinfororder(phone) {
 //       section.appendChild(creatediv); // Thêm thông điệp vào section
 //   }
 // }
-function arrayCustomer(Customer) {
-  return Customer.filter((Customer) => {
-    const filteredlichsuMuaHangs = Customer.lichsuMuaHang.filter(
-      (lichsuMuaHang) => {
-        return checktimedate(lichsuMuaHang.ngaydat);
-      }
-    );
+function arrayCustomerr(Customer) {
+  return Customer.map((Customer) => {
+    let filteredlichsuMuaHangs=Customer.lichsuMuaHang.filter(lichsu=>{
+      return checktimedate(lichsu.ngaydat);
+    })
+    console.log(filteredlichsuMuaHangs);
     if (filteredlichsuMuaHangs.length > 0) {
+      console.log(Customer);
       return {
         ...Customer,
         lichsuMuaHang: filteredlichsuMuaHangs,
@@ -593,7 +594,7 @@ function hienkhoa(phone) {
             const creatediv = document.createElement("div");
             creatediv.innerHTML = `
                         <div><div class="TheHide">Người dùng sẽ bị khóa cho đến khi admin mở lại</div></div>
-                        <label for="inputkhoand">Hãy nhập lý do khóa người dùng: </label> 
+                        <label for="inputkhoand">Hãy nhập lý do khóa người dùng : </label> 
                         <input type="text" id="inputkhoand" placeholder="Enter"> 
                         <input type="submit" id="submitkhoa" onclick="submitkhoa('${customer.phone.toString()}')"><br>
                     `;
@@ -604,6 +605,7 @@ function hienkhoa(phone) {
             document.getElementById("contentkhoa").innerHTML = `
                         <div>Bỏ khóa người dùng  
                         <input type="button" onclick="khoanguoidung('${phone}')" class="bokhoa" value="click"></div>
+                        Lý do khóa : ${customer.reasonkhoa}:
                     `;
           }
         })
@@ -698,6 +700,7 @@ function submitkhoa(phone) {
       break;
     }
   }
+  localStorage.setItem('users', JSON.stringify(Customer));
 }
 let currentpage;
 function nutphantrang() {
