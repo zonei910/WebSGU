@@ -464,7 +464,9 @@ function newstatus(phone,key,status){
 //       </div>`;
 //     }
 // }
-
+function addaccount(phone){
+  
+}
 function printinfor(page) {
 
   let Customer = JSON.parse(localStorage.getItem("users"));
@@ -483,7 +485,7 @@ function printinfor(page) {
             <div>${Customer.name}</div>
             <div>${Customer.phone}</div>
             <div class="Thehide">${Customer.email}</div>
-            <div><i class="fa-solid fa-key" id="khoa-${Customer.phone}" onclick="hienkhoa('${Customer.phone}')"></i> <i class="fa-regular fa-pen-to-square edit"  onclick="editclient('${Customer.phone}')"></i> <i id="show" class="fa-solid fa-angle-down angle" onclick="printinfororder('${Customer.phone.toString()}')"></i></div>
+            <div><i class="fa-solid fa-plus" onclick="add('${Customer.phone}')"></i> <i class="fa-solid fa-key" id="khoa-${Customer.phone}" onclick="hienkhoa('${Customer.phone}')"></i> <i class="fa-regular fa-pen-to-square edit"  onclick="editclient('${Customer.phone}')"></i> <i id="show" class="fa-solid fa-angle-down angle" onclick="printinfororder('${Customer.phone.toString()}')"></i></div>
         </div>`;
         document.getElementById("container4").innerHTML += clientouterr;
     const a = "khoa-" + Customer.phone;

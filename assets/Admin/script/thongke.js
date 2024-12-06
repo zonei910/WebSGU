@@ -10,6 +10,8 @@ function taohangthongke(Customer, product) {
   if (true) {
     addprofitforcustomer(Customer);
     addprofitforproduct(product);
+    console.log(Customer);
+    console.log(product);
     const doanhthu = document.querySelector(".container3");
     doanhthu.innerHTML = `
               <div class="doanhthu">
@@ -274,11 +276,13 @@ function highest(product) {
       productwithmax = product;
     }
   });
+  
   return productwithmax || {
     ten:"no infor",
     loai:"no infor",
     id:"no infor",
-    hinh:"no infor",
+    hinh:"./stock-image/bracelet/white.jpg",
+    
     soLuong:0,
     profit:0,
     totalprice
@@ -297,7 +301,7 @@ function lowest(product) {
     ten:"no infor",
     loai:"no infor",
     id:"no infor",
-    hinh:"no infor",
+    hinh:"./stock-image/bracelet/white.jpg",
     soLuong:0,
     profit:0,
   }
