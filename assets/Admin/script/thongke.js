@@ -18,7 +18,7 @@ function taohangthongke(Customer, product) {
               <div>ID</div>
                   <div>Tên sản phẩm</div>
                   <div>Số lượng đã bán</div>
-                  <div class="theehide">Tổng tiền</div>
+                  <div class="theehide">Tổng tiền thu được</div>
               </div>`;
     product.forEach((giohang) => {
       const createrow = document.createElement("div");
@@ -34,7 +34,7 @@ function taohangthongke(Customer, product) {
                       ${giohang.soLuong}
                   </div>
                   <div class="theehide">
-                      ${formatVND(giohang.profit)} 
+                      ${formatVND(giohang.gia)} 
                   </div>
                   `;
       doanhthu.innerHTML += createrow.outerHTML;
@@ -496,7 +496,7 @@ function aggregateCartItems(Customers){
             let theproduct=aggregatedItems.find(pro => pro.id == product.id);
             theproduct.soLuong += product.soLuong;
             theproduct.profit += product.soLuong*product.profit;
-            theproduct.gia += product.soLuong+product.gia;
+            theproduct.gia += product.soLuong*product.gia;
           }
           else{
             uni.add(product.id);
