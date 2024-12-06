@@ -1,3 +1,11 @@
+
+@media (max-width: 1400px){
+	#Menu{
+		display: block;
+	}
+}
+
+
 @media (max-width: 768px){
 	html{
 		max-height: 400px;
@@ -31,7 +39,7 @@
 	}
 
 	#Header{
-		width: 100%;
+		width: 1000px;
 	}
 
 	#Header .inner-container{
@@ -61,7 +69,7 @@
 
 
 	#Display .order .head{
-		width: 100%;
+		width: 1000px;
 	}
 
 	#Menu .close_menu{
@@ -71,11 +79,11 @@
 	}
 
 	#Display .order .foot .pagination{
-		width: 768px;
+		width: 100%;
 	}
 
 		#Display .order .foot{
-			width: 100%;
+			width: 1000px;
 		}
 
 		
@@ -133,6 +141,16 @@
     #Display .merchandise .product-info span{
     	height: 100%;
     }
+
+
+	#ttadmin{
+		width: 1000px;
+	}
+
+	#Display .merchandise #prod-edit-display{
+		width: 1000px;
+	}
+
 
 
 }
