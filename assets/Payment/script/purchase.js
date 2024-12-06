@@ -12,6 +12,7 @@ chooseCard.checked = false;
 Bank.style.display = "none";
 stk.style.display = "none";
 confirm.style.display = "none";
+contactPhone();
 }
 
 stk.style.display = "none";

@@ -6,7 +6,7 @@
 
 
 #Display .head{
-    background-color: #363A3F;
+    background-color: #E2F1F2;
     padding: 10px;
 }
 
@@ -75,7 +75,7 @@
 
 
 #Display .foot{
-    background-color: #363A3F;
+    background-color: #E2F1F2;
     padding: 10px;
     margin-top:10px;
 }
@@ -89,10 +89,10 @@
 }
 
 #Display .foot .button .item{
-    border: 2px solid white;
+    border: 2px solid black;
     display: inline-block;
     width: 5%;
-    color:white;
+    color:black;
     margin: 3px;
     border-radius: 2px;;
 }
@@ -102,16 +102,11 @@
     border: solid 2.1px aqua;
 }
 
-#Display .display{
-    height: 500px;
-
-}
 
 #Display .display .item{
     display:flex;
     align-items: center;
-    border: 3px solid black;
-    width: 50;
+    border: 1px solid black;
     padding: 10px;
 }
 
