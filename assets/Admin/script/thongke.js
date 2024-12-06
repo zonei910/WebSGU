@@ -31,7 +31,7 @@ function taohangthongke(Customer, product) {
                       ${giohang.soLuong}
                   </div>
                   <div class="theehide">
-                      ${(giohang.profit)} 
+                      ${formatVND(giohang.profit)} 
                   </div>
                   `;
       doanhthu.innerHTML += createrow.outerHTML;
@@ -45,6 +45,41 @@ function taohangthongke(Customer, product) {
       arrayCustomerwithtotalprofit(Customer)
     );
     const creatediv = document.createElement("div");
+    let hi;
+    if(productwithhighestprofit.loai == "watch"){
+        hi = "Đồng hồ";
+    }
+    if(productwithhighestprofit.loai == "ring"){
+        hi = "Nhẫn";
+    }
+    if(productwithhighestprofit.loai == "necklace"){
+        hi = "Vòng cổ";
+    }
+    if(productwithhighestprofit.loai == "bracelet"){
+        hi = "Vòng tay";
+    }
+    if(productwithhighestprofit.loai == "earring"){
+        hi = "Khuyên tai";
+    }
+
+    let ho;
+    if(productwithlowestprofit.loai == "watch"){
+        ho = "Đồng hồ";
+    }
+    if(productwithlowestprofit.loai == "ring"){
+        ho = "Nhẫn";
+    }
+    if(productwithlowestprofit.loai == "necklace"){
+        ho = "Vòng cổ";
+    }
+    if(productwithlowestprofit.loai == "bracelet"){
+        ho = "Vòng tay";
+    }
+    if(productwithlowestprofit.loai == "earring"){
+        ho = "Khuyên tai";
+    }
+
+
     creatediv.className = "";
     creatediv.innerHTML = `
                           <div class="thongkesanpham">
@@ -54,9 +89,9 @@ function taohangthongke(Customer, product) {
                           <div class="productinner"> 
                               <div class="divimage thedisplay"><image  class="imagethongke"src="${productwithhighestprofit.hinh}"></image></div>
                               <div><div >ID</div><div>${productwithhighestprofit.id}</div></div>
-                              <div><div >Loại sản phẩm</div><div>${productwithhighestprofit.loai}</div></div>
+                              <div><div >Loại sản phẩm</div><div>${hi}</div></div>
                               <div><div >Tên sản phẩm</div><div>${productwithhighestprofit.ten}</div></div>
-                              <div ><div class="thehide">Tổng lợi nhuận</div><div class="thehide">${(productwithhighestprofit.profit)}</div></div>
+                              <div ><div class="thehide">Tổng lợi nhuận</div><div class="thehide">${formatVND(productwithhighestprofit.profit)}</div></div>
                               <div ><div class="thehide">Số lượng đã bán</div><div class="thehide">${productwithhighestprofit.soLuong}</div></div>
                           </div>
                       </div>
@@ -67,9 +102,9 @@ function taohangthongke(Customer, product) {
                           <div class="productinner"> 
                               <div class="divimage thedisplay"><image  class="imagethongke"src="${productwithlowestprofit.hinh}"></image></div>
                               <div><div >ID</div><div >${productwithlowestprofit.id}</div></div>
-                              <div><div >Loại sản phẩm</div><div >${productwithlowestprofit.loai}</div></div>
+                              <div><div >Loại sản phẩm</div><div >${ho}</div></div>
                               <div><div >Tên sản phẩm</div><div >${productwithlowestprofit.ten}</div></div>
-                              <div ><div class="thehide">Tổng lợi nhuận</div><div class="thehide">${(productwithlowestprofit.profit)}</div></div>
+                              <div ><div class="thehide">Tổng lợi nhuận</div><div class="thehide">${formatVND(productwithlowestprofit.profit)}</div></div>
                               <div ><div class="thehide">Số lượng dã bán</div><div class="thehide">${productwithlowestprofit.soLuong}</div></div>
                           </div>
                       </div>
@@ -82,20 +117,20 @@ function taohangthongke(Customer, product) {
                   </div>
                   <div class="cuswithlowestprofit"> 
                           <div >
-                              <div class="head thedisplay">Highest profit</div>
+                              <div class="head thedisplay">Lợi nhuận cao nhất</div>
                               <div class="thedisplay">${Customerwithhighestprofit.name}</div>
                               <div class="thedisplay">${Customerwithhighestprofit.totalproduct}</div>
-                              <div class="thedisplay">${(Customerwithhighestprofit.totalprice)}</div>
+                              <div class="thedisplay">${formatVND(Customerwithhighestprofit.totalprice)}</div>
                               <div class="thehide">${Customerwithhighestprofit.address}</div>
                               <div class="thehide">${Customerwithhighestprofit.email}</div>
                           </div>
                   </div>
                       <div class="cuswithhighestprofit">              
                               <div>
-                                  <div class="head thedisplay">Lowest profit</div>
+                                  <div class="head thedisplay">Lợi nhuận thấp nhất</div>
                                   <div class="thedisplay">${Customerwithlowestprofit.name}</div>
                                   <div class="thedisplay">${Customerwithlowestprofit.totalproduct}</div>
-                                  <div class="thedisplay">${(Customerwithlowestprofit.totalprice)}</div>
+                                  <div class="thedisplay">${formatVND(Customerwithlowestprofit.totalprice)}</div>
                                   <div class="thehide">${Customerwithlowestprofit.address}</div>
                                   <div class="thehide">${Customerwithlowestprofit.email}</div>
                               </div>
@@ -106,10 +141,10 @@ function taohangthongke(Customer, product) {
     document.querySelector(".thongke").innerHTML += creatediv.innerHTML;
     let a = gettotal(arrayCustomerwithtotalprofit(Customer));
 
-    document.getElementById("totalprofit").innerText = (a.totalprofit);
+    document.getElementById("totalprofit").innerText = formatVND(a.totalprofit);
     document.getElementById("totalproduct").innerText = a.totalproduct;
     document.getElementById("totaluser").innerText = a.totaluser;
-    document.getElementById("totalprice").innerText = (a.totalprice);
+    document.getElementById("totalprice").innerText = formatVND(a.totalprice);
   } else {/*
     const doanhthu = document.querySelector(".container3");
     doanhthu.innerHTML = `

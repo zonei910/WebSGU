@@ -61,7 +61,7 @@
                     </p>
                 </div>
                 <div class="item">
-                    Xin chào,<div style="display:inline;color:blue;cursor:pointer" class="admin-info"><span class="admin_name"></span>
+                    Xin chào,<div style="display:inline;color:blue;cursor:pointer" class="admin-info"><span class="admin_name">hello</span>
                         <!-- Admin info -->
                         <ul id="Admin-info">
                             <div>Thông tin</div>
@@ -84,8 +84,8 @@
     <main id="Main">
         <Section id="Menu">
             <div>
-                <div class="close_menu">
-                    <i class="fa-solid fa-x " onclick="tat_mo_navbar()"></i>
+                <div class="close_menu" onclick="tat_mo_navbar()">
+                    <i class="fa-solid fa-x " ></i>
                 </div>
                 <div class="viewpage">
                     <i class="fa-solid fa-file-code"></i>
@@ -323,7 +323,7 @@
                 
                     <div class="outer">
                         <div class="container0">
-                            <div><input type="text" placeholder="Search hear" > <i class="fa-solid fa-magnifying-glass"></i></div>
+                            <div><input type="text" placeholder="Tìm kiếm" > <i class="fa-solid fa-magnifying-glass"></i></div>
                             <div>
                                 <div><input type="date" id="timefirst" ></div>
                                 <div>-</div>
@@ -376,7 +376,7 @@
             <!-- Danh sách user -->
             <div class="userlist">
                 <div class="outer">
-                    <div class="container3" ><input type="text" id="search" placeholder="Search content here" oninput="search()">  <i class="fa-solid fa-magnifying-glass"></i> </div>
+                    <div class="container3" ><input type="text" id="search" placeholder="Tìm kiếm" oninput="search()">  <i class="fa-solid fa-magnifying-glass"></i> </div>
                     <div class="outercontainer4">
                         <div id="container4">
                             <div class="clientouter" id="clientouter">
@@ -464,7 +464,7 @@
                             <!-- Search block, initially hidden -->
                         </nav>
                         <div id="searchBlock" style="display: none; padding: 10px;">
-                            <input type="text" id="searchInput" placeholder="Search..." style="width: 70%; padding: 5px;">
+                            <input type="text" id="searchInput" placeholder="Nhập giá trị cần tìm" style="width: 70%; padding: 5px;">
                             <button id="searchSubmitButton">Tìm kiếm</button>
                             <select id="searchFilter">
                                 <option value="0">Lọc theo: </option> 
@@ -497,7 +497,7 @@
                     <div class="DisplayEditItemBlock" style="display: none;">
                         <div class="EditItemHeader">
                             <div class="ProperHeaderDisplay">
-                                <div>Edit Item</div>
+                                <div style="width: max-content;">Khung chỉnh sửa</div>
                                 <button onclick="closeEditBlock()"><i class="fa-solid fa-xmark"></i></button>
                             </div>
                             <div class="DisplayEditItemBody" id="imageDropArea"><p id="uploadText">Ném ảnh vào đây hoặc chọn ảnh phía dưới</p>
@@ -508,7 +508,13 @@
                                 <label for="name">Tên: </label>
                                 <input type="text" name="name" id="nameInput">
                                 <label for="category">Loại: </label>
-                                <input type="text" name="category" id="categoryInput">
+                                <select name="" id="categoryInput">
+                                    <option value="watch">Đồng hồ</option>
+                                    <option value="ring">Nhẫn</option>
+                                    <option value="necklace">Vòng cổ</option>
+                                    <option value="bracelet">Vòng tay</option>
+                                    <option value="earring">Khuyên tai</option>
+                                </select>
                                 <label for="price">Giá: </label>
                                 <input type="text" name="price" id="priceInput">
                                 <label for="desc">Mô tả: </label>
@@ -537,11 +543,11 @@
                         <div class="thongtin">
                             <form action="">
                                 <p>Tên tài khoản: </p>
-                                <input type="text" id="ad-taikhoan" value=""><br>
+                                <input type="text" id="ad-taikhoan" value="" ><br>
                                 <p>Số điện thoại: </p>
-                                <input type="tel" name="" id="ad-sdt" value=""><br>
+                                <input type="tel" name="" id="ad-sdt" value="" ><br>
                                 <p>Chi nhánh: </p>
-                                <input type="text" name="" id="ad-chinhanh" value=""><br><br>
+                                <input type="text" name="" id="ad-chinhanh" value="" readonly><br><br>
                                 <button onclick="luuAdminTT()">Lưu thay đổi</button>
                             </form>
                         </div>
@@ -567,8 +573,8 @@
     <!-- Kết thúc Main -->
     <script language="javascript" src="product.js"></script>
     <script language="javascript" src="customer.js"></script>
-    <script language="javascript" src="assets/Admin/script/customerpage.js"></script>
     <script language="javascript" src="assets/Admin/script/navbar.js"></script>
+    <script language="javascript" src="assets/Admin/script/customerpage.js"></script>
     <script language="javascript" src="./assets/Admin/script/thongke.js"></script>
     <script language="javascript" src="assets/Admin/script/order.js"></script>
     <script language="javascript" src="assets/Admin/script/merchandise.js"></script>

@@ -795,6 +795,9 @@ function luuAdminTT(){
   localStorage.setItem('admin', JSON.stringify(ad));
   alert("Cập nhật thông tin thành công.")
 }
+
+
+
 function doiAdminMk() {
   let ad = JSON.parse(localStorage.getItem("admin"));
   let adminMk = document.getElementById('ad-old').value;

@@ -51,7 +51,7 @@ function dangky(event) {
     // Kiểm tra trùng số điện thoại admin
     const admin = JSON.parse(localStorage.getItem("admin"));
     if (admin && admin.phone === phone) {
-        alert("Số điện thoại này đã được sử dụng bởi tài khoản admin!");
+        alert("Số điện thoại đã tồn tại!");
         return;
     }
 
@@ -63,7 +63,7 @@ function dangky(event) {
 
     // kiem tra sdt co trung của user
     if (Customer.some(user => user.phone === phone)) {
-        alert("Số điện thoại đã được đăng ký!");
+        alert("Số điện thoại đã tồn tại!");
         return false;
     }
 
