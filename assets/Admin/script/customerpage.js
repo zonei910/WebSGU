@@ -26,20 +26,68 @@ function checktimedate(receiptime) {
     return false;
   }
   if (
-    receipt[0].replace(/^0+/, "") < date &&
+    receipt[0].replace(/^0+/, "") < day &&
     receipt[1].replace(/^0+/, "") == month &&
     receipt[2].replace(/^0+/, "") == year
   ) {
     return false;
   }
   if (
-    receipt[0].replace(/^0+/, "") > datesecond &&
+    receipt[0].replace(/^0+/, "") > daysecond &&
     receipt[1].replace(/^0+/, "") == monthsecond &&
     receipt[2].replace(/^0+/, "") == yearsecond
   ) {
     return false;
   }
   return true;
+}
+function taketime(phone){
+  let Customer = JSON.parse(localStorage.getItem("users"));
+  const time = document.getElementById("taketimefirst").value;
+  if (time) {
+    day = parseInt(time.split("-")[2].replace(/^0+/, ""), 10);
+    month = parseInt(time.split("-")[1].replace(/^0+/, ""), 10);
+    year = parseInt(time.split("-")[0].replace(/^0+/, ""), 10);
+  }
+  const timesec = document.getElementById("taketimesecond").value;
+  if (timesec) {
+    daysecond = parseInt(timesec.split("-")[2].replace(/^0+/, ""), 10);
+    monthsecond = parseInt(timesec.split("-")[1].replace(/^0+/, ""), 10);
+    yearsecond = parseInt(timesec.split("-")[0].replace(/^0+/, ""), 10);
+  }
+  if (timesec && document.getElementById("taketimefirst").value) {
+    if (yearsecond < year) {
+      alert("Bạn nhập sai ngày");
+      yearsecond=null;
+      year=null;
+      day=null;
+      daysecond=null;
+      month=null;
+      monthsecond=null;
+      return;
+    }
+    if (yearsecond == year && monthsecond < month) {
+      alert("Bạn nhập sai ngày");
+      yearsecond=null;
+      year=null;
+      day=null;
+      daysecond=null;
+      month=null;
+      monthsecond=null;
+      return;
+    }
+    if (yearsecond == year && monthsecond == month && daysecond < day) {
+      alert("Bạn nhập sai ngày");
+      yearsecond=null;
+      year=null;
+      day=null;
+      daysecond=null;
+      month=null;
+      monthsecond=null;
+      return;
+    }
+    printinforordernew(phone,arrayCustomerr(Customer));
+  }
 }
 function closedproduct() {
   document.getElementById("printorder").style.display = "none";
@@ -50,7 +98,6 @@ function closededitclient() {
 function editclient(Phone) {
   // let phone="0"+Phone;
   let phone=Phone;
-  console.log(phone);
   let Customer = JSON.parse(localStorage.getItem("users"));
   document.getElementById("sectioneditclient").style.display = "flex";
   document.getElementById("editkh").addEventListener("click", function (event) {
@@ -74,8 +121,6 @@ function editclient(Phone) {
         return;
       }
       Customer.forEach(customer=>{
-        console.log(customer.phone);
-        console.log(phone);
         if(customer.phone==phone){
           customer.name = hoten;
           customer.phone = thephone;
@@ -97,60 +142,10 @@ function editclient(Phone) {
     }
   });
 }
-function taketime(phone){
-  console.log(phone);
-  let Customer = JSON.parse(localStorage.getItem("users"));
-  const time = document.getElementById("taketimefirst").value;
-  if (time) {
-    day = parseInt(time.split("-")[2].replace(/^0+/, ""), 10);
-    month = parseInt(time.split("-")[1].replace(/^0+/, ""), 10);
-    year = parseInt(time.split("-")[0].replace(/^0+/, ""), 10);
-  }
-  const timesec = document.getElementById("taketimesecond").value;
-  if (timesec) {
-    daysecond = parseInt(timesec.split("-")[2].replace(/^0+/, ""), 10);
-    monthsecond = parseInt(timesec.split("-")[1].replace(/^0+/, ""), 10);
-    yearsecond = parseInt(timesec.split("-")[0].replace(/^0+/, ""), 10);
-  }
-  if (timesec && document.getElementById("taketimefirst").value) {
-    if (yearsecond < year) {
-      alert("Bạn nhập sai ngày");
-      yearsecond=null;
-      year=null;
-      date=null;
-      datesecond=null;
-      month=null;
-      monthsecond=null;
-      return;
-    }
-    if (yearsecond == year && monthsecond < month) {
-      alert("Bạn nhập sai ngày");
-      yearsecond=null;
-      year=null;
-      date=null;
-      datesecond=null;
-      month=null;
-      monthsecond=null;
-      return;
-    }
-    if (yearsecond == year && monthsecond == month && daysecond < day) {
-      alert("Bạn nhập sai ngày");
-      yearsecond=null;
-      year=null;
-      date=null;
-      datesecond=null;
-      month=null;
-      monthsecond=null;
-      return;
-    }
-    printinforordernew(phone,arrayCustomer(Customer));
-  }
-}
+
 function printinforordernew(phone,Customer){
-  document.getElementById("innerorder").innerHTML="";
-  console.log(phone);
   console.log(Customer);
-  console.log(phone);
+  document.getElementById("innerorder").innerHTML="";
   document.getElementById("printorder").style.display = "flex";
   document.querySelector("#printorder").innerHTML=`
       <div id="innerorder"><i class="fa-solid fa-x" onclick="closedproduct()"></i>
@@ -172,7 +167,6 @@ function printinforordernew(phone,Customer){
     let a=0;
   for (let i = 0; i < Customer.length; i++) {
     if (Customer[i].phone == phone) {
-
       for (let j = 0; j < Customer[i].lichsuMuaHang.length; j++) {
         const product = Customer[i].lichsuMuaHang[j];
         const outercreatediv=document.createElement("div");
@@ -207,7 +201,6 @@ function printinforordernew(phone,Customer){
                     <div>${product.ngaydat}</div>
                     `;
           outercreatediv.appendChild(creatediv);
-          console.log(outercreatediv);
         }
         let k=j;
         let thestatus=document.createElement("div");
@@ -245,7 +238,6 @@ function printinforordernew(phone,Customer){
   // }
 }
 function printinfororder(phone) {
-  console.log(phone);
   let Customer = JSON.parse(localStorage.getItem("users"));
   document.getElementById("printorder").style.display = "flex";
   document.querySelector("#printorder").innerHTML=`
@@ -371,15 +363,14 @@ function printinfororder(phone) {
 //       section.appendChild(creatediv); // Thêm thông điệp vào section
 //   }
 // }
-function arrayCustomer(Customer) {
-  // console.log(Customer)
-  return Customer.filter((Customer) => {
-    const filteredlichsuMuaHangs = Customer.lichsuMuaHang.filter(
-      (lichsuMuaHang) => {
-        return checktimedate(lichsuMuaHang.ngaydat);
-      }
-    );
+function arrayCustomerr(Customer) {
+  return Customer.map((Customer) => {
+    let filteredlichsuMuaHangs=Customer.lichsuMuaHang.filter(lichsu=>{
+      return checktimedate(lichsu.ngaydat);
+    })
+    console.log(filteredlichsuMuaHangs);
     if (filteredlichsuMuaHangs.length > 0) {
+      console.log(Customer);
       return {
         ...Customer,
         lichsuMuaHang: filteredlichsuMuaHangs,
@@ -488,7 +479,6 @@ function printinfor(page) {
         <div class="Thehide">Email</div>
     </div>`;
   newCustomer.forEach((Customer) => {
-    console.log(Customer.phone);
     const clientouterr = `<div class="clientouter" id="clientouter-${Customer.phone}">
             <div>${Customer.name}</div>
             <div>${Customer.phone}</div>
@@ -510,7 +500,6 @@ function closedkhoa() {
   document.getElementById("khoaclient").style.display = "none";
 }
 function khoanguoidung(phone) {
-  console.log(phone);
   let Customer = JSON.parse(localStorage.getItem("users"));
   for (let i = 0; i < Customer.length; i++) {
     if (Customer[i].phone == phone) {
@@ -591,7 +580,6 @@ function printsearcharray(newarray) {
   });
 }
 function hienkhoa(phone) {
-  console.log(phone);
   let Customer=JSON.parse(localStorage.getItem("users"));
   document.getElementById("khoaclient").style.display = "flex";
   let hienkh = document.querySelector(".printkh");
@@ -606,7 +594,7 @@ function hienkhoa(phone) {
             const creatediv = document.createElement("div");
             creatediv.innerHTML = `
                         <div><div class="TheHide">Người dùng sẽ bị khóa cho đến khi admin mở lại</div></div>
-                        <label for="inputkhoand">Hãy nhập lý do khóa người dùng: </label> 
+                        <label for="inputkhoand">Hãy nhập lý do khóa người dùng : </label> 
                         <input type="text" id="inputkhoand" placeholder="Enter"> 
                         <input type="submit" id="submitkhoa" onclick="submitkhoa('${customer.phone.toString()}')"><br>
                     `;
@@ -617,6 +605,7 @@ function hienkhoa(phone) {
             document.getElementById("contentkhoa").innerHTML = `
                         <div>Bỏ khóa người dùng  
                         <input type="button" onclick="khoanguoidung('${phone}')" class="bokhoa" value="click"></div>
+                        Lý do khóa : ${customer.reasonkhoa}:
                     `;
           }
         })
@@ -694,7 +683,6 @@ function hienkhoa(phone) {
 }
 
 function submitkhoa(phone) {
-  console.log(phone);
   let Customer = JSON.parse(localStorage.getItem("users"));
   const reason = document.getElementById("inputkhoand").value.trim();
   if (!reason) {
@@ -704,16 +692,15 @@ function submitkhoa(phone) {
   for (let i = 0; i < Customer.length; i++) {
     if (Customer[i].phone == phone) {
       let a="khoa-"+phone;
-      console.log(document.getElementById(a));
       document.getElementById(a).style.color="#bcbcbc"
       Customer[i].status = 1;
       localStorage.setItem('users', JSON.stringify(Customer));
-      console.log(Customer);
       Customer[i].reasonkhoa = reason;
       alert("đã khóa người dùng");
       break;
     }
   }
+  localStorage.setItem('users', JSON.stringify(Customer));
 }
 let currentpage;
 function nutphantrang() {

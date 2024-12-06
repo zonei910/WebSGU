@@ -195,9 +195,24 @@ function hienThiTaiKhoan(user) {
 // ===========taotk admin==============
 window.onload = function() {
     if (localStorage.getItem("isLoggedIn") === "true") {
-        const user = JSON.parse(localStorage.getItem("currentUser"));
-        if (user) {
-            hienThiTaiKhoan(user);
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+        if (currentUser) {
+            //dong bo lai current sau khi admin click vao khoataikhoan
+            const updatedUser = users.find(user => user.phone === currentUser.phone);
+            if (updatedUser) {
+                Object.assign(currentUser, updatedUser);
+                localStorage.setItem('currentUser', JSON.stringify(currentUser));
+                console.log("Cập nhật currentUser:", currentUser);
+            }
+            //kiem tra trang thai da bi khoa chua
+            if (currentUser.status === 1) { 
+                alert("Tài khoản của bạn đã bị khóa. Vui lòng liên hệ với quản trị viên để được hỗ trợ.");
+                dangxuat();
+                return;
+            }
+
+            hienThiTaiKhoan(currentUser);
             tatDangNhap();
         }
     }
@@ -366,3 +381,4 @@ function chuyenFormLichSuDonHang() {
     // Gọi hàm renderOrderProduct để hiển thị lịch sử đơn hàng
     renderOrderHistory();
 }
+
