@@ -5,6 +5,15 @@ let form = document.querySelector("#Form");
 let purchase = document.querySelector("#Purchase");
 let contact = document.querySelector("#Contact");
 
+function formatVND(money){
+    let data =  money.toLocaleString('vi-VN' , {
+          style: `currency`,
+          currency: `VND`,
+          minimumFractionDigits: 0,
+        });
+        return data;
+    }
+    
 
  function showContact(){
     contact.style.display = "block";
@@ -32,7 +41,7 @@ function showTomtatsp(){
                 <div>${product[i].gia} * ${product[i].soLuong} </div>
             </div>
             <div class="sumofcart">
-                ${thanhtien}
+                ${formatVND(thanhtien)}
             </div>
             <div class="button clear">
             <div class="plusbtn" onclick="tang(this)" name="${product[i].id}">Tăng</div>
@@ -96,7 +105,7 @@ function showSanPham(){
                                     <div class="content">
                                         <p>Tên: ${Product[i].name}</p>
                                         <p>Loại: ${Product[i].category}</p>
-                                        <p>Giá: ${Product[i].price} VNĐ</p>
+                                        <p>Giá: ${formatVND(Product[i].price)} VNĐ</p>
                                     </div>
                                     <div class="button">
                                         <div class="add">
@@ -159,7 +168,7 @@ let a = ``;
                                     <div class="content">
                                         <p>Tên: ${Product[i].name}</p>
                                         <p>Loại: ${Product[i].category}</p>
-                                        <p>Giá: ${Product[i].price} VNĐ</p>
+                                        <p>Giá: ${formatVND(Product[i].price)} VNĐ</p>
                                     </div>
                                     <div class="button">
                                         <select name="size">

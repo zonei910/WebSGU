@@ -513,8 +513,8 @@
                             <form id="itemForm">
                                 <label for="name">Tên: </label>
                                 <input type="text" name="name" id="nameInput">
-                                <label for="category">Loại: </label>
-                                <select name="" id="categoryInput">
+                                <label for="categoryInput">Loại: </label>
+                                <select  id="categoryInput" style="text-align: center; width: 30%;">
                                     <option value="watch">Đồng hồ</option>
                                     <option value="ring">Nhẫn</option>
                                     <option value="necklace">Vòng cổ</option>
@@ -547,7 +547,7 @@
                     </div>
                     <div class="contaner-form">
                         <div class="thongtin">
-                            <form action="">
+                            <div >
                                 <p>Tên tài khoản: </p>
                                 <input type="text" id="ad-taikhoan" value="" ><br>
                                 <p>Số điện thoại: </p>
@@ -555,10 +555,10 @@
                                 <p>Chi nhánh: </p>
                                 <input type="text" name="" id="ad-chinhanh" value="" readonly><br><br>
                                 <button onclick="luuAdminTT()">Lưu thay đổi</button>
-                            </form>
+                            </div>
                         </div>
                         <div class="matkhau">
-                            <form action="">
+                            <div>
                                 <p>Mật khẩu hiện tại: </p>
                                 <input type="password" id="ad-old" value="" placeholder="Nhập mật khẩu cũ ..."><br>
                                 <p>Mật khẩu mới: </p>
@@ -568,7 +568,7 @@
                                 <button onclick="doiAdminMk()">Đổi mật khẩu</button>
                                 <div id="error-message" style="color: red;"></div>
 
-                            </form>
+                            </div>
                         </div>
                     </div>
                     <i id="close-tt-Admin" onclick="closettAdmin()" class="fa-solid fa-xmark"></i>

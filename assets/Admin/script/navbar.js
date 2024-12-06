@@ -211,9 +211,14 @@ window.onload = () =>{
 }
 
 
+function Whoispokemon(){
+  let ad = JSON.parse(localStorage.getItem("admin"));
+  document.querySelector(".admin_name").innerHTML = ad.name;
+  document.querySelector(".admin_phone").innerHTML = `Số điện thoại: ${ad.phone}`;
+  document.querySelector(".admin_address").innerHTML = `Chi nhánh: ${ad.address}`;
+}
 
-
-
+Whoispokemon();
 
 
 function formatVND(money){
