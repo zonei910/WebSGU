@@ -54,7 +54,7 @@ document.getElementById('add-to-cart').addEventListener('click', function() {
     showMyCart();
 
     
-
+alert("Đã thêm sản phẩm vào giỏ");
 });
 
 function showcountsp() {
