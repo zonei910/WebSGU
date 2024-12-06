@@ -20,7 +20,7 @@ let Customer = [
     "quan": "Quận 11",
     "lichsuMuaHang": [
       {
-        "id": 18,
+        "id": 1,
         "stk": -1,
         "bank": -1,
         "ngaydat": "27/11/2024 ",
@@ -45,7 +45,7 @@ let Customer = [
         ]
       },
       {
-        "id": 19,
+        "id": 2,
         "stk": "35635635",
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -82,7 +82,7 @@ let Customer = [
     "quan": "Quận 1",
     "lichsuMuaHang": [
       {
-        "id": 20,
+        "id": 3,
         "stk": "34344343",
         "bank": "ABBANK",
         "ngaydat": "29/11/2024",
@@ -115,7 +115,7 @@ let Customer = [
         ]
       },
       {
-        "id": 21,
+        "id": 4,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -160,7 +160,7 @@ let Customer = [
     "quan": "Quận 1",
     "lichsuMuaHang": [
       {
-        "id": 22,
+        "id": 5,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -193,7 +193,7 @@ let Customer = [
         ]
       },
       {
-        "id": 23,
+        "id": 6,
         "stk": "3564736",
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -218,7 +218,7 @@ let Customer = [
         ]
       },
       {
-        "id": 24,
+        "id": 7,
         "stk": "362748",
         "bank": "ABBANK",
         "ngaydat": "29/11/2024",
@@ -251,7 +251,7 @@ let Customer = [
         ]
       },
       {
-        "id": 25,
+        "id": 8,
         "stk": "56556656",
         "bank": "Agribank",
         "ngaydat": "29/11/2024",
@@ -292,7 +292,7 @@ let Customer = [
         ]
       },
       {
-        "id": 26,
+        "id": 9,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -325,7 +325,7 @@ let Customer = [
         ]
       },
       {
-        "id": 27,
+        "id": 10,
         "stk": "4637578448",
         "bank": "Sacombank",
         "ngaydat": "29/11/2024",
@@ -386,7 +386,7 @@ let Customer = [
     "quan": "Quận 1",
     "lichsuMuaHang": [
       {
-        "id": 28,
+        "id": 10,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -427,7 +427,7 @@ let Customer = [
         ]
       },
       {
-        "id": 29,
+        "id": 11,
         "stk": "5656556",
         "bank": "Agribank",
         "ngaydat": "29/11/2024",
@@ -452,7 +452,7 @@ let Customer = [
         ]
       },
       {
-        "id": 30,
+        "id": 12,
         "stk": "56566565",
         "bank": "LienVietPostBank",
         "ngaydat": "29/11/2024",
@@ -477,7 +477,7 @@ let Customer = [
         ]
       },
       {
-        "id": 31,
+        "id": 13,
         "stk": "46374573",
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -510,7 +510,7 @@ let Customer = [
         ]
       },
       {
-        "id": 32,
+        "id": 14,
         "stk": "32644444",
         "bank": "BAOVIET Bank",
         "ngaydat": "29/11/2024",
@@ -543,7 +543,7 @@ let Customer = [
         ]
       },
       {
-        "id": 33,
+        "id": 15,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -568,7 +568,7 @@ let Customer = [
         ]
       },
       {
-        "id": 34,
+        "id": 16,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -593,7 +593,7 @@ let Customer = [
         ]
       },
       {
-        "id": 35,
+        "id": 17,
         "stk": "34343434",
         "bank": "HDBank",
         "ngaydat": "29/11/2024",
@@ -618,7 +618,7 @@ let Customer = [
         ]
       },
       {
-        "id": 36,
+        "id": 18,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -655,7 +655,7 @@ let Customer = [
     "quan": "Quận 7",
     "lichsuMuaHang": [
       {
-        "id": 37,
+        "id": 19,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -680,7 +680,7 @@ let Customer = [
         ]
       },
       {
-        "id": 38,
+        "id": 20,
         "stk": "325455",
         "bank": "ABBANK",
         "ngaydat": "29/11/2024",
@@ -713,7 +713,7 @@ let Customer = [
         ]
       },
       {
-        "id": 39,
+        "id": 21,
         "stk": "45346345",
         "bank": "CIMB",
         "ngaydat": "29/11/2024",
@@ -738,7 +738,7 @@ let Customer = [
         ]
       },
       {
-        "id": 40,
+        "id": 22,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -763,7 +763,7 @@ let Customer = [
         ]
       },
       {
-        "id": 41,
+        "id": 23,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -788,7 +788,7 @@ let Customer = [
         ]
       },
       {
-        "id": 42,
+        "id": 24,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -813,7 +813,7 @@ let Customer = [
         ]
       },
       {
-        "id": 43,
+        "id": 25,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -846,7 +846,7 @@ let Customer = [
         ]
       },
       {
-        "id": 44,
+        "id": 26,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -891,7 +891,7 @@ let Customer = [
     "quan": "Quận 7",
     "lichsuMuaHang": [
       {
-        "id": 45,
+        "id": 27,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -924,7 +924,7 @@ let Customer = [
         ]
       },
       {
-        "id": 46,
+        "id": 28,
         "stk": "326475723",
         "bank": "ABBANK",
         "ngaydat": "29/11/2024",
@@ -949,7 +949,7 @@ let Customer = [
         ]
       },
       {
-        "id": 47,
+        "id": 29,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -974,7 +974,7 @@ let Customer = [
         ]
       },
       {
-        "id": 48,
+        "id": 30,
         "stk": "327427834",
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -999,7 +999,7 @@ let Customer = [
         ]
       },
       {
-        "id": 49,
+        "id": 31,
         "stk": "32468723",
         "bank": "ABBANK",
         "ngaydat": "29/11/2024",
@@ -1036,7 +1036,7 @@ let Customer = [
     "quan": "Quận 1",
     "lichsuMuaHang": [
       {
-        "id": 50,
+        "id": 32,
         "stk": "3742364",
         "bank": "Co-opBank",
         "ngaydat": "29/11/2024",
@@ -1061,7 +1061,7 @@ let Customer = [
         ]
       },
       {
-        "id": 51,
+        "id": 33,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -1086,7 +1086,7 @@ let Customer = [
         ]
       },
       {
-        "id": 52,
+        "id": 34,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -1119,7 +1119,7 @@ let Customer = [
         ]
       },
       {
-        "id": 53,
+        "id": 35,
         "stk": "3627823",
         "bank": "ABBANK",
         "ngaydat": "29/11/2024",
@@ -1156,7 +1156,7 @@ let Customer = [
     "quan": "Quận 2",
     "lichsuMuaHang": [
       {
-        "id": 54,
+        "id": 36,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -1181,7 +1181,7 @@ let Customer = [
         ]
       },
       {
-        "id": 55,
+        "id": 37,
         "stk": "27364273",
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -1206,7 +1206,7 @@ let Customer = [
         ]
       },
       {
-        "id": 56,
+        "id": 38,
         "stk": "346523423",
         "bank": "ABBANK",
         "ngaydat": "29/11/2024",
@@ -1243,7 +1243,7 @@ let Customer = [
     "quan": "Quận 5",
     "lichsuMuaHang": [
       {
-        "id": 57,
+        "id": 39,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -1268,7 +1268,7 @@ let Customer = [
         ]
       },
       {
-        "id": 58,
+        "id": 40,
         "stk": "36248234",
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -1293,7 +1293,7 @@ let Customer = [
         ]
       },
       {
-        "id": 59,
+        "id": 41,
         "stk": "37462342",
         "bank": "IVB",
         "ngaydat": "29/11/2024",
@@ -1326,7 +1326,7 @@ let Customer = [
         ]
       },
       {
-        "id": 60,
+        "id": 42,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -1351,7 +1351,7 @@ let Customer = [
         ]
       },
       {
-        "id": 61,
+        "id": 43,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -1376,7 +1376,7 @@ let Customer = [
         ]
       },
       {
-        "id": 62,
+        "id": 44,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -1413,7 +1413,7 @@ let Customer = [
     "quan": "Quận 6",
     "lichsuMuaHang": [
       {
-        "id": 63,
+        "id": 45,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -1446,7 +1446,7 @@ let Customer = [
         ]
       },
       {
-        "id": 64,
+        "id": 46,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -1471,7 +1471,7 @@ let Customer = [
         ]
       },
       {
-        "id": 65,
+        "id": 47,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -1508,7 +1508,7 @@ let Customer = [
     "quan": "Quận 1",
     "lichsuMuaHang": [
       {
-        "id": 66,
+        "id": 48,
         "stk": "673423",
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -1541,7 +1541,7 @@ let Customer = [
         ]
       },
       {
-        "id": 67,
+        "id": 49,
         "stk": "43624823",
         "bank": "Agribank",
         "ngaydat": "29/11/2024",
@@ -1578,7 +1578,7 @@ let Customer = [
     "quan": "Quận 6",
     "lichsuMuaHang": [
       {
-        "id": 68,
+        "id": 50,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -1611,7 +1611,7 @@ let Customer = [
         ]
       },
       {
-        "id": 69,
+        "id": 51,
         "stk": "3624234",
         "bank": "ACB",
         "ngaydat": "29/11/2024",
@@ -1648,7 +1648,7 @@ let Customer = [
     "quan": "Quận Bình Thạnh",
     "lichsuMuaHang": [
       {
-        "id": 70,
+        "id": 52,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -1681,7 +1681,7 @@ let Customer = [
         ]
       },
       {
-        "id": 71,
+        "id": 53,
         "stk": "328425235",
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -1718,7 +1718,7 @@ let Customer = [
     "quan": "Quận Gò Vấp",
     "lichsuMuaHang": [
       {
-        "id": 72,
+        "id": 54,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -1755,7 +1755,7 @@ let Customer = [
     "quan": "Quận Gò Vấp",
     "lichsuMuaHang": [
       {
-        "id": 73,
+        "id": 55,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -1792,7 +1792,7 @@ let Customer = [
     "quan": "Quận Phú Nhuận",
     "lichsuMuaHang": [
       {
-        "id": 74,
+        "id": 56,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -1817,7 +1817,7 @@ let Customer = [
         ]
       },
       {
-        "id": 75,
+        "id": 57,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -1854,7 +1854,7 @@ let Customer = [
     "quan": "Quận 12",
     "lichsuMuaHang": [
       {
-        "id": 76,
+        "id": 57,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -1879,7 +1879,7 @@ let Customer = [
         ]
       },
       {
-        "id": 77,
+        "id": 59,
         "stk": "653472347",
         "bank": "ACB",
         "ngaydat": "29/11/2024",
@@ -1904,7 +1904,7 @@ let Customer = [
         ]
       },
       {
-        "id": 78,
+        "id": 60,
         "stk": "7835232",
         "bank": "PG BANK",
         "ngaydat": "29/11/2024",
@@ -1941,7 +1941,7 @@ let Customer = [
     "quan": "Quận 4",
     "lichsuMuaHang": [
       {
-        "id": 79,
+        "id": 61,
         "stk": "67342374",
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -2022,7 +2022,7 @@ let Customer = [
         ]
       },
       {
-        "id": 80,
+        "id": 62,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -2055,7 +2055,7 @@ let Customer = [
         ]
       },
       {
-        "id": 81,
+        "id": 63,
         "stk": "67324234628",
         "bank": "ACB",
         "ngaydat": "29/11/2024",
@@ -2092,7 +2092,7 @@ let Customer = [
     "quan": "Quận Phú Nhuận",
     "lichsuMuaHang": [
       {
-        "id": 82,
+        "id": 64,
         "stk": -1,
         "bank": -1,
         "ngaydat": "29/11/2024 ",
@@ -2129,7 +2129,7 @@ let Customer = [
     "quan": "Quận 4",
     "lichsuMuaHang": [
       {
-        "id": 83,
+        "id": 65,
         "stk": "6383834",
         "bank": "ABBANK",
         "ngaydat": "29/11/2024",
@@ -2175,4 +2175,3 @@ let Customer = [
     }
 
     
-

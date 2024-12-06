@@ -54,7 +54,7 @@
 }
 #Display .merchandise #main-content{
     flex-grow: 1;
-    max-height: 350px;
+    max-height: 380px;
     overflow: auto;
     padding: 1rem;
 }
