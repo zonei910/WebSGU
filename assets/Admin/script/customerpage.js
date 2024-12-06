@@ -773,6 +773,25 @@ function luuAdminTT(){
   let tenad=document.getElementById('ad-taikhoan').value;
   let sdtad=document.getElementById('ad-sdt').value;
   let chinhanhad=document.getElementById('ad-chinhanh').value;
+  let check = JSON.parse(localStorage.getItem("users"));
+  for(let i = 0 ; i<check.length ; i++){
+    if(check[i].phone == sdtad){
+      alert("Số điện thoại đã tồn tại!");
+      document.getElementById('ad-sdt').value = ad.phone;
+      sdtad = ad.phone;
+      return 0;
+    }
+  }
+
+  if(sdtad == ""){
+    document.getElementById('ad-sdt').value = ad.phone;
+    sdtad = ad.phone;
+  }
+  if(tenad == ""){
+    document.getElementById('ad-taikhoan').value = ad.name;
+    tenad = ad.name;
+  }
+
   ad.name=tenad;
   ad.phone=sdtad;
   ad.address=chinhanhad;
