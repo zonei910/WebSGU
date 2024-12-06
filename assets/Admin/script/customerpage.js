@@ -465,7 +465,42 @@ function newstatus(phone,key,status){
 //     }
 // }
 function addaccount(phone){
-  
+  let Customer=JSON.parse(localStorage.getItem("users"));
+  Customer.forEach(customer=>{
+    if(customer.phone==phone){
+      const name=document.getElementById("nameofkh").value.trim();
+      const address=document.getElementById("addressofkh").value.trim();
+      const phone=document.getElementById("phoneofkh").value.trim();
+      const email=document.getElementById("emailofkh").value.trim();
+      const gender=document.getElementById("genderofkh").value.trim();
+      const password=document.getElementById("passofkh").value.trim();
+      if(!name){
+        alert("bạn chưa nhập đủ form");
+        return;
+      }
+      if(!address){
+        alert("bạn chưa nhập đủ form");
+        return;
+      }
+      if(!phone){
+        alert("bạn chưa nhập đủ form");
+        return;
+      }
+      if(!email){
+        alert("bạn chưa nhập đủ form");
+        return;
+      }
+      if(!gender){
+        alert("bạn chưa nhập đủ form");
+        return;
+      }
+      if(!password){
+        alert("bạn chưa nhập đủ form");
+        return;
+      }
+      
+    }
+  })
 }
 function printinfor(page) {
 
@@ -485,7 +520,7 @@ function printinfor(page) {
             <div>${Customer.name}</div>
             <div>${Customer.phone}</div>
             <div class="Thehide">${Customer.email}</div>
-            <div><i class="fa-solid fa-plus" onclick="add('${Customer.phone}')"></i> <i class="fa-solid fa-key" id="khoa-${Customer.phone}" onclick="hienkhoa('${Customer.phone}')"></i> <i class="fa-regular fa-pen-to-square edit"  onclick="editclient('${Customer.phone}')"></i> <i id="show" class="fa-solid fa-angle-down angle" onclick="printinfororder('${Customer.phone.toString()}')"></i></div>
+            <div></i> <i class="fa-solid fa-key" id="khoa-${Customer.phone}" onclick="hienkhoa('${Customer.phone}')"></i> <i class="fa-regular fa-pen-to-square edit"  onclick="editclient('${Customer.phone}')"></i> <i id="show" class="fa-solid fa-angle-down angle" onclick="printinfororder('${Customer.phone.toString()}')"></i></div>
         </div>`;
         document.getElementById("container4").innerHTML += clientouterr;
     const a = "khoa-" + Customer.phone;
