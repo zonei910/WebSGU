@@ -31,7 +31,7 @@
 	}
 
 	#Header{
-		width: 1000px;
+		width: 100%;
 	}
 
 	#Header .inner-container{
@@ -39,7 +39,7 @@
 	}
 
 	#Header .inner{
-		width: 1000px;
+		width: 100%;
 		justify-content: space-between;
 	}
 
@@ -61,12 +61,12 @@
 
 
 	#Display .order .head{
-		width: 1000px;
+		width: 100%;
 	}
 
 	#Menu .close_menu{
 		display: block;
-		left: 262px;
+		left: 255px;
 		top: -7px;
 	}
 
@@ -75,13 +75,13 @@
 	}
 
 		#Display .order .foot{
-			width: 1000px;
+			width: 100%;
 		}
 
 		
 
 		#Display .merchandise{
-		width: 1000px;
+		width: 100%;
 		}	
 
 		#Display .merchandise #main-content{
@@ -97,7 +97,7 @@
 
 
 		#Display .order .form-donhang .khachhang{
-			width: 1000px;
+			width: 100%;
 			padding: 15px;
 		}
 

@@ -1,6 +1,17 @@
 // Lấy giỏ hàng từ storage hoặc mảng rỗng
 var giohang = JSON.parse(localStorage.getItem('giohang')); 
 
+function formatVND(money){
+    let data =  money.toLocaleString('vi-VN' , {
+          style: `currency`,
+          currency: `VND`,
+          minimumFractionDigits: 0,
+        });
+        return data;
+    }
+    
+
+
 if(giohang == null){
     giohang = [];
 }
@@ -54,7 +65,7 @@ document.getElementById('add-to-cart').addEventListener('click', function() {
     showMyCart();
 
     
-
+alert("Đã thêm sản phẩm vào giỏ");
 });
 
 function showcountsp() {
@@ -139,8 +150,8 @@ function showMyCart() {
             '<td><img class="cart-item-img" src="' + giohang[i].hinh + '" alt=""></td>' +
             '<td>' + giohang[i].ten + '</td>' +
             '<td>' + giohang[i].soLuong + '</td>' +
-            '<td>' + giohang[i].gia + 'đ</td>' +
-            '<td>' + thanhtien + 'đ</td>' +
+            '<td>' + formatVND(gia) + '</td>' +
+            '<td>' + formatVND(thanhtien) + '</td>' +
             '<td class="column-end">' +
                 '<button onclick="xoasp(this)">Xóa</button>' +
                 '<button onclick="tangsp(this)">Tăng</button>' +
@@ -150,7 +161,7 @@ function showMyCart() {
     }
     tt += '<tr class="row-end">' +
         '<th colspan="4">Tổng đơn giá</th>' +
-        '<th colspan="2"><div>' + tong + 'đ</div></th>' +
+        '<th colspan="2"><div>' + formatVND(tong) + '</div></th>' +
         '</tr>';
     document.getElementById('myCart').innerHTML = tt;
     showcountsp();
@@ -217,13 +228,13 @@ function showThanhToan() {
             '<td><img class="cart-item-img" src="' + giohang[i][0] + '" alt=""></td>' +
             '<td>' + giohang[i][1] + '</td>' +
             '<td>' + giohang[i][3] + '</td>' +
-            '<td>' + giohang[i][2] + 'đ</td>' +
-            '<td>' + thanhtien + 'đ</td>' +
+            '<td>' + formatVND(giohang[i][2]) + '</td>' +
+            '<td>' + formatVND(thanhtien) + '</td>' +
             '</tr>';
     }
     tt += '<tr class="row-end">' +
         '<th colspan="4">Tổng đơn giá</th>' +
-        '<th><div>' + tong + 'đ</div></th>' +
+        '<th><div>' + formatVND(tong) + '</div></th>' +
         '</tr>';
     document.getElementById('showProductPaying').innerHTML = tt;
 }

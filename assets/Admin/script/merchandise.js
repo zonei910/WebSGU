@@ -36,14 +36,30 @@ document.addEventListener("DOMContentLoaded", () => {
             const product = dataToDisplay[i];
             const productDiv = document.createElement("div");
             productDiv.classList.add("table");
+            let hi;
+            if(product.category == "watch"){
+                hi = "Đồng hồ";
+            }
+            if(product.category == "ring"){
+                hi = "Nhẫn";
+            }
+            if(product.category == "necklace"){
+                hi = "Vòng cổ";
+            }
+            if(product.category == "bracelet"){
+                hi = "Vòng tay";
+            }
+            if(product.category == "earring"){
+                hi = "Khuyên tai";
+            }
             productDiv.innerHTML = `
                 <img src="${product.images[0]}" width="20%">
                 <div class="product-info">
                     <span>ID: ${product.id}</span>
-                    <span>Name: ${product.name}</span>
-                    <span>Category: ${product.category}</span>
-                    <span>Price: ${formatVND(product.price)}</span>
-                    <span>Description: ${stripHtml(product.description)}</span>
+                    <span>Tên sản phẩm: ${product.name}</span>
+                    <span>Loại sản phẩm: ${hi}</span>
+                    <span>Giá tiền: ${formatVND(product.price)}</span>
+                    <span>Mô tả: ${stripHtml(product.description)}</span>
                 </div>
                 <div class="button-group">
                     <button class="edit-buttons1" onclick="openEditBlock(${i})"><i class="fa-regular fa-pen-to-square"></i></button>
@@ -189,14 +205,30 @@ document.addEventListener("DOMContentLoaded", () => {
         filteredProducts.forEach((product, index) => {
             const productDiv = document.createElement("div");
             productDiv.classList.add("table");
+            let hi;
+            if(product.category == "watch"){
+                hi = "Đồng hồ";
+            }
+            if(product.category == "ring"){
+                hi = "Nhẫn";
+            }
+            if(product.category == "necklace"){
+                hi = "Vòng cổ";
+            }
+            if(product.category == "bracelet"){
+                hi = "Vòng tay";
+            }
+            if(product.category == "earring"){
+                hi = "Khuyên tai";
+            }
             productDiv.innerHTML = `
                 <img src="${product.images[0]}" width="20%">
                 <div class="product-info">
                     <span>ID: ${product.id}</span>
-                    <span>Name: ${product.name}</span>
-                    <span>Category: ${product.category}</span>
-                    <span>Price: ${formatVND(product.price)}</span>
-                    <span>Description: ${product.description}</span>
+                    <span>Tên sản phẩm: ${product.name}</span>
+                    <span>Loại sản phẩm: ${hi}</span>
+                    <span>Giá tiền: ${formatVND(product.price)}</span>
+                    <span>Mô tả: ${product.description}</span>
                 </div>
                 <div class="button-group">
                     <button class="edit-buttons1" onclick="openEditBlock(${i})"><i class="fa-regular fa-pen-to-square"></i></button>
@@ -301,7 +333,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.updateItem = function() {
         let id;
         let name = document.getElementById('nameInput').value.trim();
-        let category = document.getElementById('categoryInput').value.trim();
+        let category = document.getElementById('categoryInput').value;
         let price = document.getElementById('priceInput').value.trim();
         let desc = document.getElementById('descInput').value.trim();
         let imageUploaded = document.getElementById('uploadedImage').src;
@@ -342,7 +374,7 @@ document.addEventListener("DOMContentLoaded", () => {
             alert('Sản phẩm cập nhật thành công');
         } else {
             // Add a new item
-            if (!name || !category || !price || !desc || !imageUploaded) {
+            if (name == "" || price == "" || desc == "" || imageUploaded == "") {
                 alert('Vui lòng thêm đầy đủ thuộc tính');
                 return 0;
             }
@@ -497,4 +529,9 @@ function showTB() {
     } else {
         donHangMoi.style.display = "none";  
     }
+}
+
+// Gọi hàm hienthiTT để cập nhật thông tin về số lượng đơn mới ngay khi trang tải
+window.onload = () => {
+    hienthiTT();  
 }

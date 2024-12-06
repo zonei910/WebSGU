@@ -61,7 +61,7 @@
                     </p>
                 </div>
                 <div class="item">
-                    Xin chào,<div style="display:inline;color:blue;cursor:pointer" class="admin-info"><span class="admin_name"></span>
+                    Xin chào,<div style="display:inline;color:blue;cursor:pointer" class="admin-info"><span class="admin_name">hello</span>
                         <!-- Admin info -->
                         <ul id="Admin-info">
                             <div>Thông tin</div>
@@ -84,8 +84,8 @@
     <main id="Main">
         <Section id="Menu">
             <div>
-                <div class="close_menu">
-                    <i class="fa-solid fa-x " onclick="tat_mo_navbar()"></i>
+                <div class="close_menu" onclick="tat_mo_navbar()">
+                    <i class="fa-solid fa-x " ></i>
                 </div>
                 <div class="viewpage">
                     <i class="fa-solid fa-file-code"></i>
@@ -321,9 +321,9 @@
             <!-- Thống kê -->
             <div class="revenue" id="revenue">
                 
-                    <div class="outer">
+                    <div class="outter">
                         <div class="container0">
-                            <div><input type="text" placeholder="Search hear" > <i class="fa-solid fa-magnifying-glass"></i></div>
+                            <div><input type="text" placeholder="Tìm kiếm" > <i class="fa-solid fa-magnifying-glass"></i></div>
                             <div>
                                 <div><input type="date" id="timefirst" ></div>
                                 <div>-</div>
@@ -376,7 +376,7 @@
             <!-- Danh sách user -->
             <div class="userlist">
                 <div class="outer">
-                    <div class="container3" ><input type="text" id="search" placeholder="Search content here" oninput="search()">  <i class="fa-solid fa-magnifying-glass"></i> </div>
+                    <div class="container3" ><input type="text" id="search" placeholder="Tìm kiếm" oninput="search()">  <i class="fa-solid fa-magnifying-glass"></i> </div>
                     <div class="outercontainer4">
                         <div id="container4">
                             <div class="clientouter" id="clientouter">
@@ -384,6 +384,7 @@
                             <div class="printorder"></div>
                             <div class="addorder"></div>
                             <div class="editorder"></div>
+                            <div class="addtheaccount"></div>
                         </div>
                         <div id="phantrangouter"></div>
                     </div>
@@ -406,11 +407,11 @@
                         <div>
                             <div>EDIT CLIENT</div>
                             <i class="fa-solid fa-x" onclick="closededitclient()"></i>
-                            <div>
+                            <div class="editouter">
                                 <form action="">
-                                    <label for="editnameofkh">Edit name</label> <input type="text" id="editnameofkh"> <br>
-                                    <label for="editemailofkh">Edit email</label> <input type="email" id="editemailofkh"> <br>
-                                    <label for="editphoneofkh">Edit address</label> <input type="phone" id="editphoneofkh"><br>
+                                    <div><div><label for="editnameofkh" class="theHide">Edit name</label> <input type="text" id="editnameofkh" placeholder="enter name"></div></div>
+                                    <div><div><label for="editemailofkh" class="theHide">Edit email</label> <input type="email" id="editemailofkh" placeholder="enter email"></div></div>
+                                    <div><div><label for="editphoneofkh" class="theHide">Edit address</label> <input type="phone" id="editphoneofkh" placeholder="enter phone"></div></div>
                                 </form>
                                 <div id="editkhouter"><input type="submit" id="editkh" value="click"></div>
                             </div>
@@ -418,19 +419,24 @@
                     </div>
                     <div id="sectionaddclient">
                         <div>
-                            <div>ADD CLIENT</div>
+                            <div>ADD ACCOUNT CLIENT</div>
                             <i class="fa-solid fa-x"></i>
-                            <div>
+                            <div class="addclientouter">
                                 <form action="">
-                                    <label for="nameofkh">Client name</label> <input type="text" id="nameofkh"> <br>
-                                    <label for="emailofkh">Client email</label> <input type="email" id="emailofkh"> <br>
-                                    <label for="phoneofkh">Client phone</label> <input type="phone" id="phoneofkh"><br>
+                                    <div><label for="nameofkh">name</label> <input type="text" id="nameofkh" placeholder="enter name"></div>
+                                    <div><label for="emailofkh">email</label> <input type="email" id="emailofkh" placeholder="enter email"></div>
+                                    <div><label for="phoneofkh">phone</label> <input type="phone" id="phoneofkh" placeholder="enter phone"></div>
+                                    <div><label for="addressofkh">address</label> <input type="text" name="" id="addressofkh" placeholder="enter address"></div>
+                                    <div><label for="passofkh">password</label> <input type="password" id="passwordofkh" placeholder="enter password"></div>
+                                    <div><label for="genderofkh">gender</label> <input type="text" id="genderofkh" placeholder="enter gender"></div>
                                 </form>
+                                <div id="addkhouter"><input type="submit" id="addkh" value="click"></div>
                             </div>
                         </div>
                     </div>
                     <div id="khoaclient">
                         <div>
+                            <image src="./assets/../"></image>
                             <i class="fa-solid fa-x" onclick="closedkhoa()"></i>
                             <div id="contentkhoa"></div>
                             <div class="printkh">
@@ -464,7 +470,7 @@
                             <!-- Search block, initially hidden -->
                         </nav>
                         <div id="searchBlock" style="display: none; padding: 10px;">
-                            <input type="text" id="searchInput" placeholder="Search..." style="width: 70%; padding: 5px;">
+                            <input type="text" id="searchInput" placeholder="Nhập giá trị cần tìm" style="width: 70%; padding: 5px;">
                             <button id="searchSubmitButton">Tìm kiếm</button>
                             <select id="searchFilter">
                                 <option value="0">Lọc theo: </option> 
@@ -497,7 +503,7 @@
                     <div class="DisplayEditItemBlock" style="display: none;">
                         <div class="EditItemHeader">
                             <div class="ProperHeaderDisplay">
-                                <div>Edit Item</div>
+                                <div style="width: max-content;">Khung chỉnh sửa</div>
                                 <button onclick="closeEditBlock()"><i class="fa-solid fa-xmark"></i></button>
                             </div>
                             <div class="DisplayEditItemBody" id="imageDropArea"><p id="uploadText">Ném ảnh vào đây hoặc chọn ảnh phía dưới</p>
@@ -508,7 +514,13 @@
                                 <label for="name">Tên: </label>
                                 <input type="text" name="name" id="nameInput">
                                 <label for="category">Loại: </label>
-                                <input type="text" name="category" id="categoryInput">
+                                <select name="" id="categoryInput">
+                                    <option value="watch">Đồng hồ</option>
+                                    <option value="ring">Nhẫn</option>
+                                    <option value="necklace">Vòng cổ</option>
+                                    <option value="bracelet">Vòng tay</option>
+                                    <option value="earring">Khuyên tai</option>
+                                </select>
                                 <label for="price">Giá: </label>
                                 <input type="text" name="price" id="priceInput">
                                 <label for="desc">Mô tả: </label>
@@ -535,18 +547,18 @@
                     </div>
                     <div class="contaner-form">
                         <div class="thongtin">
-                            <form action="">
+                            <div >
                                 <p>Tên tài khoản: </p>
-                                <input type="text" id="ad-taikhoan" value=""><br>
+                                <input type="text" id="ad-taikhoan" value="" ><br>
                                 <p>Số điện thoại: </p>
-                                <input type="tel" name="" id="ad-sdt" value=""><br>
+                                <input type="tel" name="" id="ad-sdt" value="" ><br>
                                 <p>Chi nhánh: </p>
-                                <input type="text" name="" id="ad-chinhanh" value=""><br><br>
+                                <input type="text" name="" id="ad-chinhanh" value="" readonly><br><br>
                                 <button onclick="luuAdminTT()">Lưu thay đổi</button>
-                            </form>
+                            </div>
                         </div>
                         <div class="matkhau">
-                            <form action="">
+                            <div>
                                 <p>Mật khẩu hiện tại: </p>
                                 <input type="password" id="ad-old" value="" placeholder="Nhập mật khẩu cũ ..."><br>
                                 <p>Mật khẩu mới: </p>
@@ -556,7 +568,7 @@
                                 <button onclick="doiAdminMk()">Đổi mật khẩu</button>
                                 <div id="error-message" style="color: red;"></div>
 
-                            </form>
+                            </div>
                         </div>
                     </div>
                     <i id="close-tt-Admin" onclick="closettAdmin()" class="fa-solid fa-xmark"></i>
@@ -578,8 +590,8 @@
     <!-- Kết thúc Main -->
     <script language="javascript" src="product.js"></script>
     <script language="javascript" src="customer.js"></script>
-    <script language="javascript" src="assets/Admin/script/customerpage.js"></script>
     <script language="javascript" src="assets/Admin/script/navbar.js"></script>
+    <script language="javascript" src="assets/Admin/script/customerpage.js"></script>
     <script language="javascript" src="./assets/Admin/script/thongke.js"></script>
     <script language="javascript" src="assets/Admin/script/order.js"></script>
     <script language="javascript" src="assets/Admin/script/merchandise.js"></script>

@@ -1,14 +1,15 @@
 .container3{
     background-color: rgb(247, 250, 255);
     margin:10px;
-    padding:20px;
+    padding:0;
     border-radius: 5px;
 }
 .outer{
     width:100%;
-    height: 100vh;
-    overflow: auto;
+    height: 100%;
+    /* overflow: auto; */
     background-color: white;
+    /* overflow-y: scroll; */
 }
 .container3>input{
     width: 300px;
@@ -17,15 +18,14 @@
     outline: none;
     border:none;
     background-color: white;
-    padding:5px;
+    padding: 15px;
 }
 .container3{
     position: relative;
 }
 .productinner>div>div{
     /* white-space: nowrap;  */
-    /* Ngăn không cho xuống dòng */
-    overflow: hidden;    /* Ẩn nội dung tràn */
+    overflow: hidden; 
 } 
 .head>div{
     width: 16.6%;
@@ -50,7 +50,6 @@
     margin:10px;
     position: relative;
     border-radius: 5px;
-    max-height: 100vh;
 }
 #phantrangouter{
     position: absolute;
@@ -59,8 +58,8 @@
     transform: translate(-50%,50%);
 }
 #container4{
-    overflow-y: scroll;
-    overflow-x: hidden;
+    /* overflow-y: scroll;
+    overflow-x: hidden; */
     padding-top:20px;
 }
 .nutphantrang{
@@ -76,7 +75,7 @@
     color:rgb(87, 82, 88) ;
 }
 #container4 >.clientouter{
-    width: 100%;
+    width: 98%;
     margin: 20px;
     display: flex;
 }
@@ -87,16 +86,52 @@
     width: 10%;
 }
 .clientouter>div{
-    font-size: 20px;
+    font-size: 14px;
 }
 #clientouter{
     padding-bottom:10px;
 }
-#container4>#editclient{
-    padding: 20px;
+#sectionaddclient{
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0,0.5);
+    position: fixed;
+    width:100%;
+    height:100%;
     display: flex;
-    background-color: rgb(254, 199, 111);
-    border-radius: 0px 0px 10px 10px;
+    align-items: center;
+    justify-content: center;
+
+    /* display: none; */
+}
+#sectionaddclient>div>div:nth-child(1){
+    text-align: center;
+    color: #6dbfb8 ; 
+    font-weight: bold;
+    padding: 10px;
+}
+#addkhouter{
+    padding:10px;
+}
+#addkh{
+    border-radius: 5px;
+    background-color: #be95be;
+    padding:5px;
+    float: right;
+    width: 100%;
+    outline: none;
+}
+.addclientouter >form>div>div>input{
+    width: 55%;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding:5px
+}
+.addclientouter >form>div>div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 #container4>#addclient{
     position: relative;
@@ -104,14 +139,6 @@
     display: flex;
     background-color: rgb(254, 199, 111);
     border-radius: 0px 0px 10px 10px;
-}
-#container4 > #editclient>input{
-    border-radius: 10px;
-    outline:none;
-    border: none;
-    width: 70%;
-    padding:10px;
-    color:rgb(87, 82, 88);
 }
 #container4 > #addclient>input{
     border-radius: 10px;
@@ -121,15 +148,30 @@
     padding:10px;
     color:rgb(87, 82, 88);
 }
-#container4 > #editclient>input:nth-child(6){
-    background-color: #75ba75;
-    border: 1px solid black;
-    border-radius: 0px;
+#sectionaddclient> div{
+    padding:5px;
+    border-radius: 5px;
+    background-color: #fec76f;
+    width: 30%;
+    position: relative;
+    text-align: center;
+    color: rgb(87, 82, 88) ; 
+    border: 1px solid rgba(0, 0, 0,0.5);
 }
-#container4 > #addclient>input:nth-child(6){
-    background-color: #75ba75;
-    border: 1px solid black;
-    border-radius: 0px;
+#sectionaddclient>div>i{
+    position: absolute;
+    right: 5px;
+    font-weight: bold;
+    top: 5px;
+}
+#sectionaddclient>div>div>form>label{
+    color: rgb(87, 82, 88) ;   
+}
+#sectionaddclient>div>div>form>input{
+    padding:5px;
+    border-radius: 10px;
+    outline:none;
+    margin:5px;
 }
 #container4 >.orderouter{
     background-color: #62c7ff;
@@ -171,19 +213,38 @@
     display: flex;
 }
 #innerorder>div>div>div:nth-child(1){
-    width: 5%;
+    width: 10%;
+}
+.outerdiv>div>div:nth-child(1){
+    width: 10%;
 }
 #innerorder>div>div>div:nth-child(2){
-    width: 40%;
+    width: 30%;
+}
+.outerdiv>div>div:nth-child(2){
+    width: 30%;
 }
 #innerorder>div>div>div:nth-child(3){
     width: 15%;
 }
+.outerdiv>div>div:nth-child(3){
+    width: 15%;
+}
 #innerorder>div>div>div:nth-child(4){
     width: 15%;
+    min-width: 70px !important;
+}
+.outerdiv>div>div:nth-child(4){
+    width: 15%;
+    min-width: 70px !important;
 }
 #innerorder>div>div>div:nth-child(5){
     width: 25%;
+    min-width: 130px !important;
+}
+.outerdiv>div>div:nth-child(5){
+    width: 25%;
+    min-width: 130px !important;
 }
 #innerorder{
     width: 40%;
@@ -230,32 +291,14 @@
 .active{
     background-color: salmon;
 }
-#editclient{
-    position: relative;
-}
-#editclient > .alertdivedit:nth-child(7){
-    position: absolute;
-    left: 16%;
-    top:0;
-}
 #addclient > .alertdiv:nth-child(7){
     position: absolute;
     left: 16%;
     top:0;
 }
-#editclient > .alertdivedit:nth-child(8){
-    position: absolute;
-    left: 30%;
-    top:0;
-}
 #addclient > .alertdiv:nth-child(8){
     position: absolute;
     left: 30%;
-    top:0;
-}
-#editclient > .alertdivedit:nth-child(9){
-    position: absolute;
-    left: 44%;
     top:0;
 }
 #addclient > .alertdiv:nth-child(9){
@@ -267,30 +310,15 @@
     left: 58%;
     top:0;
 }
-#editclient > .alertdivedit:nth-child(10){
-    position: absolute;
-    left: 58%;
-    top:0;
-}
 #addclient>div>i{
     color:red;
     font-size: 12px;
 }
-#editclient> .alertdivedit>i{
-    color:red;
-    font-size: 12px;
+#container4 > #addclient>input:nth-child(6){
+    background-color: #75ba75;
+    border: 1px solid black;
+    border-radius: 0px;
 }
-.editstatus>div{
-    border: none;
-    border-radius: 5px;
-    background-color: white;
-    text-align: center;
-    width: 120px;
-    height: 30px;
-    background-color: white;
-    color: palevioletred;
-}
-
 .imageofcustomer{
     border-radius: 100%;
     width: 60px;
@@ -314,7 +342,8 @@
     display: block;
 }
 #innerorder{
-    max-width: 60%;
+    max-width: 70%;
+    width: 40%;
     background-color: #fec76f;
     max-height: 70%;
     overflow-y: scroll;
@@ -342,11 +371,6 @@
 #innerorder >div{
     padding:5px;
 }
-#editkh{
-    border-radius: 5px;
-    background-color: #be95be;
-    padding:5px;
-}
 .print{
     color: rgb(87, 82, 88) ;
     border: none;
@@ -362,7 +386,9 @@
 #search{
     font-size: 20px;
     width: 400px;
-    height: 80px;
+    /* height: 80px; */
+    margin-left: 30px;
+    margin-top: 7px;
 }
 /* #printorder>#innerorder>div>div>div>div{
     width: 10%;
@@ -373,97 +399,11 @@
     text-align: center;
     padding: 5px;
 } */
-#sectioneditclient{
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0,0.5);
-    position: fixed;
-    width:100%;
-    height:100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    display: none;
-}
-#sectioneditclient> div{
-    padding:5px;
-    border-radius: 5px;
-    background-color: #fec76f;
-    width: 30%;
-    position: relative;
-    text-align: center;
-    color: rgb(87, 82, 88) ; 
-    border: 1px solid rgba(0, 0, 0,0.5);
-}
-#sectioneditclient> div>div:nth-child(1){
-    text-align: center;
-    color: #6dbfb8 ; 
-    font-weight: bold;
-    padding: 10px;
-}
-#sectioneditclient>div>i{
-    position: absolute;
-    right: 5px;
-    font-weight: bold;
-    top: 5px;
-}
-#editkh{
-    float: right;
-}
-#sectioneditclient>div>div>form>label{
-    color: rgb(87, 82, 88) ;   
-}
-
-#sectioneditclient>div>div>form>input{
-    padding:5px;
-    border-radius: 10px;
-    outline:none;
-    margin:5px;
-}
-#sectionaddclient{
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0,0.5);
-    position: fixed;
-    width:100%;
-    height:100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    display: none;
-}
 #submitkhoa{
     background-color: #6dbfb8;
     border-radius: 5px;
     width: 60px;
     height: 30px;
-}
-#sectionaddclient> div{
-    padding:5px;
-    border-radius: 5px;
-    background-color: #fec76f;
-    width: 30%;
-    position: relative;
-    text-align: center;
-    color: rgb(87, 82, 88) ; 
-    border: 1px solid rgba(0, 0, 0,0.5);
-}
-#sectionaddclient>div>i{
-    position: absolute;
-    right: 5px;
-    font-weight: bold;
-    top: 5px;
-}
-#sectionaddclient>div>div>form>label{
-    color: rgb(87, 82, 88) ;   
-}
-#sectionaddclient>div>div>form>input{
-    padding:5px;
-    border-radius: 10px;
-    outline:none;
-    margin:5px;
 }
 #khoaclient{
     top: 0;
@@ -481,10 +421,12 @@
     font-weight: bold;
 }
 #khoaclient >div{
+    /* max-height: 200px; */
+    height: 70%;
     padding:20px;
     border-radius: 5px;
     background-color: #fec76f;
-    width: 50%;
+    width: 60%;
     position: relative;
     color: rgb(87, 82, 88) ; 
     border: 1px solid rgba(0, 0, 0,0.5);
@@ -493,9 +435,6 @@
     max-height: 600px;
 
 }
-.printkh{
-    font-weight: bold;
-}
 #khoaclient>div>label{
     padding: 10px;
 }
@@ -503,7 +442,9 @@
     margin:10px;
 }
 .printkh{
-    width: 100%;
+    /* margin-right:10px ; */
+    font-weight: bold;
+    width: 90%;
     padding:10px;
     border-radius: 5px;
     border: 1px solid black;
@@ -514,7 +455,7 @@
 }
 .printorderkh{
     font-weight: bold;
-    width: 100%;
+    width: 90%;
     padding:10px;
     border-radius: 5px;
     border: 1px solid black;
@@ -535,7 +476,8 @@
 #inputkhoand{
     border-radius: 5px;
     outline:none;
-    width: 50%;
+    width: 200px;
+    height: 25px;
 }
 #khoaclient>div>i{
     position: absolute;
@@ -558,13 +500,14 @@
 }
 .Delivering{
     display: none;
+    width: 88px;
 }
 .Delivered{
     display: none;
+    width: 88px;
 }
 .Delivering,.Delivered,.Deliver{
     border:none;
-    /* border-radius: 5px; */
     padding:5px;
     background-color: #75ba75;
     text-align: center;
@@ -573,41 +516,39 @@
     cursor: pointer;
 }
 .outerdelivery{
-    background-color: #75ba75;
+    width: 90px !important;
+    /* background-color: #75ba75; */
     display: flex;
-}
-.outerdelivery{
+    border-radius: 5px;
+    /* background-color: #e2564d; */
+    padding:5px;
     display: block;
 }
 .bokhoa{
     background-color: #be95be;
-    padding:5px;
+    padding:3px;
+    border-radius: 5px;
     width: fit-content;
 }
 .thestatus{
     position: absolute;
-    right: 6px;
+    right: -5px !important;
     top: -10px;
     display: inline-block;
     width: fit-content;
     z-index: 100px;
 }
-.outerdelivery{
-    border-radius: 5px;
-    /* background-color: #e2564d; */
-    width: 130px;
-    padding:5px;
+#taketimeouter{
+    float: right;
+    width: fit-content;
 }
 .deliver{
     border-bottom: 1px solid black;
     background-color: #be95be;
-    width: 120px;
+    min-width: 88px;
+    width: 88px;
     padding:5px;
-}
-.delivering{
-    border-bottom: 1px solid black;
-    width: 120px;
-    padding:5px;
+
 }
 #contentkhoa{
     font-size: 20px;
@@ -631,13 +572,26 @@
     margin-top:10px;
 }
 #khoaclient>div{
+    
     border-radius: 10px;
+    padding: 10px;
 }
-/* #printorder{
+@media(max-width:1000px){
+    .clientouter>div:nth-child(4){
+        width: 20% !important;
+    }
+}
+@media (max-width:720px) {
+    .Thehide{
+        display: none;
+        width: 0% !important;
+    }
+    .clientouter>div{
+        width: 33% !important;
+    }
 }
 
-#printorder.hide{
-} */
+
 
 /*==================thoong tin admin============*/
 #ttadmin{
@@ -696,4 +650,179 @@
 }
 #close-tt-Admin:hover{
     color:red;
+}
+.editouter >form>div>div>input{
+    width: 55%;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding:5px
+}
+.editouter >form>div>div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#editkhouter{
+    padding:10px;
+}
+#editkh{
+    border-radius: 5px;
+    background-color: #be95be;
+    padding:5px;
+    float: right;
+    width: 100%;
+    outline: none;
+}
+.editouter >form>div{
+    /* width: 100%; */
+    padding: 10px;
+}
+#sectioneditclient{
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0,0.5);
+    position: fixed;
+    width:100%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    display: none;
+}
+#sectioneditclient> div{
+    padding:5px;
+    border-radius: 5px;
+    background-color: #fec76f;
+    width: 30%;
+    position: relative;
+    text-align: center;
+    color: rgb(87, 82, 88) ; 
+    border: 1px solid rgba(0, 0, 0,0.5);
+}
+#sectioneditclient> div>div:nth-child(1){
+    text-align: center;
+    color: #6dbfb8 ; 
+    font-weight: bold;
+    padding: 10px;
+}
+#sectioneditclient>div>i{
+    position: absolute;
+    right: 5px;
+    font-weight: bold;
+    top: 5px;
+}
+#sectioneditclient>div>div>form>label{
+    color: rgb(87, 82, 88) ;   
+}
+
+#sectioneditclient>div>div>form>input{
+    padding:5px;
+    border-radius: 10px;
+    outline:none;
+    margin:5px;
+}
+
+#editclient > .alertdivedit:nth-child(10){
+    position: absolute;
+    left: 58%;
+    top:0;
+}
+#editclient> .alertdivedit>i{
+    color:red;
+    font-size: 12px;
+}
+#editclient > .alertdivedit:nth-child(9){
+    position: absolute;
+    left: 44%;
+    top:0;
+}
+.editstatus>div{
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    text-align: center;
+    width: 120px;
+    height: 30px;
+    background-color: white;
+    color: palevioletred;
+}
+#container4>#editclient{
+    padding: 20px;
+    display: flex;
+    background-color: rgb(254, 199, 111);
+    border-radius: 0px 0px 10px 10px;
+}
+#editclient > .alertdivedit:nth-child(8){
+    position: absolute;
+    left: 30%;
+    top:0;
+}
+#editclient{
+    position: relative;
+}
+#editclient > .alertdivedit:nth-child(7){
+    position: absolute;
+    left: 16%;
+    top:0;
+}
+#container4 > #editclient>input{
+    border-radius: 10px;
+    outline:none;
+    border: none;
+    width: 70%;
+    padding:10px;
+    color:rgb(87, 82, 88);
+}
+#container4 > #editclient>input:nth-child(6){
+    background-color: #75ba75;
+    border: 1px solid black;
+    border-radius: 0px;
+}
+.innerorder>div>div>div{
+    padding:5px;
+}
+@media(max-width:720px){
+    .theHide{
+        display: none;
+        width: 0% !important;
+    }
+    .editouter >form>div>div>input{
+        width: 100% !important;
+    }
+
+}
+@media (max-width:1000px) {
+    #innerorder{
+        width: 60%;
+    }
+}
+@media (max-width:670px) {
+    .TheHide{
+        display: none !important;
+        width: 0% !important;
+    }
+    #innerorder>div>div>div:nth-child(1){
+        width: 15%;
+    }
+    .outerdiv>div>div:nth-child(1){
+        width: 15%;
+    }
+    #innerorder>div>div>div:nth-child(2){
+        width: 50%;
+    }
+    .outerdiv>div>div:nth-child(2){
+        width: 50%;
+    }
+    #innerorder>div>div>div:nth-child(3){
+        width: 25%;
+    }
+    .outerdiv>div>div:nth-child(3){
+        width: 25%;
+    }
+    .thestatus,.outerdelivery{
+        display: none !important;
+        width: 0% !important;
+    }
 }
