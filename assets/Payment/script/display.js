@@ -20,9 +20,9 @@ if(select.value == "ring" || select.value == "watch" || select.value == "bracele
                 filterarr.push(Product[i]);
     }
 
-    if(select.value == "500.000 - 1.000.000"){
+    if(select.value == "500.000 - 1.500.000"){
         for(let i = 0 ;i < Product.length;i++)
-            if(Product[i].price >= 500000 && Product[i].price<=1000000) 
+            if(Product[i].price >= 500000 && Product[i].price<=1500000) 
                 filterarr.push(Product[i]);
     }
 

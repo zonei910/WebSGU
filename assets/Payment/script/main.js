@@ -38,7 +38,7 @@ function showTomtatsp(){
         <div class="cartinner">
             <div class="cart">
                 <div>${product[i].ten}</div>
-                <div>${product[i].gia} * ${product[i].soLuong} </div>
+                <div>${formatVND(gia)} * ${product[i].soLuong} </div>
             </div>
             <div class="sumofcart">
                 ${formatVND(thanhtien)}
@@ -62,7 +62,7 @@ function showTomtatsp(){
     let showTong = document.querySelector(".sumoutter .suminner");
     showCount.innerHTML = n;
     showSP.innerHTML = a;
-    showTong.textContent = `${s} đ`;
+    showTong.textContent = `${formatVND(s)}`;
 }else{
     
 }
@@ -237,3 +237,12 @@ function dangxuat() {
     alert("Đã đăng xuất khỏi tài khoản");
     window.location.href="index.html";
 }
+
+
+function contactPhone(){
+    let a = JSON.parse(localStorage.getItem("admin"));
+    let b = document.querySelector(".contact_phone");
+    b.innerHTML = a.phone;
+}
+
+contactPhone();
