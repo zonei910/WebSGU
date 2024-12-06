@@ -2156,14 +2156,17 @@ let Customerr = [
     
     
     
-localStorage.setItem("users", JSON.stringify(Customerr));  
-// let donhang = [];
-for(let i = 0 ; i <Customerr.length;i++){
-    for(let j = 0 ; j < Customerr[i].lichsuMuaHang.length;j++){
-        donhang.push(Customerr[i].lichsuMuaHang[j]);
-}
-}
-localStorage.setItem("donhang", JSON.stringify(donhang));
+// localStorage.setItem("users", JSON.stringify(Customerr));  
+// // let donhang = [];
+// for(let i = 0 ; i <Customerr.length;i++){
+//     for(let j = 0 ; j < Customerr[i].lichsuMuaHang.length;j++){
+//         donhang.push(Customerr[i].lichsuMuaHang[j]);
+// }
+// }
+// localStorage.setItem("donhang", JSON.stringify(donhang));
+
+
+
 
 function taohangthongke(Customer, product) {
   if (true) {
