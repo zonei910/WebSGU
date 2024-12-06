@@ -30,7 +30,7 @@ let Customer = [
         "tongtien": 285000000,
         "status": 0,
         "tenKH": "Võ Văn Toàn",
-        "phoneKH": "0918273645",
+        "phoneKH": "123",
         "emailKH": "vovantoan@gmail.com",
         "genderKH": "male",
         "giohang": [
@@ -55,7 +55,7 @@ let Customer = [
         "tongtien": 12000000,
         "status": 0,
         "tenKH": "Võ Văn Toàn",
-        "phoneKH": "0918273645",
+        "phoneKH": "123",
         "emailKH": "vovantoan@gmail.com",
         "genderKH": "male",
         "giohang": [
