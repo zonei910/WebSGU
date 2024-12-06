@@ -50,7 +50,6 @@ function closededitclient() {
 function editclient(Phone) {
   // let phone="0"+Phone;
   let phone=Phone;
-  console.log(phone);
   let Customer = JSON.parse(localStorage.getItem("users"));
   document.getElementById("sectioneditclient").style.display = "flex";
   document.getElementById("editkh").addEventListener("click", function (event) {
@@ -74,8 +73,6 @@ function editclient(Phone) {
         return;
       }
       Customer.forEach(customer=>{
-        console.log(customer.phone);
-        console.log(phone);
         if(customer.phone==phone){
           customer.name = hoten;
           customer.phone = thephone;
@@ -98,7 +95,6 @@ function editclient(Phone) {
   });
 }
 function taketime(phone){
-  console.log(phone);
   let Customer = JSON.parse(localStorage.getItem("users"));
   const time = document.getElementById("taketimefirst").value;
   if (time) {
@@ -148,9 +144,6 @@ function taketime(phone){
 }
 function printinforordernew(phone,Customer){
   document.getElementById("innerorder").innerHTML="";
-  console.log(phone);
-  console.log(Customer);
-  console.log(phone);
   document.getElementById("printorder").style.display = "flex";
   document.querySelector("#printorder").innerHTML=`
       <div id="innerorder"><i class="fa-solid fa-x" onclick="closedproduct()"></i>
@@ -207,7 +200,6 @@ function printinforordernew(phone,Customer){
                     <div>${product.ngaydat}</div>
                     `;
           outercreatediv.appendChild(creatediv);
-          console.log(outercreatediv);
         }
         let k=j;
         let thestatus=document.createElement("div");
@@ -245,7 +237,6 @@ function printinforordernew(phone,Customer){
   // }
 }
 function printinfororder(phone) {
-  console.log(phone);
   let Customer = JSON.parse(localStorage.getItem("users"));
   document.getElementById("printorder").style.display = "flex";
   document.querySelector("#printorder").innerHTML=`
@@ -372,7 +363,6 @@ function printinfororder(phone) {
 //   }
 // }
 function arrayCustomer(Customer) {
-  // console.log(Customer)
   return Customer.filter((Customer) => {
     const filteredlichsuMuaHangs = Customer.lichsuMuaHang.filter(
       (lichsuMuaHang) => {
@@ -488,7 +478,6 @@ function printinfor(page) {
         <div class="Thehide">Email</div>
     </div>`;
   newCustomer.forEach((Customer) => {
-    console.log(Customer.phone);
     const clientouterr = `<div class="clientouter" id="clientouter-${Customer.phone}">
             <div>${Customer.name}</div>
             <div>${Customer.phone}</div>
@@ -510,7 +499,6 @@ function closedkhoa() {
   document.getElementById("khoaclient").style.display = "none";
 }
 function khoanguoidung(phone) {
-  console.log(phone);
   let Customer = JSON.parse(localStorage.getItem("users"));
   for (let i = 0; i < Customer.length; i++) {
     if (Customer[i].phone == phone) {
@@ -591,7 +579,6 @@ function printsearcharray(newarray) {
   });
 }
 function hienkhoa(phone) {
-  console.log(phone);
   let Customer=JSON.parse(localStorage.getItem("users"));
   document.getElementById("khoaclient").style.display = "flex";
   let hienkh = document.querySelector(".printkh");
@@ -694,7 +681,6 @@ function hienkhoa(phone) {
 }
 
 function submitkhoa(phone) {
-  console.log(phone);
   let Customer = JSON.parse(localStorage.getItem("users"));
   const reason = document.getElementById("inputkhoand").value.trim();
   if (!reason) {
@@ -704,11 +690,9 @@ function submitkhoa(phone) {
   for (let i = 0; i < Customer.length; i++) {
     if (Customer[i].phone == phone) {
       let a="khoa-"+phone;
-      console.log(document.getElementById(a));
       document.getElementById(a).style.color="#bcbcbc"
       Customer[i].status = 1;
       localStorage.setItem('users', JSON.stringify(Customer));
-      console.log(Customer);
       Customer[i].reasonkhoa = reason;
       alert("đã khóa người dùng");
       break;

@@ -50,7 +50,6 @@
     margin:10px;
     position: relative;
     border-radius: 5px;
-    height: 100%;
 }
 #phantrangouter{
     position: absolute;
@@ -87,7 +86,7 @@
     width: 10%;
 }
 .clientouter>div{
-    font-size: 20px;
+    font-size: 14px;
 }
 #clientouter{
     padding-bottom:10px;

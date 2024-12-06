@@ -4,6 +4,7 @@ let month = 1;
 let theyearrsecond = 2024 + 1;
 let daysecond;
 let monthsecond = 1;
+let donhang = [];
 
 function taohangthongke(Customer, product) {
   if (true) {
@@ -194,12 +195,10 @@ function gettotal(Customer) {
   let sumprofit = 0;
   let sumproduct = 0;
   let sumprice = 0;
-  Customer.forEach((Customer) => {
-    if(Customer.totalprofit && Customer.totalproduct && Customer.totalprice){
-      sumprofit += Customer.totalprofit;
-      sumproduct += Customer.totalproduct;
-      sumprice += Customer.totalprice;
-    }
+  Customer.forEach((customer) => {
+    sumprofit += customer.totalprofit;
+    sumproduct += customer.totalproduct;
+    sumprice += customer.totalprice;
   });
   return {
     totalprofit: sumprofit,
@@ -237,7 +236,7 @@ function cuslowest(customers) {
     customers.forEach((customer) => {
       if (customer.totalprofit <min) {
         min = customer.totalprofit;
-        highestCustomer = customer;
+        lowestCustomer = customer;
       }
     });
   }
@@ -289,7 +288,6 @@ function lowest(product) {
   let productwithmin;
   let min = +Infinity;
   product.forEach((product) => {
-    console.log(product.profit);
     if (product.profit < min) {
       min = product.profit;
       productwithmin = product;
@@ -351,7 +349,6 @@ function checktimeday(receiptime) {
 
 //lấy mảng Customer mới với lịch sử mua hàng thỏa điều kiện
 function arrayCustomer(Customer) {
-  // console.log(Customer)
   return Customer.filter((Customer) => {
     const filteredlichsuMuaHangs = Customer.lichsuMuaHang.filter(
       (lichsuMuaHang) => {
@@ -370,15 +367,15 @@ function arrayCustomer(Customer) {
 function arrayCustomerwithtotalprofit(Customer) {
   if (Customer) {
     const array = JSON.parse(JSON.stringify(Customer));
-    array.forEach((Customer) => {
-      Customer.lichsuMuaHang.forEach((lichsuMuaHang) => {
-        Customer.totalprice = 0;
-        Customer.totalproduct = 0;
-        Customer.totalprofit = 0;
+    array.forEach((customer) => {
+      customer.totalprice = 0;
+      customer.totalproduct = 0;
+      customer.totalprofit = 0;
+      customer.lichsuMuaHang.forEach((lichsuMuaHang) => {
         lichsuMuaHang.giohang.forEach((product) => {
-          Customer.totalprofit += product.soLuong * product.profit;
-          Customer.totalproduct += product.soLuong;
-          Customer.totalprice += product.soLuong * parseInt(product.gia);
+          customer.totalprofit += product.soLuong * product.profit;
+          customer.totalproduct += product.soLuong;
+          customer.totalprice += product.soLuong * parseInt(product.gia);
         });
       });
     });
@@ -386,53 +383,122 @@ function arrayCustomerwithtotalprofit(Customer) {
   }
 }
 
-// lấy mảng product mới id phân biệt
-//   function aggregateCartItems(Customers) {
-//     const aggregatedItems = {};
-//     Customers.forEach(Customer => {
-//         Customer.lichsuMuaHang.forEach(order => {
-//             let uni=new Set();
-//             let i=0;
-//             order.giohang.forEach(item => {
-//                 uni.add(item.id);
-//                 if (uni.has(item.id)) {
-//                     aggregatedItems[i].soLuong += item.soLuong;
-//                     aggregatedItems[i].profit=item.profit*item.soLuong
-//                     aggregatedItems[i].gia=item.gia*item.soLuong
-//                 } else {
-//                     aggregatedItems[i] = { ...item };
-//                     aggregatedItems[i].profit=item.profit*item.soLuong;
-//                     aggregatedItems[i].gia=item.gia*item.soLuong;
-//                     aggregatedItems[i].soLuong+=product.soLuong
-//                     i++;
-//                 }
-//             });
-//         });
+  // function aggregateCartItems(Customers) {
+  //   const aggregatedItems = {};
+  //   Customers.forEach(Customer => {
+  //       Customer.lichsuMuaHang.forEach(order => {
+  //           let uni=new Set();
+  //           let i=0;
+  //           order.giohang.forEach(item => {
+  //               uni.add(item.id);
+  //               if (uni.has(item.id)) {
+  //                   aggregatedItems[i].soLuong += item.soLuong;
+  //                   aggregatedItems[i].profit=item.profit*item.soLuong
+  //                   aggregatedItems[i].gia=item.gia*item.soLuong
+  //               } else {
+  //                   aggregatedItems[i] = { ...item };
+  //                   aggregatedItems[i].profit=item.profit*item.soLuong;
+  //                   aggregatedItems[i].gia=item.gia*item.soLuong;
+  //                   aggregatedItems[i].soLuong+=product.soLuong
+  //                   i++;
+  //               }
+  //           });
+  //       });
+  //   });
+  //   return Object.values(aggregatedItems);
+  // }
+// function aggregateCartItems(Customers) {
+//   console.log(Customers);
+//   const aggregatedItems = {};
+//   Customers.forEach((Customer) => {
+//     Customer.lichsuMuaHang.forEach((order) => {
+//       order.giohang.forEach((item) => {
+//         if (aggregatedItems[item.id]) {
+//           aggregatedItems[item.id].soLuong += item.soLuong;
+//           aggregatedItems[item.id].profit += item.profit * item.soLuong;
+//           aggregatedItems[item.id].gia += item.gia * item.soLuong;
+//         } else {
+//           aggregatedItems[item.id] = {
+//             ...item,
+//             soLuong: item.soLuong,
+//             profit: item.profit * item.soLuong,
+//             gia: item.gia * item.soLuong,
+//           };
+//         }
+//       });
 //     });
-//     return Object.values(aggregatedItems);
-//   }
-function aggregateCartItems(Customers) {
-  const aggregatedItems = {};
-  Customers.forEach((Customer) => {
-    Customer.lichsuMuaHang.forEach((order) => {
-      order.giohang.forEach((item) => {
-        if (aggregatedItems[item.id]) {
-          aggregatedItems[item.id].soLuong += item.soLuong;
-          aggregatedItems[item.id].profit += item.profit * item.soLuong;
-          aggregatedItems[item.id].gia += item.gia * item.soLuong;
-        } else {
-          aggregatedItems[item.id] = {
-            ...item,
-            soLuong: item.soLuong,
-            profit: item.profit * item.soLuong,
-            gia: item.gia * item.soLuong,
-          };
-        }
-      });
-    });
-  });
-  return Object.values(aggregatedItems);
+//   });
+//   return Object.values(aggregatedItems);
+// }
+function aggregateCartItems(Customers){
+  const aggregatedItems = [];
+  let uni=new Set();
+  let i=0;
+  Customers.forEach(customer=>{
+    if(customer.lichsuMuaHang){
+      customer.lichsuMuaHang.forEach(lichsu=>{
+        lichsu.giohang.forEach(product=>{
+          if(uni.has(product.id)){
+            let theproduct=aggregatedItems.find(pro => pro.id == product.id);
+            theproduct.soLuong += product.soLuong;
+            theproduct.profit += product.soLuong*product.profit;
+            theproduct.gia += product.soLuong+product.gia;
+          }
+          else{
+            uni.add(product.id);
+            aggregatedItems[i] = {
+              ...product,
+              soLuong: product.soLuong,
+              profit: product.profit * product.soLuong,
+              gia: product.gia * product.soLuong,
+            };
+            i++;
+          }
+  
+        })
+      })
+    }
+  })
+  return aggregatedItems;
 }
+// function aggregateCartItems(Customers) {
+//   console.log(Customers);
+//   const aggregatedItems = {};
+//   let uni = new Set();
+//   let i = 0;
+
+//   // Sử dụng Promise để xử lý bất đồng bộ
+//   const promises = Customers.map(customer => {
+//     console.log(customer);
+//     return new Promise((resolve) => {
+//       customer.lichsuMuaHang(lichsu => {
+//         lichsu.giohang(product => {
+//           if (uni.has(product.id)) {
+//             let theProduct = Object.values(aggregatedItems).find(pro => pro.id == product.id);
+//             if (theProduct) {
+//               theProduct.soLuong += product.soLuong;
+//               theProduct.profit += product.soLuong * product.profit;
+//               theProduct.gia += product.gia * product.soLuong;
+//             }
+//           } else {
+//             uni.add(product.id);
+//             aggregatedItems[i] = {
+//               id: product.id, // Thêm thuộc tính id
+//               soLuong: product.soLuong,
+//               profit: product.profit * product.soLuong,
+//               gia: product.gia * product.soLuong,
+//             };
+//             i++;
+//           }
+//           resolve(); // Kết thúc promise
+//         });
+//       });
+//     });
+//   });
+
+//   // Chờ tất cả các promise hoàn thành
+//   return Promise.all(promises).then(() => Object.values(aggregatedItems));
+// }
 
 
 
@@ -487,6 +553,5 @@ function addprofitforproduct(Product) {
 addprofitforcustomer(JSON.parse(localStorage.getItem("users")));
 taohangthongke(
   arrayCustomer(JSON.parse(localStorage.getItem("users"))),
-  aggregateCartItems(JSON.parse(localStorage.getItem("users")))
+  aggregateCartItems((JSON.parse(localStorage.getItem("users"))))
 );
-// console.log(lowest(aggregateCartItems(JSON.parse(localStorage.getItem("users"))))  );
