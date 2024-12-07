@@ -60,8 +60,33 @@
 }
 #Display .merchandise #buttons button{
     margin: 0 7px;
-    padding: 10px;
+    padding: 7px;
     cursor: pointer;
+    width:35px;
+    height:auto;
+    background-color: #bab7b7;
+    border: 1px solid #bab7b7;
+    font-weight: 500;
+    font-size: small;
+}
+#Display .merchandise #buttons button:hover{
+    background-color: gray;
+
+}
+#Display .merchandise #buttons .addItem{
+    /* padding:12px; */
+    font-size:large;
+    background-color: rgb(101, 164, 101);
+    width:max-content;
+    height:35px;
+    font-weight:600;
+    border-radius: 5px;
+    color:black;
+}
+#Display .merchandise #buttons .addItem:hover{
+    background-color: rgb(1, 84, 1);
+    color:white;
+
 }
 #Display .merchandise .button1, .button2, .button3{
     border-radius: 5px;
