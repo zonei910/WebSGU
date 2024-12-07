@@ -405,9 +405,8 @@ function checktimeday(receiptime) {
 function arrayCustomer(Customer) {
   return Customer.map((Customer) => {
     let filteredlichsuMuaHangs=Customer.lichsuMuaHang.filter(lichsu=>{
-      return checktimedate(lichsu.ngaydat);
+      return checktimeday(lichsu.ngaydat);
     })
-    console.log(filteredlichsuMuaHangs);
     if (filteredlichsuMuaHangs.length > 0) {
       console.log(Customer);
       return {
