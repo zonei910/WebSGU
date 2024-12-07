@@ -314,7 +314,8 @@
 }
 .active{
     /* background-color: salmon; */
-    background-color: #D9F3F3;
+    /* background-color: #D9F3F3; */
+    background-color: #B4B2B2;
 }
 #addclient > .alertdiv:nth-child(7){
     position: absolute;
