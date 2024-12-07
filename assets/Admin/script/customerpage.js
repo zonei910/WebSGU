@@ -584,12 +584,15 @@ function search() {
   });
 
   phonesearch.forEach((Customer) => {
-    if (!uniqueRanks.has(Customer.rank)) {
-      uniqueRanks.add(Customer.rank);
+    if (!uniqueRanks.has(Customer.phone)) {
+      uniqueRanks.add(Customer.phone);
       newarray.push(Customer);
     }
   });
   printsearcharray(newarray);
+}
+function search(){
+
 }
 function printsearcharray(newarray) {
     document.getElementById("container4").innerHTML = "";
@@ -763,13 +766,6 @@ function customnutphantrang(page) {
   });
   nutphantrangNode[page-1].classList.add("active");
 }
-
-// document.querySelector('angle').addEventListener('click', function() {
-//   var sidebar = document.getElementById('printorder');
-//   sidebar.classList.toggle('hide');
-// });
-
-
 
 
 currentpage=1;
