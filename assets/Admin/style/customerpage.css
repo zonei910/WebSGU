@@ -1,8 +1,17 @@
 .container3{
-    background-color: rgb(247, 250, 255);
+    /* background-color: rgb(247, 250, 255); */
+    background-color: #D9F3F3;
     margin:10px;
     padding:0;
     border-radius: 5px;
+}
+.divcolor{
+    background-color: #D9F3F3;
+    width: 100%;
+    height: 100px;
+    /* height: 100%; */
+    /* height: 100vh; */
+    margin:5px;
 }
 .outer{
     width:100%;
@@ -51,29 +60,35 @@
     position: relative;
     border-radius: 5px;
 }
-#phantrangouter{
-    position: absolute;
-    left: 50%;
-    bottom:20px; 
-    transform: translate(-50%,50%);
-}
 #container4{
     /* overflow-y: scroll;
     overflow-x: hidden; */
     padding-top:20px;
 }
+.divcolor{
+    position: relative;
+}
+#phantrangouter{
+    position: absolute;
+    left: 50%;
+    top:5px; 
+    transform: translate(-50%,50%);
+}
 .nutphantrang{
     cursor:pointer;
     text-align: center;
-    /* line-height: 50px; */
+    line-height: 50px;
     display: inline-block;
-    width: 50px;
+    width: 25px;
     /* height: 30px; */
-    border: 3px solid #B4B2B2;
+    /* border: 3px solid #B4B2B2; */
     border-radius: 5px;
     cursor: pointer;
-    margin: 0 10px;
-    background-color: #B4B2B2;
+    margin: 0 7px;
+    /* padding: 10px; */
+    /* margin: 0 10px; */
+    /* background-color: #B4B2B2; */
+    background-color: white;
     /* transform: translate(-50%,-50%); */
     color:rgb(87, 82, 88) ;
 }

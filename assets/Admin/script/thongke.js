@@ -408,7 +408,6 @@ function arrayCustomer(Customer) {
       return checktimeday(lichsu.ngaydat);
     })
     if (filteredlichsuMuaHangs.length > 0) {
-      console.log(Customer);
       return {
         ...Customer,
         lichsuMuaHang: filteredlichsuMuaHangs,
@@ -416,6 +415,19 @@ function arrayCustomer(Customer) {
     }
   }).filter((Customer) => Customer);
 }
+// function arrayCustomer(Customer) {
+//   return Customer.map((Customer) => {
+//     let filteredlichsuMuaHangs=Customer.lichsuMuaHang.filter(lichsu=>{
+//       return checktimeday(lichsu.ngaydat);
+//     })
+//     if (filteredlichsuMuaHangs.length > 0) {
+//       return {
+//         ...Customer,
+//         lichsuMuaHang: filteredlichsuMuaHangs,
+//       };
+//     }
+//   })
+// }
 //khách hàng với tổng doanh thu,tổng product
 function arrayCustomerwithtotalprofit(Customer) {
   if (Customer) {
