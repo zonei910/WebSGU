@@ -249,16 +249,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const totalPages = Math.ceil(dataToPaginate.length / rowsPerPage);
 
         // Create Previous button
-        const prevButton = document.createElement("button");
-        prevButton.classList.add("prev-page");
-        prevButton.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
-        prevButton.addEventListener("click", () => {
-            if (currentPage > 1) {
-                currentPage--;
-                displayPage(currentPage);
-            }
-        });
-        buttonGroup.appendChild(prevButton);
+        // const prevButton = document.createElement("button");
+        // prevButton.classList.add("prev-page");
+        // prevButton.innerHTML = '<i class="fa-solid fa-chevron-left"></i>';
+        // prevButton.addEventListener("click", () => {
+        //     if (currentPage > 1) {
+        //         currentPage--;
+        //         displayPage(currentPage);
+        //     }
+        // });
+        // buttonGroup.appendChild(prevButton);
 
         // Create page number buttons
         for (let i = 1; i <= totalPages; i++) {
@@ -273,16 +273,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Create Next button
-        const nextButton = document.createElement("button");
-        nextButton.classList.add("next-page");
-        nextButton.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
-        nextButton.addEventListener("click", () => {
-            if (currentPage < totalPages) {
-                currentPage++;
-                displayPage(currentPage);
-            }
-        });
-        buttonGroup.appendChild(nextButton);
+        // const nextButton = document.createElement("button");
+        // nextButton.classList.add("next-page");
+        // nextButton.innerHTML = '<i class="fa-solid fa-chevron-right"></i>';
+        // nextButton.addEventListener("click", () => {
+        //     if (currentPage < totalPages) {
+        //         currentPage++;
+        //         displayPage(currentPage);
+        //     }
+        // });
+        // buttonGroup.appendChild(nextButton);
     }
     loadData();
 
